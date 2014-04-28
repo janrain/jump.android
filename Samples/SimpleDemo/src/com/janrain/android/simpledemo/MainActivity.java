@@ -49,11 +49,14 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
+
 import com.janrain.android.Jump;
 import com.janrain.android.capture.CaptureApiError;
 import com.janrain.android.engage.JREngage;
 import com.janrain.android.engage.types.JRActivityObject;
+import com.janrain.android.engage.types.JRSmsObject;
 import com.janrain.android.utils.LogUtils;
+
 import org.json.JSONObject;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
@@ -171,11 +174,20 @@ public class MainActivity extends FragmentActivity {
         Button refreshToken = addButton(linearLayout, "Refresh Access Token");
         Button resendVerificationButton = addButton(linearLayout, "Resend Email Verification");
         Button link_unlinkAccount = addButton(linearLayout, "Link & Unlink Account");
+        
+        final JRActivityObject jrActivity = new JRActivityObject(
+        		"asdf",
+        		"http://google.com");
+        
+        // The SMS text will just be jrActivity's action and url combined
+        String smsBody = jrActivity.getAction() + " " + jrActivity.getUrl();
+        jrActivity.setSms(new JRSmsObject(smsBody));
+        
         addButton(linearLayout, "Share").setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(flowDownloaded)
                 JREngage.getInstance().showSocialPublishingDialog(MainActivity.this,
-                        new JRActivityObject("aslkdfj", "http://google.com"));
+                		jrActivity);
             }
         });
 
