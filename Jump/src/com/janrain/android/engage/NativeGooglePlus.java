@@ -236,6 +236,9 @@ public class NativeGooglePlus extends NativeProvider {
         public boolean shouldSignOut = false;
         public boolean shouldDisconnect = false;
 
+        // track whether an intent is already open to resolve sign-in
+        public boolean signInResolving = false;
+
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -262,7 +265,9 @@ public class NativeGooglePlus extends NativeProvider {
             super.onStop();
             LogUtils.logd("GooglePlusFragment onStart");
 
-            mPlusClient.disconnect();
+            if (mPlusClient.isConnected()) {
+                mPlusClient.disconnect();
+            }
         }
 
         @Override
@@ -279,6 +284,8 @@ public class NativeGooglePlus extends NativeProvider {
         }
 
         public void signInPlusClient() {
+            LogUtils.logd("GooglePlusFragment signInPlusClient");
+
             if (mPlusClient == null) {
                 completion.onFailure("Could not instantiate Google Plus Client",
                                      NativeAuthError.CANNOT_INSTANTIATE_GOOGLE_PLAY_CLIENT);
@@ -291,6 +298,7 @@ public class NativeGooglePlus extends NativeProvider {
                 if (mConnectionResult == null) {
                     isConnecting = true;
                 } else {
+                    LogUtils.logd("GooglePlusFragment signInPlusClient calling startResolutionForResult");
                     startResolutionForResult();
                 }
             } else {
@@ -356,12 +364,16 @@ public class NativeGooglePlus extends NativeProvider {
                     if (method.getName().equals("onConnectionFailed")) {
                         // onConnectionFailed(ConnectionResult result)
                         mConnectionResult = objects[0];
+                        LogUtils.logd("onConnectionFailed");
 
-                        if (isConnecting && connectionResultHasResolution()) {
-                            startResolutionForResult();
-                        } else {
-                            completion.onFailure("Could not resolve Google+ result",
-                                    NativeAuthError.COULD_NOT_RESOLVE_GOOGLE_PLUS_RESULT);
+                        if(!signInResolving) {
+                            if (isConnecting && connectionResultHasResolution()) {
+                                LogUtils.logd("onConnectionFailed calling startResolutionForResult");
+                                startResolutionForResult();
+                            } else {
+                                completion.onFailure("Could not resolve Google+ result",
+                                        NativeAuthError.COULD_NOT_RESOLVE_GOOGLE_PLUS_RESULT);
+                            }
                         }
                     } else if (method.getName().equals("equals")) {
                         return (o == objects[0]);
@@ -409,6 +421,8 @@ public class NativeGooglePlus extends NativeProvider {
         }
 
         private void startResolutionForResult() {
+            LogUtils.logd("startResolutionForResult");
+            signInResolving = true;
             try {
                 Method startResolution = connectionResultClass.getMethod("startResolutionForResult",
                         Activity.class, int.class);
@@ -417,7 +431,9 @@ public class NativeGooglePlus extends NativeProvider {
                 throw new RuntimeException(e);
             } catch (InvocationTargetException e) {
                 if (e.getCause() instanceof IntentSender.SendIntentException) {
+                    LogUtils.logd("startResolutionForResult : SendIntentException");
                     // Try connecting again
+                    signInResolving = false;
                     mConnectionResult = null;
                     mPlusClient.connect();
                 } else {
@@ -519,34 +535,36 @@ public class NativeGooglePlus extends NativeProvider {
             }
         }
 
-        public void connect() {
-            LogUtils.logd("plusClient Connect");
-
+        public Object callMethod(String methodName) {
+            LogUtils.logd("plusClient." + methodName + "()");
             try {
-                Method connect = plusClientClass.getMethod("connect");
-                connect.invoke(plusClient);
+                Method methodObj = plusClientClass.getMethod(methodName);
+                return methodObj.invoke(plusClient);
             } catch (NoSuchMethodException e) {
                 throw new RuntimeException(e);
-            } catch (InvocationTargetException e) {
-                throw new RuntimeException(e);
             } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            } catch (InvocationTargetException e) {
                 throw new RuntimeException(e);
             }
         }
 
-        public void disconnect() {
-            LogUtils.logd("plusClient disconnect");
-            try {
-                Method disconnect = plusClientClass.getMethod("disconnect");
-                disconnect.invoke(plusClient);
-            } catch (NoSuchMethodException e) {
-                throw new RuntimeException(e);
-            } catch (InvocationTargetException e) {
-                throw new RuntimeException(e);
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException(e);
-            }
+        public Boolean callBooleanMethod(String methodName) {
+            return (Boolean)callMethod(methodName);
+        }
 
+        public String callStringMethod(String methodName) {
+            return (String)callMethod(methodName);
+        }
+
+        public void connect() {
+            if(!isConnected() && !isConnecting()) {
+                callMethod("connect");
+            }
+        }
+
+        public void disconnect() {
+            callMethod("disconnect");
         }
 
         public void revokeAccessAndDisconnect(Object listener) {
@@ -564,52 +582,19 @@ public class NativeGooglePlus extends NativeProvider {
         }
 
         public void clearDefaultAccount() {
-            LogUtils.logd("plusClient clearDefaultAccount");
-            try {
-                Method clearDefaultAccount = plusClientClass.getMethod("clearDefaultAccount");
-                clearDefaultAccount.invoke(plusClient);
-            } catch (NoSuchMethodException e) {
-                throw new RuntimeException(e);
-            } catch (InvocationTargetException e) {
-                throw new RuntimeException(e);
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException(e);
-            }
-
+            callMethod("clearDefaultAccount");
         }
 
         public Boolean isConnected() {
-            Object isConnected = false;
-            try {
-                Method isClientConnected = plusClientClass.getMethod("isConnected");
-                isConnected = isClientConnected.invoke(plusClient);
-            } catch (NoSuchMethodException e) {
-                throw new RuntimeException(e);
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException(e);
-            } catch (InvocationTargetException e) {
-                throw new RuntimeException(e);
-            }
+            return callBooleanMethod("isConnected");
+        }
 
-            return (Boolean)isConnected;
+        public Boolean isConnecting() {
+            return callBooleanMethod("isConnecting");
         }
 
         private String accountName() {
-
-            Object accountName;
-
-            try {
-                Method getAccountName = plusClientClass.getMethod("getAccountName");
-                accountName = getAccountName.invoke(plusClient);
-            } catch (NoSuchMethodException e) {
-                throw new RuntimeException(e);
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException(e);
-            } catch (InvocationTargetException e) {
-                throw new RuntimeException(e);
-            }
-
-            return (String)accountName;
+            return callStringMethod("getAccountName");
         }
     }
 }
