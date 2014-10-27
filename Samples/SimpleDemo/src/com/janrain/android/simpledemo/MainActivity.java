@@ -49,11 +49,15 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
+
 import com.janrain.android.Jump;
 import com.janrain.android.capture.CaptureApiError;
+import com.janrain.android.capture.Capture.CaptureApiRequestCallbackWithResponse;
+import com.janrain.android.capture.CaptureRecord;
 import com.janrain.android.engage.JREngage;
 import com.janrain.android.engage.types.JRActivityObject;
 import com.janrain.android.utils.LogUtils;
+
 import org.json.JSONObject;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
@@ -169,6 +173,7 @@ public class MainActivity extends FragmentActivity {
         Button dumpRecord = addButton(linearLayout, "Dump Record to Log");
         Button editProfile = addButton(linearLayout, "Edit Profile");
         Button refreshToken = addButton(linearLayout, "Refresh Access Token");
+        Button fetchCaptureUserFromServer = addButton(linearLayout, "Fetch From Server");
         Button resendVerificationButton = addButton(linearLayout, "Resend Email Verification");
         Button link_unlinkAccount = addButton(linearLayout, "Link & Unlink Account");
         addButton(linearLayout, "Share").setOnClickListener(new View.OnClickListener() {
@@ -239,6 +244,33 @@ public class MainActivity extends FragmentActivity {
                 });
             }
         });
+
+        fetchCaptureUserFromServer.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (Jump.getSignedInUser() == null) {
+                    Toast.makeText(MainActivity.this, "Cannot fetch user without signed in user",
+                                   Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                Jump.getSignedInUser().fetchCaptureUserFromServer(new CaptureApiRequestCallbackWithResponse() {
+                    public void onFailure(CaptureApiError e) {
+                        Toast.makeText(MainActivity.this, "Failed to refresh access token",
+                                Toast.LENGTH_LONG).show();
+                        LogUtils.loge(e.toString());
+                    }
+
+					@Override
+					public CaptureRecord onSuccess(CaptureRecord response) {
+						String capture_user = Jump.getSignedInUser().toString();
+						Toast.makeText(MainActivity.this, "Capture User: " + capture_user.substring(0, Math.min(capture_user.length(), 100)),
+                                Toast.LENGTH_LONG).show();
+						return null;
+					}
+                });
+            }
+        });
+
 
         resendVerificationButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

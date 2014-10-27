@@ -36,15 +36,19 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Pair;
+
 import com.janrain.android.Jump;
+import com.janrain.android.capture.Capture.CaptureApiRequestCallbackWithResponse;
 import com.janrain.android.utils.ApiConnection;
 import com.janrain.android.utils.JsonUtils;
 import com.janrain.android.utils.LogUtils;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -106,7 +110,7 @@ public class CaptureRecord extends JSONObject {
     /*package*/ CaptureRecord(JSONObject jo, String accessToken, String refreshSecret) {
         this(jo, accessToken);
     }
-
+    
     /**
      * Loads a Capture user from a well-known filename on disk.
      * @param applicationContext the context from which to interact with the disk
@@ -372,6 +376,50 @@ public class CaptureRecord extends JSONObject {
                 } else if ("ok".equals(response.opt("stat"))) {
                     accessToken = (String) response.opt("access_token");
                     callback.onSuccess();
+                } else {
+                    callback.onFailure(new CaptureApiError(response, accessToken, null));
+                }
+            }
+        });
+    }
+    
+    /**
+     * Uses the refresh secret to refresh the access token
+     * @param callback your handler, invoked upon completion
+     */
+    public void fetchCaptureUserFromServer(final CaptureApiRequestCallbackWithResponse callback) {
+        String date = getUTCdatetimeAsString();
+        String signature = getRefreshSignature(date);
+
+        if (date == null || accessToken == null || signature == null) {
+            callback.onFailure(new CaptureApiError("Unable to generate signature"));
+            return;
+        }
+
+        CaptureApiConnection c = new CaptureApiConnection("/oauth/refresh_access_token");
+
+        c.addAllToParams(
+                "access_token", accessToken,
+                "signature", signature,
+                "date", date,
+                "client_id", Jump.getCaptureClientId(),
+                "locale", Jump.getCaptureLocale()
+        );
+        c.fetchResponseAsJson(new FetchJsonCallback() {
+            public void run(JSONObject response) {
+                if (response == null) {
+                    callback.onFailure(CaptureApiError.INVALID_API_RESPONSE);
+                } else if ("ok".equals(response.opt("stat"))) {
+                    Object user = response.opt("capture_user");
+                    if (user instanceof JSONObject) {
+                        String accessToken = response.optString("access_token");
+                        String refreshSecret = response.optString("refresh_secret");
+                        CaptureRecord record = new CaptureRecord(((JSONObject) user), accessToken);
+                        
+                        callback.onSuccess(record);
+                    } else {
+                    	callback.onFailure(CaptureApiError.INVALID_API_RESPONSE);
+                    }
                 } else {
                     callback.onFailure(new CaptureApiError(response, accessToken, null));
                 }

@@ -40,7 +40,11 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.support.v4.content.LocalBroadcastManager;
+import android.webkit.CookieManager;
+import android.webkit.CookieSyncManager;
+
 import com.janrain.android.capture.Capture;
+import com.janrain.android.capture.Capture.CaptureApiRequestCallbackWithResponse;
 import com.janrain.android.capture.CaptureApiError;
 import com.janrain.android.capture.CaptureFlowUtils;
 import com.janrain.android.capture.CaptureRecord;
@@ -54,6 +58,7 @@ import com.janrain.android.utils.ApiConnection;
 import com.janrain.android.utils.JsonUtils;
 import com.janrain.android.utils.LogUtils;
 import com.janrain.android.utils.ThreadUtils;
+
 import org.json.JSONObject;
 
 import java.io.FileInputStream;
@@ -430,6 +435,21 @@ public class Jump {
                                         SignInResultHandler handler) {
         showSignInDialog(fromActivity, providerName, handler, null);
     }
+    
+    public static void fetchCaptureUserFromServer(){
+    	
+    	state.signedInUser.fetchCaptureUserFromServer(new CaptureApiRequestCallbackWithResponse() {
+                    public void onFailure(CaptureApiError e) {
+                        LogUtils.loge(e.toString());
+                    }
+
+					@Override
+					public CaptureRecord onSuccess(CaptureRecord response) {
+						state.signedInUser = response;
+						return state.signedInUser;
+					}
+                });
+    }
 
     /**
      * Signs the signed-in user out, and removes their record from disk.
@@ -439,6 +459,10 @@ public class Jump {
         state.signedInUser = null;
         state.refreshSecret = null;
         CaptureRecord.deleteFromDisk(applicationContext);
+        
+        CookieSyncManager.createInstance(applicationContext);
+        CookieManager cookieManager = CookieManager.getInstance();
+        cookieManager.removeAllCookie();
     }
 
     /**
