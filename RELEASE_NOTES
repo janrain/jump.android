@@ -1,3 +1,9 @@
+v4.7.1
+ - Fixed issue with Native Google+ where Google+ UI would be invoked multiple times
+   upon leaving and entering the app
+ - Fixed issue with Native Google+ where back button would not back out of the
+   "Add a Google Account" screen.
+ - Fixed crash when immediately pressing back after invoking Native Google+
 v4.7.0
  - User landing screen now uses square provider icons
  - Added broadcasts for when the flow succeeds or fails to downlaod
