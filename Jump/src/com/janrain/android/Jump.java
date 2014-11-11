@@ -436,19 +436,39 @@ public class Jump {
         showSignInDialog(fromActivity, providerName, handler, null);
     }
     
-    public static void fetchCaptureUserFromServer(){
-    	
-    	state.signedInUser.fetchCaptureUserFromServer(new CaptureApiRequestCallbackWithResponse() {
-                    public void onFailure(CaptureApiError e) {
-                        LogUtils.loge(e.toString());
-                    }
+    public static void fetchCaptureUserFromServer(CaptureApiResultHandler handler){
+         state.captureAPIHandler = handler;
+         Capture.performUpdateSignedUserData(new Capture.CaptureApiResultHandler() {
+             @Override
+             public void onSuccess(JSONObject response) {
+                 CaptureApiError error = null;
+                 if ("ok".equals(response.opt("stat"))) {
+                     Object userRecord = response.opt("result");
+                     if (userRecord instanceof JSONObject){
+                         JsonUtils.deepCopy((JSONObject) userRecord, state.signedInUser);
+                         LogUtils.logd("Deep copy to the signedInUser finish");
+                         Jump.fireHandlerOnCaptureAPISuccess(response);
+                     }else {
+                        LogUtils.loge("User Record object error");
+                        Jump.fireHandlerOnCaptureAPIFailure(new CaptureAPIError(CAPTURE_API_FORMAT_ERROR,
+                                error,
+                                null));
+                     }
+                 }else{
+                     LogUtils.loge("result stat incorrect");
+                     Jump.fireHandlerOnCaptureAPIFailure(new CaptureAPIError(CAPTURE_API_FORMAT_ERROR,
+                             error,
+                             null));
+                 }
+             }
 
-					@Override
-					public CaptureRecord onSuccess(CaptureRecord response) {
-						state.signedInUser = response;
-						return state.signedInUser;
-					}
-                });
+             @Override
+             public void onFailure(CaptureApiError error) {
+                 Jump.fireHandlerOnCaptureAPIFailure(new CaptureAPIError(CAPTURE_API_FORMAT_ERROR,
+                         error,
+                         null));
+             }
+         });
     }
 
     /**
@@ -459,10 +479,19 @@ public class Jump {
         state.signedInUser = null;
         state.refreshSecret = null;
         CaptureRecord.deleteFromDisk(applicationContext);
-        
+
+        final String domain = "http://www.twitter.com";
         CookieSyncManager.createInstance(applicationContext);
         CookieManager cookieManager = CookieManager.getInstance();
-        cookieManager.removeAllCookie();
+        String cookiestring = cookieManager.getCookie(domain); //get all cookies
+        String[] cookies =  cookiestring.split(";");
+        for (int i=0; i<cookies.length; i++) {
+            String[] cookieparts = cookies[i].split("="); //split cookie into name and value etc.
+            // set cookie to an expired date
+            cookieManager.setCookie(domain, cookieparts[0].trim()+"=; Expires=Wed, 31 Dec 2000 23:59:59 GMT");
+        }
+        CookieSyncManager.getInstance().sync();
+        
     }
 
     /**

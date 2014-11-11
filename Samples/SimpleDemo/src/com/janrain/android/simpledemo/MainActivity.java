@@ -51,9 +51,8 @@ import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.janrain.android.Jump;
+import com.janrain.android.Jump.CaptureApiResultHandler;
 import com.janrain.android.capture.CaptureApiError;
-import com.janrain.android.capture.Capture.CaptureApiRequestCallbackWithResponse;
-import com.janrain.android.capture.CaptureRecord;
 import com.janrain.android.engage.JREngage;
 import com.janrain.android.engage.types.JRActivityObject;
 import com.janrain.android.utils.LogUtils;
@@ -252,21 +251,25 @@ public class MainActivity extends FragmentActivity {
                                    Toast.LENGTH_LONG).show();
                     return;
                 }
+                
+                Jump.fetchCaptureUserFromServer(new CaptureApiResultHandler() {
+                    @Override
+                    public void onSuccess(JSONObject response) {
+                        String capture_user = Jump.getSignedInUser().toString();
 
-                Jump.getSignedInUser().fetchCaptureUserFromServer(new CaptureApiRequestCallbackWithResponse() {
-                    public void onFailure(CaptureApiError e) {
-                        Toast.makeText(MainActivity.this, "Failed to refresh access token",
+                        LogUtils.logd("Fetch Capture User Frm Server Finish");
+                        Jump.saveToDisk(MainActivity.this);
+                        Toast.makeText(MainActivity.this, "Capture User: " + capture_user.substring(0, Math.min(capture_user.length(), 100)),
                                 Toast.LENGTH_LONG).show();
-                        LogUtils.loge(e.toString());
+                        
                     }
 
-					@Override
-					public CaptureRecord onSuccess(CaptureRecord response) {
-						String capture_user = Jump.getSignedInUser().toString();
-						Toast.makeText(MainActivity.this, "Capture User: " + capture_user.substring(0, Math.min(capture_user.length(), 100)),
+                    @Override
+                    public void onFailure(CaptureAPIError failureParam) {
+                        Toast.makeText(MainActivity.this, "Failed to refresh access token",
                                 Toast.LENGTH_LONG).show();
-						return null;
-					}
+                        LogUtils.loge(failureParam.toString());
+                    }
                 });
             }
         });

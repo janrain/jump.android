@@ -146,7 +146,7 @@ public class CaptureRecord extends JSONObject {
         JsonUtils.deepCopy(serializedVersion.getJSONObject("this"), inflatedRecord);
         return inflatedRecord;
     }
-
+    
     /**
      * Saves the Capture record to a well-known private file on disk.
      * @param applicationContext the context to use to write to disk
@@ -383,50 +383,6 @@ public class CaptureRecord extends JSONObject {
         });
     }
     
-    /**
-     * Uses the refresh secret to refresh the access token
-     * @param callback your handler, invoked upon completion
-     */
-    public void fetchCaptureUserFromServer(final CaptureApiRequestCallbackWithResponse callback) {
-        String date = getUTCdatetimeAsString();
-        String signature = getRefreshSignature(date);
-
-        if (date == null || accessToken == null || signature == null) {
-            callback.onFailure(new CaptureApiError("Unable to generate signature"));
-            return;
-        }
-
-        CaptureApiConnection c = new CaptureApiConnection("/oauth/refresh_access_token");
-
-        c.addAllToParams(
-                "access_token", accessToken,
-                "signature", signature,
-                "date", date,
-                "client_id", Jump.getCaptureClientId(),
-                "locale", Jump.getCaptureLocale()
-        );
-        c.fetchResponseAsJson(new FetchJsonCallback() {
-            public void run(JSONObject response) {
-                if (response == null) {
-                    callback.onFailure(CaptureApiError.INVALID_API_RESPONSE);
-                } else if ("ok".equals(response.opt("stat"))) {
-                    Object user = response.opt("capture_user");
-                    if (user instanceof JSONObject) {
-                        String accessToken = response.optString("access_token");
-                        String refreshSecret = response.optString("refresh_secret");
-                        CaptureRecord record = new CaptureRecord(((JSONObject) user), accessToken);
-                        
-                        callback.onSuccess(record);
-                    } else {
-                    	callback.onFailure(CaptureApiError.INVALID_API_RESPONSE);
-                    }
-                } else {
-                    callback.onFailure(new CaptureApiError(response, accessToken, null));
-                }
-            }
-        });
-    }
-
     /**
      * @internal
      */
