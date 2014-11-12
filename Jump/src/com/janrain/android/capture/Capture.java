@@ -137,6 +137,22 @@ public class Capture {
          */
         public void onFailure(CaptureApiError e);
     }
+    
+    /**
+     * An interface used to communicate Capture API request results, or errors.
+     */
+    public static interface CaptureApiRequestCallbackWithResponse {
+        /**
+         * Called on successful API request
+         */
+        public CaptureRecord onSuccess(CaptureRecord response);
+
+        /**
+         * Called on occurrence of error
+         * @param e the error which occurred
+         */
+        public void onFailure(CaptureApiError e);
+    }
 
     /**
      * Performs a social sign-in to Capture with the given Engage auth_info token

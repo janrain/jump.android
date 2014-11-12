@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container_scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+<GridLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
+    <GridLayout
         android:layout_height="match_parent"
         android:padding="8dip"
         android:useDefaultMargins="true"
@@ -110,3 +113,4 @@
             android:layout_height="wrap_content" />
     </GridLayout>
 </GridLayout>
+</ScrollView>
