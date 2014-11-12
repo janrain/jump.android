@@ -257,7 +257,7 @@ public class MainActivity extends FragmentActivity {
                     public void onSuccess(JSONObject response) {
                         String capture_user = Jump.getSignedInUser().toString();
 
-                        LogUtils.logd("Fetch Capture User Frm Server Finish");
+                        LogUtils.logd("Fetch Capture User From Server Finish");
                         Jump.saveToDisk(MainActivity.this);
                         Toast.makeText(MainActivity.this, "Capture User: " + capture_user.substring(0, Math.min(capture_user.length(), 100)),
                                 Toast.LENGTH_LONG).show();
@@ -295,6 +295,8 @@ public class MainActivity extends FragmentActivity {
         signOut.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Jump.signOutCaptureUser(MainActivity.this);
+                Toast.makeText(MainActivity.this, "Signout Capture User",
+                        Toast.LENGTH_LONG).show();
             }
         });
     }

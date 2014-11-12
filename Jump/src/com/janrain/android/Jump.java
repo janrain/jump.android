@@ -40,11 +40,8 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.support.v4.content.LocalBroadcastManager;
-import android.webkit.CookieManager;
-import android.webkit.CookieSyncManager;
 
 import com.janrain.android.capture.Capture;
-import com.janrain.android.capture.Capture.CaptureApiRequestCallbackWithResponse;
 import com.janrain.android.capture.CaptureApiError;
 import com.janrain.android.capture.CaptureFlowUtils;
 import com.janrain.android.capture.CaptureRecord;
@@ -479,19 +476,6 @@ public class Jump {
         state.signedInUser = null;
         state.refreshSecret = null;
         CaptureRecord.deleteFromDisk(applicationContext);
-
-        final String domain = "http://www.twitter.com";
-        CookieSyncManager.createInstance(applicationContext);
-        CookieManager cookieManager = CookieManager.getInstance();
-        String cookiestring = cookieManager.getCookie(domain); //get all cookies
-        String[] cookies =  cookiestring.split(";");
-        for (int i=0; i<cookies.length; i++) {
-            String[] cookieparts = cookies[i].split("="); //split cookie into name and value etc.
-            // set cookie to an expired date
-            cookieManager.setCookie(domain, cookieparts[0].trim()+"=; Expires=Wed, 31 Dec 2000 23:59:59 GMT");
-        }
-        CookieSyncManager.getInstance().sync();
-        
     }
 
     /**
