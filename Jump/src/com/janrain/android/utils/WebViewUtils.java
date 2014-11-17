@@ -70,7 +70,7 @@ public class WebViewUtils {
                 /* setCookie has changed a lot between different versions of Android with respect to
                  * how it handles cookies like these, which are set in order to clear an existing
                  * cookie.  This way of invoking it seems to work on all versions. */
-                cm.setCookie(domain, cookieParts[0] + "=;");
+                cm.setCookie(domain, cookieParts[0] + "=; Expires=Wed, 31 Dec 2000 23:59:59 GMT");
 
                 /* These calls have worked for some subset of the the set of all versions of
                  * Android:

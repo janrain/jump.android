@@ -36,15 +36,19 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Pair;
+
 import com.janrain.android.Jump;
+import com.janrain.android.capture.Capture.CaptureApiRequestCallbackWithResponse;
 import com.janrain.android.utils.ApiConnection;
 import com.janrain.android.utils.JsonUtils;
 import com.janrain.android.utils.LogUtils;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -106,7 +110,7 @@ public class CaptureRecord extends JSONObject {
     /*package*/ CaptureRecord(JSONObject jo, String accessToken, String refreshSecret) {
         this(jo, accessToken);
     }
-
+    
     /**
      * Loads a Capture user from a well-known filename on disk.
      * @param applicationContext the context from which to interact with the disk
@@ -142,7 +146,7 @@ public class CaptureRecord extends JSONObject {
         JsonUtils.deepCopy(serializedVersion.getJSONObject("this"), inflatedRecord);
         return inflatedRecord;
     }
-
+    
     /**
      * Saves the Capture record to a well-known private file on disk.
      * @param applicationContext the context to use to write to disk
@@ -378,7 +382,7 @@ public class CaptureRecord extends JSONObject {
             }
         });
     }
-
+    
     /**
      * @internal
      */
