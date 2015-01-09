@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
-    <string name="jr_git_describe">v4.7.1</string>
+    <string name="jr_git_describe">v4.7.1-7-gff2b000</string>
 </resources>

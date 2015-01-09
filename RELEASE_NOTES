@@ -1,3 +1,8 @@
+v5.0.0
+ - Updated SDK for Android 5.0 compatability
+ - Fixed issue with Twitter login leading to blank screen
+ - Added method to refresh capture record with what is on the server
+ - Known issue with Atom x64 (in emulation and potentially with devices utilizing this processor which is currently only the Lenovo P90), with a potential crash during Facebook share attempts
 v4.7.1
  - Fixed issue with Native Google+ where Google+ UI would be invoked multiple times
    upon leaving and entering the app
