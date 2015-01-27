@@ -130,9 +130,7 @@ import static com.janrain.android.engage.net.JRConnectionManager.ManagedConnecti
 
                 HttpResponse response;
                 try {
-                    LogUtils.logd("Making the request now...");
                     response = mHttpClient.execute(request);
-                    LogUtils.logd("Done!");
                 } catch (IOException e) {
                     // XXX Mediocre way to match exceptions from aborted requests:
                     if (request.isAborted() && e.getMessage().contains("abort")) {
