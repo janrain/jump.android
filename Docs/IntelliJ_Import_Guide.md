@@ -29,6 +29,7 @@ This will guide you through adding the JUMP library to your Android IntelliJ pro
 18.  In the **Choose modules** dialog, click **Cancel**. (The library dependency already exists; the library
      only needs to be defined.) Ensure that library is still created even though you clicked cancel.
 19.  Ensure that the new library's name is **android-support-v4**.
+20.  Repeat steps 16 through 18 for `okhttp-2.2.0.jar`, `okhttp-apache-2.2.0.jar`, and `okio-1.2.0.jar`.
 20.  Click **OK** to close the **Project Structure** settings window.  Further IDE support is available
      through the [Engage for Android support
      forum](https://support.janrain.com/forums/20122381-android-library-q-a).
