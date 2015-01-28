@@ -32,7 +32,8 @@ Clone the Janrain Jump for Android library from GitHub:
 13. Using the already open Properties window for your project, select `Java Build Path` in the left list.
 14. Select the `Libraries` tab.
 15. Click `Add JARs`.
-16. In `Jump/libs/`, select `android-support-v4.jar`, then click `OK`.
+16. In `Jump/libs/`, select `android-support-v4.jar`, `okhttp-2.2.0.jar`, `okhttp-apache-2.2.0.jar`,
+    and `okio-1.2.0.jar` then click `OK`.
 17. Open the "Jump" project's Properties window.
 17. Set the `Project Build Target` of the Jump Eclipse project to API level 15 or above. (Eclipse may have
     reset the Jump project build target to a lower level.)
