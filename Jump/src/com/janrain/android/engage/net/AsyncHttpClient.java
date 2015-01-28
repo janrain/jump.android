@@ -53,28 +53,25 @@ import android.os.Handler;
 import com.janrain.android.engage.net.async.HttpResponseHeaders;
 import com.janrain.android.utils.IoUtils;
 import com.janrain.android.utils.LogUtils;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.apache.OkApacheClient;
+
 import org.apache.http.Header;
 import org.apache.http.HeaderElement;
 import org.apache.http.HttpEntity;
-import org.apache.http.HttpRequest;
-import org.apache.http.HttpRequestInterceptor;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
+import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.client.params.HttpClientParams;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.params.BasicHttpParams;
-import org.apache.http.params.HttpConnectionParams;
-import org.apache.http.params.HttpParams;
-import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
 import java.util.zip.GZIPInputStream;
 
 import static com.janrain.android.engage.net.JRConnectionManager.ManagedConnection;
@@ -92,7 +89,7 @@ import static com.janrain.android.engage.net.JRConnectionManager.ManagedConnecti
     private AsyncHttpClient() {}
 
     /*package*/ static class HttpExecutor implements Runnable {
-        private static final DefaultHttpClient mHttpClient = setupHttpClient();
+        private static final HttpClient mHttpClient = setupHttpClient();
         private final Handler mHandler;
         private final ManagedConnection mConn;
         private final JRConnectionManager.HttpCallback callBack;
@@ -103,22 +100,13 @@ import static com.janrain.android.engage.net.JRConnectionManager.ManagedConnecti
             callBack = new JRConnectionManager.HttpCallback(mConn);
         }
 
-        static private DefaultHttpClient setupHttpClient() {
-            HttpParams connectionParams = new BasicHttpParams();
-            HttpConnectionParams.setConnectionTimeout(connectionParams, 30000); // thirty seconds
-            HttpConnectionParams.setSoTimeout(connectionParams, 30000);
-            HttpClientParams.setRedirecting(connectionParams, false);
-            DefaultHttpClient client = new DefaultHttpClient(connectionParams);
-
-            client.addRequestInterceptor(new HttpRequestInterceptor() {
-                public void process(HttpRequest request, HttpContext context) {
-                    if (!request.containsHeader(HEADER_ACCEPT_ENCODING)) {
-                        request.addHeader(HEADER_ACCEPT_ENCODING, ENCODING_GZIP);
-                    }
-                }
-            });
-
-            return client;
+        static private HttpClient setupHttpClient() {
+            OkHttpClient client = new OkHttpClient();
+            client.setConnectTimeout(30, TimeUnit.SECONDS);
+            client.setFollowRedirects(false);
+            OkApacheClient apacheClient = new OkApacheClient(client);
+            
+            return apacheClient;
         }
 
         public void run() {
@@ -127,7 +115,9 @@ import static com.janrain.android.engage.net.JRConnectionManager.ManagedConnecti
                 InetAddress ia = InetAddress.getByName(request.getURI().getHost());
                 LogUtils.logd("Requesting: " + mConn.getRequestUrl() + " (" + ia.getHostAddress() + ")");
 
-                request.addHeader("User-Agent", USER_AGENT);
+                if (USER_AGENT != null) {
+                	request.addHeader("User-Agent", USER_AGENT);
+                }
                 for (NameValuePair header : mConn.getRequestHeaders()) {
                     request.addHeader(header.getName(), header.getValue());
                 }
