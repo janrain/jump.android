@@ -1,3 +1,6 @@
+**NOTE:** The documentation on this site is no longer being updated. For current Mobile documentation,
+refer to http://developers.janrain.com/.
+
 Welcome to the JUMP platform libary for Android.  This library is available open-source under a Berkeley
 license, as found in the LICENSE file.
 
