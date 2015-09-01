@@ -17,6 +17,11 @@ Old git repo: https://github.com/janrain/engage.android
 New git repo: https://github.com/janrain/jump.android
 (Both are exactly the same, for now.)
 
+### Upgrading to v5.0.1
+
+- The Janrain Mobile Libraries and Sample Code now has dependencies on OKHttp. Follow the steps in **Eclipse_Import_Guide.md** or
+**IntelliJ_Import_Guide.md** no add the necessary Jars to your project.
+
 Updating from 3.x to 4.0:
 - 4.0 adds and focuses on Capture support, renames the library project / IDE metadata to "Jump"
 - See the developers integration guide, `Jump_Integration_Guide.md`

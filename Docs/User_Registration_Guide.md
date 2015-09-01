@@ -1,6 +1,6 @@
 # JUMP User Registration Guide
 
-This guide describes use of the user registration feature in the JUMP SDK. This guide is a follow-on to
+This guide describes use of the user registration feature in the JUMP Mobile Libraries and Sample Code. This guide is a follow-on to
 `Jump_Integration_Guide.md`, which describes the fundamentals of the integration process.
 
 ## Registration Types

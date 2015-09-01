@@ -1,5 +1,7 @@
+v5.0.1
+- The Janrain Mobile Libraries and Sample Code now has dependencies on OKHttp. Follow the steps in Eclipse_Import_Guide.md or IntelliJ_Import_Guide.md no add the necessary Jars to your project.
 v5.0.0
- - Updated SDK for Android 5.0 compatability
+ - Updated Mobile Libraries and Sample Code for Android 5.0 compatability
  - Fixed issue with Twitter login leading to blank screen
  - Added method to refresh capture record with what is on the server
  - Known issue with Atom x64 (in emulation and potentially with devices utilizing this processor which is currently only the Lenovo P90), with a potential crash during Facebook share attempts
@@ -18,12 +20,12 @@ v4.6.3
  - Icon support for Microsoft Account
  - Fixed crash when missing icons for a given provider
 v4.6.2
- - Fixed crash when signing out of the Facebook SDK
+ - Fixed crash when signing out of the Facebook Mobile Libraries and Sample Code
 v4.6.1
  - Allow Capture Domain, Capture Client ID, and Engage App ID to be changed
    after initalization
 v4.6.0:
- - Added support for Google+ sign-in using the Google Play SDK
+ - Added support for Google+ sign-in using the Google Play Mobile Libraries and Sample Code
  - Added ability to resend email verification email
  - Fixed crash in SimpleDemo
  - No longer using reflection to call nonexistent Activity method. Thanks Varun (Github issue #4)
@@ -48,7 +50,7 @@ v4.3.1:
  - Icon support for Google+ and Tumblr
 v4.3.0:
  - Update Android Phonegap plugin for Phongap 2.7.0
- - Support for Facebook native mobile SSO with Android SDK
+ - Support for Facebook native mobile SSO with Android Mobile Libraries and Sample Code
  - Supports for code_and_token
 v4.2.0:
  - Adds support for user registration (two-step social registration, as well as

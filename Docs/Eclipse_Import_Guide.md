@@ -6,7 +6,7 @@ This will guide you through:
 * [Phonegap Integration](#phonegap-integration)
 * [Troubleshooting Build and Runtime Errors](#troubleshooting-build-and-runtime-errors)
 
-## Clone the SDK Repository
+## Clone the Mobile Libraries and Sample Code Repository
 
 Clone the Janrain Jump for Android library from GitHub:
 
@@ -45,7 +45,7 @@ as detailed.
 
 **Warning:** There can only be one version of `android-support-v4.jar` in the accumulated set of `Java Build
 Path` values for your workspace (although there may be more than one copy of the same version). If you have
-a conflict you will need to delete one of the versions from the libs subdirectory of either the Jump SDK or
+a conflict you will need to delete one of the versions from the libs subdirectory of either the Jump Mobile Libraries and Sample Code or
 from your project.
 
 ### Phonegap Integration
