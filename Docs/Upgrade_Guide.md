@@ -36,7 +36,7 @@ This guide describes the steps required to upgrade from different versions of th
 
 ### Upgrading to v5.0.1
 
-The Janrain SDK now has dependencies on OKHttp. Follow the steps in **Eclipse_Import_Guide.md** or
+The Janrain Mobile Libraries and Sample Code now has dependencies on OKHttp. Follow the steps in **Eclipse_Import_Guide.md** or
 **IntelliJ_Import_Guide.md** no add the necessary Jars to your project.
 
 ### Solutions when upgrading to v4.7.0

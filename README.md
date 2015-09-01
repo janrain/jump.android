@@ -19,7 +19,7 @@ New git repo: https://github.com/janrain/jump.android
 
 ### Upgrading to v5.0.1
 
-- The Janrain SDK now has dependencies on OKHttp. Follow the steps in **Eclipse_Import_Guide.md** or
+- The Janrain Mobile Libraries and Sample Code now has dependencies on OKHttp. Follow the steps in **Eclipse_Import_Guide.md** or
 **IntelliJ_Import_Guide.md** no add the necessary Jars to your project.
 
 Updating from 3.x to 4.0:

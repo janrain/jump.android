@@ -68,7 +68,7 @@ Before you begin integrating you will need an array of configuration details:
 6. Determine the name of the traditional sign-in key-attribute (e.g. `email` or `username`)
 
 **Warning** You _must_ create a new API client with the correct `login_client` feature for operation of the
-JUMP native mobile SDKs.
+JUMP native mobile libraries.
 
 ## Declare and Import
 
@@ -194,7 +194,7 @@ side application (e.g. The Capture Drupal Plugin) to retrieve an Access Token.
 
 ### Traditional Sign-In and Social Sign-In
 
-The Capture part of the SDK supports both social sign-in via Engage (e.g. Facebook) as well as traditional
+The Capture libraries supports both social sign-in via Engage (e.g. Facebook) as well as traditional
 sign-in (i.e. username and password or email and password sign-in.) There are three main ways to start
 sign-in:
 
@@ -226,7 +226,7 @@ associated identity. The second sign-in is initiated upon the failure of the fir
 includes a merge token which Capture uses to merge the identity from the first (failed) sign-in into the
 record.
 
-Capture SDK event sequence for Merge Account Flow:
+Capture libraries event sequence for Merge Account Flow:
 
  1. User attempts to sign-in with a social identity, "identity F".
  2. Capture sign-in fails because there is an existing Capture record connected to "identity G", which shares
@@ -294,7 +294,7 @@ you can call
 
 ### Baseline Merge User-Interface
 
-In order to lower the JUMP SDK integration overhead the SDK provides a baseline user experience for the
+In order to lower the JUMP Mobile Libraries and Sample Code integration overhead the Mobile Libraries and Sample Code provides a baseline user experience for the
 merge account flow. You can use the baseline UX to get started exploring the feature. Later on, you can get
 more control over the UX by implementing your own UX, and using the headless APIs provided to interact with
 Capture.
@@ -433,7 +433,7 @@ sign-in providers user interface.
 
 ### Customizing the Stock User Interface
 
-The JUMP for Android SDK has an API for appearance customization, and allows for customization through the
+The JUMP for Android Mobile Libraries and Sample Code has an API for appearance customization, and allows for customization through the
 Android Theme system as well.
 
 For customizing the look and feel of the sign-in experience, please see
