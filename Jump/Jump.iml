@@ -14,7 +14,6 @@
       <configuration>
         <option name="LIBRARY_PROJECT" value="true" />
         <includeAssetsFromLibraries>true</includeAssetsFromLibraries>
-        <resOverlayFolders />
       </configuration>
     </facet>
   </component>
@@ -31,6 +30,9 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="library" name="android-support-v4" level="project" />
+    <orderEntry type="library" name="okhttp-2.2.0" level="project" />
+    <orderEntry type="library" name="okhttp-apache-2.2.0" level="project" />
+    <orderEntry type="library" name="okio-1.2.0" level="project" />
   </component>
 </module>
 

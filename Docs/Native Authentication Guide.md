@@ -11,7 +11,7 @@ Native authentication is supported by the Social Sign-in library, and is compati
 
 At this time native authentication is available for authentication only, and not for social-identity-resource authorization (e.g. sharing.)
 
-The SDK is not currently able to request the same scopes that are configured in the Engage dashboard when using Native Authentication. This will be available in a future release. For the time being Facebook requests basic_info and Google+ requests plus.login.
+The Mobile Libraries and Sample Code is not currently able to request the same scopes that are configured in the Engage dashboard when using Native Authentication. This will be available in a future release. For the time being Facebook requests basic_info and Google+ requests plus.login.
 
 ## 10,000′ View
 
@@ -30,7 +30,7 @@ Make sure that both your Android application and Social Sign-in app are configur
 
 ### Begin Sign-In or Authentication
 
-Start authentication or sign-in as normal. If the Facebook Android SDK is compiled into your app, it will be used to perform all Facebook authentication.
+Start authentication or sign-in as normal. If the Facebook Android Mobile Libraries and Sample Code is compiled into your app, it will be used to perform all Facebook authentication.
 
 ### Signing Out
 

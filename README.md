@@ -1,3 +1,6 @@
+**NOTE:** The documentation on this site is no longer being updated. For current Mobile documentation,
+refer to http://developers.janrain.com/.
+
 Welcome to the JUMP platform libary for Android.  This library is available open-source under a Berkeley
 license, as found in the LICENSE file.
 
@@ -13,6 +16,11 @@ Report bugs or ask questions:
 Old git repo: https://github.com/janrain/engage.android
 New git repo: https://github.com/janrain/jump.android
 (Both are exactly the same, for now.)
+
+### Upgrading to v5.0.1
+
+- The Janrain Mobile Libraries and Sample Code now has dependencies on OKHttp. Follow the steps in **Eclipse_Import_Guide.md** or
+**IntelliJ_Import_Guide.md** no add the necessary Jars to your project.
 
 Updating from 3.x to 4.0:
 - 4.0 adds and focuses on Capture support, renames the library project / IDE metadata to "Jump"
