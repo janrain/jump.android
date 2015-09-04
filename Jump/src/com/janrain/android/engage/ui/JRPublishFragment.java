@@ -31,6 +31,7 @@
  */
 package com.janrain.android.engage.ui;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -49,7 +50,10 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.NinePatchDrawable;
 import android.graphics.drawable.StateListDrawable;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Telephony;
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextUtils;
@@ -80,13 +84,11 @@ import com.janrain.android.utils.AndroidUtils;
 import com.janrain.android.utils.CollectionUtils;
 import com.janrain.android.utils.LogUtils;
 import com.janrain.android.utils.PrefUtils;
-
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-
 import static com.janrain.android.utils.AndroidUtils.colorDrawableGetColor;
 import static com.janrain.android.utils.AndroidUtils.scaleDipToPixels;
 
@@ -867,19 +869,41 @@ public class JRPublishFragment extends JRUiFragment implements TabHost.OnTabChan
         }
     };
 
-    private Intent createSmsIntent(String body) {
-        /* Google Voice does not respect passing the body, so this Intent is constructed
-         * specifically to be responded to only by Mms (the platform messaging app).
-         * http://stackoverflow.com/questions/4646508/how-to-pass-text-to-google-voice-sms-programmatically */
+    @SuppressLint("NewApi")
+	private Intent createSmsIntent(String body) {
+        Intent intent;
+    	
+    	// If the body is longer than 140 characters, we get the first 140
+    	// characters and store them in formattedBody otherwise, formattedBody
+    	// will be the same as body.
+    	String formattedBody = body.substring(0, Math.min(139, body.length()));
+    	
+    	// If Android version is at least KitKat
+    	if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
+        {
+    		// Need to change the build to API 19
+            String defaultSmsPackageName = Telephony.Sms.getDefaultSmsPackage(getActivity());
 
-        //intent = new Intent(android.content.Intent.ACTION_SEND);
-        Intent intent = new Intent(android.content.Intent.ACTION_VIEW);
-        intent.setType("vnd.android-dir/mms-sms");
-        //intent.setData(Uri.parse("smsto:"));
-        //intent.setData(Uri.parse("sms:"));
-        //intent.putExtra(android.content.Intent.EXTRA_TEXT, body.substring(0,130));
-        intent.putExtra("sms_body", body.substring(0, Math.min(139, body.length())));
-        intent.putExtra("exit_on_sent", true);
+            intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_TEXT, formattedBody);
+
+            // If the user has a default SMS app, we use that. Otherwise
+            // 'defaultSmsPackageName' will be null, and it will give the user
+            // a choice
+            if (defaultSmsPackageName != null)
+            {
+                intent.setPackage(defaultSmsPackageName);
+            }
+
+        }
+    	// If Android version is earlier than KitKat, we just use the old way
+        else
+        {
+            intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("sms:"));
+            intent.putExtra("sms_body", formattedBody);
+        }
 
         return intent;
     }
