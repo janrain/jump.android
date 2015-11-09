@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-ru/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__confirmation_code">Код подтверждения</string>
+    <string name="dgts__confirmation_edit_hint">Введите код подтверждения</string>
+    <string name="dgts__confirmation_error">Не удалось подтвердить ваш номер телефона</string>
+    <string name="dgts__confirmation_error_alternative">К сожалению, нам не удалось отправить вам код подтверждения.</string>
+    <string name="dgts__confirmation_expired">Срок действия кода истёк. Отправьте код подтверждения ещё раз.</string>
+    <string name="dgts__digits_logo_desc">значок логотипа digits</string>
+    <string name="dgts__digits_logo_name_desc">название логотипа digits</string>
+    <string name="dgts__dismiss">Отмена</string>
+    <string name="dgts__find_your_friends">Найти друзей</string>
+    <string name="dgts__image_header_description">Заголовок изображения для входа</string>
+    <string name="dgts__login_digits_text">Использовать мой номер телефона</string>
+    <string name="dgts__network_error">Проверьте сеть и попробуйте ещё раз.</string>
+    <string name="dgts__not_now">Не сейчас</string>
+    <string name="dgts__okay">ОК</string>
+    <string name="dgts__phone_number_edit_hint">Ваш номер</string>
+    <string name="dgts__phone_number_text">Введите свой номер телефона</string>
+    <string name="dgts__pin_code_verification_title">Введите код двухэтапной проверки</string>
+    <string name="dgts__resend_confirmation_text">Отправить код подтверждения ещё раз</string>
+    <string name="dgts__success_desc">Значок «Готово»</string>
+    <string name="dgts__terms_text">После нажатия кнопки %1$sОтправить код подтверждения%1$s приложение Digits by Twitter отправит вам SMS-сообщение для подтверждения вашего номера телефона. За текстовые сообщения и передачу данных может взиматься плата.</string>
+    <string name="dgts__terms_text_create">Нажимая кнопку %1$sСоздать учетную запись%1$s, вы подтверждаете свое согласие с Условиями предоставления услуг, Политикой конфиденциальности и Политикой использования файлов Сookie приложения Digits by Twitter, а также с тем, что другие пользователи смогут вас найти по номеру телефона и (или) адресу электронной почты.</string>
+    <string name="dgts__terms_text_sign_in">Нажимая кнопку %1$sВойти%1$s, вы подтверждаете свое согласие с обновленными Условиями предоставления услуг, Политикой конфиденциальности и Политикой использования файлов Сookies приложения Digits by Twitter, а также с тем, что другие пользователи %1$s смогут вас найти по номеру телефона и (или) адресу электронной почты.</string>
+    <string name="dgts__try_again">Повторите попытку</string>
+    <string name="dgts__try_again_confirmation">Проверьте код и попробуйте ещё раз.</string>
+    <string name="dgts__try_again_phone_number">Проверьте свой номер и попробуйте ещё раз.</string>
+    <string name="dgts__try_another_phone">Попробуйте ввести другой номер телефона</string>
+    <string name="dgts__upload_contacts">Мы используем Digits by Twitter, чтобы помочь вам найти друзей, которые используют это приложение. После подтверждения мы загрузим вашу адресную книгу в Digits by Twitter. Так мы сможем помочь вам найти пользователей %1$s, которых вы знаете, или поможем другим пользователям %1$s найти вас.</string>
+    <string name="dgts__verification_code">Проверочный код</string>
+    <string name="dgts_pin_code_terms">Вы уже ввели код двухэтапной проверки на сайте digits.com</string>
+</resources>

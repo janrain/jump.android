@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-en-rGB/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__confirmation_code">Confirmation code</string>
+    <string name="dgts__confirmation_edit_hint">Enter confirmation code</string>
+    <string name="dgts__confirmation_error">Unable to confirm your phone number</string>
+    <string name="dgts__confirmation_error_alternative">Sorry, we are having trouble sending you a confirmation code.</string>
+    <string name="dgts__confirmation_expired">This code has expired. Please resend\
+        confirmation code.</string>
+    <string name="dgts__digits_logo_desc">digits logo icon</string>
+    <string name="dgts__digits_logo_name_desc">digits logo name</string>
+    <string name="dgts__dismiss">Dismiss</string>
+    <string name="dgts__find_your_friends">Find your friends</string>
+    <string name="dgts__image_header_description">Image header for login</string>
+    <string name="dgts__login_digits_text">Use my phone number</string>
+    <string name="dgts__network_error">Please check your network and try again.</string>
+    <string name="dgts__not_now">Not now</string>
+    <string name="dgts__okay">OK</string>
+    <string name="dgts__phone_number_edit_hint">Your Number</string>
+    <string name="dgts__phone_number_text">Enter your phone number</string>
+    <string name="dgts__pin_code_verification_title">Enter 2-step verification code</string>
+    <string name="dgts__resend_confirmation_text">Resend confirmation code</string>
+    <string name="dgts__success_desc">Success Icon</string>
+    <string name="dgts__terms_text">By tapping %1$sSend confirmation code%1$s above, Digits by Twitter will send you an SMS message to confirm your telephone number. Message &amp; data rates may apply.</string>
+    <string name="dgts__terms_text_create">By tapping %1$sCreate account%1$s above, you agree to the Terms of Service, Privacy Policy, and Cookies Policy of Digits by Twitter and that other users of this app can discover you by phone number and/or email.</string>
+    <string name="dgts__terms_text_sign_in">By tapping %1$sSign in%1$s above, you agree to the updated Terms of Service, Privacy Policy and Cookies Policy of Digits by Twitter, and that other users of %1$s can discover you by phone number and/or email.</string>
+    <string name="dgts__try_again">Try Again</string>
+    <string name="dgts__try_again_confirmation">Please check your code and try again.</string>
+    <string name="dgts__try_again_phone_number">Please check your number and try again.</string>
+    <string name="dgts__try_another_phone">Try a different phone number</string>
+    <string name="dgts__upload_contacts">We use Digits by Twitter to find more of your friends who use this app. When you tap OK, we\'ll upload your address book to Digits by Twitter so that we can help you find users of %1$s that you know or help other users of %1$s find you.</string>
+    <string name="dgts__verification_code">Verification code</string>
+    <string name="dgts_pin_code_terms">You have previously set a 2-step verification code on digits.com</string>
+</resources>

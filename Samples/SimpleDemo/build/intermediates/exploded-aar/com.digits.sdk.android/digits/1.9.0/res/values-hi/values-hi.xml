@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-hi/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__confirmation_code">पुष्टिकरण कोड</string>
+    <string name="dgts__confirmation_edit_hint">पुष्टि कोड दर्ज करें</string>
+    <string name="dgts__confirmation_error">आपके फ़ोन नंबर की पुष्टि करने में असमर्थ</string>
+    <string name="dgts__confirmation_error_alternative">क्षमा करें, हमें आपको एक पुष्टिकरण कोड भेजने में परेशानी हो रही है.</string>
+    <string name="dgts__confirmation_expired">यह कोड समाप्त हो गया है. कृपया पुष्टिकरण कोड पुनः भेजें.</string>
+    <string name="dgts__digits_logo_desc">डिजिट्स लोगो आइकन</string>
+    <string name="dgts__digits_logo_name_desc">डिजिट्स लोगो नाम</string>
+    <string name="dgts__dismiss">बर्खास्त करें</string>
+    <string name="dgts__find_your_friends">अपने मित्रों को खोजें</string>
+    <string name="dgts__image_header_description">लॉगिन के लिए इमेज हैडर</string>
+    <string name="dgts__login_digits_text">मेरा फ़ोन नंबर इस्तेमाल करें</string>
+    <string name="dgts__network_error">कृपया अपने नेटवर्क की जांच करें और फिर कोशिश करें.</string>
+    <string name="dgts__not_now">अभी नहीं</string>
+    <string name="dgts__okay">ठीक है</string>
+    <string name="dgts__phone_number_edit_hint">आपका नंबर</string>
+    <string name="dgts__phone_number_text">अपना फ़ोन नंबर दर्ज करें</string>
+    <string name="dgts__pin_code_verification_title">2-चरणीय सत्यापन कोड दर्ज करें</string>
+    <string name="dgts__resend_confirmation_text">पुष्टिकरण कोड पुन: भेजें</string>
+    <string name="dgts__success_desc">सफलता चिह्न</string>
+    <string name="dgts__terms_text">ऊपर %1$sपुष्टिकरण कोड भेजें%1$s टैप करने से, Digits by Twitter, आपके फ़ोन नंबर की पुष्टि करने के लिए आपको एक एस.एम.एस संदेश भेज देंगे. संदेश और डेटा दरें लागू हो सकती है.</string>
+    <string name="dgts__terms_text_create">उपरोक्त %1$sखाता बनाएं%1$s को दबा कर, आप Digits by Twitter की सेवा की शर्तें, गोपनीयता नीति और कुकीज़ नीति से सहमत हैं, और यह भी कि इस एप्प के अन्य उपयोगकर्ता आपको फ़ोन नंबर और/या ईमेल के द्वारा खोज सकते हैं.</string>
+    <string name="dgts__terms_text_sign_in">उपरोक्त %1$sसाइन इन%1$s को दबा कर, आप Digits by Twitter की सेवा की शर्तों, गोपनीयता नीति और कुकीज़ नीति से सहमत हैं, और यह भी कि %1$s के अन्य उपयोगकर्ता आपको फ़ोन नंबर और/या ईमेल के द्वारा खोज सकते हैं.</string>
+    <string name="dgts__try_again">फिर से कोशिश करें</string>
+    <string name="dgts__try_again_confirmation">कृपया अपने कोड की जांच करें और फिर कोशिश करें.</string>
+    <string name="dgts__try_again_phone_number">कृपया अपने नंबर की जांच करें और फिर कोशिश करें.</string>
+    <string name="dgts__try_another_phone">एक अलग फ़ोन नंबर आजमाएं</string>
+    <string name="dgts__upload_contacts">इस एप्प का इस्तेमाल करने वाले आपके मित्रों को ढूंढने के लिए हम ट्विटर के डिजिट्स का इस्तेमाल करेंगे. जब आप ठीक है को दबाएंगे, तब हम ट्विटर के डिजिट्स पर आपकी पता पुस्तिका को अपलोड करेंगे ताकि हम आपको %1$s के आपके परिचित उपयोगकर्ताओं को खोजने में मदद कर सके या %1$s के अन्य उपयोगकर्ताओं को आपको खोजने में मदद कर सकते हैं.</string>
+    <string name="dgts__verification_code">सत्यापन कोड</string>
+    <string name="dgts_pin_code_terms">आप पहले से digits.com पर 2-चरणीय सत्यापन कोड निर्धारित किया है</string>
+</resources>

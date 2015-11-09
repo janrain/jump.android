@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-da/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__confirmation_code">Bekræftelseskode</string>
+    <string name="dgts__confirmation_edit_hint">Indtast bekræftelseskode</string>
+    <string name="dgts__confirmation_error">Ikke i stand til at bekræfte dit telefonnummer</string>
+    <string name="dgts__confirmation_error_alternative">Beklager, vi har problemer med at sende dig en bekræftelseskode.</string>
+    <string name="dgts__confirmation_expired">Denne kode er udløbet. Send venligst bekræftelseskode igen.</string>
+    <string name="dgts__digits_logo_desc">digits-logoikon</string>
+    <string name="dgts__digits_logo_name_desc">digits-logonavn</string>
+    <string name="dgts__dismiss">Afvis</string>
+    <string name="dgts__find_your_friends">Find dine venner</string>
+    <string name="dgts__image_header_description">Billedsidehoved for log ind</string>
+    <string name="dgts__login_digits_text">Brug mit telefonnummer</string>
+    <string name="dgts__network_error">Kontrollér dit netværk, og prøv igen.</string>
+    <string name="dgts__not_now">Ikke nu</string>
+    <string name="dgts__okay">Okay</string>
+    <string name="dgts__phone_number_edit_hint">Dit nummer</string>
+    <string name="dgts__phone_number_text">Indtast dit telefonnummer</string>
+    <string name="dgts__pin_code_verification_title">Indtast 2-trins-bekræftelseskode</string>
+    <string name="dgts__resend_confirmation_text">Send bekræftelseskode igen</string>
+    <string name="dgts__success_desc">Ikonet Fuldført</string>
+    <string name="dgts__terms_text">Når du trykker på %1$sSend bekræftelseskode%1$s ovenfor, vil Digits by Twitter sende dig en sms-besked for at bekræfte dit telefonnummer. Besked- og data-takster kan blive pålagt.</string>
+    <string name="dgts__terms_text_create">Ved at trykke på %1$sOpret konto%1$s herover accepterer du vilkår for anvendelse, privatlivspolitik og brug af cookies for Digits by Twitter og at andre brugere af denne app kan finde dig ved hjælp af dit telefonnummer og/eller din e-mail.</string>
+    <string name="dgts__terms_text_sign_in">Ved at trykke på %1$sLog in%1$s herover accepterer du vilkår for anvendelse, privatlivspolitik og brug af cookies for Digits by Twitter, og at andre brugere af %1$s kan finde dig ved hjælp af dit telefonnummer og/eller din e-mail.</string>
+    <string name="dgts__try_again">Prøv igen</string>
+    <string name="dgts__try_again_confirmation">Tjek venligst din kode og prøv igen.</string>
+    <string name="dgts__try_again_phone_number">Tjek venligst dit nummer og prøv igen.</string>
+    <string name="dgts__try_another_phone">Prøv et andet telefonnummer</string>
+    <string name="dgts__upload_contacts">Vi bruger Digits by Twitter til at finde flere af dine venner, der bruger denne app. Når du trykker på OK, uploader vi din adressebog til Digits by Twitter, så vi kan hjælpe dig med at finde brugere af %1$s, du kender, eller hjælpe andre brugere af %1$s med at finde dig.</string>
+    <string name="dgts__verification_code">Bekræftelseskode</string>
+    <string name="dgts_pin_code_terms">Du har tidligere sat en 2-trins-bekræftelseskode på digits.com</string>
+</resources>

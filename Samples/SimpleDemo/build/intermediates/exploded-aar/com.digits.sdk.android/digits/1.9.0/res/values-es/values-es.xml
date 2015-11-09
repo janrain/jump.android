@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-es/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__confirmation_code">Código de confirmación</string>
+    <string name="dgts__confirmation_edit_hint">Introducir código de confirmación</string>
+    <string name="dgts__confirmation_error">No se puede confirmar tu número de teléfono</string>
+    <string name="dgts__confirmation_error_alternative">Lo sentimos, estamos teniendo problemas para enviarte un código de confirmación.</string>
+    <string name="dgts__confirmation_expired">Este código ha expirado. Reenvía el código de confirmación.</string>
+    <string name="dgts__digits_logo_desc">ícono del logo de digits</string>
+    <string name="dgts__digits_logo_name_desc">nombre del logo de digits</string>
+    <string name="dgts__dismiss">Descartar</string>
+    <string name="dgts__find_your_friends">Encuentra a tus amigos</string>
+    <string name="dgts__image_header_description">Encabezado de imagen para inicio de sesión</string>
+    <string name="dgts__login_digits_text">Usar mi número de teléfono</string>
+    <string name="dgts__network_error">Revisa tu red e inténtalo de nuevo.</string>
+    <string name="dgts__not_now">Ahora no</string>
+    <string name="dgts__okay">Aceptar</string>
+    <string name="dgts__phone_number_edit_hint">Tu número</string>
+    <string name="dgts__phone_number_text">Introduce tu número de teléfono</string>
+    <string name="dgts__pin_code_verification_title">Ingresa el código de doble verificación</string>
+    <string name="dgts__resend_confirmation_text">Reenviar código de confirmación</string>
+    <string name="dgts__success_desc">Icono Éxito</string>
+    <string name="dgts__terms_text">Al pulsar %1$sEnviar código de confirmación%1$s arriba, Digits by Twitter te enviará un SMS para confirmar tu número de teléfono. Se pueden aplicar tarifas de mensajes y datos.</string>
+    <string name="dgts__terms_text_create">Al pulsar en %1$sCrear cuenta%1$s arriba, aceptas las Condiciones de Servicio, la Política de Privacidad y la Política de Cookies de Digits by Twitter, y que otros usuarios de esta aplicación puedan encontrarte por tu número de teléfono y/o correo electrónico.</string>
+    <string name="dgts__terms_text_sign_in">Al pulsar en %1$sIniciar sesión%1$s arriba, aceptas las Condiciones de Servicio, la Política de Privacidad y la Política de Cookies de Digits by Twitter actualizadas, y que otros usuarios de %1$s puedan encontrarte por tu número de teléfono y/o correo electrónico.</string>
+    <string name="dgts__try_again">Reintentar</string>
+    <string name="dgts__try_again_confirmation">Revisa tu código e inténtalo de nuevo.</string>
+    <string name="dgts__try_again_phone_number">Revisa tu número e inténtalo de nuevo.</string>
+    <string name="dgts__try_another_phone">Intenta con otro número de teléfono </string>
+    <string name="dgts__upload_contacts">Usamos Digits by Twitter para encontrar a amigos tuyos que usen esta aplicación. Cuando pulses \"Aceptar\", subiremos tu libreta de direcciones a Digits by Twitter para ayudarte a encontrar usuarios de %1$s que conozcas o ayudar a otros usuarios de %1$s a encontrarte.</string>
+    <string name="dgts__verification_code">Código de verificación</string>
+    <string name="dgts_pin_code_terms">Ya has establecido un código de doble verificación en digits.com</string>
+</resources>

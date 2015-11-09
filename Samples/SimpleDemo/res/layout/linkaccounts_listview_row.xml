@@ -60,8 +60,8 @@
                 android:layout_centerVertical="true"
                 android:gravity="left|center_vertical"
                 android:singleLine="true"
-                android:text="@string/provider_unknown"
-                android:textSize="14dip"
+                android:text="@string/jr_provider_empty_emails"
+                android:textSize="12dip"
                 android:paddingBottom="4dip" />
             <!--android:visibility="gone"-->
             <!--android:layout_toRightOf="@id/row_profile_provider_icon"-->

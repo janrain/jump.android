@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-hu/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__confirmation_code">Megerősítő kód</string>
+    <string name="dgts__confirmation_edit_hint">Add meg a megerősítő kódot!</string>
+    <string name="dgts__confirmation_error">A telefonszámod megerősítése sikertelen</string>
+    <string name="dgts__confirmation_error_alternative">Sajnáljuk, probléma merült fel az ellenőrzőkód elküldése során.</string>
+    <string name="dgts__confirmation_expired">A kód lejárt. Küldd újra a megerősítő kódot!</string>
+    <string name="dgts__digits_logo_desc">digits logó ikonja</string>
+    <string name="dgts__digits_logo_name_desc">digits logó neve</string>
+    <string name="dgts__dismiss">Bezárás</string>
+    <string name="dgts__find_your_friends">Találd meg barátaidat</string>
+    <string name="dgts__image_header_description">Fejléckép bejelentkezéshez</string>
+    <string name="dgts__login_digits_text">A telefonszámom használata</string>
+    <string name="dgts__network_error">Kérjük, ellenőrizd a hálózatod és próbáld meg újra.</string>
+    <string name="dgts__not_now">Most nem</string>
+    <string name="dgts__okay">OK</string>
+    <string name="dgts__phone_number_edit_hint">A számod</string>
+    <string name="dgts__phone_number_text">Add meg a telefonszámod</string>
+    <string name="dgts__pin_code_verification_title">Add meg a kétlépcsős hitelesítés kódját</string>
+    <string name="dgts__resend_confirmation_text">Megerősítő kód újraküldése</string>
+    <string name="dgts__success_desc">Sikerikon</string>
+    <string name="dgts__terms_text">A fenti %1$sMegerősítő kód küldése%1$s pontra koppintva a Digits by Twitter SMS-t küld telefonszámod megerősítése céljából. Üzenetküldési/adatforgalmi díjak merülhetnek fel.</string>
+    <string name="dgts__terms_text_create">A fenti %1$sFiók létrehozása%1$s pontra koppintva elfogadod a Digits by Twitter Felhasználási feltételeit, Adatvédelmi irányelveit és a Cookie-k (sütik) kezelésére vonatkozó irányelveit, valamint beleegyezel, hogy az alkalmazás más felhasználói megkereshessenek telefonszámod és/vagy e-mail címed alapján.</string>
+    <string name="dgts__terms_text_sign_in">A fenti %1$sBejelentkezés%1$s pontra koppintva elfogadod a Digits by Twitter frissített Felhasználási feltételeit, Adatvédelmi irányelveit és a Cookie-k (sütik) kezelésére vonatkozó irányelveit, valamint beleegyezel, hogy a(z) %1$s alkalmazás más felhasználói megkereshessenek telefonszámod és/vagy e-mail címed alapján.</string>
+    <string name="dgts__try_again">Próbáld meg újra</string>
+    <string name="dgts__try_again_confirmation">Kérjük, ellenőrizd a kódod és próbáld meg újra.</string>
+    <string name="dgts__try_again_phone_number">Kérjük, ellenőrizd a számod és próbáld meg újra.</string>
+    <string name="dgts__try_another_phone">Próbálkozz másik telefonszámmal!</string>
+    <string name="dgts__upload_contacts">A Digits by Twitter segítségével megkeressük az alkalmazást használó ismerőseidet. Az OK gombra koppintva feltöltjük a címjegyzéked a Digits by Twitter szolgáltatásba, és ezáltal lehetővé tesszük, hogy megtaláld a(z) %1$s  alkalmazás általad ismert felhasználóit, vagy a(z) %1$s alkalmazás többi felhasználójának, hogy megtaláljanak téged.</string>
+    <string name="dgts__verification_code">Ellenőrzőkód</string>
+    <string name="dgts_pin_code_terms">Korábban kétlépcsős ellenőrzőkódot állítottál be a digits.com oldalon</string>
+</resources>

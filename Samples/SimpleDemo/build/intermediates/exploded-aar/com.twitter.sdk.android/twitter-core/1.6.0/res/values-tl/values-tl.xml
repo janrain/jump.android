@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/twitter-core/src/main/res/values-tl/strings.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">Payagan</string>
+    <string name="tw__login_btn_txt">Mag-log in gamit ang Twitter</string>
+    <string name="tw__not_now_btn_txt">Hindi ngayon</string>
+    <string name="tw__share_email_desc">Makakuha ng mga update at iba pang impormasyon mula kay %1$s kapag binigyan mo siya ng access sa email mo sa iyong Twitter account na \@%2$s</string>
+    <string name="tw__share_email_title">Ibahagi ang email address mo</string>
+</resources>

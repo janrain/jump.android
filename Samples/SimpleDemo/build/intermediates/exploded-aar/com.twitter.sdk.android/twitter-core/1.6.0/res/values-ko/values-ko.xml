@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/twitter-core/src/main/res/values-ko/strings.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">허용</string>
+    <string name="tw__login_btn_txt">트위터 계정으로 로그인</string>
+    <string name="tw__not_now_btn_txt">나중에</string>
+    <string name="tw__share_email_desc">다른 사람이 내 트위터 계정(\@%2$s)을 사용하도록 허락할 경우 %1$s의 최신 소식과 정보를 받습니다.</string>
+    <string name="tw__share_email_title">이메일 주소를 공유하세요.</string>
+</resources>

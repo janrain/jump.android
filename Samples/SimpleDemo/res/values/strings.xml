@@ -11,4 +11,7 @@
     <!-- Profile Detail Strings -->
     <string name="no_selected_account">No Account was selected.</string>
     <string name="unknown">unknown</string>
+
+    <!-- Facebook SDK https://developers.facebook.com/docs/android/getting-started -->
+    <string name="facebook_app_id">241142639370227</string>
 </resources>

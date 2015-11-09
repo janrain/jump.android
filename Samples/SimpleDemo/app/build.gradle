@@ -1,0 +1,19 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.google.android.gms:play-services:7.5.+'
+    compile 'com.google.android.gms:play-services-plus:7.5.+'
+    compile 'com.google.android.gms:play-services-identity:7.5.+'
+}
+
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+}
