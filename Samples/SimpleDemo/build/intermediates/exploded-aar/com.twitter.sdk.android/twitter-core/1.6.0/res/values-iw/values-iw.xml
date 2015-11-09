@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/twitter-core/src/main/res/values-iw/strings.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">אשר</string>
+    <string name="tw__login_btn_txt">כניסה באמצעות טוויטר</string>
+    <string name="tw__not_now_btn_txt">לא עכשיו</string>
+    <string name="tw__share_email_desc">קבל עדכונים ומידע נוסף מ-%1$s לאחר שתאשר להם גישה לחשבון הדואר האלקטרוני שציינת בטוויטר ‎\@%2$s</string>
+    <string name="tw__share_email_title">שתף בכתובת הדואר האלקטרוני שלך</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-vi/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__confirmation_code">Mã xác nhận</string>
+    <string name="dgts__confirmation_edit_hint">Nhập mã xác nhận</string>
+    <string name="dgts__confirmation_error">Không thể xác nhận số điện thoại của bạn</string>
+    <string name="dgts__confirmation_error_alternative">Xin lỗi, chúng tôi đang gặp rắc rối với việc gửi cho bạn mã xác nhận.</string>
+    <string name="dgts__confirmation_expired">Mã này đã hết hạn. Vui lòng gửi lại mã xác nhận.</string>
+    <string name="dgts__digits_logo_desc">biểu tượng logo của digits</string>
+    <string name="dgts__digits_logo_name_desc">tên logo của digits</string>
+    <string name="dgts__dismiss">Bỏ qua</string>
+    <string name="dgts__find_your_friends">Tìm bạn bè của bạn</string>
+    <string name="dgts__image_header_description">Ảnh đầu trang để đăng nhập</string>
+    <string name="dgts__login_digits_text">Sử dụng số điện thoại của tôi</string>
+    <string name="dgts__network_error">Vui lòng kiểm tra mạng của bạn và thử lại.</string>
+    <string name="dgts__not_now">Không phải bây giờ</string>
+    <string name="dgts__okay">Okay</string>
+    <string name="dgts__phone_number_edit_hint">Số Của bạn</string>
+    <string name="dgts__phone_number_text">Nhập số điện thoại của bạn</string>
+    <string name="dgts__pin_code_verification_title">Nhập mã xác nhận 2 bước</string>
+    <string name="dgts__resend_confirmation_text">Gửi lại mã xác nhận</string>
+    <string name="dgts__success_desc">Biểu tượng Thành công</string>
+    <string name="dgts__terms_text">Khi nhấn %1$sGửi mã xác nhận%1$s ở trên, Digits by Twitter sẽ gửi bạn một tin nhắn SMS để xác nhận số điện thoại của bạn. Có thể áp dụng phí tin nhắn và dữ liệu.</string>
+    <string name="dgts__terms_text_create">Khi nhấn vào %1$sTạo tài khoản%1$s bên trên, bạn đã đồng ý với Điều khoản Dịch vụ, Chính sách Quyền riêng tư và Chính sách về Cookies của Digits by Twitter, và đồng ý rằng những người dùng khác của ứng dụng này có thể tìm thấy bạn qua số điện thoại và/hoặc email.</string>
+    <string name="dgts__terms_text_sign_in">Khi nhấn vào %1$sĐăng ký%1$s bên trên, bạn đã đồng ý với Điều khoản Dịch vụ, Chính sách Quyền riêng tư và Chính sách về Cookies được cập nhật của Digits by Twitter, và đồng ý rằng những người dùng %1$s khác có thể tìm thấy bạn qua số điện thoại và/hoặc email.</string>
+    <string name="dgts__try_again">Thử lại</string>
+    <string name="dgts__try_again_confirmation">Vui lòng kiểm tra mã của bạn và thử lại.</string>
+    <string name="dgts__try_again_phone_number">Vui lòng kiểm tra số của bạn và thử lại.</string>
+    <string name="dgts__try_another_phone">Thử một số điện thoại khác</string>
+    <string name="dgts__upload_contacts">Chúng tôi sử dụng Digits by Twitter để tìm thêm bạn bè của bạn, những người cũng sử dụng ứng dụng này. Khi bạn nhấn Okay, chúng tôi sẽ tải sổ địa chỉ của bạn lên Digits by Twitter để có thể giúp bạn tìm thấy những người dùng %1$s mà bạn biết hoặc giúp những người dùng %1$s khác tìm thấy bạn.</string>
+    <string name="dgts__verification_code">Mã xác nhận</string>
+    <string name="dgts_pin_code_terms">Trước đây bạn đã lập một mã xác nhận 2 bước trên digits.com</string>
+</resources>

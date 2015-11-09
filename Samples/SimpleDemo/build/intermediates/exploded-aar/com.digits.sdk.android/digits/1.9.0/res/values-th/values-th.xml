@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-th/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__confirmation_code">รหัสยืนยัน</string>
+    <string name="dgts__confirmation_edit_hint">กรอกรหัสยืนยัน</string>
+    <string name="dgts__confirmation_error">ไม่สามารถยืนยันหมายเลขโทรศัพท์ของคุณได้</string>
+    <string name="dgts__confirmation_error_alternative">ขออภัย เรามีปัญหาในการส่งรหัสยืนยันไปหาคุณ</string>
+    <string name="dgts__confirmation_expired">รหัสนี้หมดอายุแล้ว กรุณากดส่งรหัสยืนยันใหม่อีกครั้ง</string>
+    <string name="dgts__digits_logo_desc">ไอคอนโลโก้ Digits</string>
+    <string name="dgts__digits_logo_name_desc">ชื่อโลโก้ Digits</string>
+    <string name="dgts__dismiss">ไม่สนใจ</string>
+    <string name="dgts__find_your_friends">ค้นหาเพื่อนของคุณ</string>
+    <string name="dgts__image_header_description">ภาพส่วนหัวสำหรับการเข้าสู่ระบบ</string>
+    <string name="dgts__login_digits_text">ใช้หมายเลขโทรศัพท์ของฉัน</string>
+    <string name="dgts__network_error">กรุณาตรวจสอบการเชื่อมต่อของคุณแล้วลองอีกครั้ง</string>
+    <string name="dgts__not_now">ไม่ใช่ตอนนี้</string>
+    <string name="dgts__okay">โอเค</string>
+    <string name="dgts__phone_number_edit_hint">หมายเลขของคุณ</string>
+    <string name="dgts__phone_number_text">กรอกหมายเลขโทรศัพท์ของคุณ</string>
+    <string name="dgts__pin_code_verification_title">ป้อนรหัสยืนยัน 2 ชั้น</string>
+    <string name="dgts__resend_confirmation_text">ส่งรหัสยืนยันอีกครั้ง</string>
+    <string name="dgts__success_desc">ไอคอนความสำเร็จ</string>
+    <string name="dgts__terms_text">เมื่อแตะ %1$sส่งรหัสยืนยัน%1$s ด้านบน Digits by Twitter จะส่งข้อความ SMS ไปหาคุณเพื่อยืนยันหมายเลขโทรศัพท์ ซึ่งอาจมีการเก็บค่าบริการข้อความและข้อมูล</string>
+    <string name="dgts__terms_text_create">เมื่อแตะ %1$sสร้างบัญชี%1$s ด้านบน จะถือว่าคุณยอมรับข้อตกลงการใช้งาน นโยบายความเป็นส่วนตัว และนโยบายคุกกี้ของ Digits by Twitter และผู้ใช้อื่นๆของแอพนี้จะสามารถหาคุณได้จากหมายเลขโทรศัพท์และ/หรืออีเมล</string>
+    <string name="dgts__terms_text_sign_in">เมื่อแตะ %1$sลงชื่อเข้าใช้%1$s ด้านบนจะถือว่าคุณยอมรับข้อตกลงการใช้งาน นโยบายความเป็นส่วนตัว และนโยบายคุกกี้ของ Digits by Twitter และผู้ใช้อื่นของ %1$s สามารถหาคุณได้จากหมายเลขโทรศัพท์และ/หรืออีเมลของคุณ</string>
+    <string name="dgts__try_again">ลองใหม่</string>
+    <string name="dgts__try_again_confirmation">กรุณาตรวจสอบรหัสของคุณแล้วลองอีกครั้ง</string>
+    <string name="dgts__try_again_phone_number">กรุณาตรวจสอบหมายเลขของคุณแล้วลองอีกครั้ง</string>
+    <string name="dgts__try_another_phone">ลองใช้หมายเลขโทรศัพท์อื่น</string>
+    <string name="dgts__upload_contacts">เราใช้ Digits by Twitter เพื่อค้นหาเพื่อนของคุณที่ใช้งานแอพนี้ เมื่อคุณแตะ ตกลง เราจะอัพโหลดสมุดที่อยู่ของคุณไปที่ Digits by Twitter ดังนั้นเราสามารถหาผู้ใช้ของ %1$s ที่คุณรู้จักหรือช่วยผู้ใช้อื่นๆของ %1$s ค้นหาคุณ</string>
+    <string name="dgts__verification_code">รหัสยืนยัน</string>
+    <string name="dgts_pin_code_terms">คุณได้ตั้งรหัสยืนยัน 2 ชั้นไว้ก่อนหน้านี้บน digits.com</string>
+</resources>

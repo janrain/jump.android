@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-cs/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__confirmation_code">Potvrzovací kód</string>
+    <string name="dgts__confirmation_edit_hint">Zadejte potvrzovací kód</string>
+    <string name="dgts__confirmation_error">Vaše telefonní číslo se nám nepodařilo potvrdit.</string>
+    <string name="dgts__confirmation_error_alternative">Nedaří se nám odeslat vám potvrzovací kód.</string>
+    <string name="dgts__confirmation_expired">Platnost tohoto kódu vypršela. Znovu odešlete potvrzovací kód.</string>
+    <string name="dgts__digits_logo_desc">ikona loga služby Digits</string>
+    <string name="dgts__digits_logo_name_desc">název loga služby Digits</string>
+    <string name="dgts__dismiss">Zavřít</string>
+    <string name="dgts__find_your_friends">Najděte svoje přátele</string>
+    <string name="dgts__image_header_description">Obrázkové záhlaví k přihlášení</string>
+    <string name="dgts__login_digits_text">Použít moje telefonní číslo</string>
+    <string name="dgts__network_error">Zkontrolujte síť a zkuste to znovu.</string>
+    <string name="dgts__not_now">Teď ne</string>
+    <string name="dgts__okay">OK</string>
+    <string name="dgts__phone_number_edit_hint">Vaše číslo</string>
+    <string name="dgts__phone_number_text">Zadejte své telefonní číslo</string>
+    <string name="dgts__pin_code_verification_title">Zadejte dvoufázový ověřovací kód</string>
+    <string name="dgts__resend_confirmation_text">Znovu odeslat potvrzovací kód</string>
+    <string name="dgts__success_desc">Ikona Úspěch</string>
+    <string name="dgts__terms_text">Když klepnete na výše uvedené tlačítko %1$sOdeslat potvrzovací kód%1$s, služba Digits by Twitter vám pošle SMS, pomocí které potvrdíte své telefonní číslo. Posílání zpráv a přenos dat mohou být zpoplatněny.</string>
+    <string name="dgts__terms_text_create">Klepnutím na výše uvedené tlačítko %1$sVytvořit účet%1$s vyjadřujete\
+souhlas se smluvními podmínkami, zásadami\
+ochrany osobních údajů a zásadami používání souborů cookie služby Digits by Twitter a s tím, že vás ostatní\
+uživatelé této aplikace budou moct najít podle telefonního čísla nebo e-mailu.</string>
+    <string name="dgts__terms_text_sign_in">Klepnutím na výše uvedené tlačítko %1$sPřihlásit se%1$s vyjadřujete\
+souhlas s aktualizovanými smluvními podmínkami, zásadami\
+ochrany osobních údajů a zásadami používání souborů cookie služby Digits by Twitter a s tím, že vás ostatní\
+uživatelé aplikace %1$s budou moct najít podle telefonního čísla nebo e-mailu.</string>
+    <string name="dgts__try_again">Zkusit znovu</string>
+    <string name="dgts__try_again_confirmation">Zkontrolujte kód a zkuste to znovu.</string>
+    <string name="dgts__try_again_phone_number">Zkontrolujte číslo a zkuste to znovu.</string>
+    <string name="dgts__try_another_phone">Zkusit jiné telefonní číslo</string>
+    <string name="dgts__upload_contacts">Používáme službu Digits by Twitter. Ta nám umožňuje najít více vašich přátel, kteří používají tuto aplikaci. Když klepnete na OK, nahrajeme váš adresář do této služby, a vy tak budete moct najít uživatele aplikace %1$s, které znáte, nebo ostatní uživatelé aplikace %1$s budou moct najít vás.</string>
+    <string name="dgts__verification_code">Ověřovací kód</string>
+    <string name="dgts_pin_code_terms">Na webu digits.com jste si nastavili dvoufázový ověřovací kód.</string>
+</resources>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="facebook-android-sdk-4.7.0-unspecified">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/build/intermediates/exploded-aar/SimpleDemo/facebook-android-sdk-4.7.0/unspecified/res" />
+      <root url="jar://$PROJECT_DIR$/build/intermediates/exploded-aar/SimpleDemo/facebook-android-sdk-4.7.0/unspecified/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/twitter-core/src/main/res/values-hi/strings.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">अनुमति दें</string>
+    <string name="tw__login_btn_txt">ट्विटर के साथ लॉगइन करें</string>
+    <string name="tw__not_now_btn_txt">अभी नहीं</string>
+    <string name="tw__share_email_desc">%1$s से अपडेट और अन्य जानकारी प्राप्त करें जब आप अपने \@%2$s ट्विटर खाते पर उन्हें आपके ईमेल तक पहुंच ने की अनुमति दें</string>
+    <string name="tw__share_email_title">अपना ईमेल पता साझा करें</string>
+</resources>

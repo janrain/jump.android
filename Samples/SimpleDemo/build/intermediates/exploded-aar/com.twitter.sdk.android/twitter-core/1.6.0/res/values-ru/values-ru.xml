@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/twitter-core/src/main/res/values-ru/strings.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">Разрешить</string>
+    <string name="tw__login_btn_txt">Войти с учётной записью Твиттера</string>
+    <string name="tw__not_now_btn_txt">Не сейчас</string>
+    <string name="tw__share_email_desc">Получать обновления и другую информацию от %1$s, если вы позволите им видеть ваш адрес электронной почты в вашем профиле Твиттера \@%2$s</string>
+    <string name="tw__share_email_title">Поделиться своим адресом электронной почты</string>
+</resources>

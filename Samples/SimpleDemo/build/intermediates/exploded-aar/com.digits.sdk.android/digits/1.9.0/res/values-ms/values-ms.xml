@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-ms/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__confirmation_code">Kod pengesahan</string>
+    <string name="dgts__confirmation_edit_hint">Masukkan kod pengesahan</string>
+    <string name="dgts__confirmation_error">Tidak dapat mengesahkan nombor telefon anda</string>
+    <string name="dgts__confirmation_error_alternative">Maaf, kami menghadapi masalah menghantar anda kod pengesahan.</string>
+    <string name="dgts__confirmation_expired">Kod ini telah tamat tempoh. Sila hantar semula kod pengesahan.</string>
+    <string name="dgts__digits_logo_desc">ikon logo digits</string>
+    <string name="dgts__digits_logo_name_desc">nama logo digits</string>
+    <string name="dgts__dismiss">Abai</string>
+    <string name="dgts__find_your_friends">Cari rakan anda</string>
+    <string name="dgts__image_header_description">Imej pengepala untuk log masuk</string>
+    <string name="dgts__login_digits_text">Gunakan nombor telefon saya</string>
+    <string name="dgts__network_error">Sila semak rangkaian anda dan cuba sekali lagi.</string>
+    <string name="dgts__not_now">Bukan sekarang</string>
+    <string name="dgts__okay">Okay</string>
+    <string name="dgts__phone_number_edit_hint">Nombor Anda</string>
+    <string name="dgts__phone_number_text">Masukkan nombor telefon anda</string>
+    <string name="dgts__pin_code_verification_title">Masukkan kod pengesahan 2 langkah</string>
+    <string name="dgts__resend_confirmation_text">Hantar semula kod pengesahan</string>
+    <string name="dgts__success_desc">Ikon Berjaya</string>
+    <string name="dgts__terms_text">Dengan mengetik %1$sHantar kod pengesahan%1$s di atas, Digits by Twitter, akan menghantar anda mesej SMS untuk mengesahkan nombor telefon anda. Kadar mesej &amp; data boleh dikenakan.</string>
+    <string name="dgts__terms_text_create">Dengan mengetik %1$sCipta akaun%1$s di atas, anda bersetuju dengan Dasar Perkhidmatan, Dasar Privasi dan Dasar Kuki Digits by Twitter, dan bahawa pengguna lain daripada aplikasi ini boleh menemui anda menggunakan nombor telefon dan/atau e-mel anda.</string>
+    <string name="dgts__terms_text_sign_in">Dengan mengetik %1$sDaftar masuk%1$s di atas, anda bersetuju dengan Dasar Perkhidmatan, Dasar Privasi dan Dasar Kuki Digits by Twitter, dan bahawa pengguna lain %1$s boleh menemui anda menggunakan nombor telefon dan/atau e-mel.</string>
+    <string name="dgts__try_again">Cuba Lagi</string>
+    <string name="dgts__try_again_confirmation">Sila semak kod anda dan cuba sekali lagi.</string>
+    <string name="dgts__try_again_phone_number">Sila semak nombor anda dan cuba sekali lagi.</string>
+    <string name="dgts__try_another_phone">Cuba nombor telefon lain</string>
+    <string name="dgts__upload_contacts">Kami menggunakan Digits by Twitter untuk mencari lebih ramai rakan anda yang menggunakan aplikasi ini. Apabila anda mengetik Okey, kami akan memuat naik buku alamat anda ke Digits by Twitter supaya kami boleh membantu anda mencari pengguna %1$s yang anda kenali atau membantu pengguna lain %1$s mencari anda.</string>
+    <string name="dgts__verification_code">Kod pengesahan</string>
+    <string name="dgts_pin_code_terms">Anda telah setkan kod pengesahan 2 langkah sebelum ini di digits.com</string>
+</resources>

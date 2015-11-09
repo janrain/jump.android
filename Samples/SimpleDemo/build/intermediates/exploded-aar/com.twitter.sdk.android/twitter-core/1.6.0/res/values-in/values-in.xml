@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/twitter-core/src/main/res/values-in/strings.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">Izinkan</string>
+    <string name="tw__login_btn_txt">Masuk dengan Twitter</string>
+    <string name="tw__not_now_btn_txt">Jangan sekarang</string>
+    <string name="tw__share_email_desc">Dapatkan pembaruan dan informasi lainnya dari %1$s bila Anda memberinya akses ke email di akun Twitter Anda \@%2$s</string>
+    <string name="tw__share_email_title">Sebarkan alamat email Anda</string>
+</resources>

@@ -533,12 +533,11 @@ public abstract class JRUiFragment extends Fragment {
     }
 
     /*package*/ void finishFragment() {
-        FragmentActivity activity = getActivity();
-        if (activity instanceof JRFragmentHostActivity) {
-            if (mFragmentResult != null) ((JRFragmentHostActivity) activity)._setResult(mFragmentResult);
-            activity.finish();
-        } else if (null != activity) {
-            FragmentManager fm = activity.getSupportFragmentManager();
+        if (getActivity() instanceof JRFragmentHostActivity) {
+            if (mFragmentResult != null) ((JRFragmentHostActivity) getActivity())._setResult(mFragmentResult);
+            getActivity().finish();
+        } else {
+            FragmentManager fm = getActivity().getSupportFragmentManager();
             int bsec = fm.getBackStackEntryCount();
             if (bsec > 0 && fm.getBackStackEntryAt(bsec - 1).getName().equals(getLogTag())) {
                 fm.popBackStack();

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-th/values-th.xml -->
+    <eat-comment/>
+    <plurals name="tw__time_hours">
+        <item quantity="one">1ชม.</item>
+        <item quantity="other">%dชม.</item>
+    </plurals>
+    <plurals name="tw__time_mins">
+        <item quantity="one">1นาที</item>
+        <item quantity="other">%dนาที</item>
+    </plurals>
+    <plurals name="tw__time_secs">
+        <item quantity="one">1วิ</item>
+        <item quantity="other">%dวิ</item>
+    </plurals>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values-th/values-th.xml -->
+    <eat-comment/>
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"นำทางไปหน้าแรก"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"นำทางขึ้น"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"ตัวเลือกอื่น"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"เสร็จสิ้น"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"ดูทั้งหมด"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"เลือกแอป"</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"ล้างข้อความค้นหา"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"ข้อความค้นหา"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"ค้นหา"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"ส่งข้อความค้นหา"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"ค้นหาด้วยเสียง"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"แชร์กับ"</string>
+    <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"แชร์กับ %s"</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/exploded-aar/SimpleDemo/facebook-android-sdk-4.7.0/unspecified/res/values-th/values-th.xml -->
+    <eat-comment/>
+    <string name="com_facebook_image_download_unknown_error">เกิดข้อผิดพลาดที่ไม่คาดคิดขณะดาวน์โหลดรูปภาพ</string>
+    <string name="com_facebook_internet_permission_error_message">การเข้าสู่ระบบ WebView จำเป็นต้องได้รับอนุญาตจากอินเทอร์เน็ต</string>
+    <string name="com_facebook_internet_permission_error_title">ข้อผิดพลาดของ AndroidManifest</string>
+    <string name="com_facebook_like_button_liked">ถูกใจแล้ว</string>
+    <string name="com_facebook_like_button_not_liked">ถูกใจ</string>
+    <string name="com_facebook_loading">กำลังโหลด...</string>
+    <string name="com_facebook_loginview_cancel_action">ยกเลิก</string>
+    <string name="com_facebook_loginview_log_in_button">เข้าสู่ระบบ</string>
+    <string name="com_facebook_loginview_log_in_button_long">เข้าสู่ระบบด้วย Facebook</string>
+    <string name="com_facebook_loginview_log_out_action">ออกจากระบบ</string>
+    <string name="com_facebook_loginview_log_out_button">ออกจากระบบ</string>
+    <string name="com_facebook_loginview_logged_in_as">เข้าสู่ระบบในชื่อ: %1$s</string>
+    <string name="com_facebook_loginview_logged_in_using_facebook">เข้าสู่ระบบโดยใช้ Facebook</string>
+    <string name="com_facebook_send_button_text">ส่ง</string>
+    <string name="com_facebook_share_button_text">แชร์</string>
+    <string name="com_facebook_tooltip_default">ใหม่! คุณเป็นฝ่ายควบคุม โปรดเลือกข้อมูลที่คุณต้องการแชร์ด้วยแอพ</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/res/values-th/common_strings.xml -->
+    <eat-comment/>
+    <string msgid="6428604800157361567" name="common_android_wear_notification_needs_update_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> ต้องการให้อัปเดตแอป Android Wear"</string>
+    <string msgid="2453027084525739603" name="common_android_wear_update_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> จะไม่ทำงานจนกว่าคุณจะอัปเดตแอป Android Wear"</string>
+    <string msgid="1366439133145190222" name="common_android_wear_update_title">"อัปเดต Android Wear"</string>
+    <string msgid="6534628256897874213" name="common_google_play_services_api_unavailable_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> ต้องใช้บริการ Google Play อย่างน้อย 1 บริการ ซึ่งไม่พร้อมใช้งานในปัจจุบัน โปรดติดต่อนักพัฒนาซอฟต์แวร์เพื่อขอความช่วยเหลือ"</string>
+    <string msgid="4181637455539816337" name="common_google_play_services_enable_button">"เปิดใช้งานบริการ Google Play"</string>
+    <string msgid="4896236883690196080" name="common_google_play_services_enable_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> จะไม่ทำงานจนกว่าคุณจะเปิดใช้บริการ Google Play"</string>
+    <string msgid="529078775174559253" name="common_google_play_services_enable_title">"เปิดใช้งานบริการ Google Play"</string>
+    <string msgid="2443362625939284971" name="common_google_play_services_error_notification_requested_by_msg">"ขอโดย <ns1:g id="APP_NAME">%1$s</ns1:g>"</string>
+    <string msgid="8515591849428043265" name="common_google_play_services_install_button">"รับบริการ Google Play"</string>
+    <string msgid="8836325110837822534" name="common_google_play_services_install_text_phone">"<ns1:g id="APP_NAME">%1$s</ns1:g> จะไม่ทำงานหากไม่มีบริการ Google Play ซึ่งไม่มีในโทรศัพท์ของคุณ"</string>
+    <string msgid="542176290824754127" name="common_google_play_services_install_text_tablet">"<ns1:g id="APP_NAME">%1$s</ns1:g> จะไม่ทำงานหากไม่มีบริการ Google Play ซึ่งไม่มีในแท็บเล็ตของคุณ"</string>
+    <string msgid="26645092511305524" name="common_google_play_services_install_title">"รับบริการ Google Play"</string>
+    <string msgid="4983316348021735578" name="common_google_play_services_invalid_account_text">"บัญชีที่ระบุไม่มีอยู่บนอุปกรณ์นี้ โปรดเลือกบัญชีอื่น"</string>
+    <string msgid="1066672360770936753" name="common_google_play_services_invalid_account_title">"บัญชีไม่ถูกต้อง"</string>
+    <string msgid="2583358409598976717" name="common_google_play_services_needs_enabling_title">"แอปพลิเคชันหนึ่งจำเป็นต้องมีบริการ Google Play เพื่อเปิดใช้งาน"</string>
+    <string msgid="9038847255613537209" name="common_google_play_services_network_error_text">"ต้องมีการเขื่อมต่อข้อมูลเพื่อเชื่อมต่อกับบริการ Google Play"</string>
+    <string msgid="3827284619958211114" name="common_google_play_services_network_error_title">"ข้อผิดพลาดของเครือข่าย"</string>
+    <string msgid="1388129345631079938" name="common_google_play_services_notification_needs_update_title">"แอปพลิเคชันหนึ่งจำเป็นต้องมีการอัปเดตสำหรับบริการ Google Play"</string>
+    <string msgid="1852570676146674985" name="common_google_play_services_notification_ticker">"ข้อผิดพลาดของบริการ Google Play"</string>
+    <string msgid="5194079840165204725" name="common_google_play_services_sign_in_failed_text">"เกิดข้อผิดพลาดในการลงชื่อเข้าใช้บัญชีที่ระบุ โปรดเลือกบัญชีอื่น"</string>
+    <string msgid="8164948898147532159" name="common_google_play_services_sign_in_failed_title">"การลงชื่อเข้าใช้ล้มเหลว"</string>
+    <string msgid="4762332809710093730" name="common_google_play_services_unknown_issue">"ปัญหาที่ไม่รู้จักของบริการ Google Play"</string>
+    <string msgid="7682982632307307938" name="common_google_play_services_unsupported_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> ต้องใช้บริการ Google Play ซึ่งอุปกรณ์ของคุณไม่สนับสนุน โปรดติดต่อผู้ผลิตเพื่อขอความช่วยเหลือ"</string>
+    <string msgid="6334768798839376943" name="common_google_play_services_unsupported_title">"บริการ Google Play"</string>
+    <string msgid="8932944190611227642" name="common_google_play_services_update_button">"อัปเดต"</string>
+    <string msgid="5709479369299147668" name="common_google_play_services_update_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> จะไม่ทำงานจนกว่าคุณจะอัปเดตบริการ Google Play"</string>
+    <string msgid="6006316683626838685" name="common_google_play_services_update_title">"อัปเดตบริการ Google Play"</string>
+    <string msgid="2201289642219771610" name="common_google_play_services_updating_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> จะไม่ทำงานหากไม่มีบริการ Google Play ซึ่งกำลังอัปเดตอยู่ในขณะนี้"</string>
+    <string msgid="815008177440683245" name="common_google_play_services_updating_title">"กำลังอัปเดตบริการ Google Play"</string>
+    <string msgid="411506735369601515" name="common_open_on_phone">"เปิดบนโทรศัพท์"</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values-th/values-th.xml -->
+    <eat-comment/>
+    <string name="dgts__confirmation_code">รหัสยืนยัน</string>
+    <string name="dgts__confirmation_edit_hint">กรอกรหัสยืนยัน</string>
+    <string name="dgts__confirmation_error">ไม่สามารถยืนยันหมายเลขโทรศัพท์ของคุณได้</string>
+    <string name="dgts__confirmation_error_alternative">ขออภัย เรามีปัญหาในการส่งรหัสยืนยันไปหาคุณ</string>
+    <string name="dgts__confirmation_expired">รหัสนี้หมดอายุแล้ว กรุณากดส่งรหัสยืนยันใหม่อีกครั้ง</string>
+    <string name="dgts__digits_logo_desc">ไอคอนโลโก้ Digits</string>
+    <string name="dgts__digits_logo_name_desc">ชื่อโลโก้ Digits</string>
+    <string name="dgts__dismiss">ไม่สนใจ</string>
+    <string name="dgts__find_your_friends">ค้นหาเพื่อนของคุณ</string>
+    <string name="dgts__image_header_description">ภาพส่วนหัวสำหรับการเข้าสู่ระบบ</string>
+    <string name="dgts__login_digits_text">ใช้หมายเลขโทรศัพท์ของฉัน</string>
+    <string name="dgts__network_error">กรุณาตรวจสอบการเชื่อมต่อของคุณแล้วลองอีกครั้ง</string>
+    <string name="dgts__not_now">ไม่ใช่ตอนนี้</string>
+    <string name="dgts__okay">โอเค</string>
+    <string name="dgts__phone_number_edit_hint">หมายเลขของคุณ</string>
+    <string name="dgts__phone_number_text">กรอกหมายเลขโทรศัพท์ของคุณ</string>
+    <string name="dgts__pin_code_verification_title">ป้อนรหัสยืนยัน 2 ชั้น</string>
+    <string name="dgts__resend_confirmation_text">ส่งรหัสยืนยันอีกครั้ง</string>
+    <string name="dgts__success_desc">ไอคอนความสำเร็จ</string>
+    <string name="dgts__terms_text">เมื่อแตะ %1$sส่งรหัสยืนยัน%1$s ด้านบน Digits by Twitter จะส่งข้อความ SMS ไปหาคุณเพื่อยืนยันหมายเลขโทรศัพท์ ซึ่งอาจมีการเก็บค่าบริการข้อความและข้อมูล</string>
+    <string name="dgts__terms_text_create">เมื่อแตะ %1$sสร้างบัญชี%1$s ด้านบน จะถือว่าคุณยอมรับข้อตกลงการใช้งาน นโยบายความเป็นส่วนตัว และนโยบายคุกกี้ของ Digits by Twitter และผู้ใช้อื่นๆของแอพนี้จะสามารถหาคุณได้จากหมายเลขโทรศัพท์และ/หรืออีเมล</string>
+    <string name="dgts__terms_text_sign_in">เมื่อแตะ %1$sลงชื่อเข้าใช้%1$s ด้านบนจะถือว่าคุณยอมรับข้อตกลงการใช้งาน นโยบายความเป็นส่วนตัว และนโยบายคุกกี้ของ Digits by Twitter และผู้ใช้อื่นของ %1$s สามารถหาคุณได้จากหมายเลขโทรศัพท์และ/หรืออีเมลของคุณ</string>
+    <string name="dgts__try_again">ลองใหม่</string>
+    <string name="dgts__try_again_confirmation">กรุณาตรวจสอบรหัสของคุณแล้วลองอีกครั้ง</string>
+    <string name="dgts__try_again_phone_number">กรุณาตรวจสอบหมายเลขของคุณแล้วลองอีกครั้ง</string>
+    <string name="dgts__try_another_phone">ลองใช้หมายเลขโทรศัพท์อื่น</string>
+    <string name="dgts__upload_contacts">เราใช้ Digits by Twitter เพื่อค้นหาเพื่อนของคุณที่ใช้งานแอพนี้ เมื่อคุณแตะ ตกลง เราจะอัพโหลดสมุดที่อยู่ของคุณไปที่ Digits by Twitter ดังนั้นเราสามารถหาผู้ใช้ของ %1$s ที่คุณรู้จักหรือช่วยผู้ใช้อื่นๆของ %1$s ค้นหาคุณ</string>
+    <string name="dgts__verification_code">รหัสยืนยัน</string>
+    <string name="dgts_pin_code_terms">คุณได้ตั้งรหัสยืนยัน 2 ชั้นไว้ก่อนหน้านี้บน digits.com</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/exploded-aar/SimpleDemo/facebook-android-sdk-4.7.0/unspecified/res/values-th/values-th.xml -->
+    <eat-comment/>
+    <string name="messenger_send_button_text">ส่ง</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-th/values-th.xml -->
+    <eat-comment/>
+    <string msgid="4271159405637008602" name="mr_media_route_button_content_description">"เอาต์พุตสื่อ"</string>
+    <string msgid="7553005460920830010" name="mr_media_route_chooser_searching">"กำลังค้นหาอุปกรณ์…"</string>
+    <string msgid="7106830097177242655" name="mr_media_route_chooser_title">"เชื่อมต่อกับอุปกรณ์"</string>
+    <string msgid="109793632378378069" name="mr_media_route_controller_disconnect">"ยกเลิกการเชื่อมต่อ"</string>
+    <string msgid="5441529851481176817" name="mr_system_route_name">"ระบบ"</string>
+    <string msgid="7498112907524977311" name="mr_user_route_category_name">"อุปกรณ์"</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-th/values-th.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">อนุญาต</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-th/values-th.xml -->
+    <eat-comment/>
+    <string name="tw__loading_tweet">กำลังโหลดทวีต</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-th/values-th.xml -->
+    <eat-comment/>
+    <string name="tw__login_btn_txt">เข้าสู่ระบบด้วยทวิตเตอร์</string>
+    <string name="tw__not_now_btn_txt">ไม่ใช่ตอนนี้</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-th/values-th.xml -->
+    <eat-comment/>
+    <string name="tw__relative_date_format_long">d/M/y</string>
+    <string name="tw__relative_date_format_short">d MMM</string>
+    <string name="tw__retweeted_by_format">ถูกรีทวีตโดย %1$s</string>
+    <string name="tw__share_content_format">ดูทวีตของ \@%1$s: Tweet: https://twitter.com/%1$s/status/%2$s</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-th/values-th.xml -->
+    <eat-comment/>
+    <string name="tw__share_email_desc">รับการอัพเดทและข้อมูลอื่นๆ ได้จาก %1$s เมื่อคุณให้สิทธิ์ในการเข้าถึงอีเมลของคุณบนบัญชีทวิตเตอร์ \@%2$s</string>
+    <string name="tw__share_email_title">แชร์ที่อยู่อีเมลของคุณ</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-th/values-th.xml -->
+    <eat-comment/>
+    <string name="tw__share_subject_format">ทวีตจาก %1$s (\@%2$s)</string>
+    <string name="tw__share_tweet">แบ่งปันทวีต</string>
+    <string name="tw__tweet_content_description">%1$s. %2$s. %3$s.</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.1.0/res/values-th/wallet_strings.xml -->
+    <eat-comment/>
+    <string msgid="4184147110658930238" name="wallet_buy_button_place_holder">"ซื้อด้วย Google"</string>
+</resources>

@@ -40,7 +40,6 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.support.v4.content.LocalBroadcastManager;
-
 import com.janrain.android.capture.Capture;
 import com.janrain.android.capture.CaptureApiError;
 import com.janrain.android.capture.CaptureFlowUtils;
@@ -55,7 +54,6 @@ import com.janrain.android.utils.ApiConnection;
 import com.janrain.android.utils.JsonUtils;
 import com.janrain.android.utils.LogUtils;
 import com.janrain.android.utils.ThreadUtils;
-
 import org.json.JSONObject;
 
 import java.io.FileInputStream;
@@ -431,41 +429,6 @@ public class Jump {
     public static void showSignInDialog(Activity fromActivity, String providerName,
                                         SignInResultHandler handler) {
         showSignInDialog(fromActivity, providerName, handler, null);
-    }
-    
-    public static void fetchCaptureUserFromServer(CaptureApiResultHandler handler){
-         state.captureAPIHandler = handler;
-         Capture.performUpdateSignedUserData(new Capture.CaptureApiResultHandler() {
-             @Override
-             public void onSuccess(JSONObject response) {
-                 CaptureApiError error = null;
-                 if ("ok".equals(response.opt("stat"))) {
-                     Object userRecord = response.opt("result");
-                     if (userRecord instanceof JSONObject){
-                         JsonUtils.deepCopy((JSONObject) userRecord, state.signedInUser);
-                         LogUtils.logd("Deep copy to the signedInUser finish");
-                         Jump.fireHandlerOnCaptureAPISuccess(response);
-                     }else {
-                        LogUtils.loge("User Record object error");
-                        Jump.fireHandlerOnCaptureAPIFailure(new CaptureAPIError(CAPTURE_API_FORMAT_ERROR,
-                                error,
-                                null));
-                     }
-                 }else{
-                     LogUtils.loge("result stat incorrect");
-                     Jump.fireHandlerOnCaptureAPIFailure(new CaptureAPIError(CAPTURE_API_FORMAT_ERROR,
-                             error,
-                             null));
-                 }
-             }
-
-             @Override
-             public void onFailure(CaptureApiError error) {
-                 Jump.fireHandlerOnCaptureAPIFailure(new CaptureAPIError(CAPTURE_API_FORMAT_ERROR,
-                         error,
-                         null));
-             }
-         });
     }
 
     /**

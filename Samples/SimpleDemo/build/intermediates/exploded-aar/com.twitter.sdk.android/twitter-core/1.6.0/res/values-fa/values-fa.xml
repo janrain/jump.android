@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/twitter-core/src/main/res/values-fa/strings.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">مجاز</string>
+    <string name="tw__login_btn_txt">ورود با توییتر</string>
+    <string name="tw__not_now_btn_txt">فعلاً نه</string>
+    <string name="tw__share_email_desc">هنگامی که به آنها اجازه دسترسی به ایمیل خودتان برروی حساب کاربری توییترتان را دادید، به روزرسانی‌ها و دیگر اطلاعات از %1$s را دریافت کنید / ‎\@%2$s</string>
+    <string name="tw__share_email_title">نشانی ایمیل خود را به اشتراک بگذارید</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-fa/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__confirmation_code">کد تأیید</string>
+    <string name="dgts__confirmation_edit_hint">کد تأیید را وارد کنید</string>
+    <string name="dgts__confirmation_error">امکان تأیید شماره تلفنتان وجود ندارد</string>
+    <string name="dgts__confirmation_error_alternative">متأسفیم، مشکلی در ارسال کد تأیید برای شما وجود دارد.</string>
+    <string name="dgts__confirmation_expired">این کد منقضی شده است. لطفاً کد تأیید را دوباره ارسال کنید.</string>
+    <string name="dgts__digits_logo_desc">نماد آرم Digits</string>
+    <string name="dgts__digits_logo_name_desc">نام آرم digits</string>
+    <string name="dgts__dismiss">نادیده گرفتن</string>
+    <string name="dgts__find_your_friends">دوستانتان را پیدا کنید</string>
+    <string name="dgts__image_header_description">تصویر سربرگ برای ورود</string>
+    <string name="dgts__login_digits_text">از شماره تلفن من استفاده شود</string>
+    <string name="dgts__network_error">لطفاً شبکه تان را بررسی کنید و دوباره امتحان کنید.</string>
+    <string name="dgts__not_now">حالا نه</string>
+    <string name="dgts__okay">تأیید</string>
+    <string name="dgts__phone_number_edit_hint">شماره شما</string>
+    <string name="dgts__phone_number_text">شماره تلفنتان را وارد کنید</string>
+    <string name="dgts__pin_code_verification_title">کد تاییدسازی ۲مرحله‌ای را وارد کنید</string>
+    <string name="dgts__resend_confirmation_text">ارسال مجدد کد تأیید</string>
+    <string name="dgts__success_desc">نماد موفقیت</string>
+    <string name="dgts__terms_text">با ضربه زدن بر روی %1$sارسال کد تایید%1$s در بالا، Digits by Twitter یک پیامک برای شما ارسال خواهد کرد تا شماره تلفن خود را تأیید کنید. نرخ معمول پیامک و داده محاسبه می شود.</string>
+    <string name="dgts__terms_text_create">با ضربه زدن بر روی %1$sایجاد حساب %1$s در بالا، شما با شرایط سرویس، سیاست حریم خصوصی و سیاست کوکی‌های Digits by Twitter موافقت می‌کنید، و اینکه سایر کاربران این برنامه می‌توانند از طریق شماره تلفن و/یا ایمیل شما را پیدا کنند.</string>
+    <string name="dgts__terms_text_sign_in">با ضربه زدن روی %1$sورود%1$s در بالا، شما با شرایط خدمات، سیاست حریم خصوصی و سیاست کوکی‌های به‌روزرسانی شده Digits by Twitter موافقت می‌کنید و اینکه سایر کاربران %1$s می‌توانند از طریق شماره تلفن و/یا ایمیل شما را پیدا کنند.</string>
+    <string name="dgts__try_again">تلاش مجدد</string>
+    <string name="dgts__try_again_confirmation">لطفاً کدتان را بررسی کنید و دوباره امتحان کنید.</string>
+    <string name="dgts__try_again_phone_number">لطفاً شماره تان را بررسی کنید و دوباره امتحان کنید.</string>
+    <string name="dgts__try_another_phone">یک شماره تلفن دیگر را امتحان کنید</string>
+    <string name="dgts__upload_contacts">ما از Digits by Twitter استفاده می‌کنیم تا تعداد بیشتری از دوستان شما که از این برنامه استفاده می کنند را پیدا کنیم. وقتی تأیید را بزنید، دفترچه آدرس شما را در Digits by Twitter بارگذاری خواهیم کرد تا شما را در یافتن کاربران %1$s که می‌شناسید کمک کنیم یا به سایر کاربران %1$s  کمک کنیم شما را پیدا کنند.</string>
+    <string name="dgts__verification_code">کد تاییدسازی</string>
+    <string name="dgts_pin_code_terms">شما پیش‌تر کد تاییدسازی ۲مرحله‌ای را در digits.com فعال کرده‌اید.</string>
+</resources>

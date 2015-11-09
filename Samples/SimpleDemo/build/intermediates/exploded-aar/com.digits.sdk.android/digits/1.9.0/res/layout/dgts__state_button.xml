@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2015 Twitter, Inc.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<!-- This must be merge with a RelativeLayout -->
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:tools="http://schemas.android.com/tools"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/dgts__state_button"
+        style="@style/dgts__ButtonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textAllCaps="false"
+        tools:ignore="UnusedAttribute"/>
+    <ProgressBar
+        android:id="@+id/dgts__state_progress"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="@dimen/dgts__progress_bar_side_length"
+        android:layout_height="@dimen/dgts__progress_bar_side_length"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/tw__login_btn_left_padding"
+        android:layout_marginRight="@dimen/tw__login_btn_left_padding"
+        android:layout_toLeftOf="@+id/dgts__state_button"/>
+
+    <ImageView
+        android:id="@+id/dgts__state_success"
+        android:layout_width="@dimen/dgts__progress_bar_side_length"
+        android:layout_height="@dimen/dgts__progress_bar_side_length"
+        android:layout_centerInParent="true"
+        android:layout_toLeftOf="@+id/dgts__state_button"
+        android:contentDescription="@string/dgts__success_desc"
+        android:src="@drawable/dgts__ic_success"/>
+</merge><!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/layout/dgts__state_button.xml -->
