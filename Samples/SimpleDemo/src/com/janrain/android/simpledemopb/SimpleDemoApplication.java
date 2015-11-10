@@ -66,6 +66,7 @@ public class SimpleDemoApplication extends Application {
         jumpConfig.traditionalSignInType = Jump.TraditionalSignInType.EMAIL;
         jumpConfig.captureAppId = "uw3ccr9xhy3yxhte6krh4cn9f9";
         jumpConfig.captureFlowName = "standard";
+        jumpConfig.captureFlowVersion="HEAD";
         jumpConfig.captureSocialRegistrationFormName = "socialRegistrationForm";
         jumpConfig.captureTraditionalRegistrationFormName = "registrationForm";
         jumpConfig.captureEditUserProfileFormName = "editProfileForm";

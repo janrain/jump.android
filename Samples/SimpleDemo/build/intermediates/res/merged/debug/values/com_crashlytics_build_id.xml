@@ -6,5 +6,5 @@
 
   Do NOT modify, delete, or commit to source control!
 -->
-<string xmlns:ns0="http://schemas.android.com/tools" name="com.crashlytics.android.build_id" ns0:ignore="UnusedResources,TypographyDashes" translatable="false">c1b875b4-dc49-4823-98c6-8e408aaabee3</string>
+<string xmlns:ns0="http://schemas.android.com/tools" ns0:ignore="UnusedResources,TypographyDashes" name="com.crashlytics.android.build_id" translatable="false">31cfbc3b-8f95-4519-bb8c-2a69ad03a1df</string>
 </resources>
