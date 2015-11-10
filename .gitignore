@@ -3,8 +3,6 @@
 
 # Ignore generated files, compiled files, etc.
 out/*
-Samples/SimpleDemo/jump/build/*
-Samples/SimpleDemo/build/
 
 # Editor backup and swap files
 *~
