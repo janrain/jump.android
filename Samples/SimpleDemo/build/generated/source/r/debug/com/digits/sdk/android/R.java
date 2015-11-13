@@ -736,8 +736,8 @@ public final class R {
 		public static final int dgts__upload_contacts = 0x7f06005e;
 		public static final int dgts__verification_code = 0x7f06005f;
 		public static final int dgts_pin_code_terms = 0x7f060060;
-		public static final int kit_name = 0x7f0600d6;
-		public static final int status_bar_notification_info_overflow = 0x7f0600df;
+		public static final int kit_name = 0x7f0600d7;
+		public static final int status_bar_notification_info_overflow = 0x7f0600e0;
 		public static final int tw__allow_btn_txt = 0x7f060061;
 		public static final int tw__login_btn_txt = 0x7f060063;
 		public static final int tw__not_now_btn_txt = 0x7f060064;

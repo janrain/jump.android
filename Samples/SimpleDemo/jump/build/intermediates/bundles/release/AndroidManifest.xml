@@ -3,8 +3,8 @@
     package="com.janrain.android" >
 
     <uses-sdk
-        android:minSdkVersion="19"
-        android:targetSdkVersion="21" />
+        android:minSdkVersion="17"
+        android:targetSdkVersion="23" />
 
     <!--
         According to Xav Ducrochet nothing from the Library Project's manifest *except* the package

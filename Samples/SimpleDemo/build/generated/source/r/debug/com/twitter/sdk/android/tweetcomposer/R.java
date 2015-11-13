@@ -120,15 +120,15 @@ public final class R {
 		public static final int tw__cacerts = 0x7f050001;
 	}
 	public static final class string {
-		public static final int kit_name = 0x7f0600d6;
+		public static final int kit_name = 0x7f0600d7;
 		public static final int tw__allow_btn_txt = 0x7f060061;
-		public static final int tw__composer_hint = 0x7f0600e2;
-		public static final int tw__install = 0x7f0600e5;
+		public static final int tw__composer_hint = 0x7f0600e3;
+		public static final int tw__install = 0x7f0600e6;
 		public static final int tw__login_btn_txt = 0x7f060063;
-		public static final int tw__max_tweet_chars = 0x7f0600e6;
+		public static final int tw__max_tweet_chars = 0x7f0600e7;
 		public static final int tw__not_now_btn_txt = 0x7f060064;
-		public static final int tw__play_store = 0x7f0600e7;
-		public static final int tw__post_tweet = 0x7f0600e8;
+		public static final int tw__play_store = 0x7f0600e8;
+		public static final int tw__post_tweet = 0x7f0600e9;
 		public static final int tw__share_email_desc = 0x7f060069;
 		public static final int tw__share_email_title = 0x7f06006a;
 	}

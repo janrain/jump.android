@@ -650,13 +650,13 @@ public final class R {
 		public static final int mr_media_route_chooser_searching = 0x7f06003e;
 		public static final int mr_media_route_chooser_title = 0x7f06003f;
 		public static final int mr_media_route_controller_disconnect = 0x7f060040;
-		public static final int mr_media_route_controller_pause = 0x7f0600d9;
-		public static final int mr_media_route_controller_play = 0x7f0600da;
-		public static final int mr_media_route_controller_settings_description = 0x7f0600db;
-		public static final int mr_media_route_controller_stop = 0x7f0600dc;
+		public static final int mr_media_route_controller_pause = 0x7f0600da;
+		public static final int mr_media_route_controller_play = 0x7f0600db;
+		public static final int mr_media_route_controller_settings_description = 0x7f0600dc;
+		public static final int mr_media_route_controller_stop = 0x7f0600dd;
 		public static final int mr_system_route_name = 0x7f060041;
 		public static final int mr_user_route_category_name = 0x7f060042;
-		public static final int status_bar_notification_info_overflow = 0x7f0600df;
+		public static final int status_bar_notification_info_overflow = 0x7f0600e0;
 	}
 	public static final class style {
 		public static final int AlertDialog_AppCompat = 0x7f090083;

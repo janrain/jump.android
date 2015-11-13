@@ -9,34 +9,6 @@ package com.janrain.android;
 
 public final class R {
     public static final class attr {
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static int circleCrop=0x7f010007;
-        /** <p>Must be a floating point value, such as "<code>1.2</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static int imageAspectRatio=0x7f010006;
-        /** <p>Must be one of the following constant values.</p>
-<table>
-<colgroup align="left" />
-<colgroup align="left" />
-<colgroup align="left" />
-<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>none</code></td><td>0</td><td></td></tr>
-<tr><td><code>adjust_width</code></td><td>1</td><td></td></tr>
-<tr><td><code>adjust_height</code></td><td>2</td><td></td></tr>
-</table>
-         */
-        public static int imageAspectRatioAdjust=0x7f010005;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -78,244 +50,196 @@ containing a value of this type.
         public static int jr_color=0x7f010004;
     }
     public static final class color {
-        public static int common_action_bar_splitter=0x7f070000;
-        public static int common_signin_btn_dark_text_default=0x7f070001;
-        public static int common_signin_btn_dark_text_disabled=0x7f070002;
-        public static int common_signin_btn_dark_text_focused=0x7f070003;
-        public static int common_signin_btn_dark_text_pressed=0x7f070004;
-        public static int common_signin_btn_default_background=0x7f070005;
-        public static int common_signin_btn_light_text_default=0x7f070006;
-        public static int common_signin_btn_light_text_disabled=0x7f070007;
-        public static int common_signin_btn_light_text_focused=0x7f070008;
-        public static int common_signin_btn_light_text_pressed=0x7f070009;
-        public static int common_signin_btn_text_dark=0x7f070015;
-        public static int common_signin_btn_text_light=0x7f070016;
-        public static int jr_janrain_darkblue=0x7f07000a;
-        public static int jr_janrain_darkblue_lightened=0x7f07000b;
-        public static int jr_janrain_darkblue_medium=0x7f07000c;
-        public static int jr_janrain_lightblue=0x7f07000d;
-        public static int jr_janrain_mediumblue_100percent=0x7f07000e;
-        public static int jr_medium_grey=0x7f07000f;
-        public static int jr_powered_by_text=0x7f070010;
-        public static int jr_preview_label=0x7f070011;
-        public static int jr_preview_outer_grey_bg_rect=0x7f070012;
-        public static int jr_some_other_blue=0x7f070013;
-        public static int jr_text_color_hint=0x7f070014;
+        public static int jr_janrain_darkblue=0x7f060000;
+        public static int jr_janrain_darkblue_lightened=0x7f060001;
+        public static int jr_janrain_darkblue_medium=0x7f060002;
+        public static int jr_janrain_lightblue=0x7f060003;
+        public static int jr_janrain_mediumblue_100percent=0x7f060004;
+        public static int jr_medium_grey=0x7f060005;
+        public static int jr_powered_by_text=0x7f060006;
+        public static int jr_preview_label=0x7f060007;
+        public static int jr_preview_outer_grey_bg_rect=0x7f060008;
+        public static int jr_some_other_blue=0x7f060009;
+        public static int jr_text_color_hint=0x7f06000a;
     }
     public static final class dimen {
-        public static int jr_button_text_size=0x7f060000;
-        public static int jr_character_count_size=0x7f060001;
-        public static int jr_edit_text_size=0x7f060002;
-        public static int jr_media_content_description_size=0x7f060003;
-        public static int jr_media_content_title_size=0x7f060004;
-        public static int jr_media_icon_size=0x7f060005;
-        public static int jr_powered_by_text_size=0x7f060006;
-        public static int jr_preview_border_padding=0x7f060007;
-        public static int jr_preview_box_border_inset=0x7f060008;
-        public static int jr_preview_box_border_padding_top=0x7f060009;
-        public static int jr_preview_label_padding=0x7f06000a;
-        public static int jr_preview_label_paddingLeft=0x7f06000b;
-        public static int jr_preview_label_size=0x7f06000c;
-        public static int jr_preview_text_size=0x7f06000d;
-        public static int jr_profile_pic_size=0x7f06000e;
-        public static int jr_provider_icon_size=0x7f06000f;
-        public static int jr_share_button_size=0x7f060010;
-        public static int jr_shared_text_size=0x7f060011;
-        public static int jr_signout_button_text_size=0x7f060012;
-        public static int jr_tagline_size=0x7f060013;
-        public static int jr_username_text_size=0x7f060014;
+        public static int jr_button_text_size=0x7f050000;
+        public static int jr_character_count_size=0x7f050001;
+        public static int jr_edit_text_size=0x7f050002;
+        public static int jr_media_content_description_size=0x7f050003;
+        public static int jr_media_content_title_size=0x7f050004;
+        public static int jr_media_icon_size=0x7f050005;
+        public static int jr_powered_by_text_size=0x7f050006;
+        public static int jr_preview_border_padding=0x7f050007;
+        public static int jr_preview_box_border_inset=0x7f050008;
+        public static int jr_preview_box_border_padding_top=0x7f050009;
+        public static int jr_preview_label_padding=0x7f05000a;
+        public static int jr_preview_label_paddingLeft=0x7f05000b;
+        public static int jr_preview_label_size=0x7f05000c;
+        public static int jr_preview_text_size=0x7f05000d;
+        public static int jr_profile_pic_size=0x7f05000e;
+        public static int jr_provider_icon_size=0x7f05000f;
+        public static int jr_share_button_size=0x7f050010;
+        public static int jr_shared_text_size=0x7f050011;
+        public static int jr_signout_button_text_size=0x7f050012;
+        public static int jr_tagline_size=0x7f050013;
+        public static int jr_username_text_size=0x7f050014;
     }
     public static final class drawable {
-        public static int common_full_open_on_phone=0x7f020000;
-        public static int common_ic_googleplayservices=0x7f020001;
-        public static int common_signin_btn_icon_dark=0x7f020002;
-        public static int common_signin_btn_icon_disabled_dark=0x7f020003;
-        public static int common_signin_btn_icon_disabled_focus_dark=0x7f020004;
-        public static int common_signin_btn_icon_disabled_focus_light=0x7f020005;
-        public static int common_signin_btn_icon_disabled_light=0x7f020006;
-        public static int common_signin_btn_icon_focus_dark=0x7f020007;
-        public static int common_signin_btn_icon_focus_light=0x7f020008;
-        public static int common_signin_btn_icon_light=0x7f020009;
-        public static int common_signin_btn_icon_normal_dark=0x7f02000a;
-        public static int common_signin_btn_icon_normal_light=0x7f02000b;
-        public static int common_signin_btn_icon_pressed_dark=0x7f02000c;
-        public static int common_signin_btn_icon_pressed_light=0x7f02000d;
-        public static int common_signin_btn_text_dark=0x7f02000e;
-        public static int common_signin_btn_text_disabled_dark=0x7f02000f;
-        public static int common_signin_btn_text_disabled_focus_dark=0x7f020010;
-        public static int common_signin_btn_text_disabled_focus_light=0x7f020011;
-        public static int common_signin_btn_text_disabled_light=0x7f020012;
-        public static int common_signin_btn_text_focus_dark=0x7f020013;
-        public static int common_signin_btn_text_focus_light=0x7f020014;
-        public static int common_signin_btn_text_light=0x7f020015;
-        public static int common_signin_btn_text_normal_dark=0x7f020016;
-        public static int common_signin_btn_text_normal_light=0x7f020017;
-        public static int common_signin_btn_text_pressed_dark=0x7f020018;
-        public static int common_signin_btn_text_pressed_light=0x7f020019;
-        public static int ic_plusone_medium_off_client=0x7f02001a;
-        public static int ic_plusone_small_off_client=0x7f02001b;
-        public static int ic_plusone_standard_off_client=0x7f02001c;
-        public static int ic_plusone_tall_off_client=0x7f02001d;
-        public static int jr_bg_provider_activity_info=0x7f02001e;
-        public static int jr_bg_publish_preview=0x7f02001f;
-        public static int jr_bg_publish_preview_border=0x7f020020;
-        public static int jr_check_mark=0x7f020021;
-        public static int jr_email_sms_tab_indicator=0x7f020022;
-        public static int jr_ic_menu_about=0x7f020023;
-        public static int jr_icon_amazon=0x7f020024;
-        public static int jr_icon_aol=0x7f020025;
-        public static int jr_icon_blogger=0x7f020026;
-        public static int jr_icon_bw_amazon=0x7f020027;
-        public static int jr_icon_bw_facebook=0x7f020028;
-        public static int jr_icon_bw_googleplus=0x7f020029;
-        public static int jr_icon_bw_instagram=0x7f02002a;
-        public static int jr_icon_bw_linkedin=0x7f02002b;
-        public static int jr_icon_bw_mail=0x7f02002c;
-        public static int jr_icon_bw_mail_sms=0x7f02002d;
-        public static int jr_icon_bw_microsoftaccount=0x7f02002e;
-        public static int jr_icon_bw_myspace=0x7f02002f;
-        public static int jr_icon_bw_paypal=0x7f020030;
-        public static int jr_icon_bw_paypal_openid_connect=0x7f020031;
-        public static int jr_icon_bw_sms=0x7f020032;
-        public static int jr_icon_bw_tumblr=0x7f020033;
-        public static int jr_icon_bw_twitter=0x7f020034;
-        public static int jr_icon_bw_yahoo=0x7f020035;
-        public static int jr_icon_bw_yahoo_oauth2=0x7f020036;
-        public static int jr_icon_facebook=0x7f020037;
-        public static int jr_icon_flickr=0x7f020038;
-        public static int jr_icon_foursquare=0x7f020039;
-        public static int jr_icon_google=0x7f02003a;
-        public static int jr_icon_googleplus=0x7f02003b;
-        public static int jr_icon_hyves=0x7f02003c;
-        public static int jr_icon_instagram=0x7f02003d;
-        public static int jr_icon_linkedin=0x7f02003e;
-        public static int jr_icon_live_id=0x7f02003f;
-        public static int jr_icon_livejournal=0x7f020040;
-        public static int jr_icon_mail_sms=0x7f020041;
-        public static int jr_icon_microsoftaccount=0x7f020042;
-        public static int jr_icon_myopenid=0x7f020043;
-        public static int jr_icon_myspace=0x7f020044;
-        public static int jr_icon_netlog=0x7f020045;
-        public static int jr_icon_openid=0x7f020046;
-        public static int jr_icon_orkut=0x7f020047;
-        public static int jr_icon_paypal=0x7f020048;
-        public static int jr_icon_paypal_openid_connect=0x7f020049;
-        public static int jr_icon_salesforce=0x7f02004a;
-        public static int jr_icon_tumblr=0x7f02004b;
-        public static int jr_icon_twitter=0x7f02004c;
-        public static int jr_icon_unknown=0x7f02004d;
-        public static int jr_icon_verisign=0x7f02004e;
-        public static int jr_icon_vzn=0x7f02004f;
-        public static int jr_icon_wordpress=0x7f020050;
-        public static int jr_icon_yahoo=0x7f020051;
-        public static int jr_icon_yahoo_oauth2=0x7f020052;
-        public static int jr_logo_amazon=0x7f020053;
-        public static int jr_logo_aol=0x7f020054;
-        public static int jr_logo_blogger=0x7f020055;
-        public static int jr_logo_facebook=0x7f020056;
-        public static int jr_logo_flickr=0x7f020057;
-        public static int jr_logo_foursquare=0x7f020058;
-        public static int jr_logo_google=0x7f020059;
-        public static int jr_logo_googleplus=0x7f02005a;
-        public static int jr_logo_hyves=0x7f02005b;
-        public static int jr_logo_instagram=0x7f02005c;
-        public static int jr_logo_linkedin=0x7f02005d;
-        public static int jr_logo_live_id=0x7f02005e;
-        public static int jr_logo_livejournal=0x7f02005f;
-        public static int jr_logo_microsoftaccount=0x7f020060;
-        public static int jr_logo_myopenid=0x7f020061;
-        public static int jr_logo_myspace=0x7f020062;
-        public static int jr_logo_netlog=0x7f020063;
-        public static int jr_logo_openid=0x7f020064;
-        public static int jr_logo_orkut=0x7f020065;
-        public static int jr_logo_paypal=0x7f020066;
-        public static int jr_logo_paypal_openid_connect=0x7f020067;
-        public static int jr_logo_salesforce=0x7f020068;
-        public static int jr_logo_tumblr=0x7f020069;
-        public static int jr_logo_twitter=0x7f02006a;
-        public static int jr_logo_verisign=0x7f02006b;
-        public static int jr_logo_vzn=0x7f02006c;
-        public static int jr_logo_yahoo=0x7f02006d;
-        public static int jr_logo_yahoo_oauth2=0x7f02006e;
-        public static int jr_media60x60=0x7f02006f;
-        public static int jr_profilepic_placeholder=0x7f020070;
-        public static int jr_shape_landing_box=0x7f020071;
-        public static int jr_triangle_icon=0x7f020072;
+        public static int jr_bg_provider_activity_info=0x7f020000;
+        public static int jr_bg_publish_preview=0x7f020001;
+        public static int jr_bg_publish_preview_border=0x7f020002;
+        public static int jr_check_mark=0x7f020003;
+        public static int jr_email_sms_tab_indicator=0x7f020004;
+        public static int jr_ic_menu_about=0x7f020005;
+        public static int jr_icon_amazon=0x7f020006;
+        public static int jr_icon_aol=0x7f020007;
+        public static int jr_icon_blogger=0x7f020008;
+        public static int jr_icon_bw_amazon=0x7f020009;
+        public static int jr_icon_bw_facebook=0x7f02000a;
+        public static int jr_icon_bw_googleplus=0x7f02000b;
+        public static int jr_icon_bw_instagram=0x7f02000c;
+        public static int jr_icon_bw_linkedin=0x7f02000d;
+        public static int jr_icon_bw_mail=0x7f02000e;
+        public static int jr_icon_bw_mail_sms=0x7f02000f;
+        public static int jr_icon_bw_microsoftaccount=0x7f020010;
+        public static int jr_icon_bw_myspace=0x7f020011;
+        public static int jr_icon_bw_paypal=0x7f020012;
+        public static int jr_icon_bw_paypal_openid_connect=0x7f020013;
+        public static int jr_icon_bw_sms=0x7f020014;
+        public static int jr_icon_bw_tumblr=0x7f020015;
+        public static int jr_icon_bw_twitter=0x7f020016;
+        public static int jr_icon_bw_yahoo=0x7f020017;
+        public static int jr_icon_bw_yahoo_oauth2=0x7f020018;
+        public static int jr_icon_facebook=0x7f020019;
+        public static int jr_icon_flickr=0x7f02001a;
+        public static int jr_icon_foursquare=0x7f02001b;
+        public static int jr_icon_google=0x7f02001c;
+        public static int jr_icon_googleplus=0x7f02001d;
+        public static int jr_icon_hyves=0x7f02001e;
+        public static int jr_icon_instagram=0x7f02001f;
+        public static int jr_icon_linkedin=0x7f020020;
+        public static int jr_icon_live_id=0x7f020021;
+        public static int jr_icon_livejournal=0x7f020022;
+        public static int jr_icon_mail_sms=0x7f020023;
+        public static int jr_icon_microsoftaccount=0x7f020024;
+        public static int jr_icon_myopenid=0x7f020025;
+        public static int jr_icon_myspace=0x7f020026;
+        public static int jr_icon_netlog=0x7f020027;
+        public static int jr_icon_openid=0x7f020028;
+        public static int jr_icon_orkut=0x7f020029;
+        public static int jr_icon_paypal=0x7f02002a;
+        public static int jr_icon_paypal_openid_connect=0x7f02002b;
+        public static int jr_icon_salesforce=0x7f02002c;
+        public static int jr_icon_tumblr=0x7f02002d;
+        public static int jr_icon_twitter=0x7f02002e;
+        public static int jr_icon_unknown=0x7f02002f;
+        public static int jr_icon_verisign=0x7f020030;
+        public static int jr_icon_vzn=0x7f020031;
+        public static int jr_icon_wordpress=0x7f020032;
+        public static int jr_icon_yahoo=0x7f020033;
+        public static int jr_icon_yahoo_oauth2=0x7f020034;
+        public static int jr_logo_amazon=0x7f020035;
+        public static int jr_logo_aol=0x7f020036;
+        public static int jr_logo_blogger=0x7f020037;
+        public static int jr_logo_facebook=0x7f020038;
+        public static int jr_logo_flickr=0x7f020039;
+        public static int jr_logo_foursquare=0x7f02003a;
+        public static int jr_logo_google=0x7f02003b;
+        public static int jr_logo_googleplus=0x7f02003c;
+        public static int jr_logo_hyves=0x7f02003d;
+        public static int jr_logo_instagram=0x7f02003e;
+        public static int jr_logo_linkedin=0x7f02003f;
+        public static int jr_logo_live_id=0x7f020040;
+        public static int jr_logo_livejournal=0x7f020041;
+        public static int jr_logo_microsoftaccount=0x7f020042;
+        public static int jr_logo_myopenid=0x7f020043;
+        public static int jr_logo_myspace=0x7f020044;
+        public static int jr_logo_netlog=0x7f020045;
+        public static int jr_logo_openid=0x7f020046;
+        public static int jr_logo_orkut=0x7f020047;
+        public static int jr_logo_paypal=0x7f020048;
+        public static int jr_logo_paypal_openid_connect=0x7f020049;
+        public static int jr_logo_salesforce=0x7f02004a;
+        public static int jr_logo_tumblr=0x7f02004b;
+        public static int jr_logo_twitter=0x7f02004c;
+        public static int jr_logo_verisign=0x7f02004d;
+        public static int jr_logo_vzn=0x7f02004e;
+        public static int jr_logo_yahoo=0x7f02004f;
+        public static int jr_logo_yahoo_oauth2=0x7f020050;
+        public static int jr_media60x60=0x7f020051;
+        public static int jr_profilepic_placeholder=0x7f020052;
+        public static int jr_shape_landing_box=0x7f020053;
+        public static int jr_triangle_icon=0x7f020054;
     }
     public static final class id {
-        public static int adjust_height=0x7f080005;
-        public static int adjust_width=0x7f080006;
-        public static int custom_signin_button=0x7f08000e;
-        public static int custom_signin_cancel=0x7f08000f;
-        public static int emailAddress_edit=0x7f080009;
-        public static int gone=0x7f080002;
-        public static int header=0x7f080008;
-        public static int invisible=0x7f080003;
-        public static int jr_character_count_view=0x7f08002b;
-        public static int jr_check_mark=0x7f080041;
-        public static int jr_connect_and_share_button=0x7f080042;
-        public static int jr_edit_comment=0x7f08002a;
-        public static int jr_email_button=0x7f080027;
-        public static int jr_email_sms_button_container=0x7f080026;
-        public static int jr_email_sms_button_layout=0x7f080024;
-        public static int jr_email_sms_edit_comment=0x7f080023;
-        public static int jr_email_sms_powered_by_text=0x7f080029;
-        public static int jr_empty_label=0x7f08001c;
-        public static int jr_footer_text=0x7f080043;
-        public static int jr_force_reauth=0x7f080045;
-        public static int jr_fragment_container=0x7f080011;
-        public static int jr_just_share_button=0x7f08003e;
-        public static int jr_landing_dialog=0x7f080012;
-        public static int jr_landing_edit=0x7f080016;
-        public static int jr_landing_logo=0x7f080014;
-        public static int jr_landing_small_signin_button=0x7f080019;
-        public static int jr_landing_switch_account_button=0x7f080018;
-        public static int jr_landing_welcome_label=0x7f080017;
-        public static int jr_media_content_description=0x7f080034;
-        public static int jr_media_content_image=0x7f080032;
-        public static int jr_media_content_title=0x7f080033;
-        public static int jr_media_content_view=0x7f080031;
-        public static int jr_menu_about=0x7f080044;
-        public static int jr_name_and_sign_out_container=0x7f08003a;
-        public static int jr_nested_layout_mania_sunday_sunday_sunday=0x7f08002c;
-        public static int jr_preview_box=0x7f08002e;
-        public static int jr_preview_box_border=0x7f08002f;
-        public static int jr_preview_label=0x7f080035;
-        public static int jr_preview_text_view=0x7f080030;
-        public static int jr_profile_pic=0x7f080039;
-        public static int jr_profile_pic_and_buttons_horizontal_layout=0x7f080037;
-        public static int jr_provider_icon=0x7f08002d;
-        public static int jr_provider_list_container=0x7f08001a;
-        public static int jr_provider_row_layout=0x7f08001d;
-        public static int jr_publish_fragment=0x7f080000;
-        public static int jr_row_provider_icon=0x7f08001e;
-        public static int jr_row_provider_label=0x7f080015;
-        public static int jr_shared=0x7f080040;
-        public static int jr_shared_text_and_check_mark_horizontal_layout=0x7f08003f;
-        public static int jr_sign_out_button=0x7f08003d;
-        public static int jr_signin_fragment=0x7f080001;
-        public static int jr_sms_button=0x7f080028;
-        public static int jr_tab_email_sms_content=0x7f080021;
-        public static int jr_tab_social_publish_content=0x7f080022;
-        public static int jr_tagline=0x7f08001b;
-        public static int jr_triangle_icon_view=0x7f08003b;
-        public static int jr_triangle_icon_view_email=0x7f080025;
-        public static int jr_user_name=0x7f08003c;
-        public static int jr_user_profile_container=0x7f080038;
-        public static int jr_user_profile_information_and_share_button_container=0x7f080036;
-        public static int jr_webview=0x7f08001f;
-        public static int jr_webview_progress=0x7f080020;
-        public static int linear=0x7f080013;
-        public static int message_container=0x7f08000a;
-        public static int none=0x7f080007;
-        public static int password_edit=0x7f08000d;
-        public static int trad_forgot_progress=0x7f08000b;
-        public static int trad_signin_progress=0x7f080010;
-        public static int username_edit=0x7f08000c;
-        public static int visible=0x7f080004;
-    }
-    public static final class integer {
-        public static int google_play_services_version=0x7f090000;
+        public static int custom_signin_button=0x7f07000b;
+        public static int custom_signin_cancel=0x7f07000c;
+        public static int emailAddress_edit=0x7f070006;
+        public static int gone=0x7f070002;
+        public static int header=0x7f070005;
+        public static int invisible=0x7f070003;
+        public static int jr_character_count_view=0x7f070028;
+        public static int jr_check_mark=0x7f07003e;
+        public static int jr_connect_and_share_button=0x7f07003f;
+        public static int jr_edit_comment=0x7f070027;
+        public static int jr_email_button=0x7f070024;
+        public static int jr_email_sms_button_container=0x7f070023;
+        public static int jr_email_sms_button_layout=0x7f070021;
+        public static int jr_email_sms_edit_comment=0x7f070020;
+        public static int jr_email_sms_powered_by_text=0x7f070026;
+        public static int jr_empty_label=0x7f070019;
+        public static int jr_footer_text=0x7f070040;
+        public static int jr_force_reauth=0x7f070042;
+        public static int jr_fragment_container=0x7f07000e;
+        public static int jr_just_share_button=0x7f07003b;
+        public static int jr_landing_dialog=0x7f07000f;
+        public static int jr_landing_edit=0x7f070013;
+        public static int jr_landing_logo=0x7f070011;
+        public static int jr_landing_small_signin_button=0x7f070016;
+        public static int jr_landing_switch_account_button=0x7f070015;
+        public static int jr_landing_welcome_label=0x7f070014;
+        public static int jr_media_content_description=0x7f070031;
+        public static int jr_media_content_image=0x7f07002f;
+        public static int jr_media_content_title=0x7f070030;
+        public static int jr_media_content_view=0x7f07002e;
+        public static int jr_menu_about=0x7f070041;
+        public static int jr_name_and_sign_out_container=0x7f070037;
+        public static int jr_nested_layout_mania_sunday_sunday_sunday=0x7f070029;
+        public static int jr_preview_box=0x7f07002b;
+        public static int jr_preview_box_border=0x7f07002c;
+        public static int jr_preview_label=0x7f070032;
+        public static int jr_preview_text_view=0x7f07002d;
+        public static int jr_profile_pic=0x7f070036;
+        public static int jr_profile_pic_and_buttons_horizontal_layout=0x7f070034;
+        public static int jr_provider_icon=0x7f07002a;
+        public static int jr_provider_list_container=0x7f070017;
+        public static int jr_provider_row_layout=0x7f07001a;
+        public static int jr_publish_fragment=0x7f070000;
+        public static int jr_row_provider_icon=0x7f07001b;
+        public static int jr_row_provider_label=0x7f070012;
+        public static int jr_shared=0x7f07003d;
+        public static int jr_shared_text_and_check_mark_horizontal_layout=0x7f07003c;
+        public static int jr_sign_out_button=0x7f07003a;
+        public static int jr_signin_fragment=0x7f070001;
+        public static int jr_sms_button=0x7f070025;
+        public static int jr_tab_email_sms_content=0x7f07001e;
+        public static int jr_tab_social_publish_content=0x7f07001f;
+        public static int jr_tagline=0x7f070018;
+        public static int jr_triangle_icon_view=0x7f070038;
+        public static int jr_triangle_icon_view_email=0x7f070022;
+        public static int jr_user_name=0x7f070039;
+        public static int jr_user_profile_container=0x7f070035;
+        public static int jr_user_profile_information_and_share_button_container=0x7f070033;
+        public static int jr_webview=0x7f07001c;
+        public static int jr_webview_progress=0x7f07001d;
+        public static int linear=0x7f070010;
+        public static int message_container=0x7f070007;
+        public static int password_edit=0x7f07000a;
+        public static int trad_forgot_progress=0x7f070008;
+        public static int trad_signin_progress=0x7f07000d;
+        public static int username_edit=0x7f070009;
+        public static int visible=0x7f070004;
     }
     public static final class layout {
         public static int jr_about_dialog=0x7f030000;
@@ -333,131 +257,100 @@ containing a value of this type.
         public static int jr_shared_footer=0x7f03000c;
     }
     public static final class menu {
-        public static int jr_about_menu=0x7f0a0000;
-        public static int jr_provider_listview_row_menu=0x7f0a0001;
+        public static int jr_about_menu=0x7f090000;
+        public static int jr_provider_listview_row_menu=0x7f090001;
     }
     public static final class string {
-        public static int common_android_wear_notification_needs_update_text=0x7f040000;
-        public static int common_android_wear_update_text=0x7f040001;
-        public static int common_android_wear_update_title=0x7f040002;
-        public static int common_google_play_services_enable_button=0x7f040003;
-        public static int common_google_play_services_enable_text=0x7f040004;
-        public static int common_google_play_services_enable_title=0x7f040005;
-        public static int common_google_play_services_error_notification_requested_by_msg=0x7f040006;
-        public static int common_google_play_services_install_button=0x7f040007;
-        public static int common_google_play_services_install_text_phone=0x7f040008;
-        public static int common_google_play_services_install_text_tablet=0x7f040009;
-        public static int common_google_play_services_install_title=0x7f04000a;
-        public static int common_google_play_services_invalid_account_text=0x7f04000b;
-        public static int common_google_play_services_invalid_account_title=0x7f04000c;
-        public static int common_google_play_services_needs_enabling_title=0x7f04000d;
-        public static int common_google_play_services_network_error_text=0x7f04000e;
-        public static int common_google_play_services_network_error_title=0x7f04000f;
-        public static int common_google_play_services_notification_needs_installation_title=0x7f040010;
-        public static int common_google_play_services_notification_needs_update_title=0x7f040011;
-        public static int common_google_play_services_notification_ticker=0x7f040012;
-        public static int common_google_play_services_sign_in_failed_text=0x7f040013;
-        public static int common_google_play_services_sign_in_failed_title=0x7f040014;
-        public static int common_google_play_services_unknown_issue=0x7f040015;
-        public static int common_google_play_services_unsupported_text=0x7f040016;
-        public static int common_google_play_services_unsupported_title=0x7f040017;
-        public static int common_google_play_services_update_button=0x7f040018;
-        public static int common_google_play_services_update_text=0x7f040019;
-        public static int common_google_play_services_update_title=0x7f04001a;
-        public static int common_open_on_phone=0x7f04001b;
-        public static int common_signin_button_text=0x7f04001c;
-        public static int common_signin_button_text_long=0x7f04001d;
-        public static int commono_google_play_services_api_unavailable_text=0x7f04001e;
-        public static int jr_about_URL=0x7f04001f;
-        public static int jr_about_menu_item=0x7f040020;
-        public static int jr_about_title=0x7f040021;
-        public static int jr_calculating_remaining_characters=0x7f040022;
-        public static int jr_capture_forgotpassword_dialog_header=0x7f040023;
-        public static int jr_capture_forgotpassword_dismiss_button=0x7f040024;
-        public static int jr_capture_forgotpassword_error_msg=0x7f040025;
-        public static int jr_capture_forgotpassword_forgotpass_button=0x7f040026;
-        public static int jr_capture_forgotpassword_link_text=0x7f040027;
-        public static int jr_capture_forgotpassword_reset_error_msg=0x7f040028;
-        public static int jr_capture_forgotpassword_send_button=0x7f040029;
-        public static int jr_capture_forgotpassword_success_msg=0x7f04002a;
-        public static int jr_capture_forgotpassword_user_displaymsg=0x7f04002b;
-        public static int jr_capture_forgotpassword_view_failuremsg=0x7f04002c;
-        public static int jr_capture_signin_view_button_title=0x7f04002d;
-        public static int jr_capture_signin_view_password_hint=0x7f04002e;
-        public static int jr_capture_signin_view_signing_in=0x7f04002f;
-        public static int jr_capture_signin_view_username_hint=0x7f040030;
-        public static int jr_capture_trad_signin_bad_password=0x7f040031;
-        public static int jr_capture_trad_signin_dialog_title=0x7f040032;
-        public static int jr_capture_trad_signin_unrecognized_error=0x7f040033;
-        public static int jr_choose_email_handler=0x7f040034;
-        public static int jr_connect_share_button_text=0x7f040035;
-        public static int jr_default_email_share_subject=0x7f040036;
-        public static int jr_desktop_browser_ua=0x7f040037;
-        public static int jr_dialog_dismiss=0x7f040038;
-        public static int jr_dialog_network_error=0x7f040039;
-        public static int jr_dialog_ok=0x7f04003a;
-        public static int jr_email_button_text=0x7f04003b;
-        public static int jr_error_generic_sharing=0x7f04003c;
-        public static int jr_error_linkedin_too_long=0x7f04003d;
-        public static int jr_error_twitter_no_duplicates_allowed=0x7f04003e;
-        public static int jr_getconfig_network_failure_message=0x7f04003f;
-        public static int jr_getconfig_parse_error_message=0x7f040040;
-        public static int jr_git_describe=0x7f040041;
-        public static int jr_landing_bad_input_long=0x7f040042;
-        public static int jr_landing_bad_user_input=0x7f040043;
-        public static int jr_landing_default_custom_title=0x7f040044;
-        public static int jr_landing_signin_button_text=0x7f040045;
-        public static int jr_landing_switch_account_button_text=0x7f040046;
-        public static int jr_menu_item_refresh=0x7f040047;
-        public static int jr_merge_flow_default_dialog_message=0x7f040048;
-        public static int jr_merge_flow_default_dialog_title=0x7f040049;
-        public static int jr_merge_flow_default_merge_button=0x7f04004a;
-        public static int jr_no_configured_social_providers=0x7f04004b;
-        public static int jr_no_social_providers=0x7f04004c;
-        public static int jr_please_enter_text=0x7f04004d;
-        public static int jr_powered_by=0x7f04004e;
-        public static int jr_preview=0x7f04004f;
-        public static int jr_problem_sharing=0x7f040050;
-        public static int jr_progress_loading=0x7f040051;
-        public static int jr_progress_sharing=0x7f040052;
-        public static int jr_provider_empty_emails=0x7f040053;
-        public static int jr_provider_list_empty=0x7f040054;
-        public static int jr_provider_list_title=0x7f040055;
-        public static int jr_provider_sign_in_with=0x7f040056;
-        public static int jr_provider_spinner_prompt=0x7f040057;
-        public static int jr_provider_unknown=0x7f040058;
-        public static int jr_publish_activity_title=0x7f040059;
-        public static int jr_share_button_text=0x7f04005a;
-        public static int jr_shared=0x7f04005b;
-        public static int jr_shortening_url=0x7f04005c;
-        public static int jr_sign_out_button=0x7f04005d;
-        public static int jr_sign_out_dialog=0x7f04005e;
-        public static int jr_sms_button_text=0x7f04005f;
-        public static int jr_traditional_account_name=0x7f040060;
-        public static int jr_user_profile_default_name=0x7f040061;
-        public static int jr_webview_bad_user_input_message=0x7f040062;
-        public static int jr_webview_bad_user_input_title=0x7f040063;
-        public static int jr_webview_error_dialog_msg=0x7f040064;
-        public static int jr_webview_error_dialog_title=0x7f040065;
-        public static int jr_webview_generic_auth_error_message=0x7f040066;
-        public static int jr_welcome_back_message=0x7f040067;
+        public static int jr_about_URL=0x7f080000;
+        public static int jr_about_menu_item=0x7f080001;
+        public static int jr_about_title=0x7f080002;
+        public static int jr_calculating_remaining_characters=0x7f080003;
+        public static int jr_capture_forgotpassword_dialog_header=0x7f080004;
+        public static int jr_capture_forgotpassword_dismiss_button=0x7f080005;
+        public static int jr_capture_forgotpassword_error_msg=0x7f080006;
+        public static int jr_capture_forgotpassword_forgotpass_button=0x7f080007;
+        public static int jr_capture_forgotpassword_link_text=0x7f080008;
+        public static int jr_capture_forgotpassword_reset_error_msg=0x7f080009;
+        public static int jr_capture_forgotpassword_send_button=0x7f08000a;
+        public static int jr_capture_forgotpassword_success_msg=0x7f08000b;
+        public static int jr_capture_forgotpassword_user_displaymsg=0x7f08000c;
+        public static int jr_capture_forgotpassword_view_failuremsg=0x7f08000d;
+        public static int jr_capture_signin_view_button_title=0x7f08000e;
+        public static int jr_capture_signin_view_password_hint=0x7f08000f;
+        public static int jr_capture_signin_view_signing_in=0x7f080010;
+        public static int jr_capture_signin_view_username_hint=0x7f080011;
+        public static int jr_capture_trad_signin_bad_password=0x7f080012;
+        public static int jr_capture_trad_signin_dialog_title=0x7f080013;
+        public static int jr_capture_trad_signin_unrecognized_error=0x7f080014;
+        public static int jr_choose_email_handler=0x7f080015;
+        public static int jr_connect_share_button_text=0x7f080016;
+        public static int jr_default_email_share_subject=0x7f080017;
+        public static int jr_desktop_browser_ua=0x7f080018;
+        public static int jr_dialog_dismiss=0x7f080019;
+        public static int jr_dialog_network_error=0x7f08001a;
+        public static int jr_dialog_ok=0x7f08001b;
+        public static int jr_email_button_text=0x7f08001c;
+        public static int jr_error_generic_sharing=0x7f08001d;
+        public static int jr_error_linkedin_too_long=0x7f08001e;
+        public static int jr_error_twitter_no_duplicates_allowed=0x7f08001f;
+        public static int jr_getconfig_network_failure_message=0x7f080020;
+        public static int jr_getconfig_parse_error_message=0x7f080021;
+        public static int jr_git_describe=0x7f080022;
+        public static int jr_landing_bad_input_long=0x7f080023;
+        public static int jr_landing_bad_user_input=0x7f080024;
+        public static int jr_landing_default_custom_title=0x7f080025;
+        public static int jr_landing_signin_button_text=0x7f080026;
+        public static int jr_landing_switch_account_button_text=0x7f080027;
+        public static int jr_menu_item_refresh=0x7f080028;
+        public static int jr_merge_flow_default_dialog_message=0x7f080029;
+        public static int jr_merge_flow_default_dialog_title=0x7f08002a;
+        public static int jr_merge_flow_default_merge_button=0x7f08002b;
+        public static int jr_no_configured_social_providers=0x7f08002c;
+        public static int jr_no_social_providers=0x7f08002d;
+        public static int jr_please_enter_text=0x7f08002e;
+        public static int jr_powered_by=0x7f08002f;
+        public static int jr_preview=0x7f080030;
+        public static int jr_problem_sharing=0x7f080031;
+        public static int jr_progress_loading=0x7f080032;
+        public static int jr_progress_sharing=0x7f080033;
+        public static int jr_provider_empty_emails=0x7f080034;
+        public static int jr_provider_list_empty=0x7f080035;
+        public static int jr_provider_list_title=0x7f080036;
+        public static int jr_provider_sign_in_with=0x7f080037;
+        public static int jr_provider_spinner_prompt=0x7f080038;
+        public static int jr_provider_unknown=0x7f080039;
+        public static int jr_publish_activity_title=0x7f08003a;
+        public static int jr_share_button_text=0x7f08003b;
+        public static int jr_shared=0x7f08003c;
+        public static int jr_shortening_url=0x7f08003d;
+        public static int jr_sign_out_button=0x7f08003e;
+        public static int jr_sign_out_dialog=0x7f08003f;
+        public static int jr_sms_button_text=0x7f080040;
+        public static int jr_traditional_account_name=0x7f080041;
+        public static int jr_user_profile_default_name=0x7f080042;
+        public static int jr_webview_bad_user_input_message=0x7f080043;
+        public static int jr_webview_bad_user_input_title=0x7f080044;
+        public static int jr_webview_error_dialog_msg=0x7f080045;
+        public static int jr_webview_error_dialog_title=0x7f080046;
+        public static int jr_webview_generic_auth_error_message=0x7f080047;
+        public static int jr_welcome_back_message=0x7f080048;
     }
     public static final class style {
-        public static int Theme_Janrain=0x7f050000;
-        public static int Theme_Janrain_Dialog=0x7f050001;
-        public static int Theme_Janrain_Dialog_Light=0x7f050002;
-        public static int Theme_Janrain_Light=0x7f050003;
-        public static int jr_about_dialog_text=0x7f050004;
-        public static int jr_dialog=0x7f05000c;
-        public static int jr_dialog_71_percent=0x7f050005;
-        public static int jr_dialog_dark=0x7f050006;
-        public static int jr_dialog_phone_sized=0x7f050007;
-        public static int jr_disable_title_and_action_bar_style=0x7f050008;
-        public static int jr_fullscreen=0x7f05000d;
-        public static int jr_fullscreen_dark=0x7f050009;
-        public static int jr_fullscreen_no_title=0x7f05000a;
-        public static int jr_fullscreen_no_title_dark=0x7f05000b;
-        public static int jr_progress_dialog_style=0x7f05000e;
+        public static int Theme_Janrain=0x7f040000;
+        public static int Theme_Janrain_Dialog=0x7f040001;
+        public static int Theme_Janrain_Dialog_Light=0x7f040002;
+        public static int Theme_Janrain_Light=0x7f040003;
+        public static int jr_about_dialog_text=0x7f040004;
+        public static int jr_dialog=0x7f04000c;
+        public static int jr_dialog_71_percent=0x7f040005;
+        public static int jr_dialog_dark=0x7f040006;
+        public static int jr_dialog_phone_sized=0x7f040007;
+        public static int jr_disable_title_and_action_bar_style=0x7f040008;
+        public static int jr_fullscreen=0x7f04000d;
+        public static int jr_fullscreen_dark=0x7f040009;
+        public static int jr_fullscreen_no_title=0x7f04000a;
+        public static int jr_fullscreen_no_title_dark=0x7f04000b;
+        public static int jr_progress_dialog_style=0x7f04000e;
     }
     public static final class styleable {
         /** Attributes that can be used with a ColorButton.
@@ -488,68 +381,5 @@ containing a value of this type.
           @attr name com.janrain.android:jr_color
         */
         public static int ColorButton_jr_color = 0;
-        /** Attributes that can be used with a LoadingImageView.
-           <p>Includes the following attributes:</p>
-           <table>
-           <colgroup align="left" />
-           <colgroup align="left" />
-           <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #LoadingImageView_circleCrop com.janrain.android:circleCrop}</code></td><td></td></tr>
-           <tr><td><code>{@link #LoadingImageView_imageAspectRatio com.janrain.android:imageAspectRatio}</code></td><td></td></tr>
-           <tr><td><code>{@link #LoadingImageView_imageAspectRatioAdjust com.janrain.android:imageAspectRatioAdjust}</code></td><td></td></tr>
-           </table>
-           @see #LoadingImageView_circleCrop
-           @see #LoadingImageView_imageAspectRatio
-           @see #LoadingImageView_imageAspectRatioAdjust
-         */
-        public static final int[] LoadingImageView = {
-            0x7f010005, 0x7f010006, 0x7f010007
-        };
-        /**
-          <p>This symbol is the offset where the {@link com.janrain.android.R.attr#circleCrop}
-          attribute's value can be found in the {@link #LoadingImageView} array.
-
-
-          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name com.janrain.android:circleCrop
-        */
-        public static int LoadingImageView_circleCrop = 2;
-        /**
-          <p>This symbol is the offset where the {@link com.janrain.android.R.attr#imageAspectRatio}
-          attribute's value can be found in the {@link #LoadingImageView} array.
-
-
-          <p>Must be a floating point value, such as "<code>1.2</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name com.janrain.android:imageAspectRatio
-        */
-        public static int LoadingImageView_imageAspectRatio = 1;
-        /**
-          <p>This symbol is the offset where the {@link com.janrain.android.R.attr#imageAspectRatioAdjust}
-          attribute's value can be found in the {@link #LoadingImageView} array.
-
-
-          <p>Must be one of the following constant values.</p>
-<table>
-<colgroup align="left" />
-<colgroup align="left" />
-<colgroup align="left" />
-<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>none</code></td><td>0</td><td></td></tr>
-<tr><td><code>adjust_width</code></td><td>1</td><td></td></tr>
-<tr><td><code>adjust_height</code></td><td>2</td><td></td></tr>
-</table>
-          @attr name com.janrain.android:imageAspectRatioAdjust
-        */
-        public static int LoadingImageView_imageAspectRatioAdjust = 0;
     };
 }
