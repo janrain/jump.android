@@ -3,8 +3,8 @@
     package="com.janrain.android.test" >
 
     <uses-sdk
-        android:minSdkVersion="19"
-        android:targetSdkVersion="21" />
+        android:minSdkVersion="17"
+        android:targetSdkVersion="23" />
 
     <instrumentation
         android:name="android.test.InstrumentationTestRunner"
@@ -51,10 +51,6 @@
 
     <application>
         <uses-library android:name="android.test.runner" />
-
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>

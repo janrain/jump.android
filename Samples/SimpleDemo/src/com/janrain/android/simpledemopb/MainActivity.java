@@ -40,6 +40,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.IntentSender;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -48,6 +49,7 @@ import android.support.multidex.MultiDex;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.webkit.CookieManager;
@@ -72,6 +74,8 @@ import com.google.android.gms.auth.GoogleAuthException;
 import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.android.gms.auth.GooglePlayServicesAvailabilityException;
 import com.google.android.gms.auth.UserRecoverableAuthException;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.common.AccountPicker;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -80,6 +84,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.plus.Plus;
 
+import com.google.android.gms.plus.Plus;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.Callback;
@@ -236,12 +241,16 @@ public class MainActivity extends FragmentActivity implements
 
         //enableStrictMode();
 
+        // Configure sign-in to request the user's ID, email address, and basic
+//      // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+
         // Build GoogleApiClient with access to basic profile
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .addApi(Plus.API)
                 .addScope(new Scope(Scopes.PROFILE))
+                .addScope(new Scope(Scopes.EMAIL))
                 .build();
 
         //Initialize Facebook SDK
@@ -616,10 +625,12 @@ public class MainActivity extends FragmentActivity implements
 
 
     private void googlePickUserAccount() {
+
         String[] accountTypes = new String[]{"com.google"};
         Intent intent = AccountPicker.newChooseAccountIntent(null, null,
                 accountTypes, false, null, null, null, null);
         startActivityForResult(intent, GOOGLE_REQUEST_CODE_PICK_ACCOUNT);
+
     }
 
 
@@ -673,6 +684,8 @@ public class MainActivity extends FragmentActivity implements
         }
     }
 
+
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -685,14 +698,13 @@ public class MainActivity extends FragmentActivity implements
             }
 
             mIsResolving = false;
+
             mGoogleApiClient.connect();
-        } else if (requestCode == GOOGLE_REQUEST_CODE_PICK_ACCOUNT) {
+        }else if (requestCode == GOOGLE_REQUEST_CODE_PICK_ACCOUNT) {
             // Receiving a result from the AccountPicker
             if (resultCode == RESULT_OK) {
                 googleEmail = data.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
                 // With the account name acquired, go get the auth token
-                //getUsername();
-                Toast.makeText(this, googleEmail, Toast.LENGTH_SHORT).show();
                 new RetrieveGoogleTokenTask(MainActivity.this).execute(googleEmail, GOOGLE_SCOPES);
             } else if (resultCode == RESULT_CANCELED) {
                 // The account picker dialog closed without selecting an account.
@@ -795,6 +807,7 @@ public class MainActivity extends FragmentActivity implements
             }
         });
     }
+
 
     private class RetrieveGoogleTokenTask extends AsyncTask<String, Void, String> {
 

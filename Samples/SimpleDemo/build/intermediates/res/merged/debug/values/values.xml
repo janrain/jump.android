@@ -656,6 +656,9 @@
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/res/values/strings.xml -->
     <eat-comment/>
     <string name="facebook_app_id">241142639370227</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/generated/res/google-services/debug/values/values.xml -->
+    <eat-comment/>
+    <string name="gcm_defaultSenderId">520070855106</string>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/exploded-aar/SimpleDemo/jump/unspecified/res/values/values.xml -->
     <eat-comment/>
     <string name="jr_about_URL">www.janrain.com</string>

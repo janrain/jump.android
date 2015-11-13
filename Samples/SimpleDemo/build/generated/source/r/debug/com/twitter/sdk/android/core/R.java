@@ -65,7 +65,7 @@ public final class R {
 		public static final int tw__cacerts = 0x7f050001;
 	}
 	public static final class string {
-		public static final int kit_name = 0x7f0600d6;
+		public static final int kit_name = 0x7f0600d7;
 		public static final int tw__allow_btn_txt = 0x7f060061;
 		public static final int tw__login_btn_txt = 0x7f060063;
 		public static final int tw__not_now_btn_txt = 0x7f060064;
