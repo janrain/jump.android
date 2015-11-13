@@ -60,8 +60,6 @@ public class JRFragmentHostActivity extends FragmentActivity {
     public static final int JR_WEBVIEW = 2;
     public static final int JR_PUBLISH = 3;
     public static final int JR_PROVIDER_LIST = 4;
-    //PB
-    //public static final int JR_NATIVE_AUTH = 5;
     private static final String JR_OPERATION_MODE = "JR_OPERATION_MODE";
     private static final int JR_DIALOG = 0;
     private static final int JR_FULLSCREEN = 1;
@@ -108,12 +106,6 @@ public class JRFragmentHostActivity extends FragmentActivity {
             case JR_PUBLISH:
                 mUiFragment = new JRPublishFragment();
                 break;
-            //PB
-            /*
-            case JR_NATIVE_AUTH:
-                mUiFragment = new JRNativeAuthFragment();
-                break;
-            */
             default:
                 throw new IllegalFragmentIdException(getFragmentId());
         }
@@ -213,13 +205,6 @@ public class JRFragmentHostActivity extends FragmentActivity {
          * by the Fragment API path.
          */
 
-        //PB
-        /*
-        JRSession session = JRSession.getInstance();
-        if (session != null && session.getCurrentNativeProvider() != null) {
-            session.getCurrentNativeProvider().onActivityResult(requestCode, resultCode, data);
-        }
-        */
     }
 
     @Override
@@ -319,14 +304,6 @@ public class JRFragmentHostActivity extends FragmentActivity {
         return i;
     }
 
-    //PB
-    /*
-    public static Intent createNativeAuthIntent(Activity activity) {
-        Intent i = createIntentForCurrentScreen(activity, false);
-        i.putExtra(JR_FRAGMENT_ID, JR_NATIVE_AUTH);
-        return i;
-    }
-    */
 
     /* ~aliases for alternative activity declarations for this activity */
     public static class Fullscreen extends JRFragmentHostActivity {}

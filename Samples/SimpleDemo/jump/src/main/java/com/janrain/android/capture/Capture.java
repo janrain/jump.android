@@ -372,7 +372,6 @@ public class Capture {
         return c;
     }
 
-    //PB
     public static CaptureApiConnection updateUserProfile(CaptureRecord user,
                                                          String editProfileFormName,
                                                          final CaptureApiRequestCallback handler) {

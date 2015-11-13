@@ -176,11 +176,6 @@ public class Jump {
         state.context = context;
         state.jrEngage = JREngage.initInstance(context.getApplicationContext(), jumpConfig.engageAppId,
                 null, null, jumpConfig.customProviders);
-        //PB
-        /*
-        state.jrEngage.setTryWebViewAuthenticationWhenGooglePlayIsUnavailable(
-                jumpConfig.tryWebViewAuthenticationWhenGooglePlayIsUnavailable);
-        */
         state.captureSocialRegistrationFormName = jumpConfig.captureSocialRegistrationFormName;
         state.captureTraditionalRegistrationFormName = jumpConfig.captureTraditionalRegistrationFormName;
         state.captureEditUserProfileFormName = jumpConfig.captureEditUserProfileFormName;
@@ -457,46 +452,6 @@ public class Jump {
         }
     }
 
-//PB
-/*
-    private static void showSocialSignInDialogWithPermissions(Activity fromActivity, String providerName, String[] permissions,
-                                               final String mergeToken) {
-        state.jrEngage.addDelegate(new JREngageDelegate.SimpleJREngageDelegate() {
-            @Override
-            public void jrAuthenticationDidSucceedForUser(JRDictionary auth_info, String provider) {
-                handleEngageAuthenticationSuccess(auth_info, provider, mergeToken);
-                state.jrEngage.removeDelegate(this);
-            }
-
-            @Override
-            public void jrAuthenticationDidNotComplete() {
-                fireHandlerFailure(new SignInError(AUTHENTICATION_CANCELED_BY_USER, null, null));
-            }
-
-            @Override
-            public void jrEngageDialogDidFailToShowWithError(JREngageError error) {
-                fireHandlerFailure(new SignInError(ENGAGE_ERROR, null, error));
-            }
-
-            @Override
-            public void jrAuthenticationDidFailWithError(JREngageError error, String provider) {
-                fireHandlerFailure(new SignInError(ENGAGE_ERROR, null, error));
-            }
-
-            private void fireHandlerFailure(SignInError err) {
-                state.jrEngage.removeDelegate(this);
-                Jump.fireHandlerOnFailure(err);
-            }
-        });
-
-        if (providerName != null) {
-            state.jrEngage.showAuthenticationDialog(fromActivity, providerName, permissions);
-        } else {
-            state.jrEngage.showAuthenticationDialog(fromActivity, TradSignInUi.class);
-        }
-    }
-*/
-    //PB
     public static void startTokenAuthForNativeProvider(final Activity fromActivity,
                                                        final String providerName,
                                                        final String accessToken,
@@ -529,14 +484,6 @@ public class Jump {
             public void jrAuthenticationDidNotComplete() {
                 fireHandlerFailure(new SignInError(AUTHENTICATION_CANCELED_BY_USER, null, null));
             }
-
-            //PB
-            /*
-            @Override
-            public void jrEngageDialogDidFailToShowWithError(JREngageError error) {
-                fireHandlerFailure(new SignInError(ENGAGE_ERROR, null, error));
-            }
-            */
 
             @Override
             public void jrAuthenticationDidFailWithError(JREngageError error, String provider) {

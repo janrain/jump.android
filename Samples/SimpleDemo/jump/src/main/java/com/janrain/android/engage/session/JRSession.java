@@ -43,8 +43,6 @@ import com.janrain.android.engage.JREngageError;
 import com.janrain.android.engage.JREngageError.ConfigurationError;
 import com.janrain.android.engage.JREngageError.ErrorType;
 import com.janrain.android.engage.JREngageError.SocialPublishingError;
-//PB
-//import com.janrain.android.engage.JRNativeAuth;
 import com.janrain.android.engage.net.JRConnectionManager;
 import com.janrain.android.engage.net.JRConnectionManagerDelegate;
 import com.janrain.android.engage.net.async.HttpResponseHeaders;
@@ -99,9 +97,7 @@ public class JRSession implements JRConnectionManagerDelegate {
     private JRProvider mCurrentlyAuthenticatingProvider;
     private String[] mCurrentlyAuthenticatingProviderPermissions;
     private JRProvider mCurrentlyPublishingProvider;
-    //PB
-    //private JRNativeAuth.NativeProvider mCurrentNativeProvider;
-
+    
     private String mReturningAuthProvider;
     private String[] mReturningAuthProviderPermissions;
     private String mReturningSharingProvider;
@@ -890,64 +886,7 @@ public class JRSession implements JRConnectionManagerDelegate {
             triggerUserWasSignedOut(providerName);
         }
     }
-//PB
-/*
-    public void signOutNativeProviders(Activity fromActivity) {
-        String providerName = "googleplus";
-        if (mAuthenticatedNativeAuthProviders.contains(providerName)) {
-            mAuthenticatedNativeAuthProviders.clear();
-            Archiver.asyncSave(ARCHIVE_AUTH_NATIVE_PROVIDERS, mAuthenticatedNativeAuthProviders);
 
-            JRProvider provider = getAllProviders().get(providerName);
-            if (provider == null) {
-                throwDebugException(new IllegalStateException("Unknown provider name:" + providerName));
-                return;
-            }
-
-            if (JRNativeAuth.canHandleProvider(provider) && fromActivity != null) {
-                Intent i = JRFragmentHostActivity.createNativeAuthIntent(fromActivity);
-                i.putExtra(JRFragmentHostActivity.JR_SIGN_OUT_PROVIDER, provider.getName());
-                fromActivity.startActivity(i);
-            }
-        }
-    }
-*/
-
-//PB
-/*
-    public void revokeAndDisconnectNativeGooglePlus(Activity fromActivity) {
-        String providerName = "googleplus";
-        JRProvider provider = getAllProviders().get(providerName);
-        if (provider == null) {
-            throwDebugException(new IllegalStateException("Unknown provider name:" + providerName));
-            return;
-        }
-
-        if (JRNativeAuth.canHandleProvider(provider) && fromActivity != null) {
-            Intent i = JRFragmentHostActivity.createNativeAuthIntent(fromActivity);
-            i.putExtra(JRFragmentHostActivity.JR_REVOKE_PROVIDER, provider.getName());
-            fromActivity.startActivity(i);
-        }
-    }
-*/
-
-//PB
-/*
-    public void revokeAndDisconnectNativeFacebook(Activity fromActivity) {
-        String providerName = "facebook";
-        JRProvider provider = getAllProviders().get(providerName);
-        if (provider == null) {
-            throwDebugException(new IllegalStateException("Unknown provider name:" + providerName));
-            return;
-        }
-
-        if (JRNativeAuth.canHandleProvider(provider) && fromActivity != null) {
-            Intent i = JRFragmentHostActivity.createNativeAuthIntent(fromActivity);
-            i.putExtra(JRFragmentHostActivity.JR_REVOKE_PROVIDER, provider.getName());
-            fromActivity.startActivity(i);
-        }
-    }
-*/
     public void signOutAllAuthenticatedUsers() {
         for (String p : getAllProviders().keySet()) signOutUserForProvider(p);
     }
@@ -1255,15 +1194,6 @@ public class JRSession implements JRConnectionManagerDelegate {
     public boolean getLinkAccount() {
         return mLinkAccount;
     }
-//PB
-/*
-    public void setCurrentNativeProvider(JRNativeAuth.NativeProvider nativeProvider) {
-        mCurrentNativeProvider = nativeProvider;
-    }
 
-    public JRNativeAuth.NativeProvider getCurrentNativeProvider() {
-        return mCurrentNativeProvider;
-    }
-*/
 
 }
