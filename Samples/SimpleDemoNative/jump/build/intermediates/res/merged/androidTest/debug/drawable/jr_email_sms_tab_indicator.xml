@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/jr_icon_bw_mail_sms" />
+    <item android:drawable="@drawable/jr_icon_mail_sms"
+          android:state_selected="true" />
+
+</selector>
+<!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_email_sms_tab_indicator.xml --><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/bundles/debug/res/drawable/jr_email_sms_tab_indicator.xml -->

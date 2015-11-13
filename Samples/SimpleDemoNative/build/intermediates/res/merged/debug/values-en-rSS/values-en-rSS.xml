@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-en-rSS/values-en-rSS.xml -->
+    <eat-comment/>
+    <plurals name="tw__time_hours">
+        <item quantity="one">[[59358]] 1h</item>
+        <item quantity="other">[[59359]] %dh</item>
+    </plurals>
+    <plurals name="tw__time_mins">
+        <item quantity="one">[[59356]] 1m</item>
+        <item quantity="other">[[59357]] %dm</item>
+    </plurals>
+    <plurals name="tw__time_secs">
+        <item quantity="one">[[59354]] 1s</item>
+        <item quantity="other">[[59355]] %ds</item>
+    </plurals>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values-en-rSS/values-en-rSS.xml -->
+    <eat-comment/>
+    <string name="dgts__confirmation_code">[[59318]] Confirmation code</string>
+    <string name="dgts__confirmation_edit_hint">[[59324]] Enter confirmation code</string>
+    <string name="dgts__confirmation_error">[[59343]] Unable to confirm your phone number</string>
+    <string name="dgts__confirmation_error_alternative">[[97083]] Sorry, we are having trouble sending you a confirmation code.</string>
+    <string name="dgts__confirmation_expired">[[59337]] This code has expired. Please resend\
+        confirmation code.</string>
+    <string name="dgts__digits_logo_desc">[[94017]] digits logo icon</string>
+    <string name="dgts__digits_logo_name_desc">[[94018]] digits logo name</string>
+    <string name="dgts__dismiss">[[59340]] Dismiss</string>
+    <string name="dgts__find_your_friends">[[59346]] Find your friends</string>
+    <string name="dgts__image_header_description">[[60972]] Image header for login</string>
+    <string name="dgts__login_digits_text">[[59315]] Use my phone number</string>
+    <string name="dgts__network_error">[[59339]] Please check your network and try again.</string>
+    <string name="dgts__not_now">[[59332]] Not now</string>
+    <string name="dgts__okay">[[59331]] Okay</string>
+    <string name="dgts__phone_number_edit_hint">[[59317]] Your Number</string>
+    <string name="dgts__phone_number_text">[[59316]] Enter your phone number</string>
+    <string name="dgts__pin_code_verification_title">[[94009]] Enter 2-step verification code</string>
+    <string name="dgts__resend_confirmation_text">[[59329]] Resend confirmation code</string>
+    <string name="dgts__success_desc">[[60971]] Success Icon</string>
+    <string name="dgts__terms_text">[[100619]] By tapping %1$sSend confirmation code%1$s above, Digits by Twitter, will send you a SMS message to confirm your phone number. Message &amp; data rates may apply.</string>
+    <string name="dgts__terms_text_create">[[97081]] By tapping %1$sCreate account%1$s above, you agree to the Terms of Service, Privacy Policy, and Cookies Policy of Digits by Twitter, and that other users of this app can discover you by phone number and/or email.</string>
+    <string name="dgts__terms_text_sign_in">[[99300]] By tapping %1$sSign in%1$s above, you agree to the updated Terms of Service, Privacy Policy, and Cookies Policy of Digits by Twitter, and that other users of %1$s can discover you by phone number and/or email.</string>
+    <string name="dgts__try_again">[[59342]] Try Again</string>
+    <string name="dgts__try_again_confirmation">[[59336]] Please check your code and try again.</string>
+    <string name="dgts__try_again_phone_number">[[59335]] Please check your number and try again.</string>
+    <string name="dgts__try_another_phone">[[59360]] Try a different phone number</string>
+    <string name="dgts__upload_contacts">[[97086]] We use Digits by Twitter to find more of your friends who use this app. When you tap Okay, we\'ll upload your address book to Digits by Twitter so that we can help you find users of %1$s that you know or help other users of %1$s find you.</string>
+    <string name="dgts__verification_code">[[94019]] Verification code</string>
+    <string name="dgts_pin_code_terms">[[94015]] You have previously set a 2-step verification code on digits.com</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-en-rSS/values-en-rSS.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">[[94023]] Allow</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-en-rSS/values-en-rSS.xml -->
+    <eat-comment/>
+    <string name="tw__loading_tweet">[[60974]] Loading Tweet</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-en-rSS/values-en-rSS.xml -->
+    <eat-comment/>
+    <string name="tw__login_btn_txt">[[94020]] Log in with Twitter</string>
+    <string name="tw__not_now_btn_txt">[[94024]] Not now</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-en-rSS/values-en-rSS.xml -->
+    <eat-comment/>
+    <string name="tw__relative_date_format_long">[[59353]] MM/dd/yy</string>
+    <string name="tw__relative_date_format_short">[[59352]] MMM dd</string>
+    <string name="tw__retweeted_by_format">[[99301]] Retweeted by %1$s</string>
+    <string name="tw__share_content_format">[[60977]] Check out \@%1$s\'s Tweet: https://twitter.com/%1$s/status/%2$s</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-en-rSS/values-en-rSS.xml -->
+    <eat-comment/>
+    <string name="tw__share_email_desc">[[94022]] Get updates and other information from %1$s when you allow\
+        them access to your email on your Twitter account \@%2$s</string>
+    <string name="tw__share_email_title">[[94021]] Share your email address</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-en-rSS/values-en-rSS.xml -->
+    <eat-comment/>
+    <string name="tw__share_subject_format">[[60978]] Tweet from %1$s (\@%2$s)</string>
+    <string name="tw__share_tweet">[[60976]] Share Tweet</string>
+    <string name="tw__tweet_content_description">[[60975]] %1$s. %2$s. %3$s.</string>
+</resources>

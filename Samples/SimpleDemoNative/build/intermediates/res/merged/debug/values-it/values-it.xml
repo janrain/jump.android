@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-it/values-it.xml -->
+    <eat-comment/>
+    <plurals name="tw__time_hours">
+        <item quantity="one">1h</item>
+        <item quantity="other">%dh</item>
+    </plurals>
+    <plurals name="tw__time_mins">
+        <item quantity="one">1m</item>
+        <item quantity="other">%dm</item>
+    </plurals>
+    <plurals name="tw__time_secs">
+        <item quantity="one">1s</item>
+        <item quantity="other">%ds</item>
+    </plurals>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values-it/values-it.xml -->
+    <eat-comment/>
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Vai alla home page"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"Vai in alto"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"Altre opzioni"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"Fine"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"Visualizza tutte"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"Scegli un\'applicazione"</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"Cancella query"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"Query di ricerca"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"Cerca"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"Invia query"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"Ricerca vocale"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Condividi con"</string>
+    <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"Condividi con %s"</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.7.0/unspecified/res/values-it/values-it.xml -->
+    <eat-comment/>
+    <string name="com_facebook_image_download_unknown_error">Errore imprevisto durante il
+        caricamento di un\'immagine.</string>
+    <string name="com_facebook_internet_permission_error_message">L\'accesso tramite Web richiede
+        l\'autorizzazione INTERNET</string>
+    <string name="com_facebook_internet_permission_error_title">AndroidManifest Error</string>
+    <string name="com_facebook_like_button_liked">Ti piace</string>
+    <string name="com_facebook_like_button_not_liked">Mi piace</string>
+    <string name="com_facebook_loading">Caricamento...</string>
+    <string name="com_facebook_loginview_cancel_action">Annulla</string>
+    <string name="com_facebook_loginview_log_in_button">Accedi</string>
+    <string name="com_facebook_loginview_log_in_button_long">Accedi con Facebook</string>
+    <string name="com_facebook_loginview_log_out_action">Esci</string>
+    <string name="com_facebook_loginview_log_out_button">Esci</string>
+    <string name="com_facebook_loginview_logged_in_as">Accesso effettuato come: %1$s</string>
+    <string name="com_facebook_loginview_logged_in_using_facebook">Accesso effettuato con Facebook</string>
+    <string name="com_facebook_send_button_text">Invia</string>
+    <string name="com_facebook_share_button_text">Condividi</string>
+    <string name="com_facebook_tooltip_default">Novità! Il controllo è nelle tue mani: scegli quali informazioni condividere con le applicazioni.</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/res/values-it/common_strings.xml -->
+    <eat-comment/>
+    <string msgid="6428604800157361567" name="common_android_wear_notification_needs_update_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> richiede l\'aggiornamento dell\'app Android Wear."</string>
+    <string msgid="2453027084525739603" name="common_android_wear_update_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> funzionerà solo dopo avere aggiornato Android Wear."</string>
+    <string msgid="1366439133145190222" name="common_android_wear_update_title">"Aggiorna Android Wear"</string>
+    <string msgid="6534628256897874213" name="common_google_play_services_api_unavailable_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> richiede uno o più servizi di Google Play che non sono attualmente disponibili. Contatta lo sviluppatore per ricevere assistenza."</string>
+    <string msgid="4181637455539816337" name="common_google_play_services_enable_button">"Attiva Google Play Services"</string>
+    <string msgid="4896236883690196080" name="common_google_play_services_enable_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> non funzionerà se non attivi Google Play Services."</string>
+    <string msgid="529078775174559253" name="common_google_play_services_enable_title">"Attiva Google Play Services"</string>
+    <string msgid="2443362625939284971" name="common_google_play_services_error_notification_requested_by_msg">"Richiesta da <ns1:g id="APP_NAME">%1$s</ns1:g>"</string>
+    <string msgid="8515591849428043265" name="common_google_play_services_install_button">"Installa Google Play Services"</string>
+    <string msgid="8836325110837822534" name="common_google_play_services_install_text_phone">"<ns1:g id="APP_NAME">%1$s</ns1:g> non funzionerà senza Google Play Services, non presente sul tuo telefono."</string>
+    <string msgid="542176290824754127" name="common_google_play_services_install_text_tablet">"<ns1:g id="APP_NAME">%1$s</ns1:g> non funzionerà senza Google Play Services, non presente sul tuo tablet."</string>
+    <string msgid="26645092511305524" name="common_google_play_services_install_title">"Installa Google Play Services"</string>
+    <string msgid="4983316348021735578" name="common_google_play_services_invalid_account_text">"L\'account specificato non esiste su questo dispositivo. Scegli un altro account."</string>
+    <string msgid="1066672360770936753" name="common_google_play_services_invalid_account_title">"Account non valido"</string>
+    <string msgid="2583358409598976717" name="common_google_play_services_needs_enabling_title">"Un\'applicazione richiede l\'attivazione di Google Play Services."</string>
+    <string msgid="9038847255613537209" name="common_google_play_services_network_error_text">"È necessaria una connessione dati per connettersi a Google Play Services."</string>
+    <string msgid="3827284619958211114" name="common_google_play_services_network_error_title">"Errore di rete"</string>
+    <string msgid="1388129345631079938" name="common_google_play_services_notification_needs_update_title">"Un\'applicazione richiede un aggiornamento di Google Play Services."</string>
+    <string msgid="1852570676146674985" name="common_google_play_services_notification_ticker">"Errore Google Play Services"</string>
+    <string msgid="5194079840165204725" name="common_google_play_services_sign_in_failed_text">"Errore durante l\'accesso all\'account specificato. Scegli un altro account."</string>
+    <string msgid="8164948898147532159" name="common_google_play_services_sign_in_failed_title">"Accesso non riuscito"</string>
+    <string msgid="4762332809710093730" name="common_google_play_services_unknown_issue">"Problema sconosciuto con Google Play Services."</string>
+    <string msgid="7682982632307307938" name="common_google_play_services_unsupported_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> si basa su Google Play Services, che non è supportato sul tuo dispositivo. Contatta il produttore per ricevere assistenza."</string>
+    <string msgid="6334768798839376943" name="common_google_play_services_unsupported_title">"Google Play Services"</string>
+    <string msgid="8932944190611227642" name="common_google_play_services_update_button">"Aggiorna"</string>
+    <string msgid="5709479369299147668" name="common_google_play_services_update_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> non funzionerà se non aggiorni Google Play Services."</string>
+    <string msgid="6006316683626838685" name="common_google_play_services_update_title">"Aggiorna Google Play Services"</string>
+    <string msgid="2201289642219771610" name="common_google_play_services_updating_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> non funzionerà senza Google Play Services, attualmente in fase di aggiornamento."</string>
+    <string msgid="815008177440683245" name="common_google_play_services_updating_title">"Aggiornamento di Google Play Services"</string>
+    <string msgid="411506735369601515" name="common_open_on_phone">"Apri sul telefono"</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values-it/values-it.xml -->
+    <eat-comment/>
+    <string name="dgts__confirmation_code">Codice di conferma</string>
+    <string name="dgts__confirmation_edit_hint">Inserisci codice di conferma</string>
+    <string name="dgts__confirmation_error">Impossibile confermare il tuo numero di telefono</string>
+    <string name="dgts__confirmation_error_alternative">Spiacenti, non riusciamo a inviarti un codice di conferma.</string>
+    <string name="dgts__confirmation_expired">Questo codice è scaduto. Reinvia codice di conferma.</string>
+    <string name="dgts__digits_logo_desc">icona del logo su Digits</string>
+    <string name="dgts__digits_logo_name_desc">nome del logo su Digits</string>
+    <string name="dgts__dismiss">Rimuovi</string>
+    <string name="dgts__find_your_friends">Trova i tuoi amici</string>
+    <string name="dgts__image_header_description">Immagine d\'intestazione per l\'accesso</string>
+    <string name="dgts__login_digits_text">Usa il mio numero di telefono</string>
+    <string name="dgts__network_error">Controlla la tua rete e riprova.</string>
+    <string name="dgts__not_now">Non ora</string>
+    <string name="dgts__okay">Ok</string>
+    <string name="dgts__phone_number_edit_hint">Il tuo numero</string>
+    <string name="dgts__phone_number_text">Inserisci il tuo numero di telefono</string>
+    <string name="dgts__pin_code_verification_title">Inserisci il codice di verifica in 2 passaggi</string>
+    <string name="dgts__resend_confirmation_text">Reinvia codice di conferma</string>
+    <string name="dgts__success_desc">Icona di avvenuta operazione</string>
+    <string name="dgts__terms_text">Selezionando %1$sInvia codice di conferma%1$s qui sopra, ti verrà inviato un SMS da Digits by Twitter per confermare il tuo numero di telefono. Verranno applicate le tariffe standard.</string>
+    <string name="dgts__terms_text_create">Selezionando %1$sCrea account%1$s qui sopra, accetti i Termini di servizio, l\'Informativa sulla privacy e l\'Informativa sull\'uso dei cookie di Digits by Twitter. Accetti inoltre che altri utenti di quest\'app possano trovarti tramite il tuo numero di telefono e/o la tua email.</string>
+    <string name="dgts__terms_text_sign_in">Toccando %1$sAccedi%1$s qui sopra, accetti l\'aggiornamento di Termini di servizio, Informativa sulla privacy e Informativa sull\'uso dei cookie di Digits by Twitter. Accetti inoltre che altri utenti di %1$s possano trovarti tramite numero di telefono e/o email.</string>
+    <string name="dgts__try_again">Riprova</string>
+    <string name="dgts__try_again_confirmation">Controlla il tuo codice e riprova.</string>
+    <string name="dgts__try_again_phone_number">Controlla il tuo numero e riprova.</string>
+    <string name="dgts__try_another_phone">Prova con un altro numero di telefono</string>
+    <string name="dgts__upload_contacts">Utilizziamo Digits by Twitter per trovare altri tuoi amici che usano quest\'app. Selezionando Ok, caricheremo la tua rubrica su Digits by Twitter per aiutarti a trovare utenti di %1$s che conosci o per aiutare altri utenti di %1$s a trovarti.</string>
+    <string name="dgts__verification_code">Codice di verifica</string>
+    <string name="dgts_pin_code_terms">Precedentemente hai impostato un codice di verifica in 2 passaggi su digits.com</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.7.0/unspecified/res/values-it/values-it.xml -->
+    <eat-comment/>
+    <string name="messenger_send_button_text">Invia</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-it/values-it.xml -->
+    <eat-comment/>
+    <string msgid="4271159405637008602" name="mr_media_route_button_content_description">"Uscita media"</string>
+    <string msgid="7553005460920830010" name="mr_media_route_chooser_searching">"Ricerca di dispositivi…"</string>
+    <string msgid="7106830097177242655" name="mr_media_route_chooser_title">"Connetti al dispositivo"</string>
+    <string msgid="109793632378378069" name="mr_media_route_controller_disconnect">"Disconnetti"</string>
+    <string msgid="5441529851481176817" name="mr_system_route_name">"Sistema"</string>
+    <string msgid="7498112907524977311" name="mr_user_route_category_name">"Dispositivi"</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-it/values-it.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">Consenti</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-it/values-it.xml -->
+    <eat-comment/>
+    <string name="tw__loading_tweet">Caricamento del Tweet in corso</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-it/values-it.xml -->
+    <eat-comment/>
+    <string name="tw__login_btn_txt">Accedi con Twitter</string>
+    <string name="tw__not_now_btn_txt">Non adesso</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-it/values-it.xml -->
+    <eat-comment/>
+    <string name="tw__relative_date_format_long">d/M/y</string>
+    <string name="tw__relative_date_format_short">d MMM</string>
+    <string name="tw__retweeted_by_format">Ritwittato da %1$s</string>
+    <string name="tw__share_content_format">Dai un\'occhiata al Tweet di \@%1$s: https://twitter.com/%1$s/status/%2$s</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-it/values-it.xml -->
+    <eat-comment/>
+    <string name="tw__share_email_desc">Ricevi aggiornamenti e altre informazioni da %1$s nel momento in cui gli permetti di ottenere la tua email tramite il tuo account Twitter \@%2$s</string>
+    <string name="tw__share_email_title">Condividi il tuo indirizzo email</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-it/values-it.xml -->
+    <eat-comment/>
+    <string name="tw__share_subject_format">Tweet da %1$s (\@%2$s)</string>
+    <string name="tw__share_tweet">Condividi Tweet</string>
+    <string name="tw__tweet_content_description">%1$s. %2$s. %3$s.</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.1.0/res/values-it/wallet_strings.xml -->
+    <eat-comment/>
+    <string msgid="4184147110658930238" name="wallet_buy_button_place_holder">"Acquista con Google"</string>
+</resources>

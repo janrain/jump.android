@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-ms/values-ms.xml -->
+    <eat-comment/>
+    <plurals name="tw__time_hours">
+        <item quantity="one">1j</item>
+        <item quantity="other">%dh</item>
+    </plurals>
+    <plurals name="tw__time_mins">
+        <item quantity="one">1m</item>
+        <item quantity="other">%dm</item>
+    </plurals>
+    <plurals name="tw__time_secs">
+        <item quantity="one">1s</item>
+        <item quantity="other">%ds</item>
+    </plurals>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.7.0/unspecified/res/values-ms/values-ms.xml -->
+    <eat-comment/>
+    <string name="com_facebook_image_download_unknown_error">Ralat tidak dijangka ketika memuat turun imej.</string>
+    <string name="com_facebook_internet_permission_error_message">Log masuk WebView memerlukan kebenaran INTERNET</string>
+    <string name="com_facebook_internet_permission_error_title">Ralat AndroidManifest</string>
+    <string name="com_facebook_like_button_liked">Disukai</string>
+    <string name="com_facebook_like_button_not_liked">Suka</string>
+    <string name="com_facebook_loading">Memuatkan...</string>
+    <string name="com_facebook_loginview_cancel_action">Batal</string>
+    <string name="com_facebook_loginview_log_in_button">Log masuk</string>
+    <string name="com_facebook_loginview_log_in_button_long">Log masuk dengan Facebook</string>
+    <string name="com_facebook_loginview_log_out_action">Log keluar</string>
+    <string name="com_facebook_loginview_log_out_button">Log keluar</string>
+    <string name="com_facebook_loginview_logged_in_as">Dilog masuk sebagai: %1$s</string>
+    <string name="com_facebook_loginview_logged_in_using_facebook">Dilog masuk menggunakan Facebook</string>
+    <string name="com_facebook_send_button_text">Hantar</string>
+    <string name="com_facebook_share_button_text">Kongsi</string>
+    <string name="com_facebook_tooltip_default">Baru! Anda yang mengawal - pilih maklumat yang anda ingin kongsi dengan aplikasi.</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values-ms/values-ms.xml -->
+    <eat-comment/>
+    <string name="dgts__confirmation_code">Kod pengesahan</string>
+    <string name="dgts__confirmation_edit_hint">Masukkan kod pengesahan</string>
+    <string name="dgts__confirmation_error">Tidak dapat mengesahkan nombor telefon anda</string>
+    <string name="dgts__confirmation_error_alternative">Maaf, kami menghadapi masalah menghantar anda kod pengesahan.</string>
+    <string name="dgts__confirmation_expired">Kod ini telah tamat tempoh. Sila hantar semula kod pengesahan.</string>
+    <string name="dgts__digits_logo_desc">ikon logo digits</string>
+    <string name="dgts__digits_logo_name_desc">nama logo digits</string>
+    <string name="dgts__dismiss">Abai</string>
+    <string name="dgts__find_your_friends">Cari rakan anda</string>
+    <string name="dgts__image_header_description">Imej pengepala untuk log masuk</string>
+    <string name="dgts__login_digits_text">Gunakan nombor telefon saya</string>
+    <string name="dgts__network_error">Sila semak rangkaian anda dan cuba sekali lagi.</string>
+    <string name="dgts__not_now">Bukan sekarang</string>
+    <string name="dgts__okay">Okay</string>
+    <string name="dgts__phone_number_edit_hint">Nombor Anda</string>
+    <string name="dgts__phone_number_text">Masukkan nombor telefon anda</string>
+    <string name="dgts__pin_code_verification_title">Masukkan kod pengesahan 2 langkah</string>
+    <string name="dgts__resend_confirmation_text">Hantar semula kod pengesahan</string>
+    <string name="dgts__success_desc">Ikon Berjaya</string>
+    <string name="dgts__terms_text">Dengan mengetik %1$sHantar kod pengesahan%1$s di atas, Digits by Twitter, akan menghantar anda mesej SMS untuk mengesahkan nombor telefon anda. Kadar mesej &amp; data boleh dikenakan.</string>
+    <string name="dgts__terms_text_create">Dengan mengetik %1$sCipta akaun%1$s di atas, anda bersetuju dengan Dasar Perkhidmatan, Dasar Privasi dan Dasar Kuki Digits by Twitter, dan bahawa pengguna lain daripada aplikasi ini boleh menemui anda menggunakan nombor telefon dan/atau e-mel anda.</string>
+    <string name="dgts__terms_text_sign_in">Dengan mengetik %1$sDaftar masuk%1$s di atas, anda bersetuju dengan Dasar Perkhidmatan, Dasar Privasi dan Dasar Kuki Digits by Twitter, dan bahawa pengguna lain %1$s boleh menemui anda menggunakan nombor telefon dan/atau e-mel.</string>
+    <string name="dgts__try_again">Cuba Lagi</string>
+    <string name="dgts__try_again_confirmation">Sila semak kod anda dan cuba sekali lagi.</string>
+    <string name="dgts__try_again_phone_number">Sila semak nombor anda dan cuba sekali lagi.</string>
+    <string name="dgts__try_another_phone">Cuba nombor telefon lain</string>
+    <string name="dgts__upload_contacts">Kami menggunakan Digits by Twitter untuk mencari lebih ramai rakan anda yang menggunakan aplikasi ini. Apabila anda mengetik Okey, kami akan memuat naik buku alamat anda ke Digits by Twitter supaya kami boleh membantu anda mencari pengguna %1$s yang anda kenali atau membantu pengguna lain %1$s mencari anda.</string>
+    <string name="dgts__verification_code">Kod pengesahan</string>
+    <string name="dgts_pin_code_terms">Anda telah setkan kod pengesahan 2 langkah sebelum ini di digits.com</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.7.0/unspecified/res/values-ms/values-ms.xml -->
+    <eat-comment/>
+    <string name="messenger_send_button_text">Hantar</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-ms/values-ms.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">Benarkan</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-ms/values-ms.xml -->
+    <eat-comment/>
+    <string name="tw__loading_tweet">Memuatkan Tweet</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-ms/values-ms.xml -->
+    <eat-comment/>
+    <string name="tw__login_btn_txt">Log masuk dengan Twitter</string>
+    <string name="tw__not_now_btn_txt">Bukan sekarang</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-ms/values-ms.xml -->
+    <eat-comment/>
+    <string name="tw__relative_date_format_long">d/M/y</string>
+    <string name="tw__relative_date_format_short">d MMM</string>
+    <string name="tw__retweeted_by_format">Ditweet semula oleh %1$s</string>
+    <string name="tw__share_content_format">Semak Tweet \@%1$s\ : https://twitter.com/%1$s/status/%2$s</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-ms/values-ms.xml -->
+    <eat-comment/>
+    <string name="tw__share_email_desc">Dapatkan kemas kini dan maklumat lain daripada %1$s apabila anda memberikan mereka akses kepada e-mel anda pada akaun Twitter anda \@%2$s</string>
+    <string name="tw__share_email_title">Kongsi alamat e-mel anda</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-ms/values-ms.xml -->
+    <eat-comment/>
+    <string name="tw__share_subject_format">Tweet daripada %1$s (\@%2$s)</string>
+    <string name="tw__share_tweet">Kongsi Tweet</string>
+    <string name="tw__tweet_content_description">%1$s. %2$s. %3$s.</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/jr_fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+</FrameLayout><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/layout/jr_fragment_host_activity.xml --><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/bundles/debug/res/layout/jr_fragment_host_activity.xml -->

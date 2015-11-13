@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SimpleDemo.iml" filepath="$PROJECT_DIR$/SimpleDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/facebook-android-sdk-4.7.0/facebook-android-sdk-4.7.0.iml" filepath="$PROJECT_DIR$/facebook-android-sdk-4.7.0/facebook-android-sdk-4.7.0.iml" />
       <module fileurl="file://$PROJECT_DIR$/jump/jump.iml" filepath="$PROJECT_DIR$/jump/jump.iml" />
     </modules>
   </component>

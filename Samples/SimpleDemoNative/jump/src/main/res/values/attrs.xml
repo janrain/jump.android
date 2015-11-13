@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ColorButton">
+        <attr name="jr_color" format="color"/>
+    </declare-styleable>
+
+    <attr name="jrCustomLandingStyle" format="reference"/>
+    <attr name="jrCustomLandingRootViewStyle" format="reference"/>
+
+    <attr name="jrPublishTriangleResource" format="reference"/>
+    <attr name="jrPublishTriangleVisibility" format="integer">
+        <enum name="visible" value="0"/>
+        <enum name="invisible" value="1"/>
+        <enum name="gone" value="2"/>
+    </attr>
+
+</resources>
