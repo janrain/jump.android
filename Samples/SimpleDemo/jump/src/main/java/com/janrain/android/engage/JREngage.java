@@ -583,25 +583,6 @@ public class JREngage {
     }
 
     /**
-     * Begins authentication.  The library will
-     * start a new Android Activity and take the user through the sign-in process.
-     *
-     * @param fromActivity The Activity from which to show the authentication dialog
-     * @param provider     Specify a provider to start authentication with. No provider selection list will
-     *                     be shown, the user will be brought directly to authentication with this provider.
-     *                     If null the user will be shown the provider list as usual.
-     *          
-     * @note If you always want to force the user to re-enter his/her credentials, pass \c true to the method
-     * setAlwaysForceReauthentication().
-     */
-    //PB
-    /*
-    public void showAuthenticationDialog(Activity fromActivity, String provider, String[] permissions) {
-        showAuthenticationDialog(fromActivity, null, provider, permissions,  null);
-    }
-    */
-
-    /**
      * @param provider                     See showAuthenticationDialog(Activity fromActivity, String provider)
      * @param skipReturningUserLandingPage See showAuthenticationDialog(Activity fromActivity, String provider)
      * @deprecated use showAuthenticationDialog(Activity fromActivity, String provider) instead
@@ -701,61 +682,6 @@ public class JREngage {
     }
 
     /**
-     * Begins authentication.  The library will
-     * start a new Android Activity and take the user through the sign-in process.
-     *
-     * @param fromActivity                 The Activity from which to show the authentication dialog
-     * @param skipReturningUserLandingPage Prevents the dialog from opening to the returning-user landing
-     *                                     page when \c true.  That is, the dialog will always open straight
-     *                                     to the list of providers.  The dialog falls back to the default
-     *                                     behavior when \c false
-     * @param provider                     Specify a provider to start authentication with. No provider
-     *                                     selection list will be shown, the user will be brought directly
-     *                                     to authentication with this provider. If null the user will be
-     *                                     shown the provider list as usual.
-     * @param permissions                  If Native Authentication is used, pass these Permissions/Scopes
-     *                                     selection list will be shown, the user will be brought directly
-     *                                     to Facebook/GooglePlus.  Otherwise ignored.
-     * @param uiCustomization              The custom sign-in object to display in the provider list. May be
-     *                                     null for no custom sign-in.
-     * @note If you always want to force the user to re-enter his/her credentials, pass \c true to the method
-     * setAlwaysForceReauthentication().
-     */
-    //PB
-    /*
-    public void showAuthenticationDialog(final Activity fromActivity,
-                                         final Boolean skipReturningUserLandingPage,
-                                         final String provider,
-                                         final String[] permissions,
-                                         final Class<? extends JRCustomInterface> uiCustomization) {
-        blockOnInitialization();
-        if (checkSessionDataError()) return;
-        checkNullActivity(fromActivity);
-
-        if (skipReturningUserLandingPage != null) {
-            mSession.setSkipLandingPage(skipReturningUserLandingPage);
-        }
-
-        if (provider != null && mSession.getProviderByName(provider) == null && !mSession.isConfigDone()) {
-            final Dialog progressDialog = UiUtils.getProgressDialog(fromActivity);
-            progressDialog.show();
-
-
-            mConfigFinishListeners.add(new ConfigFinishListener() {
-                public void configDidFinish() {
-                    mConfigFinishListeners.remove(this);
-                    checkSessionDataError();
-                    showAuthFlowInternal(fromActivity, provider, permissions, uiCustomization);
-                    progressDialog.dismiss();
-                }
-            });
-        } else {
-            showAuthFlowInternal(fromActivity, provider, permissions, uiCustomization);
-        }
-    }
-    */
-
-    /**
      * Begins authentication. The library will start a new Android Activity and take the user through the
      * sign-in process.
      *
@@ -778,53 +704,7 @@ public class JREngage {
      * @note If you always want to force the user to re-enter his/her credentials, pass \c true to the method
      * setAlwaysForceReauthentication().
      */
-    //PB
-    /*
-    public void showAuthenticationDialog(final Activity fromActivity,
-                                         final Boolean skipReturningUserLandingPage,
-                                         final String provider,
-                                         final String[] permissions,
-                                         final Class<? extends JRCustomInterface> uiCustomization,
-                                         final boolean linkAccount) {
-        mSession.setLinkAccount(linkAccount);
-        showAuthenticationDialog(fromActivity, skipReturningUserLandingPage, provider, permissions, uiCustomization);
-    }
-    */
-
-    /**
-     * Sign out of the Native Google+ SDK
-     * @param fromActivity
-     */
-    //PB
-    /*
-    public void signOutNativeGooglePlus(Activity fromActivity) {
-        mSession.signOutNativeProviders(fromActivity);
-    }
-    */
-
-    /**
-     * Revoke the Google+ access token and disconnect the app
-     * After calling this you must delete whatever information you've obtained from Google+
-     * @param fromActivity
-     */
-    //PB
-    /*
-    public void revokeAndDisconnectNativeGooglePlus(Activity fromActivity) {
-        mSession.revokeAndDisconnectNativeGooglePlus(fromActivity);
-    }
-    */
-
-    /**
-     * Revoke the Facebook access token and disconnect the app
-     * After calling this you must delete whatever information you've obtained from Google+
-     * @param fromActivity
-     */
-    //PB
-    /*
-    public void revokeAndDisconnectNativeFacebook(final Activity fromActivity) {
-    	mSession.revokeAndDisconnectNativeFacebook(fromActivity);
-    }
-    */
+ 
 
     /**
      * Change the engage app ID and reload the Engage configuration data
@@ -863,39 +743,9 @@ public class JREngage {
         void configDidFinish();
     }
 
-    /**
-     * @internal
-     * @hide
-     */
-    //PB
-    /*
-    private void showAuthFlowInternal(final Activity fromActivity,
-                                      final String providerName,
-                                      final String[] permissions,
-                                      final Class<? extends JRCustomInterface> uiCustomization) {
-        JRProvider provider = mSession.getProviderByName(providerName);
 
-        if (provider != null && JRNativeAuth.canHandleProvider(provider)) {
-        	if(permissions != null){
-        		showNativeAuthFlowInternal(fromActivity, provider, permissions, uiCustomization);
-        	}else{
-        		showWebAuthFlowInternal(fromActivity, providerName, provider, uiCustomization);
-        	}
-        } else {
-            showWebAuthFlowInternal(fromActivity, providerName, provider, uiCustomization);
-        }
-    }
-    */
     public static enum NativeAuthError {
-        //CANNOT_INVOKE_FACEBOOK_OPEN_SESSION_METHODS,
-        //FACEBOOK_SESSION_IS_CLOSED,
-        ENGAGE_ERROR,
-        //LOGIN_CANCELED,
-        //GOOGLE_PLAY_UNAVAILABLE,
-        //CANNOT_INSTANTIATE_GOOGLE_PLAY_CLIENT,
-        //CANNOT_GET_GOOGLE_PLUS_ACCESS_TOKEN,
-        //GOOGLE_PLUS_DISCONNECTED,
-        //COULD_NOT_RESOLVE_GOOGLE_PLUS_RESULT
+        ENGAGE_ERROR
     }
 
     public void getAuthInfoTokenForNativeProvider(final Activity fromActivity,
@@ -967,47 +817,6 @@ public class JREngage {
 
     }
 
-    //PB
-    /*
-    private void showNativeAuthFlowInternal(final Activity fromActivity,
-                                            final JRProvider provider,
-                                            final String[] permissions,
-                                            final Class<? extends JRCustomInterface> uiCustomization) {
-        mSession.setCurrentlyAuthenticatingProvider(provider);
-        mSession.setCurrentlyAuthenticatingProviderPermissions(permissions);
-        mUiCustomization = uiCustomization;
-
-        Intent i = JRFragmentHostActivity.createNativeAuthIntent(fromActivity);
-        i.putExtra(JRFragmentHostActivity.JR_PROVIDER, provider.getName());
-        fromActivity.startActivity(i);
-    }
-    */
-
-    //PB
-    /*
-    public JRNativeAuth.NativeAuthCallback getNativeAuthCallback(final Activity fromActivity,
-            final Class<? extends JRCustomInterface> uiCustomization) {
-        final JRProvider provider = mSession.getCurrentlyAuthenticatingProvider();
-        final String[] permissions = mSession.getCurrentlyAuthenticatingProviderPermissions();
-
-        return new JRNativeAuth.NativeAuthCallback() {
-            public void onSuccess(JRDictionary payload) {
-                mSession.saveLastUsedAuthProvider();
-                mSession.triggerAuthenticationDidCompleteWithPayload(payload);
-            }
-
-            public boolean shouldTriggerAuthenticationDidCancel() {
-                return true;
-            }
-
-            public void tryWebViewAuthentication() {
-                showWebAuthFlowInternal(fromActivity, provider.getName(), provider, uiCustomization);
-            }
-        };
-    }
-    */
-
-    //PB - CLEAN UP
     private void showWebAuthFlowInternal(final Activity fromActivity,
                                          final String providerName,
                                          final JRProvider provider,
@@ -1345,30 +1154,7 @@ public class JREngage {
 /*@}*/
 
 
-    /**
-     * Set this to "true" if you want the Janrain SDK to silently fail, then attempt WebView authentication
-     * when the Google+ SDK is integrated but Google Play Services is unavailable.
-     *
-     * When false, if the Google Play error is SERVICE_MISSING, SERVICE_VERSION_UPDATE_REQUIRE, or
-     * SERVICE_DISABLED, then the SDK will present Google's dialog suggesting that the user install or update
-     * Google Play Services. After the dialog is dismissed it will call your onFailure method. If the Google
-     * Play error is something else, then the SDK will silently fail and attempt WebView authentication.
-     *
-     * Reference: https://developer.android.com/google/play-services/setup.html#ensure
-     *
-     * This defaults to true.
-     */
-    //PB
-    /*
-    public void setTryWebViewAuthenticationWhenGooglePlayIsUnavailable(boolean newValue) {
-        tryWebViewAuthenticationWhenGooglePlayIsUnavailable = newValue;
-    }
-
-    public static boolean shouldTryWebViewAuthenticationWhenGooglePlayIsUnavailable() {
-        return getInstance().tryWebViewAuthenticationWhenGooglePlayIsUnavailable;
-    }
-    */
-
+    
     private JRSessionDelegate mJrsd = new JRSessionDelegate.SimpleJRSessionDelegate() {
         public void authenticationDidCancel() {
             LogUtils.logd();

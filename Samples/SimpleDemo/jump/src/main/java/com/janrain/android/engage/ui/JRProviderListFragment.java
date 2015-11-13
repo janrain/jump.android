@@ -49,8 +49,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.janrain.android.R;
-//PB
-// import com.janrain.android.engage.JRNativeAuth;
 import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.session.JRSession;
 import com.janrain.android.utils.LogUtils;
@@ -81,9 +79,6 @@ public class JRProviderListFragment extends JRUiFragment {
 
     private boolean mSectionHeaderEnabled;
     private boolean mSectionFooterEnabled;
-
-    //PB
-    //private JRNativeAuth.NativeProvider nativeProvider;
 
     /**
      * @internal
@@ -284,16 +279,8 @@ public class JRProviderListFragment extends JRUiFragment {
             final JRProvider provider = mAdapter.getItem((int) id - (mSectionHeaderEnabled ? 1 : 0));
             mSession.setCurrentlyAuthenticatingProvider(provider);
 
-            //PB
             startWebViewAuthForProvider(provider);
-            //PB
-            /*
-            if (JRNativeAuth.canHandleProvider(provider)) {
-                startNativeAuth();
-            } else {
-                startWebViewAuthForProvider(provider);
-            }
-            */
+            
         }
     };
 
