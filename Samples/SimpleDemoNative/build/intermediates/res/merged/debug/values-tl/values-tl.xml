@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-tl/values-tl.xml -->
+    <eat-comment/>
+    <plurals name="tw__time_hours">
+        <item quantity="one">1h</item>
+        <item quantity="other">%dh</item>
+    </plurals>
+    <plurals name="tw__time_mins">
+        <item quantity="one">1m</item>
+        <item quantity="other">%dm</item>
+    </plurals>
+    <plurals name="tw__time_secs">
+        <item quantity="one">1s</item>
+        <item quantity="other">%ds</item>
+    </plurals>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values-tl/values-tl.xml -->
+    <eat-comment/>
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Mag-navigate patungo sa home"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"Mag-navigate pataas"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"Higit pang mga opsyon"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"Tapos na"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"Tingnan lahat"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"Pumili ng isang app"</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"I-clear ang query"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"Query sa paghahanap"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"Maghanap"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"Isumite ang query"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"Paghahanap gamit ang boses"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Ibahagi sa/kay"</string>
+    <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"Ibahagi sa/kay %s"</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.7.0/unspecified/res/values-tl/values-tl.xml -->
+    <eat-comment/>
+    <string name="com_facebook_image_download_unknown_error">Hindi inaasahang error habang dina-download ang imahe.</string>
+    <string name="com_facebook_internet_permission_error_message">Ang pag-log in sa Web ay nangangailangan ng pahintulot sa INTERNET</string>
+    <string name="com_facebook_internet_permission_error_title">Error na AndroidManifest</string>
+    <string name="com_facebook_like_button_liked">Nagustuhan</string>
+    <string name="com_facebook_like_button_not_liked">Gustuhin</string>
+    <string name="com_facebook_loading">Naglo-load...</string>
+    <string name="com_facebook_loginview_cancel_action">Kanselahin</string>
+    <string name="com_facebook_loginview_log_in_button">Mag-log in</string>
+    <string name="com_facebook_loginview_log_in_button_long">Mag-log in sa pamamagitan ng Facebook</string>
+    <string name="com_facebook_loginview_log_out_action">Mag-log out</string>
+    <string name="com_facebook_loginview_log_out_button">Mag-log out</string>
+    <string name="com_facebook_loginview_logged_in_as">Naka-log in bilang si: %1$s</string>
+    <string name="com_facebook_loginview_logged_in_using_facebook">Naka-log in gamit ang Facebook</string>
+    <string name="com_facebook_send_button_text">Ipadala</string>
+    <string name="com_facebook_share_button_text">Ibahagi</string>
+    <string name="com_facebook_tooltip_default">Bago! Ikaw ang may kontrol - piliin kung anong impormasyon ang gusto mong ibahagi sa mga app.</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/res/values-tl/common_strings.xml -->
+    <eat-comment/>
+    <string msgid="6428604800157361567" name="common_android_wear_notification_needs_update_text">"Ang <ns1:g id="APP_NAME">%1$s</ns1:g> ay nangangailangan ng update sa Android Wear app."</string>
+    <string msgid="2453027084525739603" name="common_android_wear_update_text">"Hindi gagana ang <ns1:g id="APP_NAME">%1$s</ns1:g> maliban kung i-a-update mo ang Android Wear app."</string>
+    <string msgid="1366439133145190222" name="common_android_wear_update_title">"I-update ang Android Wear"</string>
+    <string msgid="6534628256897874213" name="common_google_play_services_api_unavailable_text">"Kailangan ng <ns1:g id="APP_NAME">%1$s</ns1:g> ng isa o higit pang mga serbisyo ng Google Play na kasalukuyang hindi available. Mangyaring makipag-ugnayan sa developer para sa tulong."</string>
+    <string msgid="4181637455539816337" name="common_google_play_services_enable_button">"Enable Google Play services"</string>
+    <string msgid="4896236883690196080" name="common_google_play_services_enable_text">"Hindi gagana ang <ns1:g id="APP_NAME">%1$s</ns1:g> maliban kung i-e-enable mo ang mga serbisyo ng Google Play."</string>
+    <string msgid="529078775174559253" name="common_google_play_services_enable_title">"Paganahin ang Google Play services"</string>
+    <string msgid="2443362625939284971" name="common_google_play_services_error_notification_requested_by_msg">"Hiniling ng <ns1:g id="APP_NAME">%1$s</ns1:g>"</string>
+    <string msgid="8515591849428043265" name="common_google_play_services_install_button">"Kumuha ng Google Play services"</string>
+    <string msgid="8836325110837822534" name="common_google_play_services_install_text_phone">"Hindi gagana ang <ns1:g id="APP_NAME">%1$s</ns1:g> nang wala ang mga serbisyo ng Google Play na wala sa iyong telepono."</string>
+    <string msgid="542176290824754127" name="common_google_play_services_install_text_tablet">"Hindi gagana ang <ns1:g id="APP_NAME">%1$s</ns1:g> nang wala ang mga serbisyo ng Google Play na wala sa iyong tablet."</string>
+    <string msgid="26645092511305524" name="common_google_play_services_install_title">"Kumuha ng mga serbisyo ng Google Play"</string>
+    <string msgid="4983316348021735578" name="common_google_play_services_invalid_account_text">"Hindi umiiral ang tinukoy na account sa device na ito. Mangyaring pumili ng ibang account."</string>
+    <string msgid="1066672360770936753" name="common_google_play_services_invalid_account_title">"Di-wasto ang Account"</string>
+    <string msgid="2583358409598976717" name="common_google_play_services_needs_enabling_title">"Kailangan ng application na na-enable ang Mga Serbisyo ng Google Play."</string>
+    <string msgid="9038847255613537209" name="common_google_play_services_network_error_text">"Kailangan ng koneksyon ng data upang makakonekta sa mga serbisyo ng Google Play."</string>
+    <string msgid="3827284619958211114" name="common_google_play_services_network_error_title">"May Error sa Network"</string>
+    <string msgid="1388129345631079938" name="common_google_play_services_notification_needs_update_title">"Kailangan ng application ng update sa Mga Serbisyo ng Google Play."</string>
+    <string msgid="1852570676146674985" name="common_google_play_services_notification_ticker">"Error sa Mga Serbisyo ng Google Play"</string>
+    <string msgid="5194079840165204725" name="common_google_play_services_sign_in_failed_text">"Error sa pagsa-sign in sa tinukoy na account. Pakipili ng ibang account."</string>
+    <string msgid="8164948898147532159" name="common_google_play_services_sign_in_failed_title">"Hindi nakapag-sign in"</string>
+    <string msgid="4762332809710093730" name="common_google_play_services_unknown_issue">"May hindi alam na isyu sa mga serbisyo ng Google Play."</string>
+    <string msgid="7682982632307307938" name="common_google_play_services_unsupported_text">"Sumasalalay ang <ns1:g id="APP_NAME">%1$s</ns1:g> sa mga serbisyo ng Google Play na hindi sinusuportahan ng iyong device. Makipag-ugnayan sa manufacturer para sa tulong."</string>
+    <string msgid="6334768798839376943" name="common_google_play_services_unsupported_title">"Mga serbisyo ng Google Play"</string>
+    <string msgid="8932944190611227642" name="common_google_play_services_update_button">"I-update"</string>
+    <string msgid="5709479369299147668" name="common_google_play_services_update_text">"Hindi gagana ang <ns1:g id="APP_NAME">%1$s</ns1:g> maliban kung i-a-update mo ang mga serbisyo ng Google Play."</string>
+    <string msgid="6006316683626838685" name="common_google_play_services_update_title">"I-update ang mga serbisyo ng Google Play"</string>
+    <string msgid="2201289642219771610" name="common_google_play_services_updating_text">"Hindi gagana ang <ns1:g id="APP_NAME">%1$s</ns1:g> nang wala ang mga serbisyo ng Google Play na kasalukuyang ina-update."</string>
+    <string msgid="815008177440683245" name="common_google_play_services_updating_title">"Ina-update mga serbisyo ng Google Play"</string>
+    <string msgid="411506735369601515" name="common_open_on_phone">"Buksan sa telepono"</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values-tl/values-tl.xml -->
+    <eat-comment/>
+    <string name="dgts__confirmation_code">Code sa Pagkumpirma</string>
+    <string name="dgts__confirmation_edit_hint">Ipasok code ng kumpirmasyon</string>
+    <string name="dgts__confirmation_error">Hindi makumpirma ang numero ng iyong telepono. </string>
+    <string name="dgts__confirmation_error_alternative">Paumanhin, nagkakaproblema kaming ipadala sa iyo ang code ng kumpirmasyon.</string>
+    <string name="dgts__confirmation_expired">Paso na ang code na ito. Pakipadala ulit ang code sa kumpirmasyon.</string>
+    <string name="dgts__digits_logo_desc">icon ng digits logo</string>
+    <string name="dgts__digits_logo_name_desc">pangalan ng digits logo</string>
+    <string name="dgts__dismiss">I-dismiss</string>
+    <string name="dgts__find_your_friends">Hanapin ang mga kaibigan mo</string>
+    <string name="dgts__image_header_description">Image header para sa login</string>
+    <string name="dgts__login_digits_text">Gamitin ang numero ng telepono.</string>
+    <string name="dgts__network_error">Pakitingnan ang inyong network at subukan ulit.</string>
+    <string name="dgts__not_now">Hindi ngayon</string>
+    <string name="dgts__okay">Okay</string>
+    <string name="dgts__phone_number_edit_hint">Ang Numero Mo</string>
+    <string name="dgts__phone_number_text">Ipasok ang numero ng telepono mo.</string>
+    <string name="dgts__pin_code_verification_title">Ipasok ang 2-step verification code</string>
+    <string name="dgts__resend_confirmation_text">Ipadala ulit code ng kumpirmasyon</string>
+    <string name="dgts__success_desc">Success Icon</string>
+    <string name="dgts__terms_text">Sa pag-tap sa %1$sIpadala ang code ng kumpirmasyon%1$s sa itaas, papadalhan ka ng Digits by Twitter ng mensaheng SMS para kumpirmahin ang numero ng telepono mo. Maaaring malapatan ng singil sa mensahe at data.</string>
+    <string name="dgts__terms_text_create">Sa pag-tap sa %1$sGumawa ng account%1$s sa itaas, sumasang-ayon ka sa Mga Tuntunin ng Serbisyo, Patakaran sa Pagkapribado, at Patakaran sa Mga Cookie ng Digits by Twitter, at sumasang-ayon ka rin na maaari kang matuklasan ng iba pang mga user ng app na ito gamit ang numero ng telepono at/o email.</string>
+    <string name="dgts__terms_text_sign_in">Sa pag-tap sa %1$sMag-sign in%1$s sa itaas, sumasang-ayon ka sa Mga Tuntunin ng Serbisyo, Patakaran sa Pagkapribado, at Patakaran sa Mga Cookie ng Digits by Twitter, at sumasang-ayon ka rin na maaari kang matuklasan ng iba pang mga user ng %1$s gamit ang numero ng telepono at/o email.</string>
+    <string name="dgts__try_again">Subukan ulit</string>
+    <string name="dgts__try_again_confirmation">Pakitingan ulit ang inyong code a subukan ulit.</string>
+    <string name="dgts__try_again_phone_number">Pakitingnan ang numero ninyo at subukan ulit.</string>
+    <string name="dgts__try_another_phone">Subukan ang ibang numero ng telepono</string>
+    <string name="dgts__upload_contacts">Ginagamit namin ang Digits by Twitter para mahanap ang iba mo pang mga kaibigan na gumagamit ng app na ito. Kapag tinap mo ang Okay, i-a-upload namin ang iyong address book sa Digits by Twitter para matulungan ka naming mahanap ang mga user ng %1$s na kilala mo o matulungan ang ibang mga user ng %1$s na matuklasan ka.</string>
+    <string name="dgts__verification_code">Code ng beripikasyon</string>
+    <string name="dgts_pin_code_terms">Nakapagtakda ka na ng 2-step verification code sa digits.com</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.7.0/unspecified/res/values-tl/values-tl.xml -->
+    <eat-comment/>
+    <string name="messenger_send_button_text">Ipadala</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-tl/values-tl.xml -->
+    <eat-comment/>
+    <string msgid="4271159405637008602" name="mr_media_route_button_content_description">"Output ng media"</string>
+    <string msgid="7553005460920830010" name="mr_media_route_chooser_searching">"Naghahanap ng mga device…"</string>
+    <string msgid="7106830097177242655" name="mr_media_route_chooser_title">"Kumonekta sa device"</string>
+    <string msgid="109793632378378069" name="mr_media_route_controller_disconnect">"Idiskonekta"</string>
+    <string msgid="5441529851481176817" name="mr_system_route_name">"System"</string>
+    <string msgid="7498112907524977311" name="mr_user_route_category_name">"Mga Device"</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-tl/values-tl.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">Payagan</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-tl/values-tl.xml -->
+    <eat-comment/>
+    <string name="tw__loading_tweet">Naglo-load ng Tweet</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-tl/values-tl.xml -->
+    <eat-comment/>
+    <string name="tw__login_btn_txt">Mag-log in gamit ang Twitter</string>
+    <string name="tw__not_now_btn_txt">Hindi ngayon</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-tl/values-tl.xml -->
+    <eat-comment/>
+    <string name="tw__relative_date_format_long">d/M/y</string>
+    <string name="tw__relative_date_format_short">d MMM</string>
+    <string name="tw__retweeted_by_format">Ni-retweet ni %1$s</string>
+    <string name="tw__share_content_format">Tingnan \@%1$s\'s Tweet: https://twitter.com/%1$s/status/%2$s</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-tl/values-tl.xml -->
+    <eat-comment/>
+    <string name="tw__share_email_desc">Makakuha ng mga update at iba pang impormasyon mula kay %1$s kapag binigyan mo siya ng access sa email mo sa iyong Twitter account na \@%2$s</string>
+    <string name="tw__share_email_title">Ibahagi ang email address mo</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-tl/values-tl.xml -->
+    <eat-comment/>
+    <string name="tw__share_subject_format">Tweet mula kay %1$s (\@%2$s)</string>
+    <string name="tw__share_tweet">Ibahagi ang Tweet</string>
+    <string name="tw__tweet_content_description">%1$s. %2$s. %3$s.</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.1.0/res/values-tl/wallet_strings.xml -->
+    <eat-comment/>
+    <string msgid="4184147110658930238" name="wallet_buy_button_place_holder">"Bumili gamit ang Google"</string>
+</resources>

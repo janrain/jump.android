@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/profiles_row_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:padding="6dip">
+
+    <RelativeLayout
+        android:id="@+id/row_content"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ImageView
+            android:id="@+id/row_unlink_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip"
+            android:text="@string/delete_row"
+            android:background="@drawable/jr_icon_unlink"
+          />
+        <!--android:layout_weight="1"   android:background="@drawable/jr_icon_unlink" -->
+
+
+
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentBottom="true"-->
+
+        <LinearLayout
+            android:id="@+id/display_name_and_timestamp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/row_unlink_btn"
+            android:gravity="center_horizontal|center_vertical">
+            <!--android:layout_weight="1"-->
+
+            <TextView
+
+                android:id="@+id/row_profile_linkaccount_label"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerVertical="true"
+                android:gravity="left|center_vertical"
+                android:singleLine="true"
+                android:text="@string/provider_unknown"
+                android:textSize="14dip"
+                android:paddingBottom="4dip" />
+
+            <TextView
+
+                android:id="@+id/row_profile_email_label"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerVertical="true"
+                android:gravity="left|center_vertical"
+                android:singleLine="true"
+                android:text="@string/jr_provider_empty_emails"
+                android:textSize="12dip"
+                android:paddingBottom="4dip" />
+            <!--android:visibility="gone"-->
+            <!--android:layout_toRightOf="@id/row_profile_provider_icon"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignWithParentIfMissing="true"-->
+            <!--android:textColor="#333333"-->
+
+            <TextView
+                android:id="@+id/row_profile_identifier_label"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerVertical="true"
+                android:maxWidth="200dip"
+                android:gravity="left|center_vertical"
+                android:singleLine="true"
+                android:text="@string/provider_unknown"
+                android:textSize="11dip" />
+        </LinearLayout>
+
+        <!--android:layout_toRightOf="@id/display_name_and_timestamp"-->
+        <!--android:layout_weight="1"-->
+
+        <!--android:visibility="gone"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentRight="true"-->
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-v16/values-v16.xml -->
+    <eat-comment/>
+    <style name="tw__TweetFullName" parent="tw__TweetFullNameBase">
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:importantForAccessibility">no</item>
+    </style>
+</resources>

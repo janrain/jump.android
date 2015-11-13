@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-ur/values-ur.xml -->
+    <eat-comment/>
+    <plurals name="tw__time_hours">
+        <item quantity="one">1 گھنٹہ</item>
+        <item quantity="other">%d گھنٹے</item>
+    </plurals>
+    <plurals name="tw__time_mins">
+        <item quantity="one">1منٹ</item>
+        <item quantity="other">%dمنٹ</item>
+    </plurals>
+    <plurals name="tw__time_secs">
+        <item quantity="one">پہلا</item>
+        <item quantity="other">%dسیکنڈ</item>
+    </plurals>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values-ur/values-ur.xml -->
+    <eat-comment/>
+    <string name="dgts__confirmation_code">تصدیقی کوڈ</string>
+    <string name="dgts__confirmation_edit_hint">تصدیقی کوڈ داخل کریں</string>
+    <string name="dgts__confirmation_error">آپ کے فون نمبر کی تصدیق کرنے سے قاصر</string>
+    <string name="dgts__confirmation_error_alternative">معاف کیجیے گا، ہمیں آپ کو تصدیقی کوڈ بھیجنے میں مشکل درپیش ہے۔</string>
+    <string name="dgts__confirmation_expired">کوڈ کی معیاد کتم ہو گئی ہے۔ برائے مہربانی تصدیقی کوڈ دوبارہ بھیجیں۔</string>
+    <string name="dgts__dismiss">برخاست کریں</string>
+    <string name="dgts__find_your_friends">اپنے دوستوں کو ڈھونڈیں</string>
+    <string name="dgts__login_digits_text">میرا فون نمبر استعمال کریں</string>
+    <string name="dgts__network_error">برائے مہربانی اپنے نیٹ ورک کی پڑتال کریں اور دوبارہ کوشش کریں۔</string>
+    <string name="dgts__not_now">ابھی نہیں</string>
+    <string name="dgts__okay">ٹھیک ہے</string>
+    <string name="dgts__phone_number_edit_hint">آپ کا نمبر</string>
+    <string name="dgts__phone_number_text">اپنا فون نمبر داخل کریں</string>
+    <string name="dgts__resend_confirmation_text">تصدیقی کوڈ دوبارہ بھیجیں</string>
+    <string name="dgts__try_again">دوبارہ کوشش کریں</string>
+    <string name="dgts__try_again_confirmation">برائے مہربانی اپنے کوڈ کی پڑتال کریں اور دوبارہ کوشش کریں۔</string>
+    <string name="dgts__try_again_phone_number">برائے مہربانی اپنے نمبر کی پڑتال کریں اور دوبارہ کوشش کریں-</string>
+    <string name="dgts__try_another_phone">ایک مختلف فون نمبر آزمائیں</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-ur/values-ur.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">اجازت دیں</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-ur/values-ur.xml -->
+    <eat-comment/>
+    <string name="tw__loading_tweet">ٹویٹ لوڈ ہو رہی ہے</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-ur/values-ur.xml -->
+    <eat-comment/>
+    <string name="tw__login_btn_txt">ٹوئٹر سے لاگ ان کریں</string>
+    <string name="tw__not_now_btn_txt">ابھی نہیں</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-ur/values-ur.xml -->
+    <eat-comment/>
+    <string name="tw__relative_date_format_long">d/M/y</string>
+    <string name="tw__relative_date_format_short">d MMM</string>
+    <string name="tw__retweeted_by_format">%1$s کی ریٹویٹ کردہ</string>
+    <string name="tw__share_content_format">‎\@%1$s کی ٹویٹ دیکھیں: https://twitter.com/%1$s/status/%2$s</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-ur/values-ur.xml -->
+    <eat-comment/>
+    <string name="tw__share_email_desc">%1$s سے اپ ڈیٹس اور دیگر معلومات حاصل کریں جب آپ نے انہیں ‎\@%2$s اپنے ٹوئٹر اکاؤنٹ پر اپنے ای میل تک رسائی کی اجازت دی ہو</string>
+    <string name="tw__share_email_title">اپنا ای میل ایڈریس شیئر کریں</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-ur/values-ur.xml -->
+    <eat-comment/>
+    <string name="tw__share_subject_format">%1$s (‎\@%2$s) کی ٹویٹ</string>
+    <string name="tw__share_tweet">ٹویٹ شیئر کریں</string>
+    <string name="tw__tweet_content_description">%1$s۔ %2$s۔ %3$s۔</string>
+</resources>

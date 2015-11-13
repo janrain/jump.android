@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.janrain.android.multidex.simpledemopb2"
+    package="com.janrain.android.simpledemo"
     android:versionCode="1"
     android:versionName="1.0">
 
@@ -12,7 +12,7 @@
     <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="21" />
 
     <application
-        android:name="SimpleDemoApplication"
+        android:name="com.janrain.android.multidex.com.janrain.android.simpledemo.SimpleDemoApplication"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:hardwareAccelerated="true"
@@ -20,17 +20,7 @@
         android:debuggable="true"
         >
 
-        <!-- Facebook SDK -->
-        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
-
-        <!--Facebook Login or Share-->
-        <activity android:name="com.facebook.FacebookActivity"
-            android:configChanges=
-                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:label="@string/app_name" />
-
-        <activity android:name=".MainActivity">
+        <activity android:name="com.janrain.android.multidex.com.janrain.android.simpledemo.MainActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -39,10 +29,10 @@
 
         </activity>
 
-        <activity android:name=".RegistrationActivity"
+        <activity android:name="com.janrain.android.multidex.com.janrain.android.simpledemo.RegistrationActivity"
             />
-        <activity android:name=".UpdateProfileActivity" />
-        <activity android:name=".LinkListActivity"/>
+        <activity android:name="com.janrain.android.multidex.com.janrain.android.simpledemo.UpdateProfileActivity" />
+        <activity android:name="com.janrain.android.multidex.com.janrain.android.simpledemo.LinkListActivity"/>
 
         <!-- The following activities are for the Janrain Engage for Android library -->
         <!-- This activity must have a dialog theme such as Theme.Holo.Dialog, or
@@ -71,9 +61,6 @@
             android:windowSoftInputMode="adjustResize|stateHidden"
             />
 
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="c62a7de78181c7889143e54a7a33e92adfd1fa63" />
     </application>
 
 </manifest>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.janrain.android.multidex.simpledemopb2.test">
+    package="com.janrain.android.simpledemo.test">
 
     <uses-sdk android:minSdkVersion="17" android:targetSdkVersion="23" />
 
@@ -9,8 +9,8 @@
     </application>
 
     <instrumentation android:name="android.test.InstrumentationTestRunner"
-                     android:targetPackage="com.janrain.android.multidex.simpledemopb2"
+                     android:targetPackage="com.janrain.android.simpledemo"
                      android:handleProfiling="false"
                      android:functionalTest="false"
-                     android:label="Tests for com.janrain.android.multidex.simpledemopb2"/>
+                     android:label="Tests for com.janrain.android.simpledemo"/>
 </manifest>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/pbaker/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3/5fc52c41ef0239d1093a1eb7c3697036183677ce/gson-2.3.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce">
+        <dex dex="/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/pre-dexed/debug/gson-2.3-667483e503c9b33578b1fc14e2b4d162f9947152.jar" />
+    </item>
+    <item
+        jar="/Users/pbaker/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.0/support-annotations-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
+        <dex dex="/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/pre-dexed/debug/support-annotations-23.1.0-df95466d1081430f03d22cc9767c2adf0ecf7728.jar" />
+    </item>
+    <item
+        jar="/Users/pbaker/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.8.0/a517f29ed06be2b2879524fcd94b6e9b36e2e0b5/retrofit-1.8.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a517f29ed06be2b2879524fcd94b6e9b36e2e0b5">
+        <dex dex="/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/pre-dexed/debug/retrofit-1.8.0-53dc8c593ca1621b4c4a6a0ed4323fa812691865.jar" />
+    </item>
+    <item
+        jar="/Users/pbaker/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.5.0/4de2b4ed3445c37ec1720a7d214712e845a24636/okhttp-2.5.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4de2b4ed3445c37ec1720a7d214712e845a24636">
+        <dex dex="/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/pre-dexed/debug/okhttp-2.5.0-ae07bd190fe8cfc08a489237ea783ee37df2d849.jar" />
+    </item>
+    <item
+        jar="/Users/pbaker/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/pre-dexed/debug/picasso-2.5.2-370174dcfa8697f8eaa6392ef2b4c325336f0309.jar" />
+    </item>
+    <item
+        jar="/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/exploded-aar/SimpleDemo/jump/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="59b955b782b19b8a859ec3ba0f7a38f1b7aec103">
+        <dex dex="/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/pre-dexed/debug/classes-daa15816717546ab77d07dd8d9bca2f7c856457c.jar" />
+    </item>
+    <item
+        jar="/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/libs/org.apache.http.legacy.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="fa331331b626ee78c52bea16ce1e34b39e666ce5">
+        <dex dex="/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/pre-dexed/debug/org.apache.http.legacy-5d9ebaf26ac265224bacb4bfe69c2dff34a88d12.jar" />
+    </item>
+    <item
+        jar="/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
+        <dex dex="/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/pre-dexed/debug/classes-819c8f301290091448c7b194d0524a71f18761fc.jar" />
+    </item>
+    <item
+        jar="/Users/pbaker/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/pre-dexed/debug/okio-1.6.0-1cac7caea507e0df52fd31a1cb5c7be362c24852.jar" />
+    </item>
+    <item
+        jar="/Users/pbaker/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp-apache/2.5.0/8d5ecca29ce0547e297d2faa307ab69377d72afd/okhttp-apache-2.5.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8d5ecca29ce0547e297d2faa307ab69377d72afd">
+        <dex dex="/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/pre-dexed/debug/okhttp-apache-2.5.0-f1538830800216a5bc474cf1f523ef09811af3bf.jar" />
+    </item>
+    <item
+        jar="/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/libs/internal_impl-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
+        <dex dex="/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemo/build/intermediates/pre-dexed/debug/internal_impl-23.1.0-3930b02c3622e482f6787e42530c82b11a0d5ba9.jar" />
+    </item>
+
+</items>

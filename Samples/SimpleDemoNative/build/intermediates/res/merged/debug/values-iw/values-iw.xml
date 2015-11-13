@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-iw/values-iw.xml -->
+    <eat-comment/>
+    <plurals name="tw__time_hours">
+        <item quantity="one">שעה אחת</item>
+        <item quantity="other">%d שעות</item>
+    </plurals>
+    <plurals name="tw__time_mins">
+        <item quantity="one">דקה אחת</item>
+        <item quantity="other">%d דקות</item>
+    </plurals>
+    <plurals name="tw__time_secs">
+        <item quantity="one">שנייה אחת</item>
+        <item quantity="other">%d שניות</item>
+    </plurals>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values-iw/values-iw.xml -->
+    <eat-comment/>
+    <string msgid="4600421777120114993" name="abc_action_bar_home_description">"נווט לדף הבית"</string>
+    <string msgid="1594238315039666878" name="abc_action_bar_up_description">"נווט למעלה"</string>
+    <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"עוד אפשרויות"</string>
+    <string msgid="4076576682505996667" name="abc_action_mode_done">"בוצע"</string>
+    <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"ראה הכול"</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"בחר אפליקציה"</string>
+    <string msgid="3691816814315814921" name="abc_searchview_description_clear">"מחק שאילתה"</string>
+    <string msgid="2550479030709304392" name="abc_searchview_description_query">"שאילתת חיפוש"</string>
+    <string msgid="8264924765203268293" name="abc_searchview_description_search">"חפש"</string>
+    <string msgid="8928215447528550784" name="abc_searchview_description_submit">"שלח שאילתה"</string>
+    <string msgid="893419373245838918" name="abc_searchview_description_voice">"חיפוש קולי"</string>
+    <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"שתף עם"</string>
+    <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"‏שתף עם %s"</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/res/values-iw/common_strings.xml -->
+    <eat-comment/>
+    <string msgid="6428604800157361567" name="common_android_wear_notification_needs_update_text">"‏<ns1:g id="APP_NAME">%1$s</ns1:g> דורש עדכון לאפליקציה Android Wear."</string>
+    <string msgid="2453027084525739603" name="common_android_wear_update_text">"‏<ns1:g id="APP_NAME">%1$s</ns1:g> לא יפעל עד שתעדכן את האפליקציה Android Wear."</string>
+    <string msgid="1366439133145190222" name="common_android_wear_update_title">"‏עדכון Android Wear"</string>
+    <string msgid="6534628256897874213" name="common_google_play_services_api_unavailable_text">"‏ל-<ns1:g id="APP_NAME">%1$s</ns1:g> נדרש שירות אחד או יותר של Google Play שאינו זמין כעת. צור קשר עם המפתח לקבלת סיוע."</string>
+    <string msgid="4181637455539816337" name="common_google_play_services_enable_button">"‏הפעל את שירותי Google Play"</string>
+    <string msgid="4896236883690196080" name="common_google_play_services_enable_text">"‏<ns1:g id="APP_NAME">%1$s</ns1:g> לא יפעל אם לא תפעיל את שירותי Google Play."</string>
+    <string msgid="529078775174559253" name="common_google_play_services_enable_title">"‏הפעלת שירותי Google Play"</string>
+    <string msgid="2443362625939284971" name="common_google_play_services_error_notification_requested_by_msg">"התבקשה על ידי <ns1:g id="APP_NAME">%1$s</ns1:g>"</string>
+    <string msgid="8515591849428043265" name="common_google_play_services_install_button">"‏קבל את שירותי Google Play"</string>
+    <string msgid="8836325110837822534" name="common_google_play_services_install_text_phone">"‏<ns1:g id="APP_NAME">%1$s</ns1:g> לא יפעל ללא שירותי Google Play, שחסרים בטלפון שלך."</string>
+    <string msgid="542176290824754127" name="common_google_play_services_install_text_tablet">"‏<ns1:g id="APP_NAME">%1$s</ns1:g> לא יפעל ללא שירותי Google Play, שחסרים בטאבלט שלך."</string>
+    <string msgid="26645092511305524" name="common_google_play_services_install_title">"‏קבל את שירותי Google Play"</string>
+    <string msgid="4983316348021735578" name="common_google_play_services_invalid_account_text">"החשבון שצוין לא קיים במכשיר זה. בחר חשבון אחר."</string>
+    <string msgid="1066672360770936753" name="common_google_play_services_invalid_account_title">"חשבון לא חוקי"</string>
+    <string msgid="2583358409598976717" name="common_google_play_services_needs_enabling_title">"‏קיימת אפליקציה המחייבת הפעלה של שירותי Google Play."</string>
+    <string msgid="9038847255613537209" name="common_google_play_services_network_error_text">"‏דרוש חיבור נתונים כדי להתחבר לשירותי Google Play."</string>
+    <string msgid="3827284619958211114" name="common_google_play_services_network_error_title">"שגיאת רשת."</string>
+    <string msgid="1388129345631079938" name="common_google_play_services_notification_needs_update_title">"‏קיימת אפליקציה המחייבת עדכון עבור שירותי Google Play."</string>
+    <string msgid="1852570676146674985" name="common_google_play_services_notification_ticker">"‏שגיאה בשירותי Google Play"</string>
+    <string msgid="5194079840165204725" name="common_google_play_services_sign_in_failed_text">"אירעה שגיאה בעת הכניסה אל החשבון המצוין. בחר חשבון אחר."</string>
+    <string msgid="8164948898147532159" name="common_google_play_services_sign_in_failed_title">"הכניסה נכשלה"</string>
+    <string msgid="4762332809710093730" name="common_google_play_services_unknown_issue">"‏בעיה לא ידועה בשירותי Google Play."</string>
+    <string msgid="7682982632307307938" name="common_google_play_services_unsupported_text">"‏<ns1:g id="APP_NAME">%1$s</ns1:g> מתבסס על שירותי Google Play, שאינם נתמכים במכשיר שלך. צור קשר עם היצרן לקבלת סיוע."</string>
+    <string msgid="6334768798839376943" name="common_google_play_services_unsupported_title">"‏שירותי Google Play"</string>
+    <string msgid="8932944190611227642" name="common_google_play_services_update_button">"עדכן"</string>
+    <string msgid="5709479369299147668" name="common_google_play_services_update_text">"‏<ns1:g id="APP_NAME">%1$s</ns1:g> לא יפעל אם לא תעדכן את שירותי Google Play."</string>
+    <string msgid="6006316683626838685" name="common_google_play_services_update_title">"‏עדכון שירותי Google Play"</string>
+    <string msgid="2201289642219771610" name="common_google_play_services_updating_text">"‏<ns1:g id="APP_NAME">%1$s</ns1:g> לא יפעל ללא שירותי Google Play, שמתעדכנים כרגע."</string>
+    <string msgid="815008177440683245" name="common_google_play_services_updating_title">"‏שירותי Google Play מתעדכנים"</string>
+    <string msgid="411506735369601515" name="common_open_on_phone">"פתח בטלפון"</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values-iw/values-iw.xml -->
+    <eat-comment/>
+    <string name="dgts__confirmation_code">קוד אישור</string>
+    <string name="dgts__confirmation_edit_hint">הזן קוד אישור</string>
+    <string name="dgts__confirmation_error">לא ניתן לאשר את מספר הטלפון שלך</string>
+    <string name="dgts__confirmation_error_alternative">מצטערים, נתקלנו בבעיה בשליחת קוד האישור.</string>
+    <string name="dgts__confirmation_expired">תוקף הקוד פג. שלח מחדש קוד אישור.</string>
+    <string name="dgts__digits_logo_desc">הסמל של Digits</string>
+    <string name="dgts__digits_logo_name_desc">שם הסמל של Digits</string>
+    <string name="dgts__dismiss">התעלם</string>
+    <string name="dgts__find_your_friends">חפש את החברים שלך</string>
+    <string name="dgts__image_header_description">כותרת תמונה לדף כניסה</string>
+    <string name="dgts__login_digits_text">השתמש במספר הטלפון שלי</string>
+    <string name="dgts__network_error">בדוק את הרשת שלך ונסה שוב.</string>
+    <string name="dgts__not_now">לא עכשיו</string>
+    <string name="dgts__okay">אישור</string>
+    <string name="dgts__phone_number_edit_hint">המספר שלך</string>
+    <string name="dgts__phone_number_text">הזן את מספר הטלפון שלך</string>
+    <string name="dgts__pin_code_verification_title">הזן קוד אימות בשני שלבים</string>
+    <string name="dgts__resend_confirmation_text">שלח מחדש קוד אישור</string>
+    <string name="dgts__success_desc">סמל הצלחה</string>
+    <string name="dgts__terms_text">לאחר ההקשה על %1$sשלח קוד אישור%1$s לעיל, Digits by Twitter שולח לך הודעת SMS כדי לאשר את מספר הטלפון שלך. ייתכן שתחויב בתשלום על העברת הודעות ונתונים.</string>
+    <string name="dgts__terms_text_create">בהקשה על %1$sצור חשבון%1$s לעיל, אתה מסכים לתנאי השירות, למדיניות הפרטיות ולמדיניות קובצי ה-Cookie של Digits by Twitter, ולכך שמשתמשים אחרים של יישום זה יוכלו לגלות אותך באמצעות מספר טלפון ו/או דואר אלקטרוני.</string>
+    <string name="dgts__terms_text_sign_in">בהקשה על %1$sכניסה%1$s לעיל, אתה מסכים לתנאי השירות, למדיניות הפרטיות ולמדיניות קובצי ה-Cookie של Digits by Twitter, ולכך שמשתמשים אחרים של %1$s יוכלו לאתר אותך לפי מספר טלפון ו/או דואר אלקטרוני.</string>
+    <string name="dgts__try_again">נסה שוב</string>
+    <string name="dgts__try_again_confirmation">בדוק את הקוד שלך ונסה שוב.</string>
+    <string name="dgts__try_again_phone_number">בדוק את המספר שלך ונסה שוב.</string>
+    <string name="dgts__try_another_phone">נסה מספר טלפון אחר</string>
+    <string name="dgts__upload_contacts">אנחנו משתמשים ב-Digits by Twitter לאיתור עוד חברים שלך המשתמשים ביישום זה. בעת ההקשה על \'אישור\', אנחנו מעלים את פנקס הכתובות שלך ל-Digits by Twitter כדי שנוכל לעזור לך לאתר משתמשים של %1$s שאתה מכיר, או לעזור למשתמשים אחרים של %1$s למצוא אותך.</string>
+    <string name="dgts__verification_code">קוד אימות</string>
+    <string name="dgts_pin_code_terms">הגדרת בעבר קוד אימות בשני שלבים באתר digits.com</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-iw/values-iw.xml -->
+    <eat-comment/>
+    <string msgid="4271159405637008602" name="mr_media_route_button_content_description">"פלט מדיה"</string>
+    <string msgid="7553005460920830010" name="mr_media_route_chooser_searching">"מחפש מכשירים…"</string>
+    <string msgid="7106830097177242655" name="mr_media_route_chooser_title">"התחבר למכשיר"</string>
+    <string msgid="109793632378378069" name="mr_media_route_controller_disconnect">"התנתק"</string>
+    <string msgid="5441529851481176817" name="mr_system_route_name">"מערכת"</string>
+    <string msgid="7498112907524977311" name="mr_user_route_category_name">"מכשירים"</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-iw/values-iw.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">אשר</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-iw/values-iw.xml -->
+    <eat-comment/>
+    <string name="tw__loading_tweet">טוען ציוץ</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-iw/values-iw.xml -->
+    <eat-comment/>
+    <string name="tw__login_btn_txt">כניסה באמצעות טוויטר</string>
+    <string name="tw__not_now_btn_txt">לא עכשיו</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-iw/values-iw.xml -->
+    <eat-comment/>
+    <string name="tw__relative_date_format_long">d.M.y</string>
+    <string name="tw__relative_date_format_short">d. MMM</string>
+    <string name="tw__retweeted_by_format">צויץ מחדש על-ידי %1$s</string>
+    <string name="tw__share_content_format">בוא לראות את הציוץ של ‎\@%1$s‏: https://twitter.com/%1$s/status/%2$s</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-iw/values-iw.xml -->
+    <eat-comment/>
+    <string name="tw__share_email_desc">קבל עדכונים ומידע נוסף מ-%1$s לאחר שתאשר להם גישה לחשבון הדואר האלקטרוני שציינת בטוויטר ‎\@%2$s</string>
+    <string name="tw__share_email_title">שתף בכתובת הדואר האלקטרוני שלך</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-iw/values-iw.xml -->
+    <eat-comment/>
+    <string name="tw__share_subject_format">ציוץ של %1$s‏ (‎\@%2$s)</string>
+    <string name="tw__share_tweet">שתף ציוץ</string>
+    <string name="tw__tweet_content_description">%1$s‏. %2$s‏. %3$s</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.1.0/res/values-iw/wallet_strings.xml -->
+    <eat-comment/>
+    <string msgid="4184147110658930238" name="wallet_buy_button_place_holder">"קנה בעזרת Google"</string>
+</resources>

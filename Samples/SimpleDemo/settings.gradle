@@ -1,1 +1,1 @@
-include ':jump', ':facebook-android-sdk-4.7.0'
+include ':jump'
