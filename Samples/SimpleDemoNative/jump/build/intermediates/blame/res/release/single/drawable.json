@@ -1,0 +1,342 @@
+[
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_netlog.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_netlog.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_paypal_openid_connect.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_paypal_openid_connect.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_bw_yahoo_oauth2.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_bw_yahoo_oauth2.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_orkut.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_orkut.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_myopenid.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_myopenid.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_myspace.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_myspace.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_paypal_openid_connect.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_paypal_openid_connect.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_mail_sms.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_mail_sms.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_blogger.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_blogger.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_check_mark.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_check_mark.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_bw_facebook.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_bw_facebook.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_livejournal.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_livejournal.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_tumblr.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_tumblr.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_vzn.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_vzn.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_media60x60.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_media60x60.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_aol.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_aol.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_netlog.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_netlog.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_googleplus.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_googleplus.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_hyves.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_hyves.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_salesforce.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_salesforce.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_twitter.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_twitter.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_live_id.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_live_id.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_orkut.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_orkut.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_foursquare.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_foursquare.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_hyves.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_hyves.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_tumblr.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_tumblr.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_flickr.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_flickr.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_openid.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_openid.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_yahoo_oauth2.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_yahoo_oauth2.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_ic_menu_about.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_ic_menu_about.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_unknown.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_unknown.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_bg_provider_activity_info.xml",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_bg_provider_activity_info.xml"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_bw_tumblr.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_bw_tumblr.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_bg_publish_preview_border.xml",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_bg_publish_preview_border.xml"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_bw_twitter.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_bw_twitter.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_openid.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_openid.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_shape_landing_box.xml",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_shape_landing_box.xml"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_bw_myspace.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_bw_myspace.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_bg_publish_preview.xml",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_bg_publish_preview.xml"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_flickr.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_flickr.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_profilepic_placeholder.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_profilepic_placeholder.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_bw_mail.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_bw_mail.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_email_sms_tab_indicator.xml",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_email_sms_tab_indicator.xml"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_vzn.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_vzn.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_paypal.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_paypal.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_instagram.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_instagram.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_amazon.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_amazon.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_linkedin.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_linkedin.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_googleplus.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_googleplus.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_wordpress.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_wordpress.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_facebook.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_facebook.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_myspace.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_myspace.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_yahoo.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_yahoo.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_triangle_icon.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_triangle_icon.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_bw_yahoo.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_bw_yahoo.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_yahoo_oauth2.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_yahoo_oauth2.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_microsoftaccount.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_microsoftaccount.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_bw_microsoftaccount.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_bw_microsoftaccount.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_linkedin.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_linkedin.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_bw_googleplus.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_bw_googleplus.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_google.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_google.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_live_id.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_live_id.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_twitter.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_twitter.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_livejournal.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_livejournal.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_paypal.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_paypal.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_yahoo.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_yahoo.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_google.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_google.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_bw_linkedin.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_bw_linkedin.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_bw_amazon.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_bw_amazon.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_instagram.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_instagram.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_bw_instagram.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_bw_instagram.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_myopenid.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_myopenid.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_microsoftaccount.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_microsoftaccount.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_bw_mail_sms.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_bw_mail_sms.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_bw_paypal_openid_connect.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_bw_paypal_openid_connect.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_foursquare.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_foursquare.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_facebook.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_facebook.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_blogger.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_blogger.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_bw_sms.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_bw_sms.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_aol.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_aol.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_bw_paypal.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_bw_paypal.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_amazon.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_amazon.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_icon_verisign.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_icon_verisign.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_salesforce.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_salesforce.png"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/drawable/jr_logo_verisign.png",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_logo_verisign.png"
+    }
+]

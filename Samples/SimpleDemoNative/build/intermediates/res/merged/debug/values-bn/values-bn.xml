@@ -14,8 +14,9 @@
         <item quantity="one">1সে</item>
         <item quantity="other">%dসেকেন্ড</item>
     </plurals>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.7.0/unspecified/res/values-bn/values-bn.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.9.0/unspecified/res/values-bn/values-bn.xml -->
     <eat-comment/>
+    <string name="com_facebook_device_auth_instructions">আপনার কম্পিউটার বা স্মার্টফোন থেকে %@ এ যান এবং এই কোডটিকে প্রবেশ করান:</string>
     <string name="com_facebook_image_download_unknown_error">একটি চিত্র ডাউনলোড করার সময়ে অপ্রত্যাশিত ত্রুটি দেখা দিচ্ছে৷</string>
     <string name="com_facebook_internet_permission_error_message">WebView লগ ইন করার জন্য INTERNET-এর অনুমতির প্রয়োজন আছে</string>
     <string name="com_facebook_internet_permission_error_title">AndroidManifest ত্রুটি</string>
@@ -64,7 +65,7 @@
     <string name="dgts__upload_contacts">এই অ্যাপটি আপনার আর যে সব বন্ধুরা ব্যবহার করছেন তাদের আমরা Digits by Twitter -এর সাহায্যে খুঁজে নিই। আপনি ঠিক আছে টিপলে, আমরা Digits by Twitter-এ আপনার ঠিকানা বই আপলোড করব যাতে কিনা, আমরা আপনাকে আপনার পরিচিতি %1$s -এর ব্যবহারকারীদের খুঁজে নিতে বা %1$s -এর অন্যান্য ব্যবহারকারীদের আপনাকে খুঁজে নিতে সাহায্য করতে পারি।</string>
     <string name="dgts__verification_code">যাচাইকরণ কোড</string>
     <string name="dgts_pin_code_terms">আপনি পূর্বে digits.com -এ একটি 2-পদক্ষেপ যাচাইকরণ কোড সেট করেছেন</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.7.0/unspecified/res/values-bn/values-bn.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.9.0/unspecified/res/values-bn/values-bn.xml -->
     <eat-comment/>
     <string name="messenger_send_button_text">প্রেরণ করুন</string>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-bn/values-bn.xml -->

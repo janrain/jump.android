@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/menu/jr_provider_listview_row_menu.xml",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/menu/jr_provider_listview_row_menu.xml"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/menu/jr_about_menu.xml",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/menu/jr_about_menu.xml"
+    }
+]

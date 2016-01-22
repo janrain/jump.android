@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/layout/jr_capture_forgotpassword.xml",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/layout/jr_capture_forgotpassword.xml"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/layout/jr_fragment_host_activity.xml",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/layout/jr_fragment_host_activity.xml"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/layout/jr_publish_provider_tab_content.xml",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/layout/jr_publish_provider_tab_content.xml"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/layout/jr_capture_trad_signin.xml",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/layout/jr_capture_trad_signin.xml"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/layout/jr_provider_listview_row.xml",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/layout/jr_provider_listview_row.xml"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/layout/jr_provider_native.xml",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/layout/jr_provider_native.xml"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/layout/jr_provider_webview.xml",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/layout/jr_provider_webview.xml"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/layout/jr_about_dialog.xml",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/layout/jr_about_dialog.xml"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/layout/jr_publish.xml",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/layout/jr_publish.xml"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/layout/jr_shared_footer.xml",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/layout/jr_shared_footer.xml"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/layout/jr_provider_listview.xml",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/layout/jr_provider_listview.xml"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/layout/jr_provider_landing.xml",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/layout/jr_provider_landing.xml"
+    },
+    {
+        "merged": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/build/intermediates/res/merged/release/layout/jr_publish_email_tab_content.xml",
+        "source": "/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/layout/jr_publish_email_tab_content.xml"
+    }
+]

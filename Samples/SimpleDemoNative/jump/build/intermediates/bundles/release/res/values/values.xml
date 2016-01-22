@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/values/attrs.xml -->
-    <eat-comment/>
     <attr format="reference" name="jrCustomLandingRootViewStyle"/>
     <attr format="reference" name="jrCustomLandingStyle"/>
     <attr format="reference" name="jrPublishTriangleResource"/>
@@ -10,8 +8,6 @@
         <enum name="invisible" value="1"/>
         <enum name="gone" value="2"/>
     </attr>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/values/colors.xml -->
-    <eat-comment/>
     <color name="jr_janrain_darkblue">#FF074764</color>
     <color name="jr_janrain_darkblue_lightened">#FFcddae0</color>
     <color name="jr_janrain_darkblue_medium">#ff1a557c</color>
@@ -24,8 +20,6 @@
     <color name="jr_some_other_blue">#44248bc0</color>
     <color name="jr_text_color_hint">#cccccc</color>
     <declare-styleable name="ColorButton"><attr format="color" name="jr_color"/></declare-styleable>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/values/dimens.xml -->
-    <eat-comment/>
     <dimen name="jr_button_text_size">20sp</dimen>
     <dimen name="jr_character_count_size">10sp</dimen>
     <dimen name="jr_edit_text_size">20sp</dimen>
@@ -47,12 +41,8 @@
     <dimen name="jr_signout_button_text_size">10sp</dimen>
     <dimen name="jr_tagline_size">12sp</dimen>
     <dimen name="jr_username_text_size">14sp</dimen>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/values/ids.xml -->
-    <eat-comment/>
     <item name="jr_publish_fragment" type="id"/>
     <item name="jr_signin_fragment" type="id"/>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/values/strings.xml -->
-    <eat-comment/>
     <string name="jr_about_URL">www.janrain.com</string>
     <string name="jr_about_menu_item">About Janrain Engage</string>
     <string name="jr_about_title">Janrain Engage for Android Library</string>
@@ -94,11 +84,7 @@
     <string name="jr_getconfig_parse_error_message">There was a problem communicating with the Janrain server
         while configuring authentication.
     </string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/values/jr_git_describe.xml -->
-    <eat-comment/>
     <string name="jr_git_describe">v4.7.1</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/values/strings.xml -->
-    <eat-comment/>
     <string name="jr_landing_bad_input_long">The input you have entered is not valid. Please try again.</string>
     <string name="jr_landing_bad_user_input">Invalid Input</string>
     <string name="jr_landing_default_custom_title">Welcome Back!</string>
@@ -140,8 +126,6 @@
     <string name="jr_webview_generic_auth_error_message">There was a problem authenticating. Please try again.
     </string>
     <string name="jr_welcome_back_message">Welcome back</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/values/styles.xml -->
-    <eat-comment/>
     <style name="Theme.Janrain" parent="android:style/Theme">
         <item name="jrPublishTriangleVisibility">invisible</item>
         <item name="jrPublishTriangleResource">@drawable/jr_triangle_icon</item>

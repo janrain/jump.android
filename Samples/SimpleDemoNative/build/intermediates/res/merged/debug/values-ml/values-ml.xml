@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.7.0/unspecified/res/values-ml/values-ml.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.9.0/unspecified/res/values-ml/values-ml.xml -->
     <eat-comment/>
+    <string name="com_facebook_device_auth_instructions">നിങ്ങളുടെ സ്‌മാർട്ട്ഫോണിലെ അല്ലെങ്കിൽ കമ്പ്യൂട്ടറിലെ %@ സന്ദർശിച്ച് ഇനിപ്പറയുന്ന കോഡ് നൽകുക:</string>
     <string name="com_facebook_image_download_unknown_error">ചിത്രം ഡൗൺലോഡുചെയ്യുന്നതിൽ അപ്രതീക്ഷിത പിശക് സംഭവിച്ചു.</string>
     <string name="com_facebook_internet_permission_error_message">WebView ലോഗിന് ഇന്റർനെറ്റ് അനുമതി ആവശ്യമാണ്</string>
     <string name="com_facebook_internet_permission_error_title">AndroidManifest പിശക്</string>
