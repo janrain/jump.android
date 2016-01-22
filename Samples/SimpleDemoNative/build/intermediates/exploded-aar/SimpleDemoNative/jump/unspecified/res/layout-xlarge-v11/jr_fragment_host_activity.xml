@@ -8,4 +8,4 @@
     android:layout_height="match_parent"
     >
 
-</com.janrain.android.engage.ui.CustomMeasuringFrameLayout><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/layout-xlarge-v11/jr_fragment_host_activity.xml -->
+</com.janrain.android.engage.ui.CustomMeasuringFrameLayout>

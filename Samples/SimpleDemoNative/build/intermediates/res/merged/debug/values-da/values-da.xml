@@ -29,8 +29,9 @@
     <string msgid="893419373245838918" name="abc_searchview_description_voice">"Stemmesøgning"</string>
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Del med"</string>
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"Del med %s"</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.7.0/unspecified/res/values-da/values-da.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.9.0/unspecified/res/values-da/values-da.xml -->
     <eat-comment/>
+    <string name="com_facebook_device_auth_instructions">Gå til %@ på din smartphone eller computer, og indtast denne kode:</string>
     <string name="com_facebook_image_download_unknown_error">Der opstod en uventet fejl under download af et billede.</string>
     <string name="com_facebook_internet_permission_error_message">WebView-login kræver tilladelse til INTERNET</string>
     <string name="com_facebook_internet_permission_error_title">Fejl i forbindelse med AndroidManifest</string>
@@ -110,7 +111,7 @@
     <string name="dgts__upload_contacts">Vi bruger Digits by Twitter til at finde flere af dine venner, der bruger denne app. Når du trykker på OK, uploader vi din adressebog til Digits by Twitter, så vi kan hjælpe dig med at finde brugere af %1$s, du kender, eller hjælpe andre brugere af %1$s med at finde dig.</string>
     <string name="dgts__verification_code">Bekræftelseskode</string>
     <string name="dgts_pin_code_terms">Du har tidligere sat en 2-trins-bekræftelseskode på digits.com</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.7.0/unspecified/res/values-da/values-da.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.9.0/unspecified/res/values-da/values-da.xml -->
     <eat-comment/>
     <string name="messenger_send_button_text">Send</string>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-da/values-da.xml -->

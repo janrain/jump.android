@@ -9,7 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/facebook-android-sdk-4.7.0" />
+            <option value="$PROJECT_DIR$/facebook-android-sdk-4.9.0" />
             <option value="$PROJECT_DIR$/jump" />
           </set>
         </option>

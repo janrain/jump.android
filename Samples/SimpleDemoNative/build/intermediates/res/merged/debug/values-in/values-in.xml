@@ -95,7 +95,7 @@ Layanan, Kebijakan Privasi, dan Kebijakan Kuki dari Digits by Twitter, dan bahwa
     <string name="dgts__upload_contacts">Kami menggunakan Digits by Twitter untuk menemukan lebih banyak teman Anda yang menggunakan aplikasi ini. Bila Anda menyentuh Oke, kami akan mengunggah buku alamat Anda ke Digits by Twitter sehingga kami dapat membantu Anda menemukan pengguna %1$s yang Anda kenal atau membantu pengguna %1$s lainnya untuk menemukan Anda.</string>
     <string name="dgts__verification_code">Kode verifikasi</string>
     <string name="dgts_pin_code_terms">Anda sebelumnya telah menetapkan kode verifikasi 2 langkah di digits.com</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.7.0/unspecified/res/values-in/values-in.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.9.0/unspecified/res/values-in/values-in.xml -->
     <eat-comment/>
     <string name="messenger_send_button_text">Kirim</string>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-in/values-in.xml -->

@@ -133,4 +133,3 @@
     <include layout="@layout/jr_shared_footer" />
 
 </RelativeLayout>
-<!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/layout/jr_provider_landing.xml -->

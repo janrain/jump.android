@@ -29,8 +29,9 @@
     <string msgid="893419373245838918" name="abc_searchview_description_voice">"Gesproken zoekopdracht"</string>
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Delen met"</string>
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"Delen met %s"</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.7.0/unspecified/res/values-nl/values-nl.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.9.0/unspecified/res/values-nl/values-nl.xml -->
     <eat-comment/>
+    <string name="com_facebook_device_auth_instructions">Ga op je smartphone of computer naar %@ en voer deze code in:</string>
     <string name="com_facebook_image_download_unknown_error">Onverwachte fout tijdens het downloaden van een afbeelding.</string>
     <string name="com_facebook_internet_permission_error_message">Voor aanmelding via webweergave is de toestemming INTERNET vereist</string>
     <string name="com_facebook_internet_permission_error_title">AndroidManifest Error</string>
@@ -112,7 +113,7 @@ die %1$s gebruiken, kunnen je vinden via je telefoonnummer en/of e-mailadres .</
     <string name="dgts__upload_contacts">We gebruiken Digits by Twitter om vrienden te zoeken die deze app gebruiken. Als je op OK tikt, wordt je adresboek naar Digits by Twitter geüpload om bekenden die %1$s gebruiken te vinden en andere mensen die %1$s gebruiken, te helpen jou te vinden.</string>
     <string name="dgts__verification_code">Verificatiecode</string>
     <string name="dgts_pin_code_terms">Je hebt eerder een code voor 2-staps verificatie ingesteld op digits.com</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.7.0/unspecified/res/values-nl/values-nl.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.9.0/unspecified/res/values-nl/values-nl.xml -->
     <eat-comment/>
     <string name="messenger_send_button_text">Verzenden</string>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-nl/values-nl.xml -->

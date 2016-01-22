@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/values-xlarge-v11/dimens.xml -->
-    <eat-comment/>
     <dimen name="jr_button_text_size">25sp</dimen>
     <dimen name="jr_character_count_size">14sp</dimen>
     <dimen name="jr_edit_text_size">25sp</dimen>
@@ -23,8 +21,6 @@
     <dimen name="jr_signout_button_text_size">15sp</dimen>
     <dimen name="jr_tagline_size">15sp</dimen>
     <dimen name="jr_username_text_size">18sp</dimen>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/values-xlarge-v11/styles.xml -->
-    <eat-comment/>
     <style name="jr_about_dialog_text">
         <item name="android:textAppearance">?android:textAppearanceLarge</item>
     </style>

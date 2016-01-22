@@ -29,8 +29,9 @@
     <string msgid="893419373245838918" name="abc_searchview_description_voice">"語音搜尋"</string>
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"選擇分享對象"</string>
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"與「%s」分享"</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.7.0/unspecified/res/values-zh-rTW/values-zh-rTW.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.9.0/unspecified/res/values-zh-rTW/values-zh-rTW.xml -->
     <eat-comment/>
+    <string name="com_facebook_device_auth_instructions">使用您的智慧型手機或電腦前往 %@，然後輸入此代碼：</string>
     <string name="com_facebook_image_download_unknown_error">下載圖像時發生非預期的錯誤。</string>
     <string name="com_facebook_internet_permission_error_message">WebView 登入需要「網際網路」授權</string>
     <string name="com_facebook_internet_permission_error_title">AndroidManifest 錯誤</string>
@@ -110,7 +111,7 @@
     <string name="dgts__upload_contacts">我們會使用 Digits by Twitter 為你尋找更多在使用此應用程式的朋友。當你點選「確定」時，我們就會將你的通訊錄上傳到 Digits by Twitter，以便協助你尋找你認識的 %1$s 的使用者，或協助其他 %1$s 的使用者找到你。</string>
     <string name="dgts__verification_code">認證碼</string>
     <string name="dgts_pin_code_terms">你先前已在 digits.com 上設定 2 步驟認證碼</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.7.0/unspecified/res/values-zh-rTW/values-zh-rTW.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.9.0/unspecified/res/values-zh-rTW/values-zh-rTW.xml -->
     <eat-comment/>
     <string name="messenger_send_button_text">傳送</string>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-zh-rTW/values-zh-rTW.xml -->

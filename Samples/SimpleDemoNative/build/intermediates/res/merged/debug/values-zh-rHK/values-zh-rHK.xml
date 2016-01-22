@@ -15,8 +15,9 @@
     <string msgid="893419373245838918" name="abc_searchview_description_voice">"語音搜尋"</string>
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"分享對象"</string>
     <string msgid="7165123711973476752" name="abc_shareactionprovider_share_with_application">"與「%s」分享"</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.7.0/unspecified/res/values-zh-rHK/values-zh-rHK.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.9.0/unspecified/res/values-zh-rHK/values-zh-rHK.xml -->
     <eat-comment/>
+    <string name="com_facebook_device_auth_instructions">在智能手機或電腦前往 %@ 並輸入此代碼：</string>
     <string name="com_facebook_image_download_unknown_error">下載圖像時發生預期外的錯誤。</string>
     <string name="com_facebook_internet_permission_error_message">WebView 登入需有 INTERNET 權限</string>
     <string name="com_facebook_internet_permission_error_title">AndroidManifest 錯誤</string>
@@ -65,7 +66,7 @@
     <string msgid="2201289642219771610" name="common_google_play_services_updating_text">"您的「Google Play 服務」目前正在更新，完成後才能執行 <ns1:g id="APP_NAME">%1$s</ns1:g>。"</string>
     <string msgid="815008177440683245" name="common_google_play_services_updating_title">"「Google Play 服務」正在更新"</string>
     <string msgid="411506735369601515" name="common_open_on_phone">"在手機中開啟"</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.7.0/unspecified/res/values-zh-rHK/values-zh-rHK.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.9.0/unspecified/res/values-zh-rHK/values-zh-rHK.xml -->
     <eat-comment/>
     <string name="messenger_send_button_text">傳送</string>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/res/values-zh-rHK/values-zh-rHK.xml -->

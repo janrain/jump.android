@@ -33,4 +33,4 @@
                  android:indeterminateOnly="true"
         />
 </RelativeLayout>
-<!-- From: file:/Users/swiese/fbandroid-sdk/facebook/res/layout/com_facebook_login_fragment.xml --><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.7.0/unspecified/res/layout/com_facebook_login_fragment.xml -->
+<!-- From: file:/Users/swiese/fbandroid-sdk/facebook/src/main/res/layout/com_facebook_login_fragment.xml --><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.9.0/unspecified/res/layout/com_facebook_login_fragment.xml -->

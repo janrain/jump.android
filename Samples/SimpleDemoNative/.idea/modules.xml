@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SimpleDemoNative.iml" filepath="$PROJECT_DIR$/SimpleDemoNative.iml" />
       <module fileurl="file://$PROJECT_DIR$/facebook-android-sdk-4.7.0/facebook-android-sdk-4.7.0.iml" filepath="$PROJECT_DIR$/facebook-android-sdk-4.7.0/facebook-android-sdk-4.7.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/facebook-android-sdk-4.9.0/facebook-android-sdk-4.9.0.iml" filepath="$PROJECT_DIR$/facebook-android-sdk-4.9.0/facebook-android-sdk-4.9.0.iml" />
       <module fileurl="file://$PROJECT_DIR$/jump/jump.iml" filepath="$PROJECT_DIR$/jump/jump.iml" />
     </modules>
   </component>

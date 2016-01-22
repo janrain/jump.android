@@ -12,4 +12,4 @@
         android:bottom="7dp" />
     <corners
         android:radius="8dp"/>
-</shape><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/drawable/jr_shape_landing_box.xml -->
+</shape>
