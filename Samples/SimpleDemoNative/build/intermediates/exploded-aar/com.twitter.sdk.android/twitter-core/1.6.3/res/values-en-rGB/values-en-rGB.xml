@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/twitter-core/src/main/res/values-en-rGB/strings.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">Allow</string>
+    <string name="tw__login_btn_txt">Log in with Twitter</string>
+    <string name="tw__not_now_btn_txt"> Not now </string>
+    <string name="tw__share_email_desc">Get updates and other information from %1$s when you allow them access to your email on yourTwitter account \@%2$s</string>
+    <string name="tw__share_email_title">Share your email address</string>
+</resources>

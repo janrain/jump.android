@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-de/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__call_me">Ruf mich an</string>
+    <string name="dgts__calling">Anruf…</string>
+    <string name="dgts__confirmation_code">Bestätigungscode</string>
+    <string name="dgts__confirmation_edit_hint">Bestätigungscode eingeben</string>
+    <string name="dgts__confirmation_error">Deine Telefonnummer konnte nicht bestätigt werden</string>
+    <string name="dgts__confirmation_error_alternative">Leider haben wir Schwierigkeiten, Dir einen Bestätigungscode zu senden.</string>
+    <string name="dgts__confirmation_expired">Dieser Code ist abgelaufen. Lass Dir einen neuen Bestätigungscode senden.</string>
+    <string name="dgts__continue">Weiter</string>
+    <string name="dgts__digits_logo_desc">Digits Logo-Symbol</string>
+    <string name="dgts__digits_logo_name_desc">Digits Logo-Name</string>
+    <string name="dgts__dismiss">Verwerfen</string>
+    <string name="dgts__done">Fertig</string>
+    <string name="dgts__email_request_edit_hint">E-Mail Adresse</string>
+    <string name="dgts__email_request_title">E-Mail Adresse eingeben</string>
+    <string name="dgts__find_your_friends">Freunde suchen</string>
+    <string name="dgts__image_header_description">Image-Header für Anmeldung</string>
+    <string name="dgts__invalid_email">Ungültige E-Mail Adresse. Erneut versuchen</string>
+    <string name="dgts__login_digits_text">Meine Telefonnummer verwenden</string>
+    <string name="dgts__network_error">Prüfe bitte Dein Netzwerk und versuche es erneut.</string>
+    <string name="dgts__not_now">Nicht jetzt</string>
+    <string name="dgts__okay">Okay</string>
+    <string name="dgts__phone_number_edit_hint">Deine Nummer</string>
+    <string name="dgts__phone_number_text">Deine Telefonnummer eingeben</string>
+    <string name="dgts__pin_code_verification_title">2-Schritt-Bestätigungscode eingeben</string>
+    <string name="dgts__resend_confirmation_text">Bestätigungscode erneut senden</string>
+    <string name="dgts__sending">Sendet…</string>
+    <string name="dgts__success_desc">Erfolgssymbol</string>
+    <string name="dgts__terms_email_request">Wenn Du oben %1$sWeiter%1$s \
+antippst, fügst Du diese E-Mail Adresse zu Deinem Digits Account hinzu. \
+Alle Deine Apps, die mit Digits authentifiziert sind, haben dann Zugriff \
+zu dieser \
+E-Mail Adresse und ihre Nutzer können Dich anhand dieser E-Mail Adresse \
+finden. Verwalte Deinen Account auf %2$sDigits.com%3$s.</string>
+    <string name="dgts__terms_text">Wenn Du oben %1$sWeiter%1$s antippst, sendet %2$sDigits by Twitter%3$s Dir eine SMS zu, um Deine Telefonnummer zu bestätigen. SMS- und Datengebühren können anfallen.</string>
+    <string name="dgts__terms_text_call_me">Wenn Du oben %1$sRuf mich an%1$s antippst, sendet %2$sDigits by Twitter%3$s Dir eine SMS zu, um Deine Telefonnummer zu bestätigen. SMS- und Datengebühren können anfallen.</string>
+    <string name="dgts__terms_text_create">Wenn Du oben %1$sWeiter%1$s antippst, stimmst Du den %2$sAllgemeinen Geschäftsbedingungen%3$s, den %2$sDatenschutzbestimmungen%3$s und den %2$sCookie-Richtlinien%3$s von Digits by Twitter zu und erklärst Dich damit einverstanden, dass andere Nutzer dieser App Dich anhand Deiner Telefonnummer und/oder E-Mail Adresse finden können.</string>
+    <string name="dgts__terms_text_sign_in">Wenn Du oben %1$sWeiter%1$s antippst, stimmst Du den aktualisierten %2$sAllgemeinen Geschäftsbedingungen%3$s, den %2$sDatenschutzbestimmungen%3$s und den %2$sCookie-Richtlinien%3$s von Digits by Twitter zu  und erklärst Dich damit einverstanden, dass andere Nutzer von %1$s Dich\
+ anhand Deiner Telefonnummer und/oder E-Mail Adresse finden können.</string>
+    <string name="dgts__try_again">Erneut versuchen</string>
+    <string name="dgts__try_again_confirmation">Prüfe bitte Deinen Code und versuche es erneut.</string>
+    <string name="dgts__try_again_email">Prüfe bitte Deine E-Mail Adresse und versuche es erneut</string>
+    <string name="dgts__try_again_phone_number">Prüfe bitte Deine Nummer und versuche es erneut.</string>
+    <string name="dgts__try_another_phone">Probiere eine andere Telefonnummer</string>
+    <string name="dgts__unsupported_operator_error">Es konnte keine SMS Nachricht an diese Nummer gesendet werden.</string>
+    <string name="dgts__upload_contacts">Mit Digits by Twitter können wir mehrere Deiner Freunde finden, die diese App verwenden. Wenn Du auf \"OK\" tippst, laden wir Dein Adressuch in Digits by Twitter hoch und helfen dabei, Dir bekannte Nutzer von %1$s zu finden sowie anderen Nutzern von %1$s, Dich zu finden.</string>
+    <string name="dgts__verification_code">Verifizierungscode</string>
+    <string name="dgts_pin_code_terms">Du hast zuvor einen 2-Schritte-Verifizierungscode auf digits.com eingestellt</string>
+</resources>

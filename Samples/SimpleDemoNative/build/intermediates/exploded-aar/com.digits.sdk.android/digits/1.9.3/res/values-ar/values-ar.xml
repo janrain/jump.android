@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-ar/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__call_me">الاتصال بي</string>
+    <string name="dgts__calling">جاري الاتّصال…</string>
+    <string name="dgts__confirmation_code">رمز التأكيد</string>
+    <string name="dgts__confirmation_edit_hint">أدخل رمز التأكيد</string>
+    <string name="dgts__confirmation_error">لا يمكن تأكيد رقم هاتفك.</string>
+    <string name="dgts__confirmation_error_alternative">عذرًا، نواجه مشكلة في إرسال رمز التأكيد لك.</string>
+    <string name="dgts__confirmation_expired">هذا الرمز منتهي الصلاحية. يُرجى إعادة إرسال رمز التأكيد.</string>
+    <string name="dgts__continue">استمرار</string>
+    <string name="dgts__digits_logo_desc">أيقونة شعار digits</string>
+    <string name="dgts__digits_logo_name_desc">اسم شعار digits</string>
+    <string name="dgts__dismiss">تجاهل</string>
+    <string name="dgts__done">تمّ</string>
+    <string name="dgts__email_request_edit_hint">عنوان البريد الإلكترونيّ</string>
+    <string name="dgts__email_request_title">أدخِل عنوان البريد الإلكترونيّ</string>
+    <string name="dgts__find_your_friends">ابحث عن أصدقائك</string>
+    <string name="dgts__image_header_description">عنوان الصورة لتسجيل الدخول</string>
+    <string name="dgts__invalid_email">بريد إلكترونيّ غير صالح. حاول مرّة أخرى</string>
+    <string name="dgts__login_digits_text">استخدام رقم الهاتف الخاص بي</string>
+    <string name="dgts__network_error">يُرجى التحقق من الشبكة وإعادة المحاولة.</string>
+    <string name="dgts__not_now">ليس الآن</string>
+    <string name="dgts__okay">حسنًا</string>
+    <string name="dgts__phone_number_edit_hint">رقم هاتفك</string>
+    <string name="dgts__phone_number_text">أدخل رقم الهاتف الخاص بك</string>
+    <string name="dgts__pin_code_verification_title">أدخِل رمز التوثيق المكوَّن من خطوتين</string>
+    <string name="dgts__resend_confirmation_text">إعادة إرسال رمز التوثيق</string>
+    <string name="dgts__sending">جارٍ الإرسال…</string>
+    <string name="dgts__success_desc">أيقونة النجاح</string>
+    <string name="dgts__terms_email_request">بالنقر على %1$sاستمرار%1$s تقوم بإضافة هذا البريد الإلكترونيّ لحسابك على Digits. جميع تطبيقاتك المصادق عليها من Digits ستتمكّن من الوصول لهذا البريد الإلكترونيّ، وسيتمكّن مستخدموها من اكتشافك بواسطة البريد الإلكترونيّ. قُم بإدراة حسابك على %2$sDigits.com%3$s.</string>
+    <string name="dgts__terms_text">بالنقر على %1$sاستمرار%1$s أعلاه، سيقوم %2$sDigits\
+        by Twitter%3$s بإرسال رسالة نصّيّة قصيرة لك لتأكيد رقم هاتفك. قد يتم تطبيق رسوم الرسائل والبيانات.</string>
+    <string name="dgts__terms_text_call_me">بالنقر على %1$sاتصِل بي%1$s أعلاه، سيقوم%2$sDigits by Twitter%3$s بإرسال رسالة صوتية لك لتأكيد رقم هاتفك. قد يتم تطبيق رسوم المكالمات والبيانات.</string>
+    <string name="dgts__terms_text_create">بالنقر على %1$sاستمرار%1$s أعلاه، أنت توافق على %2$sشروط الخدمة%3$s ،%2$sسياسة الخصوصيّة%3$s و%2$sسياسة ملفّات تعريف الارتباط%3$s لـ Digits by Twitter، ويمكن لمستخدمي هذا التطبيق الآخرين اكتشافك بواسطة رقم الهاتف و/أو البريد الإلكترونيّ.</string>
+    <string name="dgts__terms_text_sign_in">بالنقر على %1$sاستمرار%1$s أعلاه، أنت توافق على تحديثات %2$sشروط الخدمة%3$s ،%2$sسياسة الخصوصيّة%3$s و%2$sسياسة ملفّات تعريف الارتباط%3$s لـ Digits by Twitter، ويمكن لمستخدمي %1$s الآخرين اكتشافك بواسطة رقم الهاتف و/أو البريد الإلكترونيّ.</string>
+    <string name="dgts__try_again">حاول مرّة أخرى</string>
+    <string name="dgts__try_again_confirmation">يُرجى التحقق من الرمز وإعادة المحاولة.</string>
+    <string name="dgts__try_again_email">يُرجى التحقق من بريدك الإلكترونيّ وإعادة المحاولة.</string>
+    <string name="dgts__try_again_phone_number">يُرجى التحقق من الرقم وإعادة المحاولة.</string>
+    <string name="dgts__try_another_phone">جرّب رقم هاتف مختلف.</string>
+    <string name="dgts__unsupported_operator_error">تعذر إرسال هذا العدد في رسالة نصّيّة قصيرة.</string>
+    <string name="dgts__upload_contacts">نحن نستخدم  Digits بواسطة\
+تويتر في العثور على المزيد من أصدقائك الذين يستخدمون هذا التطبيق. عندما تنقر موافق، سنقوم/ برفع دفتر عناوينك إلى Digits بواسطة تويتر، كي نتمكّن من مساعدتك في العثور على مستخدمي %1$s الذين تعرفهم أو مساعدة مستخدمي %1$s الآخرين في العثور عليك.</string>
+    <string name="dgts__verification_code">رمز التوثيق</string>
+    <string name="dgts_pin_code_terms">لقد قمتَ مسبقًا بتعيين رمز توثيق مكوَّن من خطوتين على digits.Com</string>
+</resources>

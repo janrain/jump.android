@@ -22,4 +22,4 @@
               android:toDegrees="720"
               android:pivotX="50%"
               android:pivotY="50%"
-              android:repeatCount="infinite"/><!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/drawable/progress_dark.xml --><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/drawable/progress_dark.xml -->
+              android:repeatCount="infinite"/><!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/drawable/progress_dark.xml --><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.3/res/drawable/progress_dark.xml -->

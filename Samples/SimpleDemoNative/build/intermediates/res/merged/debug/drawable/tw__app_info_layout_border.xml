@@ -27,4 +27,4 @@
         android:width="1dp"
         android:color="@color/tw__composer_light_gray"/>
 </shape>
-<!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/tweet-composer/src/main/res/drawable/tw__app_info_layout_border.xml --><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.0/res/drawable/tw__app_info_layout_border.xml -->
+<!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/tweet-composer/src/main/res/drawable/tw__app_info_layout_border.xml --><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.2/res/drawable/tw__app_info_layout_border.xml -->

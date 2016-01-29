@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-zh-rCN/values-zh-rCN.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-zh-rCN/values-zh-rCN.xml -->
     <eat-comment/>
     <plurals name="tw__time_hours">
         <item quantity="one">1时</item>
@@ -80,18 +80,25 @@
     <string msgid="2201289642219771610" name="common_google_play_services_updating_text">"Google Play 服务当前正在更新，因此您无法运行<ns1:g id="APP_NAME">%1$s</ns1:g>。"</string>
     <string msgid="815008177440683245" name="common_google_play_services_updating_title">"Google Play 服务正在更新"</string>
     <string msgid="411506735369601515" name="common_open_on_phone">"在手机上打开"</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values-zh-rCN/values-zh-rCN.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.3/res/values-zh-rCN/values-zh-rCN.xml -->
     <eat-comment/>
+    <string name="dgts__call_me">呼叫我</string>
+    <string name="dgts__calling">呼叫中…</string>
     <string name="dgts__confirmation_code">确认码</string>
     <string name="dgts__confirmation_edit_hint">输入确认码</string>
     <string name="dgts__confirmation_error">无法确认你的手机号码</string>
     <string name="dgts__confirmation_error_alternative">很抱歉，我们无法向你发送验证码。</string>
-    <string name="dgts__confirmation_expired">此确认码已过期,请重新发送确认码。</string>
+    <string name="dgts__confirmation_expired">此确认码已过期，请重新发送确认码。</string>
+    <string name="dgts__continue">继续</string>
     <string name="dgts__digits_logo_desc">digits logo 图标</string>
     <string name="dgts__digits_logo_name_desc">digits logo 名字</string>
     <string name="dgts__dismiss">忽略</string>
+    <string name="dgts__done">已完成</string>
+    <string name="dgts__email_request_edit_hint">邮件地址</string>
+    <string name="dgts__email_request_title">输入邮件地址</string>
     <string name="dgts__find_your_friends">查找你的好友</string>
     <string name="dgts__image_header_description">登录图片标题</string>
+    <string name="dgts__invalid_email">邮件地址无效。请重试</string>
     <string name="dgts__login_digits_text">使用我的手机号码</string>
     <string name="dgts__network_error">请检查你的网络并重试。</string>
     <string name="dgts__not_now">暂时不用</string>
@@ -100,14 +107,19 @@
     <string name="dgts__phone_number_text">输入你的手机号码</string>
     <string name="dgts__pin_code_verification_title">输入两步验证码</string>
     <string name="dgts__resend_confirmation_text">重新发送确认码</string>
+    <string name="dgts__sending">发送中…</string>
     <string name="dgts__success_desc">成功图标</string>
-    <string name="dgts__terms_text">点击上面的%1$s发送验证码%1$s按钮，Twitter 的 Digits便会向你的手机号码发送验证短信。运营商可能会收取额外的短信或数据传输费。</string>
-    <string name="dgts__terms_text_create">点击上面的%1$s创建账号%1$s按钮即表示你同意Twitter Digits的服务条款、隐私政策和Cookies 政策，而且该应用程序的其他用户可以通过手机号码和/或电子邮件找到你。</string>
-    <string name="dgts__terms_text_sign_in">点击上面的%1$s登入%1$s按钮即表示你同意Twitter Digits的服务条款、隐私政策和Cookies政策，而且%1$s的其他用户可以通过手机号码和/或邮件地址找到你。</string>
+    <string name="dgts__terms_email_request">点击%1$s继续%1$s后，你会向你的 Digits 账号添加这个邮件地址。经过 Digits 认证的所有应用都可以访问这个邮件地址，而它们的用户将能够通过邮件地址找到你。在 %2$sDigits.com%3$s 上管理你的账号。</string>
+    <string name="dgts__terms_text">点击上面的%1$s继续%1$s按钮，%2$sDigits by Twitter%3$s 便会向你的手机号码发送验证短信。运营商可能会收取短信或数据传输费。</string>
+    <string name="dgts__terms_text_call_me">点击上面的%1$s呼叫我%1$s按钮，%2$sDigits by Twitter%3$s 便会向你进行语音呼叫。运营商可能会收取短信或数据传输费。</string>
+    <string name="dgts__terms_text_create">点击上面的%1$s继续%1$s按钮即表示你同意 Digits by Twitter 的 %2$s服务条款%3$s、%2$s隐私政策%3$s和 %2$sCookies 政策%3$s，而且该应用程序的其他用户可以通过手机号码和/或邮件地址找到你。</string>
+    <string name="dgts__terms_text_sign_in">轻按上面的%1$s继续%1$s按钮即表示你同意 Digits by Twitter 的%2$s服务条款%3$s、%2$s隐私政策%3$s和 %2$sCookies 政策%3$s，而 %1$s 的其他用户可以通过手机号码和/或邮件地址找到你。</string>
     <string name="dgts__try_again">重试</string>
     <string name="dgts__try_again_confirmation">请检查你的确认码并重试。</string>
+    <string name="dgts__try_again_email">请检查你的邮件并重试</string>
     <string name="dgts__try_again_phone_number">请检查你的手机号码并重试。</string>
     <string name="dgts__try_another_phone">请尝试其他手机号码</string>
+    <string name="dgts__unsupported_operator_error">无法向这个号码发送短信。</string>
     <string name="dgts__upload_contacts">我们使用Twitter Digits来查找你身边使用这个应用程序的朋友。当你点击“确认”时，我们将上传你的通讯录至Twitter Digits，帮你找到你认识的%1$s用户，同时帮其他%1$s用户找到你。</string>
     <string name="dgts__verification_code">验证码</string>
     <string name="dgts_pin_code_terms">你之前已在 digits.com 设置了两步验证</string>
@@ -122,27 +134,29 @@
     <string msgid="109793632378378069" name="mr_media_route_controller_disconnect">"断开连接"</string>
     <string msgid="5441529851481176817" name="mr_system_route_name">"系统"</string>
     <string msgid="7498112907524977311" name="mr_user_route_category_name">"设备"</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-zh-rCN/values-zh-rCN.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-zh-rCN/values-zh-rCN.xml -->
     <eat-comment/>
     <string name="tw__allow_btn_txt">允许</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-zh-rCN/values-zh-rCN.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-zh-rCN/values-zh-rCN.xml -->
     <eat-comment/>
+    <string name="tw__like_tweet">喜欢推文</string>
+    <string name="tw__liked_tweet">取消喜欢</string>
     <string name="tw__loading_tweet">加载推文</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-zh-rCN/values-zh-rCN.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-zh-rCN/values-zh-rCN.xml -->
     <eat-comment/>
     <string name="tw__login_btn_txt">登录 Twitter</string>
     <string name="tw__not_now_btn_txt">以后再说</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-zh-rCN/values-zh-rCN.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-zh-rCN/values-zh-rCN.xml -->
     <eat-comment/>
     <string name="tw__relative_date_format_long">y/M/d</string>
     <string name="tw__relative_date_format_short">M月d日</string>
     <string name="tw__retweeted_by_format">由 %1$s 转推</string>
     <string name="tw__share_content_format">看看 \@%1$s 的推文：https://twitter.com/%1$s/status/%2$s</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-zh-rCN/values-zh-rCN.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-zh-rCN/values-zh-rCN.xml -->
     <eat-comment/>
     <string name="tw__share_email_desc">允许%1$s获取你的Twitter 账号\@%2$s电子邮件地址以随时接收更新及其它讯息</string>
     <string name="tw__share_email_title">分享你的电子邮件地址</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-zh-rCN/values-zh-rCN.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-zh-rCN/values-zh-rCN.xml -->
     <eat-comment/>
     <string name="tw__share_subject_format">来自 %1$s 的推文 (\@%2$s)</string>
     <string name="tw__share_tweet">分享推文</string>

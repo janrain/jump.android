@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-ur/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__confirmation_code">تصدیقی کوڈ</string>
+    <string name="dgts__confirmation_edit_hint">تصدیقی کوڈ درج کریں</string>
+    <string name="dgts__confirmation_error">آپ کے فون نمبر کی تصدیق کرنے سے قاصر</string>
+    <string name="dgts__confirmation_error_alternative">معاف کیجیے گا، ہمیں آپ کو تصدیقی کوڈ بھیجنے میں مشکل درپیش ہے۔</string>
+    <string name="dgts__digits_logo_desc">digits کا آئیکان</string>
+    <string name="dgts__digits_logo_name_desc">digits کے لوگو کا نام</string>
+    <string name="dgts__dismiss">برخاست کریں</string>
+    <string name="dgts__find_your_friends">اپنے دوستوں کو ڈھونڈیں</string>
+    <string name="dgts__image_header_description">لاگ ان کے لیے تصویر کے ہیڈر</string>
+    <string name="dgts__login_digits_text">میرا فون نمبر استعمال کریں</string>
+    <string name="dgts__network_error">برائے مہربانی اپنے نیٹ ورک کی پڑتال کریں اور دوبارہ کوشش کریں۔</string>
+    <string name="dgts__not_now">ابھی نہیں</string>
+    <string name="dgts__okay">ٹھیک ہے</string>
+    <string name="dgts__phone_number_edit_hint">آپ کا نمبر</string>
+    <string name="dgts__phone_number_text">اپنا فون نمبر درج کریں</string>
+    <string name="dgts__pin_code_verification_title">2-step کا تصدیقی کوڈ درج کریں</string>
+    <string name="dgts__resend_confirmation_text">تصدیقی کوڈ دوبارہ بھیجیں</string>
+    <string name="dgts__success_desc">کامیابی کا آئیکان</string>
+    <string name="dgts__try_again">دوبارہ کوشش کریں</string>
+    <string name="dgts__try_again_confirmation">برائے مہربانی اپنے کوڈ کی پڑتال کریں اور دوبارہ کوشش کریں۔</string>
+    <string name="dgts__try_again_phone_number">برائے مہربانی اپنے نمبر کی پڑتال کریں اور دوبارہ کوشش کریں-</string>
+    <string name="dgts__try_another_phone">ایک مختلف فون نمبر آزمائیں</string>
+    <string name="dgts__upload_contacts">ہم آپ کے مزید دوست جو یہ ایپلی کیشن استعمال کرتے ہیں کو تلاش کرنے کے \
+لیے، Digits by Twitter استعمال کرتے ہیں۔ جب آپ ٹھیک ہے پر کلک کرتے ہیں، تو \
+ہم Digits by Twitter پر آپ کی ایڈریس بک کو اپ لوڈ کریں گے تاکہ آپ %1$s کے دیگر صارفین کو تلاش کر سکیں جو آپ کو جانتے ہیں  اور آپ کو تلاش کرنے میں %1$s کے دیگر صارفین کی مدد کریں گے۔</string>
+    <string name="dgts__verification_code">تصدیقی کوڈ</string>
+    <string name="dgts_pin_code_terms">آپ نے پہلے ہی digits.com پر 2-step تصدیقی کوڈ مقرر کیا ہوا ہے</string>
+</resources>

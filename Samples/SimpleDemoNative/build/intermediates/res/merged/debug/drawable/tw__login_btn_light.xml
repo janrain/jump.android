@@ -27,4 +27,4 @@
     <item android:drawable="@drawable/tw__login_btn_pressed_light"
           android:state_focused="true"/>
     <item android:drawable="@drawable/tw__login_btn_default_light"/>
-</selector><!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/twitter-core/src/main/res/drawable/tw__login_btn_light.xml --><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/drawable/tw__login_btn_light.xml -->
+</selector><!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/twitter-core/src/main/res/drawable/tw__login_btn_light.xml --><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/drawable/tw__login_btn_light.xml -->

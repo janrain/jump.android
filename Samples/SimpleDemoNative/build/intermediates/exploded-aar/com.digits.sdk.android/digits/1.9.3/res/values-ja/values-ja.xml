@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-ja/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__call_me">自分に発信</string>
+    <string name="dgts__calling">発信中…</string>
+    <string name="dgts__confirmation_code">認証コード</string>
+    <string name="dgts__confirmation_edit_hint">認証コードを入力</string>
+    <string name="dgts__confirmation_error">電話番号の認証に失敗しました</string>
+    <string name="dgts__confirmation_error_alternative">認証コードの送信に問題が発生しました。</string>
+    <string name="dgts__confirmation_expired">このコードは有効期限切れです。認証コードを再送信してください。</string>
+    <string name="dgts__continue">続ける</string>
+    <string name="dgts__digits_logo_desc">digitsロゴのアイコン</string>
+    <string name="dgts__digits_logo_name_desc">digitsロゴの名前</string>
+    <string name="dgts__dismiss">非表示</string>
+    <string name="dgts__done">完了</string>
+    <string name="dgts__email_request_edit_hint">メールアドレス</string>
+    <string name="dgts__email_request_title">メールアドレスを入力</string>
+    <string name="dgts__find_your_friends">友だちを探す</string>
+    <string name="dgts__image_header_description">ログイン用のイメージヘッダー</string>
+    <string name="dgts__invalid_email">メールアドレスが正しくありません。やり直してください</string>
+    <string name="dgts__login_digits_text">電話番号を使用する</string>
+    <string name="dgts__network_error">ネットワークを確認し、やり直してください。</string>
+    <string name="dgts__not_now">今はしない</string>
+    <string name="dgts__okay">OK</string>
+    <string name="dgts__phone_number_edit_hint">ご利用の番号</string>
+    <string name="dgts__phone_number_text">電話番号を入力してください</string>
+    <string name="dgts__pin_code_verification_title">2段階認証コードを入力</string>
+    <string name="dgts__resend_confirmation_text">認証コードを再送信</string>
+    <string name="dgts__sending">送信中…</string>
+    <string name="dgts__success_desc">プロフィール画像</string>
+    <string name="dgts__terms_email_request">上の%1$s続ける%1$sをタップすると、このメールアドレスがDigitsアカウントに登録されます。 Digitsで認証したすべてのアプリはメールアドレスにアクセスでき、そのアプリのユーザーはメールアドレスであなたを見つけることができるようになります。アカウントの管理は%2$sDigits.com%3$sから行えます。</string>
+    <string name="dgts__terms_text">上の%1$s続ける%1$sをタップすると、電話番号を認証するためのSMSメッセージが%2$sDigits by Twitter%3$sから送信されます。SMS使用料がかかる場合があります。</string>
+    <string name="dgts__terms_text_call_me">上の%1$s自分に発信%1$sをタップすると、電話番号を認証するための電話が%2$sDigits by Twitter%3$sから発信されます。通話料金がかかる場合があります。</string>
+    <string name="dgts__terms_text_create">上の%1$s続ける%1$sをタップすることで、%2$s利用規約%3$s、%2$sプライバシーポリシー%3$s、およびDigits by Twitterの%2$sCookieポリシー%3$s、さらにこのアプリの他のユーザーが電話番号やメールアドレスからあなたを見つけることができることに同意します。</string>
+    <string name="dgts__terms_text_sign_in">上の%1$s続ける%1$sをタップすることで、更新された%2$s利用規約%3$s、%2$sプライバシーポリシー%3$s、およびDigits by Twitterの%2$sCookieポリシー%3$s、さらに%1$sの他のユーザーが電話番号やメールアドレスからあなたを見つけることができることに同意します。</string>
+    <string name="dgts__try_again">やり直してください</string>
+    <string name="dgts__try_again_confirmation">コードを確認し、やり直してください。</string>
+    <string name="dgts__try_again_email">メールアドレスを確認し、やり直してください</string>
+    <string name="dgts__try_again_phone_number">番号を確認し、やり直してください。</string>
+    <string name="dgts__try_another_phone">別の電話番号をお試しください</string>
+    <string name="dgts__unsupported_operator_error">この電話番号にはSMSメッセージを送信できません。</string>
+    <string name="dgts__upload_contacts">Twitterでは、このアプリを使う友だちをより多く見つけるためにDigits by Twitterを使います。OKをタップすると、アドレス帳がDigits by Twitterにアップロードされ、あなたが%1$sのユーザーを見つけやすくなったり、%1$sのユーザーがあなたを見つけやすくなります。</string>
+    <string name="dgts__verification_code">認証コード</string>
+    <string name="dgts_pin_code_terms">2段階認証コードはdigits.comで設定済みです</string>
+</resources>

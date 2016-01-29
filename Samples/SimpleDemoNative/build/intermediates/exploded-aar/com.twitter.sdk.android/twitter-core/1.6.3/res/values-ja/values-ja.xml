@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/twitter-core/src/main/res/values-ja/strings.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">許可</string>
+    <string name="tw__login_btn_txt">Twitterにログイン</string>
+    <string name="tw__not_now_btn_txt">今はしない</string>
+    <string name="tw__share_email_desc">%1$sからの更新情報を受け取る場合は、ご利用のTwitterアカウント\@%2$sで使用中のメールアドレスでメールの受信を許可してください。</string>
+    <string name="tw__share_email_title">メールアドレスを共有</string>
+</resources>

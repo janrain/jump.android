@@ -26,11 +26,11 @@
     tools:visibility="visible">
 
     <com.twitter.sdk.android.tweetui.ToggleImageButton
-        android:id="@+id/tw__tweet_favorite_button"
-        style="@style/tw__TweetActionButton"
-        android:src="@drawable/tw__favorite_action"
-        twitter:contentDescriptionOff="@string/tw__favorited_tweet"
-        twitter:contentDescriptionOn="@string/tw__favorite_tweet"
+        android:id="@+id/tw__tweet_like_button"
+        style="@style/tw__TweetActionButton.Heart"
+        android:src="@drawable/tw__like_action"
+        twitter:contentDescriptionOff="@string/tw__like_tweet"
+        twitter:contentDescriptionOn="@string/tw__liked_tweet"
         android:layout_marginRight="@dimen/tw__tweet_action_button_spacing"/>
 
     <ImageButton
@@ -39,4 +39,4 @@
         android:contentDescription="@string/tw__share_tweet"
         android:src="@drawable/tw__share_action"/>
 
-</com.twitter.sdk.android.tweetui.TweetActionBarView><!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/tweet-ui/src/main/res/layout/tw__action_bar.xml --><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/layout/tw__action_bar.xml -->
+</com.twitter.sdk.android.tweetui.TweetActionBarView><!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/tweet-ui/src/main/res/layout/tw__action_bar.xml --><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/layout/tw__action_bar.xml -->

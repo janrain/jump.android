@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-bn/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__call_me">আমাকে কল করুন</string>
+    <string name="dgts__calling">কল করা হচ্ছে…</string>
+    <string name="dgts__confirmation_code">নিশ্চিতকরণ কোড</string>
+    <string name="dgts__confirmation_edit_hint">নিশ্চিতকরণ কোড লিখুন</string>
+    <string name="dgts__confirmation_error">আপনার ফোন নম্বর নিশ্চিত করা যায়নি</string>
+    <string name="dgts__confirmation_error_alternative">দুঃখিত, আপনাকে একটি যাচাইকরণ কোড পাঠাতে আমরা সমস্যার সম্মুখীন হচ্ছি।</string>
+    <string name="dgts__confirmation_expired">এই কোডের মেয়াদ শেষ হয়েছে। দয়া করে নিশ্চিতকরণ কোড পুনঃপাঠান।</string>
+    <string name="dgts__continue">অবিরত</string>
+    <string name="dgts__digits_logo_desc">digits লোগো আইকন</string>
+    <string name="dgts__digits_logo_name_desc">digits লোগো নাম</string>
+    <string name="dgts__dismiss">খারিজ করুন</string>
+    <string name="dgts__done">সম্পন্ন</string>
+    <string name="dgts__email_request_edit_hint">ইমেল ঠিকানা</string>
+    <string name="dgts__email_request_title">ইমেল ঠিকানা লিখুন</string>
+    <string name="dgts__find_your_friends">আপনার বন্ধুদের খুঁজুন</string>
+    <string name="dgts__image_header_description">লগ-ইনের জন্য ছবির শিরোনাম</string>
+    <string name="dgts__invalid_email">অবৈধ ইমেল। আবার চেষ্টা করুন</string>
+    <string name="dgts__login_digits_text">আমার ফোন নম্বর ব্যবহার করুন</string>
+    <string name="dgts__network_error">অনুগ্রহ করে আপনার নেটওয়ার্ক পরীক্ষা করে আবার চেষ্টা করুন।</string>
+    <string name="dgts__not_now">এখন নয়</string>
+    <string name="dgts__okay">ঠিক আছে</string>
+    <string name="dgts__phone_number_edit_hint">আপনার নম্বর</string>
+    <string name="dgts__phone_number_text">আপনার ফোন নম্বর লিখুন</string>
+    <string name="dgts__pin_code_verification_title">2-পদক্ষেপ যাচাইকরণ কোড লিখুন</string>
+    <string name="dgts__resend_confirmation_text">নিশ্চিতকরণ কোড আবার পাঠান</string>
+    <string name="dgts__sending">পাঠানো হচ্ছে…</string>
+    <string name="dgts__success_desc">সফল হওয়ার আইকন</string>
+    <string name="dgts__terms_email_request">%1$sঅবিরত%1$s ট্যাপ করে আপনি আপনার Digits by Twitter অ্যাকাউন্টে এই ইমেল যোগ করছেন। Digits-এর সাথে প্রমাণীকৃত আপনার সমস্ত অ্যাপের এই ইমেল ঠিকানাতে অ্যাক্সেস থাকবে ও তাদের ব্যবহারকারীরা আপনাকে ইমেল দিয়ে আবিষ্কার করতে সক্ষম হবে। %2$sDigits.com%3$s-এ আপনার অ্যাকাউন্ট পরিচালনা করুন।</string>
+    <string name="dgts__terms_text">উপরে %1$sঅবিরত%1$s ট্যাপ করলে আপনার ফোন নম্বর নিশ্চিত করতে %2$sDigits by Twitter%3$s আপনাকে একটি এসএমএস বার্তা পাঠাবে। বার্তা ও ডেটা দর প্রয়োগ হতে পারে।</string>
+    <string name="dgts__terms_text_call_me">উপরে %1$sআমাকে কল করুন%1$s ট্যাপ করলে আপনার ফোন নম্বর নিশ্চিত করতে %2$sDigits by Twitter%3$s আপনাকে একটি ভয়েস কল পাঠাবে। কল ও ডেটা দর প্রয়োগ হতে পারে।</string>
+    <string name="dgts__terms_text_create">উপরে %1$sঅবিরত%1$s ট্যাপ করে আপনি Digits by Twitter-এর %2$sপরিষেবার শর্তাবলী%3$s, %2$sগোপনীয়তা নীতি%3$s, ও %2$sকুকিজ নীতির%3$s সাথে এবং এই অ্যাপের অন্যান্য ব্যবহারকারীরা আপনাকে ফোন নম্বর এবং/অথবা ইমেলের মাধ্যমে আবিষ্কার করতে পারবেন তাতে সম্মত হন।</string>
+    <string name="dgts__terms_text_sign_in">উপরে %1$sঅবিরত%1$s ট্যাপ করে আপনি Digits by Twitter-এর আপডেট হওয়া %2$sপরিষেবার শর্তাবলী%3$s, %2$sগোপনীয়তা নীতি%3$s, ও %2$sকুকিজ নীতির%3$s সাথে এবং %1$s-এর অন্যান্য ব্যবহারকারীরা আপনাকে ফোন নম্বর এবং/অথবা ইমেলের মাধ্যমে আবিষ্কার করতে পারবেন তাতে সম্মত হন।</string>
+    <string name="dgts__try_again">আবার চেষ্টা করুন</string>
+    <string name="dgts__try_again_confirmation">অনুগ্রহ করে আপনার কোড পরীক্ষা করে আবার চেষ্টা করুন।</string>
+    <string name="dgts__try_again_email">দয়া করে আপনার ইমেল পরীক্ষা করুন ও আবার চেষ্টা করুন</string>
+    <string name="dgts__try_again_phone_number">অনুগ্রহ করে আপনার নম্বর দেখে নিয়ে আবার চেষ্টা করুন।</string>
+    <string name="dgts__try_another_phone">অন্য একটি ফোন নম্বর ব্যবহার করুন</string>
+    <string name="dgts__unsupported_operator_error">এই নম্বরে একটি এসএমএস বার্তা পাঠাতে অক্ষম।</string>
+    <string name="dgts__upload_contacts">এই অ্যাপটি আপনার আর যে সব বন্ধুরা ব্যবহার করছেন তাদের আমরা Digits by Twitter -এর সাহায্যে খুঁজে নিই। আপনি ঠিক আছে টিপলে, আমরা Digits by Twitter-এ আপনার ঠিকানা বই আপলোড করব যাতে কিনা, আমরা আপনাকে আপনার পরিচিতি %1$s -এর ব্যবহারকারীদের খুঁজে নিতে বা %1$s -এর অন্যান্য ব্যবহারকারীদের আপনাকে খুঁজে নিতে সাহায্য করতে পারি।</string>
+    <string name="dgts__verification_code">যাচাইকরণ কোড</string>
+    <string name="dgts_pin_code_terms">আপনি পূর্বে digits.com -এ একটি 2-পদক্ষেপ যাচাইকরণ কোড সেট করেছেন</string>
+</resources>

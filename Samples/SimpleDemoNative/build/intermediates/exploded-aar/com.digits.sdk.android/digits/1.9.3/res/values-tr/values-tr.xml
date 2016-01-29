@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-tr/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__call_me">Beni ara</string>
+    <string name="dgts__calling">Aranıyor…</string>
+    <string name="dgts__confirmation_code">Doğrulama kodu</string>
+    <string name="dgts__confirmation_edit_hint">Doğrulama kodunu gir</string>
+    <string name="dgts__confirmation_error">Telefon numaran doğrulanamıyor</string>
+    <string name="dgts__confirmation_error_alternative">Üzgünüz, sana bir doğrulama kodu göndermede sorun yaşıyoruz.</string>
+    <string name="dgts__confirmation_expired">Bu kodun süresi doldu. Lütfen doğrulama kodunu yeniden gönder.</string>
+    <string name="dgts__continue">Devam</string>
+    <string name="dgts__digits_logo_desc">digits logo simgesi</string>
+    <string name="dgts__digits_logo_name_desc">digits logo ismi</string>
+    <string name="dgts__dismiss">Gizle</string>
+    <string name="dgts__done">Tamam</string>
+    <string name="dgts__email_request_edit_hint">E-posta adresi</string>
+    <string name="dgts__email_request_title">E-posta adresini gir</string>
+    <string name="dgts__find_your_friends">Arkadaşlarını bul</string>
+    <string name="dgts__image_header_description">Giriş için görüntü başlığı</string>
+    <string name="dgts__invalid_email">Geçersiz e-posta. Tekrar Deneyin</string>
+    <string name="dgts__login_digits_text">Telefon numaramı kullan</string>
+    <string name="dgts__network_error">Lütfen ağını kontrol et ve yeniden dene.</string>
+    <string name="dgts__not_now">Şu an değil</string>
+    <string name="dgts__okay">Tamam</string>
+    <string name="dgts__phone_number_edit_hint">Numaran</string>
+    <string name="dgts__phone_number_text">Telefon numaranı gir</string>
+    <string name="dgts__pin_code_verification_title">2 adımlı onaylama kodunu gir</string>
+    <string name="dgts__resend_confirmation_text">Doğrulama kodunu yeniden gönder</string>
+    <string name="dgts__sending">Gönderiliyor…</string>
+    <string name="dgts__success_desc">Başarılı Simgesi</string>
+    <string name="dgts__terms_email_request">%1$sDevam%1$s düğmesine dokunarak bu e-postayı Digits hesabına eklemiş olursun. Digits ile doğrulanmış tüm uygulamaların bu e-posta adresine erişebilecek ve kullanıcılar e-posta adresinden seni keşfedebilecek. Hesabını %2$sDigits.com%3$s\'da yönet.</string>
+    <string name="dgts__terms_text">Yukarıdaki %1$sDevam%1$s düğmesine dokunduğunda, %2$sDigits by Twitter%3$s telefon numaranı doğrulamak için sana bir kısa mesaj gönderir. Mesaj ve veri ücretleri geçerlidir.</string>
+    <string name="dgts__terms_text_call_me">Yukarıdaki %1$sBeni ara%1$s düğmesine dokunduğunda, %2$sDigits by Twitter%3$s telefon numaranı doğrulamak için bir sesli arama yapar. Mesaj ve veri ücretleri geçerlidir.</string>
+    <string name="dgts__terms_text_create">Yukarıdaki %1$sDevam%1$s düğmesine dokunarak Digits by Twitter\'ın %2$sHizmet Şartları%3$s\'nı, %2$sGizlilik Politikası%3$s\'nı ve %2$sÇerez Politikası%3$s\'nı \
+onaylamış ve bu uygulamayı kullanan diğer kullanıcıların seni telefon \
+numarandan ve/veya e-posta adresinden bulabileceğini kabul etmiş \
+oluyorsun.</string>
+    <string name="dgts__terms_text_sign_in">Yukarıdaki %1$sDevam%1$s düğmesine dokunarak Digits by Twitter\'ın %2$sHizmet Şartlarını%3$s, %2$sGizlilik Politikasını%3$s ve %2$sÇerez Politikasını%3$s onaylamış ve diğer %1$s kullanıcılarının seni telefon numarandan ve/veya e-posta adresinden bulabileceğini kabul etmiş oluyorsun.</string>
+    <string name="dgts__try_again">Yeniden Dene</string>
+    <string name="dgts__try_again_confirmation">Lütfen kodunu kontrol et ve yeniden dene.</string>
+    <string name="dgts__try_again_email">Lütfen e-postanızı  kontrol edin ve yeniden deneyin</string>
+    <string name="dgts__try_again_phone_number">Lütfen numaranı kontrol et ve yeniden dene.</string>
+    <string name="dgts__try_another_phone">Farklı bir telefon numarası dene</string>
+    <string name="dgts__unsupported_operator_error">Bu numaraya kısa mesaj gönderilemiyor.</string>
+    <string name="dgts__upload_contacts">Bu uygulamayı kullanan daha fazla arkadaşını bulmak için Digits by Twitter\'ı kullanırız. Tamam\'a dokunduğunda, rehberin Digits by Twitter\'a yüklenir böylece tanıdığın %1$s kullanıcılarını bulmana veya diğer %1$s kullanıcılarının seni bulmasına yardımcı olabiliriz.</string>
+    <string name="dgts__verification_code">Doğrulama kodu</string>
+    <string name="dgts_pin_code_terms">Daha önce digits.com üzerinden ayarladığın 2 adımlı doğrulama kodu</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/twitter-core/src/main/res/values-fr/strings.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">Autoriser</string>
+    <string name="tw__login_btn_txt">Se connecter avec Twitter</string>
+    <string name="tw__not_now_btn_txt">Pas maintenant</string>
+    <string name="tw__share_email_desc">Recevez des mises à jour et d\'autres informations de %1$s lorsque vous l\'autorisez à accéder à l\'email de votre compte Twitter  \@%2$s</string>
+    <string name="tw__share_email_title">Partagez votre adresse email</string>
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-tl/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__call_me">Tawagan ako</string>
+    <string name="dgts__calling">Tumatawag…</string>
+    <string name="dgts__confirmation_code">Code sa Pagkumpirma</string>
+    <string name="dgts__confirmation_edit_hint">Ipasok code ng kumpirmasyon</string>
+    <string name="dgts__confirmation_error">Hindi makumpirma ang numero ng iyong telepono. </string>
+    <string name="dgts__confirmation_error_alternative">Paumanhin, nagkakaproblema kaming ipadala sa iyo ang code ng kumpirmasyon.</string>
+    <string name="dgts__confirmation_expired">Paso na ang code na ito. Pakipadala ulit ang code ng kumpirmasyon.</string>
+    <string name="dgts__continue">Magpatuloy</string>
+    <string name="dgts__digits_logo_desc">icon ng digits logo</string>
+    <string name="dgts__digits_logo_name_desc">pangalan ng digits logo</string>
+    <string name="dgts__dismiss">I-dismiss</string>
+    <string name="dgts__done">Tapos na</string>
+    <string name="dgts__email_request_edit_hint">Email address</string>
+    <string name="dgts__email_request_title">Ilagay ang email address</string>
+    <string name="dgts__find_your_friends">Hanapin ang mga kaibigan mo</string>
+    <string name="dgts__image_header_description">Image header para sa login</string>
+    <string name="dgts__invalid_email">Maling Email. Subukan Ulit</string>
+    <string name="dgts__login_digits_text">Gamitin ang numero ng telepono.</string>
+    <string name="dgts__network_error">Pakitingnan ang inyong network at subukan ulit.</string>
+    <string name="dgts__not_now">Hindi ngayon</string>
+    <string name="dgts__okay">Okay</string>
+    <string name="dgts__phone_number_edit_hint">Ang Numero Mo</string>
+    <string name="dgts__phone_number_text">Ipasok ang numero ng telepono mo.</string>
+    <string name="dgts__pin_code_verification_title">Ipasok ang 2-step verification code</string>
+    <string name="dgts__resend_confirmation_text">Ipadala ulit code ng kumpirmasyon</string>
+    <string name="dgts__sending">Pinapadala…</string>
+    <string name="dgts__success_desc">Success Icon</string>
+    <string name="dgts__terms_email_request">Sa pag-tap sa  %1$sMagpatuloy%1$s idinadagdag mo ang email na ito sa Digits account mo. Ang lahat ng app mo na napatunayan gamit ang Digits ay magkakaroon ng access sa email address na ito, at mahahanap ka ng kanilang mga user sa pamamagitan ng email. Pamahalaan ang account mo sa %2$sDigits.com%3$s.</string>
+    <string name="dgts__terms_text">Sa pag-tap sa %1$sMagpatuloy%1$s sa itaas, papadalhan ka ng %2$sDigits by Twitter%3$s ng mensaheng SMS upang kumpirmahin ang numero ng telepono mo. Maaaring magkaroon ng singil sa mensahe at data.</string>
+    <string name="dgts__terms_text_call_me">Sa pag-tap sa %1$sTawagan ako%1$s sa itaas, tatawagan ka ng %2$sDigits by Twitter%3$s upang kumpirmahin ang numero ng telepono mo. Maaaring magkaroon ng singil sa mensahe at data.</string>
+    <string name="dgts__terms_text_create">Sa pag-tap sa %1$sMagpatuloy%1$s sa itaas, sumasang-ayon ka sa %2$sMga Tuntunin ng Serbisyo%3$s, %2$sPatakaran sa Pagkapribado%3$s, at %2$sPatakaran sa Cookies%3$s ng Digits by Twitter, at sumasang-ayon ka rin na maaari kang mahanap ng ibang mga user ng app na ito sa pamamagitan ng numero ng telepono at/o email.</string>
+    <string name="dgts__terms_text_sign_in">Sa pag-tap sa %1$sMagpatuloy%1$s sa itaas, sumasang-ayon ka sa %2$sMga Tuntunin ng Serbisyo%3$s, %2$sPatakaran sa Pagkapribado%3$s, at %2$sPatakaran sa Cookies%3$s ng Digits by Twitter, at sumasang-ayon ka rin na maaari kang mahanap ng ibang mga user ng %1$s sa pamamagitan ng numero ng telepono at/o email.</string>
+    <string name="dgts__try_again">Subukan ulit</string>
+    <string name="dgts__try_again_confirmation">Pakitingan ulit ang inyong code a subukan ulit.</string>
+    <string name="dgts__try_again_email">Pakitingnan ang email mo at subukan ulit</string>
+    <string name="dgts__try_again_phone_number">Pakitingnan ang numero ninyo at subukan ulit.</string>
+    <string name="dgts__try_another_phone">Subukan ang ibang numero ng telepono</string>
+    <string name="dgts__unsupported_operator_error">Hindi mapadalhan ang numerong ito ng mensaheng SMS.</string>
+    <string name="dgts__upload_contacts">Ginagamit namin ang Digits by Twitter para mahanap ang iba mo pang mga kaibigan na gumagamit ng app na ito. Kapag tinap mo ang Okay, i-a-upload namin ang iyong address book sa Digits by Twitter para matulungan ka naming mahanap ang mga user ng %1$s na kilala mo o matulungan ang ibang mga user ng %1$s na matuklasan ka.</string>
+    <string name="dgts__verification_code">Code ng beripikasyon</string>
+    <string name="dgts_pin_code_terms">Nakapagtakda ka na ng 2-step verification code sa digits.com</string>
+</resources>

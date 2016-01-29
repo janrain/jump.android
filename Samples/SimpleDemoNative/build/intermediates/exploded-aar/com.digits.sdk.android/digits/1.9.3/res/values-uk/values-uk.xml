@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-uk/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__call_me">Зателефонуйте мені</string>
+    <string name="dgts__calling">Телефонуємо…</string>
+    <string name="dgts__confirmation_code">Код підтвердження</string>
+    <string name="dgts__confirmation_edit_hint">Введіть код підтвердження</string>
+    <string name="dgts__confirmation_error">Не вдалося підтвердити ваш номер телефону</string>
+    <string name="dgts__confirmation_error_alternative">На жаль, нам не вдалося надіслати вам код підтвердження.</string>
+    <string name="dgts__confirmation_expired">Термін дії коду минув. Надішліть код підтвердження ще раз.</string>
+    <string name="dgts__continue">Продовжити</string>
+    <string name="dgts__digits_logo_desc">значок логотипа digits</string>
+    <string name="dgts__digits_logo_name_desc">ім’я логотипа digits</string>
+    <string name="dgts__dismiss">Відхилити</string>
+    <string name="dgts__done">Готово</string>
+    <string name="dgts__email_request_edit_hint">Адреса електронної пошти</string>
+    <string name="dgts__email_request_title">Введіть адресу електронної пошти</string>
+    <string name="dgts__find_your_friends">Пошук друзів</string>
+    <string name="dgts__image_header_description">Зображення шапки для сторінки входу</string>
+    <string name="dgts__invalid_email">Неправильна адреса електронної пошти. Спробуйте ще раз</string>
+    <string name="dgts__login_digits_text">Використовувати мій номер телефону</string>
+    <string name="dgts__network_error">Перевірте мережу та спробуйте ще раз.</string>
+    <string name="dgts__not_now">Не зараз</string>
+    <string name="dgts__okay">OK</string>
+    <string name="dgts__phone_number_edit_hint">Ваш номер</string>
+    <string name="dgts__phone_number_text">Введіть свій номер телефону</string>
+    <string name="dgts__pin_code_verification_title">Введіть код 2-етапного підтвердження</string>
+    <string name="dgts__resend_confirmation_text">Надіслати код підтвердження ще раз</string>
+    <string name="dgts__sending">Надсилається…</string>
+    <string name="dgts__success_desc">Значок «Успіх»</string>
+    <string name="dgts__terms_email_request">Натискаючи кнопку %1$sПродовжити%1$s, ви додаєте цю адресу електронної пошти до свого профілю Digits. Всі ваші додатки, автентифіковані за допомогою додатка Digits, матимуть доступ до цієї адреси електронної пошти, і їхні користувачі зможуть знайти вас за адресою електронної пошти. Керуйте своїм профілем на веб-сайті %2$sDigits.com%3$s.</string>
+    <string name="dgts__terms_text">Якщо натиснути кнопку %1$sПродовжити%1$s вище, додаток %2$sDigits\
+        by Twitter%3$s надішле вам SMS-повідомлення для підтвердження вашого номера телефону. Може стягуватися плата за повідомлення та передавання даних.</string>
+    <string name="dgts__terms_text_call_me">Якщо натиснути кнопку %1$sЗателефонуйте мені%1$s вище, додаток %2$sDigits by Twitter%3$s надішле вам голосовий виклик для підтвердження вашого номера телефону. Може стягуватися плата за повідомлення та передавання даних.</string>
+    <string name="dgts__terms_text_create">Натискаючи кнопку %1$sПродовжити%1$s вище, ви погоджуєтеся з %2$sУмовами надання послуг%3$s, %2$sПолітикою конфіденційності%3$s та %2$sПолітикою використання файлів cookie%3$s додатка Digits by Twitter, а також із тим, що інші користувачі цього додатка зможуть знайти вас за номером телефону та/або адресою електронної пошти.</string>
+    <string name="dgts__terms_text_sign_in">Натискаючи кнопку %1$sПродовжити%1$s вище, ви погоджуєтеся з оновленими %2$sУмовами надання послуг%3$s, %2$sПолітикою конфіденційності%3$s та %2$sПолітикою використання файлів cookie%3$s додатка Digits by Twitter, а також із тим, що інші користувачі додатка %1$s зможуть знайти вас за номером телефону та/або адресою електронної пошти.</string>
+    <string name="dgts__try_again">Спробуйте ще раз</string>
+    <string name="dgts__try_again_confirmation">Перевірте код і спробуйте ще раз.</string>
+    <string name="dgts__try_again_email">Перевірте свою адресу електронної пошти та спробуйте ще раз.</string>
+    <string name="dgts__try_again_phone_number">Перевірте свій номер і спробуйте ще раз.</string>
+    <string name="dgts__try_another_phone">Спробуйте інший номер телефону</string>
+    <string name="dgts__unsupported_operator_error">Не вдалося надіслати SMS-повідомлення на цей номер.</string>
+    <string name="dgts__upload_contacts">Ми використовуємо додаток Digits by Twitter, щоб знайти більше ваших друзів, які ним користуються. Коли ви торкнетеся кнопки «OK», ми завантажимо вашу адресну книгу до Digits by Twitter, щоб допомагати вам знаходити користувачів %1$s, яких ви знаєте, або допомагати іншим користувачам %1$s знаходити вас.</string>
+    <string name="dgts__verification_code">Код підтвердження</string>
+    <string name="dgts_pin_code_terms">Ви вже встановили код 2-етапного підтвердження на сайті digits.com</string>
+</resources>

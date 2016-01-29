@@ -22,7 +22,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.twitter.sdk.android.core.internal.util.AspectRatioImageView
+    <com.twitter.sdk.android.tweetui.internal.TweetMediaView
         tools:ignore="ContentDescription"
         android:id="@+id/tw__tweet_media"
         style="@style/tw__TweetMedia"/>
@@ -99,5 +99,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tw__tweet_text"/>
 
+    <View
+        android:id="@+id/bottom_separator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tw__tweet_container_bottom_separator"
+        android:layout_below="@id/tw__tweet_text"/>
+
 </RelativeLayout>
-<!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/tweet-ui/src/main/res/layout/tw__tweet.xml --><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/layout/tw__tweet.xml -->
+<!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/tweet-ui/src/main/res/layout/tw__tweet.xml --><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/layout/tw__tweet.xml -->

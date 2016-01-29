@@ -48,4 +48,4 @@
         android:layout_toLeftOf="@+id/dgts__state_button"
         android:contentDescription="@string/dgts__success_desc"
         android:src="@drawable/dgts__ic_success"/>
-</merge><!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/layout/dgts__state_button.xml --><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/layout/dgts__state_button.xml -->
+</merge><!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/layout/dgts__state_button.xml --><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.3/res/layout/dgts__state_button.xml -->

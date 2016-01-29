@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/twitter-core/src/main/res/values-nb/strings.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">Tillat</string>
+    <string name="tw__login_btn_txt">Logg inn med Twitter</string>
+    <string name="tw__not_now_btn_txt">Ikke nå</string>
+    <string name="tw__share_email_desc">Motta oppdateringer og annen informasjon fra %1$s når du deler e-postadressen tilknyttet Twitter-kontoen din \@%2$s</string>
+    <string name="tw__share_email_title">Del e-postadressen din</string>
+</resources>

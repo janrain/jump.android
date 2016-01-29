@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-sr/values-sr.xml -->
+    <eat-comment/>
+    <plurals name="tw__time_hours">
+        <item quantity="one">1с</item>
+        <item quantity="other">%dс</item>
+    </plurals>
+    <plurals name="tw__time_mins">
+        <item quantity="one">1м</item>
+        <item quantity="other">%dм</item>
+    </plurals>
+    <plurals name="tw__time_secs">
+        <item quantity="one">1с</item>
+        <item quantity="other">%dс</item>
+    </plurals>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values-sr/values-sr.xml -->
     <eat-comment/>
     <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Одлазак на Почетну"</string>
@@ -55,6 +69,30 @@
     <string msgid="109793632378378069" name="mr_media_route_controller_disconnect">"Прекини везу"</string>
     <string msgid="5441529851481176817" name="mr_system_route_name">"Систем"</string>
     <string msgid="7498112907524977311" name="mr_user_route_category_name">"Уређаји"</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-sr/values-sr.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">Дозволи</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-sr/values-sr.xml -->
+    <eat-comment/>
+    <string name="tw__like_tweet">Свиђа ти се твит</string>
+    <string name="tw__liked_tweet">Опозови свиђање</string>
+    <string name="tw__loading_tweet">Учитавање твита</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-sr/values-sr.xml -->
+    <eat-comment/>
+    <string name="tw__login_btn_txt">Пријави се преко Твитера</string>
+    <string name="tw__not_now_btn_txt">Не сада</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-sr/values-sr.xml -->
+    <eat-comment/>
+    <string name="tw__retweeted_by_format">Ретвитовано од стране %1$s</string>
+    <string name="tw__share_content_format">Провери твит \@%1$s: https://twitter.com/%1$s/status/%2$s</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-sr/values-sr.xml -->
+    <eat-comment/>
+    <string name="tw__share_email_title">Подели своју адресу е-поште</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-sr/values-sr.xml -->
+    <eat-comment/>
+    <string name="tw__share_subject_format">Твит од %1$s (\@%2$s)</string>
+    <string name="tw__share_tweet">Подели твит</string>
+    <string name="tw__tweet_content_description">%1$s. %2$s. %3$s.</string>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.1.0/res/values-sr/wallet_strings.xml -->
     <eat-comment/>
     <string msgid="4184147110658930238" name="wallet_buy_button_place_holder">"Купи помоћу Google-а"</string>

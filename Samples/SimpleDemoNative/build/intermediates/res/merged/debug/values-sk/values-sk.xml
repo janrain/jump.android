@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-sk/values-sk.xml -->
+    <eat-comment/>
+    <plurals name="tw__time_hours">
+        <item quantity="one">1h</item>
+        <item quantity="other">%dh</item>
+    </plurals>
+    <plurals name="tw__time_mins">
+        <item quantity="one">1m</item>
+        <item quantity="other">%dm</item>
+    </plurals>
+    <plurals name="tw__time_secs">
+        <item quantity="one">1s</item>
+        <item quantity="other">%ds</item>
+    </plurals>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values-sk/values-sk.xml -->
     <eat-comment/>
     <string msgid="4600421777120114993" name="abc_action_bar_home_description">"Prejsť na plochu"</string>
@@ -74,6 +88,21 @@
     <string msgid="109793632378378069" name="mr_media_route_controller_disconnect">"Odpojiť"</string>
     <string msgid="5441529851481176817" name="mr_system_route_name">"Systém"</string>
     <string msgid="7498112907524977311" name="mr_user_route_category_name">"Zariadenia"</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-sk/values-sk.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">Povoliť</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-sk/values-sk.xml -->
+    <eat-comment/>
+    <string name="tw__like_tweet">Obľúbiť Tweet</string>
+    <string name="tw__loading_tweet">Tweet sa načítava</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-sk/values-sk.xml -->
+    <eat-comment/>
+    <string name="tw__login_btn_txt">Prihlásiť sa na Twitter</string>
+    <string name="tw__not_now_btn_txt">Teraz nie</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-sk/values-sk.xml -->
+    <eat-comment/>
+    <string name="tw__share_tweet">Zdieľať Tweet</string>
+    <string name="tw__tweet_content_description">%1$s. %2$s. %3$s.</string>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/8.1.0/res/values-sk/wallet_strings.xml -->
     <eat-comment/>
     <string msgid="4184147110658930238" name="wallet_buy_button_place_holder">"Kúpiť cez Google"</string>

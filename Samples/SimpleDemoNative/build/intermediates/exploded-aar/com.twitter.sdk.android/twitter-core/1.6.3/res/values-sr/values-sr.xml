@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/twitter-core/src/main/res/values-sr/strings.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">Дозволи</string>
+    <string name="tw__login_btn_txt">Пријави се преко Твитера</string>
+    <string name="tw__not_now_btn_txt">Не сада</string>
+    <string name="tw__share_email_title">Подели своју адресу е-поште</string>
+</resources>

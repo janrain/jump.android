@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-sv/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__call_me">Ring mig</string>
+    <string name="dgts__calling">Ringer …</string>
+    <string name="dgts__confirmation_code">Bekräftelsekod</string>
+    <string name="dgts__confirmation_edit_hint">Ange bekräftelsekod</string>
+    <string name="dgts__confirmation_error">Kunde inte bekräfta ditt telefonnummer</string>
+    <string name="dgts__confirmation_error_alternative">Vi har problem med att skicka en bekräftelsekod till dig.</string>
+    <string name="dgts__confirmation_expired">Koden har upphört gälla. Begär en ny bekräftelsekod.</string>
+    <string name="dgts__continue">Fortsätt</string>
+    <string name="dgts__digits_logo_desc">digits logotypikon</string>
+    <string name="dgts__digits_logo_name_desc">digits logotypnamn</string>
+    <string name="dgts__dismiss">Dölj</string>
+    <string name="dgts__done">Klar</string>
+    <string name="dgts__email_request_edit_hint">E-postadress</string>
+    <string name="dgts__email_request_title">Ange e-postadress</string>
+    <string name="dgts__find_your_friends">Hitta dina vänner</string>
+    <string name="dgts__image_header_description">Bildhuvud för inloggning</string>
+    <string name="dgts__invalid_email">Ogiltig e-postadress. Försök igen</string>
+    <string name="dgts__login_digits_text">Använd mitt telefonnummer</string>
+    <string name="dgts__network_error">Vänligen kontrollera din nätverksanslutning och prova igen.</string>
+    <string name="dgts__not_now">Inte nu</string>
+    <string name="dgts__okay">Okej</string>
+    <string name="dgts__phone_number_edit_hint">Ditt nummer</string>
+    <string name="dgts__phone_number_text">Ange ditt telefonnummer</string>
+    <string name="dgts__pin_code_verification_title">Ange kod för tvåstegsverifiering</string>
+    <string name="dgts__resend_confirmation_text">Skicka bekräftelsekod igen</string>
+    <string name="dgts__sending">Skickar …</string>
+    <string name="dgts__success_desc">Ikonen Lyckades</string>
+    <string name="dgts__terms_email_request">Om du trycker på %1$sFortsätt%1$s lägger du till den här e-postadressen i ditt Digits-konto. Alla dina appar som har autentiserats med Digits kommer att ha tillgång till den här e-postadressen, och deras användare kan hitta dig om de känner till din e-postadress. Hantera ditt konto på %2$sDigits.com%3$s.</string>
+    <string name="dgts__terms_text">Om du trycker på %1$sFortsätt%1$s ovan skickar %2$sDigits by Twitter%3$s ett SMS till dig för att bekräfta ditt telefonnummer. SMS- och dataavgifter kan tillkomma.</string>
+    <string name="dgts__terms_text_call_me">Om du trycker på %1$sRing mig%1$s ovan ringer %2$sDigits by Twitter%3$s ett röstsamtal till dig för att bekräfta ditt telefonnummer. Samtals- och datakostnader kan tillkomma.</string>
+    <string name="dgts__terms_text_create">Om du trycker på %1$sFortsätt%1$s ovan godkänner du Digits by Twitters %2$sanvändarvillkor%3$s, %2$ssekretesspolicy%3$s och %2$scookiepolicy%3$s och att andra användare av den här appen kan hitta dig genom ditt telefonnummer och/eller din e-postadress.</string>
+    <string name="dgts__terms_text_sign_in">Om du trycker på %1$sFortsätt%1$s ovan godkänner du Digits by Twitters %2$sanvändarvillkor%3$s, %2$ssekretesspolicy%3$s och %2$scookiepolicy%3$s och att andra\
+ användare av %1$s kan hitta dig genom ditt telefonnummer\
+ och/eller din e-postadress.</string>
+    <string name="dgts__try_again">Försök igen</string>
+    <string name="dgts__try_again_confirmation">Vänligen kontrollera din kod och prova igen.</string>
+    <string name="dgts__try_again_email">Kontrollera e-posten och försök igen.</string>
+    <string name="dgts__try_again_phone_number">Vänligen kontrollera ditt nummer och prova igen.</string>
+    <string name="dgts__try_another_phone">Prova ett annat telefonnummer</string>
+    <string name="dgts__unsupported_operator_error">Det gick inte att skicka ett SMS till det här numret.</string>
+    <string name="dgts__upload_contacts">Vi använder Digits by Twitter för att hitta fler av dina vänner som använder denna app. När du trycker på OK laddar vi upp din adressbok till Digits by Twitter så att vi kan hjälpa dig att hitta användare av %1$s som du känner eller hjälpa andra användare av %1$s att hitta dig.</string>
+    <string name="dgts__verification_code">Verifieringskod</string>
+    <string name="dgts_pin_code_terms">Du har tidigare angett en tvåstegsverifieringskod på digits.com</string>
+</resources>

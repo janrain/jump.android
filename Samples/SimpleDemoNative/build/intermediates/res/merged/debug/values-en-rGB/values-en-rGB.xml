@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-en-rGB/values-en-rGB.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-en-rGB/values-en-rGB.xml -->
     <eat-comment/>
     <plurals name="tw__time_hours">
         <item quantity="one">1h</item>
@@ -61,19 +61,25 @@
     <string msgid="2201289642219771610" name="common_google_play_services_updating_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> won\'t run without Google Play services, which are currently updating."</string>
     <string msgid="815008177440683245" name="common_google_play_services_updating_title">"Google Play services are updating"</string>
     <string msgid="411506735369601515" name="common_open_on_phone">"Open on phone"</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values-en-rGB/values-en-rGB.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.3/res/values-en-rGB/values-en-rGB.xml -->
     <eat-comment/>
+    <string name="dgts__call_me">Call me</string>
+    <string name="dgts__calling">Calling…</string>
     <string name="dgts__confirmation_code">Confirmation code</string>
     <string name="dgts__confirmation_edit_hint">Enter confirmation code</string>
     <string name="dgts__confirmation_error">Unable to confirm your phone number</string>
     <string name="dgts__confirmation_error_alternative">Sorry, we are having trouble sending you a confirmation code.</string>
-    <string name="dgts__confirmation_expired">This code has expired. Please resend\
-        confirmation code.</string>
+    <string name="dgts__confirmation_expired">This code has expired. Please resend confirmation code.</string>
+    <string name="dgts__continue">Continue</string>
     <string name="dgts__digits_logo_desc">digits logo icon</string>
     <string name="dgts__digits_logo_name_desc">digits logo name</string>
     <string name="dgts__dismiss">Dismiss</string>
+    <string name="dgts__done">Done</string>
+    <string name="dgts__email_request_edit_hint">Email address</string>
+    <string name="dgts__email_request_title">Enter email address</string>
     <string name="dgts__find_your_friends">Find your friends</string>
     <string name="dgts__image_header_description">Image header for login</string>
+    <string name="dgts__invalid_email">Invalid Email. Try Again.</string>
     <string name="dgts__login_digits_text">Use my phone number</string>
     <string name="dgts__network_error">Please check your network and try again.</string>
     <string name="dgts__not_now">Not now</string>
@@ -82,14 +88,21 @@
     <string name="dgts__phone_number_text">Enter your phone number</string>
     <string name="dgts__pin_code_verification_title">Enter 2-step verification code</string>
     <string name="dgts__resend_confirmation_text">Resend confirmation code</string>
+    <string name="dgts__sending">Sending…</string>
     <string name="dgts__success_desc">Success Icon</string>
-    <string name="dgts__terms_text">By tapping %1$sSend confirmation code%1$s above, Digits by Twitter will send you an SMS message to confirm your telephone number. Message &amp; data rates may apply.</string>
-    <string name="dgts__terms_text_create">By tapping %1$sCreate account%1$s above, you agree to the Terms of Service, Privacy Policy, and Cookies Policy of Digits by Twitter and that other users of this app can discover you by phone number and/or email.</string>
-    <string name="dgts__terms_text_sign_in">By tapping %1$sSign in%1$s above, you agree to the updated Terms of Service, Privacy Policy and Cookies Policy of Digits by Twitter, and that other users of %1$s can discover you by phone number and/or email.</string>
+    <string name="dgts__terms_email_request">By tapping %1$sContinue%1$s you are adding this email to your Digits account. All your apps authenticated with Digits will have access to this email address and their users will be able to discover you by email. Manage your account on %2$sDigits.com%3$s.</string>
+    <string name="dgts__terms_text">By tapping %1$sContinue%1$s above, %2$sDigits\
+        by Twitter%3$s will send a text message to confirm your phone number. Message &amp; data rates may apply.</string>
+    <string name="dgts__terms_text_call_me">By tapping %1$sCall\
+    me%1$s above, %2$sDigits by Twitter%3$s will send a voice call to confirm your phone number. Call &amp; data rates may apply.</string>
+    <string name="dgts__terms_text_create">By tapping %1$sContinue%1$s above, you agree to the %2$sTerms of Service%3$s, %2$sPrivacy Policy%3$s, and %2$sCookies Policy%3$s of Digits by Twitter, and that other users of this app can discover you by phone number and/or email.</string>
+    <string name="dgts__terms_text_sign_in">By tapping %1$sContinue%1$s above, you agree to the updated %2$sTerms of Service%3$s, %2$sPrivacy Policy%3$s, and %2$sCookies Policy%3$s of Digits by Twitter, and that other users of %1$s can discover you by phone number and/or email.</string>
     <string name="dgts__try_again">Try Again</string>
     <string name="dgts__try_again_confirmation">Please check your code and try again.</string>
+    <string name="dgts__try_again_email">Please check your email and try again.</string>
     <string name="dgts__try_again_phone_number">Please check your number and try again.</string>
     <string name="dgts__try_another_phone">Try a different phone number</string>
+    <string name="dgts__unsupported_operator_error">Unable to send this number a text message.</string>
     <string name="dgts__upload_contacts">We use Digits by Twitter to find more of your friends who use this app. When you tap OK, we\'ll upload your address book to Digits by Twitter so that we can help you find users of %1$s that you know or help other users of %1$s find you.</string>
     <string name="dgts__verification_code">Verification code</string>
     <string name="dgts_pin_code_terms">You have previously set a 2-step verification code on digits.com</string>
@@ -101,27 +114,29 @@
     <string msgid="109793632378378069" name="mr_media_route_controller_disconnect">"Disconnect"</string>
     <string msgid="5441529851481176817" name="mr_system_route_name">"System"</string>
     <string msgid="7498112907524977311" name="mr_user_route_category_name">"Devices"</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-en-rGB/values-en-rGB.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-en-rGB/values-en-rGB.xml -->
     <eat-comment/>
     <string name="tw__allow_btn_txt">Allow</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-en-rGB/values-en-rGB.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-en-rGB/values-en-rGB.xml -->
     <eat-comment/>
+    <string name="tw__like_tweet">Like Tweet</string>
+    <string name="tw__liked_tweet">Undo Like</string>
     <string name="tw__loading_tweet">Loading Tweet</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-en-rGB/values-en-rGB.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-en-rGB/values-en-rGB.xml -->
     <eat-comment/>
     <string name="tw__login_btn_txt">Log in with Twitter</string>
     <string name="tw__not_now_btn_txt"> Not now </string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-en-rGB/values-en-rGB.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-en-rGB/values-en-rGB.xml -->
     <eat-comment/>
     <string name="tw__relative_date_format_long">dd/MM/y</string>
     <string name="tw__relative_date_format_short">d MMM</string>
     <string name="tw__retweeted_by_format">Retweeted by %1$s</string>
     <string name="tw__share_content_format">Check out \@%1$s\'s Tweet: https://twitter.com/%1$s/status/%2$s</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-en-rGB/values-en-rGB.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-en-rGB/values-en-rGB.xml -->
     <eat-comment/>
     <string name="tw__share_email_desc">Get updates and other information from %1$s when you allow them access to your email on yourTwitter account \@%2$s</string>
     <string name="tw__share_email_title">Share your email address</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-en-rGB/values-en-rGB.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-en-rGB/values-en-rGB.xml -->
     <eat-comment/>
     <string name="tw__share_subject_format">Tweet from %1$s (\@%2$s)</string>
     <string name="tw__share_tweet">Share Tweet</string>

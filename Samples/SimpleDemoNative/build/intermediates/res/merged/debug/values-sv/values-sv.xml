@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-sv/values-sv.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-sv/values-sv.xml -->
     <eat-comment/>
     <plurals name="tw__time_hours">
         <item quantity="one">1h</item>
@@ -80,18 +80,25 @@
     <string msgid="2201289642219771610" name="common_google_play_services_updating_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> kan inte köras utan Google Play-tjänster, och dessa uppdateras för närvarande."</string>
     <string msgid="815008177440683245" name="common_google_play_services_updating_title">"Google Play-tjänsterna uppdateras"</string>
     <string msgid="411506735369601515" name="common_open_on_phone">"Öppna på mobilen"</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values-sv/values-sv.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.3/res/values-sv/values-sv.xml -->
     <eat-comment/>
+    <string name="dgts__call_me">Ring mig</string>
+    <string name="dgts__calling">Ringer …</string>
     <string name="dgts__confirmation_code">Bekräftelsekod</string>
     <string name="dgts__confirmation_edit_hint">Ange bekräftelsekod</string>
     <string name="dgts__confirmation_error">Kunde inte bekräfta ditt telefonnummer</string>
     <string name="dgts__confirmation_error_alternative">Vi har problem med att skicka en bekräftelsekod till dig.</string>
-    <string name="dgts__confirmation_expired">Denna kod har upphört gälla. Vänligen begär en ny bekräftelsekod.</string>
+    <string name="dgts__confirmation_expired">Koden har upphört gälla. Begär en ny bekräftelsekod.</string>
+    <string name="dgts__continue">Fortsätt</string>
     <string name="dgts__digits_logo_desc">digits logotypikon</string>
     <string name="dgts__digits_logo_name_desc">digits logotypnamn</string>
     <string name="dgts__dismiss">Dölj</string>
+    <string name="dgts__done">Klar</string>
+    <string name="dgts__email_request_edit_hint">E-postadress</string>
+    <string name="dgts__email_request_title">Ange e-postadress</string>
     <string name="dgts__find_your_friends">Hitta dina vänner</string>
     <string name="dgts__image_header_description">Bildhuvud för inloggning</string>
+    <string name="dgts__invalid_email">Ogiltig e-postadress. Försök igen</string>
     <string name="dgts__login_digits_text">Använd mitt telefonnummer</string>
     <string name="dgts__network_error">Vänligen kontrollera din nätverksanslutning och prova igen.</string>
     <string name="dgts__not_now">Inte nu</string>
@@ -100,14 +107,21 @@
     <string name="dgts__phone_number_text">Ange ditt telefonnummer</string>
     <string name="dgts__pin_code_verification_title">Ange kod för tvåstegsverifiering</string>
     <string name="dgts__resend_confirmation_text">Skicka bekräftelsekod igen</string>
+    <string name="dgts__sending">Skickar …</string>
     <string name="dgts__success_desc">Ikonen Lyckades</string>
-    <string name="dgts__terms_text">Genom att klicka på %1$sSkicka bekräftelsekod%1$s ovan, kommer Digits by Twitter skicka ett SMS till dig för att bekräfta ditt telefonnummer. Kostnad för SMS/Data kan komma tillkomma enligt avtal med din teleoperatör.</string>
-    <string name="dgts__terms_text_create">Om du trycker på %1$sSkapa konto%1$s ovan godkänner du Digits by Twitters användarvillkor, sekretesspolicy och cookiepolicy och att andra användare av den här appen kan identifiera dig genom ditt telefonnummer och/eller din e-postadress.</string>
-    <string name="dgts__terms_text_sign_in">Genom att klicka på %1$sLogga in%1$s ovan, godkänner du våra uppdaterade tjänstevillkor, integritetspolicy och användande av Cookies, inklusive Digits by Twitter, samt att andra användare av %1$s kan hitta dig genom telefonnummer och/eller e-postadress.</string>
+    <string name="dgts__terms_email_request">Om du trycker på %1$sFortsätt%1$s lägger du till den här e-postadressen i ditt Digits-konto. Alla dina appar som har autentiserats med Digits kommer att ha tillgång till den här e-postadressen, och deras användare kan hitta dig om de känner till din e-postadress. Hantera ditt konto på %2$sDigits.com%3$s.</string>
+    <string name="dgts__terms_text">Om du trycker på %1$sFortsätt%1$s ovan skickar %2$sDigits by Twitter%3$s ett SMS till dig för att bekräfta ditt telefonnummer. SMS- och dataavgifter kan tillkomma.</string>
+    <string name="dgts__terms_text_call_me">Om du trycker på %1$sRing mig%1$s ovan ringer %2$sDigits by Twitter%3$s ett röstsamtal till dig för att bekräfta ditt telefonnummer. Samtals- och datakostnader kan tillkomma.</string>
+    <string name="dgts__terms_text_create">Om du trycker på %1$sFortsätt%1$s ovan godkänner du Digits by Twitters %2$sanvändarvillkor%3$s, %2$ssekretesspolicy%3$s och %2$scookiepolicy%3$s och att andra användare av den här appen kan hitta dig genom ditt telefonnummer och/eller din e-postadress.</string>
+    <string name="dgts__terms_text_sign_in">Om du trycker på %1$sFortsätt%1$s ovan godkänner du Digits by Twitters %2$sanvändarvillkor%3$s, %2$ssekretesspolicy%3$s och %2$scookiepolicy%3$s och att andra\
+ användare av %1$s kan hitta dig genom ditt telefonnummer\
+ och/eller din e-postadress.</string>
     <string name="dgts__try_again">Försök igen</string>
     <string name="dgts__try_again_confirmation">Vänligen kontrollera din kod och prova igen.</string>
+    <string name="dgts__try_again_email">Kontrollera e-posten och försök igen.</string>
     <string name="dgts__try_again_phone_number">Vänligen kontrollera ditt nummer och prova igen.</string>
     <string name="dgts__try_another_phone">Prova ett annat telefonnummer</string>
+    <string name="dgts__unsupported_operator_error">Det gick inte att skicka ett SMS till det här numret.</string>
     <string name="dgts__upload_contacts">Vi använder Digits by Twitter för att hitta fler av dina vänner som använder denna app. När du trycker på OK laddar vi upp din adressbok till Digits by Twitter så att vi kan hjälpa dig att hitta användare av %1$s som du känner eller hjälpa andra användare av %1$s att hitta dig.</string>
     <string name="dgts__verification_code">Verifieringskod</string>
     <string name="dgts_pin_code_terms">Du har tidigare angett en tvåstegsverifieringskod på digits.com</string>
@@ -122,27 +136,29 @@
     <string msgid="109793632378378069" name="mr_media_route_controller_disconnect">"Koppla från"</string>
     <string msgid="5441529851481176817" name="mr_system_route_name">"System"</string>
     <string msgid="7498112907524977311" name="mr_user_route_category_name">"Enheter"</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-sv/values-sv.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-sv/values-sv.xml -->
     <eat-comment/>
     <string name="tw__allow_btn_txt">Tillåt</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-sv/values-sv.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-sv/values-sv.xml -->
     <eat-comment/>
+    <string name="tw__like_tweet">Gilla Tweet</string>
+    <string name="tw__liked_tweet">Ångra gillamarkeringen</string>
     <string name="tw__loading_tweet">Läser in tweeten</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-sv/values-sv.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-sv/values-sv.xml -->
     <eat-comment/>
     <string name="tw__login_btn_txt">Logga in med Twitter</string>
     <string name="tw__not_now_btn_txt">Inte nu</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-sv/values-sv.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-sv/values-sv.xml -->
     <eat-comment/>
     <string name="tw__relative_date_format_long">d.M.y</string>
     <string name="tw__relative_date_format_short">d MMM</string>
     <string name="tw__retweeted_by_format">Retweetad av %1$s</string>
     <string name="tw__share_content_format">Kolla in \@%1$ss tweet: https://twitter.com/%1$s/status/%2$s</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-sv/values-sv.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-sv/values-sv.xml -->
     <eat-comment/>
     <string name="tw__share_email_desc">Få uppdateringar och annan information från %1$s när du ger dem åtkomst till din e-post på ditt Twitter-konto \@%2$s</string>
     <string name="tw__share_email_title">Dela din e-postadress</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-sv/values-sv.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-sv/values-sv.xml -->
     <eat-comment/>
     <string name="tw__share_subject_format">Tweet från %1$s (\@%2$s)</string>
     <string name="tw__share_tweet">Dela tweeten</string>

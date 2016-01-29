@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-ko/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__call_me">전화로 인증</string>
+    <string name="dgts__calling">통화 연결 중…</string>
+    <string name="dgts__confirmation_code">인증 코드</string>
+    <string name="dgts__confirmation_edit_hint">인증 코드 입력</string>
+    <string name="dgts__confirmation_error">휴대폰 번호를 확인할 수 없음</string>
+    <string name="dgts__confirmation_error_alternative">죄송합니다. 인증 코드를 전송하는 데 문제가 발생했습니다.</string>
+    <string name="dgts__confirmation_expired">이 코드는 만료되었습니다. 인증 코드를 다시 보내세요.</string>
+    <string name="dgts__continue">계속하기</string>
+    <string name="dgts__digits_logo_desc">digits 로고 아이콘</string>
+    <string name="dgts__digits_logo_name_desc">digits 로고 이름</string>
+    <string name="dgts__dismiss">숨기기</string>
+    <string name="dgts__done">완료</string>
+    <string name="dgts__email_request_edit_hint">이메일 주소</string>
+    <string name="dgts__email_request_title">이메일 주소를 입력하세요.</string>
+    <string name="dgts__find_your_friends">친구 찾기</string>
+    <string name="dgts__image_header_description">로그인용 이미지 헤더</string>
+    <string name="dgts__invalid_email">이메일이 유효하지 않습니다. 다시 시도해주세요</string>
+    <string name="dgts__login_digits_text">내 휴대폰 번호 사용</string>
+    <string name="dgts__network_error">네트워크를 확인한 후 다시 시도하세요.</string>
+    <string name="dgts__not_now">나중에</string>
+    <string name="dgts__okay">확인</string>
+    <string name="dgts__phone_number_edit_hint">내 휴대폰 번호</string>
+    <string name="dgts__phone_number_text">휴대폰 번호 입력</string>
+    <string name="dgts__pin_code_verification_title">2단계 인증 코드를 입력해 주세요.</string>
+    <string name="dgts__resend_confirmation_text">인증 코드 다시 보내기</string>
+    <string name="dgts__sending">보내는 중…</string>
+    <string name="dgts__success_desc">성공 아이콘</string>
+    <string name="dgts__terms_email_request">%1$s계속하기%1$s를 탭하면 이 이메일이 Digits 계정에 추가됩니다. Digit에서 인증된 모든 앱에서 이 이메일에 접근할 수 있고, 각 앱의 사용자들이 이 이메일로 나를 찾을 수 있습니다. %2$sDigits.com%3$s에서 계정을 관리하세요.</string>
+    <string name="dgts__terms_text">위의 %1$s계속하기%1$s를 탭하면 %2$sDigits by Twitter%3$s에서 휴대폰 번호 인증을 위한 SMS 메시지를 보내 드립니다. 문자 및 데이터 요금이 부과될 수 있습니다.</string>
+    <string name="dgts__terms_text_call_me">위의 %1$s전화 받기%1$s를 탭하면 %2$sDigits by Twitter%3$s에서 휴대폰 번호 인증을 위한 음성 통화를 걸어 옵니다. 음성 통화 및 데이터 요금이 부과될 수 있습니다.</string>
+    <string name="dgts__terms_text_create">위의 %1$s계속하기%1$s를 탭하면 Digits by Twitter의 %2$s이용약관%3$s, %2$s개인정보 취급방침%3$s 및 %2$s쿠키 정책%3$s에 동의하게 되고, 이 앱의 다른 사용자가 휴대폰 번호 및 이메일로 나를 찾을 수 있습니다.</string>
+    <string name="dgts__terms_text_sign_in">위의 %1$s계속하기%1$s를 탭하면 Digits by Twitter의 개정된 %2$s이용약관%3$s, %2$s개인정보 취급방침%3$s 및 %2$s쿠키 정책%3$s에 동의하게 되고, %1$s의 다른 사용자가 휴대폰 번호 및 이메일로 나를 찾을 수 있습니다.</string>
+    <string name="dgts__try_again">다시 시도</string>
+    <string name="dgts__try_again_confirmation">코드를 확인한 후 다시 시도하세요.</string>
+    <string name="dgts__try_again_email">이메일 주소를 확인한 후 다시 시도해주세요.</string>
+    <string name="dgts__try_again_phone_number">휴대폰 번호를 확인하고 다시 시도해 주세요.</string>
+    <string name="dgts__try_another_phone">다른 휴대폰 번호로 시도</string>
+    <string name="dgts__unsupported_operator_error">이 번호로 SMS 메시지를 보낼 수 없습니다.</string>
+    <string name="dgts__upload_contacts">Digits by Twitter를 사용하여 이 앱을 사용하는 친구를 더 많이 찾을 수 있습니다. \"확인\"을 터치하면 주소록이 Digits by Twitter에 업로드되어 나를 아는 %1$s의 사용자를 발견하거나, %1$s의 다른 사용자들이 나를 발견할 수 있습니다.</string>
+    <string name="dgts__verification_code">인증 코드</string>
+    <string name="dgts_pin_code_terms">이전에 digits.com에서 2단계 인증 코드를 설정했습니다.</string>
+</resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:ns1="http://schemas.android.com/tools">
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-ar/values-ar.xml -->
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-ar/values-ar.xml -->
     <eat-comment/>
     <plurals name="tw__time_hours">
         <item quantity="one">1 س</item>
@@ -80,18 +80,25 @@
     <string msgid="2201289642219771610" name="common_google_play_services_updating_text">"‏لن يتم تشغيل <ns1:g id="APP_NAME">%1$s</ns1:g> بدون خدمات Google Play التي يتم تحديثها حاليًا."</string>
     <string msgid="815008177440683245" name="common_google_play_services_updating_title">"‏يتم الآن تحديث خدمات Google Play."</string>
     <string msgid="411506735369601515" name="common_open_on_phone">"فتح على الهاتف"</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values-ar/values-ar.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.3/res/values-ar/values-ar.xml -->
     <eat-comment/>
+    <string name="dgts__call_me">الاتصال بي</string>
+    <string name="dgts__calling">جاري الاتّصال…</string>
     <string name="dgts__confirmation_code">رمز التأكيد</string>
     <string name="dgts__confirmation_edit_hint">أدخل رمز التأكيد</string>
     <string name="dgts__confirmation_error">لا يمكن تأكيد رقم هاتفك.</string>
     <string name="dgts__confirmation_error_alternative">عذرًا، نواجه مشكلة في إرسال رمز التأكيد لك.</string>
-    <string name="dgts__confirmation_expired">انتهت صلاحية هذا الرمز. يُرجى إعادة إرسال رمز التوثيق.</string>
+    <string name="dgts__confirmation_expired">هذا الرمز منتهي الصلاحية. يُرجى إعادة إرسال رمز التأكيد.</string>
+    <string name="dgts__continue">استمرار</string>
     <string name="dgts__digits_logo_desc">أيقونة شعار digits</string>
     <string name="dgts__digits_logo_name_desc">اسم شعار digits</string>
     <string name="dgts__dismiss">تجاهل</string>
+    <string name="dgts__done">تمّ</string>
+    <string name="dgts__email_request_edit_hint">عنوان البريد الإلكترونيّ</string>
+    <string name="dgts__email_request_title">أدخِل عنوان البريد الإلكترونيّ</string>
     <string name="dgts__find_your_friends">ابحث عن أصدقائك</string>
     <string name="dgts__image_header_description">عنوان الصورة لتسجيل الدخول</string>
+    <string name="dgts__invalid_email">بريد إلكترونيّ غير صالح. حاول مرّة أخرى</string>
     <string name="dgts__login_digits_text">استخدام رقم الهاتف الخاص بي</string>
     <string name="dgts__network_error">يُرجى التحقق من الشبكة وإعادة المحاولة.</string>
     <string name="dgts__not_now">ليس الآن</string>
@@ -100,19 +107,20 @@
     <string name="dgts__phone_number_text">أدخل رقم الهاتف الخاص بك</string>
     <string name="dgts__pin_code_verification_title">أدخِل رمز التوثيق المكوَّن من خطوتين</string>
     <string name="dgts__resend_confirmation_text">إعادة إرسال رمز التوثيق</string>
+    <string name="dgts__sending">جارٍ الإرسال…</string>
     <string name="dgts__success_desc">أيقونة النجاح</string>
-    <string name="dgts__terms_text" ns1:ignore="StringFormatCount">بالنقر على %1$sإرسال رمز التأكيد%1$s أعلاه، سيقوم Digits
-        byTwitter، بإرسال رسالة نصّيّة قصيرة لتأكيد رقم هاتفك. قد يتم تطبيق رسوم الرسائل والبيانات.</string>
-    <string name="dgts__terms_text_create" ns1:ignore="StringFormatCount">بالنقر على %1$sإنشاء حساب%1$s أعلاه،\
-أنت توافق على شروط الخدمة، وسياسة الخصوصيّة، وسياسة\
-ملفات ارتباط Digits بواسطة تويتر، ويمكن لمستخدمي هذا التطبيق الآخرين الكشف عنك  بواسطة رقم هاتفك و/أو بريدك الإلكترونيّ.</string>
-    <string name="dgts__terms_text_sign_in" ns1:ignore="StringFormatCount">بالنقر على %1$sتسجيل الدخول%1$s أعلاه،\
-أنت توافق على تحديثات شروط الخدمة، سياسة الخصوصيّة، وسياسة\
-ملفات ارتباط Digits بواسطة تويتر، ويمكن لمستخدمي %1$s الآخرين الكشف عنك  بواسطة رقم الهاتف و/أو البريد الإلكترونيّ.</string>
+    <string name="dgts__terms_email_request">بالنقر على %1$sاستمرار%1$s تقوم بإضافة هذا البريد الإلكترونيّ لحسابك على Digits. جميع تطبيقاتك المصادق عليها من Digits ستتمكّن من الوصول لهذا البريد الإلكترونيّ، وسيتمكّن مستخدموها من اكتشافك بواسطة البريد الإلكترونيّ. قُم بإدراة حسابك على %2$sDigits.com%3$s.</string>
+    <string name="dgts__terms_text">بالنقر على %1$sاستمرار%1$s أعلاه، سيقوم %2$sDigits\
+        by Twitter%3$s بإرسال رسالة نصّيّة قصيرة لك لتأكيد رقم هاتفك. قد يتم تطبيق رسوم الرسائل والبيانات.</string>
+    <string name="dgts__terms_text_call_me">بالنقر على %1$sاتصِل بي%1$s أعلاه، سيقوم%2$sDigits by Twitter%3$s بإرسال رسالة صوتية لك لتأكيد رقم هاتفك. قد يتم تطبيق رسوم المكالمات والبيانات.</string>
+    <string name="dgts__terms_text_create">بالنقر على %1$sاستمرار%1$s أعلاه، أنت توافق على %2$sشروط الخدمة%3$s ،%2$sسياسة الخصوصيّة%3$s و%2$sسياسة ملفّات تعريف الارتباط%3$s لـ Digits by Twitter، ويمكن لمستخدمي هذا التطبيق الآخرين اكتشافك بواسطة رقم الهاتف و/أو البريد الإلكترونيّ.</string>
+    <string name="dgts__terms_text_sign_in">بالنقر على %1$sاستمرار%1$s أعلاه، أنت توافق على تحديثات %2$sشروط الخدمة%3$s ،%2$sسياسة الخصوصيّة%3$s و%2$sسياسة ملفّات تعريف الارتباط%3$s لـ Digits by Twitter، ويمكن لمستخدمي %1$s الآخرين اكتشافك بواسطة رقم الهاتف و/أو البريد الإلكترونيّ.</string>
     <string name="dgts__try_again">حاول مرّة أخرى</string>
     <string name="dgts__try_again_confirmation">يُرجى التحقق من الرمز وإعادة المحاولة.</string>
+    <string name="dgts__try_again_email">يُرجى التحقق من بريدك الإلكترونيّ وإعادة المحاولة.</string>
     <string name="dgts__try_again_phone_number">يُرجى التحقق من الرقم وإعادة المحاولة.</string>
     <string name="dgts__try_another_phone">جرّب رقم هاتف مختلف.</string>
+    <string name="dgts__unsupported_operator_error">تعذر إرسال هذا العدد في رسالة نصّيّة قصيرة.</string>
     <string name="dgts__upload_contacts">نحن نستخدم  Digits بواسطة\
 تويتر في العثور على المزيد من أصدقائك الذين يستخدمون هذا التطبيق. عندما تنقر موافق، سنقوم/ برفع دفتر عناوينك إلى Digits بواسطة تويتر، كي نتمكّن من مساعدتك في العثور على مستخدمي %1$s الذين تعرفهم أو مساعدة مستخدمي %1$s الآخرين في العثور عليك.</string>
     <string name="dgts__verification_code">رمز التوثيق</string>
@@ -128,27 +136,29 @@
     <string msgid="109793632378378069" name="mr_media_route_controller_disconnect">"قطع الاتصال"</string>
     <string msgid="5441529851481176817" name="mr_system_route_name">"النظام"</string>
     <string msgid="7498112907524977311" name="mr_user_route_category_name">"الأجهزة"</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-ar/values-ar.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-ar/values-ar.xml -->
     <eat-comment/>
     <string name="tw__allow_btn_txt">السماح</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-ar/values-ar.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-ar/values-ar.xml -->
     <eat-comment/>
+    <string name="tw__like_tweet">إعجاب بالتغريدة</string>
+    <string name="tw__liked_tweet">إلغاء الإعجاب</string>
     <string name="tw__loading_tweet">يتم تحميل التغريدة</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-ar/values-ar.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-ar/values-ar.xml -->
     <eat-comment/>
     <string name="tw__login_btn_txt">سجّل الدخول بواسطة تويتر</string>
     <string name="tw__not_now_btn_txt">ليس الآن</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-ar/values-ar.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-ar/values-ar.xml -->
     <eat-comment/>
     <string name="tw__relative_date_format_long">d /M /y</string>
     <string name="tw__relative_date_format_short">d MMM</string>
     <string name="tw__retweeted_by_format">مُعاد تغريدها بواسطة %1$s</string>
     <string name="tw__share_content_format">اطلع على تغريدة ‎\@%1$s\: https://twitter.com/%1$s/status/%2$s</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-ar/values-ar.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-ar/values-ar.xml -->
     <eat-comment/>
     <string name="tw__share_email_desc">كُن على إطلاع بكل التحديثات ومعلومات أخرى من %1$s عندما تسمح لهم بالدخول إلى بريدك الإلكترونيّ على حساب تويتر الخاصّ بك ‎\@%2$s</string>
     <string name="tw__share_email_title">شارِك عنوان بريدك الإلكترونيّ</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-ar/values-ar.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-ar/values-ar.xml -->
     <eat-comment/>
     <string name="tw__share_subject_format">تغريدة من %1$s (‎\@%2$s)</string>
     <string name="tw__share_tweet">مشاركة التغريدة</string>

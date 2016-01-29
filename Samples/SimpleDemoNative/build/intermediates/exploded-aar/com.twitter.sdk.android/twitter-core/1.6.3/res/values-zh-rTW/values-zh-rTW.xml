@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/twitter-core/src/main/res/values-zh-rTW/strings.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">允許</string>
+    <string name="tw__login_btn_txt">使用 Twitter 登入</string>
+    <string name="tw__not_now_btn_txt">現在不要</string>
+    <string name="tw__share_email_desc">當你允許 %1$s 存取你的 Twitter 帳戶上的電子郵件時，就可以取得來自他們的最新消息和其他資訊 \@%2$s</string>
+    <string name="tw__share_email_title">分享你的電子郵件地址</string>
+</resources>

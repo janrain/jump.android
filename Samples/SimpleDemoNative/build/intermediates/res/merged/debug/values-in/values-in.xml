@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-in/values-in.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-in/values-in.xml -->
     <eat-comment/>
     <plurals name="tw__time_hours">
         <item quantity="one">1 jam</item>
@@ -61,18 +61,25 @@
     <string msgid="2201289642219771610" name="common_google_play_services_updating_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> tidak akan berjalan tanpa layanan Google Play, yang saat ini sedang diperbarui."</string>
     <string msgid="815008177440683245" name="common_google_play_services_updating_title">"Layanan Google Play sedang diperbarui"</string>
     <string msgid="411506735369601515" name="common_open_on_phone">"Buka di ponsel"</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values-in/values-in.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.3/res/values-in/values-in.xml -->
     <eat-comment/>
+    <string name="dgts__call_me">Hubungi saya</string>
+    <string name="dgts__calling">Menghubungi…</string>
     <string name="dgts__confirmation_code">Kode konfimasi</string>
     <string name="dgts__confirmation_edit_hint">Masukkan kode konfirmasi</string>
     <string name="dgts__confirmation_error">Tidak dapat mengonfirmasi nomor ponsel Anda</string>
     <string name="dgts__confirmation_error_alternative">Maaf, ada masalah saat kami mengirim kode konfirmasi.</string>
     <string name="dgts__confirmation_expired">Kode ini telah kedaluwarsa. Silakan kirim ulang kode konfirmasi.</string>
+    <string name="dgts__continue">Lanjut</string>
     <string name="dgts__digits_logo_desc">ikon logo digits</string>
     <string name="dgts__digits_logo_name_desc">nama logo digits</string>
     <string name="dgts__dismiss">Singkirkan</string>
+    <string name="dgts__done">Selesai</string>
+    <string name="dgts__email_request_edit_hint">Alamat email</string>
+    <string name="dgts__email_request_title">Masukkan alamat email</string>
     <string name="dgts__find_your_friends">Temukan teman Anda</string>
     <string name="dgts__image_header_description">Header gambar untuk masuk</string>
+    <string name="dgts__invalid_email">Email Tidak Sah. Coba Lagi</string>
     <string name="dgts__login_digits_text">Gunakan nomor ponsel saya</string>
     <string name="dgts__network_error">Harap periksa jaringan Anda dan coba lagi.</string>
     <string name="dgts__not_now">Jangan sekarang</string>
@@ -81,17 +88,21 @@
     <string name="dgts__phone_number_text">Masukkan nomor ponsel Anda</string>
     <string name="dgts__pin_code_verification_title">Masukkan kode verifikasi 2 langkah</string>
     <string name="dgts__resend_confirmation_text">Mengirim ulang kode konfirmasi</string>
+    <string name="dgts__sending">Mengirim…</string>
     <string name="dgts__success_desc">Ikon Berhasil</string>
-    <string name="dgts__terms_text">Dengan menyentuh %1$sKirim kode konfirmasi%1$s di atas, Digits by Twitter,\
-akan mengirim pesan SMS untuk mengonfirmasi nomor ponsel Anda. Biaya SMS &amp; data mungkin berlaku.</string>
-    <string name="dgts__terms_text_create">Dengan menyentuh %1$sBuat akun%1$s di atas, Anda menyetujui Persyaratan \
-Layanan, Kebijakan Privasi, dan Kebijakan Kuki dari Digits by Twitter, dan bahwa pengguna lain aplikasi ini dapat menemukan Anda berdasarkan nomor ponsel dan/atau email.</string>
-    <string name="dgts__terms_text_sign_in">Dengan menyentuh %1$sMasuk%1$s di atas, Anda menyetujui pembaruan Persyaratan \
-Layanan, Kebijakan Privasi, dan Kebijakan Kuki dari Digits by Twitter, dan bahwa pengguna %1$s lainnya dapat menemukan Anda berdasarkan nomor ponsel dan/atau email.</string>
+    <string name="dgts__terms_email_request">Dengan menyentuh %1$sLanjut%1$s Anda menambahkan email ini ke akun Digits Anda. Semua aplikasi yang diotentikasi dengan Digits akan memiliki akses ke alamat email ini, dan penggunanya akan dapat nememukan Anda berdasarkan email. Kelola akun Anda di %2$sDigits.com%3$s.</string>
+    <string name="dgts__terms_text">Dengan menyentuh %1$sLanjut%1$s di atas, %2$sDigits by Twitter%3$s\
+akan mengirim pesan SMS untuk mengonfirmasi nomor ponsel Anda. Tarif SMS &amp; data mungkin berlaku.</string>
+    <string name="dgts__terms_text_call_me">Dengan menyentuh %1$sHubungi saya%1$s di atas, %2$sDigits by Twitter%3$s akan mengirimkan panggilan suara untuk mengonfirmasi nomor ponsel Anda. Tarif telepon &amp; data mungkin berlaku.</string>
+    <string name="dgts__terms_text_create">Dengan menyentuh %1$sLanjut%1$s di atas, Anda menyetujui %2$sPersyaratan \
+Layanan%3$s, %2$sKebijakan Privasi%3$s, dan %2$sKebijakan Kuki%3$s dari Digits by Twitter, dan bahwa pengguna lain aplikasi ini dapat menemukan Anda berdasarkan nomor ponsel dan/atau email.</string>
+    <string name="dgts__terms_text_sign_in">Dengan menyentuh %1$sLanjut%1$s di atas, Anda menyetujui pembaruan %2$sPersyaratan Layanan%3$s, %2$sKebijakan Privasi%3$s, dan %2$sKebijakan Kuki%3$s dari Digits by Twitter, dan bahwa pengguna %1$s lainnya dapat menemukan Anda berdasarkan nomor ponsel dan/atau email.</string>
     <string name="dgts__try_again">Coba Lagi</string>
     <string name="dgts__try_again_confirmation">Silakan periksa kode Anda dan coba lagi.</string>
+    <string name="dgts__try_again_email">Silakan periksa email Anda dan coba lagi</string>
     <string name="dgts__try_again_phone_number">Silakan periksa nomor ponsel Anda dan coba lagi.</string>
     <string name="dgts__try_another_phone">Coba nomor ponsel yang berbeda</string>
+    <string name="dgts__unsupported_operator_error">Tidak dapat mengirim pesan SMS ke nomor ini.</string>
     <string name="dgts__upload_contacts">Kami menggunakan Digits by Twitter untuk menemukan lebih banyak teman Anda yang menggunakan aplikasi ini. Bila Anda menyentuh Oke, kami akan mengunggah buku alamat Anda ke Digits by Twitter sehingga kami dapat membantu Anda menemukan pengguna %1$s yang Anda kenal atau membantu pengguna %1$s lainnya untuk menemukan Anda.</string>
     <string name="dgts__verification_code">Kode verifikasi</string>
     <string name="dgts_pin_code_terms">Anda sebelumnya telah menetapkan kode verifikasi 2 langkah di digits.com</string>
@@ -106,27 +117,29 @@ Layanan, Kebijakan Privasi, dan Kebijakan Kuki dari Digits by Twitter, dan bahwa
     <string msgid="109793632378378069" name="mr_media_route_controller_disconnect">"Putuskan sambungan"</string>
     <string msgid="5441529851481176817" name="mr_system_route_name">"Sistem"</string>
     <string msgid="7498112907524977311" name="mr_user_route_category_name">"Perangkat"</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-in/values-in.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-in/values-in.xml -->
     <eat-comment/>
     <string name="tw__allow_btn_txt">Izinkan</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-in/values-in.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-in/values-in.xml -->
     <eat-comment/>
+    <string name="tw__like_tweet">Menyukai Tweet</string>
+    <string name="tw__liked_tweet">Batal Suka</string>
     <string name="tw__loading_tweet">Memuat Tweet</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-in/values-in.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-in/values-in.xml -->
     <eat-comment/>
     <string name="tw__login_btn_txt">Masuk dengan Twitter</string>
     <string name="tw__not_now_btn_txt">Jangan sekarang</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-in/values-in.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-in/values-in.xml -->
     <eat-comment/>
     <string name="tw__relative_date_format_long">d/M/y</string>
     <string name="tw__relative_date_format_short">d MMM</string>
     <string name="tw__retweeted_by_format">Di-retweet oleh %1$s</string>
     <string name="tw__share_content_format">Lihat Tweet \@%1$s: https://twitter.com/%1$s/status/%2$s</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-in/values-in.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-in/values-in.xml -->
     <eat-comment/>
     <string name="tw__share_email_desc">Dapatkan pembaruan dan informasi lainnya dari %1$s bila Anda memberinya akses ke email di akun Twitter Anda \@%2$s</string>
     <string name="tw__share_email_title">Sebarkan alamat email Anda</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-in/values-in.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-in/values-in.xml -->
     <eat-comment/>
     <string name="tw__share_subject_format">Tweet dari %1$s (\@%2$s)</string>
     <string name="tw__share_tweet">Sebarkan Tweet</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-tr/values-tr.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-tr/values-tr.xml -->
     <eat-comment/>
     <plurals name="tw__time_hours">
         <item quantity="one">1s</item>
@@ -80,18 +80,25 @@
     <string msgid="2201289642219771610" name="common_google_play_services_updating_text">"<ns1:g id="APP_NAME">%1$s</ns1:g>, şu anda güncellenmekte olan Google Play hizmetleri olmadan çalışmayacak."</string>
     <string msgid="815008177440683245" name="common_google_play_services_updating_title">"Google Play hizmetleri güncelleniyor"</string>
     <string msgid="411506735369601515" name="common_open_on_phone">"Telefonda aç"</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values-tr/values-tr.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.3/res/values-tr/values-tr.xml -->
     <eat-comment/>
+    <string name="dgts__call_me">Beni ara</string>
+    <string name="dgts__calling">Aranıyor…</string>
     <string name="dgts__confirmation_code">Doğrulama kodu</string>
     <string name="dgts__confirmation_edit_hint">Doğrulama kodunu gir</string>
     <string name="dgts__confirmation_error">Telefon numaran doğrulanamıyor</string>
     <string name="dgts__confirmation_error_alternative">Üzgünüz, sana bir doğrulama kodu göndermede sorun yaşıyoruz.</string>
-    <string name="dgts__confirmation_expired">Bu kodun süresi dolmuş. Lütfen doğrulama kodunu yeniden gönder.</string>
+    <string name="dgts__confirmation_expired">Bu kodun süresi doldu. Lütfen doğrulama kodunu yeniden gönder.</string>
+    <string name="dgts__continue">Devam</string>
     <string name="dgts__digits_logo_desc">digits logo simgesi</string>
     <string name="dgts__digits_logo_name_desc">digits logo ismi</string>
     <string name="dgts__dismiss">Gizle</string>
+    <string name="dgts__done">Tamam</string>
+    <string name="dgts__email_request_edit_hint">E-posta adresi</string>
+    <string name="dgts__email_request_title">E-posta adresini gir</string>
     <string name="dgts__find_your_friends">Arkadaşlarını bul</string>
     <string name="dgts__image_header_description">Giriş için görüntü başlığı</string>
+    <string name="dgts__invalid_email">Geçersiz e-posta. Tekrar Deneyin</string>
     <string name="dgts__login_digits_text">Telefon numaramı kullan</string>
     <string name="dgts__network_error">Lütfen ağını kontrol et ve yeniden dene.</string>
     <string name="dgts__not_now">Şu an değil</string>
@@ -100,18 +107,22 @@
     <string name="dgts__phone_number_text">Telefon numaranı gir</string>
     <string name="dgts__pin_code_verification_title">2 adımlı onaylama kodunu gir</string>
     <string name="dgts__resend_confirmation_text">Doğrulama kodunu yeniden gönder</string>
+    <string name="dgts__sending">Gönderiliyor…</string>
     <string name="dgts__success_desc">Başarılı Simgesi</string>
-    <string name="dgts__terms_text">Yukarıdaki %1$sKod gönder%1$s düğmesine dokunduğunda, Digits by Twitter, telefon numaranı doğrulamak için sana bir kısa mesaj gönderir. Mesaj ve veri ücretleri geçerlidir.</string>
-    <string name="dgts__terms_text_create">Yukarıdaki %1$sHesap oluştur%1$s düğmesine dokunarak Digits by Twitter\'ın \
-Hizmet Şartları\'nı, Gizlilik Politikası\'nı ve Çerez Politikası\'nı \
+    <string name="dgts__terms_email_request">%1$sDevam%1$s düğmesine dokunarak bu e-postayı Digits hesabına eklemiş olursun. Digits ile doğrulanmış tüm uygulamaların bu e-posta adresine erişebilecek ve kullanıcılar e-posta adresinden seni keşfedebilecek. Hesabını %2$sDigits.com%3$s\'da yönet.</string>
+    <string name="dgts__terms_text">Yukarıdaki %1$sDevam%1$s düğmesine dokunduğunda, %2$sDigits by Twitter%3$s telefon numaranı doğrulamak için sana bir kısa mesaj gönderir. Mesaj ve veri ücretleri geçerlidir.</string>
+    <string name="dgts__terms_text_call_me">Yukarıdaki %1$sBeni ara%1$s düğmesine dokunduğunda, %2$sDigits by Twitter%3$s telefon numaranı doğrulamak için bir sesli arama yapar. Mesaj ve veri ücretleri geçerlidir.</string>
+    <string name="dgts__terms_text_create">Yukarıdaki %1$sDevam%1$s düğmesine dokunarak Digits by Twitter\'ın %2$sHizmet Şartları%3$s\'nı, %2$sGizlilik Politikası%3$s\'nı ve %2$sÇerez Politikası%3$s\'nı \
 onaylamış ve bu uygulamayı kullanan diğer kullanıcıların seni telefon \
 numarandan ve/veya e-posta adresinden bulabileceğini kabul etmiş \
 oluyorsun.</string>
-    <string name="dgts__terms_text_sign_in">Yukarıdaki %1$sGiriş yap%1$s düğmesine dokunarak Digits by Twitter\'ın güncel Hizmet Şartları\'nı, Gizlilik Politikası\'nı ve Çerez Politikası\'nı onaylamış ve %1$s uygulamasını kullanan diğer kullanıcıların seni telefon numarandan ve/veya e-posta adresinden bulabileceğini kabul etmiş oluyorsun.</string>
+    <string name="dgts__terms_text_sign_in">Yukarıdaki %1$sDevam%1$s düğmesine dokunarak Digits by Twitter\'ın %2$sHizmet Şartlarını%3$s, %2$sGizlilik Politikasını%3$s ve %2$sÇerez Politikasını%3$s onaylamış ve diğer %1$s kullanıcılarının seni telefon numarandan ve/veya e-posta adresinden bulabileceğini kabul etmiş oluyorsun.</string>
     <string name="dgts__try_again">Yeniden Dene</string>
     <string name="dgts__try_again_confirmation">Lütfen kodunu kontrol et ve yeniden dene.</string>
+    <string name="dgts__try_again_email">Lütfen e-postanızı  kontrol edin ve yeniden deneyin</string>
     <string name="dgts__try_again_phone_number">Lütfen numaranı kontrol et ve yeniden dene.</string>
     <string name="dgts__try_another_phone">Farklı bir telefon numarası dene</string>
+    <string name="dgts__unsupported_operator_error">Bu numaraya kısa mesaj gönderilemiyor.</string>
     <string name="dgts__upload_contacts">Bu uygulamayı kullanan daha fazla arkadaşını bulmak için Digits by Twitter\'ı kullanırız. Tamam\'a dokunduğunda, rehberin Digits by Twitter\'a yüklenir böylece tanıdığın %1$s kullanıcılarını bulmana veya diğer %1$s kullanıcılarının seni bulmasına yardımcı olabiliriz.</string>
     <string name="dgts__verification_code">Doğrulama kodu</string>
     <string name="dgts_pin_code_terms">Daha önce digits.com üzerinden ayarladığın 2 adımlı doğrulama kodu</string>
@@ -126,27 +137,29 @@ oluyorsun.</string>
     <string msgid="109793632378378069" name="mr_media_route_controller_disconnect">"Bağlantıyı kes"</string>
     <string msgid="5441529851481176817" name="mr_system_route_name">"Sistem"</string>
     <string msgid="7498112907524977311" name="mr_user_route_category_name">"Cihazlar"</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-tr/values-tr.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-tr/values-tr.xml -->
     <eat-comment/>
     <string name="tw__allow_btn_txt">İzin ver</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-tr/values-tr.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-tr/values-tr.xml -->
     <eat-comment/>
+    <string name="tw__like_tweet">Tweet Beğen</string>
+    <string name="tw__liked_tweet">Beğenmekten Vazgeç</string>
     <string name="tw__loading_tweet">Tweet Yükleniyor</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-tr/values-tr.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-tr/values-tr.xml -->
     <eat-comment/>
     <string name="tw__login_btn_txt">Twitter ile giriş yap</string>
     <string name="tw__not_now_btn_txt">Şu an değil</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-tr/values-tr.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-tr/values-tr.xml -->
     <eat-comment/>
     <string name="tw__relative_date_format_long">dd.MM.y</string>
     <string name="tw__relative_date_format_short">d MMM</string>
     <string name="tw__retweeted_by_format">%1$s tarafından Retweetlendi</string>
     <string name="tw__share_content_format">\@%1$s adlı kişinin Tweetini incele: https://twitter.com/%1$s/status/%2$s</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-tr/values-tr.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-tr/values-tr.xml -->
     <eat-comment/>
     <string name="tw__share_email_desc">\@%2$s Twitter hesabındaki e-postana erişim izni verdiğinde, %1$s adlı kişinin güncellemelerini ve diğer bilgilerini alabilirsin.</string>
     <string name="tw__share_email_title">E-posta adresini paylaş</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-tr/values-tr.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-tr/values-tr.xml -->
     <eat-comment/>
     <string name="tw__share_subject_format">Tweet gönderen: %1$s (\@%2$s)</string>
     <string name="tw__share_tweet">Tweet Paylaş</string>
