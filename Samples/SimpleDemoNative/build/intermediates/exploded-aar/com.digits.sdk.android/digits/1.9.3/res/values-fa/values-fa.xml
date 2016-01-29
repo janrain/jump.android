@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-fa/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__call_me">با من تماس بگیر</string>
+    <string name="dgts__calling">در حال تماس…</string>
+    <string name="dgts__confirmation_code">کد تأیید</string>
+    <string name="dgts__confirmation_edit_hint">کد تأیید را وارد کنید</string>
+    <string name="dgts__confirmation_error">امکان تأیید شماره تلفنتان وجود ندارد</string>
+    <string name="dgts__confirmation_error_alternative">متأسفیم، مشکلی در ارسال کد تأیید برای شما وجود دارد.</string>
+    <string name="dgts__confirmation_expired">این کد منقضی شده است. لطفا کد تاییدسازی را مجددا ارسال کنید.</string>
+    <string name="dgts__continue">ادامه</string>
+    <string name="dgts__digits_logo_desc">نماد آرم Digits</string>
+    <string name="dgts__digits_logo_name_desc">نام آرم digits</string>
+    <string name="dgts__dismiss">نادیده گرفتن</string>
+    <string name="dgts__done">انجام شد</string>
+    <string name="dgts__email_request_edit_hint">آدرس ایمیل</string>
+    <string name="dgts__email_request_title">آدرس ايميل را وارد كنيد</string>
+    <string name="dgts__find_your_friends">دوستانتان را پیدا کنید</string>
+    <string name="dgts__image_header_description">تصویر سربرگ برای ورود</string>
+    <string name="dgts__invalid_email">ايميل نامعتبر است. دوباره تلاش كنيد</string>
+    <string name="dgts__login_digits_text">از شماره تلفن من استفاده شود</string>
+    <string name="dgts__network_error">لطفاً شبکه تان را بررسی کنید و دوباره امتحان کنید.</string>
+    <string name="dgts__not_now">حالا نه</string>
+    <string name="dgts__okay">تأیید</string>
+    <string name="dgts__phone_number_edit_hint">شماره شما</string>
+    <string name="dgts__phone_number_text">شماره تلفنتان را وارد کنید</string>
+    <string name="dgts__pin_code_verification_title">کد تاییدسازی ۲مرحله‌ای را وارد کنید</string>
+    <string name="dgts__resend_confirmation_text">ارسال مجدد کد تأیید</string>
+    <string name="dgts__sending">در حال ارسال…</string>
+    <string name="dgts__success_desc">نماد موفقیت</string>
+    <string name="dgts__terms_email_request">با ضربه زدن روی %1$s ادامه %1$s  این ایمیل را به حساب کاربری Digits خود اضافه می‌کنید. تمام برنامه‌های شما که با Digits تصدیق داده شده به این آدرس ایمیل دسترسی خواهند داشت و کاربران آنها قادر به پیدا کردن شما از طریق ایمیل خواهند بود. حساب کاربری خود را در%2$sDigits.com%3$s مدیریت کنید.</string>
+    <string name="dgts__terms_text">با ضربه زدن روی %1$sادامه%1$s در بالا،  %2$sDigits by Twitter%3$s به شما پیامکی برای تایید شماره تلفنتان ارسال خواهد کرد. هزینه پیامک و داده ممکن است محاسبه شود.</string>
+    <string name="dgts__terms_text_call_me">با ضربه زدن روی %1$s تماس با من %1$s در بالا، %2$sDigits by Twitter%3$s پیامی صوتی برای شما ارسال خواهد کرد تا شماره خود را تایید کنید.هزینه داده و تماس ممکن است اعمال شود.</string>
+    <string name="dgts__terms_text_create">با ضربه زدن روی %1$s ادامه %1$s در بالا، %2$sشرایط استفاده از خدمات%3$s,  %2$s سیاست حریم خصوصی %3$s و %2$s سیاست کوکی‌های %3$s، Digits by Twitter را می‌پذیرید و کاربران دیگر این برنامه می‌توانند شما را از طریق شماره تلفن و/یا ایمیل پیدا کنند.</string>
+    <string name="dgts__terms_text_sign_in">با ضربه زدن روی %1$s ادامه %1$s در بالا،  شما با نسخه به‌روزشده %2$sشرایط استفاده از خدمات%3$s، %2$s سیاست حریم خصوصی %3$s و %2$sسیاست کوکی‌های%3$s Digits by Twitter  موافقت می‌کنید و کاربران دیگر %1$s  می‌توانند از طریق شماره تلفن و/یا ایمیل شما را پیدا کنند.</string>
+    <string name="dgts__try_again">تلاش مجدد</string>
+    <string name="dgts__try_again_confirmation">لطفاً کدتان را بررسی کنید و دوباره امتحان کنید.</string>
+    <string name="dgts__try_again_email">لطفا ايميلتان را بررسی کرده و دوباره امتحان کنید</string>
+    <string name="dgts__try_again_phone_number">لطفاً شماره تان را بررسی کنید و دوباره امتحان کنید.</string>
+    <string name="dgts__try_another_phone">یک شماره تلفن دیگر را امتحان کنید</string>
+    <string name="dgts__unsupported_operator_error">قادر به ارسال پیامک برای این شماره نیستیم.</string>
+    <string name="dgts__upload_contacts">ما از Digits by Twitter استفاده می‌کنیم تا تعداد بیشتری از دوستان شما که از این برنامه استفاده می کنند را پیدا کنیم. وقتی تأیید را بزنید، دفترچه آدرس شما را در Digits by Twitter بارگذاری خواهیم کرد تا شما را در یافتن کاربران %1$s که می‌شناسید کمک کنیم یا به سایر کاربران %1$s  کمک کنیم شما را پیدا کنند.</string>
+    <string name="dgts__verification_code">کد تاییدسازی</string>
+    <string name="dgts_pin_code_terms">شما پیش‌تر کد تاییدسازی ۲مرحله‌ای را در digits.com فعال کرده‌اید.</string>
+</resources>

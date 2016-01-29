@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-iw/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__call_me">התקשרו אליי</string>
+    <string name="dgts__calling">מתקשר…</string>
+    <string name="dgts__confirmation_code">קוד אישור</string>
+    <string name="dgts__confirmation_edit_hint">הזן קוד אישור</string>
+    <string name="dgts__confirmation_error">לא ניתן לאשר את מספר הטלפון שלך</string>
+    <string name="dgts__confirmation_error_alternative">מצטערים, נתקלנו בבעיה בשליחת קוד האישור.</string>
+    <string name="dgts__confirmation_expired">פג תוקפו של הקוד. בצע שליחה מחדש של קוד אישור.</string>
+    <string name="dgts__continue">המשך</string>
+    <string name="dgts__digits_logo_desc">הסמל של Digits</string>
+    <string name="dgts__digits_logo_name_desc">שם הסמל של Digits</string>
+    <string name="dgts__dismiss">התעלם</string>
+    <string name="dgts__done">סיום</string>
+    <string name="dgts__email_request_edit_hint">כתובת דואר אלקטרוני</string>
+    <string name="dgts__email_request_title">הזן כתובת דואר אלקטרוני</string>
+    <string name="dgts__find_your_friends">חפש את החברים שלך</string>
+    <string name="dgts__image_header_description">כותרת תמונה לדף כניסה</string>
+    <string name="dgts__invalid_email">כתובת דואר אלקטרוני לא חוקית. נסה שוב.</string>
+    <string name="dgts__login_digits_text">השתמש במספר הטלפון שלי</string>
+    <string name="dgts__network_error">בדוק את הרשת שלך ונסה שוב.</string>
+    <string name="dgts__not_now">לא עכשיו</string>
+    <string name="dgts__okay">אישור</string>
+    <string name="dgts__phone_number_edit_hint">המספר שלך</string>
+    <string name="dgts__phone_number_text">הזן את מספר הטלפון שלך</string>
+    <string name="dgts__pin_code_verification_title">הזן קוד אימות בשני שלבים</string>
+    <string name="dgts__resend_confirmation_text">שלח מחדש קוד אישור</string>
+    <string name="dgts__sending">שולח…</string>
+    <string name="dgts__success_desc">סמל הצלחה</string>
+    <string name="dgts__terms_email_request">הקשה על %1$sהמשך%1$s תוסיף את כתובת הדואר האלקטרוני לחשבון Digits שלך. כל היישומים שאומתו באמצעות Digits יקבלו גישה לכתובת דואר אלקטרוני זו והמשתמשים בהם יוכלו למצוא אותך לפי כתובת דואר אלקטרוני. נהל את החשבון שלך באתר %2$sDigits.com%3$s.</string>
+    <string name="dgts__terms_text">אם תקיש על %1$sהמשך%1$s לעיל, תישלח אליך הודעת SMS מ-%2$sDigits\
+        by Twitter%3$s כדי שתאשר את מספר הטלפון שלך. יתכן שתחויב בעלויות העברת מסרים ונתונים.</string>
+    <string name="dgts__terms_text_call_me">הקשה על %1$sהתקשרו אליי%1$s לעיל תגרום לכך שתקבל שיחה קולית מ-%2$sDigits by Twitter%3$s כדי לאמת את מספר הטלפון שלך. יתכן שתחויב בתעריפי שיחה והעברת נתונים.</string>
+    <string name="dgts__terms_text_create">הקשה על %1$sהמשך%1$s לעיל, מהווה את הסכמתך ל%2$sתנאי השירות%3$s‏, %2$sמדיניות הפרטיות%3$s ו%2$sהמדיניות בנושא קבצי Cookie‏%3$s של Digits by Twitter ולכך שמשתמשים אחרים ביישום יוכלו למצאו אותך לפי מספר טלפון ו/או כתובת דואר אלקטרוני.</string>
+    <string name="dgts__terms_text_sign_in">הקשה על %1$sהמשך%1$s לעיל מהווה את הסכמתך ל%2$sתנאי השירות%3$s, %2$sמדיניות הפרטיות%3$s ו%2$sהמדיניות בנוגע לקבצי Cookie‏%3$s העדכניים של Digits by Twitter, ולכך שמשתמשים אחרים של %1$s יוכלו למצוא אותך לפי מספר טלפון ו/או כתובת דואר אלקטרוני.</string>
+    <string name="dgts__try_again">נסה שוב</string>
+    <string name="dgts__try_again_confirmation">בדוק את הקוד שלך ונסה שוב.</string>
+    <string name="dgts__try_again_email">בדוק את כתובת הדואר האלקטרוני ונסה שוב.</string>
+    <string name="dgts__try_again_phone_number">בדוק את המספר שלך ונסה שוב.</string>
+    <string name="dgts__try_another_phone">נסה מספר טלפון אחר</string>
+    <string name="dgts__unsupported_operator_error">לא ניתן לשלוח הודעת SMS למספר זה.</string>
+    <string name="dgts__upload_contacts">אנחנו משתמשים ב-Digits by Twitter לאיתור עוד חברים שלך המשתמשים ביישום זה. בעת ההקשה על \'אישור\', אנחנו מעלים את פנקס הכתובות שלך ל-Digits by Twitter כדי שנוכל לעזור לך לאתר משתמשים של %1$s שאתה מכיר, או לעזור למשתמשים אחרים של %1$s למצוא אותך.</string>
+    <string name="dgts__verification_code">קוד אימות</string>
+    <string name="dgts_pin_code_terms">הגדרת בעבר קוד אימות בשני שלבים באתר digits.com</string>
+</resources>

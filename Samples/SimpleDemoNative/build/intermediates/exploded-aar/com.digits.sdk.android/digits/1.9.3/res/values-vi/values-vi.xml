@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-vi/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__call_me">Gọi cho tôi</string>
+    <string name="dgts__calling">Đang gọi…</string>
+    <string name="dgts__confirmation_code">Mã xác nhận</string>
+    <string name="dgts__confirmation_edit_hint">Nhập mã xác nhận</string>
+    <string name="dgts__confirmation_error">Không thể xác nhận số điện thoại của bạn</string>
+    <string name="dgts__confirmation_error_alternative">Rất tiếc, chúng tôi đang gặp vấn đề khi gửi cho bạn mã xác nhận.</string>
+    <string name="dgts__confirmation_expired">Mã này đã hết hạn. Vui lòng gửi lại mã xác nhận.</string>
+    <string name="dgts__continue">Tiếp tục</string>
+    <string name="dgts__digits_logo_desc">biểu tượng logo của digits</string>
+    <string name="dgts__digits_logo_name_desc">tên logo của digits</string>
+    <string name="dgts__dismiss">Bỏ qua</string>
+    <string name="dgts__done">Hoàn tất</string>
+    <string name="dgts__email_request_edit_hint">Địa chỉ email</string>
+    <string name="dgts__email_request_title">Nhập địa chỉ email</string>
+    <string name="dgts__find_your_friends">Tìm bạn bè của bạn</string>
+    <string name="dgts__image_header_description">Tiêu đề ảnh để đăng nhập</string>
+    <string name="dgts__invalid_email">Email không hợp lệ. Thử lại</string>
+    <string name="dgts__login_digits_text">Sử dụng số điện thoại của tôi</string>
+    <string name="dgts__network_error">Vui lòng kiểm tra mạng của bạn và thử lại.</string>
+    <string name="dgts__not_now">Không phải bây giờ</string>
+    <string name="dgts__okay">Okay</string>
+    <string name="dgts__phone_number_edit_hint">Số của Bạn</string>
+    <string name="dgts__phone_number_text">Nhập số điện thoại của bạn</string>
+    <string name="dgts__pin_code_verification_title">Nhập mã xác nhận 2 bước</string>
+    <string name="dgts__resend_confirmation_text">Gửi lại mã xác nhận</string>
+    <string name="dgts__sending">Đang gửi…</string>
+    <string name="dgts__success_desc">Biểu tượng Thành công</string>
+    <string name="dgts__terms_email_request">Khi nhấn %1$sTiếp tục%1$s bạn đang thêm email này vào tài khoản Digits của mình. Tất cả ứng dụng được xác thực bằng Digits của bạn sẽ có quyền truy cập địa chỉ email này, và người dùng ứng dụng sẽ có thể tìm thấy bạn qua email. Quản lý tài khoản của bạn trên %2$sDigits.com%3$s.</string>
+    <string name="dgts__terms_text">Khi nhấn %1$sTiếp tục%1$s bên trên, %2$sDigits by Twitter%3$s sẽ gửi bạn một tin nhắn SMS để xác nhận số điện thoại của bạn. Có thể áp dụng phí tin nhắn &amp; dữ liệu.</string>
+    <string name="dgts__terms_text_call_me">Khi nhấn %1$sGọi cho tôi%1$s bên trên, %2$sDigits by Twitter%3$s sẽ gửi bạn một cuộc gọi thoại để xác nhận số điện thoại của bạn. Có thể áp dụng phí gọi &amp; dữ liệu.</string>
+    <string name="dgts__terms_text_create">Khi nhấn %1$sTiếp tục%1$s bên trên, bạn đồng ý với %2$sĐiều khoản Dịch vụ%3$s, %2$sChính sách Riêng tư%3$s, và %2$sChính sách về Cookie%3$s của Digits by Twitter, và rằng những người dùng khác của ứng dụng này có thể tìm thấy bạn qua số điện thoại và/hoặc email.</string>
+    <string name="dgts__terms_text_sign_in">Khi nhấn %1$sTiếp tục%1$s bên trên, bạn đồng ý với %2$sĐiều khoản Dịch vụ%3$s, %2$sChính sách Riêng tư%3$s, và %2$sChính sách về Cookie%3$s đã được cập nhật của Digits by Twitter, và rằng những người dùng khác của %1$s có thể tìm thấy bạn qua số điện thoại và/hoặc email.</string>
+    <string name="dgts__try_again">Thử Lại</string>
+    <string name="dgts__try_again_confirmation">Vui lòng kiểm tra mã của bạn và thử lại.</string>
+    <string name="dgts__try_again_email">Vui lòng kiểm tra email của bạn và thử lại</string>
+    <string name="dgts__try_again_phone_number">Vui lòng kiểm tra số của bạn và thử lại.</string>
+    <string name="dgts__try_another_phone">Thử một số điện thoại khác</string>
+    <string name="dgts__unsupported_operator_error">Không thể gửi một tin nhắn SMS đến số này.</string>
+    <string name="dgts__upload_contacts">Chúng tôi sử dụng Digits by Twitter để tìm thêm bạn bè của bạn sử dụng ứng dụng này. Khi bạn nhấn Okay, chúng tôi sẽ tải sổ địa chỉ của bạn lên Digits by Twitter để có thể giúp bạn tìm thấy những người dùng %1$s mà bạn biết hoặc giúp những người dùng %1$s khác tìm thấy bạn.</string>
+    <string name="dgts__verification_code">Mã xác nhận</string>
+    <string name="dgts_pin_code_terms">Trước đây bạn đã đặt một mã xác nhận 2 bước trên digits.com</string>
+</resources>

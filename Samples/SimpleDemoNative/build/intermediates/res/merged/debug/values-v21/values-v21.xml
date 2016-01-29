@@ -220,24 +220,29 @@
     <style name="Base.Widget.AppCompat.TextView.SpinnerItem" parent="android:Widget.Material.TextView.SpinnerItem"/>
     <style name="Base.Widget.AppCompat.Toolbar.Button.Navigation" parent="android:Widget.Material.Toolbar.Button.Navigation">
     </style>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.0/res/values-v21/values-v21.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.2/res/values-v21/values-v21.xml -->
     <eat-comment/>
     <style name="ComposerDark" parent="@android:style/Theme.Material.NoActionBar">
         <item name="android:textColor">@color/tw__composer_white</item>
         <item name="android:textColorSecondary">@color/tw__composer_deep_gray</item>
         <item name="android:textColorHint">@color/tw__composer_light_gray</item>
-        <item name="tw__twitter_logo">@drawable/tw__ic_logo_white</item>
+        <item name="tw__twitter_logo">@drawable/tw__composer_logo_white</item>
     </style>
     <style name="ComposerLight" parent="@android:style/Theme.Material.Light.NoActionBar">
         <item name="android:textColor">@color/tw__composer_black</item>
         <item name="android:textColorSecondary">@color/tw__composer_deep_gray</item>
         <item name="android:textColorHint">@color/tw__composer_light_gray</item>
-        <item name="tw__twitter_logo">@drawable/tw__ic_logo_blue</item>
+        <item name="tw__twitter_logo">@drawable/tw__composer_logo_blue</item>
     </style>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values-v21/values-v21.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.3/res/values-v21/values-v21.xml -->
     <eat-comment/>
     <style name="Digits_default" parent="@android:style/Theme.Material.Light">
         <item name="dgts__accentColor">?android:attr/colorAccent</item>
+    </style>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-v21/values-v21.xml -->
+    <eat-comment/>
+    <style name="MediaTheme" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@android:color/black</item>
     </style>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values-v21/values-v21.xml -->
     <eat-comment/>
@@ -275,7 +280,7 @@
         <item name="android:colorControlHighlight">?attr/colorControlHighlight</item>
         <item name="android:colorButtonNormal">?attr/colorButtonNormal</item>
     </style>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-v21/values-v21.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-v21/values-v21.xml -->
     <eat-comment/>
     <style name="tw__TweetFullName" parent="tw__TweetFullNameBase">
         <item name="android:fontFamily">sans-serif-medium</item>

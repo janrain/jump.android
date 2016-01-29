@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-nl/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__call_me">Bel me</string>
+    <string name="dgts__calling">Bellen…</string>
+    <string name="dgts__confirmation_code">Bevestigingscode</string>
+    <string name="dgts__confirmation_edit_hint">Bevestigingscode invoeren</string>
+    <string name="dgts__confirmation_error">We konden je telefoonnummer niet bevestigen.</string>
+    <string name="dgts__confirmation_error_alternative">Sorry, we kunnen je geen bevestigingscode sturen.</string>
+    <string name="dgts__confirmation_expired">Deze code is verlopen. Verstuur de bevestigingscode opnieuw.</string>
+    <string name="dgts__continue">Verder</string>
+    <string name="dgts__digits_logo_desc">pictogram van Digits-logo</string>
+    <string name="dgts__digits_logo_name_desc">naam van Digits-logo</string>
+    <string name="dgts__dismiss">Verbergen</string>
+    <string name="dgts__done">Klaar</string>
+    <string name="dgts__email_request_edit_hint">E-mailadres</string>
+    <string name="dgts__email_request_title">E-mailadres invoeren</string>
+    <string name="dgts__find_your_friends">Je vrienden zoeken</string>
+    <string name="dgts__image_header_description">Afbeeldingskoptekst voor inloggen</string>
+    <string name="dgts__invalid_email">Ongeldig e-mailadres. Probeer het opnieuw.</string>
+    <string name="dgts__login_digits_text">Mijn telefoonnummer gebruiken</string>
+    <string name="dgts__network_error">Controleer je internetverbinding en probeer het opnieuw.</string>
+    <string name="dgts__not_now">Nu niet</string>
+    <string name="dgts__okay">Oké</string>
+    <string name="dgts__phone_number_edit_hint">Je telefoonnummer</string>
+    <string name="dgts__phone_number_text">Vul je telefoonnummer in</string>
+    <string name="dgts__pin_code_verification_title">Voer de code voor 2-staps verificatie in</string>
+    <string name="dgts__resend_confirmation_text">Bevestigingscode opnieuw verzenden</string>
+    <string name="dgts__sending">Verzenden…</string>
+    <string name="dgts__success_desc">Gelukt-pictogram</string>
+    <string name="dgts__terms_email_request">Door op %1$sVerder%1$s te tikken, voeg je je e-mailadres toe aan je Digits-account. Al je met Digits geverifieerde apps krijgen toegang tot dit e-mailadres en alle gebruikers van deze apps kunnen je vinden via e-mail. Beheer je account op %2$sDigits.com%3$s.</string>
+    <string name="dgts__terms_text">Als je hierboven op %1$sVerder%1$s tikt, stuurt %2$sDigits by Twitter%3$s je eens sms om je telefoonnummer te bevestigen. Standaardkosten voor gegevens en berichten van toepassing.</string>
+    <string name="dgts__terms_text_call_me">Als je hierboven op %1$sBel me%1$s tikt, stuurt %2$sDigits by Twitter%3$s je een spraakoproep om je telefoonnummer te bevestigen. Standaardkosten voor bellen en dataverbruik van toepassing.</string>
+    <string name="dgts__terms_text_create">Als je hierboven op %1$sVerder%1$s tikt, ga je akkoord met de %2$salgemene voorwaarden%3$s, het %2$sprivacybeleid%3$s en het %2$scookiebeleid%3$s van Digits by Twitter. Andere mensen die deze app gebruiken, kunnen je vinden via je telefoonnummer en/of e-mailadres.</string>
+    <string name="dgts__terms_text_sign_in">Door hierboven op %1$sVerder%1$s te tikken, ga je akkoord met de bijgewerkte %2$salgemene voorwaarden%3$s, het %2$sprivacybeleid%3$s en het %2$scookiebeleid%3$s van Digits by Twitter. Andere gebruikers van %1$s kunnen je vinden via je telefoonnummer en/of e-mailadres.</string>
+    <string name="dgts__try_again">Probeer het opnieuw</string>
+    <string name="dgts__try_again_confirmation">Controleer je code en probeer het opnieuw.</string>
+    <string name="dgts__try_again_email">Controleer je e-mail en probeer het opnieuw</string>
+    <string name="dgts__try_again_phone_number">Controleer je telefoonnummer en probeer het opnieuw.</string>
+    <string name="dgts__try_another_phone">Probeer een ander telefoonnummer</string>
+    <string name="dgts__unsupported_operator_error">Het is niet mogelijk om dit nummer een sms-bericht te sturen.</string>
+    <string name="dgts__upload_contacts">We gebruiken Digits by Twitter om vrienden te zoeken die deze app gebruiken. Als je op OK tikt, wordt je adresboek naar Digits by Twitter geüpload om bekenden die %1$s gebruiken te vinden en andere mensen die %1$s gebruiken, te helpen jou te vinden.</string>
+    <string name="dgts__verification_code">Verificatiecode</string>
+    <string name="dgts_pin_code_terms">Je hebt eerder een code voor 2-staps verificatie ingesteld op digits.com</string>
+</resources>

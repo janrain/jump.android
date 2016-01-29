@@ -29,4 +29,4 @@
     <item android:drawable="@drawable/tw__login_btn_disabled"
           android:state_enabled="false"/>
     <item android:drawable="@drawable/dgts__digits_btn_default"/>
-</selector><!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/drawable/dgts__digits_btn.xml --><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/drawable/dgts__digits_btn.xml -->
+</selector><!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/drawable/dgts__digits_btn.xml --><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.3/res/drawable/dgts__digits_btn.xml -->

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-vi/values-vi.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-vi/values-vi.xml -->
     <eat-comment/>
     <plurals name="tw__time_hours">
-        <item quantity="one">1 giờ</item>
-        <item quantity="other">%d giờ</item>
+        <item quantity="one">1giờ</item>
+        <item quantity="other">%dgiờ</item>
     </plurals>
     <plurals name="tw__time_mins">
-        <item quantity="one">1 phút</item>
-        <item quantity="other">%d phút</item>
+        <item quantity="one">1phút</item>
+        <item quantity="other">%dphút</item>
     </plurals>
     <plurals name="tw__time_secs">
-        <item quantity="one">1 giây</item>
-        <item quantity="other">%d giây</item>
+        <item quantity="one">1giây</item>
+        <item quantity="other">%dgiây</item>
     </plurals>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values-vi/values-vi.xml -->
     <eat-comment/>
@@ -80,37 +80,49 @@
     <string msgid="2201289642219771610" name="common_google_play_services_updating_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> sẽ không chạy khi không có Dịch vụ của Google Play đang cập nhật."</string>
     <string msgid="815008177440683245" name="common_google_play_services_updating_title">"Dịch vụ của Google Play đang cập nhật"</string>
     <string msgid="411506735369601515" name="common_open_on_phone">"Mở trên điện thoại"</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values-vi/values-vi.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.3/res/values-vi/values-vi.xml -->
     <eat-comment/>
+    <string name="dgts__call_me">Gọi cho tôi</string>
+    <string name="dgts__calling">Đang gọi…</string>
     <string name="dgts__confirmation_code">Mã xác nhận</string>
     <string name="dgts__confirmation_edit_hint">Nhập mã xác nhận</string>
     <string name="dgts__confirmation_error">Không thể xác nhận số điện thoại của bạn</string>
-    <string name="dgts__confirmation_error_alternative">Xin lỗi, chúng tôi đang gặp rắc rối với việc gửi cho bạn mã xác nhận.</string>
+    <string name="dgts__confirmation_error_alternative">Rất tiếc, chúng tôi đang gặp vấn đề khi gửi cho bạn mã xác nhận.</string>
     <string name="dgts__confirmation_expired">Mã này đã hết hạn. Vui lòng gửi lại mã xác nhận.</string>
+    <string name="dgts__continue">Tiếp tục</string>
     <string name="dgts__digits_logo_desc">biểu tượng logo của digits</string>
     <string name="dgts__digits_logo_name_desc">tên logo của digits</string>
     <string name="dgts__dismiss">Bỏ qua</string>
+    <string name="dgts__done">Hoàn tất</string>
+    <string name="dgts__email_request_edit_hint">Địa chỉ email</string>
+    <string name="dgts__email_request_title">Nhập địa chỉ email</string>
     <string name="dgts__find_your_friends">Tìm bạn bè của bạn</string>
-    <string name="dgts__image_header_description">Ảnh đầu trang để đăng nhập</string>
+    <string name="dgts__image_header_description">Tiêu đề ảnh để đăng nhập</string>
+    <string name="dgts__invalid_email">Email không hợp lệ. Thử lại</string>
     <string name="dgts__login_digits_text">Sử dụng số điện thoại của tôi</string>
     <string name="dgts__network_error">Vui lòng kiểm tra mạng của bạn và thử lại.</string>
     <string name="dgts__not_now">Không phải bây giờ</string>
     <string name="dgts__okay">Okay</string>
-    <string name="dgts__phone_number_edit_hint">Số Của bạn</string>
+    <string name="dgts__phone_number_edit_hint">Số của Bạn</string>
     <string name="dgts__phone_number_text">Nhập số điện thoại của bạn</string>
     <string name="dgts__pin_code_verification_title">Nhập mã xác nhận 2 bước</string>
     <string name="dgts__resend_confirmation_text">Gửi lại mã xác nhận</string>
+    <string name="dgts__sending">Đang gửi…</string>
     <string name="dgts__success_desc">Biểu tượng Thành công</string>
-    <string name="dgts__terms_text">Khi nhấn %1$sGửi mã xác nhận%1$s ở trên, Digits by Twitter sẽ gửi bạn một tin nhắn SMS để xác nhận số điện thoại của bạn. Có thể áp dụng phí tin nhắn và dữ liệu.</string>
-    <string name="dgts__terms_text_create">Khi nhấn vào %1$sTạo tài khoản%1$s bên trên, bạn đã đồng ý với Điều khoản Dịch vụ, Chính sách Quyền riêng tư và Chính sách về Cookies của Digits by Twitter, và đồng ý rằng những người dùng khác của ứng dụng này có thể tìm thấy bạn qua số điện thoại và/hoặc email.</string>
-    <string name="dgts__terms_text_sign_in">Khi nhấn vào %1$sĐăng ký%1$s bên trên, bạn đã đồng ý với Điều khoản Dịch vụ, Chính sách Quyền riêng tư và Chính sách về Cookies được cập nhật của Digits by Twitter, và đồng ý rằng những người dùng %1$s khác có thể tìm thấy bạn qua số điện thoại và/hoặc email.</string>
-    <string name="dgts__try_again">Thử lại</string>
+    <string name="dgts__terms_email_request">Khi nhấn %1$sTiếp tục%1$s bạn đang thêm email này vào tài khoản Digits của mình. Tất cả ứng dụng được xác thực bằng Digits của bạn sẽ có quyền truy cập địa chỉ email này, và người dùng ứng dụng sẽ có thể tìm thấy bạn qua email. Quản lý tài khoản của bạn trên %2$sDigits.com%3$s.</string>
+    <string name="dgts__terms_text">Khi nhấn %1$sTiếp tục%1$s bên trên, %2$sDigits by Twitter%3$s sẽ gửi bạn một tin nhắn SMS để xác nhận số điện thoại của bạn. Có thể áp dụng phí tin nhắn &amp; dữ liệu.</string>
+    <string name="dgts__terms_text_call_me">Khi nhấn %1$sGọi cho tôi%1$s bên trên, %2$sDigits by Twitter%3$s sẽ gửi bạn một cuộc gọi thoại để xác nhận số điện thoại của bạn. Có thể áp dụng phí gọi &amp; dữ liệu.</string>
+    <string name="dgts__terms_text_create">Khi nhấn %1$sTiếp tục%1$s bên trên, bạn đồng ý với %2$sĐiều khoản Dịch vụ%3$s, %2$sChính sách Riêng tư%3$s, và %2$sChính sách về Cookie%3$s của Digits by Twitter, và rằng những người dùng khác của ứng dụng này có thể tìm thấy bạn qua số điện thoại và/hoặc email.</string>
+    <string name="dgts__terms_text_sign_in">Khi nhấn %1$sTiếp tục%1$s bên trên, bạn đồng ý với %2$sĐiều khoản Dịch vụ%3$s, %2$sChính sách Riêng tư%3$s, và %2$sChính sách về Cookie%3$s đã được cập nhật của Digits by Twitter, và rằng những người dùng khác của %1$s có thể tìm thấy bạn qua số điện thoại và/hoặc email.</string>
+    <string name="dgts__try_again">Thử Lại</string>
     <string name="dgts__try_again_confirmation">Vui lòng kiểm tra mã của bạn và thử lại.</string>
+    <string name="dgts__try_again_email">Vui lòng kiểm tra email của bạn và thử lại</string>
     <string name="dgts__try_again_phone_number">Vui lòng kiểm tra số của bạn và thử lại.</string>
     <string name="dgts__try_another_phone">Thử một số điện thoại khác</string>
-    <string name="dgts__upload_contacts">Chúng tôi sử dụng Digits by Twitter để tìm thêm bạn bè của bạn, những người cũng sử dụng ứng dụng này. Khi bạn nhấn Okay, chúng tôi sẽ tải sổ địa chỉ của bạn lên Digits by Twitter để có thể giúp bạn tìm thấy những người dùng %1$s mà bạn biết hoặc giúp những người dùng %1$s khác tìm thấy bạn.</string>
+    <string name="dgts__unsupported_operator_error">Không thể gửi một tin nhắn SMS đến số này.</string>
+    <string name="dgts__upload_contacts">Chúng tôi sử dụng Digits by Twitter để tìm thêm bạn bè của bạn sử dụng ứng dụng này. Khi bạn nhấn Okay, chúng tôi sẽ tải sổ địa chỉ của bạn lên Digits by Twitter để có thể giúp bạn tìm thấy những người dùng %1$s mà bạn biết hoặc giúp những người dùng %1$s khác tìm thấy bạn.</string>
     <string name="dgts__verification_code">Mã xác nhận</string>
-    <string name="dgts_pin_code_terms">Trước đây bạn đã lập một mã xác nhận 2 bước trên digits.com</string>
+    <string name="dgts_pin_code_terms">Trước đây bạn đã đặt một mã xác nhận 2 bước trên digits.com</string>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.9.0/unspecified/res/values-vi/values-vi.xml -->
     <eat-comment/>
     <string name="messenger_send_button_text">Gửi</string>
@@ -122,25 +134,27 @@
     <string msgid="109793632378378069" name="mr_media_route_controller_disconnect">"Ngắt kết nối"</string>
     <string msgid="5441529851481176817" name="mr_system_route_name">"Hệ thống"</string>
     <string msgid="7498112907524977311" name="mr_user_route_category_name">"Thiết bị"</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-vi/values-vi.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-vi/values-vi.xml -->
     <eat-comment/>
     <string name="tw__allow_btn_txt">Cho phép</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-vi/values-vi.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-vi/values-vi.xml -->
     <eat-comment/>
+    <string name="tw__like_tweet">Thích Tweet</string>
+    <string name="tw__liked_tweet">Hoàn tác Thích</string>
     <string name="tw__loading_tweet">Đang tải Tweet</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-vi/values-vi.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-vi/values-vi.xml -->
     <eat-comment/>
     <string name="tw__login_btn_txt">Đăng nhập bằng Twitter</string>
     <string name="tw__not_now_btn_txt">Không phải bây giờ</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-vi/values-vi.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-vi/values-vi.xml -->
     <eat-comment/>
     <string name="tw__retweeted_by_format">Đã Tweet lại bởi %1$s</string>
     <string name="tw__share_content_format">Hãy xem Tweet của \@%1$s: https://twitter.com/%1$s/status/%2$s</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-vi/values-vi.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-vi/values-vi.xml -->
     <eat-comment/>
     <string name="tw__share_email_desc">Nhận các cập nhật và thông tin khác từ %1$s khi bạn cho phép họ truy cập email trên tài khoản Twitter của bạn \@%2$s</string>
     <string name="tw__share_email_title">Chia sẻ địa chỉ email của bạn</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-vi/values-vi.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-vi/values-vi.xml -->
     <eat-comment/>
     <string name="tw__share_subject_format">Tweet từ %1$s (\@%2$s)</string>
     <string name="tw__share_tweet">Chia sẻ Tweet</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-bn/values-bn.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-bn/values-bn.xml -->
     <eat-comment/>
     <plurals name="tw__time_hours">
         <item quantity="one">1ঘ</item>
@@ -33,18 +33,25 @@
     <string name="com_facebook_send_button_text">পাঠান</string>
     <string name="com_facebook_share_button_text">ভাগ করুন</string>
     <string name="com_facebook_tooltip_default">নতুন! আপনি নিয়ন্ত্রণে আছেন-অ্যাপসের সাথে আপনি কোন তথ্য ভাগ করতে চাইছেন তা চয়ন করুন৷</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values-bn/values-bn.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.3/res/values-bn/values-bn.xml -->
     <eat-comment/>
+    <string name="dgts__call_me">আমাকে কল করুন</string>
+    <string name="dgts__calling">কল করা হচ্ছে…</string>
     <string name="dgts__confirmation_code">নিশ্চিতকরণ কোড</string>
     <string name="dgts__confirmation_edit_hint">নিশ্চিতকরণ কোড লিখুন</string>
     <string name="dgts__confirmation_error">আপনার ফোন নম্বর নিশ্চিত করা যায়নি</string>
     <string name="dgts__confirmation_error_alternative">দুঃখিত, আপনাকে একটি যাচাইকরণ কোড পাঠাতে আমরা সমস্যার সম্মুখীন হচ্ছি।</string>
-    <string name="dgts__confirmation_expired">এই কোডের মেয়াদ শেষ হয়ে গেছে। অনুগ্রহ করে নিশ্চিতকরণ কোড আবার পাঠান।</string>
+    <string name="dgts__confirmation_expired">এই কোডের মেয়াদ শেষ হয়েছে। দয়া করে নিশ্চিতকরণ কোড পুনঃপাঠান।</string>
+    <string name="dgts__continue">অবিরত</string>
     <string name="dgts__digits_logo_desc">digits লোগো আইকন</string>
     <string name="dgts__digits_logo_name_desc">digits লোগো নাম</string>
     <string name="dgts__dismiss">খারিজ করুন</string>
+    <string name="dgts__done">সম্পন্ন</string>
+    <string name="dgts__email_request_edit_hint">ইমেল ঠিকানা</string>
+    <string name="dgts__email_request_title">ইমেল ঠিকানা লিখুন</string>
     <string name="dgts__find_your_friends">আপনার বন্ধুদের খুঁজুন</string>
     <string name="dgts__image_header_description">লগ-ইনের জন্য ছবির শিরোনাম</string>
+    <string name="dgts__invalid_email">অবৈধ ইমেল। আবার চেষ্টা করুন</string>
     <string name="dgts__login_digits_text">আমার ফোন নম্বর ব্যবহার করুন</string>
     <string name="dgts__network_error">অনুগ্রহ করে আপনার নেটওয়ার্ক পরীক্ষা করে আবার চেষ্টা করুন।</string>
     <string name="dgts__not_now">এখন নয়</string>
@@ -53,40 +60,46 @@
     <string name="dgts__phone_number_text">আপনার ফোন নম্বর লিখুন</string>
     <string name="dgts__pin_code_verification_title">2-পদক্ষেপ যাচাইকরণ কোড লিখুন</string>
     <string name="dgts__resend_confirmation_text">নিশ্চিতকরণ কোড আবার পাঠান</string>
+    <string name="dgts__sending">পাঠানো হচ্ছে…</string>
     <string name="dgts__success_desc">সফল হওয়ার আইকন</string>
-    <string name="dgts__terms_text">উপরের %1$sযাচাইকরণের কোড পাঠান%1$s টিপলে,\
-আপনাকে আপনার ফোন নম্বর নিশ্চিত করতে Digits by Twitter আপনাকে একটি এস্এমএস বার্তা পাঠাবে। বার্তা এবং ডেটা হার প্রযোজ্য হতে পারে।</string>
-    <string name="dgts__terms_text_create">উপরের %1$sঅ্যাকাউন্ট তৈরি করুন%1$s টিপে, আপনি Digits by Twitter -এর পরিষেবার শর্তাদি, গোপনীয়তা নীতি এবং কুকিজ নীতি\'তে সম্মতি এবং এই অ্যাপের অন্যান্য ব্যবহারকারীরা আপনাকে ফোন নম্বর এবং/অথবা ইমেইল দিয়ে খুঁজে নিতে পারবেন তাতে সম্মতি জানাচ্ছেন।</string>
-    <string name="dgts__terms_text_sign_in">উপরের %1$sসাইন ইন করুন%1$s টিপে, আপনি Digits by Twitter -এর আপডেট হওয়া পরিষেবার শর্তাদি, গোপনীয়তা নীতি এবং কুকিজ নীতি\'তে সম্মতি এবং %1$s -এর অন্যান্য ব্যবহারকারীরা আপনাকে ফোন নম্বর এবং/অথবা ইমেইল দিয়ে খুঁজে নিতে পারবেন তাতে সম্মতি জানাচ্ছেন।</string>
+    <string name="dgts__terms_email_request">%1$sঅবিরত%1$s ট্যাপ করে আপনি আপনার Digits by Twitter অ্যাকাউন্টে এই ইমেল যোগ করছেন। Digits-এর সাথে প্রমাণীকৃত আপনার সমস্ত অ্যাপের এই ইমেল ঠিকানাতে অ্যাক্সেস থাকবে ও তাদের ব্যবহারকারীরা আপনাকে ইমেল দিয়ে আবিষ্কার করতে সক্ষম হবে। %2$sDigits.com%3$s-এ আপনার অ্যাকাউন্ট পরিচালনা করুন।</string>
+    <string name="dgts__terms_text">উপরে %1$sঅবিরত%1$s ট্যাপ করলে আপনার ফোন নম্বর নিশ্চিত করতে %2$sDigits by Twitter%3$s আপনাকে একটি এসএমএস বার্তা পাঠাবে। বার্তা ও ডেটা দর প্রয়োগ হতে পারে।</string>
+    <string name="dgts__terms_text_call_me">উপরে %1$sআমাকে কল করুন%1$s ট্যাপ করলে আপনার ফোন নম্বর নিশ্চিত করতে %2$sDigits by Twitter%3$s আপনাকে একটি ভয়েস কল পাঠাবে। কল ও ডেটা দর প্রয়োগ হতে পারে।</string>
+    <string name="dgts__terms_text_create">উপরে %1$sঅবিরত%1$s ট্যাপ করে আপনি Digits by Twitter-এর %2$sপরিষেবার শর্তাবলী%3$s, %2$sগোপনীয়তা নীতি%3$s, ও %2$sকুকিজ নীতির%3$s সাথে এবং এই অ্যাপের অন্যান্য ব্যবহারকারীরা আপনাকে ফোন নম্বর এবং/অথবা ইমেলের মাধ্যমে আবিষ্কার করতে পারবেন তাতে সম্মত হন।</string>
+    <string name="dgts__terms_text_sign_in">উপরে %1$sঅবিরত%1$s ট্যাপ করে আপনি Digits by Twitter-এর আপডেট হওয়া %2$sপরিষেবার শর্তাবলী%3$s, %2$sগোপনীয়তা নীতি%3$s, ও %2$sকুকিজ নীতির%3$s সাথে এবং %1$s-এর অন্যান্য ব্যবহারকারীরা আপনাকে ফোন নম্বর এবং/অথবা ইমেলের মাধ্যমে আবিষ্কার করতে পারবেন তাতে সম্মত হন।</string>
     <string name="dgts__try_again">আবার চেষ্টা করুন</string>
     <string name="dgts__try_again_confirmation">অনুগ্রহ করে আপনার কোড পরীক্ষা করে আবার চেষ্টা করুন।</string>
+    <string name="dgts__try_again_email">দয়া করে আপনার ইমেল পরীক্ষা করুন ও আবার চেষ্টা করুন</string>
     <string name="dgts__try_again_phone_number">অনুগ্রহ করে আপনার নম্বর দেখে নিয়ে আবার চেষ্টা করুন।</string>
     <string name="dgts__try_another_phone">অন্য একটি ফোন নম্বর ব্যবহার করুন</string>
+    <string name="dgts__unsupported_operator_error">এই নম্বরে একটি এসএমএস বার্তা পাঠাতে অক্ষম।</string>
     <string name="dgts__upload_contacts">এই অ্যাপটি আপনার আর যে সব বন্ধুরা ব্যবহার করছেন তাদের আমরা Digits by Twitter -এর সাহায্যে খুঁজে নিই। আপনি ঠিক আছে টিপলে, আমরা Digits by Twitter-এ আপনার ঠিকানা বই আপলোড করব যাতে কিনা, আমরা আপনাকে আপনার পরিচিতি %1$s -এর ব্যবহারকারীদের খুঁজে নিতে বা %1$s -এর অন্যান্য ব্যবহারকারীদের আপনাকে খুঁজে নিতে সাহায্য করতে পারি।</string>
     <string name="dgts__verification_code">যাচাইকরণ কোড</string>
     <string name="dgts_pin_code_terms">আপনি পূর্বে digits.com -এ একটি 2-পদক্ষেপ যাচাইকরণ কোড সেট করেছেন</string>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.9.0/unspecified/res/values-bn/values-bn.xml -->
     <eat-comment/>
     <string name="messenger_send_button_text">প্রেরণ করুন</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-bn/values-bn.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-bn/values-bn.xml -->
     <eat-comment/>
     <string name="tw__allow_btn_txt">অনুমতি দিন</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-bn/values-bn.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-bn/values-bn.xml -->
     <eat-comment/>
+    <string name="tw__like_tweet">টুইট পছন্দ করুন</string>
+    <string name="tw__liked_tweet">পছন্দ ফিরিয়ে নিন</string>
     <string name="tw__loading_tweet">টুইট লোড হচ্ছে</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-bn/values-bn.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-bn/values-bn.xml -->
     <eat-comment/>
     <string name="tw__login_btn_txt">টুইটার দিয়ে লগ ইন করুন</string>
     <string name="tw__not_now_btn_txt">এখন নয়</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-bn/values-bn.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-bn/values-bn.xml -->
     <eat-comment/>
     <string name="tw__retweeted_by_format">%1$s পুনঃটুইট করেছেন</string>
     <string name="tw__share_content_format">\@%1$s -এর টুইট দেখুন: https://twitter.com/%1$s/status/%2$s</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-bn/values-bn.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-bn/values-bn.xml -->
     <eat-comment/>
     <string name="tw__share_email_desc">আপনি %1$s কে আপনার টুইটার অ্যাকাউন্ট \@%2$s -এ আপনার ইমেইলে প্রবেশাধিকার দিলে তার থেকে আপডেট এবং অন্যান্য তথ্য পেতে পারবেন </string>
     <string name="tw__share_email_title">আপনার ইমেইল ঠিকানা ভাগ করুন</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-bn/values-bn.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-bn/values-bn.xml -->
     <eat-comment/>
     <string name="tw__share_subject_format">%1$s (\@%2$s) থেকে টুইট</string>
     <string name="tw__share_tweet">টুইট ভাগ করুন</string>

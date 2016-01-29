@@ -21,4 +21,4 @@
     <stroke
         android:width="@dimen/tw__tweet_container_width"
         android:color="@color/tw__tweet_container_border"/>
-</shape><!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/tweet-ui/src/main/res/drawable/tw__bg_tweet.xml --><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/drawable/tw__bg_tweet.xml -->
+</shape><!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/tweet-ui/src/main/res/drawable/tw__bg_tweet.xml --><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/drawable/tw__bg_tweet.xml -->

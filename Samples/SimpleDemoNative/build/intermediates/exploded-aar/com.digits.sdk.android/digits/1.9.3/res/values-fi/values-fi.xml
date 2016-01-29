@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-fi/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__call_me">Soita minulle</string>
+    <string name="dgts__calling">Soitetaan…</string>
+    <string name="dgts__confirmation_code">Vahvistuskoodi</string>
+    <string name="dgts__confirmation_edit_hint">Syötä vahvistuskoodi</string>
+    <string name="dgts__confirmation_error">Puhelinnumeroasi ei pystytty vahvistamaan</string>
+    <string name="dgts__confirmation_error_alternative">Vahvistuskoodin lähettämisessä on nyt ongelmia.</string>
+    <string name="dgts__confirmation_expired">Tämä koodi on vanhentunut. Lähetä vahvistuskoodi uudelleen.</string>
+    <string name="dgts__continue">Jatka</string>
+    <string name="dgts__digits_logo_desc">digits-logon kuvake</string>
+    <string name="dgts__digits_logo_name_desc">digits-logon nimi</string>
+    <string name="dgts__dismiss">Hylkää</string>
+    <string name="dgts__done">Valmis</string>
+    <string name="dgts__email_request_edit_hint">Sähköpostiosoite</string>
+    <string name="dgts__email_request_title">Kirjoita sähköpostiosoite</string>
+    <string name="dgts__find_your_friends">Löydä ystäväsi</string>
+    <string name="dgts__image_header_description">Kirjautumisen kuvaotsake</string>
+    <string name="dgts__invalid_email">Virheellinen sähköpostiosoite. Yritä uudelleen</string>
+    <string name="dgts__login_digits_text">Käytä puhelinnumeroani</string>
+    <string name="dgts__network_error">Tarkista verkkoyhteys ja yritä uudelleen</string>
+    <string name="dgts__not_now">Ei nyt</string>
+    <string name="dgts__okay">OK</string>
+    <string name="dgts__phone_number_edit_hint">Numerosi</string>
+    <string name="dgts__phone_number_text">Anna puhelinnumerosi</string>
+    <string name="dgts__pin_code_verification_title">Syötä kaksivaiheinen varmennuskoodi</string>
+    <string name="dgts__resend_confirmation_text">Lähetä vahvistuskoodi</string>
+    <string name="dgts__sending">Lähetetään…</string>
+    <string name="dgts__success_desc">Onnistumiskuvake</string>
+    <string name="dgts__terms_email_request">Napauttamalla %1$sJatka%1$s lisäät tämän sähköpostiosoitteen Digits-tiliisi. Kaikilla Digits-palvelulla varmennetuilla sovelluksillasi on käyttöoikeus tähän sähköpostiosoitteeseen, ja niiden käyttäjät voivat löytää sinut sähköpostiosoitteesi perusteella. Hallinnoi tiliäsi osoitteessa %2$sDigits.com%3$s.</string>
+    <string name="dgts__terms_text">Kun napautat yltä %1$sJatka%1$s, %2$sDigits\
+        by Twitter -palvelu%3$s lähettää sinulle tekstiviestin puhelinnumerosi vahvistamista varten. Tekstiviesti- ja tiedonsiirtokustannukset ovat voimassa.</string>
+    <string name="dgts__terms_text_call_me">Kun napautat yltä %1$sSoita minulle%1$s, %2$sDigits by Twitter -palvelu%3$s soittaa sinulle äänipuhelun puhelinnumerosi vahvistamista varten. Puhelu- ja tiedonsiirtokustannukset ovat voimassa.</string>
+    <string name="dgts__terms_text_create">Napauttamalla yltä %1$sJatka%1$s hyväksyt Digits by Twitter -palvelun %2$skäyttöehdot%3$s, %2$syksityisyyskäytännön%3$s ja %2$sevästekäytännön%3$s sekä sen, että muut tämän sovelluksen käyttäjät voivat löytää sinut puhelinnumeron ja/tai sähköpostiosoitteen perusteella.</string>
+    <string name="dgts__terms_text_sign_in">Napauttamalla yltä %1$sJatka%1$s hyväksyt Digits by Twitter -palvelun uudet %2$skäyttöehdot%3$s, %2$syksityisyyskäytännön%3$s ja %2$sevästekäytännön%3$s sekä sen, että muut sovelluksen %1$s käyttäjät voivat löytää sinut puhelinnumeron ja/tai sähköpostiosoitteen perusteella.</string>
+    <string name="dgts__try_again">Yritä uudelleen</string>
+    <string name="dgts__try_again_confirmation">Tarkista koodi ja yritä uudelleen.</string>
+    <string name="dgts__try_again_email">Tarkista sähköpostiosoitteesi ja yritä uudelleen</string>
+    <string name="dgts__try_again_phone_number">Tarkista numero ja yritä uudelleen.</string>
+    <string name="dgts__try_another_phone">Kokeile toista puhelinnumeroa</string>
+    <string name="dgts__unsupported_operator_error">Tekstiviestin lähettäminen tähän numeroon ei onnistu.</string>
+    <string name="dgts__upload_contacts">Digits by Twitter -palvelu auttaa löytämään muita tätä sovellusta käyttäviä ystäviäsi. Kun napautat OK, lähetämme osoitekirjasi Digits by Twitterille, jotta voimme auttaa sinua löytämään tuntemiasi sovelluksen %1$s käyttäjiä tai auttaa muita sovelluksen %1$s käyttäjiä löytämään sinut.</string>
+    <string name="dgts__verification_code">Varmennuskoodi</string>
+    <string name="dgts_pin_code_terms">Olet aiemmin asettanut kaksivaiheisen varmennuskoodin osoitteessa digits.com</string>
+</resources>

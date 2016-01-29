@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="http://schemas.android.com/tools">
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.3/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference|color" name="dgts__accentColor"/>
     <attr format="reference" name="dgts__logoDrawable"/>
@@ -31,7 +31,7 @@
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <attr format="string" name="title"/>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.2/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="tw__twitter_logo"/>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
@@ -99,7 +99,7 @@
     <color name="common_signin_btn_light_text_disabled">#FFAAAAAA</color>
     <color name="common_signin_btn_light_text_focused">#FF737373</color>
     <color name="common_signin_btn_light_text_pressed">@android:color/white</color>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.3/res/values/values.xml -->
     <eat-comment/>
     <color name="dgts__default_accent">#5baaf4</color>
     <color name="dgts__default_logo_name">#56626d</color>
@@ -157,12 +157,12 @@
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values/values.xml -->
     <eat-comment/>
     <color name="tw__blue_default">#FF5BAAF4</color>
     <color name="tw__blue_pressed">#FF4186C8</color>
     <color name="tw__blue_pressed_light">#ffe1e8ed</color>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.2/res/values/values.xml -->
     <eat-comment/>
     <color name="tw__composer_black">#ff292f33</color>
     <color name="tw__composer_blue">#ff1da1f2</color>
@@ -171,13 +171,19 @@
     <color name="tw__composer_light_gray">#ffccd6dd</color>
     <color name="tw__composer_red">#ffe81c4f</color>
     <color name="tw__composer_white">#ffffffff</color>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values/values.xml -->
     <eat-comment/>
     <color name="tw__light_gray">#ccd6dd</color>
     <color name="tw__medium_gray">#8899a6</color>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values/values.xml -->
+    <eat-comment/>
+    <color name="tw__seekbar_thumb_inner_color">#ffffffff</color>
+    <color name="tw__seekbar_thumb_outer_color">#4dffffff</color>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values/values.xml -->
+    <eat-comment/>
     <color name="tw__solid_white">#FFFFFFFF</color>
     <color name="tw__transparent">#00000000</color>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values/values.xml -->
     <eat-comment/>
     <color name="tw__tweet_action_color">#55acee</color>
     <color name="tw__tweet_container_border">#1a000000</color>
@@ -333,7 +339,7 @@
     <dimen name="com_facebook_share_button_padding_top">12dp</dimen>
     <dimen name="com_facebook_share_button_text_size">16.0sp</dimen>
     <dimen name="com_facebook_tooltip_horizontal_padding">10dp</dimen>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.3/res/values/values.xml -->
     <eat-comment/>
     <dimen name="dgts__country_code_margin_bottom">1dp</dimen>
     <dimen name="dgts__margin_bottom">16dp</dimen>
@@ -382,11 +388,11 @@
     <dimen name="notification_large_icon_height">64dp</dimen>
     <dimen name="notification_large_icon_width">64dp</dimen>
     <dimen name="notification_subtext_size">12dp</dimen>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values/values.xml -->
     <eat-comment/>
     <dimen name="tw__btn_bar_margin_left">8dp</dimen>
     <dimen name="tw__btn_bar_margin_right">8dp</dimen>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.2/res/values/values.xml -->
     <eat-comment/>
     <dimen name="tw__card_font_size_medium">18sp</dimen>
     <dimen name="tw__card_font_size_small">14sp</dimen>
@@ -396,14 +402,14 @@
     <dimen name="tw__card_spacing_large">16dp</dimen>
     <dimen name="tw__card_spacing_medium">8dp</dimen>
     <dimen name="tw__card_spacing_small">4dp</dimen>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values/values.xml -->
     <eat-comment/>
     <dimen name="tw__compact_tweet_action_bar_offset_left">-12dp</dimen>
     <dimen name="tw__compact_tweet_attribution_line_margin_right">36dp</dimen>
     <dimen name="tw__compact_tweet_avatar_margin_left">12dp</dimen>
     <dimen name="tw__compact_tweet_avatar_margin_right">8dp</dimen>
     <dimen name="tw__compact_tweet_avatar_margin_top">5.5dp</dimen>
-    <dimen name="tw__compact_tweet_container_padding_bottom">13dp</dimen>
+    <dimen name="tw__compact_tweet_container_bottom_separator">13dp</dimen>
     <dimen name="tw__compact_tweet_container_padding_top">10.5dp</dimen>
     <dimen name="tw__compact_tweet_full_name_margin_top">0dp</dimen>
     <dimen name="tw__compact_tweet_logo_margin_right">12dp</dimen>
@@ -423,7 +429,7 @@
     <dimen name="tw__compact_tweet_text_margin_right">12dp</dimen>
     <dimen name="tw__compact_tweet_text_margin_top">1dp</dimen>
     <dimen name="tw__compact_tweet_timestamp_margin_top">0dp</dimen>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.2/res/values/values.xml -->
     <eat-comment/>
     <dimen name="tw__composer_avatar_size">32dp</dimen>
     <dimen name="tw__composer_char_count_height">36dp</dimen>
@@ -437,7 +443,7 @@
     <dimen name="tw__composer_spacing_small">4dp</dimen>
     <dimen name="tw__composer_tweet_btn_height">36dp</dimen>
     <dimen name="tw__composer_tweet_btn_radius">4dp</dimen>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values/values.xml -->
     <eat-comment/>
     <dimen name="tw__font_size_large">16sp</dimen>
     <dimen name="tw__login_btn_drawable_padding">4dp</dimen>
@@ -446,25 +452,30 @@
     <dimen name="tw__login_btn_radius">5dp</dimen>
     <dimen name="tw__login_btn_right_padding">12dp</dimen>
     <dimen name="tw__login_btn_text_size">14sp</dimen>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values/values.xml -->
     <eat-comment/>
     <dimen name="tw__padding_permission_horizontal_container">24dp</dimen>
     <dimen name="tw__padding_permission_vertical_container">24dp</dimen>
     <dimen name="tw__permission_description_text_size">16sp</dimen>
     <dimen name="tw__permission_title_text_size">24sp</dimen>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values/values.xml -->
     <eat-comment/>
+    <dimen name="tw__seekbar_thumb_inner_padding">13dp</dimen>
+    <dimen name="tw__seekbar_thumb_outer_padding">7dp</dimen>
+    <dimen name="tw__seekbar_thumb_size">32dp</dimen>
     <dimen name="tw__text_size_large">16dp</dimen>
     <dimen name="tw__text_size_medium">14dp</dimen>
-    <dimen name="tw__tweet_action_bar_offset_bottom">-8dp</dimen>
+    <dimen name="tw__tweet_action_bar_offset_bottom">-2dp</dimen>
     <dimen name="tw__tweet_action_bar_offset_left">8dp</dimen>
-    <dimen name="tw__tweet_action_button_padding">12dp</dimen>
+    <dimen name="tw__tweet_action_button_margin_top">-4dp</dimen>
     <dimen name="tw__tweet_action_button_spacing">40dp</dimen>
+    <dimen name="tw__tweet_action_heart_size">43dp</dimen>
+    <dimen name="tw__tweet_action_share_padding">14dp</dimen>
     <dimen name="tw__tweet_avatar_margin_left">20dp</dimen>
     <dimen name="tw__tweet_avatar_margin_right">8dp</dimen>
     <dimen name="tw__tweet_avatar_margin_top">18dp</dimen>
     <dimen name="tw__tweet_avatar_size">36dp</dimen>
-    <dimen name="tw__tweet_container_padding_bottom">18dp</dimen>
+    <dimen name="tw__tweet_container_bottom_separator">18dp</dimen>
     <dimen name="tw__tweet_container_padding_top">0dp</dimen>
     <dimen name="tw__tweet_container_width">1dp</dimen>
     <dimen name="tw__tweet_full_name_margin_top">15dp</dimen>
@@ -484,6 +495,8 @@
     <dimen name="tw__tweet_timestamp_padding_left">4dp</dimen>
     <dimen name="tw__tweet_verified_check_padding_left">3dp</dimen>
     <dimen name="tw__tweet_verified_margin_bottom">3dp</dimen>
+    <dimen name="tw__video_control_height">32dp</dimen>
+    <dimen name="tw__video_control_text_size">13sp</dimen>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
@@ -517,7 +530,7 @@
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <integer name="status_bar_notification_info_maxnum">999</integer>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values/values.xml -->
     <eat-comment/>
     <plurals name="tw__time_hours">
         <item quantity="one">1h</item>
@@ -567,7 +580,7 @@
     <string name="cast_notification_disconnect">Disconnect</string>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/generated/fabric/res/debug/values/com_crashlytics_build_id.xml -->
     <eat-comment/>
-    <string name="com.crashlytics.android.build_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">cb80eef9-4a50-435c-96a7-a43fb9d92710</string>
+    <string name="com.crashlytics.android.build_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">8346744e-3cbb-4f2c-b7b8-63190e786357</string>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.9.0/unspecified/res/values/values.xml -->
     <eat-comment/>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b>&lt;br />on your smartphone or computer&lt;br />and enter this code</string>
@@ -631,7 +644,7 @@
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/res/values/strings.xml -->
     <eat-comment/>
     <string name="delete_row">Delete</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.3/res/values/values.xml -->
     <eat-comment/>
     <string name="dgts__call_me">Call me</string>
     <string name="dgts__calling">Calling…</string>
@@ -662,10 +675,8 @@
     <string name="dgts__sending">Sending…</string>
     <string name="dgts__success_desc">Success Icon</string>
     <string name="dgts__terms_email_request">By tapping %1$sContinue%1$s you are adding this email to your Digits account. All your apps authenticated with Digits will have access to this email address, and their users will be able to discover you by email. Manage your account on %2$sDigits.com%3$s.</string>
-    <string name="dgts__terms_text">By tapping %1$sContinue%1$s above, %2$sDigits
-        by Twitter%3$s will send you an SMS message to confirm your phone number. Message &amp; data rates may apply.</string>
-    <string name="dgts__terms_text_call_me">By tapping %1$sCall
-    me%1$s above, %2$sDigits by Twitter%3$s will send you a voice call to confirm your phone number. Call &amp; data rates may apply.</string>
+    <string name="dgts__terms_text">By tapping %1$sContinue%1$s above, %2$sDigits by Twitter%3$s will send you an SMS message to confirm your phone number. Message &amp; data rates may apply.</string>
+    <string name="dgts__terms_text_call_me">By tapping %1$sCall me%1$s above, %2$sDigits by Twitter%3$s will send you a voice call to confirm your phone number. Call &amp; data rates may apply.</string>
     <string name="dgts__terms_text_create">By tapping %1$sContinue%1$s above, you agree to the %2$sTerms of Service%3$s, %2$sPrivacy Policy%3$s, and %2$sCookies Policy%3$s of Digits by Twitter, and that other users of this app can discover you by phone number and/or email.</string>
     <string name="dgts__terms_text_sign_in">By tapping %1$sContinue%1$s above, you agree to the updated %2$sTerms of Service%3$s, %2$sPrivacy Policy%3$s, and %2$sCookies Policy%3$s of Digits by Twitter, and that other users of %1$s can discover you by phone number and/or email.</string>
     <string name="dgts__try_again">Try Again</string>
@@ -768,7 +779,7 @@
     <string name="jr_webview_generic_auth_error_message">There was a problem authenticating. Please try again.
     </string>
     <string name="jr_welcome_back_message">Welcome back</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values/values.xml -->
     <eat-comment/>
     <string name="kit_name">Twitter</string>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/res/values/strings.xml -->
@@ -801,50 +812,52 @@
     <eat-comment/>
     <string name="store_picture_message">"Allow Ad to store image in Picture gallery?"</string>
     <string name="store_picture_title">Save image</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values/values.xml -->
     <eat-comment/>
     <string name="tw__allow_btn_txt">Allow</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.2/res/values/values.xml -->
     <eat-comment/>
     <string name="tw__composer_hint">What\'s Happening?</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values/values.xml -->
-    <eat-comment/>
-    <string name="tw__favorite_tweet">Favorite Tweet</string>
-    <string name="tw__favorited_tweet">Favorited Tweet</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.0/res/values/values.xml -->
-    <eat-comment/>
     <string name="tw__install">Install</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values/values.xml -->
     <eat-comment/>
+    <string name="tw__like_tweet">Like Tweet</string>
+    <string name="tw__liked_tweet">Undo Like</string>
     <string name="tw__loading_tweet">Loading Tweet</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values/values.xml -->
     <eat-comment/>
     <string name="tw__login_btn_txt">Log in with Twitter</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.2/res/values/values.xml -->
     <eat-comment/>
     <string name="tw__max_tweet_chars">140</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values/values.xml -->
     <eat-comment/>
     <string name="tw__not_now_btn_txt">Not now</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values/values.xml -->
+    <eat-comment/>
+    <string name="tw__pause">pause</string>
+    <string name="tw__play">play</string>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.2/res/values/values.xml -->
     <eat-comment/>
     <string name="tw__play_store">Google Play</string>
     <string name="tw__post_tweet">Tweet</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values/values.xml -->
     <eat-comment/>
     <string name="tw__relative_date_format_long">MM/dd/yy</string>
     <string name="tw__relative_date_format_short">MMM dd</string>
+    <string name="tw__replay">replay</string>
     <string name="tw__retweeted_by_format">Retweeted by %1$s</string>
     <string name="tw__share_content_format">Check out @%1$s\'s Tweet: https://twitter.com/%1$s/status/%2$s</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values/values.xml -->
     <eat-comment/>
-    <string name="tw__share_email_desc">Get updates and other information from %1$s when you allow
-        them access to your email on your Twitter account \@%2$s</string>
+    <string name="tw__share_email_desc">Allow %1$s to access the email address associated with your Twitter account \@%2$s so that %1$s can use it according to its privacy policy. For example, %1$s could send you updates and other information at that address.</string>
     <string name="tw__share_email_title">Share your email address</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values/values.xml -->
     <eat-comment/>
     <string name="tw__share_subject_format">Tweet from %1$s (@%2$s)</string>
     <string name="tw__share_tweet">Share Tweet</string>
+    <string name="tw__time_format_long">%1$d:%2$02d:%3$02d</string>
+    <string name="tw__time_format_short">%1$d:%2$02d</string>
     <string name="tw__tweet_content_description">%1$s. %2$s. %3$s.</string>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/res/values/strings.xml -->
     <eat-comment/>
@@ -1788,24 +1801,29 @@
     <style name="CardView.Light">
         <item name="cardBackgroundColor">@color/cardview_light_background</item>
     </style>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.2/res/values/values.xml -->
     <eat-comment/>
     <style name="ComposerDark" parent="@android:style/Theme">
         <item name="android:textColor">@color/tw__composer_white</item>
         <item name="android:textColorSecondary">@color/tw__composer_deep_gray</item>
         <item name="android:textColorHint">@color/tw__composer_light_gray</item>
-        <item name="tw__twitter_logo">@drawable/tw__ic_logo_white</item>
+        <item name="tw__twitter_logo">@drawable/tw__composer_logo_white</item>
     </style>
     <style name="ComposerLight" parent="@android:style/Theme.Light">
         <item name="android:textColor">@color/tw__composer_black</item>
         <item name="android:textColorSecondary">@color/tw__composer_deep_gray</item>
         <item name="android:textColorHint">@color/tw__composer_light_gray</item>
-        <item name="tw__twitter_logo">@drawable/tw__ic_logo_blue</item>
+        <item name="tw__twitter_logo">@drawable/tw__composer_logo_blue</item>
     </style>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.3/res/values/values.xml -->
     <eat-comment/>
     <style name="Digits_default" parent="@android:style/Theme.Light">
         <item name="dgts__accentColor">@color/dgts__default_accent</item>
+    </style>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values/values.xml -->
+    <eat-comment/>
+    <style name="MediaTheme" parent="@android:style/Theme">
+        <item name="android:windowBackground">@android:color/black</item>
     </style>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.9.0/unspecified/res/values/values.xml -->
     <eat-comment/>
@@ -2341,7 +2359,7 @@
         <item name="android:drawableLeft">@null</item>
         <item name="android:textColor">#4b5164</item>
     </style>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.3/res/values/values.xml -->
     <eat-comment/>
     <style name="dgts__ButtonText">
         <item name="android:textAppearance">?android:attr/textAppearanceButton</item>
@@ -2388,7 +2406,7 @@
         <item name="android:shadowRadius">0.25</item>
         <item name="android:shadowColor">#40000000</item>
     </style>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values/values.xml -->
     <eat-comment/>
     <style name="tw__AttributionText" ns1:ignore="NewApi">
         <item name="android:layout_width">wrap_content</item>
@@ -2397,7 +2415,7 @@
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:singleLine">true</item>
     </style>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values/values.xml -->
     <eat-comment/>
     <style name="tw__Button">
         <item name="android:background">@drawable/tw__login_btn</item>
@@ -2417,7 +2435,7 @@
         <item name="android:paddingRight">0dp</item>
         <item name="android:paddingBottom">0dp</item>
     </style>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.2/res/values/values.xml -->
     <eat-comment/>
     <style name="tw__CardAppInfoLayout">
         <item name="android:layout_width">match_parent</item>
@@ -2449,7 +2467,7 @@
         <item name="android:textSize">@dimen/tw__card_font_size_small</item>
         <item name="android:background">@drawable/tw__install_button_border</item>
     </style>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values/values.xml -->
     <eat-comment/>
     <style name="tw__CompactAttributionLine" ns1:ignore="NewApi">
         <item name="android:layout_width">wrap_content</item>
@@ -2460,9 +2478,8 @@
     <style name="tw__CompactTweetContainer" parent="tw__TweetFillWidth">
         <item name="android:background">@drawable/tw__bg_tweet_compact</item>
         <item name="android:paddingTop">@dimen/tw__compact_tweet_container_padding_top</item>
-        <item name="android:paddingBottom">@dimen/tw__compact_tweet_container_padding_bottom</item>
     </style>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-composer/1.0.2/res/values/values.xml -->
     <eat-comment/>
     <style name="tw__ComposerAvatar">
         <item name="android:layout_width">@dimen/tw__composer_avatar_size</item>
@@ -2489,7 +2506,7 @@
         <item name="android:layout_width">@dimen/tw__composer_close_size</item>
         <item name="android:layout_height">@dimen/tw__composer_close_size</item>
         <item name="android:padding">@dimen/tw__composer_spacing_large</item>
-        <item name="android:src">@drawable/tw__ic_dialog_close</item>
+        <item name="android:src">@drawable/tw__composer_close</item>
         <item name="android:background">@null</item>
         <item name="android:scaleType">fitCenter</item>
     </style>
@@ -2536,7 +2553,7 @@
         <item name="android:imeOptions">actionSend</item>
         <item name="android:imeActionLabel">@string/tw__post_tweet</item>
     </style>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values/values.xml -->
     <eat-comment/>
     <style name="tw__Permission_Container">
         <item name="android:paddingLeft">@dimen/tw__padding_permission_horizontal_container</item>
@@ -2554,15 +2571,20 @@
         <item name="android:layout_marginBottom">5dp</item>
         <item name="android:layout_marginTop">30dp</item>
     </style>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values/values.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values/values.xml -->
     <eat-comment/>
     <style name="tw__TweetActionButton">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:padding">@dimen/tw__tweet_action_button_padding</item>
+        <item name="android:layout_marginTop">@dimen/tw__tweet_action_button_margin_top</item>
+    </style>
+    <style name="tw__TweetActionButton.Heart">
+        <item name="android:layout_width">@dimen/tw__tweet_action_heart_size</item>
+        <item name="android:layout_height">@dimen/tw__tweet_action_heart_size</item>
     </style>
     <style name="tw__TweetActionButton.Share">
         <item name="android:background">@null</item>
+        <item name="android:padding">@dimen/tw__tweet_action_share_padding</item>
     </style>
     <style name="tw__TweetActionButtonBar">
         <item name="android:layout_marginLeft">@dimen/tw__tweet_action_bar_offset_left</item>
@@ -2591,7 +2613,6 @@
     <style name="tw__TweetContainer" parent="tw__TweetFillWidth">
         <item name="android:background">@drawable/tw__bg_tweet</item>
         <item name="android:paddingTop">@dimen/tw__tweet_container_padding_top</item>
-        <item name="android:paddingBottom">@dimen/tw__tweet_container_padding_bottom</item>
     </style>
     <style name="tw__TweetDarkStyle">
         <item name="tw__container_bg_color">@color/tw__tweet_dark_container_bg_color</item>

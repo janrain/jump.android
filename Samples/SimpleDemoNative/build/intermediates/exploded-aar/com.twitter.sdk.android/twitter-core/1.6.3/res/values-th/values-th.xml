@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/twitter-core/src/main/res/values-th/strings.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">อนุญาต</string>
+    <string name="tw__login_btn_txt">เข้าสู่ระบบด้วยทวิตเตอร์</string>
+    <string name="tw__not_now_btn_txt">ไม่ใช่ตอนนี้</string>
+    <string name="tw__share_email_desc">รับการอัพเดทและข้อมูลอื่นๆ ได้จาก %1$s เมื่อคุณให้สิทธิ์ในการเข้าถึงอีเมลของคุณบนบัญชีทวิตเตอร์ \@%2$s</string>
+    <string name="tw__share_email_title">แชร์ที่อยู่อีเมลของคุณ</string>
+</resources>

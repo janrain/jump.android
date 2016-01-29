@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-en-rSS/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__call_me">[[141532]] Call me</string>
+    <string name="dgts__calling">[[141533]] Calling…</string>
+    <string name="dgts__confirmation_code">[[59318]] Confirmation code</string>
+    <string name="dgts__confirmation_edit_hint">[[59324]] Enter confirmation code</string>
+    <string name="dgts__confirmation_error">[[59343]] Unable to confirm your phone number</string>
+    <string name="dgts__confirmation_error_alternative">[[97083]] Sorry, we are having trouble sending you a confirmation code.</string>
+    <string name="dgts__confirmation_expired">[[141531]] This code has expired. Please resend confirmation code.</string>
+    <string name="dgts__continue">[[141537]] Continue</string>
+    <string name="dgts__digits_logo_desc">[[94017]] digits logo icon</string>
+    <string name="dgts__digits_logo_name_desc">[[94018]] digits logo name</string>
+    <string name="dgts__dismiss">[[59340]] Dismiss</string>
+    <string name="dgts__done">[[141539]] Done</string>
+    <string name="dgts__email_request_edit_hint">[[141536]] Email address</string>
+    <string name="dgts__email_request_title">[[141540]] Enter email address</string>
+    <string name="dgts__find_your_friends">[[59346]] Find your friends</string>
+    <string name="dgts__image_header_description">[[60972]] Image header for login</string>
+    <string name="dgts__invalid_email">[[141542]] Invalid Email. Try Again</string>
+    <string name="dgts__login_digits_text">[[59315]] Use my phone number</string>
+    <string name="dgts__network_error">[[59339]] Please check your network and try again.</string>
+    <string name="dgts__not_now">[[59332]] Not now</string>
+    <string name="dgts__okay">[[59331]] Okay</string>
+    <string name="dgts__phone_number_edit_hint">[[59317]] Your Number</string>
+    <string name="dgts__phone_number_text">[[59316]] Enter your phone number</string>
+    <string name="dgts__pin_code_verification_title">[[94009]] Enter 2-step verification code</string>
+    <string name="dgts__resend_confirmation_text">[[59329]] Resend confirmation code</string>
+    <string name="dgts__sending">[[141538]] Sending…</string>
+    <string name="dgts__success_desc">[[60971]] Success Icon</string>
+    <string name="dgts__terms_email_request">[[141535]] By tapping %1$sContinue%1$s you are adding this email to your Digits account. All your apps authenticated with Digits will have access to this email address, and their users will be able to discover you by email. Manage your account on %2$sDigits.com%3$s.</string>
+    <string name="dgts__terms_text">[[141527]] By tapping %1$sContinue%1$s above, %2$sDigits\
+        by Twitter%3$s will send you an SMS message to confirm your phone number. Message &amp; data rates may apply.</string>
+    <string name="dgts__terms_text_call_me">[[141528]] By tapping %1$sCall\
+    me%1$s above, %2$sDigits by Twitter%3$s will send you a voice call to confirm your phone number. Call &amp; data rates may apply.</string>
+    <string name="dgts__terms_text_create">[[141529]] By tapping %1$sContinue%1$s above, you agree to the %2$sTerms of Service%3$s, %2$sPrivacy Policy%3$s, and %2$sCookies Policy%3$s of Digits by Twitter, and that other users of this app can discover you by phone number and/or email.</string>
+    <string name="dgts__terms_text_sign_in">[[141530]] By tapping %1$sContinue%1$s above, you agree to the updated %2$sTerms of Service%3$s, %2$sPrivacy Policy%3$s, and %2$sCookies Policy%3$s of Digits by Twitter, and that other users of %1$s can discover you by phone number and/or email.</string>
+    <string name="dgts__try_again">[[59342]] Try Again</string>
+    <string name="dgts__try_again_confirmation">[[59336]] Please check your code and try again.</string>
+    <string name="dgts__try_again_email">[[141541]] Please check your email and try again</string>
+    <string name="dgts__try_again_phone_number">[[59335]] Please check your number and try again.</string>
+    <string name="dgts__try_another_phone">[[59360]] Try a different phone number</string>
+    <string name="dgts__unsupported_operator_error">[[141534]] Unable to send this number an SMS message.</string>
+    <string name="dgts__upload_contacts">[[97086]] We use Digits by Twitter to find more of your friends who use this app. When you tap Okay, we\'ll upload your address book to Digits by Twitter so that we can help you find users of %1$s that you know or help other users of %1$s find you.</string>
+    <string name="dgts__verification_code">[[94019]] Verification code</string>
+    <string name="dgts_pin_code_terms">[[94015]] You have previously set a 2-step verification code on digits.com</string>
+</resources>

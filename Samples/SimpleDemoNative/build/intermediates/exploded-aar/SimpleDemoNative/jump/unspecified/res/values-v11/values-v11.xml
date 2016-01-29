@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/values-v11/styles.xml -->
+    <eat-comment/>
     <style name="Theme.Janrain" parent="@android:style/Theme.Holo"/>
     <style name="Theme.Janrain.Dialog" parent="@android:style/Theme.Holo.DialogWhenLarge.NoActionBar"/>
     <style name="Theme.Janrain.Dialog.Light" parent="@android:style/Theme.Holo.Light.DialogWhenLarge.NoActionBar"/>

@@ -3,4 +3,4 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/jr_force_reauth"
           android:title="force reauth" />
-</menu>
+</menu><!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/jump/src/main/res/menu/jr_provider_listview_row_menu.xml -->

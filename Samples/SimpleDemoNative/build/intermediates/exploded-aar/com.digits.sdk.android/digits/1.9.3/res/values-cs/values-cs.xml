@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-cs/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__call_me">Zavolejte mi</string>
+    <string name="dgts__calling">Voláme…</string>
+    <string name="dgts__confirmation_code">Potvrzovací kód</string>
+    <string name="dgts__confirmation_edit_hint">Zadejte potvrzovací kód</string>
+    <string name="dgts__confirmation_error">Vaše telefonní číslo se nám nepodařilo potvrdit.</string>
+    <string name="dgts__confirmation_error_alternative">Nedaří se nám odeslat vám potvrzovací kód.</string>
+    <string name="dgts__confirmation_expired">Platnost tohoto kódu vypršela. Znovu odešlete potvrzovací\
+kód.</string>
+    <string name="dgts__continue">Pokračovat</string>
+    <string name="dgts__digits_logo_desc">ikona loga služby Digits</string>
+    <string name="dgts__digits_logo_name_desc">název loga služby Digits</string>
+    <string name="dgts__dismiss">Zavřít</string>
+    <string name="dgts__done">Hotovo</string>
+    <string name="dgts__email_request_edit_hint">E-mailová adresa</string>
+    <string name="dgts__email_request_title">Zadejte e-mailovou adresu</string>
+    <string name="dgts__find_your_friends">Najděte svoje přátele</string>
+    <string name="dgts__image_header_description">Obrázkové záhlaví k přihlášení</string>
+    <string name="dgts__invalid_email">Neplatná e-mailová adresa. Zkuste to znovu.</string>
+    <string name="dgts__login_digits_text">Použít moje telefonní číslo</string>
+    <string name="dgts__network_error">Zkontrolujte síť a zkuste to znovu.</string>
+    <string name="dgts__not_now">Teď ne</string>
+    <string name="dgts__okay">OK</string>
+    <string name="dgts__phone_number_edit_hint">Vaše číslo</string>
+    <string name="dgts__phone_number_text">Zadejte své telefonní číslo</string>
+    <string name="dgts__pin_code_verification_title">Zadejte dvoufázový ověřovací kód</string>
+    <string name="dgts__resend_confirmation_text">Znovu odeslat potvrzovací kód</string>
+    <string name="dgts__sending">Odesílání…</string>
+    <string name="dgts__success_desc">Ikona Úspěch</string>
+    <string name="dgts__terms_email_request">Klepnutím na tlačítko %1$sPokračovat%1$s přidáte e-mailovou\
+adresu do svého účtu ve službě Digits. Všechny aplikace ověřené prostřednictvím\
+služby Digits k ní budou mít přístup a jejich uživatelé vás podle ní budou moct\
+najít. Svůj účet můžete nastavit zde: %2$sDigits.com%3$s.</string>
+    <string name="dgts__terms_text">Když klepnete na výše uvedené tlačítko %1$sPokračovat%1$s,\
+služba %2$sDigits by Twitter%3$s vám pošle SMS, pomocí které potvrdíte své\
+telefonní číslo. Zprávy a přenos dat mohou být zpoplatněny.</string>
+    <string name="dgts__terms_text_call_me">Když klepnete na výše uvedené tlačítko %1$sZavolejte mi%1$s,\
+služba %2$sDigits by Twitter%3$s vám zavolá, aby potvrdila vaše telefonní\
+číslo. Hovory a přenos dat mohou být zpoplatněny.</string>
+    <string name="dgts__terms_text_create">Klepnutím na výše uvedené tlačítko %1$sPokračovat%1$s\
+vyjadřujete souhlas se %2$ssmluvními podmínkami%3$s, %2$szásadami ochrany\
+osobních údajů%3$s a %2$szásadami používání souborů cookie%3$s služby Digits by\
+Twitter a s tím, že vás ostatní uživatelé této aplikace budou moct najít podle\
+telefonního čísla nebo e-mailové adresy.</string>
+    <string name="dgts__terms_text_sign_in">Klepnutím na výše uvedené tlačítko %1$sPokračovat%1$s\
+vyjadřujete souhlas s aktualizovanými %2$ssmluvními podmínkami%3$s, %2$szásadami\
+ochrany osobních údajů%3$s a %2$szásadami používání souborů cookie%3$s služby\
+Digits by Twitter a s tím, že vás ostatní uživatelé aplikace %1$s budou moct\
+najít podle telefonního čísla nebo e-mailové adresy.</string>
+    <string name="dgts__try_again">Zkusit znovu</string>
+    <string name="dgts__try_again_confirmation">Zkontrolujte kód a zkuste to znovu.</string>
+    <string name="dgts__try_again_email">Zkontrolujte e-mailovou adresu a zkuste to znovu.</string>
+    <string name="dgts__try_again_phone_number">Zkontrolujte číslo a zkuste to znovu.</string>
+    <string name="dgts__try_another_phone">Zkusit jiné telefonní číslo</string>
+    <string name="dgts__unsupported_operator_error">Na toto číslo nelze poslat SMS.</string>
+    <string name="dgts__upload_contacts">Používáme službu Digits by Twitter. Ta nám umožňuje najít více vašich přátel, kteří používají tuto aplikaci. Když klepnete na OK, nahrajeme váš adresář do této služby, a vy tak budete moct najít uživatele aplikace %1$s, které znáte, nebo ostatní uživatelé aplikace %1$s budou moct najít vás.</string>
+    <string name="dgts__verification_code">Ověřovací kód</string>
+    <string name="dgts_pin_code_terms">Na webu digits.com jste si nastavili dvoufázový ověřovací kód.</string>
+</resources>

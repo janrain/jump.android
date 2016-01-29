@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/twitter/twitter-core/src/main/res/values-bn/strings.xml -->
+    <eat-comment/>
+    <string name="tw__allow_btn_txt">অনুমতি দিন</string>
+    <string name="tw__login_btn_txt">টুইটার দিয়ে লগ ইন করুন</string>
+    <string name="tw__not_now_btn_txt">এখন নয়</string>
+    <string name="tw__share_email_desc">আপনি %1$s কে আপনার টুইটার অ্যাকাউন্ট \@%2$s -এ আপনার ইমেইলে প্রবেশাধিকার দিলে তার থেকে আপডেট এবং অন্যান্য তথ্য পেতে পারবেন </string>
+    <string name="tw__share_email_title">আপনার ইমেইল ঠিকানা ভাগ করুন</string>
+</resources>

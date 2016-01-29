@@ -40,22 +40,23 @@
         android:windowSoftInputMode="adjustResize|stateHidden" />
 
     <application
-        android:name="com.janrain.android.multidex.com.janrain.android.simpledemo.SimpleDemoApplication"
-        android:debuggable="true"
+        android:name="com.janrain.android.simpledemo.SimpleDemoApplication"
         android:hardwareAccelerated="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo.Light" >
-        <activity android:name="com.janrain.android.multidex.com.janrain.android.simpledemo.MainActivity" >
+
+        <!-- android:debuggable="true" -->
+        <activity android:name="com.janrain.android.simpledemo.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.janrain.android.multidex.com.janrain.android.simpledemo.RegistrationActivity" />
-        <activity android:name="com.janrain.android.multidex.com.janrain.android.simpledemo.UpdateProfileActivity" />
-        <activity android:name="com.janrain.android.multidex.com.janrain.android.simpledemo.LinkListActivity" />
+        <activity android:name="com.janrain.android.simpledemo.RegistrationActivity" />
+        <activity android:name="com.janrain.android.simpledemo.UpdateProfileActivity" />
+        <activity android:name="com.janrain.android.simpledemo.LinkListActivity" />
 
         <!-- The following activities are for the Janrain Engage for Android library -->
         <!--

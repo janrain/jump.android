@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-uk/values-uk.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-uk/values-uk.xml -->
     <eat-comment/>
     <plurals name="tw__time_hours">
         <item quantity="one">1 год</item>
@@ -61,18 +61,25 @@
     <string msgid="2201289642219771610" name="common_google_play_services_updating_text">"Додаток <ns1:g id="APP_NAME">%1$s</ns1:g> не працюватиме без сервісів Google Play, які зараз оновлюються."</string>
     <string msgid="815008177440683245" name="common_google_play_services_updating_title">"Сервіси Google Play оновлюються"</string>
     <string msgid="411506735369601515" name="common_open_on_phone">"Відкрити на телефоні"</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.0/res/values-uk/values-uk.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.digits.sdk.android/digits/1.9.3/res/values-uk/values-uk.xml -->
     <eat-comment/>
+    <string name="dgts__call_me">Зателефонуйте мені</string>
+    <string name="dgts__calling">Телефонуємо…</string>
     <string name="dgts__confirmation_code">Код підтвердження</string>
     <string name="dgts__confirmation_edit_hint">Введіть код підтвердження</string>
     <string name="dgts__confirmation_error">Не вдалося підтвердити ваш номер телефону</string>
     <string name="dgts__confirmation_error_alternative">На жаль, нам не вдалося надіслати вам код підтвердження.</string>
     <string name="dgts__confirmation_expired">Термін дії коду минув. Надішліть код підтвердження ще раз.</string>
+    <string name="dgts__continue">Продовжити</string>
     <string name="dgts__digits_logo_desc">значок логотипа digits</string>
     <string name="dgts__digits_logo_name_desc">ім’я логотипа digits</string>
     <string name="dgts__dismiss">Відхилити</string>
+    <string name="dgts__done">Готово</string>
+    <string name="dgts__email_request_edit_hint">Адреса електронної пошти</string>
+    <string name="dgts__email_request_title">Введіть адресу електронної пошти</string>
     <string name="dgts__find_your_friends">Пошук друзів</string>
     <string name="dgts__image_header_description">Зображення шапки для сторінки входу</string>
+    <string name="dgts__invalid_email">Неправильна адреса електронної пошти. Спробуйте ще раз</string>
     <string name="dgts__login_digits_text">Використовувати мій номер телефону</string>
     <string name="dgts__network_error">Перевірте мережу та спробуйте ще раз.</string>
     <string name="dgts__not_now">Не зараз</string>
@@ -81,14 +88,20 @@
     <string name="dgts__phone_number_text">Введіть свій номер телефону</string>
     <string name="dgts__pin_code_verification_title">Введіть код 2-етапного підтвердження</string>
     <string name="dgts__resend_confirmation_text">Надіслати код підтвердження ще раз</string>
+    <string name="dgts__sending">Надсилається…</string>
     <string name="dgts__success_desc">Значок «Успіх»</string>
-    <string name="dgts__terms_text">Якщо торкнутися кнопки %1$sНадіслати код підтвердження%1$s, додаток Digits by Twitter надішле вам SMS-повідомлення для підтвердження вашого номера телефону. Може стягуватися плата за повідомлення та передавання даних.</string>
-    <string name="dgts__terms_text_create">Торкаючись кнопки %1$sСтворити профіль%1$s вище, ви погоджуєтеся з Умовами надання послуг, Політикою конфіденційності та Політикою використання файлів cookie додатка Digits by Twitter, а інші користувачі цього додатка зможуть знаходити вас за номером телефону та/або адресою електронної пошти.</string>
-    <string name="dgts__terms_text_sign_in">Торкаючись кнопки %1$sУвійти%1$s вище, ви погоджуєтеся з оновленими Умовами надання послуг, Політикою конфіденційності та Політикою використання файлів cookie додатка Digits by Twitter, а інші користувачі %1$s зможуть знаходити вас за номером телефону та/або адресою електронної пошти.</string>
+    <string name="dgts__terms_email_request">Натискаючи кнопку %1$sПродовжити%1$s, ви додаєте цю адресу електронної пошти до свого профілю Digits. Всі ваші додатки, автентифіковані за допомогою додатка Digits, матимуть доступ до цієї адреси електронної пошти, і їхні користувачі зможуть знайти вас за адресою електронної пошти. Керуйте своїм профілем на веб-сайті %2$sDigits.com%3$s.</string>
+    <string name="dgts__terms_text">Якщо натиснути кнопку %1$sПродовжити%1$s вище, додаток %2$sDigits\
+        by Twitter%3$s надішле вам SMS-повідомлення для підтвердження вашого номера телефону. Може стягуватися плата за повідомлення та передавання даних.</string>
+    <string name="dgts__terms_text_call_me">Якщо натиснути кнопку %1$sЗателефонуйте мені%1$s вище, додаток %2$sDigits by Twitter%3$s надішле вам голосовий виклик для підтвердження вашого номера телефону. Може стягуватися плата за повідомлення та передавання даних.</string>
+    <string name="dgts__terms_text_create">Натискаючи кнопку %1$sПродовжити%1$s вище, ви погоджуєтеся з %2$sУмовами надання послуг%3$s, %2$sПолітикою конфіденційності%3$s та %2$sПолітикою використання файлів cookie%3$s додатка Digits by Twitter, а також із тим, що інші користувачі цього додатка зможуть знайти вас за номером телефону та/або адресою електронної пошти.</string>
+    <string name="dgts__terms_text_sign_in">Натискаючи кнопку %1$sПродовжити%1$s вище, ви погоджуєтеся з оновленими %2$sУмовами надання послуг%3$s, %2$sПолітикою конфіденційності%3$s та %2$sПолітикою використання файлів cookie%3$s додатка Digits by Twitter, а також із тим, що інші користувачі додатка %1$s зможуть знайти вас за номером телефону та/або адресою електронної пошти.</string>
     <string name="dgts__try_again">Спробуйте ще раз</string>
     <string name="dgts__try_again_confirmation">Перевірте код і спробуйте ще раз.</string>
+    <string name="dgts__try_again_email">Перевірте свою адресу електронної пошти та спробуйте ще раз.</string>
     <string name="dgts__try_again_phone_number">Перевірте свій номер і спробуйте ще раз.</string>
     <string name="dgts__try_another_phone">Спробуйте інший номер телефону</string>
+    <string name="dgts__unsupported_operator_error">Не вдалося надіслати SMS-повідомлення на цей номер.</string>
     <string name="dgts__upload_contacts">Ми використовуємо додаток Digits by Twitter, щоб знайти більше ваших друзів, які ним користуються. Коли ви торкнетеся кнопки «OK», ми завантажимо вашу адресну книгу до Digits by Twitter, щоб допомагати вам знаходити користувачів %1$s, яких ви знаєте, або допомагати іншим користувачам %1$s знаходити вас.</string>
     <string name="dgts__verification_code">Код підтвердження</string>
     <string name="dgts_pin_code_terms">Ви вже встановили код 2-етапного підтвердження на сайті digits.com</string>
@@ -100,25 +113,27 @@
     <string msgid="109793632378378069" name="mr_media_route_controller_disconnect">"Від’єднатися"</string>
     <string msgid="5441529851481176817" name="mr_system_route_name">"Система"</string>
     <string msgid="7498112907524977311" name="mr_user_route_category_name">"Пристрої"</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-uk/values-uk.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-uk/values-uk.xml -->
     <eat-comment/>
     <string name="tw__allow_btn_txt">Дозволити</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-uk/values-uk.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-uk/values-uk.xml -->
     <eat-comment/>
+    <string name="tw__like_tweet">Вподобати твіт</string>
+    <string name="tw__liked_tweet">Скасувати вподобання</string>
     <string name="tw__loading_tweet">Завантаження твіта</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-uk/values-uk.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-uk/values-uk.xml -->
     <eat-comment/>
     <string name="tw__login_btn_txt">Увійти за допомогою профілю Твіттера</string>
     <string name="tw__not_now_btn_txt">Не зараз</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-uk/values-uk.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-uk/values-uk.xml -->
     <eat-comment/>
     <string name="tw__retweeted_by_format">Ретвітнуто користувачем(кою) %1$s</string>
     <string name="tw__share_content_format">Перегляньте твіт користувача(ки) \@%1$s: https://twitter.com/%1$s/status/%2$s</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.0/res/values-uk/values-uk.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/twitter-core/1.6.3/res/values-uk/values-uk.xml -->
     <eat-comment/>
     <string name="tw__share_email_desc">Отримуйте оновлення та іншу інформацію від користувача(ки) %1$s, надавши йому/їй доступ до адреси електронної пошти у вашому профілі Твіттера \@%2$s</string>
     <string name="tw__share_email_title">Поділіться своєю адресою електронної пошти</string>
-    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.6.0/res/values-uk/values-uk.xml -->
+    <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.twitter.sdk.android/tweet-ui/1.9.0/res/values-uk/values-uk.xml -->
     <eat-comment/>
     <string name="tw__share_subject_format">Твіт від користувача(ки) %1$s (\@%2$s)</string>
     <string name="tw__share_tweet">Поділитися твітом</string>

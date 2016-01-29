@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/android/workspace/jenkins/workspace/fabric-android-deploy-to-staging/sdk/digits/digits/src/main/res/values-in/strings.xml -->
+    <eat-comment/>
+    <string name="dgts__call_me">Hubungi saya</string>
+    <string name="dgts__calling">Menghubungi…</string>
+    <string name="dgts__confirmation_code">Kode konfimasi</string>
+    <string name="dgts__confirmation_edit_hint">Masukkan kode konfirmasi</string>
+    <string name="dgts__confirmation_error">Tidak dapat mengonfirmasi nomor ponsel Anda</string>
+    <string name="dgts__confirmation_error_alternative">Maaf, ada masalah saat kami mengirim kode konfirmasi.</string>
+    <string name="dgts__confirmation_expired">Kode ini telah kedaluwarsa. Silakan kirim ulang kode konfirmasi.</string>
+    <string name="dgts__continue">Lanjut</string>
+    <string name="dgts__digits_logo_desc">ikon logo digits</string>
+    <string name="dgts__digits_logo_name_desc">nama logo digits</string>
+    <string name="dgts__dismiss">Singkirkan</string>
+    <string name="dgts__done">Selesai</string>
+    <string name="dgts__email_request_edit_hint">Alamat email</string>
+    <string name="dgts__email_request_title">Masukkan alamat email</string>
+    <string name="dgts__find_your_friends">Temukan teman Anda</string>
+    <string name="dgts__image_header_description">Header gambar untuk masuk</string>
+    <string name="dgts__invalid_email">Email Tidak Sah. Coba Lagi</string>
+    <string name="dgts__login_digits_text">Gunakan nomor ponsel saya</string>
+    <string name="dgts__network_error">Harap periksa jaringan Anda dan coba lagi.</string>
+    <string name="dgts__not_now">Jangan sekarang</string>
+    <string name="dgts__okay">Oke</string>
+    <string name="dgts__phone_number_edit_hint">Nomor Anda</string>
+    <string name="dgts__phone_number_text">Masukkan nomor ponsel Anda</string>
+    <string name="dgts__pin_code_verification_title">Masukkan kode verifikasi 2 langkah</string>
+    <string name="dgts__resend_confirmation_text">Mengirim ulang kode konfirmasi</string>
+    <string name="dgts__sending">Mengirim…</string>
+    <string name="dgts__success_desc">Ikon Berhasil</string>
+    <string name="dgts__terms_email_request">Dengan menyentuh %1$sLanjut%1$s Anda menambahkan email ini ke akun Digits Anda. Semua aplikasi yang diotentikasi dengan Digits akan memiliki akses ke alamat email ini, dan penggunanya akan dapat nememukan Anda berdasarkan email. Kelola akun Anda di %2$sDigits.com%3$s.</string>
+    <string name="dgts__terms_text">Dengan menyentuh %1$sLanjut%1$s di atas, %2$sDigits by Twitter%3$s\
+akan mengirim pesan SMS untuk mengonfirmasi nomor ponsel Anda. Tarif SMS &amp; data mungkin berlaku.</string>
+    <string name="dgts__terms_text_call_me">Dengan menyentuh %1$sHubungi saya%1$s di atas, %2$sDigits by Twitter%3$s akan mengirimkan panggilan suara untuk mengonfirmasi nomor ponsel Anda. Tarif telepon &amp; data mungkin berlaku.</string>
+    <string name="dgts__terms_text_create">Dengan menyentuh %1$sLanjut%1$s di atas, Anda menyetujui %2$sPersyaratan \
+Layanan%3$s, %2$sKebijakan Privasi%3$s, dan %2$sKebijakan Kuki%3$s dari Digits by Twitter, dan bahwa pengguna lain aplikasi ini dapat menemukan Anda berdasarkan nomor ponsel dan/atau email.</string>
+    <string name="dgts__terms_text_sign_in">Dengan menyentuh %1$sLanjut%1$s di atas, Anda menyetujui pembaruan %2$sPersyaratan Layanan%3$s, %2$sKebijakan Privasi%3$s, dan %2$sKebijakan Kuki%3$s dari Digits by Twitter, dan bahwa pengguna %1$s lainnya dapat menemukan Anda berdasarkan nomor ponsel dan/atau email.</string>
+    <string name="dgts__try_again">Coba Lagi</string>
+    <string name="dgts__try_again_confirmation">Silakan periksa kode Anda dan coba lagi.</string>
+    <string name="dgts__try_again_email">Silakan periksa email Anda dan coba lagi</string>
+    <string name="dgts__try_again_phone_number">Silakan periksa nomor ponsel Anda dan coba lagi.</string>
+    <string name="dgts__try_another_phone">Coba nomor ponsel yang berbeda</string>
+    <string name="dgts__unsupported_operator_error">Tidak dapat mengirim pesan SMS ke nomor ini.</string>
+    <string name="dgts__upload_contacts">Kami menggunakan Digits by Twitter untuk menemukan lebih banyak teman Anda yang menggunakan aplikasi ini. Bila Anda menyentuh Oke, kami akan mengunggah buku alamat Anda ke Digits by Twitter sehingga kami dapat membantu Anda menemukan pengguna %1$s yang Anda kenal atau membantu pengguna %1$s lainnya untuk menemukan Anda.</string>
+    <string name="dgts__verification_code">Kode verifikasi</string>
+    <string name="dgts_pin_code_terms">Anda sebelumnya telah menetapkan kode verifikasi 2 langkah di digits.com</string>
+</resources>
