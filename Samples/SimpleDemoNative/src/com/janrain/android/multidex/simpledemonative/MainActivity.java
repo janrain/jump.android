@@ -117,8 +117,8 @@ public class MainActivity extends FragmentActivity implements
         GoogleApiClient.OnConnectionFailedListener {
 
     // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
-    private static final String TWITTER_KEY = "oua7S98XSYNdJ8qvMPydQ";
-    private static final String TWITTER_SECRET = "uRrDzqH60UXFvRYCglJYEARR0lbp1LyIq5CHRTyOuio";
+    private static final String TWITTER_KEY = "xv6nwj4U62sYH09N9zkoUbMqV";
+    private static final String TWITTER_SECRET = "vpOS6A3GQQeXxP0QvFGubvxXA1JOnbPzd7C7MrShESxSHF6GeH";
 
 
     //Facebook SDK
@@ -237,7 +237,6 @@ public class MainActivity extends FragmentActivity implements
 
         }
     };
-
 
 
     @Override
@@ -388,6 +387,7 @@ public class MainActivity extends FragmentActivity implements
         googleplusAuth.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (flowDownloaded) {
+                    mGoogleApiClient.connect();
                     //Add Google+ Native
 
                     //  BASIC GOOGLE SIGN IN CODE
@@ -415,6 +415,7 @@ public class MainActivity extends FragmentActivity implements
                     }else{
                         Set<String> facebookPermissions = facebookToken.getPermissions();
                         if(!facebookPermissions.contains("public_profile")|| !facebookPermissions.contains("email")) {
+                            String tokenTest = facebookToken.getToken();
                             Jump.startTokenAuthForNativeProvider(MainActivity.this, "facebook", facebookToken.getToken(), "", MainActivity.this.signInResultHandler, "");
                         }else{
                             LoginManager.getInstance().logInWithReadPermissions(MainActivity.this, Arrays.asList("public_profile", "email"));
@@ -660,13 +661,19 @@ public class MainActivity extends FragmentActivity implements
     @Override
     protected void onStart() {
         super.onStart();
-        mGoogleApiClient.connect();
+        //mGoogleApiClient.connect();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();  // Always call the superclass method first
+        // Activity being restarted from stopped state
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        mGoogleApiClient.disconnect();
+        //mGoogleApiClient.disconnect();
     }
 
     @Override
@@ -765,6 +772,19 @@ public class MainActivity extends FragmentActivity implements
     protected void onPause() {
         Jump.saveToDisk(this);
         super.onPause();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        Jump.saveToDisk(this);
+        // Always call the superclass so it can save the view hierarchy state
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();  // Always call the superclass method first
+        if(Jump.getCaptureFlowName() != "") flowDownloaded = true;
     }
 
     private static void enableStrictMode() {

@@ -568,7 +568,7 @@
     <string name="accept">Accept</string>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/res/values/strings.xml -->
     <eat-comment/>
-    <string name="app_name">SimpleDemo</string>
+    <string name="app_name">SimpleDemoNative</string>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/res/values/auth_strings.xml -->
     <eat-comment/>
     <string name="auth_google_play_services_client_facebook_display_name">Facebook</string>
@@ -580,7 +580,7 @@
     <string name="cast_notification_disconnect">Disconnect</string>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/generated/fabric/res/debug/values/com_crashlytics_build_id.xml -->
     <eat-comment/>
-    <string name="com.crashlytics.android.build_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">8346744e-3cbb-4f2c-b7b8-63190e786357</string>
+    <string name="com.crashlytics.android.build_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">ba88d383-bf68-445f-ab40-17efb3a6e253</string>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/facebook-android-sdk-4.9.0/unspecified/res/values/values.xml -->
     <eat-comment/>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b>&lt;br />on your smartphone or computer&lt;br />and enter this code</string>
@@ -690,10 +690,10 @@
     <string name="dgts_pin_code_terms">You have previously set a 2-step verification code on digits.com</string>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/res/values/strings.xml -->
     <eat-comment/>
-    <string name="facebook_app_id">241142639370227</string>
+    <string name="facebook_app_id">773409502771506</string>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/generated/res/google-services/debug/values/values.xml -->
     <eat-comment/>
-    <string name="gcm_defaultSenderId">520070855106</string>
+    <string name="gcm_defaultSenderId">169582807084</string>
     <!-- From: file:/Users/pbaker/GitHub/jump.android.internal/Samples/SimpleDemoNative/build/intermediates/exploded-aar/SimpleDemoNative/jump/unspecified/res/values/values.xml -->
     <eat-comment/>
     <string name="jr_about_URL">www.janrain.com</string>

@@ -57,7 +57,7 @@ android {
 
     defaultConfig {
         applicationId "com.janrain.android.multidex.simpledemonative"
-        minSdkVersion 17  //14?
+        minSdkVersion 17
         targetSdkVersion 23
         multiDexEnabled = true
     }

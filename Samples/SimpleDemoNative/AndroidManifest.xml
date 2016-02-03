@@ -9,7 +9,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
 
-    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="21" />
+    <uses-sdk android:minSdkVersion="17" android:targetSdkVersion="23" />
 
     <application
         android:name="SimpleDemoApplication"
@@ -17,8 +17,8 @@
         android:label="@string/app_name"
         android:hardwareAccelerated="true"
         android:theme="@android:style/Theme.Holo.Light"
-        android:debuggable="true"
         >
+        <!--  android:debuggable="true" -->
 
         <!-- Facebook SDK -->
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
@@ -73,7 +73,7 @@
 
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="c62a7de78181c7889143e54a7a33e92adfd1fa63" />
+            android:value="fbb7bb73de5c88fb8942e7590b7bf60735b59f3d" />
     </application>
 
 </manifest>
