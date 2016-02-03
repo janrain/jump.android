@@ -55,7 +55,7 @@ int drawable jr_icon_bw_mail_sms 0x7f020010
 int drawable jr_icon_bw_microsoftaccount 0x7f020011
 int drawable jr_icon_bw_myspace 0x7f020012
 int drawable jr_icon_bw_paypal 0x7f020013
-int drawable jr_icon_bw_paypal_openid_connect 0x7f020014
+int drawable jr_icon_bw_paypal_openidconnect 0x7f020014
 int drawable jr_icon_bw_sms 0x7f020015
 int drawable jr_icon_bw_tumblr 0x7f020016
 int drawable jr_icon_bw_twitter 0x7f020017
@@ -79,7 +79,7 @@ int drawable jr_icon_netlog 0x7f020028
 int drawable jr_icon_openid 0x7f020029
 int drawable jr_icon_orkut 0x7f02002a
 int drawable jr_icon_paypal 0x7f02002b
-int drawable jr_icon_paypal_openid_connect 0x7f02002c
+int drawable jr_icon_paypal_openidconnect 0x7f02002c
 int drawable jr_icon_salesforce 0x7f02002d
 int drawable jr_icon_tumblr 0x7f02002e
 int drawable jr_icon_twitter 0x7f02002f
@@ -110,7 +110,7 @@ int drawable jr_logo_netlog 0x7f020047
 int drawable jr_logo_openid 0x7f020048
 int drawable jr_logo_orkut 0x7f020049
 int drawable jr_logo_paypal 0x7f02004a
-int drawable jr_logo_paypal_openid_connect 0x7f02004b
+int drawable jr_logo_paypal_openidconnect 0x7f02004b
 int drawable jr_logo_salesforce 0x7f02004c
 int drawable jr_logo_tumblr 0x7f02004d
 int drawable jr_logo_twitter 0x7f02004e

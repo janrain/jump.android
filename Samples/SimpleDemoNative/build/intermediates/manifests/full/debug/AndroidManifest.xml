@@ -48,11 +48,13 @@
 
     <application
         android:name="com.janrain.android.multidex.simpledemonative.SimpleDemoApplication"
-        android:debuggable="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo.Light" >
+
+        <!-- android:debuggable="true" -->
+
 
         <!-- Facebook SDK -->
         <meta-data
@@ -105,7 +107,7 @@
 
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="c62a7de78181c7889143e54a7a33e92adfd1fa63" />
+            android:value="UPDATE" />
         <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"

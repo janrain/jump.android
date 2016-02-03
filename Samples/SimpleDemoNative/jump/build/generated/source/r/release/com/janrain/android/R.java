@@ -105,7 +105,7 @@ containing a value of this type.
         public static int jr_icon_bw_microsoftaccount=0x7f020010;
         public static int jr_icon_bw_myspace=0x7f020011;
         public static int jr_icon_bw_paypal=0x7f020012;
-        public static int jr_icon_bw_paypal_openid_connect=0x7f020013;
+        public static int jr_icon_bw_paypal_openidconnect=0x7f020013;
         public static int jr_icon_bw_sms=0x7f020014;
         public static int jr_icon_bw_tumblr=0x7f020015;
         public static int jr_icon_bw_twitter=0x7f020016;
@@ -129,7 +129,7 @@ containing a value of this type.
         public static int jr_icon_openid=0x7f020028;
         public static int jr_icon_orkut=0x7f020029;
         public static int jr_icon_paypal=0x7f02002a;
-        public static int jr_icon_paypal_openid_connect=0x7f02002b;
+        public static int jr_icon_paypal_openidconnect=0x7f02002b;
         public static int jr_icon_salesforce=0x7f02002c;
         public static int jr_icon_tumblr=0x7f02002d;
         public static int jr_icon_twitter=0x7f02002e;
@@ -159,7 +159,7 @@ containing a value of this type.
         public static int jr_logo_openid=0x7f020046;
         public static int jr_logo_orkut=0x7f020047;
         public static int jr_logo_paypal=0x7f020048;
-        public static int jr_logo_paypal_openid_connect=0x7f020049;
+        public static int jr_logo_paypal_openidconnect=0x7f020049;
         public static int jr_logo_salesforce=0x7f02004a;
         public static int jr_logo_tumblr=0x7f02004b;
         public static int jr_logo_twitter=0x7f02004c;

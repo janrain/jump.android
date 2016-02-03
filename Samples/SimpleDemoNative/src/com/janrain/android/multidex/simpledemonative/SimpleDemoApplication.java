@@ -45,27 +45,19 @@ import io.fabric.sdk.android.Fabric;
 
 public class SimpleDemoApplication extends Application {
 
-    // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
-    private static final String TWITTER_KEY = "oua7S98XSYNdJ8qvMPydQ";
-    private static final String TWITTER_SECRET = "uRrDzqH60UXFvRYCglJYEARR0lbp1LyIq5CHRTyOuio";
-
     @Override
     public void onCreate() {
         super.onCreate();
-        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
-        Fabric.with(this, new Twitter(authConfig));
-
         JumpConfig jumpConfig = new JumpConfig();
 
-        //capture prod
-        jumpConfig.engageAppId = "alpgblcgbdgeekiaodhj";
-        jumpConfig.captureDomain = "pbjanrain-dev.janraincapture.com";
-        jumpConfig.captureClientId = "y9yamwewngnz7nxsbrmg9rynsspngkh8";
+        jumpConfig.engageAppId = "appcfamhnpkagijaeinl";
+        jumpConfig.captureDomain = "mobile-dev.janraincapture.com";
+        jumpConfig.captureClientId = "9vt2ej43mxyftkf68c3xthkm2rtweg8w";
         jumpConfig.captureLocale = "en-US";
         jumpConfig.captureTraditionalSignInFormName = "userInformationForm";
         jumpConfig.traditionalSignInType = Jump.TraditionalSignInType.EMAIL;
-        jumpConfig.captureAppId = "uw3ccr9xhy3yxhte6krh4cn9f9";
-        jumpConfig.captureFlowName = "standard";
+        jumpConfig.captureAppId = "rz47skmnm48jpcv3bh4eguv4b8";
+        jumpConfig.captureFlowName = "standard_flow";
         jumpConfig.captureFlowVersion="HEAD";
         jumpConfig.captureSocialRegistrationFormName = "socialRegistrationForm";
         jumpConfig.captureTraditionalRegistrationFormName = "registrationForm";

@@ -194,8 +194,12 @@ public class MainActivity extends FragmentActivity {
 
         addButton(linearLayout, "Traditional Registration").setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (flowDownloaded)
+                if (flowDownloaded){
                     MainActivity.this.startActivity(new Intent(MainActivity.this, com.janrain.android.simpledemo.RegistrationActivity.class));
+                } else {
+                    Toast.makeText(MainActivity.this, "Flow Configuration not downloaded yet",
+                            Toast.LENGTH_LONG).show();
+                }
             }
         });
 
@@ -206,16 +210,24 @@ public class MainActivity extends FragmentActivity {
 
         webviewAuth.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (flowDownloaded)
+                if (flowDownloaded){
                     Jump.showSignInDialog(MainActivity.this, null, signInResultHandler, null);
+                } else {
+                    Toast.makeText(MainActivity.this, "Flow Configuration not downloaded yet",
+                            Toast.LENGTH_LONG).show();
+                }
             }
         });
 
 
         dumpRecord.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (flowDownloaded)
+                if (flowDownloaded){
                     LogUtils.logd(String.valueOf(Jump.getSignedInUser()));
+                } else {
+                    Toast.makeText(MainActivity.this, "Flow Configuration not downloaded yet",
+                            Toast.LENGTH_LONG).show();
+                }
             }
         });
 
@@ -337,6 +349,19 @@ public class MainActivity extends FragmentActivity {
     protected void onPause() {
         Jump.saveToDisk(this);
         super.onPause();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        Jump.saveToDisk(this);
+        // Always call the superclass so it can save the view hierarchy state
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();  // Always call the superclass method first
+        if(Jump.getCaptureFlowName() != "") flowDownloaded = true;
     }
 
     private static void enableStrictMode() {

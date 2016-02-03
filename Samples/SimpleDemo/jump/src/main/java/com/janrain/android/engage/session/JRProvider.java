@@ -49,12 +49,8 @@ import com.janrain.android.utils.WebViewUtils;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.Serializable;
 import java.lang.ref.SoftReference;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -103,7 +99,7 @@ public class JRProvider implements Serializable {
                     put("icon_bw_microsoftaccount", R.drawable.jr_icon_bw_microsoftaccount);
                     put("icon_bw_instagram", R.drawable.jr_icon_bw_instagram);
                     put("icon_bw_paypal", R.drawable.jr_icon_bw_paypal);
-                    put("icon_bw_paypal_openid_connect", R.drawable.jr_icon_bw_paypal_openid_connect);
+                    put("icon_bw_paypal_openidconnect", R.drawable.jr_icon_bw_paypal_openidconnect);
                     put("icon_aol", R.drawable.jr_icon_aol);
                     put("icon_blogger", R.drawable.jr_icon_blogger);
                     put("icon_facebook", R.drawable.jr_icon_facebook);
@@ -122,7 +118,7 @@ public class JRProvider implements Serializable {
                     put("icon_openid", R.drawable.jr_icon_openid);
                     put("icon_orkut", R.drawable.jr_icon_orkut);
                     put("icon_paypal", R.drawable.jr_icon_paypal);
-                    put("icon_paypal_openid_connect", R.drawable.jr_icon_paypal_openid_connect);
+                    put("icon_paypal_openidconnect", R.drawable.jr_icon_paypal_openidconnect);
                     put("icon_salesforce", R.drawable.jr_icon_salesforce);
                     put("icon_twitter", R.drawable.jr_icon_twitter);
                     put("icon_verisign", R.drawable.jr_icon_verisign);
@@ -161,7 +157,7 @@ public class JRProvider implements Serializable {
                     put("logo_openid", R.drawable.jr_logo_openid);
                     put("logo_orkut", R.drawable.jr_logo_orkut);
                     put("logo_paypal", R.drawable.jr_logo_paypal);
-                    put("logo_paypal_openid_connect", R.drawable.jr_logo_paypal_openid_connect);
+                    put("logo_paypal_openidconnect", R.drawable.jr_logo_paypal_openidconnect);
                     put("logo_salesforce", R.drawable.jr_logo_salesforce);
                     put("logo_twitter", R.drawable.jr_logo_twitter);
                     put("logo_verisign", R.drawable.jr_logo_verisign);

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SimpleDemo</string>
+    <string name="app_name">SimpleDemoNative</string>
 
     <!-- Profile Listview Strings -->
     <string name="link_another_account">Link Accounts</string>
@@ -13,6 +13,6 @@
     <string name="unknown">unknown</string>
 
     <!-- Facebook SDK https://developers.facebook.com/docs/android/getting-started -->
-    <string name="facebook_app_id">241142639370227</string>
+    <string name="facebook_app_id">773409502771506</string>
 
 </resources>

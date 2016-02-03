@@ -828,7 +828,7 @@ public class Jump {
         loadUserFromDiskInternal(context);
     }
 
-    /*package*/ static void loadUserFromDiskInternal(Context context) {
+    /*package*/public static void loadUserFromDiskInternal(Context context) {
         state.signedInUser = CaptureRecord.loadFromDisk(context);
     }
 
