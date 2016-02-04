@@ -1,4 +1,13 @@
-# JUMP for Android Integration Guide
+# Janrain Android Mobile Libraries Integration Guide
+
+## Upgrading to v6.0
+
+* **IMPORTANT:** This is the last release of this form of the Janrain Android Mobile Libraries.  Other than major bug fixes or compatibility updates no further implementations will be released.  A new Android Sample Application will be written using more modern Android tools and libraries (release date is unscheduled at this time).
+* The only IDE that this release supports and has been tested with is the Android Studio IDE.
+* The Android Mobile Libraries have removed all inter-dependencies on the Google, Facebook, and Twitter SDK's and Libraries.  The SimpleDemoNative app has been created to demonstrate how to integrate native provider logon for these providers using their SDK's and Libraries. Please refer to the "Native Authentication Guide" for more information.
+* **NOTE:**  Google Play/Sign-On libraries newer than version 8.1 are NOT supported.  Google has changed the oAuth access token provisioning as of version 8.3 and it is no longer compatible with Janrain's API's at the time of this release.  Janrain will be updating their API's to support Google's re-architecture in the future.
+* If your previous project had implemented native provider authentication you will have to re-implement this as outlined in the Native Authentication Guide and the "SimpleDemoNative" sample application.
+* If you want to use the Janrain Mobile Libraries and Sample Code with the latest Android API levels there is now has dependencies on the deprecated org.apache.http.legacy.jar.  This file is included in the Github repo in the libs folder.  Additional information on this can be found in the build.gradle file.
 
 This guide describes integrating the Janrain User Management Platform into your Android app. This includes
 the Capture user registration system. For Engage-only (i.e. social-authentication-only) integrations see
@@ -128,9 +137,9 @@ project's `AndroidManifest.xml` file:
 
     </manifest>
 
-**Note**: If you wish to target a version of Android lower than 13 (which is 3.2) you may. To do so, change
-the `android:targetSdkVersion`, to your desired deployment target. _You must still build against API 13+
-even when targeting a lower API level._ The build SDK used when compiling your project is defined by your
+**Note**: If you wish to target a version of Android lower than 17 you may but this is not supported by Janrain. 
+To do so, change the `android:targetSdkVersion`, to your desired deployment target. _You must still build against 
+API 17+ even when targeting a lower API level._ The build SDK used when compiling your project is defined by your
 project's local.properties. `android list target` to get a list of targets available in your installation of
 the Android SDK. `android update project -p . -t target_name_or_target_installation_id` to update the build
 SDK for your project. (Note that this does *not* affect your project's `minSdkVersion` or `targetSdkVersion`.

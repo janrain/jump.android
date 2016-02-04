@@ -18,3 +18,12 @@ out/*
 .idea/*
 
 *.keystore
+
+Samples/SimpleDemo/.idea/*
+Samples/SimpleDemo/.gradle/*
+Samples/SimpleDemo/build/*
+Samples/SimpleDemo/jump/build/*
+Samples/SimpleDemoNative/.idea/*
+Samples/SimpleDemoNative/.gradle/*
+Samples/SimpleDemoNative/build/*
+Samples/SimpleDemoNative/jump/build/*

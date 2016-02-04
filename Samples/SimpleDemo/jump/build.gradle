@@ -23,7 +23,6 @@ android {
 }
 
 dependencies {
-    //compile 'com.android.support:support-v4:22.2.1'
     compile 'com.android.support:support-v4:23.1.0'
     compile files('libs/org.apache.http.legacy.jar')
     compile 'com.squareup.okhttp:okhttp:2.5.0'

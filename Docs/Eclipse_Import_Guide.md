@@ -2,7 +2,7 @@
 
 ##DEPRECATION NOTICE:  
 
-As of version 6.0.0 Eclipse IDE support has been dropped.  The Eclipse IDE was not tested with version 6.0.0 of the Janrain Android Mobile Libraries.  All information in this document pertains to versions prior to 6.0.0 but may still be applicable.
+As of version 6.0.0 Eclipse IDE support has been dropped.  The Eclipse IDE was not tested with version 6.0.0 of the Janrain Android Mobile Libraries.  All information in this document pertains to versions prior to 6.0.0 but may still be applicable if you are using the Eclipse IDE.
 
 This will guide you through:
 
