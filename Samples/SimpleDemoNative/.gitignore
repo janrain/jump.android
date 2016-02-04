@@ -2,22 +2,22 @@
 .DS_Store
 
 # Ignore generated files, compiled files, etc.
-bin/*
-gen/*
-out/*
+bin/
+gen/
+out/
 
 # Editor backup and swap files
 *~
 *.swp
 
 # Other common ignores
-log/*
-tmp/*
+log/
+tmp/
 
 proguard.cfg
 local.properties
 
-.idea/*
-.gradle/*
-build/*
-jump/build/*
+.idea/
+.gradle/
+build/
+jump/build/
