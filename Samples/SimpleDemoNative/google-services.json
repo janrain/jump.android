@@ -1,8 +1,8 @@
 {
   "project_info": {
-    "project_id": "jrauthenticate",
+    "project_id": "UPDATE",
     "project_number": "UPDATE",
-    "name": "jrauthenticate"
+    "name": "UPDATE"
   },
   "client": [
     {
@@ -15,7 +15,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "169582807084-bk8a4jintrtka452cj1v610s588riapp.apps.googleusercontent.com",
+          "client_id": "UPDATE",
           "client_type": 1,
           "android_info": {
             "package_name": "com.janrain.android.multidex.simpledemonative",
