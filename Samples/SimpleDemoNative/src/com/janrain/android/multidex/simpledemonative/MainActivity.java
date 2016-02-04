@@ -339,14 +339,6 @@ public class MainActivity extends FragmentActivity implements
         Button googleplusAuth = addButton(linearLayout, "Google+");
         Button facebookAuth = addButton(linearLayout, "Facebook");
         final Button twitterAuth = addButton(linearLayout, "Twitter");
-        /*
-        addButton(linearLayout, "Test Direct Auth").setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if(flowDownloaded)
-                Jump.showSignInDialog(MainActivity.this, "linkedin", signInResultHandler, null);
-            }
-        });
-        */
         Button dumpRecord = addButton(linearLayout, "Dump Record to Log");
         Button editProfile = addButton(linearLayout, "Edit Profile");
         Button refreshToken = addButton(linearLayout, "Refresh Access Token");

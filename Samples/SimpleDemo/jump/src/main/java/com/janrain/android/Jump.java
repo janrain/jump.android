@@ -381,7 +381,7 @@ public class Jump {
         if ("capture".equals(providerName)) {
             TradSignInUi.showStandAloneDialog(fromActivity, mergeToken);
         } else {
-        	showSocialSignInDialog(fromActivity, providerName, mergeToken);
+            showSocialSignInDialog(fromActivity, providerName, mergeToken);
         }
     }
 
@@ -500,7 +500,7 @@ public class Jump {
         if (providerName != null && accessToken != null) {
             state.jrEngage.getAuthInfoTokenForNativeProvider(fromActivity, providerName, accessToken, tokenSecret);
         }else{
-            //PB Add in error handling
+            LogUtils.logd("Provider Name or Access Token can not be null");
         }
     }
 
@@ -644,6 +644,7 @@ public class Jump {
          */
         public static class SignInError {
             public enum FailureReason {
+
                 /**
                  * A well formed response could not be retrieved from the Capture server
                  */
@@ -734,7 +735,7 @@ public class Jump {
      * An interface to receive a callback which handles the Facebook closeAndClearTokenInformation call.
      */
     public interface FacebookRevokedHandler {
-    	/**
+        /**
          * Called when Facebook closeAndClearTokenInformation has succeeded. 
          */
         void onSuccess();
@@ -1014,7 +1015,7 @@ public class Jump {
          * lines of code.
          */
         if(tempExistingProvider.equals("google")){
-        	tempExistingProvider = "googleplus";
+            tempExistingProvider = "googleplus";
         }
         final String existingProvider = tempExistingProvider;
         
@@ -1038,12 +1039,12 @@ public class Jump {
                                 //
                                 // ... instead of showSignInDialog if you wish to present your own dialog
                                 // and then use the headless API to perform the traditional sign-in.
-                            	
-                            	// For the Merge Account workflow it is recommended to use the standard 
+                                
+                                // For the Merge Account workflow it is recommended to use the standard 
                                 // web based (non-native) authentication dialog.  This allows the end 
                                 // user to manually enter the social account that "owns" the Janrain user 
                                 // record.  If the user did not have this account stored on their 
-                            	// phone or had multiple accounts stored the user interface could be overly 
+                                // phone or had multiple accounts stored the user interface could be overly 
                                 // complicated. The standard web based sign in dialog can be forced by 
                                 // passing a null permissions parameter in the method call below
                                 Jump.showSignInDialog(fromActivity,

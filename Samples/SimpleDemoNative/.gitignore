@@ -16,3 +16,8 @@ tmp/*
 
 proguard.cfg
 local.properties
+
+.idea/*
+.gradle/*
+build/*
+jump/build/*
