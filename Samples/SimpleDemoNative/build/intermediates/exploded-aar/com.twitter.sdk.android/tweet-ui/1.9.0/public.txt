@@ -1,4 +1,0 @@
-style tw__TweetDarkStyle
-style tw__TweetDarkWithActionsStyle
-style tw__TweetLightStyle
-style tw__TweetLightWithActionsStyle
