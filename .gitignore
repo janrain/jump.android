@@ -2,10 +2,10 @@
 *.DS_Store
 
 # Ignore temp files, etc.
-temp/*
+temp/
 
 # Ignore generated files, compiled files, etc.
-out/*
+out/
 
 # Editor backup and swap files
 *~
@@ -15,15 +15,15 @@ out/*
 .idea/runConfigurations
 .idea/workspace.xml
 .idea/tasks.xml
-.idea/*
+.idea/
 
 *.keystore
 
-Samples/SimpleDemo/.idea/*
-Samples/SimpleDemo/.gradle/*
-Samples/SimpleDemo/build/*
-Samples/SimpleDemo/jump/build/*
-Samples/SimpleDemoNative/.idea/*
-Samples/SimpleDemoNative/.gradle/*
-Samples/SimpleDemoNative/build/*
-Samples/SimpleDemoNative/jump/build/*
+Samples/SimpleDemo/.idea/
+Samples/SimpleDemo/.gradle/
+Samples/SimpleDemo/build/
+Samples/SimpleDemo/jump/build/
+Samples/SimpleDemoNative/.idea/
+Samples/SimpleDemoNative/.gradle/
+Samples/SimpleDemoNative/build/
+Samples/SimpleDemoNative/jump/build/
