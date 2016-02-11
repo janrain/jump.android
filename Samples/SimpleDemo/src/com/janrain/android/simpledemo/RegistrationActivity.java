@@ -39,6 +39,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.janrain.android.Jump;
+
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -49,6 +51,7 @@ import static com.janrain.android.simpledemo.R.id.trad_reg_email;
 import static com.janrain.android.simpledemo.R.id.trad_reg_first_name;
 import static com.janrain.android.simpledemo.R.id.trad_reg_last_name;
 import static com.janrain.android.simpledemo.R.id.trad_reg_password;
+import static com.janrain.android.simpledemo.R.id.trad_reg_password_confirm;
 import static com.janrain.android.utils.CollectionUtils.collectionToHumanReadableString;
 
 public class RegistrationActivity extends Activity {
@@ -82,31 +85,38 @@ public class RegistrationActivity extends Activity {
             setEditTextString(trad_reg_first_name, newUser.optString("givenName"));
             setEditTextString(trad_reg_last_name, newUser.optString("familyName"));
             setEditTextString(trad_reg_password, newUser.optString("password"));
+            setEditTextString(trad_reg_password_confirm, newUser.optString(""));
         } else {
             setTitle("Sign Up");
         }
     }
 
     public void register(View view) {
-        String email, displayName, firstName, lastName, password;
+        String email, displayName, firstName, lastName, password, passwordConfirm;
         email = getEditTextString(trad_reg_email);
         displayName = getEditTextString(trad_reg_display_name);
         firstName = getEditTextString(trad_reg_first_name);
         lastName = getEditTextString(trad_reg_last_name);
         password = getEditTextString(trad_reg_password);
-        try {
-            newUser.put("email", email)
-                    .put("displayName", displayName)
-                    .put("givenName", firstName)
-                    .put("familyName", lastName)
-                    .put("password", password);
-        } catch (JSONException e) {
-            throw new RuntimeException("Unexpected", e);
+        passwordConfirm = getEditTextString(trad_reg_password_confirm);
+
+       if (password.equals(passwordConfirm)){
+            try {
+                newUser.put("email", email)
+                        .put("displayName", displayName)
+                        .put("givenName", firstName)
+                        .put("familyName", lastName)
+                        .put("password", password);
+            } catch (JSONException e) {
+                throw new RuntimeException("Unexpected", e);
+            }
+
+            Jump.registerNewUser(newUser, socialRegistrationToken, new MySignInResultHandler());
+            registerButton.setEnabled(false);
+        }else{
+            Toast.makeText(RegistrationActivity.this, "Passwords do not match", Toast.LENGTH_LONG).show();
         }
 
-        Jump.registerNewUser(newUser, socialRegistrationToken, new MySignInResultHandler());
-
-        registerButton.setEnabled(false);
     }
 
     private String getEditTextString(int layoutId) {

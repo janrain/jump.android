@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/jr_tagline"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:layout_weight="0.0"
+    android:layout_alignParentBottom="true"
+
+    android:background="#333"
+    >
+
+    <TextView
+        android:id="@+id/jr_footer_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="right|center_vertical"
+        android:padding="5dp"
+
+        android:singleLine="true"
+        android:text="@string/jr_powered_by"
+        android:textColor="#fff"
+        android:textStyle="italic"
+        />
+
+</FrameLayout>

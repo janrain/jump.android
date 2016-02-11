@@ -183,7 +183,3 @@ method:
 
     mEngage.showSocialPublishingDialogWithActivity(jrActivity);
 
-## FAQ, Troubleshooting, Getting Help
-
-The Android and iOS native library community forums are available here:
-https://community.janrain.com/forums/20472248-Mobile-Android

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  ~  Copyright (c) 2011, Janrain, Inc.
+  ~
+  ~  All rights reserved.
+  ~
+  ~  Redistribution and use in source and binary forms, with or without modification,
+  ~  are permitted provided that the following conditions are met:
+  ~
+  ~  * Redistributions of source code must retain the above copyright notice, this
+  ~    list of conditions and the following disclaimer.
+  ~  * Redistributions in binary form must reproduce the above copyright notice,
+  ~    this list of conditions and the following disclaimer in the documentation and/or
+  ~    other materials provided with the distribution.
+  ~  * Neither the name of the Janrain, Inc. nor the names of its
+  ~    contributors may be used to endorse or promote products derived from this
+  ~    software without specific prior written permission.
+  ~
+  ~
+  ~  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+  ~  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  ~  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  ~  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+  ~  ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+  ~  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  ~  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+  ~  ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  ~  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  ~  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  ~  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+  -->
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/jr_tab_email_sms_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:padding="5dp"
+
+    android:orientation="vertical"
+    android:visibility="gone"
+    >
+
+    <EditText
+        android:id="@+id/jr_email_sms_edit_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="5dip"
+        android:layout_marginRight="4dip"
+        android:layout_marginLeft="4dip"
+        android:layout_alignParentTop="true"
+        android:gravity="top|left"
+
+        android:hint="@string/jr_please_enter_text"
+        android:textColorHint="@color/jr_text_color_hint"
+        android:lines="4"
+        android:textSize="@dimen/jr_edit_text_size"
+        android:inputType="textMultiLine|textAutoComplete"
+        />
+
+    <LinearLayout
+        android:id="@+id/jr_email_sms_button_layout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+
+        android:layout_alignParentBottom="true"
+        android:gravity="top|center_horizontal"
+        android:paddingBottom="10dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+
+        android:orientation="vertical"
+        android:background="@color/jr_some_other_blue"
+        >
+
+        <ImageView
+            android:id="@+id/jr_triangle_icon_view_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:src="@drawable/jr_triangle_icon"
+            />
+
+        <LinearLayout
+            android:id="@+id/jr_email_sms_button_container"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+
+            android:orientation="horizontal"
+            >
+
+            <!-- It would be nice to use
+                 xmlns:jr="http://schemas.android.com/apk/res/com.janrain.android.engage"
+                 here, but there's an open bug preventing aapt from being able to
+                 compile the subsequent usage of the jr:jr_color attribute.
+                 http://code.google.com/p/android/issues/detail?id=9656
+                 -->
+            <com.janrain.android.engage.ui.ColorButton
+                android:id="@+id/jr_email_button"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+
+                android:gravity="center_horizontal|center_vertical"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+
+                android:text="@string/jr_email_button_text"
+                android:textStyle="bold"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/jr_button_text_size"
+                />
+
+            <com.janrain.android.engage.ui.ColorButton
+                android:id="@+id/jr_sms_button"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+
+                android:gravity="center_horizontal|center_vertical"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+
+                android:text="@string/jr_sms_button_text"
+                android:textStyle="bold"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/jr_button_text_size"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/jr_email_sms_powered_by_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_above="@id/jr_email_sms_button_layout"
+        android:layout_marginBottom="4dip"
+        android:singleLine="true"
+        android:text="@string/jr_powered_by"
+        android:textColor="@color/jr_powered_by_text"
+        android:textStyle="normal"
+        android:paddingRight="6dip"
+        android:textSize="@dimen/jr_powered_by_text_size"
+        />
+
+</RelativeLayout>
