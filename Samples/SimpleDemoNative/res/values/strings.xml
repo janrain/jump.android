@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SimpleDemoNative</string>
+
+    <!-- Profile Listview Strings -->
+    <string name="link_another_account">Link Accounts</string>
+    <string name="linked_accounts">You have not linked any accounts.</string>
+    <string name="provider_unknown">Unknown provider</string>
+    <string name="delete_row">Delete</string>
+
+    <!-- Profile Detail Strings -->
+    <string name="no_selected_account">No Account was selected.</string>
+    <string name="unknown">unknown</string>
+
+    <!-- Facebook SDK https://developers.facebook.com/docs/android/getting-started -->
+    <string name="facebook_app_id">UPDATE</string>
+
+</resources>

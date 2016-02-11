@@ -42,6 +42,7 @@ import com.janrain.android.Jump;
 import com.janrain.android.capture.Capture;
 import com.janrain.android.capture.CaptureApiError;
 import com.janrain.android.capture.CaptureRecord;
+
 import org.json.JSONException;
 
 import static com.janrain.android.simpledemo.R.id.update_profile_display_name;

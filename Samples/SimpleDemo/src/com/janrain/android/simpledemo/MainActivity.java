@@ -50,12 +50,13 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
+
 import com.janrain.android.Jump;
-import com.janrain.android.Jump.CaptureApiResultHandler;
 import com.janrain.android.capture.CaptureApiError;
 import com.janrain.android.engage.JREngage;
 import com.janrain.android.engage.types.JRActivityObject;
 import com.janrain.android.utils.LogUtils;
+
 
 import org.json.JSONObject;
 
@@ -66,6 +67,12 @@ import static com.janrain.android.capture.Capture.CaptureApiRequestCallback;
 public class MainActivity extends FragmentActivity {
 
     private boolean flowDownloaded = false;
+
+    /* Is there a ConnectionResult resolution in progress? */
+    private boolean mIsResolving = false;
+
+    /* Should we automatically resolve ConnectionResults when possible? */
+    private boolean mShouldResolve = false;
 
     private class MySignInResultHandler implements Jump.SignInResultHandler, Jump.SignInCodeHandler {
         public void onSuccess() {
@@ -102,7 +109,7 @@ public class MainActivity extends FragmentActivity {
                 // Called when a user cannot sign in because they have no record, but a two-step social
                 // registration is possible. (Which means that the error contains pre-filled form fields
                 // for the registration form.
-                Intent i = new Intent(MainActivity.this, RegistrationActivity.class);
+                Intent i = new Intent(MainActivity.this, com.janrain.android.simpledemo.RegistrationActivity.class);
                 JSONObject prefilledRecord = error.captureApiError.getPreregistrationRecord();
                 i.putExtra("preregistrationRecord", prefilledRecord.toString());
                 i.putExtra("socialRegistrationToken", error.captureApiError.getSocialRegistrationToken());
@@ -114,7 +121,9 @@ public class MainActivity extends FragmentActivity {
                 b.show();
             }
         }
-    };
+    }
+
+
 
     private final MySignInResultHandler signInResultHandler = new MySignInResultHandler();
 
@@ -143,11 +152,17 @@ public class MainActivity extends FragmentActivity {
         }
     };
 
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         //enableStrictMode();
+
+        // Configure sign-in to request the user's ID, email address, and basic
+        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+
 
         IntentFilter filter = new IntentFilter(Jump.JR_FAILED_TO_DOWNLOAD_FLOW);
         LocalBroadcastManager.getInstance(this).registerReceiver(messageReceiver, filter);
@@ -162,31 +177,29 @@ public class MainActivity extends FragmentActivity {
         linearLayout.setLayoutParams(new LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT));
         linearLayout.setOrientation(LinearLayout.VERTICAL);
 
-        Button testAuth = addButton(linearLayout, "Capture Sign-In");
-        addButton(linearLayout, "Test Direct Auth").setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if(flowDownloaded)
-                Jump.showSignInDialog(MainActivity.this, "linkedin", signInResultHandler, null);
-            }
-        });
+        Button webviewAuth = addButton(linearLayout, "Webview Sign-In");
+
         Button dumpRecord = addButton(linearLayout, "Dump Record to Log");
         Button editProfile = addButton(linearLayout, "Edit Profile");
         Button refreshToken = addButton(linearLayout, "Refresh Access Token");
-        Button fetchCaptureUserFromServer = addButton(linearLayout, "Fetch From Server");
-        Button resendVerificationButton = addButton(linearLayout, "Resend Email Verification");
+        final Button resendVerificationButton = addButton(linearLayout, "Resend Email Verification");
         Button link_unlinkAccount = addButton(linearLayout, "Link & Unlink Account");
         addButton(linearLayout, "Share").setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if(flowDownloaded)
-                JREngage.getInstance().showSocialPublishingDialog(MainActivity.this,
-                        new JRActivityObject("aslkdfj", "http://google.com"));
+                if (flowDownloaded)
+                    JREngage.getInstance().showSocialPublishingDialog(MainActivity.this,
+                            new JRActivityObject("", null));
             }
         });
 
         addButton(linearLayout, "Traditional Registration").setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if(flowDownloaded)
-                MainActivity.this.startActivity(new Intent(MainActivity.this, RegistrationActivity.class));
+                if (flowDownloaded){
+                    MainActivity.this.startActivity(new Intent(MainActivity.this, com.janrain.android.simpledemo.RegistrationActivity.class));
+                } else {
+                    Toast.makeText(MainActivity.this, "Flow Configuration not downloaded yet",
+                            Toast.LENGTH_LONG).show();
+                }
             }
         });
 
@@ -195,17 +208,26 @@ public class MainActivity extends FragmentActivity {
         sv.addView(linearLayout);
         setContentView(sv);
 
-        testAuth.setOnClickListener(new View.OnClickListener() {
+        webviewAuth.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if(flowDownloaded)
-                Jump.showSignInDialog(MainActivity.this, null, signInResultHandler, null);
+                if (flowDownloaded){
+                    Jump.showSignInDialog(MainActivity.this, null, signInResultHandler, null);
+                } else {
+                    Toast.makeText(MainActivity.this, "Flow Configuration not downloaded yet",
+                            Toast.LENGTH_LONG).show();
+                }
             }
         });
 
+
         dumpRecord.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if(flowDownloaded)
-                LogUtils.logd(String.valueOf(Jump.getSignedInUser()));
+                if (flowDownloaded){
+                    LogUtils.logd(String.valueOf(Jump.getSignedInUser()));
+                } else {
+                    Toast.makeText(MainActivity.this, "Flow Configuration not downloaded yet",
+                            Toast.LENGTH_LONG).show();
+                }
             }
         });
 
@@ -216,7 +238,7 @@ public class MainActivity extends FragmentActivity {
                             Toast.LENGTH_LONG).show();
                     return;
                 }
-                Intent i = new Intent(MainActivity.this, UpdateProfileActivity.class);
+                Intent i = new Intent(MainActivity.this, com.janrain.android.simpledemo.UpdateProfileActivity.class);
                 MainActivity.this.startActivity(i);
             }
         });
@@ -225,7 +247,7 @@ public class MainActivity extends FragmentActivity {
             public void onClick(View v) {
                 if (Jump.getSignedInUser() == null) {
                     Toast.makeText(MainActivity.this, "Cannot refresh token without signed in user",
-                                   Toast.LENGTH_LONG).show();
+                            Toast.LENGTH_LONG).show();
                     return;
                 }
 
@@ -244,37 +266,6 @@ public class MainActivity extends FragmentActivity {
             }
         });
 
-        fetchCaptureUserFromServer.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if (Jump.getSignedInUser() == null) {
-                    Toast.makeText(MainActivity.this, "Cannot fetch user without signed in user",
-                                   Toast.LENGTH_LONG).show();
-                    return;
-                }
-                
-                Jump.fetchCaptureUserFromServer(new CaptureApiResultHandler() {
-                    @Override
-                    public void onSuccess(JSONObject response) {
-                        String capture_user = Jump.getSignedInUser().toString();
-
-                        LogUtils.logd("Fetch Capture User From Server Finish");
-                        Jump.saveToDisk(MainActivity.this);
-                        Toast.makeText(MainActivity.this, "Capture User: " + capture_user.substring(0, Math.min(capture_user.length(), 100)),
-                                Toast.LENGTH_LONG).show();
-                        
-                    }
-
-                    @Override
-                    public void onFailure(CaptureAPIError failureParam) {
-                        Toast.makeText(MainActivity.this, "Failed to refresh access token",
-                                Toast.LENGTH_LONG).show();
-                        LogUtils.loge(failureParam.toString());
-                    }
-                });
-            }
-        });
-
-
         resendVerificationButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 promptForResendVerificationEmailAddress();
@@ -284,7 +275,7 @@ public class MainActivity extends FragmentActivity {
         link_unlinkAccount.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (Jump.getSignedInUser() != null && Jump.getAccessToken() != null) {
-                    MainActivity.this.startActivity(new Intent(MainActivity.this, LinkListActivity.class));
+                    MainActivity.this.startActivity(new Intent(MainActivity.this, com.janrain.android.simpledemo.LinkListActivity.class));
                 } else {
                     Toast.makeText(MainActivity.this, "Please Login to Link Account",
                             Toast.LENGTH_LONG).show();
@@ -295,11 +286,13 @@ public class MainActivity extends FragmentActivity {
         signOut.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Jump.signOutCaptureUser(MainActivity.this);
-                Toast.makeText(MainActivity.this, "Signout Capture User",
+                Toast.makeText(MainActivity.this, "Signed out of Capture",
                         Toast.LENGTH_LONG).show();
             }
         });
+
     }
+
 
     private void promptForResendVerificationEmailAddress() {
         final EditText input = new EditText(this);
@@ -328,7 +321,7 @@ public class MainActivity extends FragmentActivity {
 
             public void onFailure(CaptureApiError e) {
                 Toast.makeText(MainActivity.this, "Failed to send verification email: " + e,
-                               Toast.LENGTH_LONG).show();
+                        Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -341,20 +334,44 @@ public class MainActivity extends FragmentActivity {
         return button;
     }
 
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        //Log.d(TAG, "onActivityResult:" + requestCode + ":" + resultCode + ":" + data);
+        LogUtils.loge("onActivityResult:" + requestCode + ":" + resultCode + ":" + data);
+    }
+
+
+
     @Override
     protected void onPause() {
         Jump.saveToDisk(this);
         super.onPause();
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        Jump.saveToDisk(this);
+        // Always call the superclass so it can save the view hierarchy state
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();  // Always call the superclass method first
+        if(Jump.getCaptureFlowName() != "") flowDownloaded = true;
+    }
+
     private static void enableStrictMode() {
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
                 .detectAll()
-        //        .detectDiskReads()
-        //        .detectDiskWrites()
-        //        .detectNetwork()   // or .detectAll() for all detectable problems
+                        //        .detectDiskReads()
+                        //        .detectDiskWrites()
+                        //        .detectNetwork()   // or .detectAll() for all detectable problems
                 .penaltyLog()
-        //        .penaltyDeath()
+                        //        .penaltyDeath()
                 .build());
         StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
                 //.detectAll()
@@ -362,7 +379,7 @@ public class MainActivity extends FragmentActivity {
                 //.detectLeakedSqlLiteObjects()
                 //.detectLeakedClosableObjects()
                 .penaltyLog()
-                //.penaltyDeath()
+                        //.penaltyDeath()
                 .build());
     }
 
@@ -371,5 +388,9 @@ public class MainActivity extends FragmentActivity {
         LocalBroadcastManager.getInstance(this).unregisterReceiver(messageReceiver);
         LocalBroadcastManager.getInstance(this).unregisterReceiver(flowMessageReceiver);
         super.onDestroy();
+
     }
+
+
+
 }

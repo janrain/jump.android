@@ -11,10 +11,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class LinkAccountsAdapter extends BaseAdapter {
-    private static ArrayList<LinkData> linkArrayList;
+    private static ArrayList<com.janrain.android.simpledemo.LinkData> linkArrayList;
     private LayoutInflater mInflater;
 
-    public LinkAccountsAdapter(Context context, ArrayList<LinkData> results) {
+    public LinkAccountsAdapter(Context context, ArrayList<com.janrain.android.simpledemo.LinkData> results) {
         linkArrayList = results;
         mInflater = LayoutInflater.from(context);
     }
@@ -45,8 +45,8 @@ public class LinkAccountsAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-
         holder.mIdentifier.setText(linkArrayList.get(position).getIdentifier());
+        holder.mVerifiedEmail.setText(linkArrayList.get(position).getVerifiedEmail());
         holder.mDomain.setText(linkArrayList.get(position).getDomainName());
         return convertView;
     }

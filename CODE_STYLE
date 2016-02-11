@@ -1,7 +1,0 @@
-We follow modified AOSP style guidelines:
-http://source.android.com/source/code-style.html
-
-Except:
-Each line of text can be up to 110 characters.
-Static field names can, but are not required to start with 's'.
-Non-public, non-static field names can, but are not required to start with 'm'.
