@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.janrain.android">
+          package="com.janrain.android"
+          android:versionCode="1"
+          android:versionName="1.0">
 
     <!--According to Xav Ducrochet nothing from the Library Project's manifest *except* the package
         is respected by the Android SDK.  He recommends that the activities contained in a
@@ -11,7 +13,7 @@
         https://groups.google.com/group/android-developers/browse_thread/thread/0b4a5d751346655b/9db36f18521fca7d#9db36f18521fca7d -->
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-sdk android:minSdkVersion="10"/>
+    <uses-sdk android:minSdkVersion="17" android:targetSdkVersion="23"/>
 
     <!-- The following activities are for the Janrain Engage for Android library -->
     <!-- This activity must have a dialog theme such as Theme.Holo.Dialog, or
@@ -34,10 +36,10 @@
         Theme.Holo (or Theme.Holo.Light) on API 11+
     -->
     <activity
-        android:name="com.janrain.android.engage.ui.JRFragmentHostActivity$Fullscreen"
-        android:configChanges="orientation|screenSize"
-        android:theme="@style/Theme.Janrain.Light"
-        android:windowSoftInputMode="adjustResize|stateHidden"
-        />
+            android:name="com.janrain.android.engage.ui.JRFragmentHostActivity$Fullscreen"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.Janrain"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            />
 
 </manifest>

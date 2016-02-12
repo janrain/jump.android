@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- {Selects between Theme.Dialog, and Theme.Holo.Light.DialogWhenLarge.NoActionBar} -->
+    <style name="Theme.Janrain.Dialog" parent="@android:style/Theme.Holo.DialogWhenLarge.NoActionBar"/>
+
+    <!-- {Selects between Theme and Theme.Holo} -->
+    <style name="Theme.Janrain" parent="@android:style/Theme.Holo"/>
+
+    <!-- {Light versions of the above} -->
+    <style name="Theme.Janrain.Dialog.Light"
+        parent="@android:style/Theme.Holo.Light.DialogWhenLarge.NoActionBar"/>
+    <style name="Theme.Janrain.Light" parent="android:style/Theme.Holo.Light"/>
+
+    <!-- {@deprecated Compatibility themes for v1 & v2} -->
+    <style name="jr_dialog_dark" parent="@android:style/Theme.Holo.DialogWhenLarge.NoActionBar"/>
+    <style name="jr_fullscreen_no_title" parent="style/Theme.Janrain"/>
+    <style name="jr_fullscreen_dark" parent="android:style/Theme.Holo"/>
+    <style name="jr_fullscreen_no_title_dark" parent="style/Theme.Janrain"/>
+
+    <!-- {@internal} -->
+    <style name="jr_dialog_71_percent">
+        <item name="android:windowMinWidthMinor">71%</item>
+        <item name="android:windowMinWidthMajor">71%</item>
+    </style>
+
+    <style name="jr_dialog_phone_sized">
+        <item name="android:windowMinWidthMinor">320dip</item>
+        <item name="android:windowMinWidthMajor">320dip</item>
+    </style>
+
+    <style name="jr_disable_title_and_action_bar_style">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="jr_about_dialog_text"/>
+
+</resources>

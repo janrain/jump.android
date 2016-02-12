@@ -3,11 +3,13 @@ package com.janrain.android.simpledemo;
 public class LinkData {
     String identifier = null;
     String domainName = null;
+    String verifiedEmails = null;
 
-    public LinkData(String identifier, String domainName) {
+    public LinkData(String identifier, String domainName, String emails) {
         super();
         this.identifier = identifier;
         this.domainName = domainName;
+        this.verifiedEmails = emails;
     }
 
     public LinkData() {
@@ -28,6 +30,15 @@ public class LinkData {
 
     public void setDomainName(String domain) {
         this.domainName = domain;
+    }
+
+
+    public String getVerifiedEmail() {
+         return verifiedEmails;
+    }
+
+    public void setVerifiedEmail(String verifiedEmails) {
+        this.verifiedEmails = verifiedEmails;
     }
 
 }

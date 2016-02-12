@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- {Selects between Theme.Dialog, and Theme.Holo.Light.Dialog} -->
+    <style name="Theme.Janrain.Dialog" parent="@android:style/Theme.Dialog">
+        <item name="jrPublishTriangleVisibility">invisible</item>
+        <item name="jrPublishTriangleResource">@drawable/jr_triangle_icon</item>
+    </style>
+
+    <!-- {Selects between Theme and Theme.Holo} -->
+    <style name="Theme.Janrain" parent="android:style/Theme">
+        <item name="jrPublishTriangleVisibility">invisible</item>
+        <item name="jrPublishTriangleResource">@drawable/jr_triangle_icon</item>
+    </style>
+
+    <!-- {Light versions} -->
+    <style name="Theme.Janrain.Dialog.Light" parent="@android:style/Theme.Dialog">
+        <item name="jrPublishTriangleVisibility">visible</item>
+        <item name="jrPublishTriangleResource">@drawable/jr_triangle_icon</item>
+    </style>
+
+    <style name="Theme.Janrain.Light" parent="android:style/Theme.Light">
+        <item name="jrPublishTriangleVisibility">visible</item>
+        <item name="jrPublishTriangleResource">@drawable/jr_triangle_icon</item>
+    </style>
+
+    <!-- {@deprecated Compatibility themes for v1 & v2} -->
+    <style name="jr_dialog" parent="Theme.Janrain.Dialog"/>
+    <style name="jr_fullscreen" parent="Theme.Janrain.Light"/>
+    <style name="jr_fullscreen_no_title" parent="Theme.Janrain.Light"/>
+
+    <style name="jr_dialog_dark" parent="Theme.Janrain.Dialog"/>
+    <style name="jr_fullscreen_dark" parent="Theme.Janrain"/>
+    <style name="jr_fullscreen_no_title_dark" parent="Theme.Janrain"/>
+
+    <!-- {@internal} -->
+    <style name="jr_about_dialog_text">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="jr_progress_dialog_style" parent="@android:Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+</resources>

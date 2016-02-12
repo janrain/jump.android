@@ -33,25 +33,27 @@
 package com.janrain.android.simpledemo;
 
 import android.app.Application;
+import android.content.Context;
+
 import com.janrain.android.Jump;
 import com.janrain.android.JumpConfig;
 
 public class SimpleDemoApplication extends Application {
+
     @Override
     public void onCreate() {
         super.onCreate();
-
         JumpConfig jumpConfig = new JumpConfig();
 
-        //capture prod
-        jumpConfig.engageAppId = "appcfamhnpkagijaeinl";
-        jumpConfig.captureDomain = "mobile-dev.janraincapture.com";
-        jumpConfig.captureClientId = "gpy4j6d8bcsepkb2kzm7zp5qkk8wrza6";
+        jumpConfig.engageAppId = "UPDATE";
+        jumpConfig.captureDomain = "UPDATE.janraincapture.com";
+        jumpConfig.captureClientId = "UPDATE";
         jumpConfig.captureLocale = "en-US";
         jumpConfig.captureTraditionalSignInFormName = "userInformationForm";
         jumpConfig.traditionalSignInType = Jump.TraditionalSignInType.EMAIL;
-        jumpConfig.captureAppId = "rz47skmnm48jpcv3bh4eguv4b8";
-        jumpConfig.captureFlowName = "standard_flow";
+        jumpConfig.captureAppId = "UPDATE";
+        jumpConfig.captureFlowName = "UPDATE";
+        jumpConfig.captureFlowVersion="HEAD";
         jumpConfig.captureSocialRegistrationFormName = "socialRegistrationForm";
         jumpConfig.captureTraditionalRegistrationFormName = "registrationForm";
         jumpConfig.captureEditUserProfileFormName = "editProfileForm";
@@ -61,4 +63,5 @@ public class SimpleDemoApplication extends Application {
 
         Jump.init(this, jumpConfig);
     }
+
 }

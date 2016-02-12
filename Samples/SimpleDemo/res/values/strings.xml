@@ -11,4 +11,5 @@
     <!-- Profile Detail Strings -->
     <string name="no_selected_account">No Account was selected.</string>
     <string name="unknown">unknown</string>
+
 </resources>
