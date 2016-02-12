@@ -63,7 +63,7 @@ import java.util.ArrayList;
 
 public class LinkListActivity extends ListActivity {
     private static final String TAG = ListActivity.class.getSimpleName();
-    private static LinkAccountsAdapter mAdapter;
+    private static com.janrain.android.simpledemo.LinkAccountsAdapter mAdapter;
     private final MyCaptureApiResultHandler captureApiResultHandler = new MyCaptureApiResultHandler();
     ListView link_account;
     TextView mIdentifier;
@@ -170,7 +170,7 @@ public class LinkListActivity extends ListActivity {
 
                 } else {
                     LinkListActivity.this.startActivity(new Intent(LinkListActivity.this,
-                            MainActivity.class));
+                            com.janrain.android.simpledemo.MainActivity.class));
                 }
             }
         });
@@ -225,19 +225,30 @@ public class LinkListActivity extends ListActivity {
         Jump.performFetchCaptureData(new Jump.CaptureApiResultHandler() {
             @Override
             public void onSuccess(JSONObject response) {
-                ArrayList<LinkData> linkUnlinkResults = new ArrayList<LinkData>();
+                ArrayList<com.janrain.android.simpledemo.LinkData> linkUnlinkResults = new ArrayList<com.janrain.android.simpledemo.LinkData>();
                 JSONObject json = response;
                 try {
                     JSONArray profiles = json.getJSONObject("result").getJSONArray("profiles");
                     for (int i = 0; i < profiles.length(); i++) {
                         JSONObject profileData = profiles.getJSONObject(i);
                         LogUtils.loge(profileData.getString("domain"));
-                        LinkData linkedRecords = new LinkData(profileData.getString("identifier"),
-                                profileData.getString("domain"));
+                        JSONArray profileEmails = profileData.getJSONObject("profile").getJSONArray("emails");
+                        StringBuilder profileEmailsCombined = new StringBuilder();
+                        if(profileEmails.length()>0){
+                            for(int ii=0; ii<profileEmails.length();ii++){
+                                if(profileEmailsCombined.toString() != ""){
+                                    profileEmailsCombined.append(", ");
+                                }
+                                profileEmailsCombined.append(profileEmails.getJSONObject(ii).getString("value"));
+                            }
+                        }
+                        LogUtils.loge(profileEmailsCombined.toString());
+                        com.janrain.android.simpledemo.LinkData linkedRecords = new com.janrain.android.simpledemo.LinkData(profileData.getString("identifier"),
+                                profileData.getString("domain"), profileEmailsCombined.toString());
                         linkUnlinkResults.add(linkedRecords);
                         LogUtils.loge(profileData.getString("identifier"));
                     }
-                    mAdapter = new LinkAccountsAdapter(LinkListActivity.this, linkUnlinkResults);
+                    mAdapter = new com.janrain.android.simpledemo.LinkAccountsAdapter(LinkListActivity.this, linkUnlinkResults);
                     link_account.setAdapter(mAdapter);
                 } catch (JSONException e) {
                     LogUtils.loge("Error parsing data " + e.toString());
@@ -246,6 +257,7 @@ public class LinkListActivity extends ListActivity {
 
             @Override
             public void onFailure(CaptureAPIError error) {
+
                 Toast.makeText(LinkListActivity.this,
                         "Account LinkUnlink Failed.",
                         Toast.LENGTH_LONG).show();
