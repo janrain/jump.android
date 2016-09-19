@@ -344,14 +344,13 @@ public class Jump {
             state.userAgent += "/" + info.versionCode + " ";
         } catch (PackageManager.NameNotFoundException e) {
             throwDebugException(new RuntimeException("User agent create failed : ", e));
-            return "";
+            state.userAgent = "";
         }
         if (state.userAgent == null){
             state.userAgent = "";
-            return "";
-        }else{
-            return state.userAgent;
         }
+        return state.userAgent;
+
     }
 
     public static String getAccessToken() {
