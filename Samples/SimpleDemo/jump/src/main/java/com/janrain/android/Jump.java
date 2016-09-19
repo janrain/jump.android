@@ -345,7 +345,11 @@ public class Jump {
         } catch (PackageManager.NameNotFoundException e) {
             throwDebugException(new RuntimeException("User agent create failed : ", e));
         }
+        if (state.userAgent == null){
+            state.userAgent = "";
+        }
         return state.userAgent;
+
     }
 
     public static String getAccessToken() {
