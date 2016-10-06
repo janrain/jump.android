@@ -7,7 +7,7 @@ Getting Started:
 Report bugs or ask questions:
     https://support.janrain.com
 
-### Upgrading to v6.0
+### Upgrading to v6.0.1
 
 - IMPORTANT: This is the last release of this form of the Janrain Android Mobile Libraries.  Other than major bug fixes or compatibility updates no further implementations will be released.  A new Android Sample Application will be written using more modern Android tools and libraries.
 - The only IDE that this release supports and has been tested with is the Android Studio IDE.
