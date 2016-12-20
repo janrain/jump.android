@@ -677,7 +677,7 @@ public class JREngage {
                 }
             });
         } else {
-            showWebAuthFlowInternal(fromActivity, providerName, provider, uiCustomization);
+            showAuthFlowInternal(fromActivity, providerName, uiCustomization);
         }
     }
 
@@ -743,10 +743,10 @@ public class JREngage {
         void configDidFinish();
     }
 
-
-    public static enum NativeAuthError {
+    public static enum ExternalAuthError {
         ENGAGE_ERROR
     }
+
 
     public void getAuthInfoTokenForNativeProvider(final Activity fromActivity,
                                                   final String providerName,
@@ -764,14 +764,14 @@ public class JREngage {
             public void run(JSONObject json) {
 
                 if (json == null) {
-                    triggerOnFailure("Bad Response", NativeAuthError.ENGAGE_ERROR);
+                    triggerOnFailure("Bad Response", ExternalAuthError.ENGAGE_ERROR);
                     return;
                 }
 
                 String status = json.optString("stat");
 
                 if (json == null || json.optString("stat") == null || !json.optString("stat").equals("ok")) {
-                    triggerOnFailure("Bad Json: " + json, NativeAuthError.ENGAGE_ERROR);
+                    triggerOnFailure("Bad Json: " + json, ExternalAuthError.ENGAGE_ERROR);
                     return;
                 }
 
@@ -803,11 +803,11 @@ public class JREngage {
         mSession.triggerAuthenticationDidCompleteWithPayload(payload);
     }
 
-    /*package*/ void triggerOnFailure(String message, NativeAuthError errorCode) {
+    /*package*/ void triggerOnFailure(String message, ExternalAuthError errorCode) {
         triggerOnFailure(message, errorCode, null, false);
     }
 
-    /*package*/void triggerOnFailure(final String message, NativeAuthError errorCode, Exception exception,
+    /*package*/void triggerOnFailure(final String message, ExternalAuthError errorCode, Exception exception,
                                      boolean shouldTryWebViewAuthentication) {
         //completion.onFailure(message, errorCode, exception, shouldTryWebViewAuthentication);
         LogUtils.loge("triggerOnFailure message: " + message);
@@ -815,6 +815,53 @@ public class JREngage {
 
         if(exception != null) LogUtils.loge("triggerOnFailure exception: " + exception.getMessage());
 
+    }
+
+    /**
+     * @internal
+     * @hide
+     */
+    private void showAuthFlowInternal(final Activity fromActivity,
+                                      final String providerName,
+                                      final Class<? extends JRCustomInterface> uiCustomization) {
+        JRProvider provider = mSession.getProviderByName(providerName);
+
+        if (provider != null && JROpenIDAppAuth.canHandleProvider(mApplicationContext, provider)) {
+            showOpenIDAppAuthFlowInternal(fromActivity, provider, uiCustomization);
+        } else {
+            showWebAuthFlowInternal(fromActivity, providerName, provider, uiCustomization);
+        }
+    }
+
+    private void showOpenIDAppAuthFlowInternal(final Activity fromActivity,
+                                            final JRProvider provider,
+                                            final Class<? extends JRCustomInterface> uiCustomization) {
+        mSession.setCurrentlyAuthenticatingProvider(provider);
+        mUiCustomization = uiCustomization;
+
+        Intent i = JRFragmentHostActivity.createOpenIDAppAuthIntent(fromActivity);
+        i.putExtra(JRFragmentHostActivity.JR_PROVIDER, provider.getName());
+        fromActivity.startActivity(i);
+    }
+
+    public JROpenIDAppAuth.OpenIDAppAuthCallback getNativeAuthCallback(final Activity fromActivity,
+                                                                 final Class<? extends JRCustomInterface> uiCustomization) {
+        final JRProvider provider = mSession.getCurrentlyAuthenticatingProvider();
+
+        return new JROpenIDAppAuth.OpenIDAppAuthCallback() {
+            public void onSuccess(JRDictionary payload) {
+                mSession.saveLastUsedAuthProvider();
+                mSession.triggerAuthenticationDidCompleteWithPayload(payload);
+            }
+
+            public boolean shouldTriggerAuthenticationDidCancel() {
+                return true;
+            }
+
+            public void tryWebViewAuthentication() {
+                showWebAuthFlowInternal(fromActivity, provider.getName(), provider, uiCustomization);
+            }
+        };
     }
 
     private void showWebAuthFlowInternal(final Activity fromActivity,
