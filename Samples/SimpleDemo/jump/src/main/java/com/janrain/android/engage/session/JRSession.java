@@ -31,7 +31,9 @@
  */
 package com.janrain.android.engage.session;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -43,17 +45,23 @@ import com.janrain.android.engage.JREngageError;
 import com.janrain.android.engage.JREngageError.ConfigurationError;
 import com.janrain.android.engage.JREngageError.ErrorType;
 import com.janrain.android.engage.JREngageError.SocialPublishingError;
+import com.janrain.android.engage.JROpenIDAppAuth;
+import com.janrain.android.engage.JROpenIDAppAuth.OpenIDAppAuthProvider;
 import com.janrain.android.engage.net.JRConnectionManager;
 import com.janrain.android.engage.net.JRConnectionManagerDelegate;
 import com.janrain.android.engage.net.async.HttpResponseHeaders;
 import com.janrain.android.engage.types.JRActivityObject;
 import com.janrain.android.engage.types.JRDictionary;
+import com.janrain.android.engage.ui.JRFragmentHostActivity;
 import com.janrain.android.utils.AndroidUtils;
 import com.janrain.android.utils.Archiver;
 import com.janrain.android.utils.CollectionUtils;
 import com.janrain.android.utils.LogUtils;
 import com.janrain.android.utils.PrefUtils;
 import com.janrain.android.utils.StringUtils;
+
+import net.openid.appauth.AuthorizationService;
+
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -76,7 +84,7 @@ public class JRSession implements JRConnectionManagerDelegate {
     private static final String ARCHIVE_AUTH_PROVIDERS = "authProviders";
     private static final String ARCHIVE_SHARING_PROVIDERS = "sharingProviders";
     private static final String ARCHIVE_AUTH_USERS_BY_PROVIDER = "jrAuthenticatedUsersByProvider";
-    private static final String ARCHIVE_AUTH_NATIVE_PROVIDERS = "jrAuthenticatedNativeProviders";
+    private static final String ARCHIVE_AUTH_OPENID_APPAUTH_PROVIDERS = "jrAuthenticatedOpenIDAppAuthProviders";
 
     private static final String RPXNOW_BASE_URL = "https://rpxnow.com";
     private static String mEngageBaseUrl = RPXNOW_BASE_URL;
@@ -97,9 +105,11 @@ public class JRSession implements JRConnectionManagerDelegate {
     private JRProvider mCurrentlyAuthenticatingProvider;
     private String[] mCurrentlyAuthenticatingProviderPermissions;
     private JRProvider mCurrentlyPublishingProvider;
-    
+    private JROpenIDAppAuth.OpenIDAppAuthProvider mCurrentOpenIDAppAuthProvider;
+
     private String mReturningAuthProvider;
     private String[] mReturningAuthProviderPermissions;
+
     private String mReturningSharingProvider;
 
     private Map<String, JRProvider> mProviders;
@@ -108,7 +118,7 @@ public class JRSession implements JRConnectionManagerDelegate {
     private List<String> mEnabledSharingProviders;
     private List<String> mSharingProviders;
     private Map<String, JRAuthenticatedUser> mAuthenticatedUsersByProvider;
-    private Set<String> mAuthenticatedNativeAuthProviders;
+    private Set<String> mAuthenticatedOpenIDAppAuthProviders;
     private List<JRProvider> mCustomProviders;
 
     private JRActivityObject mActivity;
@@ -249,7 +259,7 @@ public class JRSession implements JRConnectionManagerDelegate {
 
             /* Load the library state from disk */
             mAuthenticatedUsersByProvider = Archiver.load(ARCHIVE_AUTH_USERS_BY_PROVIDER);
-            mAuthenticatedNativeAuthProviders = Archiver.load(ARCHIVE_AUTH_NATIVE_PROVIDERS);
+            mAuthenticatedOpenIDAppAuthProviders = Archiver.load(ARCHIVE_AUTH_OPENID_APPAUTH_PROVIDERS);
             mProviders = Archiver.load(ARCHIVE_ALL_PROVIDERS);
 
             /* Fix up the provider objects with data that isn't serialized along with them */
@@ -342,6 +352,14 @@ public class JRSession implements JRConnectionManagerDelegate {
 
     public void setCurrentlyAuthenticatingProviderPermissions(String[] permissions) {
         mCurrentlyAuthenticatingProviderPermissions = permissions;
+    }
+
+    public OpenIDAppAuthProvider getCurrentlyAuthenticatingOpenIDAppAuthProvider() {
+        return mCurrentOpenIDAppAuthProvider;
+    }
+
+    public void setCurrentlyAuthenticatingOpenIDAppAuthProvider(OpenIDAppAuthProvider provider) {
+        mCurrentOpenIDAppAuthProvider = provider;
     }
 
     public ArrayList<JRProvider> getAuthProviders() {
@@ -544,8 +562,8 @@ public class JRSession implements JRConnectionManagerDelegate {
     private void clearEngageConfigurationCache() {
         mAuthenticatedUsersByProvider = new HashMap<String, JRAuthenticatedUser>();
         Archiver.asyncSave(ARCHIVE_AUTH_USERS_BY_PROVIDER, mAuthenticatedUsersByProvider);
-        mAuthenticatedNativeAuthProviders = new HashSet<String>();
-        Archiver.asyncSave(ARCHIVE_AUTH_NATIVE_PROVIDERS, mAuthenticatedNativeAuthProviders);
+        mAuthenticatedOpenIDAppAuthProviders = new HashSet<String>();
+        Archiver.asyncSave(ARCHIVE_AUTH_OPENID_APPAUTH_PROVIDERS, mAuthenticatedOpenIDAppAuthProviders);
 
         // Note that these values are removed from the settings when resetting state to prevent
         // uninitialized state from being read on startup as valid state
@@ -855,9 +873,9 @@ public class JRSession implements JRConnectionManagerDelegate {
         return mAuthenticatedUsersByProvider.get(provider.getName());
     }
 
-    public void addNativeProvider(String providerName) {
-        mAuthenticatedNativeAuthProviders.add(providerName);
-        Archiver.asyncSave(ARCHIVE_AUTH_NATIVE_PROVIDERS, mAuthenticatedNativeAuthProviders);
+    public void addOpenIDAppAuthProvider(String providerName) {
+        mAuthenticatedOpenIDAppAuthProviders.add(providerName);
+        Archiver.asyncSave(ARCHIVE_AUTH_OPENID_APPAUTH_PROVIDERS, mAuthenticatedOpenIDAppAuthProviders);
     }
 
     public void signOutUserForProvider(String providerName) {
@@ -884,6 +902,41 @@ public class JRSession implements JRConnectionManagerDelegate {
             mAuthenticatedUsersByProvider.remove(providerName);
             Archiver.asyncSave(ARCHIVE_AUTH_USERS_BY_PROVIDER, mAuthenticatedUsersByProvider);
             triggerUserWasSignedOut(providerName);
+        }
+    }
+
+    public void signOutOpenIDAppAuthProviders(Activity fromActivity) {
+        String providerName = "googleplus";
+        if (mAuthenticatedOpenIDAppAuthProviders.contains(providerName)) {
+            mAuthenticatedOpenIDAppAuthProviders.clear();
+            Archiver.asyncSave(ARCHIVE_AUTH_OPENID_APPAUTH_PROVIDERS, mAuthenticatedOpenIDAppAuthProviders);
+
+            JRProvider provider = getAllProviders().get(providerName);
+            if (provider == null) {
+                throwDebugException(new IllegalStateException("Unknown provider name:" + providerName));
+                return;
+            }
+
+            if (JROpenIDAppAuth.canHandleProvider(fromActivity, provider) && fromActivity != null) {
+                Intent i = JRFragmentHostActivity.createOpenIDAppAuthIntent(fromActivity);
+                i.putExtra(JRFragmentHostActivity.JR_SIGN_OUT_PROVIDER, provider.getName());
+                fromActivity.startActivity(i);
+            }
+        }
+    }
+
+    public void revokeAndDisconnectOpenIDAppAuthGooglePlus(Activity fromActivity) {
+        String providerName = "googleplus";
+        JRProvider provider = getAllProviders().get(providerName);
+        if (provider == null) {
+            throwDebugException(new IllegalStateException("Unknown provider name:" + providerName));
+            return;
+        }
+
+        if (JROpenIDAppAuth.canHandleProvider(fromActivity, provider) && fromActivity != null) {
+            Intent i = JRFragmentHostActivity.createOpenIDAppAuthIntent(fromActivity);
+            i.putExtra(JRFragmentHostActivity.JR_REVOKE_PROVIDER, provider.getName());
+            fromActivity.startActivity(i);
         }
     }
 
@@ -1195,5 +1248,12 @@ public class JRSession implements JRConnectionManagerDelegate {
         return mLinkAccount;
     }
 
+    public void setCurrentOpenIDAppAuthProvider(JROpenIDAppAuth.OpenIDAppAuthProvider openIDProvider) {
+        mCurrentOpenIDAppAuthProvider = openIDProvider;
+    }
+
+    public JROpenIDAppAuth.OpenIDAppAuthProvider getCurrentOpenIDAppAuthProvider() {
+        return mCurrentOpenIDAppAuthProvider;
+    }
 
 }

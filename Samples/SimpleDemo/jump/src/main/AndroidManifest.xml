@@ -40,4 +40,5 @@
         android:windowSoftInputMode="adjustResize|stateHidden"
         />
 
+
 </manifest>
