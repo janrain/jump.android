@@ -124,6 +124,7 @@ public class JRSession implements JRConnectionManagerDelegate {
     private JRActivityObject mActivity;
     private String mTokenUrl;
     private String mAppId;
+    private String mAppUrl;
     private String mRpBaseUrl;
     private String mUrlEncodedAppName;
     private String mUniqueIdentifier;
@@ -149,17 +150,34 @@ public class JRSession implements JRConnectionManagerDelegate {
         return sInstance;
     }
 
+
+    public static JRSession getInstance(String appId, String appUrl, String tokenUrl, JRSessionDelegate delegate) {
+        if (sInstance != null) {
+            if (sInstance.isUiShowing()) {
+                LogUtils.loge("Cannot reinitialize JREngage while its UI is showing");
+            } else {
+                LogUtils.logd("reinitializing, registered delegates will be unregistered");
+                sInstance.initialize(appId, appUrl, tokenUrl, delegate);
+            }
+        } else {
+            LogUtils.logd("returning new instance.");
+            sInstance = new JRSession(appId, appUrl, tokenUrl, delegate);
+        }
+
+        return sInstance;
+    }
+
     public static JRSession getInstance(String appId, String tokenUrl, JRSessionDelegate delegate) {
         if (sInstance != null) {
             if (sInstance.isUiShowing()) {
                 LogUtils.loge("Cannot reinitialize JREngage while its UI is showing");
             } else {
                 LogUtils.logd("reinitializing, registered delegates will be unregistered");
-                sInstance.initialize(appId, tokenUrl, delegate);
+                sInstance.initialize(appId, "", tokenUrl, delegate);
             }
         } else {
             LogUtils.logd("returning new instance.");
-            sInstance = new JRSession(appId, tokenUrl, delegate);
+            sInstance = new JRSession(appId, "", tokenUrl, delegate);
         }
 
         return sInstance;
@@ -204,13 +222,17 @@ public class JRSession implements JRConnectionManagerDelegate {
     }
 
     private JRSession(String appId, String tokenUrl, JRSessionDelegate delegate) {
-        initialize(appId, tokenUrl, delegate);
+        initialize(appId, "", tokenUrl, delegate);
+    }
+
+    private JRSession(String appId, String appUrl, String tokenUrl, JRSessionDelegate delegate) {
+        initialize(appId, appUrl, tokenUrl, delegate);
     }
 
     /* We runtime type check the deserialized generics so we can safely ignore these unchecked
      * assignment warnings. */
     @SuppressWarnings("unchecked")
-    private void initialize(String appId, String tokenUrl, JRSessionDelegate delegate) {
+    private void initialize(String appId, String appUrl, String tokenUrl, JRSessionDelegate delegate) {
         LogUtils.logd("initializing instance.");
 
         // for configurability to test against e.g. staging
@@ -221,6 +243,7 @@ public class JRSession implements JRConnectionManagerDelegate {
         mDelegates.add(delegate);
 
         mAppId = appId;
+        mAppUrl = appUrl;
         mTokenUrl = tokenUrl;
         mUniqueIdentifier = this.getUniqueIdentifier();
 
@@ -697,12 +720,24 @@ public class JRSession implements JRConnectionManagerDelegate {
     public void tryToReconfigureLibraryWithNewAppId(String engageAppId) {
         clearEngageConfigurationCache();
         mAppId = engageAppId;
+        mAppUrl = "";
+        tryToReconfigureLibrary();
+    }
+
+    public void tryToReconfigureLibraryWithNewAppId(String engageAppId, String engageAppUrl) {
+        clearEngageConfigurationCache();
+        mAppId = engageAppId;
+        mAppUrl = engageAppUrl;
         tryToReconfigureLibrary();
     }
 
     private JREngageError startGetConfiguration() {
+        String engageBaseUrl = mEngageBaseUrl;
+        if(mAppUrl != null && !mAppUrl.isEmpty()){
+            engageBaseUrl = String.format("https://%s", mAppUrl);
+        }
         String urlString = String.format(UNFORMATTED_CONFIG_URL,
-                mEngageBaseUrl,
+                engageBaseUrl,
                 mAppId,
                 mUrlEncodedAppName,
                 mUrlEncodedLibraryVersion);

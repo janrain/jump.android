@@ -47,6 +47,10 @@ jump/build/**
 jump/build/**/*
 Samples/SimpleDemo/build
 Samples/SimpleDemo/*.iml
+Samples/SimpleDemo/SimpleDemo.iml
+Samples/SimpleDemo/gradlew
+Samples/SimpleDemo/gradle/
+Samples/SimpleDemo/jump/jump.iml
 Samples/SimpleDemo/build/**
 Samples/SimpleDemo/build/**/*
 Samples/SimpleDemo/*.iml
