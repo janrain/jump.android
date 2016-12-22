@@ -208,8 +208,8 @@ public class JRPublishFragment extends JRUiFragment implements TabHost.OnTabChan
         mUserCommentView.addTextChangedListener(mUserCommentTextWatcher);
         mEmailSmsComment.addTextChangedListener(mEmailSmsCommentTextWatcher);
 
-        mSmsButton.setColor(getColor(R.color.jr_janrain_darkblue));
-        mEmailButton.setColor(getColor(R.color.jr_janrain_darkblue));
+        mSmsButton.setColor(getColor(this.getContext(), R.color.jr_janrain_darkblue));
+        mEmailButton.setColor(getColor(this.getContext(), R.color.jr_janrain_darkblue));
 
         /* Retrieve the background color */
         /* TODO should default to android.R.attr.colorBackground if windowBackground can't be parlayed into a
@@ -255,7 +255,7 @@ public class JRPublishFragment extends JRUiFragment implements TabHost.OnTabChan
                 (double) Color.green(colorBackground),
                 (double) Color.blue(colorBackground),
         };
-        int colorGreyOutermostBox = getColor(R.color.jr_preview_outer_grey_bg_rect);
+        int colorGreyOutermostBox = getColor(this.getContext(), R.color.jr_preview_outer_grey_bg_rect);
         Double[] colorGreyBoxArray = {
                 (double) Color.alpha(colorGreyOutermostBox),
                 (double) Color.red(colorGreyOutermostBox),
@@ -289,12 +289,12 @@ public class JRPublishFragment extends JRUiFragment implements TabHost.OnTabChan
         float[] jrBlueLightHsv = new float[3];
         float[] jrBlueDarkHsv = new float[3];
         Color.colorToHSV(colorBackground, bgHsv);
-        Color.colorToHSV(getColor(R.color.jr_janrain_darkblue), jrBlueDarkHsv);
-        Color.colorToHSV(getColor(R.color.jr_janrain_darkblue_lightened), jrBlueLightHsv);
+        Color.colorToHSV(getColor(this.getContext(), R.color.jr_janrain_darkblue), jrBlueDarkHsv);
+        Color.colorToHSV(getColor(this.getContext(), R.color.jr_janrain_darkblue_lightened), jrBlueLightHsv);
         ((TextView) content.findViewById(R.id.jr_media_content_title)).setTextColor(
                 Math.abs(bgHsv[2] - jrBlueDarkHsv[2]) > Math.abs(bgHsv[2] - jrBlueLightHsv[2]) ?
-                        getColor(R.color.jr_janrain_darkblue)
-                        : getColor(R.color.jr_janrain_darkblue_lightened)
+                        getColor(this.getContext(), R.color.jr_janrain_darkblue)
+                        : getColor(this.getContext(), R.color.jr_janrain_darkblue_lightened)
         );
 
         ImageView triangle = (ImageView) content.findViewById(R.id.jr_triangle_icon_view);
@@ -649,7 +649,7 @@ public class JRPublishFragment extends JRUiFragment implements TabHost.OnTabChan
 
     private int getTextColorPrimary() {
         TypedValue data = getThemeAttributeValue(android.R.attr.textColorPrimary);
-        return (data.type == TypedValue.TYPE_REFERENCE) ? getColor(data.data) : data.data;
+        return (data.type == TypedValue.TYPE_REFERENCE) ? getColor(this.getContext(), data.data) : data.data;
     }
 
     private TypedValue getThemeAttributeValue(int attribute) {
