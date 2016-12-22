@@ -119,10 +119,10 @@ public class JRLandingFragment extends JRUiFragment {
 
         mSwitchAccountButton.setOnClickListener(mButtonListener);
         mSignInButton.setOnClickListener(mButtonListener);
-        mSignInButton.setColor(getColor(R.color.jr_janrain_darkblue_lightened));
+        mSignInButton.setColor(getColor(this.getContext(), R.color.jr_janrain_darkblue_lightened));
         if (AndroidUtils.SDK_INT <= 10) {
             /* Todo this should really test for Theme.Holo or it's descendants */
-            mSignInButton.setTextColor(getColor(android.R.color.white));
+            mSignInButton.setTextColor(getColor(this.getContext(), android.R.color.white));
         }
 
         mLogo.setImageDrawable(mProvider.getProviderIcon(getActivity()));
