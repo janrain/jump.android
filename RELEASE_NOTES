@@ -1,5 +1,11 @@
+v7.0.0
+- Implemented OpenID AppAuth Libraries to support Google WebView Deprecation.
+- Added support for non-standard Engage server url's
+- Added support for custom flow download location url's
+- Added support for Native Authentication using the WeChat application
+- Updated sample applications as needed to implement new changes.
+- Updated SimpleDemoNative sample app to use Facebook SDK version 4.18.0 and Twitter SDK version 2.3.1
 v6.0.0
-- IMPORTANT: This is the last release of this form of the Janrain Android Mobile Libraries.  Other than major bug fixes or compatibility updates no further implementations will be released.  A new Android Sample Application will be written using more modern Android tools and libraries.
 - The only IDE that this release supports and has been tested with is the Android Studio IDE.
 - The Android Mobile Libraries have removed all inter-dependencies on the Google, Facebook, and Twitter SDK's and Libraries.  The SimpleDemoNative app has been created to demonstrate how to integrate native provider logon for these providers using their SDK's and Libraries.  NOTE:  Google Play/Sign-On libraries newer than version 8.1 are NOT supported.  Google has changed the oAuth access token provisioning as of version 8.3 and it is no longer compatible with Janrain's API's at the time of this release.  Janrain will be updating their API's to support Google's re-architecture in the future.
 - Resolved an issue with the CaptureJsonUtils.java file where customers with large amounts of user records would overflow the Integer data type.
@@ -75,11 +81,11 @@ v4.1.1:
 v4.1.0:
  - Adds support for the merge-accounts sign-in flow. (Which enables an end user
    who has signed in with the "wrong" social identity to resolve the error by
-   linking that social identity with their existing record.) 
+   linking that social identity with their existing record.)
 v4.0.12:
  - Fixes a build error due to a missing-from-source-control utils class
 v4.0.11:
- - Bug fix to throttle back overzealous force-reauth flags which were triggering 
+ - Bug fix to throttle back overzealous force-reauth flags which were triggering
    double-password-entry Facebook authentications
 v4.0.10:
  - Updates to Engage-only integration guide
