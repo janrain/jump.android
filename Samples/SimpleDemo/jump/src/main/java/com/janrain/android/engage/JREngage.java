@@ -38,7 +38,7 @@ package com.janrain.android.engage;
  * Janrain Engage for Android SDK</a> makes it easy to include third party authentication and
  * social publishing in your Android app.  This library includes the same key
  * features as Janrain Engage for the web, as well as additional features created specifically for
- * the mobile platform. With as few as three lines of code, you can authenticate your users with 
+ * the mobile platform. With as few as three lines of code, you can authenticate your users with
  * their accounts on Google, Yahoo!, Facebook, etc., and they can immediately publish their
  * activities to multiple social networks, including Facebook, Twitter, LinkedIn, MySpace,
  * and Yahoo, through one simple interface.
@@ -56,11 +56,11 @@ package com.janrain.android.engage;
  * Janrain Engage application</a>,
  * which you can do on <a href="http://rpxnow.com">http://rpxnow.com</a>
  *
- * For an overview of how the library works and how you can take advantage of the library's 
- * features, please see the <a href="http://rpxnow.com/docs/android#user_experience">"Overview"</a> 
+ * For an overview of how the library works and how you can take advantage of the library's
+ * features, please see the <a href="http://rpxnow.com/docs/android#user_experience">"Overview"</a>
  * section of our documentation.
  *
- * To begin using the SDK, please see the 
+ * To begin using the SDK, please see the
  * <a href="http://rpxnow.com/docs/android#quick">"Quick Start Guide"</a>.
  *
  * For more detailed documentation of the library's API, you can use
@@ -727,7 +727,7 @@ public class JREngage {
      * @note If you always want to force the user to re-enter his/her credentials, pass \c true to the method
      * setAlwaysForceReauthentication().
      */
- 
+
 
     /**
      * Change the engage app ID and reload the Engage configuration data
@@ -843,7 +843,7 @@ public class JREngage {
                 new ApiConnection(JRSession.getInstance().getRpBaseUrl() + "/signin/oauth_token");
         if(tokenSecret != null){
             if(providerName.equals("wechat")){
-                connection.addAllToParams("token", accessToken, "wechat.openid", tokenSecret, "provider", providerName);
+                connection.addAllToParams("token", accessToken, "openid", tokenSecret, "provider", providerName);
             }else{
                 connection.addAllToParams("token", accessToken, "token_secret", tokenSecret, "provider", providerName);
             }
@@ -1259,7 +1259,7 @@ public class JREngage {
 /*@}*/
 
 
-    
+
     private JRSessionDelegate mJrsd = new JRSessionDelegate.SimpleJRSessionDelegate() {
         public void authenticationDidCancel() {
             LogUtils.logd();
@@ -1361,7 +1361,7 @@ public class JREngage {
         return new ArrayList<JREngageDelegate>(mDelegates);
     }
 
-    
+
 }
 
 /**
