@@ -2,9 +2,9 @@
 
 Tested withe the following provider SDK versions:
 
-* Facebook Android SDK 4.9.0
+* Facebook Android SDK 4.18.0
 * Google Play/Sign-In 8.1
-* Fabric.io Twitter 1.12.0
+* Fabric.io Twitter 2.3.1
 
 This application is NOT configured with any useful Application or SDK credentials.
 

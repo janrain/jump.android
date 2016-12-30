@@ -33,7 +33,7 @@ dependencies {
     compile 'com.android.support:cardview-v7:24.1.0'
     compile 'com.android.support:appcompat-v7:24.2.1'
     //http://stackoverflow.com/questions/21882804/adding-local-aar-files-to-my-gradle-build
-    compile project(':facebook-android-sdk-4.9.0')
+    compile project(':facebook-android-sdk-4.18.0')
     compile project(':jump')
     compile('com.twitter.sdk.android:twitter:2.3.1@aar') {
         transitive = true;
@@ -56,10 +56,11 @@ android {
         targetSdkVersion 25
         multiDexEnabled = true
 
-        // replace the below string with your own Google client ID. Make sure this is consistent
+        // If using web-based (not native) Google authentication.
+        // Replace the below string with your own Google client ID. Make sure this is consistent
         // with the values used in openid_appauth_idp_configs.xml
         manifestPlaceholders = [
-                'appAuthRedirectScheme': 'com.googleusercontent.apps.169582807084-bk8a4jintrtka452cj1v610s588riapp'
+                'appAuthRedirectScheme': 'com.googleusercontent.apps.UPDATE_WITH_GOOGLE_CLIENT_ID'
         ]
     }
 
