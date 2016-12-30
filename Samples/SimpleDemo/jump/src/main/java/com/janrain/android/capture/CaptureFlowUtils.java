@@ -46,7 +46,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import static android.R.attr.password;
 import static com.janrain.android.utils.CollectionUtils.Function;
 import static com.janrain.android.utils.CollectionUtils.filter;
 import static com.janrain.android.utils.LogUtils.throwDebugException;
