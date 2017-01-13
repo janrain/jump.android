@@ -33,8 +33,6 @@
 package com.janrain.android.simpledemo;
 
 import android.app.Application;
-import android.content.Context;
-
 import com.janrain.android.Jump;
 import com.janrain.android.JumpConfig;
 
@@ -43,6 +41,7 @@ public class SimpleDemoApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
         JumpConfig jumpConfig = new JumpConfig();
 
         jumpConfig.engageAppId = "appcfamhnpkagijaeinl";
@@ -63,5 +62,6 @@ public class SimpleDemoApplication extends Application {
 
         Jump.init(this, jumpConfig);
     }
+
 
 }

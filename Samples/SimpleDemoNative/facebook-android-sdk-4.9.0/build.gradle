@@ -1,2 +1,0 @@
-configurations.create("default")
-artifacts.add("default", file('facebook-android-sdk-4.9.0.aar'))

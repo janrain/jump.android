@@ -39,15 +39,18 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.InputType;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 
@@ -76,10 +79,13 @@ public class MainActivity extends FragmentActivity {
 
     private class MySignInResultHandler implements Jump.SignInResultHandler, Jump.SignInCodeHandler {
         public void onSuccess() {
+            LogUtils.logd("User Logged in: " + String.valueOf(Jump.getSignedInUser()));
+
             AlertDialog.Builder b = new AlertDialog.Builder(MainActivity.this);
             b.setMessage("Sign-in complete.");
             b.setNeutralButton("Dismiss", null);
-            b.show();
+            AlertDialog alertDialog = b.create();
+            alertDialog.show();
         }
 
         public void onCode(String code) {
@@ -177,7 +183,7 @@ public class MainActivity extends FragmentActivity {
         linearLayout.setLayoutParams(new LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT));
         linearLayout.setOrientation(LinearLayout.VERTICAL);
 
-        Button webviewAuth = addButton(linearLayout, "Webview Sign-In");
+        Button webviewAuth = addButton(linearLayout, "Social Sign-In");
 
         Button dumpRecord = addButton(linearLayout, "Dump Record to Log");
         Button editProfile = addButton(linearLayout, "Edit Profile");

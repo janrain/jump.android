@@ -103,5 +103,10 @@
     <string name="jr_capture_forgotpassword_error_msg">Incorrect Email or Password</string>
     <string name="jr_capture_forgotpassword_reset_error_msg">Could Not Reset Password</string>
 
+    <!-- OpenID AppAuth -->
+    <string name="browser_selector_label">Use browser:</string>
+    <string name="browser_icon_contentDescription">Browser app icon</string>
+    <string name="browser_appauth_default_label">AppAuth heuristic selection</string>
+    <string name="custom_tab_label">"%1$s (custom tab)"</string>
 
 </resources>
