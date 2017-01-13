@@ -38,7 +38,7 @@ package com.janrain.android.engage;
  * Janrain Engage for Android SDK</a> makes it easy to include third party authentication and
  * social publishing in your Android app.  This library includes the same key
  * features as Janrain Engage for the web, as well as additional features created specifically for
- * the mobile platform. With as few as three lines of code, you can authenticate your users with 
+ * the mobile platform. With as few as three lines of code, you can authenticate your users with
  * their accounts on Google, Yahoo!, Facebook, etc., and they can immediately publish their
  * activities to multiple social networks, including Facebook, Twitter, LinkedIn, MySpace,
  * and Yahoo, through one simple interface.
@@ -56,11 +56,11 @@ package com.janrain.android.engage;
  * Janrain Engage application</a>,
  * which you can do on <a href="http://rpxnow.com">http://rpxnow.com</a>
  *
- * For an overview of how the library works and how you can take advantage of the library's 
- * features, please see the <a href="http://rpxnow.com/docs/android#user_experience">"Overview"</a> 
+ * For an overview of how the library works and how you can take advantage of the library's
+ * features, please see the <a href="http://rpxnow.com/docs/android#user_experience">"Overview"</a>
  * section of our documentation.
  *
- * To begin using the SDK, please see the 
+ * To begin using the SDK, please see the
  * <a href="http://rpxnow.com/docs/android#quick">"Quick Start Guide"</a>.
  *
  * For more detailed documentation of the library's API, you can use
@@ -189,6 +189,7 @@ public class JREngage {
      * @param appId    Your 20-character application ID.  You can find this on your application's
      *                 Engage Dashboard at <a href="http://rpxnow.com">http://rpxnow.com</a>.  This value
      *                 cannot be null
+     * @param appUrl   Used for non rpxnow.com engage apps
      * @param tokenUrl The URL on your server where you wish to complete authentication, or null.  If
      *                 provided, the JREngage library will post the user's authentication token to this URL
      *                 where it can used for further authentication and processing.  When complete, the
@@ -199,9 +200,10 @@ public class JREngage {
      */
     public static JREngage initInstance(final Context context,
                                         final String appId,
+                                        final String appUrl,
                                         final String tokenUrl,
                                         final JREngageDelegate delegate) {
-        return JREngage.initInstance(context, appId, tokenUrl, delegate, null);
+        return JREngage.initInstance(context, appId, appUrl, tokenUrl, delegate, null);
     }
 
     /**
@@ -217,12 +219,37 @@ public class JREngage {
      *                 where it can used for further authentication and processing.  When complete, the
      *                 library will pass the server's response back to the your application
      * @param delegate The delegate object that implements the JREngageDelegate interface
+     * @return The shared instance of the JREngage object initialized with the given
+     *         appId, tokenUrl, and delegate.  If the given appId is null, returns null
+     */
+    public static JREngage initInstance(final Context context,
+                                        final String appId,
+                                        final String tokenUrl,
+                                        final JREngageDelegate delegate) {
+        return JREngage.initInstance(context, appId, "", tokenUrl, delegate, null);
+    }
+
+    /**
+     * Initializes and returns the singleton instance of JREngage.
+     *
+     * @param context  The Android Context used to access to system resources (e.g. global
+     *                 preferences).  This value cannot be null
+     * @param appId    Your 20-character application ID.  You can find this on your application's
+     *                 Engage Dashboard at <a href="http://rpxnow.com">http://rpxnow.com</a>.  This value
+     *                 cannot be null
+     * @param appUrl   Used for non rpxnow.com engage apps
+     * @param tokenUrl The URL on your server where you wish to complete authentication, or null.  If
+     *                 provided, the JREngage library will post the user's authentication token to this URL
+     *                 where it can used for further authentication and processing.  When complete, the
+     *                 library will pass the server's response back to the your application
+     * @param delegate The delegate object that implements the JREngageDelegate interface
      * @param customProviders Describes the configuration of custom identity providers
      * @return The shared instance of the JREngage object initialized with the given
      *         appId, tokenUrl, and delegate.  If the given appId is null, returns null
      */
     public static JREngage initInstance(final Context context,
                                         final String appId,
+                                        final String appUrl,
                                         final String tokenUrl,
                                         final JREngageDelegate delegate,
                                         final Map<String, JRDictionary> customProviders) {
@@ -231,10 +258,6 @@ public class JREngage {
         }
 
         if (sLoggingEnabled == null) sLoggingEnabled = AndroidUtils.isApplicationDebuggable(context);
-
-        if (TextUtils.isEmpty(appId)) {
-            throwDebugException(new IllegalArgumentException("appId parameter cannot be null."));
-        }
 
         LogUtils.logd("git resource '" + context.getString(jr_git_describe) +
                 "' activity '" + context + "' appId '" + appId + "' tokenUrl '" + tokenUrl + "'");
@@ -245,7 +268,7 @@ public class JREngage {
             // Initialize JRSession in background thread because it does a bunch of IO
             ThreadUtils.executeInBg(new Runnable() {
                 public void run() {
-                    sInstance.mSession = JRSession.getInstance(appId, tokenUrl, sInstance.mJrsd);
+                    sInstance.mSession = JRSession.getInstance(appId, appUrl, tokenUrl, sInstance.mJrsd);
                     sInstance.mSession.setCustomProviders(customProviders);
 
                     // any use of the library is guarded by blockOnInitialization, which checks this ivar,
@@ -677,7 +700,7 @@ public class JREngage {
                 }
             });
         } else {
-            showWebAuthFlowInternal(fromActivity, providerName, provider, uiCustomization);
+            showAuthFlowInternal(fromActivity, providerName, uiCustomization);
         }
     }
 
@@ -704,7 +727,7 @@ public class JREngage {
      * @note If you always want to force the user to re-enter his/her credentials, pass \c true to the method
      * setAlwaysForceReauthentication().
      */
- 
+
 
     /**
      * Change the engage app ID and reload the Engage configuration data
@@ -732,7 +755,38 @@ public class JREngage {
                 }
             }
         });
-        JRSession.getInstance().tryToReconfigureLibraryWithNewAppId(engageAppId);
+        JRSession.getInstance().tryToReconfigureLibraryWithNewAppId(engageAppId, "");
+    }
+
+    /**
+     * Change the engage app ID and reload the Engage configuration data
+     * @param engageAppId
+     *   The new Engage app id
+     * @param engageAppUrl
+     *   Used for non rpx.now Engage apps
+     */
+    public void changeEngageAppId(String engageAppId, String engageAppUrl) {
+        blockOnInitialization();
+
+        mConfigFinishListeners.add(new ConfigFinishListener() {
+            @Override
+            public void configDidFinish() {
+                mConfigFinishListeners.remove(this);
+                JREngageError error = mSession.getError();
+                LocalBroadcastManager manager = LocalBroadcastManager.getInstance(mActivityContext);
+
+                if (error == null) {
+                    Intent intent = new Intent(JR_SUCCESSFULLY_UPDATED_ENGAGE_APP_ID);
+                    intent.putExtra("message", "Successfully updated Engage App ID");
+                    manager.sendBroadcast(intent);
+                } else {
+                    Intent intent = new Intent(JR_FAILED_TO_UPDATE_ENGAGE_APP_ID);
+                    intent.putExtra("message", "Failed to change Engage AppID");
+                    manager.sendBroadcast(intent);
+                }
+            }
+        });
+        JRSession.getInstance().tryToReconfigureLibraryWithNewAppId(engageAppId, engageAppUrl);
     }
 
     /**
@@ -743,10 +797,10 @@ public class JREngage {
         void configDidFinish();
     }
 
-
-    public static enum NativeAuthError {
+    public static enum ExternalAuthError {
         ENGAGE_ERROR
     }
+
 
     public void getAuthInfoTokenForNativeProvider(final Activity fromActivity,
                                                   final String providerName,
@@ -764,14 +818,14 @@ public class JREngage {
             public void run(JSONObject json) {
 
                 if (json == null) {
-                    triggerOnFailure("Bad Response", NativeAuthError.ENGAGE_ERROR);
+                    triggerOnFailure("Bad Response", ExternalAuthError.ENGAGE_ERROR);
                     return;
                 }
 
                 String status = json.optString("stat");
 
                 if (json == null || json.optString("stat") == null || !json.optString("stat").equals("ok")) {
-                    triggerOnFailure("Bad Json: " + json, NativeAuthError.ENGAGE_ERROR);
+                    triggerOnFailure("Bad Json: " + json, ExternalAuthError.ENGAGE_ERROR);
                     return;
                 }
 
@@ -788,7 +842,11 @@ public class JREngage {
         ApiConnection connection =
                 new ApiConnection(JRSession.getInstance().getRpBaseUrl() + "/signin/oauth_token");
         if(tokenSecret != null){
-            connection.addAllToParams("token", accessToken, "token_secret", tokenSecret, "provider", providerName);
+            if(providerName.equals("wechat")){
+                connection.addAllToParams("token", accessToken, "openid", tokenSecret, "provider", providerName);
+            }else{
+                connection.addAllToParams("token", accessToken, "token_secret", tokenSecret, "provider", providerName);
+            }
         }else{
             connection.addAllToParams("token", accessToken, "provider", providerName);
         }
@@ -803,11 +861,11 @@ public class JREngage {
         mSession.triggerAuthenticationDidCompleteWithPayload(payload);
     }
 
-    /*package*/ void triggerOnFailure(String message, NativeAuthError errorCode) {
+    /*package*/ void triggerOnFailure(String message, ExternalAuthError errorCode) {
         triggerOnFailure(message, errorCode, null, false);
     }
 
-    /*package*/void triggerOnFailure(final String message, NativeAuthError errorCode, Exception exception,
+    /*package*/void triggerOnFailure(final String message, ExternalAuthError errorCode, Exception exception,
                                      boolean shouldTryWebViewAuthentication) {
         //completion.onFailure(message, errorCode, exception, shouldTryWebViewAuthentication);
         LogUtils.loge("triggerOnFailure message: " + message);
@@ -815,6 +873,53 @@ public class JREngage {
 
         if(exception != null) LogUtils.loge("triggerOnFailure exception: " + exception.getMessage());
 
+    }
+
+    /**
+     * @internal
+     * @hide
+     */
+    private void showAuthFlowInternal(final Activity fromActivity,
+                                      final String providerName,
+                                      final Class<? extends JRCustomInterface> uiCustomization) {
+        JRProvider provider = mSession.getProviderByName(providerName);
+
+        if (provider != null && JROpenIDAppAuth.canHandleProvider(mApplicationContext, provider)) {
+            showOpenIDAppAuthFlowInternal(fromActivity, provider, uiCustomization);
+        } else {
+            showWebAuthFlowInternal(fromActivity, providerName, provider, uiCustomization);
+        }
+    }
+
+    private void showOpenIDAppAuthFlowInternal(final Activity fromActivity,
+                                            final JRProvider provider,
+                                            final Class<? extends JRCustomInterface> uiCustomization) {
+        mSession.setCurrentlyAuthenticatingProvider(provider);
+        mUiCustomization = uiCustomization;
+
+        Intent i = JRFragmentHostActivity.createOpenIDAppAuthIntent(fromActivity);
+        i.putExtra(JRFragmentHostActivity.JR_PROVIDER, provider.getName());
+        fromActivity.startActivity(i);
+    }
+
+    public JROpenIDAppAuth.OpenIDAppAuthCallback getNativeAuthCallback(final Activity fromActivity,
+                                                                 final Class<? extends JRCustomInterface> uiCustomization) {
+        final JRProvider provider = mSession.getCurrentlyAuthenticatingProvider();
+
+        return new JROpenIDAppAuth.OpenIDAppAuthCallback() {
+            public void onSuccess(JRDictionary payload) {
+                mSession.saveLastUsedAuthProvider();
+                mSession.triggerAuthenticationDidCompleteWithPayload(payload);
+            }
+
+            public boolean shouldTriggerAuthenticationDidCancel() {
+                return true;
+            }
+
+            public void tryWebViewAuthentication() {
+                showWebAuthFlowInternal(fromActivity, provider.getName(), provider, uiCustomization);
+            }
+        };
     }
 
     private void showWebAuthFlowInternal(final Activity fromActivity,
@@ -1154,7 +1259,7 @@ public class JREngage {
 /*@}*/
 
 
-    
+
     private JRSessionDelegate mJrsd = new JRSessionDelegate.SimpleJRSessionDelegate() {
         public void authenticationDidCancel() {
             LogUtils.logd();
@@ -1256,7 +1361,7 @@ public class JREngage {
         return new ArrayList<JREngageDelegate>(mDelegates);
     }
 
-    
+
 }
 
 /**

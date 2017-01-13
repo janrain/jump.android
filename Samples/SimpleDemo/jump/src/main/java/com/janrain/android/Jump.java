@@ -118,7 +118,8 @@ public class Jump {
         /*package*/ String userAgent;
         /*package*/ String accessToken;
         /*package*/ String captureRedirectUri;
-
+        /*package*/ String engageAppUrl;
+        /*package*/ String downloadFlowUrl;
         // Transient state values:
         /*
          * Every method that performs a sign-in or registration must set signInHandler and call
@@ -175,7 +176,7 @@ public class Jump {
 
         state.context = context;
         state.jrEngage = JREngage.initInstance(context.getApplicationContext(), jumpConfig.engageAppId,
-                null, null, jumpConfig.customProviders);
+                jumpConfig.engageAppUrl, null, null, jumpConfig.customProviders);
         state.captureSocialRegistrationFormName = jumpConfig.captureSocialRegistrationFormName;
         state.captureTraditionalRegistrationFormName = jumpConfig.captureTraditionalRegistrationFormName;
         state.captureEditUserProfileFormName = jumpConfig.captureEditUserProfileFormName;
@@ -195,6 +196,9 @@ public class Jump {
         }else{
             state.captureRedirectUri = jumpConfig.captureRedirectUri;
         }
+        state.engageAppUrl = jumpConfig.engageAppUrl;
+        state.downloadFlowUrl = jumpConfig.downloadFlowUrl;
+
 
 
 
@@ -898,11 +902,20 @@ public class Jump {
     private static void downloadFlow() {
         String flowVersion = state.captureFlowVersion != null ? state.captureFlowVersion : "HEAD";
 
-        String flowUrlString =
-                String.format("https://%s.cloudfront.net/widget_data/flows/%s/%s/%s/%s.json",
-                        state.flowUsesTestingCdn ? "dlzjvycct5xka" : "d1lqe9temigv1p",
-                        state.captureAppId, state.captureFlowName, flowVersion,
-                        state.captureLocale);
+        String flowUrlString = "";
+
+        if(state.downloadFlowUrl != null && !state.downloadFlowUrl.isEmpty()){
+            flowUrlString = String.format("https://%s/widget_data/flows/%s/%s/%s/%s.json",
+                    state.downloadFlowUrl,
+                    state.captureAppId, state.captureFlowName, flowVersion,
+                    state.captureLocale);
+        }else{
+            flowUrlString = String.format("https://%s.cloudfront.net/widget_data/flows/%s/%s/%s/%s.json",
+                    state.flowUsesTestingCdn ? "dlzjvycct5xka" : "d1lqe9temigv1p",
+                    state.captureAppId, state.captureFlowName, flowVersion,
+                    state.captureLocale);
+        }
+
 
         ApiConnection c = new ApiConnection(flowUrlString);
         c.method = ApiConnection.Method.GET;

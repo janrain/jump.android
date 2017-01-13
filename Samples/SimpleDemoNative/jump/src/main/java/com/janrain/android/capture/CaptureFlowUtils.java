@@ -72,6 +72,11 @@ public class CaptureFlowUtils {
                 continue;
             }
 
+            if(!((Map) fieldEntry.getValue()).containsKey("schemaId")){
+                throwDebugException(new RuntimeException("field defn is missing schemaId: " +
+                        fieldEntry.getValue() + " - field skipped"));
+                continue;
+            }
             Object schemaId = ((Map) fieldEntry.getValue()).get("schemaId");
 
             String key = (String) fieldEntry.getKey();

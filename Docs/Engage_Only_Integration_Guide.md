@@ -87,6 +87,22 @@ project's `AndroidManifest.xml` file:
             android:theme="@style/Theme.Janrain.Light"
             android:windowSoftInputMode="adjustResize|stateHidden"
             />
+        <activity android:name="net.openid.appauth.RedirectUriReceiverActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="https"
+                    android:host="com.googleusercontent.apps.UPDATE_WITH_GOOGLE_CLIENT_ID:"
+                    android:path="/oauth2redirect"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.janrain.android.engage.OpenIDAppAuthTokenActivity"
+            android:label="SimpleDemoApplication"
+            android:theme="@style/Theme.Janrain.Dialog.Light"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
 
       ...
 
@@ -101,6 +117,27 @@ project's local.properties. `android list target` to get a list of targets avail
 the Android SDK. `android update project -p path/to/project -t target_name_or_target_installation_id` to
 update the build target SDK for your project. (Note that this does *not* affect your project's
 `minSdkVersion` or `targetSdkVersion`.)
+
+Open the '/jump.android/Jump/src/res/values/openid_appauth_idp_configs.xml' file and update the `google_client_id` and `google_auth_redirect_uri` with the appropriate Google application client id that correlates to the Google app that is used in your Engage application.
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    This contains the authorization service configuration details that are used to demonstrate
+    authentication. By default, all authorization services are disabled until you modify this file
+    to provide your own configuration details.
+    -->
+    <eat-comment/>
+    <bool name="google_enabled">true</bool>
+    <string name="google_client_id" translatable="false">UPDATE_WITH_GOOGLE_CLIENT_ID.apps.googleusercontent.com</string>
+    <!--
+    NOTE: This scheme is automatically provisioned by Google for Android OAuth2 clients, and is
+    the reverse form of the client ID registered above. Handling of this scheme is registered in an
+    intent filter in the app's manifest.
+    -->
+    <string name="google_auth_redirect_uri" translatable="false">com.googleusercontent.apps.UPDATE_WITH_GOOGLE_CLIENT_ID:/oauth2redirect</string>
+</resources>
+```
 
 ## Import and Initialize
 
@@ -182,4 +219,49 @@ Then pass the activity to the
 method:
 
     mEngage.showSocialPublishingDialogWithActivity(jrActivity);
+
+### Upgrading to v7.0
+
+- Update the module settings for your project to use the latest Jump sdk files you may need to remove any existing "jump" modules and re-add the latest module in order to ensure your project files are updated.
+- Open the '/jump.android/Jump/src/res/values/openid_appauth_idp_configs.xml' file and update the `google_client_id` and `google_auth_redirect_uri` with the appropriate Google application client id that correlates to the Google app that is used in your Engage application.
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    This contains the authorization service configuration details that are used to demonstrate
+    authentication. By default, all authorization services are disabled until you modify this file
+    to provide your own configuration details.
+    -->
+    <eat-comment/>
+    <bool name="google_enabled">true</bool>
+    <string name="google_client_id" translatable="false">UPDATE_WITH_GOOGLE_CLIENT_ID.apps.googleusercontent.com</string>
+    <!--
+    NOTE: This scheme is automatically provisioned by Google for Android OAuth2 clients, and is
+    the reverse form of the client ID registered above. Handling of this scheme is registered in an
+    intent filter in the app's manifest.
+    -->
+    <string name="google_auth_redirect_uri" translatable="false">com.googleusercontent.apps.UPDATE_WITH_GOOGLE_CLIENT_ID:/oauth2redirect</string>
+</resources>
+```
+
+- Open your application's AndroidManifest.xml and add the following activities (modify as needed):
+```xml
+<activity android:name="net.openid.appauth.RedirectUriReceiverActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.VIEW"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+        <category android:name="android.intent.category.BROWSABLE"/>
+        <data android:scheme="https"
+            android:host="com.googleusercontent.apps.UPDATE_WITH_GOOGLE_CLIENT_ID:"
+            android:path="/oauth2redirect"/>
+    </intent-filter>
+</activity>
+<activity
+    android:name="com.janrain.android.engage.OpenIDAppAuthTokenActivity"
+    android:label="SimpleDemoApplication"
+    android:theme="@style/Theme.Janrain.Dialog.Light"
+    android:windowSoftInputMode="stateHidden" >
+</activity>
+```
+
 

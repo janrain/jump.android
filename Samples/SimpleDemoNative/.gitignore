@@ -1,0 +1,83 @@
+*.DS_Store
+#built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/**
+gen/**
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Windows thumbnail db
+Thumbs.db
+
+# OSX files
+.DS_Store
+
+# Eclipse project files
+.classpath
+.project
+
+# Android Studio
+*.iml
+.idea
+#.idea/workspace.xml - remove # and delete .idea if it better suit your needs.
+.idea
+.gradle
+.gradle/**
+.gradle/**/*
+build
+build/**
+build/**/*
+jump/build
+jump/*.iml
+jump/.idea
+jump/.gradle
+jump/.gradle/**
+jump/.gradle/**/*
+jump/build/**
+jump/build/**/*
+Samples/SimpleDemo/build
+Samples/SimpleDemo/*.iml
+Samples/SimpleDemo/SimpleDemo.iml
+Samples/SimpleDemo/gradlew
+Samples/SimpleDemo/gradle/
+Samples/SimpleDemo/jump/jump.iml
+Samples/SimpleDemo/build/**
+Samples/SimpleDemo/build/**/*
+Samples/SimpleDemo/*.iml
+Samples/SimpleDemo/.idea
+Samples/SimpleDemo/.gradle
+Samples/SimpleDemo/.gradle/**
+Samples/SimpleDemo/.gradle/**/*
+Samples/SimpleDemo/build
+Samples/SimpleDemo/jump/build
+Samples/SimpleDemo/jump/build/**
+Samples/SimpleDemo/jump/build/**/*
+Samples/SimpleDemoNative/*.iml
+Samples/SimpleDemoNative/.idea
+Samples/SimpleDemoNative/.gradle
+Samples/SimpleDemoNative/.gradle/**
+Samples/SimpleDemoNative/.gradle/**/*
+Samples/SimpleDemoNative/build
+Samples/SimpleDemoNative/build/**
+Samples/SimpleDemoNative/build/**/*
+Samples/SimpleDemoNative/jump/*.iml
+Samples/SimpleDemoNative/jump/.idea
+Samples/SimpleDemoNative/jump/.gradle
+Samples/SimpleDemoNative/jump/.gradle/**
+Samples/SimpleDemoNative/jump/.gradle/**/*
+Samples/SimpleDemoNative/jump/build
+Samples/SimpleDemoNative/jump/build/**
+Samples/SimpleDemoNative/jump/build/**/*
+
+#NDK
+obj/
