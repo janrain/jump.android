@@ -95,15 +95,17 @@ public class TradSignInUi extends JRCustomInterfaceConfiguration {
 
         // http://stackoverflow.com/questions/2620444/how-to-prevent-a-dialog-from-closing-when-a-button-is-clicked
         dialog.setOnShowListener(new DialogInterface.OnShowListener() {
-            public void onShow(DialogInterface _) {
-                signInButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+            public void onShow(final DialogInterface dialog) {
+                signInButton = ((AlertDialog) dialog).getButton(AlertDialog.BUTTON_POSITIVE);
                 signInButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
                     public void onClick(View v) {
                         tradSignInView.onStandAloneClick();
                     }
                 });
-                cancelButton = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
+                cancelButton = ((AlertDialog) dialog).getButton(AlertDialog.BUTTON_NEGATIVE);
                 cancelButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
                     public void onClick(View v) {
                         Jump.fireHandlerOnFailure(new Jump.SignInResultHandler.SignInError(
                                 AUTHENTICATION_CANCELED_BY_USER, null, null));

@@ -118,7 +118,8 @@ public class Jump {
         /*package*/ String userAgent;
         /*package*/ String accessToken;
         /*package*/ String captureRedirectUri;
-
+        /*package*/ String engageAppUrl;
+        /*package*/ String downloadFlowUrl;
         // Transient state values:
         /*
          * Every method that performs a sign-in or registration must set signInHandler and call
@@ -175,7 +176,7 @@ public class Jump {
 
         state.context = context;
         state.jrEngage = JREngage.initInstance(context.getApplicationContext(), jumpConfig.engageAppId,
-                null, null, jumpConfig.customProviders);
+                jumpConfig.engageAppUrl, null, null, jumpConfig.customProviders);
         state.captureSocialRegistrationFormName = jumpConfig.captureSocialRegistrationFormName;
         state.captureTraditionalRegistrationFormName = jumpConfig.captureTraditionalRegistrationFormName;
         state.captureEditUserProfileFormName = jumpConfig.captureEditUserProfileFormName;
@@ -195,6 +196,9 @@ public class Jump {
         }else{
             state.captureRedirectUri = jumpConfig.captureRedirectUri;
         }
+        state.engageAppUrl = jumpConfig.engageAppUrl;
+        state.downloadFlowUrl = jumpConfig.downloadFlowUrl;
+
 
 
 
@@ -345,7 +349,11 @@ public class Jump {
         } catch (PackageManager.NameNotFoundException e) {
             throwDebugException(new RuntimeException("User agent create failed : ", e));
         }
+        if (state.userAgent == null){
+            state.userAgent = "";
+        }
         return state.userAgent;
+
     }
 
     public static String getAccessToken() {
@@ -381,7 +389,7 @@ public class Jump {
         if ("capture".equals(providerName)) {
             TradSignInUi.showStandAloneDialog(fromActivity, mergeToken);
         } else {
-        	showSocialSignInDialog(fromActivity, providerName, mergeToken);
+            showSocialSignInDialog(fromActivity, providerName, mergeToken);
         }
     }
 
@@ -735,7 +743,7 @@ public class Jump {
      * An interface to receive a callback which handles the Facebook closeAndClearTokenInformation call.
      */
     public interface FacebookRevokedHandler {
-    	/**
+        /**
          * Called when Facebook closeAndClearTokenInformation has succeeded. 
          */
         void onSuccess();
@@ -894,11 +902,20 @@ public class Jump {
     private static void downloadFlow() {
         String flowVersion = state.captureFlowVersion != null ? state.captureFlowVersion : "HEAD";
 
-        String flowUrlString =
-                String.format("https://%s.cloudfront.net/widget_data/flows/%s/%s/%s/%s.json",
-                        state.flowUsesTestingCdn ? "dlzjvycct5xka" : "d1lqe9temigv1p",
-                        state.captureAppId, state.captureFlowName, flowVersion,
-                        state.captureLocale);
+        String flowUrlString = "";
+
+        if(state.downloadFlowUrl != null && !state.downloadFlowUrl.isEmpty()){
+            flowUrlString = String.format("https://%s/widget_data/flows/%s/%s/%s/%s.json",
+                    state.downloadFlowUrl,
+                    state.captureAppId, state.captureFlowName, flowVersion,
+                    state.captureLocale);
+        }else{
+            flowUrlString = String.format("https://%s.cloudfront.net/widget_data/flows/%s/%s/%s/%s.json",
+                    state.flowUsesTestingCdn ? "dlzjvycct5xka" : "d1lqe9temigv1p",
+                    state.captureAppId, state.captureFlowName, flowVersion,
+                    state.captureLocale);
+        }
+
 
         ApiConnection c = new ApiConnection(flowUrlString);
         c.method = ApiConnection.Method.GET;
@@ -1015,7 +1032,7 @@ public class Jump {
          * lines of code.
          */
         if(tempExistingProvider.equals("google")){
-        	tempExistingProvider = "googleplus";
+            tempExistingProvider = "googleplus";
         }
         final String existingProvider = tempExistingProvider;
         
@@ -1039,12 +1056,12 @@ public class Jump {
                                 //
                                 // ... instead of showSignInDialog if you wish to present your own dialog
                                 // and then use the headless API to perform the traditional sign-in.
-                            	
-                            	// For the Merge Account workflow it is recommended to use the standard 
+                                
+                                // For the Merge Account workflow it is recommended to use the standard 
                                 // web based (non-native) authentication dialog.  This allows the end 
                                 // user to manually enter the social account that "owns" the Janrain user 
                                 // record.  If the user did not have this account stored on their 
-                            	// phone or had multiple accounts stored the user interface could be overly 
+                                // phone or had multiple accounts stored the user interface could be overly 
                                 // complicated. The standard web based sign in dialog can be forced by 
                                 // passing a null permissions parameter in the method call below
                                 Jump.showSignInDialog(fromActivity,
