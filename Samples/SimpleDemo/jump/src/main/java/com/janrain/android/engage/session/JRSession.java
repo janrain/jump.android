@@ -393,7 +393,8 @@ public class JRSession implements JRConnectionManagerDelegate {
                 // Filter by enabled provider list if available
                 if (mEnabledAuthenticationProviders != null &&
                         !mEnabledAuthenticationProviders.contains(name)) continue;
-                providerList.add(mProviders.get(name));
+                JRProvider provider = mProviders.get(name);
+                if(provider != null) providerList.add(mProviders.get(name));
             }
         }
         if (mCustomProviders != null) providerList.addAll(mCustomProviders);
@@ -1242,7 +1243,7 @@ public class JRSession implements JRConnectionManagerDelegate {
         // redundantly call the setter to ensure the provider is still available
         setReturningSharingProvider(mReturningSharingProvider);
     }
-    
+
     //public List<String> getEnabledSharingProviders() {
     //    if (mEnabledSharingProviders == null) {
     //        return mSharingProviders;
