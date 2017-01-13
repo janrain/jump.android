@@ -51,7 +51,8 @@ Report bugs or ask questions:
 </activity>
 ```
 
-### Upgrading to v6.0
+### Upgrading to v6.0.1
+
 
 - The only IDE that this release supports and has been tested with is the Android Studio IDE.
 - The Android Mobile Libraries have removed all inter-dependencies on the Google, Facebook, and Twitter SDK's and Libraries.  The SimpleDemoNative app has been created to demonstrate how to integrate native provider logon for these providers using their SDK's and Libraries.  NOTE:  Google Play/Sign-On libraries newer than version 8.1 are NOT supported.  Google has changed the oAuth access token provisioning as of version 8.3 and it is no longer compatible with Janrain's API's at the time of this release.  Janrain will be updating their API's to support Google's re-architecture in the future.
