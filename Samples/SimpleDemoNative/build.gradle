@@ -4,7 +4,7 @@ buildscript {
         maven { url 'https://maven.fabric.io/public' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.3.+'
+        classpath 'com.android.tools.build:gradle:2.2.3'
         classpath 'com.google.gms:google-services:1.3.0'
         classpath 'io.fabric.tools:gradle:1.+'
     }
@@ -21,7 +21,7 @@ repositories {
 
 dependencies {
     compile files('libs/org.apache.http.legacy.jar')
-    compile 'com.android.support:multidex:1.0.0'
+    compile 'com.android.support:multidex:1.0.1'
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'com.twitter:twitter-text:1.13.0'
     compile 'com.google.android.gms:play-services:8.1.0'
@@ -30,18 +30,19 @@ dependencies {
 
     //jcenter mavencentral conflict - locally imported Facebook SDK aar
     //Cardview required for Facebook SDK 4.9.0
-    compile 'com.android.support:cardview-v7:23.1.0'
+    compile 'com.android.support:cardview-v7:24.1.0'
+    compile 'com.android.support:appcompat-v7:24.2.1'
     //http://stackoverflow.com/questions/21882804/adding-local-aar-files-to-my-gradle-build
-    compile project(':facebook-android-sdk-4.9.0')
+    compile project(':facebook-android-sdk-4.18.0')
     compile project(':jump')
-    compile('com.twitter.sdk.android:twitter:1.12.0@aar') {
+    compile('com.twitter.sdk.android:twitter:2.3.1@aar') {
         transitive = true;
     }
 }
 
 android {
-    compileSdkVersion 'Google Inc.:Google APIs:23'
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
 
     //If building with strict Android 6.0 the following will need to be uncommented
     //See: https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html
@@ -52,8 +53,15 @@ android {
     defaultConfig {
         applicationId "com.janrain.android.multidex.simpledemonative"
         minSdkVersion 17
-        targetSdkVersion 23
+        targetSdkVersion 25
         multiDexEnabled = true
+
+        // If using web-based (not native) Google authentication.
+        // Replace the below string with your own Google client ID. Make sure this is consistent
+        // with the values used in openid_appauth_idp_configs.xml
+        manifestPlaceholders = [
+                'appAuthRedirectScheme': 'com.googleusercontent.apps.UPDATE_WITH_GOOGLE_CLIENT_ID'
+        ]
     }
 
     sourceSets {

@@ -60,6 +60,7 @@ public class JRFragmentHostActivity extends FragmentActivity {
     public static final int JR_WEBVIEW = 2;
     public static final int JR_PUBLISH = 3;
     public static final int JR_PROVIDER_LIST = 4;
+    public static final int JR_OPENID_APPAUTH = 5;
     private static final String JR_OPERATION_MODE = "JR_OPERATION_MODE";
     private static final int JR_DIALOG = 0;
     private static final int JR_FULLSCREEN = 1;
@@ -105,6 +106,9 @@ public class JRFragmentHostActivity extends FragmentActivity {
                 break;
             case JR_PUBLISH:
                 mUiFragment = new JRPublishFragment();
+                break;
+            case JR_OPENID_APPAUTH:
+                mUiFragment = new JROpenIDAppAuthFragment();
                 break;
             default:
                 throw new IllegalFragmentIdException(getFragmentId());
@@ -204,6 +208,10 @@ public class JRFragmentHostActivity extends FragmentActivity {
          * the request code up two bytes. This method doesn't handle such request codes; they dispatch
          * by the Fragment API path.
          */
+        JRSession session = JRSession.getInstance();
+        if (session != null && session.getCurrentOpenIDAppAuthProvider() != null) {
+            session.getCurrentOpenIDAppAuthProvider().onActivityResult(requestCode, resultCode, data);
+        }
 
     }
 
@@ -301,6 +309,12 @@ public class JRFragmentHostActivity extends FragmentActivity {
     public static Intent createWebViewIntent(Activity activity) {
         Intent i = createIntentForCurrentScreen(activity, false);
         i.putExtra(JR_FRAGMENT_ID, JR_WEBVIEW);
+        return i;
+    }
+
+    public static Intent createOpenIDAppAuthIntent(Activity activity) {
+        Intent i = createIntentForCurrentScreen(activity, false);
+        i.putExtra(JR_FRAGMENT_ID, JR_OPENID_APPAUTH);
         return i;
     }
 

@@ -199,6 +199,13 @@ public final class JumpConfig {
      */
     public String captureRedirectUri;
 
-
+    /**
+     * Used for non-rpx.now Engage app url's
+     */
+    public String engageAppUrl;
+    /**
+     * Used for custom Flow endpoints (i.e. China)
+     */
+    public String downloadFlowUrl;
 
 }

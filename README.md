@@ -7,13 +7,58 @@ Getting Started:
 Report bugs or ask questions:
     https://support.janrain.com
 
-### Upgrading to v6.0
+### Upgrading to v7.0
 
-- IMPORTANT: This is the last release of this form of the Janrain Android Mobile Libraries.  Other than major bug fixes or compatibility updates no further implementations will be released.  A new Android Sample Application will be written using more modern Android tools and libraries.
+- Update the module settings for your project to use the latest Jump sdk files you may need to remove any existing "jump" modules and re-add the latest module in order to ensure your project files are updated.
+- Open the '/jump.android/Jump/src/res/values/openid_appauth_idp_configs.xml' file and update the `google_client_id` and `google_auth_redirect_uri` with the appropriate Google application client id that correlates to the Google app that is used in your Engage application.
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    This contains the authorization service configuration details that are used to demonstrate
+    authentication. By default, all authorization services are disabled until you modify this file
+    to provide your own configuration details.
+    -->
+    <eat-comment/>
+    <bool name="google_enabled">true</bool>
+    <string name="google_client_id" translatable="false">UPDATE_WITH_GOOGLE_CLIENT_ID.apps.googleusercontent.com</string>
+    <!--
+    NOTE: This scheme is automatically provisioned by Google for Android OAuth2 clients, and is
+    the reverse form of the client ID registered above. Handling of this scheme is registered in an
+    intent filter in the app's manifest.
+    -->
+    <string name="google_auth_redirect_uri" translatable="false">com.googleusercontent.apps.UPDATE_WITH_GOOGLE_CLIENT_ID:/oauth2redirect</string>
+</resources>
+```
+
+- Open your application's AndroidManifest.xml and add the following activities (modify as needed):
+```xml
+<activity android:name="net.openid.appauth.RedirectUriReceiverActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.VIEW"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+        <category android:name="android.intent.category.BROWSABLE"/>
+        <data android:scheme="https"
+            android:host="com.googleusercontent.apps.UPDATE_WITH_GOOGLE_CLIENT_ID:"
+            android:path="/oauth2redirect"/>
+    </intent-filter>
+</activity>
+<activity
+    android:name="com.janrain.android.engage.OpenIDAppAuthTokenActivity"
+    android:label="SimpleDemoApplication"
+    android:theme="@style/Theme.Janrain.Dialog.Light"
+    android:windowSoftInputMode="stateHidden" >
+</activity>
+```
+
+### Upgrading to v6.0.1
+
+
 - The only IDE that this release supports and has been tested with is the Android Studio IDE.
 - The Android Mobile Libraries have removed all inter-dependencies on the Google, Facebook, and Twitter SDK's and Libraries.  The SimpleDemoNative app has been created to demonstrate how to integrate native provider logon for these providers using their SDK's and Libraries.  NOTE:  Google Play/Sign-On libraries newer than version 8.1 are NOT supported.  Google has changed the oAuth access token provisioning as of version 8.3 and it is no longer compatible with Janrain's API's at the time of this release.  Janrain will be updating their API's to support Google's re-architecture in the future.
 - If your previous project had implemented native provider authentication you will have to re-implement this as outlined in the Native Authentication Guide and the "SimpleDemoNative" sample application.
 - If you want to use the Janrain Mobile Libraries and Sample Code with the latest Android API levels there is now has dependencies on the deprecated org.apache.http.legacy.jar.  This file is included in the Github repo in the libs folder.  Additional information on this can be found in the build.gradle file.
+-
 
 
 ### Upgrading to v5.0.1
@@ -50,4 +95,3 @@ Using tablet support:
   JREngage#createSocialPublishingFragment(...)
 - Embedded mode requires a host activity sub-classed from android.support.v4.app.FragmentActivity,
   android.app.FragmentActivity is incompatible.
-

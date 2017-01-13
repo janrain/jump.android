@@ -49,6 +49,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.janrain.android.R;
+import com.janrain.android.engage.JROpenIDAppAuth;
 import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.session.JRSession;
 import com.janrain.android.utils.LogUtils;
@@ -64,7 +65,7 @@ import java.util.TimerTask;
  */
 public class JRProviderListFragment extends JRUiFragment {
     public static final int RESULT_FAIL = Activity.RESULT_FIRST_USER;
-    public static final int RESULT_NATIVE_SIGNIN = Activity.RESULT_FIRST_USER + 1;
+    public static final int RESULT_OPENID_APPAUTH_SIGNIN = Activity.RESULT_FIRST_USER + 1;
     
     private static final int TIMER_MAX_ITERATIONS = 40;
 
@@ -79,6 +80,8 @@ public class JRProviderListFragment extends JRUiFragment {
 
     private boolean mSectionHeaderEnabled;
     private boolean mSectionFooterEnabled;
+
+    private JROpenIDAppAuth.OpenIDAppAuthProvider openIDProvider;
 
     /**
      * @internal
@@ -279,7 +282,11 @@ public class JRProviderListFragment extends JRUiFragment {
             final JRProvider provider = mAdapter.getItem((int) id - (mSectionHeaderEnabled ? 1 : 0));
             mSession.setCurrentlyAuthenticatingProvider(provider);
 
-            startWebViewAuthForProvider(provider);
+            if (JROpenIDAppAuth.canHandleProvider(parent.getContext(), provider)) {
+                startOpenIDAppAuth();
+            } else {
+                startWebViewAuthForProvider(provider);
+            }
             
         }
     };
@@ -409,7 +416,7 @@ public class JRProviderListFragment extends JRUiFragment {
     }
 
     public void finishJrSignin() {
-        finishFragmentWithResult(JRProviderListFragment.RESULT_NATIVE_SIGNIN);
+        finishFragmentWithResult(JRProviderListFragment.RESULT_OPENID_APPAUTH_SIGNIN);
     }
     
     public String getCustomTitle() {
