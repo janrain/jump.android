@@ -183,7 +183,7 @@ public class MainActivity extends FragmentActivity {
         linearLayout.setLayoutParams(new LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT));
         linearLayout.setOrientation(LinearLayout.VERTICAL);
 
-        Button webviewAuth = addButton(linearLayout, "Webview Sign-In");
+        Button webviewAuth = addButton(linearLayout, "Social Sign-In");
 
         Button dumpRecord = addButton(linearLayout, "Dump Record to Log");
         Button editProfile = addButton(linearLayout, "Edit Profile");
