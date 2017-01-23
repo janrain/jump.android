@@ -48,7 +48,8 @@
 
         To the list of attributes on the activity element.
         -->
-        <activity android:name="net.openid.appauth.RedirectUriReceiverActivity">
+        <activity
+            android:name="net.openid.appauth.RedirectUriReceiverActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -63,7 +64,7 @@
             android:name="com.janrain.android.engage.OpenIDAppAuthTokenActivity"
             android:label="SimpleDemoApplication"
             android:theme="@style/Theme.Janrain.Dialog.Light"
-            android:windowSoftInputMode="stateHidden" >
+            android:windowSoftInputMode="stateHidden">
         </activity>
 
 

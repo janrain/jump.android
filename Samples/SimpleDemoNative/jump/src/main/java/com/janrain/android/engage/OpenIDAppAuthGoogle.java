@@ -38,9 +38,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.content.Context;
 import android.content.Intent;
-
 import com.janrain.android.utils.LogUtils;
-
 import net.openid.appauth.AuthState;
 import net.openid.appauth.AuthorizationException;
 import net.openid.appauth.AuthorizationRequest;
@@ -51,7 +49,6 @@ import net.openid.appauth.ClientSecretBasic;
 import net.openid.appauth.RegistrationRequest;
 import net.openid.appauth.RegistrationResponse;
 import net.openid.appauth.ResponseTypeValues;
-
 import java.util.Arrays;
 import java.util.List;
 import java.lang.reflect.InvocationTargetException;
@@ -66,7 +63,7 @@ public class OpenIDAppAuthGoogle extends OpenIDAppAuthProvider {
     private String[] scopes;
     private boolean isConnecting = false;
     private static final String TAG = "OpenIDAppAuthGoogle";
-    private AuthorizationService mAuthService;
+
 
     /*package*/ static boolean canHandleAuthentication(Context context) {
         List<OpenIDIdentityProvider> providers = OpenIDIdentityProvider.getEnabledProviders(context);
@@ -78,8 +75,8 @@ public class OpenIDAppAuthGoogle extends OpenIDAppAuthProvider {
         return false;
     }
 
-    /*package*/ OpenIDAppAuthGoogle(FragmentActivity activity, JROpenIDAppAuth.OpenIDAppAuthCallback callback) {
-        super(activity, callback);
+    /*package*/ OpenIDAppAuthGoogle(FragmentActivity activity, JROpenIDAppAuth.OpenIDAppAuthCallback callback, Context parentContext, AuthorizationService authorizationService) {
+        super(activity, callback, parentContext, authorizationService);
         scopes = new String[] {"https://www.googleapis.com/auth/plus.login"};
     }
 
@@ -98,8 +95,7 @@ public class OpenIDAppAuthGoogle extends OpenIDAppAuthProvider {
     @Override
     public void startAuthentication() {
         LogUtils.logd(TAG, "[startAuthentication]");
-        final Context appContext = getApplicationContext();
-        mAuthService = new AuthorizationService(appContext);
+        final Context appContext = fromParentContext;
 
         List<OpenIDIdentityProvider> providers = OpenIDIdentityProvider.getEnabledProviders(appContext);
 
@@ -231,6 +227,7 @@ public class OpenIDAppAuthGoogle extends OpenIDAppAuthProvider {
     public void revoke() {
 
     }
+
 
 
 }
