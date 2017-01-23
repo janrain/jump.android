@@ -32,6 +32,7 @@ package com.janrain.android.engage.ui;
  */
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -43,8 +44,11 @@ import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.types.JRDictionary;
 import com.janrain.android.utils.LogUtils;
 
+import net.openid.appauth.AuthorizationService;
+
 public class JROpenIDAppAuthFragment extends JRUiFragment {
     private JRProvider mProvider;
+    private Context mParentContext;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         LogUtils.logd(TAG, "[onCreateView]");
@@ -67,16 +71,20 @@ public class JROpenIDAppAuthFragment extends JRUiFragment {
 
     private void signOut() {
         final JRProvider provider = mSession.getProviderByName(getSignOutProviderName());
+        final Context parentContext = mSession.getCurrentOpenIdStartActivityContext();
+        final AuthorizationService authorizationService = mSession.getCurrentOpenIDAppAuthService();
         JROpenIDAppAuth.OpenIDAppAuthProvider openIDProvider = JROpenIDAppAuth.createOpenIDAppAuthProvider(provider,
-                getActivity(), getSignOutOrRevokeCallback());
+                getActivity(), getSignOutOrRevokeCallback(),parentContext, authorizationService);
         openIDProvider.signOut();
     }
 
     private void revoke() {
         if (getRevokeProviderName().equals("googleplus")) {
             final JRProvider provider = mSession.getProviderByName(getRevokeProviderName());
+            final Context parentContext = mSession.getCurrentOpenIdStartActivityContext();
+            final AuthorizationService authorizationService = mSession.getCurrentOpenIDAppAuthService();
             JROpenIDAppAuth.OpenIDAppAuthProvider openIDProvider = JROpenIDAppAuth.createOpenIDAppAuthProvider(provider,
-                    getActivity(), getSignOutOrRevokeCallback());
+                    getActivity(), getSignOutOrRevokeCallback(), parentContext, authorizationService);
             openIDProvider.revoke();
         }
     }
@@ -84,6 +92,8 @@ public class JROpenIDAppAuthFragment extends JRUiFragment {
     private void signIn() {
         LogUtils.logd(TAG, "[signIn]");
         mProvider = mSession.getCurrentlyAuthenticatingProvider();
+        mParentContext = mSession.getCurrentOpenIdStartActivityContext();
+        mSession.setCurrentlyAuthenticatingOpenIDAppAuthService(new AuthorizationService(mParentContext));
         JROpenIDAppAuth.OpenIDAppAuthProvider openIDProvider = JROpenIDAppAuth.createOpenIDAppAuthProvider(mProvider, getActivity(),
                 new JROpenIDAppAuth.OpenIDAppAuthCallback() {
                     @Override
@@ -112,7 +122,7 @@ public class JROpenIDAppAuthFragment extends JRUiFragment {
                         mProvider = mSession.getCurrentlyAuthenticatingProvider();
                         startWebViewAuthForProvider(mProvider);
                     }
-                });
+                }, mParentContext, mSession.getCurrentOpenIDAppAuthService());
         mSession.setCurrentOpenIDAppAuthProvider(openIDProvider);
         LogUtils.logd(TAG, "[startAuthentication]");
         openIDProvider.startAuthentication();
@@ -132,6 +142,12 @@ public class JROpenIDAppAuthFragment extends JRUiFragment {
     @Override
     public void onBackPressed() {
         finishFragmentWithResult(Activity.RESULT_CANCELED);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mSession.getCurrentOpenIDAppAuthService().dispose();
     }
 
     private boolean isSignOutFlow() {
