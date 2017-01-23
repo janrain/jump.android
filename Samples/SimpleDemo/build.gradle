@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-        jcenter { url "http://jcenter.bintray.com/"}
+        jcenter ()
         maven { url 'https://maven.fabric.io/public' }
     }
     dependencies {
@@ -10,7 +10,7 @@ buildscript {
 apply plugin: 'com.android.application'
 
 repositories {
-    jcenter { url "http://jcenter.bintray.com/"}
+    jcenter ()
     maven { url 'https://maven.fabric.io/public' }
 }
 
