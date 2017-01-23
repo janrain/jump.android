@@ -41,6 +41,8 @@ import com.janrain.android.engage.types.JRDictionary;
 import com.janrain.android.utils.ApiConnection;
 import com.janrain.android.utils.LogUtils;
 
+import net.openid.appauth.AuthorizationService;
+
 import org.json.JSONObject;
 
 public class JROpenIDAppAuth {
@@ -55,12 +57,15 @@ public class JROpenIDAppAuth {
         return false;
     }
 
-    public static OpenIDAppAuthProvider createOpenIDAppAuthProvider(JRProvider provider, FragmentActivity activity,
-                                                                    OpenIDAppAuthCallback callback) {
+    public static OpenIDAppAuthProvider createOpenIDAppAuthProvider(JRProvider provider,
+                                                                    FragmentActivity activity,
+                                                                    OpenIDAppAuthCallback callback,
+                                                                    Context parentContext,
+                                                                    AuthorizationService authorizationService) {
         OpenIDAppAuthProvider openIDProvider = null;
 
         if (provider.getName().equals("googleplus")) {
-            openIDProvider = new OpenIDAppAuthGoogle(activity, callback);
+            openIDProvider = new OpenIDAppAuthGoogle(activity, callback, parentContext, authorizationService);
         } else {
             throw new RuntimeException("Unexpected OpenID provider " + provider);
         }
@@ -128,10 +133,14 @@ public class JROpenIDAppAuth {
     public static abstract class OpenIDAppAuthProvider {
         /*package*/ OpenIDAppAuthCallback completion;
         /*package*/ FragmentActivity fromActivity;
+        /*package*/ Context fromParentContext;
+        /*package*/ AuthorizationService mAuthService;
 
-        /*package*/ OpenIDAppAuthProvider(FragmentActivity activity, JROpenIDAppAuth.OpenIDAppAuthCallback callback) {
+        /*package*/ OpenIDAppAuthProvider(FragmentActivity activity, JROpenIDAppAuth.OpenIDAppAuthCallback callback, Context parentContext, AuthorizationService authorizationService) {
             completion = callback;
             fromActivity = activity;
+            fromParentContext = parentContext;
+            mAuthService = authorizationService;
         }
 
         /*package*/ static boolean canHandleAuthentication() {

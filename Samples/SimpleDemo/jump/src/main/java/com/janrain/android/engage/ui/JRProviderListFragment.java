@@ -282,7 +282,9 @@ public class JRProviderListFragment extends JRUiFragment {
             final JRProvider provider = mAdapter.getItem((int) id - (mSectionHeaderEnabled ? 1 : 0));
             mSession.setCurrentlyAuthenticatingProvider(provider);
 
-            if (JROpenIDAppAuth.canHandleProvider(parent.getContext(), provider)) {
+            Context parentContext = parent.getContext();
+            if (JROpenIDAppAuth.canHandleProvider(parentContext, provider)) {
+                mSession.setCurrentOpenIdStartActivityContext(parentContext);
                 startOpenIDAppAuth();
             } else {
                 startWebViewAuthForProvider(provider);
