@@ -95,4 +95,3 @@ Using tablet support:
   JREngage#createSocialPublishingFragment(...)
 - Embedded mode requires a host activity sub-classed from android.support.v4.app.FragmentActivity,
   android.app.FragmentActivity is incompatible.
-
