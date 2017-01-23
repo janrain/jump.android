@@ -1,3 +1,5 @@
+v7.0.1
+- Resolved compatibility issues with certain Android versions and configurations.
 v7.0.0
 - Implemented OpenID AppAuth Libraries to support Google WebView Deprecation.
 - Added support for non-standard Engage server url's

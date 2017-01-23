@@ -106,6 +106,8 @@ public class JRSession implements JRConnectionManagerDelegate {
     private String[] mCurrentlyAuthenticatingProviderPermissions;
     private JRProvider mCurrentlyPublishingProvider;
     private JROpenIDAppAuth.OpenIDAppAuthProvider mCurrentOpenIDAppAuthProvider;
+    private AuthorizationService mCurrentOpenIDAppAuthService;
+    private Context mCurrentOpenIdStartActivityContext;
 
     private String mReturningAuthProvider;
     private String[] mReturningAuthProviderPermissions;
@@ -369,6 +371,14 @@ public class JRSession implements JRConnectionManagerDelegate {
         mCurrentlyAuthenticatingProvider = provider;
     }
 
+    public Context getCurrentOpenIdStartActivityContext() {
+        return mCurrentOpenIdStartActivityContext;
+    }
+
+    public void setCurrentOpenIdStartActivityContext(Context context){
+        mCurrentOpenIdStartActivityContext = context;
+    }
+
     public String[] getCurrentlyAuthenticatingProviderPermissions() {
         return mCurrentlyAuthenticatingProviderPermissions;
     }
@@ -383,6 +393,10 @@ public class JRSession implements JRConnectionManagerDelegate {
 
     public void setCurrentlyAuthenticatingOpenIDAppAuthProvider(OpenIDAppAuthProvider provider) {
         mCurrentOpenIDAppAuthProvider = provider;
+    }
+
+    public void setCurrentlyAuthenticatingOpenIDAppAuthService(AuthorizationService authorizationService) {
+        mCurrentOpenIDAppAuthService = authorizationService;
     }
 
     public ArrayList<JRProvider> getAuthProviders() {
@@ -1290,6 +1304,10 @@ public class JRSession implements JRConnectionManagerDelegate {
 
     public JROpenIDAppAuth.OpenIDAppAuthProvider getCurrentOpenIDAppAuthProvider() {
         return mCurrentOpenIDAppAuthProvider;
+    }
+
+    public AuthorizationService getCurrentOpenIDAppAuthService() {
+        return mCurrentOpenIDAppAuthService;
     }
 
 }
