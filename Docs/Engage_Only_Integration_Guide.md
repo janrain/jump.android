@@ -18,7 +18,7 @@ for the JUMP platform see `Jump_Integration_Guide.md`.
 Configure your desired set of social identity providers in the Engage Dashboard. There is a provider
 configuration guide here:
 
-    http://developers.janrain.com/documentation/widgets/social-sign-in-widget/social-sign-in-widget-users-guide/configure-the-widget/provider-setup-guide/
+    http://developers.janrain.com/overview/social-login/implementing-social-login/
 
 ### Configure the Providers Used in the Android Library
 
