@@ -1,44 +1,37 @@
-# Engage-Only Integration Guide
+# Android Social Sign-In Only Integration
 
-This guide describes integrating Engage-only into your android App. For a description of integration steps
-for the JUMP platform see `Jump_Integration_Guide.md`.
+This guide describes integrating Social Sign-In or Social Sharing with your app, but not implmenting Janrain’s User Registration features. For a description of integration steps
+for all of JUMP see `Jump_Integration_Guide.md`.
 
-## 10,000' View
+## The Big Picture
 
-1. Gather configuration details
-2. Add the necessary library dependency to your project
-3. Declare the library project dependency
+1. Gather you configuration details.
+2. Declare the library project dependency.
+3. Declare the library required activities permissions and add to your `AndroidManifest.xml` file.
 4. Add library required activities permissions and to your `AndroidManifest.xml` file.
 5. Import and initialize the library.
 6. Begin authentication by calling one of the two `show...Dialog methods`.
-7. Receive your authentication token URL's response in JREngageDelegate#jrAuthenticationDidReachTokenUrl()
+7. Receive your authentication token URL's response in `JREngageDelegate#jrAuthenticationDidReachTokenUrl()`
 
 ## Gather Configuration Details
 
-Configure your desired set of social identity providers in the Engage Dashboard. There is a provider
-configuration guide here:
 
-    http://developers.janrain.com/documentation/widgets/social-sign-in-widget/social-sign-in-widget-users-guide/configure-the-widget/provider-setup-guide/
+1.  Sign in to the Janrain Dashboard – https://dashboard.janrain.com
+2.  Click the Engage icon (Looks like talk balloons).
+3.  You get a new page. In the lower left panel, under Widgets and SKDs, click Android.
+4.  On the new page, near the top, click Sign-In Providers. Then go to the relevant provider guide in the Provider Setup Guide and follow the instructions.
+5.  When you finish configuring all of the Identity Providers that you want, click Save, then click Next.
+6.  On the next page, you see a list of providers on the left. Double click the ones you want to appear in your app.
+7.  When you finish, click Save.
 
-### Configure the Providers Used in the Android Library
+    Retrieve your 20-character Engage application ID from the Dashboard. (From the Provider page of the dashboard, click the name of your application in the bread crumbs at the top of the page. Go to the Settings panel, and click the pencil icon. Your ID and secrets are on the right.)
 
-Once the providers themselves are configured they need to be enabled explicitly for the the native Android
-Engage Library.
-
-While signed in to the Engage dashboard go to the 'Engage for Android' configuration wizard (in the drop-down
-menus, under Deployment -> 'Engage for Android'). Follow the wizard to configure the providers used
-for authentication and social sharing from the Android library.
-
-### Retrieve your Engage Application ID
-
-You will also need your 20-character Application ID from the Engage Dashboard. Click the `Home` link int the Engage
-dashboard and you will find your app ID in the right-most column towards the bottom of the colum under the "Application
-Info" header.
 
 ## Declare the Library Dependency
 
-If you are using Eclipse, see the Eclipse_Import_Guide.md. If you are using IntelliJ or Android Studio it's
-way easier (import the Jump module and add a module dependency to it.)
+We recommend that you use IntelliJ or Android Studio, because it’s easy. In either case, import the JUMP module and add a module dependency to it.
+
+If you are using Eclipse, see the Eclipse_Import_Guide.md. 
 
 If you are using the ant build tool chain the library just use
 `android update project -p path/to/your/prj -l path/to/jump.android/Jump`.
@@ -113,9 +106,9 @@ project's `AndroidManifest.xml` file:
 Note: If you wish to target a version of Android lower than 13 (which is 3.2) you *can*. To do so, change the
 `android:targetSdkVersion`, to your desired deployment target. _You must still build against API 13+
 even when targeting a lower API level._ The build SDK used when compiling your project is defined by your
-project's local.properties. `android list target` to get a list of targets available in your installation of
-the Android SDK. `android update project -p path/to/project -t target_name_or_target_installation_id` to
-update the build target SDK for your project. (Note that this does *not* affect your project's
+project's `local.properties`. Use `android list target` to get a list of targets available in your installation of
+the Android SDK. Use `android update project -p path/to/project -t target_name_or_target_installation_id` to
+update the build target SDK for your project. (This does *not* affect your project's
 `minSdkVersion` or `targetSdkVersion`.)
 
 Open the '/jump.android/Jump/src/res/values/openid_appauth_idp_configs.xml' file and update the `google_client_id` and `google_auth_redirect_uri` with the appropriate Google application client id that correlates to the Google app that is used in your Engage application.
@@ -161,7 +154,7 @@ Interaction begins by calling the `JREngage.initInstance` method, which returns 
 
     mEngage = JREngage.initInstance(this.getApplicationContext(), ENGAGE_APP_ID, ENGAGE_TOKEN_URL, this);
 
-[initInstance](http://janrain.github.com/engage.android/docs/html/classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage.html#a469d808d2464c065bc16dedec7a2cc23)
+The [initInstance](http://janrain.github.com/engage.android/docs/html/classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage.html#a469d808d2464c065bc16dedec7a2cc23)
 takes four arguments, `context`, `appId`, `tokenUrl`, and `delegate`:
 
 - `context` — Your Android application Context.
@@ -170,18 +163,18 @@ takes four arguments, `context`, `appId`, `tokenUrl`, and `delegate`:
 - `delegate` — An implementation of the `JREngageDelegate` interface through which you will receive callbacks
   from the library.
 
-### Choosing your Engage Delegate Class
+### Choosing your (Social Sign-In) Engage Delegate Class
 
-Select a class you will use to receive callbacks from the Engage library. This is called your Engage
+Select a class you will use to receive callbacks from the Engage library (Social Sign-In, Social Sharing, or both). This is called your Engage
 delegate. The delegate should be a singleton object. A good place to start is your app's Android Application
 class, if you have one. Activities which are always at the root of the back stack can be acceptable choices.
-Avoid using Activities which will short lived.
+Avoid using Activities which will be short lived.
 
 ## Social Sign-In
 
 An Engage authentication is meaningful in the context of authenticating your mobile app *to* something.
-If you are unsure of what your users should be authenticating to, then Janrain Capture may be a great choice.
-(Capture signs authenticating users into your copy of their social profile, affording your mobile app a
+If you are unsure of what your users should be authenticating to, then Janrain User Registration may be a great choice.
+(User Registration signs authenticating users into your copy of their social profile, affording your mobile app a
 place to store and retrieve data from, and a pier from which to build out a service.)
 
 Once the `JREngage` object has been initialized, start authentication by calling
@@ -190,13 +183,13 @@ method:
 
     mEngage.showAuthenticationDialog();
 
-You will receive your authentication token URL's response in the jrAuthenticationDidReachTokenUrl method.
+You will receive your authentication token URL's response in the `jrAuthenticationDidReachTokenUrl` method.
 When received you will have access to the body of the response, as well as the headers, which frequently
-contain session cookies used to coordinate the app's session with your web server. Parsing your
+contain session cookies which you should use to coordinate the app's session with your web server. Parsing your
 authentication token URL's response for session establishing information, or retrieving session cookies from
 the header, is your app's responsibility.
 
-For guidance implementing your web-server's authentication token URL, see `Authentication-Token-URL.md`.
+For guidance implementing your web-server's authentication token URL, see Authentication-Token-URL.md.
 
 ## Social Sharing
 
@@ -208,8 +201,7 @@ If you want to share an activity, first create an instance of the
 
     JRActivityObject jrActivity = new JRActivityObject(activityText, activityLink);
 
-Populate the new object with information about the activity being shared by. Here, an exciting Facebook
-"action link" is added:
+Populate the new object with information about the activity being shared by. Here, we add a Facebook "action link:"
 
     activityObject.addActionLink(new JRActionLink("Download the Quick Share demo!",
           "https://market.android.com/details?id=com.janrain.android.quickshare");
