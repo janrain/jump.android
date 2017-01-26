@@ -34,7 +34,7 @@ This guide describes the steps required to upgrade from different versions of th
 
     Use `com.janrain.android.utils.LogUtils` instead.
 
-###  Upgrading to v7.0.1
+###  Upgrading to v7.0.2
 
 * In order to support Google's deprecation of the use of Webviews for web based authentication the mobile libraries have been updated to use Google's preferred OpenID AppAuth for Android Libraries (version 0.4.1 tested) for web based Google authentication (this is different from the native Google Android SDK based authentication that the Mobile Libraries also support).  Other than the required code and configuration changes the end-user experience should not appear to be any different than in previous versions of the mobile libraries.
 
@@ -84,6 +84,21 @@ This guide describes the steps required to upgrade from different versions of th
 </activity>
 ```
 
+Add the manifest placeholder to your app's build.gradle defaultConfig section.
+
+    // If using web-based (not native) Google authentication.
+    // Replace the below string with your own Google client ID. Make sure this is consistent
+    // with the values used in openid_appauth_idp_configs.xml
+    manifestPlaceholders = [
+            'appAuthRedirectScheme': 'com.googleusercontent.apps.UPDATE_WITH_GOOGLE_CLIENT_ID'
+    ]
+
+Include jcenter with your list of repositories.
+
+    repositories {
+        jcenter ()
+        maven { url 'https://maven.fabric.io/public' }
+    }
 
 
 ###  Upgrading to v6.0.0
