@@ -1,3 +1,7 @@
+v7.0.2
+- Bug fixes around Activity creation for the App Auth module.
+- Documentation update
+- Catch error when signInForm is not defined or spelled incorrectly.
 v7.0.1
 - Resolved compatibility issues with certain Android versions and configurations.
 v7.0.0

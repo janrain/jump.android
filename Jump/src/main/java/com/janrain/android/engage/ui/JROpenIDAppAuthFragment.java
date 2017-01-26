@@ -147,6 +147,8 @@ public class JROpenIDAppAuthFragment extends JRUiFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        mSession.setCurrentOpenIdStartActivityContext(null);
+        mSession.setCurrentlyAuthenticatingOpenIDAppAuthProvider(null);
         mSession.getCurrentOpenIDAppAuthService().dispose();
     }
 

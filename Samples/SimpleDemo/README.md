@@ -30,5 +30,19 @@ manifestPlaceholders = [
 
 *Error*:
 
+```
+Error:Execution failed for task ':processDebugManifest'.
+> Manifest merger failed : Attribute data@scheme at AndroidManifest.xml requires a placeholder substitution but no value for <appAuthRedirectScheme> is provided.
+```
+
+*Resolution*: You need to add the manifest placeholder to your app's build.gradle defaultConfig section.
+
+    // If using web-based (not native) Google authentication.
+    // Replace the below string with your own Google client ID. Make sure this is consistent
+    // with the values used in openid_appauth_idp_configs.xml
+    manifestPlaceholders = [
+            'appAuthRedirectScheme': 'com.googleusercontent.apps.UPDATE_WITH_GOOGLE_CLIENT_ID'
+    ]
+
 
 

@@ -686,7 +686,7 @@ public class JREngage {
 
         final JRProvider provider = mSession.getProviderByName(providerName);
 
-        if (provider != null && provider == null && !mSession.isConfigDone()) {
+        if (provider != null  && !mSession.isConfigDone()) {
             final Dialog progressDialog = UiUtils.getProgressDialog(fromActivity);
             progressDialog.show();
 
@@ -894,7 +894,9 @@ public class JREngage {
     private void showOpenIDAppAuthFlowInternal(final Activity fromActivity,
                                             final JRProvider provider,
                                             final Class<? extends JRCustomInterface> uiCustomization) {
+
         mSession.setCurrentlyAuthenticatingProvider(provider);
+        mSession.setCurrentOpenIdStartActivityContext(fromActivity);
         mUiCustomization = uiCustomization;
 
         Intent i = JRFragmentHostActivity.createOpenIDAppAuthIntent(fromActivity);

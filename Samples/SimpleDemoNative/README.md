@@ -82,6 +82,7 @@ private static final String TWITTER_SECRET = "UPDATE";
 ```
 
 *Error*:
+
 ```
 E/[com.janrain.android.engage.net.AsyncHttpClient$HttpExecutor.run:193]: HTTP/1.1 400 Bad Request
 {"stat": "fail", "err": {"code": 1, "msg": "token does not match the googleplus application registered with Janrain"}}
@@ -89,7 +90,9 @@ E/[com.janrain.android.engage.net.AsyncHttpClient$HttpExecutor.run:193]: HTTP/1.
 
 *Resolution*: Update the google-services.json file with the correct Google application settings that correlates to the Google application used by the configured Engage application.
 
-*Error*: Initiating Facebook Native login results in the Facebook interface erroring with `Invalid App ID: UPDATE`
+*Error*:
+
+Initiating Facebook Native login results in the Facebook interface erroring with `Invalid App ID: UPDATE`
 
 *Resolution*:  Find this file: /jump.android/Samples/SimpleDemoNative/res/values/strings.xml and update the following value with the Facebook App ID that corresponds to the Facebook application used by the configured Engage application:
 ```xml
@@ -97,4 +100,18 @@ E/[com.janrain.android.engage.net.AsyncHttpClient$HttpExecutor.run:193]: HTTP/1.
     <string name="facebook_app_id">UPDATE</string>
 ```
 
+*Error*:
 
+```
+Error:Execution failed for task ':processDebugManifest'.
+> Manifest merger failed : Attribute data@scheme at AndroidManifest.xml requires a placeholder substitution but no value for <appAuthRedirectScheme> is provided.
+```
+
+*Resolution*: You need to add the manifest placeholder to your app's build.gradle defaultConfig section.
+
+    // If using web-based (not native) Google authentication.
+    // Replace the below string with your own Google client ID. Make sure this is consistent
+    // with the values used in openid_appauth_idp_configs.xml
+    manifestPlaceholders = [
+            'appAuthRedirectScheme': 'com.googleusercontent.apps.UPDATE_WITH_GOOGLE_CLIENT_ID'
+    ]
