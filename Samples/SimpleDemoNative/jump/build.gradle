@@ -40,9 +40,7 @@ dependencies {
 
 allprojects {
     repositories {
-        jcenter {
-            url "http://jcenter.bintray.com/"
-        }
+        jcenter()
     }
     gradle.projectsEvaluated {
         tasks.withType(JavaCompile) {

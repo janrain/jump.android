@@ -18,7 +18,7 @@ for the JUMP platform see `Jump_Integration_Guide.md`.
 Configure your desired set of social identity providers in the Engage Dashboard. There is a provider
 configuration guide here:
 
-    http://developers.janrain.com/documentation/widgets/social-sign-in-widget/social-sign-in-widget-users-guide/configure-the-widget/provider-setup-guide/
+    http://developers.janrain.com/overview/social-login/implementing-social-login/
 
 ### Configure the Providers Used in the Android Library
 
@@ -139,6 +139,22 @@ Open the '/jump.android/Jump/src/res/values/openid_appauth_idp_configs.xml' file
 </resources>
 ```
 
+Add the manifest placeholder to your app's build.gradle defaultConfig section.
+
+    // If using web-based (not native) Google authentication.
+    // Replace the below string with your own Google client ID. Make sure this is consistent
+    // with the values used in openid_appauth_idp_configs.xml
+    manifestPlaceholders = [
+            'appAuthRedirectScheme': 'com.googleusercontent.apps.UPDATE_WITH_GOOGLE_CLIENT_ID'
+    ]
+
+Include jcenter with your list of repositories.
+
+    repositories {
+        jcenter ()
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
 ## Import and Initialize
 
 Import the following classes:
@@ -220,7 +236,7 @@ method:
 
     mEngage.showSocialPublishingDialogWithActivity(jrActivity);
 
-### Upgrading to v7.0
+### Upgrading to v7.0 or later
 
 - Update the module settings for your project to use the latest Jump sdk files you may need to remove any existing "jump" modules and re-add the latest module in order to ensure your project files are updated.
 - Open the '/jump.android/Jump/src/res/values/openid_appauth_idp_configs.xml' file and update the `google_client_id` and `google_auth_redirect_uri` with the appropriate Google application client id that correlates to the Google app that is used in your Engage application.
