@@ -50,6 +50,10 @@ public class JROpenIDAppAuthFragment extends JRUiFragment {
     private JRProvider mProvider;
     private Context mParentContext;
 
+    public static final int RESULT_SWITCH_ACCOUNTS = Activity.RESULT_FIRST_USER;
+    public static final int RESULT_RESTART = Activity.RESULT_FIRST_USER + 1;
+    public static final int RESULT_FAIL = Activity.RESULT_FIRST_USER + 2;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         LogUtils.logd(TAG, "[onCreateView]");
         View view = inflater.inflate(R.layout.jr_provider_openid_appauth, container, false);
@@ -140,16 +144,33 @@ public class JROpenIDAppAuthFragment extends JRUiFragment {
     }
 
     @Override
+    public void onResume() {
+        if (mSession == null) {
+            finishFragmentWithResult(RESULT_RESTART);
+            return;
+        }
+
+        if (isSpecificProviderFlow()) {
+            mSession.triggerAuthenticationDidCancel();
+        } else {
+            mSession.triggerAuthenticationDidRestart();
+        }
+
+        finishFragmentWithResult(RESULT_RESTART);
+        super.onResume();
+        LogUtils.logd(TAG, "[onResume]");
+
+    }
+
+    @Override
     public void onBackPressed() {
+        LogUtils.logd(TAG, "[onBackPressed]");
         finishFragmentWithResult(Activity.RESULT_CANCELED);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        mSession.setCurrentOpenIdStartActivityContext(null);
-        mSession.setCurrentlyAuthenticatingOpenIDAppAuthProvider(null);
-        mSession.getCurrentOpenIDAppAuthService().dispose();
     }
 
     private boolean isSignOutFlow() {

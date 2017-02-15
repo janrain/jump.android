@@ -261,8 +261,7 @@ public class JRFragmentHostActivity extends FragmentActivity {
 
     @Override
     public void onBackPressed() {
-        LogUtils.logd(TAG, "onBackPressed");
-
+        LogUtils.logd(TAG, "[onBackPressed]");
         mUiFragment.onBackPressed();
     }
 

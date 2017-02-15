@@ -107,6 +107,7 @@ import java.util.Map;
 import java.util.Set;
 
 import static com.janrain.android.R.string.jr_git_describe;
+import static com.janrain.android.engage.JREngageError.AuthenticationError.AUTHENTICATION_CANCELED;
 import static com.janrain.android.utils.LogUtils.throwDebugException;
 
 /**
@@ -870,7 +871,7 @@ public class JREngage {
         //completion.onFailure(message, errorCode, exception, shouldTryWebViewAuthentication);
         LogUtils.loge("triggerOnFailure message: " + message);
         LogUtils.loge("triggerOnFailure errorCode: " + errorCode.toString());
-
+        mSession.triggerAuthenticationDidFail(new JREngageError(message, AUTHENTICATION_CANCELED,message));
         if(exception != null) LogUtils.loge("triggerOnFailure exception: " + exception.getMessage());
 
     }
