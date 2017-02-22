@@ -1,3 +1,10 @@
+v7.0.3
+- OpenID AppAuth library activity and service connections are now bound to the activity from which the main Jump libraries are invoked from (MainActivity in the SimpleDemo application).
+- Removed JROpenIDAppAuthFragment.java class.
+- Resolved issues around back button or OpenID AppAuth cancellation behavior.
+- Improved error handling when the user denies access to the OpenID AppAuth permissions/scopes request.
+- Added an example of invoking direct Engage authentication (Google) through the SimpleDemo main UI without needing to invoke the Engage Provider List Fragment.
+- There should be no code changes required for the integrating developer/engineer from the 7.0.2 release (unless they have made other library modifications that relate to the above behaviors)
 v7.0.2
 - Bug fixes around Activity creation for the App Auth module.
 - Documentation update

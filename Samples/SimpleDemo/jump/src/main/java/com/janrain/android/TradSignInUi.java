@@ -45,6 +45,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
 import com.janrain.android.capture.Capture;
 import com.janrain.android.capture.CaptureApiConnection;
 import com.janrain.android.capture.CaptureApiError;
@@ -52,6 +53,7 @@ import com.janrain.android.capture.CaptureRecord;
 import com.janrain.android.engage.ui.JRCustomInterfaceConfiguration;
 import com.janrain.android.engage.ui.JRCustomInterfaceView;
 import com.janrain.android.utils.LogUtils;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -60,9 +62,6 @@ import java.util.List;
 import java.util.Map;
 
 import static com.janrain.android.Jump.SignInResultHandler.SignInError.FailureReason.AUTHENTICATION_CANCELED_BY_USER;
-import static com.janrain.android.R.string.jr_capture_trad_signin_bad_password;
-import static com.janrain.android.R.string.jr_capture_trad_signin_unrecognized_error;
-import static com.janrain.android.R.string.jr_dialog_dismiss;
 
 public class TradSignInUi extends JRCustomInterfaceConfiguration {
 

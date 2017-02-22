@@ -257,7 +257,7 @@ public class JRWebViewFragment extends JRUiFragment {
     }
 
     @Override
-    /*package*/ void finishFragment() {
+    /*package*/ public void finishFragment() {
         if (mRetain != null) {
             getActivity().getSupportFragmentManager().beginTransaction().remove(mRetain).commit();
         }
