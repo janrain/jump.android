@@ -31,6 +31,7 @@ package com.janrain.android.engage;
  *  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 
+import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -39,7 +40,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
 
 import com.janrain.android.engage.session.JRSession;
 import com.janrain.android.utils.LogUtils;
@@ -66,7 +66,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 
-public class OpenIDAppAuthTokenActivity extends FragmentActivity  {
+public class OpenIDAppAuthTokenActivity extends Activity {
     private static final String TAG = "OpenIDAppAuthTokenActivity";
 
     private static final String KEY_AUTH_STATE = "authState";
@@ -80,7 +80,7 @@ public class OpenIDAppAuthTokenActivity extends FragmentActivity  {
     private AuthState mAuthState;
     private AuthorizationService mAuthService;
     private JSONObject mUserInfoJson;
-    private JROpenIDAppAuth.OpenIDAppAuthProvider mOpenIDProvider;
+    /*package*/ JRSession mSession;
 
 
     @Override
@@ -88,6 +88,7 @@ public class OpenIDAppAuthTokenActivity extends FragmentActivity  {
         super.onCreate(savedInstanceState);
        
         mAuthService = new AuthorizationService(this);
+        mSession = JRSession.getInstance();
 
         if (savedInstanceState != null) {
             if (savedInstanceState.containsKey(KEY_AUTH_STATE)) {
@@ -119,7 +120,11 @@ public class OpenIDAppAuthTokenActivity extends FragmentActivity  {
                 exchangeAuthorizationCode(response);
             } else {
                 LogUtils.logd(TAG, "Authorization failed: " + ex);
-                
+                mSession.triggerAuthenticationDidFail(new JREngageError(
+                        "Authorization failed: " + ex,
+                        JREngageError.AuthenticationError.AUTHENTICATION_DENIED,
+                        JREngageError.ErrorType.AUTHENTICATION_DENIED));
+                this.finish();
             }
         }
 
@@ -267,7 +272,6 @@ public class OpenIDAppAuthTokenActivity extends FragmentActivity  {
         if (discoveryDoc != null) {
             intent.putExtra(EXTRA_AUTH_SERVICE_DISCOVERY, discoveryDoc.docJson.toString());
         }
-
         return PendingIntent.getActivity(context, request.hashCode(), intent, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 

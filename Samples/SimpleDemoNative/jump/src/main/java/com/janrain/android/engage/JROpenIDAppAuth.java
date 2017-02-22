@@ -32,12 +32,17 @@
 
 package com.janrain.android.engage;
 
+import android.app.Activity;
+import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.session.JRSession;
 import com.janrain.android.engage.types.JRDictionary;
+import com.janrain.android.engage.ui.JRUiFragment;
 import com.janrain.android.utils.ApiConnection;
 import com.janrain.android.utils.LogUtils;
 
@@ -45,9 +50,17 @@ import net.openid.appauth.AuthorizationService;
 
 import org.json.JSONObject;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 public class JROpenIDAppAuth {
 
     public static final int REQUEST_CODE_TRY_WEBVIEW = 9999;
+    /*package*/ JRSession mSession;
+    /*package*/ JRProvider mProvider;
+    /*package*/ final String TAG = getLogTag();
+    /*package*/ String getLogTag() { return getClass().getSimpleName(); }
+
 
     public static boolean canHandleProvider(Context context, JRProvider provider) {
         if (provider.getName().equals("googleplus") && OpenIDAppAuthGoogle.canHandleAuthentication(context)) {
@@ -132,7 +145,7 @@ public class JROpenIDAppAuth {
 
     public static abstract class OpenIDAppAuthProvider {
         /*package*/ OpenIDAppAuthCallback completion;
-        /*package*/ FragmentActivity fromActivity;
+        /*package*/ Activity fromActivity;
         /*package*/ Context fromParentContext;
         /*package*/ AuthorizationService mAuthService;
 
@@ -216,6 +229,57 @@ public class JROpenIDAppAuth {
                                           boolean shouldTryWebViewAuthentication) {
             completion.onFailure(message, errorCode, exception, shouldTryWebViewAuthentication);
         }
+    }
+
+
+    public void signIn(String providerName) {
+        LogUtils.logd(TAG, "[OpenIDAppAuth signIn]");
+
+        mSession = JRSession.getInstance();
+        mProvider = mSession.getProviderByName(providerName);
+        Context mParentContext = mSession.getCurrentOpenIDAppAuthActivity().getBaseContext();
+        AuthorizationService authorizationService = mSession.getCurrentOpenIDAppAuthService();
+        FragmentActivity openIdActivity = (FragmentActivity) mSession.getCurrentOpenIDAppAuthActivity();
+        mSession.setCurrentlyAuthenticatingOpenIDAppAuthService(authorizationService);
+        OpenIDAppAuthProvider openIDProvider = createOpenIDAppAuthProvider(mProvider, openIdActivity,
+                new JROpenIDAppAuth.OpenIDAppAuthCallback() {
+                    @Override
+                    public void onSuccess(JRDictionary payload) {
+                        if(mSession.getCurrentlyAuthenticatingJrUiFragment() != null) {
+                            mSession.getCurrentlyAuthenticatingJrUiFragment().finishFragmentWithResult(Activity.RESULT_OK);
+                        }
+                        mSession.saveLastUsedAuthProvider();
+                        mSession.triggerAuthenticationDidCompleteWithPayload(payload);
+                        mSession.addOpenIDAppAuthProvider(mProvider.getName());
+
+                    }
+
+                    @Override
+                    public void onFailure(final String message, JROpenIDAppAuth.OpenIDAppAuthError errorCode,
+                                          Exception exception, boolean shouldTryWebViewAuthentication) {
+                        super.onFailure(message, errorCode, exception, shouldTryWebViewAuthentication);
+                        if(mSession.getCurrentlyAuthenticatingJrUiFragment() != null) {
+                            mSession.getCurrentlyAuthenticatingJrUiFragment().finishFragment();
+                        }
+                    }
+
+                    @Override
+                    public boolean shouldTriggerAuthenticationDidCancel() {
+                        return true;
+                    }
+
+                    @Override
+                    public void tryWebViewAuthentication() {
+                        mProvider = mSession.getCurrentlyAuthenticatingProvider();
+                        if(mSession.getCurrentlyAuthenticatingJrUiFragment() != null) {
+                            mSession.getCurrentlyAuthenticatingJrUiFragment().startWebViewAuthForProvider(mProvider);
+                        }
+                    }
+                }, mParentContext, authorizationService);
+
+        mSession.setCurrentOpenIDAppAuthProvider(openIDProvider);
+        LogUtils.logd(TAG, "[OpenIDAppAuth startAuthentication]");
+        openIDProvider.startAuthentication();
     }
 
 }
