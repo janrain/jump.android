@@ -887,7 +887,7 @@ public class Jump {
         } catch (StreamCorruptedException e) {
             throwDebugException(new RuntimeException(e));
         } catch (IOException e) {
-            //throwDebugException(new RuntimeException(e));
+            throwDebugException(new RuntimeException(e));
         } catch (ClassNotFoundException e) {
             throwDebugException(new RuntimeException(e));
         } finally {
