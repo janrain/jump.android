@@ -117,6 +117,7 @@ public final class JumpConfig {
      */
     public Jump.TraditionalSignInType traditionalSignInType;
 
+
     /**
      * Set this to "true" if you want the Janrain SDK to silently fail, then attempt WebView authentication
      * when the Google+ SDK is integrated but Google Play Services is unavailable.

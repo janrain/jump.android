@@ -107,9 +107,6 @@ public class JRFragmentHostActivity extends FragmentActivity {
             case JR_PUBLISH:
                 mUiFragment = new JRPublishFragment();
                 break;
-            case JR_OPENID_APPAUTH:
-                mUiFragment = new JROpenIDAppAuthFragment();
-                break;
             default:
                 throw new IllegalFragmentIdException(getFragmentId());
         }

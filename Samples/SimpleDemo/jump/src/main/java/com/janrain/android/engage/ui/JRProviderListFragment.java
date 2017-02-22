@@ -81,7 +81,6 @@ public class JRProviderListFragment extends JRUiFragment {
     private boolean mSectionHeaderEnabled;
     private boolean mSectionFooterEnabled;
 
-    private JROpenIDAppAuth.OpenIDAppAuthProvider openIDProvider;
 
     /**
      * @internal
@@ -252,6 +251,7 @@ public class JRProviderListFragment extends JRUiFragment {
                 }
             }, 0, 500);
         }
+        mSession.setCurrentlyAuthenticatingJrUiFragment(this);
 
         return inflatedLayout;
     }
@@ -284,8 +284,9 @@ public class JRProviderListFragment extends JRUiFragment {
 
             Context parentContext = parent.getContext();
             if (JROpenIDAppAuth.canHandleProvider(parentContext, provider)) {
-                mSession.setCurrentOpenIdStartActivityContext(parentContext);
-                startOpenIDAppAuth();
+                JROpenIDAppAuth jrOpenIDAppAuth = new JROpenIDAppAuth();
+                jrOpenIDAppAuth.signIn(provider.getName());
+                //startOpenIDAppAuth();
             } else {
                 startWebViewAuthForProvider(provider);
             }

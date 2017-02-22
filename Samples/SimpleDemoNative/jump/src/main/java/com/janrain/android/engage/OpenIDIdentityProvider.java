@@ -25,6 +25,7 @@ import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 
 import com.janrain.android.R;
+import com.janrain.android.engage.session.JRSession;
 
 import net.openid.appauth.AuthorizationServiceConfiguration;
 import net.openid.appauth.AuthorizationServiceConfiguration.RetrieveConfigurationCallback;
@@ -114,6 +115,10 @@ class OpenIDIdentityProvider {
     private String mClientId;
     private Uri mRedirectUri;
     private String mScope;
+
+    /*package*/ JRSession mSession;
+    /*package*/ final String TAG = getLogTag();
+    /*package*/ String getLogTag() { return getClass().getSimpleName(); }
 
     OpenIDIdentityProvider(
             @NonNull String name,
@@ -260,4 +265,6 @@ class OpenIDIdentityProvider {
     private static Uri getUriResource(Resources res, @StringRes int resId, String resName) {
         return Uri.parse(res.getString(resId));
     }
+
+
 }
