@@ -77,9 +77,9 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
+
 import com.janrain.android.Jump;
 import com.janrain.android.engage.net.async.HttpResponseHeaders;
 import com.janrain.android.engage.session.JRProvider;
@@ -97,6 +97,8 @@ import com.janrain.android.utils.LogUtils;
 import com.janrain.android.utils.ThreadUtils;
 import com.janrain.android.utils.UiUtils;
 
+import net.openid.appauth.AuthorizationService;
+
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -107,6 +109,7 @@ import java.util.Map;
 import java.util.Set;
 
 import static com.janrain.android.R.string.jr_git_describe;
+import static com.janrain.android.engage.JREngageError.AuthenticationError.AUTHENTICATION_CANCELED;
 import static com.janrain.android.utils.LogUtils.throwDebugException;
 
 /**
@@ -261,7 +264,6 @@ public class JREngage {
 
         LogUtils.logd("git resource '" + context.getString(jr_git_describe) +
                 "' activity '" + context + "' appId '" + appId + "' tokenUrl '" + tokenUrl + "'");
-
         if (sInstance == null) {
             sInstance = new JREngage(context, delegate);
 
@@ -270,6 +272,7 @@ public class JREngage {
                 public void run() {
                     sInstance.mSession = JRSession.getInstance(appId, appUrl, tokenUrl, sInstance.mJrsd);
                     sInstance.mSession.setCustomProviders(customProviders);
+
 
                     // any use of the library is guarded by blockOnInitialization, which checks this ivar,
                     // acquires this lock and waits
@@ -316,6 +319,7 @@ public class JREngage {
         sInstance.mApplicationContext = context;
         if (context instanceof Activity) sInstance.mActivityContext = (Activity) context;
     }
+
 
     /**
      * @param activity An Activity from which startActivity will be called
@@ -454,6 +458,27 @@ public class JREngage {
         LogUtils.logd();
         return mSession.getTokenUrl();
     }
+
+    public void setAuthorizationService(AuthorizationService authorizationService) {
+        LogUtils.logd();
+        mSession.setCurrentlyAuthenticatingOpenIDAppAuthService(authorizationService);
+    }
+
+    public AuthorizationService getAuthorizationService() {
+        LogUtils.logd();
+        return mSession.getCurrentOpenIDAppAuthService();
+    }
+
+    public void setAuthorizationActivity(Activity activity) {
+        LogUtils.logd();
+        mSession.setCurrentlyAuthenticatingOpenIDAppAuthActivity(activity);
+    }
+
+    public Activity getAuthorizationActivity() {
+        LogUtils.logd();
+        return mSession.getCurrentOpenIDAppAuthActivity();
+    }
+
 
 /*@}*/
 
@@ -870,7 +895,7 @@ public class JREngage {
         //completion.onFailure(message, errorCode, exception, shouldTryWebViewAuthentication);
         LogUtils.loge("triggerOnFailure message: " + message);
         LogUtils.loge("triggerOnFailure errorCode: " + errorCode.toString());
-
+        mSession.triggerAuthenticationDidFail(new JREngageError(message, AUTHENTICATION_CANCELED,message));
         if(exception != null) LogUtils.loge("triggerOnFailure exception: " + exception.getMessage());
 
     }
@@ -896,12 +921,10 @@ public class JREngage {
                                             final Class<? extends JRCustomInterface> uiCustomization) {
 
         mSession.setCurrentlyAuthenticatingProvider(provider);
-        mSession.setCurrentOpenIdStartActivityContext(fromActivity);
         mUiCustomization = uiCustomization;
-
-        Intent i = JRFragmentHostActivity.createOpenIDAppAuthIntent(fromActivity);
-        i.putExtra(JRFragmentHostActivity.JR_PROVIDER, provider.getName());
-        fromActivity.startActivity(i);
+        mSession.setCurrentlyAuthenticatingJrUiFragment(null);
+        JROpenIDAppAuth jrOpenIDAppAuth = new JROpenIDAppAuth();
+        jrOpenIDAppAuth.signIn(provider.getName());
     }
 
     public JROpenIDAppAuth.OpenIDAppAuthCallback getNativeAuthCallback(final Activity fromActivity,

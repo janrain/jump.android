@@ -32,7 +32,6 @@
 
 package com.janrain.android.engage.ui;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -57,6 +56,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.janrain.android.R;
 import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.session.JRSession;
@@ -249,6 +249,7 @@ public abstract class JRUiFragment extends Fragment {
         if (mSession != null) mSession.setUiIsShowing(false);
 
         if (mCustomInterfaceConfiguration != null) mCustomInterfaceConfiguration.onDestroy();
+
 
         super.onDestroy();
     }
@@ -542,12 +543,12 @@ public abstract class JRUiFragment extends Fragment {
         return mFragmentResult;
     }
 
-    /*package*/ void finishFragmentWithResult(int result) {
+    /*package*/ public void finishFragmentWithResult(int result) {
         setFragmentResult(result);
         finishFragment();
     }
 
-    /*package*/ void finishFragment() {
+    /*package*/ public void finishFragment() {
         FragmentActivity activity = getActivity();
         if (activity instanceof JRFragmentHostActivity) {
             if (mFragmentResult != null) ((JRFragmentHostActivity) activity)._setResult(mFragmentResult);
@@ -570,7 +571,7 @@ public abstract class JRUiFragment extends Fragment {
         }
     }
 
-    /*package*/ void startWebViewAuthForProvider(JRProvider provider) {
+    /*package*/ public void startWebViewAuthForProvider(JRProvider provider) {
         if (provider.requiresInput() ||
                 (mSession.getAuthenticatedUserForProvider(provider) != null &&
                         !provider.getForceReauthUrlFlag()) && !mSession.getAlwaysForceReauth()) {
@@ -579,11 +580,6 @@ public abstract class JRUiFragment extends Fragment {
             showWebView();
         }
     }
-
-    /*package*/ void startOpenIDAppAuth() {
-        showFragment(JROpenIDAppAuthFragment.class, REQUEST_OPENID_APPAUTH);
-    }
-
 
     /*package*/ void showUserLanding() {
         if (getActivity() instanceof JRFragmentHostActivity || isSharingFlow()) {

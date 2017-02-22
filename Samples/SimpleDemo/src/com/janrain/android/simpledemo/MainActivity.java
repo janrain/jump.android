@@ -39,27 +39,22 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.InputType;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import android.widget.Spinner;
 import android.widget.Toast;
-
 
 import com.janrain.android.Jump;
 import com.janrain.android.capture.CaptureApiError;
 import com.janrain.android.engage.JREngage;
 import com.janrain.android.engage.types.JRActivityObject;
 import com.janrain.android.utils.LogUtils;
-
 
 import org.json.JSONObject;
 
@@ -169,7 +164,6 @@ public class MainActivity extends FragmentActivity {
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
 
-
         IntentFilter filter = new IntentFilter(Jump.JR_FAILED_TO_DOWNLOAD_FLOW);
         LocalBroadcastManager.getInstance(this).registerReceiver(messageReceiver, filter);
 
@@ -184,6 +178,7 @@ public class MainActivity extends FragmentActivity {
         linearLayout.setOrientation(LinearLayout.VERTICAL);
 
         Button webviewAuth = addButton(linearLayout, "Social Sign-In");
+        Button googleAuth = addButton(linearLayout, "Google Sign-In");
         Button dumpRecord = addButton(linearLayout, "Dump Record to Log");
         Button editProfile = addButton(linearLayout, "Edit Profile");
         Button refreshToken = addButton(linearLayout, "Refresh Access Token");
@@ -217,6 +212,17 @@ public class MainActivity extends FragmentActivity {
             public void onClick(View v) {
                 if (flowDownloaded){
                     Jump.showSignInDialog(MainActivity.this, null, signInResultHandler, null);
+                } else {
+                    Toast.makeText(MainActivity.this, "Flow Configuration not downloaded yet",
+                            Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        googleAuth.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (flowDownloaded){
+                    Jump.showSignInDialog(MainActivity.this, "googleplus", signInResultHandler, null);
                 } else {
                     Toast.makeText(MainActivity.this, "Flow Configuration not downloaded yet",
                             Toast.LENGTH_LONG).show();

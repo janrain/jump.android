@@ -31,14 +31,16 @@ package com.janrain.android.engage;
  *  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 
-import android.app.Application;
+import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
-import android.content.Context;
-import android.content.Intent;
+
+import com.janrain.android.engage.session.JRSession;
 import com.janrain.android.utils.LogUtils;
+
 import net.openid.appauth.AuthState;
 import net.openid.appauth.AuthorizationException;
 import net.openid.appauth.AuthorizationRequest;
@@ -49,12 +51,10 @@ import net.openid.appauth.ClientSecretBasic;
 import net.openid.appauth.RegistrationRequest;
 import net.openid.appauth.RegistrationResponse;
 import net.openid.appauth.ResponseTypeValues;
+
 import java.util.Arrays;
 import java.util.List;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 
-import com.janrain.android.engage.session.JRSession;
 import static com.janrain.android.engage.JROpenIDAppAuth.OpenIDAppAuthProvider;
 
 
@@ -128,32 +128,6 @@ public class OpenIDAppAuthGoogle extends OpenIDAppAuthProvider {
 
     }
 
-    @Nullable
-    private Context getApplicationContext() {
-        try {
-            final Class<?> activityThreadClass =
-                    Class.forName("android.app.ActivityThread");
-            final Method method = activityThreadClass.getMethod("currentApplication");
-            return (Application) method.invoke(null, (Object[]) null);
-        } catch (final ClassNotFoundException e) {
-            // handle exception
-            LogUtils.loge(TAG, e);
-        } catch (final NoSuchMethodException e) {
-            // handle exception
-            LogUtils.loge(TAG, e);
-        } catch (final IllegalArgumentException e) {
-            // handle exception
-            LogUtils.loge(TAG, e);
-        } catch (final IllegalAccessException e) {
-            // handle exception
-            LogUtils.loge(TAG, e);
-        } catch (final InvocationTargetException e) {
-            // handle exception
-            LogUtils.loge(TAG, e);
-        }
-        return null;
-    }
-
 
     private void makeAuthRequest(
             @NonNull AuthorizationServiceConfiguration serviceConfig,
@@ -177,11 +151,12 @@ public class OpenIDAppAuthGoogle extends OpenIDAppAuthProvider {
         session.setCurrentlyAuthenticatingOpenIDAppAuthProvider(this);
         OpenIDAppAuthTokenActivity ta = new OpenIDAppAuthTokenActivity();
         LogUtils.logd(TAG, "Making auth request to " + serviceConfig.authorizationEndpoint);
+        Context appContext = session.getCurrentOpenIDAppAuthActivity().getBaseContext();
 
         mAuthService.performAuthorizationRequest(
                 authRequest,
                 ta.createPostAuthorizationIntent(
-                        this.getApplicationContext(),
+                        appContext,
                         authRequest,
                         serviceConfig.discoveryDoc,
                         authState));
