@@ -40,6 +40,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.support.v4.content.LocalBroadcastManager;
+
 import com.janrain.android.capture.Capture;
 import com.janrain.android.capture.CaptureApiError;
 import com.janrain.android.capture.CaptureFlowUtils;
@@ -49,13 +50,14 @@ import com.janrain.android.engage.JREngageDelegate;
 import com.janrain.android.engage.JREngageError;
 import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.types.JRDictionary;
-
-import com.janrain.android.engage.ui.JRCustomInterface;
 import com.janrain.android.utils.AndroidUtils;
 import com.janrain.android.utils.ApiConnection;
 import com.janrain.android.utils.JsonUtils;
 import com.janrain.android.utils.LogUtils;
 import com.janrain.android.utils.ThreadUtils;
+
+import net.openid.appauth.AuthorizationService;
+
 import org.json.JSONObject;
 
 import java.io.FileInputStream;
@@ -67,16 +69,15 @@ import java.io.ObjectOutputStream;
 import java.io.StreamCorruptedException;
 import java.util.Map;
 
+import static com.janrain.android.Jump.CaptureApiResultHandler.CaptureAPIError;
+import static com.janrain.android.Jump.CaptureApiResultHandler.CaptureAPIError.FailureReason.CAPTURE_API_FORMAT_ERROR;
+import static com.janrain.android.Jump.ForgotPasswordResultHandler.ForgetPasswordError;
+import static com.janrain.android.Jump.ForgotPasswordResultHandler.ForgetPasswordError.FailureReason.FORGOTPASSWORD_JUMP_NOT_INITIALIZED;
 import static com.janrain.android.Jump.SignInResultHandler.SignInError;
 import static com.janrain.android.Jump.SignInResultHandler.SignInError.FailureReason.AUTHENTICATION_CANCELED_BY_USER;
 import static com.janrain.android.Jump.SignInResultHandler.SignInError.FailureReason.CAPTURE_API_ERROR;
 import static com.janrain.android.Jump.SignInResultHandler.SignInError.FailureReason.ENGAGE_ERROR;
 import static com.janrain.android.Jump.SignInResultHandler.SignInError.FailureReason.JUMP_NOT_INITIALIZED;
-import static com.janrain.android.Jump.ForgotPasswordResultHandler.ForgetPasswordError;
-import static com.janrain.android.Jump.ForgotPasswordResultHandler.ForgetPasswordError.FailureReason.
-        FORGOTPASSWORD_JUMP_NOT_INITIALIZED;
-import static com.janrain.android.Jump.CaptureApiResultHandler.CaptureAPIError;
-import static com.janrain.android.Jump.CaptureApiResultHandler.CaptureAPIError.FailureReason.CAPTURE_API_FORMAT_ERROR;
 import static com.janrain.android.utils.LogUtils.throwDebugException;
 
 /**
@@ -230,6 +231,7 @@ public class Jump {
     public static void setCaptureDomain(String domain) {
         state.captureDomain = domain;
     }
+
 
     public static String getCaptureClientId() {
         return state.captureClientId;
@@ -452,7 +454,9 @@ public class Jump {
                 Jump.fireHandlerOnFailure(err);
             }
         });
-
+        AuthorizationService authorizationService = new AuthorizationService(fromActivity);
+        state.jrEngage.setAuthorizationService(authorizationService);
+        state.jrEngage.setAuthorizationActivity(fromActivity);
         if (providerName != null) {
             state.jrEngage.showAuthenticationDialog(fromActivity, providerName);
         } else {

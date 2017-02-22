@@ -84,6 +84,13 @@ public class JREngageError {
         public static final String AUTHENTICATION_FAILED = "authenticationFailed";
 
         /**
+         * The authentication failed because of:
+         * - The user denied access to the requested provider permissions
+         */
+        public static final String AUTHENTICATION_DENIED = "authenticationDenied";
+
+
+        /**
          * The social publishing failed because:
          * - There was a response JSON decoding error
          * - There was an unrecognized error response from Engage
@@ -194,6 +201,11 @@ public class JREngageError {
          * Reserved
          */
         public static final int AUTHENTICATION_CANCELED = START + 2;
+
+        /**
+         * Reserved
+         */
+        public static final int AUTHENTICATION_DENIED = START + 3;
     }
 
     /**

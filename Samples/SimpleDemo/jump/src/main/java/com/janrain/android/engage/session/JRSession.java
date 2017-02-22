@@ -39,6 +39,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.text.TextUtils;
 import android.webkit.CookieManager;
+
 import com.janrain.android.R;
 import com.janrain.android.engage.JREngage;
 import com.janrain.android.engage.JREngageError;
@@ -53,6 +54,7 @@ import com.janrain.android.engage.net.async.HttpResponseHeaders;
 import com.janrain.android.engage.types.JRActivityObject;
 import com.janrain.android.engage.types.JRDictionary;
 import com.janrain.android.engage.ui.JRFragmentHostActivity;
+import com.janrain.android.engage.ui.JRUiFragment;
 import com.janrain.android.utils.AndroidUtils;
 import com.janrain.android.utils.Archiver;
 import com.janrain.android.utils.CollectionUtils;
@@ -105,8 +107,11 @@ public class JRSession implements JRConnectionManagerDelegate {
     private JRProvider mCurrentlyAuthenticatingProvider;
     private String[] mCurrentlyAuthenticatingProviderPermissions;
     private JRProvider mCurrentlyPublishingProvider;
+
     private JROpenIDAppAuth.OpenIDAppAuthProvider mCurrentOpenIDAppAuthProvider;
     private AuthorizationService mCurrentOpenIDAppAuthService;
+    private Activity mCurrentOpenIDAppAuthActivity;
+    private JRUiFragment mCurrentJRUiFragment;
     private Context mCurrentOpenIdStartActivityContext;
 
     private String mReturningAuthProvider;
@@ -379,6 +384,7 @@ public class JRSession implements JRConnectionManagerDelegate {
         mCurrentOpenIdStartActivityContext = context;
     }
 
+
     public String[] getCurrentlyAuthenticatingProviderPermissions() {
         return mCurrentlyAuthenticatingProviderPermissions;
     }
@@ -398,6 +404,38 @@ public class JRSession implements JRConnectionManagerDelegate {
     public void setCurrentlyAuthenticatingOpenIDAppAuthService(AuthorizationService authorizationService) {
         mCurrentOpenIDAppAuthService = authorizationService;
     }
+
+    public AuthorizationService getCurrentOpenIDAppAuthService() {
+        return mCurrentOpenIDAppAuthService;
+    }
+
+    public void setCurrentlyAuthenticatingOpenIDAppAuthActivity(Activity activity) {
+        mCurrentOpenIDAppAuthActivity = activity;
+    }
+
+    public Activity getCurrentOpenIDAppAuthActivity() {
+        return mCurrentOpenIDAppAuthActivity;
+    }
+
+    public void setCurrentlyAuthenticatingJrUiFragment(JRUiFragment jrUiFragment) {
+        mCurrentJRUiFragment = jrUiFragment;
+    }
+
+    public JRUiFragment getCurrentlyAuthenticatingJrUiFragment() {
+        return mCurrentJRUiFragment;
+    }
+
+    public void setCurrentOpenIDAppAuthProvider(JROpenIDAppAuth.OpenIDAppAuthProvider openIDProvider) {
+        mCurrentOpenIDAppAuthProvider = openIDProvider;
+    }
+
+    public JROpenIDAppAuth.OpenIDAppAuthProvider getCurrentOpenIDAppAuthProvider() {
+        return mCurrentOpenIDAppAuthProvider;
+    }
+
+
+
+
 
     public ArrayList<JRProvider> getAuthProviders() {
         ArrayList<JRProvider> providerList = new ArrayList<JRProvider>();
@@ -1298,16 +1336,5 @@ public class JRSession implements JRConnectionManagerDelegate {
         return mLinkAccount;
     }
 
-    public void setCurrentOpenIDAppAuthProvider(JROpenIDAppAuth.OpenIDAppAuthProvider openIDProvider) {
-        mCurrentOpenIDAppAuthProvider = openIDProvider;
-    }
-
-    public JROpenIDAppAuth.OpenIDAppAuthProvider getCurrentOpenIDAppAuthProvider() {
-        return mCurrentOpenIDAppAuthProvider;
-    }
-
-    public AuthorizationService getCurrentOpenIDAppAuthService() {
-        return mCurrentOpenIDAppAuthService;
-    }
 
 }
