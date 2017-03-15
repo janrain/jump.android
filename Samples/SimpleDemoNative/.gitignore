@@ -1,3 +1,5 @@
+fabric.properties
+google-services.json
 *.DS_Store
 #built application files
 *.apk

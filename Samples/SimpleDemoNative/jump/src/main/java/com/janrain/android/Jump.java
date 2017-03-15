@@ -197,8 +197,8 @@ public class Jump {
         }else{
             state.captureRedirectUri = jumpConfig.captureRedirectUri;
         }
-        state.engageAppUrl = jumpConfig.engageAppUrl;
-        state.downloadFlowUrl = jumpConfig.downloadFlowUrl;
+        //state.engageAppUrl = jumpConfig.engageAppUrl;
+        //state.downloadFlowUrl = jumpConfig.downloadFlowUrl;
 
 
 
@@ -374,13 +374,13 @@ public class Jump {
      * @param providerName the name of the provider to show the sign-in flow for. May be null.
      *                     If null, a list of providers (and a traditional sign-in form) is displayed to the
      *                     end-user.
-     * @param permissions  the Permissions/Scopes from the JumpConfig 
+     * @param permissions  the Permissions/Scopes from the JumpConfig
      *                     Used for Native Authentication of Facebook and Google+
      * @param handler your result handler, called upon completion on the UI thread
      * @param mergeToken an Engage auth_info token retrieved from an EMAIL_ADDRESS_IN_USE Capture API error,
      *                   or null for none.
      */
-    public static void showSignInDialog(Activity fromActivity, String providerName, String[] permissions, 
+    public static void showSignInDialog(Activity fromActivity, String providerName, String[] permissions,
                                         SignInResultHandler handler, final String mergeToken) {
         if (state.jrEngage == null || state.captureDomain == null) {
             handler.onFailure(new SignInError(JUMP_NOT_INITIALIZED, null, null));
@@ -748,7 +748,7 @@ public class Jump {
      */
     public interface FacebookRevokedHandler {
         /**
-         * Called when Facebook closeAndClearTokenInformation has succeeded. 
+         * Called when Facebook closeAndClearTokenInformation has succeeded.
          */
         void onSuccess();
 
@@ -1039,7 +1039,7 @@ public class Jump {
             tempExistingProvider = "googleplus";
         }
         final String existingProvider = tempExistingProvider;
-        
+
         String conflictingIdentityProvider = error.captureApiError.getConflictingIdentityProvider();
         String conflictingIdpNameLocalized = JRProvider.getLocalizedName(conflictingIdentityProvider);
         String existingIdpNameLocalized = JRProvider.getLocalizedName(existingProvider);
@@ -1060,13 +1060,13 @@ public class Jump {
                                 //
                                 // ... instead of showSignInDialog if you wish to present your own dialog
                                 // and then use the headless API to perform the traditional sign-in.
-                                
-                                // For the Merge Account workflow it is recommended to use the standard 
-                                // web based (non-native) authentication dialog.  This allows the end 
-                                // user to manually enter the social account that "owns" the Janrain user 
-                                // record.  If the user did not have this account stored on their 
-                                // phone or had multiple accounts stored the user interface could be overly 
-                                // complicated. The standard web based sign in dialog can be forced by 
+
+                                // For the Merge Account workflow it is recommended to use the standard
+                                // web based (non-native) authentication dialog.  This allows the end
+                                // user to manually enter the social account that "owns" the Janrain user
+                                // record.  If the user did not have this account stored on their
+                                // phone or had multiple accounts stored the user interface could be overly
+                                // complicated. The standard web based sign in dialog can be forced by
                                 // passing a null permissions parameter in the method call below
                                 Jump.showSignInDialog(fromActivity,
                                         existingProvider,
@@ -1210,7 +1210,7 @@ public class Jump {
         state.jrEngage.showAuthenticationDialog(fromActivity, null, providerName, null, linkAccount);
         state.jrEngage.addDelegate(mDelegate);
     }
-    
+
     /**
      * Starts the Engage account linking flow. <p/> If the providerName parameter is not null and is a valid
      * provider name string then authentication begins directly with that provider. <p/> If providerName is
@@ -1223,7 +1223,7 @@ public class Jump {
      * @param mDelegate    an Engage Delegate to handle the JRSession response.
      */
 
-    public static void showSocialSignInDialog(Activity fromActivity, String providerName, String[] permissions, 
+    public static void showSocialSignInDialog(Activity fromActivity, String providerName, String[] permissions,
                                               boolean linkAccount, JREngageDelegate mDelegate) {
 
         state.jrEngage.showAuthenticationDialog(fromActivity, null, providerName, null, linkAccount);
