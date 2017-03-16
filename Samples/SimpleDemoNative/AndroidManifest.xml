@@ -75,7 +75,7 @@
 
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="fbb7bb73de5c88fb8942e7590b7bf60735b59f3d" />
+            android:value="UPDATE" />
     </application>
 
 </manifest>

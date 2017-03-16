@@ -117,8 +117,8 @@ public class MainActivity extends FragmentActivity implements
         GoogleApiClient.OnConnectionFailedListener {
 
     // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
-    private static final String TWITTER_KEY = "xv6nwj4U62sYH09N9zkoUbMqV";
-    private static final String TWITTER_SECRET = "vpOS6A3GQQeXxP0QvFGubvxXA1JOnbPzd7C7MrShESxSHF6GeH";
+    private static final String TWITTER_KEY = "UPDATE";
+    private static final String TWITTER_SECRET = "UPDATE";
 
 
     //Facebook SDK
