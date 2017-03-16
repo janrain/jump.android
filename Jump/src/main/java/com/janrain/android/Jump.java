@@ -197,8 +197,8 @@ public class Jump {
         }else{
             state.captureRedirectUri = jumpConfig.captureRedirectUri;
         }
-        //state.engageAppUrl = jumpConfig.engageAppUrl;
-        //state.downloadFlowUrl = jumpConfig.downloadFlowUrl;
+        state.engageAppUrl = jumpConfig.engageAppUrl;
+        state.downloadFlowUrl = jumpConfig.downloadFlowUrl;
 
 
 
