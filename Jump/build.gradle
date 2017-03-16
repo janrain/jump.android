@@ -14,7 +14,7 @@ android {
         // replace the below string with your own Google client ID. Make sure this is consistent
         // with the values used in openid_appauth_idp_configs.xml
         manifestPlaceholders = [
-                'appAuthRedirectScheme': 'com.googleusercontent.apps.169582807084-268b48n6lt895lr8fqvetcnf9u8gbpp'
+                'appAuthRedirectScheme': 'com.googleusercontent.apps.UPDATE'
         ]
     }
 
@@ -35,7 +35,7 @@ dependencies {
     compile 'com.squareup.okio:okio:1.6.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.squareup.retrofit:retrofit:1.8.0'
-    compile 'net.openid:appauth:0.4.1'
+    compile 'net.openid:appauth:0.5.1'
 }
 
 allprojects {
