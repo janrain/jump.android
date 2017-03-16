@@ -778,7 +778,7 @@ public class JRSession implements JRConnectionManagerDelegate {
     public void tryToReconfigureLibraryWithNewAppId(String engageAppId) {
         clearEngageConfigurationCache();
         mAppId = engageAppId;
-        mAppUrl = "rpx";
+        mAppUrl = "";
         tryToReconfigureLibrary();
     }
 
