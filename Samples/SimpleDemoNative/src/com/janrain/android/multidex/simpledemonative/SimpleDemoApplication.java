@@ -48,13 +48,13 @@ public class SimpleDemoApplication extends Application {
         super.onCreate();
         JumpConfig jumpConfig = new JumpConfig();
 
-        jumpConfig.engageAppId = "appcfamhnpkagijaeinl";
-        jumpConfig.captureDomain = "mobile-dev.janraincapture.com";
-        jumpConfig.captureClientId = "9vt2ej43mxyftkf68c3xthkm2rtweg8w";
+        jumpConfig.engageAppId = "UPDATE";
+        jumpConfig.captureDomain = "UPDATE.janraincapture.com";
+        jumpConfig.captureClientId = "UPDATE";
         jumpConfig.captureLocale = "en-US";
         jumpConfig.captureTraditionalSignInFormName = "userInformationForm";
         jumpConfig.traditionalSignInType = Jump.TraditionalSignInType.EMAIL;
-        jumpConfig.captureAppId = "rz47skmnm48jpcv3bh4eguv4b8";
+        jumpConfig.captureAppId = "UPDATE";
         jumpConfig.captureFlowName = "standard_flow";
         jumpConfig.captureFlowVersion="HEAD";
         jumpConfig.captureSocialRegistrationFormName = "socialRegistrationForm";
