@@ -73,6 +73,7 @@
     </string>
     <string name="jr_problem_sharing">There was a problem while sharing.</string>
     <string name="jr_welcome_back_message">Welcome back</string>
+    <string name="jr_base_url">rpxnow.com</string>
 
     <!-- JRCaptureSignInView strings -->
     <string name="jr_capture_signin_view_button_title">Sign in</string>

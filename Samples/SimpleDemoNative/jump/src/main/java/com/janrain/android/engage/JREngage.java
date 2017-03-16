@@ -788,7 +788,7 @@ public class JREngage {
      * @param engageAppId
      *   The new Engage app id
      * @param engageAppUrl
-     *   Used for non rpx.now Engage apps
+     *   Used for non rpxnow.com Engage apps
      */
     public void changeEngageAppId(String engageAppId, String engageAppUrl) {
         blockOnInitialization();
@@ -863,6 +863,7 @@ public class JREngage {
                 triggerOnSuccess(payload);
             }
         };
+
 
         ApiConnection connection =
                 new ApiConnection(JRSession.getInstance().getRpBaseUrl() + "/signin/oauth_token");

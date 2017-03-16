@@ -67,6 +67,13 @@
             android:windowSoftInputMode="stateHidden">
         </activity>
 
+        <activity
+            android:name="com.janrain.android.engage.OpenIDAppAuthCancelledActivity"
+            android:label="SimpleDemoApplication"
+            android:theme="@style/Theme.Janrain.Dialog.Light"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+
 
         <!-- The following activities are for the Janrain Engage for Android library -->
         <!-- This activity must have a dialog theme such as Theme.Holo.Dialog, or
