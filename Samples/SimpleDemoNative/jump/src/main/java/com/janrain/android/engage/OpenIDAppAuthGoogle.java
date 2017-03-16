@@ -31,9 +31,12 @@ package com.janrain.android.engage;
  *  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
 
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
+import android.support.annotation.MainThread;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
@@ -63,6 +66,7 @@ public class OpenIDAppAuthGoogle extends OpenIDAppAuthProvider {
     private String[] scopes;
     private boolean isConnecting = false;
     private static final String TAG = "OpenIDAppAuthGoogle";
+    private static final String EXTRA_FAILED = "failed";
 
 
     /*package*/ static boolean canHandleAuthentication(Context context) {
@@ -153,13 +157,18 @@ public class OpenIDAppAuthGoogle extends OpenIDAppAuthProvider {
         LogUtils.logd(TAG, "Making auth request to " + serviceConfig.authorizationEndpoint);
         Context appContext = session.getCurrentOpenIDAppAuthActivity().getBaseContext();
 
+        Intent cancelIntent = new Intent(appContext, OpenIDAppAuthCancelledActivity.class);
+        cancelIntent.putExtra(EXTRA_FAILED, true);
+        cancelIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
         mAuthService.performAuthorizationRequest(
                 authRequest,
                 ta.createPostAuthorizationIntent(
                         appContext,
                         authRequest,
                         serviceConfig.discoveryDoc,
-                        authState));
+                        authState),
+                PendingIntent.getActivity(appContext, 0, cancelIntent, PendingIntent.FLAG_UPDATE_CURRENT));
 
     }
 
@@ -192,6 +201,8 @@ public class OpenIDAppAuthGoogle extends OpenIDAppAuthProvider {
                     }
                 });
     }
+
+
 
     @Override
     public void signOut() {

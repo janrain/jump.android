@@ -532,7 +532,12 @@ public class JRSession implements JRConnectionManagerDelegate {
     }
 
     public String getRpBaseUrl() {
-        return mRpBaseUrl;
+        if(mAppUrl != null && mAppUrl != "" && mAppUrl != mRpBaseUrl){
+            return mAppUrl;
+        }else{
+            return mRpBaseUrl;
+        }
+
     }
 
     public boolean getHidePoweredBy() {

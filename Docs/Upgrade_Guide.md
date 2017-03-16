@@ -34,6 +34,22 @@ This guide describes the steps required to upgrade from different versions of th
 
     Use `com.janrain.android.utils.LogUtils` instead.
 
+### Upgrading to v7.0.4
+* Add the following activity to your AndroidManifest.xml file (maybe below the OpenIDAppAuthTokenActivity):
+```xml
+<activity
+    android:name="com.janrain.android.engage.OpenIDAppAuthCancelledActivity"
+    android:label="REPLACE_WITH_YOUR_APPNAME_AS_NEEDED"
+    android:theme="@style/Theme.Janrain.Dialog.Light"
+    android:windowSoftInputMode="stateHidden">
+</activity>
+
+* Optional:  Update build.gradle files to use the OpenID AppAuth libraries version 0.5.1 as needed
+
+  compile 'net.openid:appauth:0.5.1'
+
+```
+
 ###  Upgrading to v7.0.3
 
 * In order to support Google's deprecation of the use of Webviews for web based authentication the mobile libraries have been updated to use Google's preferred OpenID AppAuth for Android Libraries (version 0.4.1 tested) for web based Google authentication (this is different from the native Google Android SDK based authentication that the Mobile Libraries also support).  Other than the required code and configuration changes the end-user experience should not appear to be any different than in previous versions of the mobile libraries.
