@@ -103,6 +103,12 @@ project's `AndroidManifest.xml` file:
             android:theme="@style/Theme.Janrain.Dialog.Light"
             android:windowSoftInputMode="stateHidden" >
         </activity>
+        <activity
+            android:name="com.janrain.android.engage.OpenIDAppAuthCancelledActivity"
+            android:label="REPLACE_WITH_YOUR_APPNAME_AS_NEEDED"
+            android:theme="@style/Theme.Janrain.Dialog.Light"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
 
       ...
 
@@ -165,6 +171,7 @@ Import the following classes:
     import com.janrain.android.engage.net.async.HttpResponseHeaders;
     import com.janrain.android.engage.types.JRActivityObject;
     import com.janrain.android.engage.types.JRDictionary;
+    import net.openid.appauth.AuthorizationService;
 
 Interaction begins by calling the `JREngage.initInstance` method, which returns the `JREngage` object:
 
@@ -177,7 +184,7 @@ Interaction begins by calling the `JREngage.initInstance` method, which returns 
 
     mEngage = JREngage.initInstance(this.getApplicationContext(), ENGAGE_APP_ID, ENGAGE_TOKEN_URL, this);
 
-[initInstance](http://janrain.github.com/engage.android/docs/html/classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage.html#a469d808d2464c065bc16dedec7a2cc23)
+[initInstance]
 takes four arguments, `context`, `appId`, `tokenUrl`, and `delegate`:
 
 - `context` — Your Android application Context.
@@ -201,9 +208,12 @@ If you are unsure of what your users should be authenticating to, then Janrain C
 place to store and retrieve data from, and a pier from which to build out a service.)
 
 Once the `JREngage` object has been initialized, start authentication by calling
-[showAuthenticationDialog](http://janrain.github.com/engage.android/docs/html/classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage.html#a0de1aa16e951a1b62e2ef459b1596e83)
+[showAuthenticationDialog] after setting the AuthorizationService and AuthorizationActivity.
 method:
 
+    AuthorizationService authorizationService = new AuthorizationService(MainActivity.this);
+    mEngage.setAuthorizationService(authorizationService);
+    mEngage.setAuthorizationActivity(MainActivity.this);
     mEngage.showAuthenticationDialog();
 
 You will receive your authentication token URL's response in the jrAuthenticationDidReachTokenUrl method.
@@ -217,7 +227,7 @@ For guidance implementing your web-server's authentication token URL, see `Authe
 ## Social Sharing
 
 If you want to share an activity, first create an instance of the
-[`JRActivityObject`](http://janrain.github.com/engage.android/docs/html/classcom_1_1janrain_1_1android_1_1engage_1_1types_1_1_j_r_activity_object.html):
+[`JRActivityObject`]:
 
     String activityText = "added JREngage to her Android application!";
     String activityLink = "http://janrain.com";
@@ -231,8 +241,7 @@ Populate the new object with information about the activity being shared by. Her
           "https://market.android.com/details?id=com.janrain.android.quickshare");
 
 Then pass the activity to the
-[`showSocialPublishingDialogWithActivity`](http://janrain.github.com/engage.android/docs/html/classcom_1_1janrain_1_1android_1_1engage_1_1_j_r_engage.html#aef1ecf0e43afeed0eb0a779c67eff285)
-method:
+[`showSocialPublishingDialogWithActivity`]:
 
     mEngage.showSocialPublishingDialogWithActivity(jrActivity);
 
@@ -278,6 +287,20 @@ method:
     android:theme="@style/Theme.Janrain.Dialog.Light"
     android:windowSoftInputMode="stateHidden" >
 </activity>
+ <activity
+    android:name="com.janrain.android.engage.OpenIDAppAuthCancelledActivity"
+    android:label="REPLACE_WITH_YOUR_APPNAME_AS_NEEDED"
+    android:theme="@style/Theme.Janrain.Dialog.Light"
+    android:windowSoftInputMode="stateHidden">
+</activity>
 ```
+
+- Add the following initialization tasks to set the AuthorizationService and AuthorizationActivity before calling the [showAuthenticationDialog] method.
+method:
+
+    AuthorizationService authorizationService = new AuthorizationService(MainActivity.this);
+    mEngage.setAuthorizationService(authorizationService);
+    mEngage.setAuthorizationActivity(MainActivity.this);
+    mEngage.showAuthenticationDialog();
 
 

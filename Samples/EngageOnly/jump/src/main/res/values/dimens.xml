@@ -1,0 +1,26 @@
+<resources>
+    <dimen name="jr_edit_text_size">20sp</dimen>
+    <dimen name="jr_button_text_size">20sp</dimen>
+    <dimen name="jr_powered_by_text_size">12sp</dimen>
+    <dimen name="jr_character_count_size">10sp</dimen>
+
+    <dimen name="jr_media_content_title_size">16sp</dimen>
+    <dimen name="jr_media_content_description_size">12sp</dimen>
+    <dimen name="jr_media_icon_size">45dip</dimen>
+
+    <dimen name="jr_preview_text_size">12sp</dimen>
+    <dimen name="jr_preview_label_padding">4sp</dimen>
+    <dimen name="jr_preview_label_size">10sp</dimen>
+    <dimen name="jr_preview_box_border_padding_top">0dp</dimen>
+    <dimen name="jr_preview_box_border_inset">6sp</dimen>
+    <dimen name="jr_preview_border_padding">8dp</dimen>
+    <dimen name="jr_preview_label_paddingLeft">12dp</dimen>
+
+    <dimen name="jr_tagline_size">12sp</dimen>
+    <dimen name="jr_provider_icon_size">20dip</dimen>
+    <dimen name="jr_profile_pic_size">45dip</dimen>
+    <dimen name="jr_username_text_size">14sp</dimen>
+    <dimen name="jr_signout_button_text_size">10sp</dimen>
+    <dimen name="jr_share_button_size">20dip</dimen>
+    <dimen name="jr_shared_text_size">20sp</dimen>
+</resources>
