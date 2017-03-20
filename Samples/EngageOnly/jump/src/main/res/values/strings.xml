@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- - Shared/common strings. -->
+    <!-- http://stackoverflow.com/questions/4353836/italic-textview-with-wrap-contents-seems-to-clip-the-text-at-right-edge/5666648#5666648 -->
+    <!-- The right side of the n was being clipped, hence this work around backslash kludge -->
+    <string name="jr_powered_by">Powered by Janrain \</string>
+
+    <string name="jr_progress_loading">Loading. Please wait…</string>
+    <string name="jr_progress_sharing">Sharing. Please wait…</string>
+    <string name="jr_dialog_ok">OK</string>
+    <string name="jr_dialog_dismiss">Dismiss</string>
+
+    <!-- - About menu/dialog strings. -->
+    <string name="jr_about_menu_item">About Janrain Engage</string>
+    <string name="jr_about_title">Janrain Engage for Android Library</string>
+    <string name="jr_about_URL">www.janrain.com</string>
+
+    <!-- - JRProviderList strings. -->
+    <string name="jr_provider_list_title">Sign in with…</string>
+    <string name="jr_provider_list_empty">No configured sign-in providers</string>
+    <string name="jr_provider_unknown">Unknown provider</string>
+    <string name="jr_provider_empty_emails">No emails in provider profile</string>
+    <string name="jr_provider_sign_in_with">Sign in with…</string>
+
+    <!-- - JRLanding strings. -->
+    <string name="jr_landing_bad_user_input">Invalid Input</string>
+    <string name="jr_landing_bad_input_long">The input you have entered is not valid. Please try again.</string>
+    <string name="jr_landing_switch_account_button_text">Switch Accounts</string>
+    <string name="jr_landing_signin_button_text">Sign In</string>
+    <string name="jr_landing_default_custom_title">Welcome Back!</string>
+
+    <!-- - JRPublish strings. -->
+    <string name="jr_publish_activity_title">Share</string>
+    <string name="jr_provider_spinner_prompt">Select a provider</string>
+    <string name="jr_calculating_remaining_characters">Calculating Remaining Characters</string>
+    <string name="jr_please_enter_text">Please enter text</string>
+    <string name="jr_shortening_url">shortening URL...</string>
+    <string name="jr_shared">Shared</string>
+    <string name="jr_preview">Preview</string>
+    <string name="jr_choose_email_handler">Choose...</string>
+    <string name="jr_default_email_share_subject">Check it out...</string>
+    <string name="jr_no_social_providers">No social sharing providers are configured.</string>
+    <string name="jr_error_twitter_no_duplicates_allowed">Twitter does not allow duplicate status updates.</string>
+    <string name="jr_error_linkedin_too_long">This message is too long for LinkedIn.</string>
+    <string name="jr_error_generic_sharing">There was an error while sharing.</string>
+    <string name="jr_sign_out_dialog">Would you like to sign out of</string>
+    <string name="jr_sign_out_button">Sign out</string>
+    <string name="jr_email_button_text">Email</string>
+    <string name="jr_sms_button_text">SMS</string>
+    <string name="jr_connect_share_button_text">Connect and Share</string>
+    <string name="jr_share_button_text">Share</string>
+    <string name="jr_no_configured_social_providers">No configured social sharing providers.</string>
+    <string name="jr_user_profile_default_name">You</string>
+
+    <!-- - JRWebView strings. -->
+    <string name="jr_dialog_network_error">A network error occurred, please try again.</string>
+    <string name="jr_menu_item_refresh">Refresh</string>
+    <string name="jr_desktop_browser_ua">Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.24 (KHTML, like Gecko)
+        Chrome/11.0.696.34 Safari/534.24
+    </string>
+    <string name="jr_webview_error_dialog_msg">An error occurred while attempting to sign in.</string>
+    <string name="jr_webview_error_dialog_title">Sign-in failed</string>
+    <string name="jr_webview_bad_user_input_message">The %1$s you entered was not valid. Please try again.</string>
+    <string name="jr_webview_generic_auth_error_message">There was a problem authenticating. Please try again.
+    </string>
+    <string name="jr_webview_bad_user_input_title">Invalid Input</string>
+
+    <!-- JRSession strings -->
+    <string name="jr_getconfig_network_failure_message">There was a problem communicating with the Janrain server.
+    </string>
+    <string name="jr_getconfig_parse_error_message">There was a problem communicating with the Janrain server
+        while configuring authentication.
+    </string>
+    <string name="jr_problem_sharing">There was a problem while sharing.</string>
+    <string name="jr_welcome_back_message">Welcome back</string>
+    <string name="jr_base_url">rpxnow.com</string>
+
+    <!-- JRCaptureSignInView strings -->
+    <string name="jr_capture_signin_view_button_title">Sign in</string>
+    <string name="jr_capture_signin_view_password_hint">Password</string>
+    <string name="jr_capture_signin_view_username_hint">Email</string>
+    <string name="jr_capture_trad_signin_bad_password">Invalid username / password</string>
+    <string name="jr_capture_trad_signin_unrecognized_error">Sorry, there was an error signing in</string>
+    <string name="jr_capture_trad_signin_dialog_title">Sign In</string>
+    <string name="jr_capture_signin_view_signing_in">Signing In …</string>
+    <string name="jr_traditional_account_name">traditional</string>
+    <string name="jr_merge_flow_default_dialog_title">Email Address Conflict</string>
+    <string name="jr_merge_flow_default_dialog_message">The %1$s account that you signed in with has the same
+        email address as an existing user. Sign in with %2$s to continue.
+    </string>
+    <string name="jr_merge_flow_default_merge_button">Merge</string>
+
+    <!-- JRForgotPasswordView strings -->
+    <string name="jr_capture_forgotpassword_link_text">Forgot your password ?</string>
+    <string name="jr_capture_forgotpassword_dialog_header">Confirm Your Email Address</string>
+    <string name="jr_capture_forgotpassword_send_button">Send</string>
+    <string name="jr_capture_forgotpassword_dismiss_button">Dismiss</string>
+    <string name="jr_capture_forgotpassword_forgotpass_button">Forgot Password</string>
+    <string name="jr_capture_forgotpassword_view_failuremsg">Could Not Reset Password</string>
+    <string name="jr_capture_forgotpassword_user_displaymsg">
+        We will send you a link to create a new password
+    </string>
+    <string name="jr_capture_forgotpassword_success_msg">Reset Password Email Sent</string>
+    <string name="jr_capture_forgotpassword_error_msg">Incorrect Email or Password</string>
+    <string name="jr_capture_forgotpassword_reset_error_msg">Could Not Reset Password</string>
+
+    <!-- OpenID AppAuth -->
+    <string name="browser_selector_label">Use browser:</string>
+    <string name="browser_icon_contentDescription">Browser app icon</string>
+    <string name="browser_appauth_default_label">AppAuth heuristic selection</string>
+    <string name="custom_tab_label">"%1$s (custom tab)"</string>
+
+</resources>
