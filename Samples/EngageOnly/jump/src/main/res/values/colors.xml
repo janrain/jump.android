@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="jr_janrain_darkblue_medium">#ff1a557c</color>
+    <color name="jr_janrain_darkblue">#FF074764</color>
+    <color name="jr_some_other_blue">#44248bc0</color>
+    <color name="jr_janrain_darkblue_lightened">#FFcddae0</color>
+    <color name="jr_janrain_lightblue">#ff08b1f5</color>
+    <color name="jr_text_color_hint">#cccccc</color>
+    <color name="jr_janrain_mediumblue_100percent">#FF053044</color>
+    <color name="jr_powered_by_text">#ff666666</color>
+    <color name="jr_preview_label">#ff666666</color>
+    <color name="jr_medium_grey">#ff666666</color>
+    <color name="jr_preview_outer_grey_bg_rect">#1a7f7f7f</color>
+</resources>

@@ -1,0 +1,70 @@
+*.DS_Store
+#built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/**
+gen/**
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Windows thumbnail db
+Thumbs.db
+
+# OSX files
+.DS_Store
+
+# Eclipse project files
+.classpath
+.project
+
+# Android Studio
+local.properties
+*.iml
+.idea
+#.idea/workspace.xml - remove # and delete .idea if it better suit your needs.
+.idea
+.gradle
+.gradle/**
+.gradle/**/*
+build
+build/**
+build/**/*
+jump/build
+jump/*.iml
+jump/.idea
+jump/.gradle
+jump/.gradle/**
+jump/.gradle/**/*
+jump/build/**
+jump/build/**/*
+Samples/EngageOnly/build
+Samples/EngageOnly/local.properties
+Samples/EngageOnly/*.iml
+Samples/EngageOnly/EngageOnly.iml
+Samples/EngageOnly/gradlew
+Samples/EngageOnly/gradle/
+Samples/EngageOnly/jump/jump.iml
+Samples/EngageOnly/build/**
+Samples/EngageOnly/build/**/*
+Samples/EngageOnly/*.iml
+Samples/EngageOnly/.idea
+Samples/EngageOnly/.gradle
+Samples/EngageOnly/.gradle/**
+Samples/EngageOnly/.gradle/**/*
+Samples/EngageOnly/build
+Samples/EngageOnly/jump/build
+Samples/EngageOnly/jump/build/**
+Samples/EngageOnly/jump/build/**/*
+Samples/EngageOnlyNative/*.iml
+
+#NDK
+obj/
