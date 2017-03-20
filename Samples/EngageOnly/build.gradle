@@ -1,0 +1,77 @@
+buildscript {
+    repositories {
+        jcenter ()
+        maven { url 'https://maven.fabric.io/public' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.0'
+    }
+}
+apply plugin: 'com.android.application'
+
+repositories {
+    jcenter ()
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile project(':jump')
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    //If building with strict Android 6.0 the following will need to be uncommented
+    //See: https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html
+    //And: http://stackoverflow.com/questions/31653002/how-to-use-the-legacy-apache-http-client-on-android-m
+
+
+    defaultConfig {
+        applicationId "com.janrain.android.engageonly"
+        minSdkVersion 17  //14?
+        targetSdkVersion 25
+        multiDexEnabled = false
+        // replace the below string with your own Google client ID. Make sure this is consistent
+        // with the values used in openid_appauth_idp_configs.xml
+        manifestPlaceholders = [
+                'appAuthRedirectScheme': 'com.googleusercontent.apps.169582807084-bl39n8snje6empnpf7cu8gmlsap2ekkm'
+        ]
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+
+        // Move the tests to tests/java, tests/res, etc...
+        instrumentTest.setRoot('tests')
+
+        // Move the build types to build-types/<type>
+        // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+        // This moves them out of them default location under src/<type>/... which would
+        // conflict with src/ being used by the main source set.
+        // Adding new build types or product flavors should be accompanied
+        // by a similar customization.
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+
+}
+
+allprojects {
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+        }
+    }
+}
