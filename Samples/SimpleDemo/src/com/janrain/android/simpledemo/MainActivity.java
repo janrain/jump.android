@@ -181,6 +181,7 @@ public class MainActivity extends FragmentActivity {
         Button googleAuth = addButton(linearLayout, "Google Sign-In");
         Button dumpRecord = addButton(linearLayout, "Dump Record to Log");
         Button editProfile = addButton(linearLayout, "Edit Profile");
+        Button changePassword = addButton(linearLayout, "Change Password");
         Button refreshToken = addButton(linearLayout, "Refresh Access Token");
         final Button resendVerificationButton = addButton(linearLayout, "Resend Email Verification");
         Button link_unlinkAccount = addButton(linearLayout, "Link & Unlink Account");
@@ -250,6 +251,18 @@ public class MainActivity extends FragmentActivity {
                     return;
                 }
                 Intent i = new Intent(MainActivity.this, com.janrain.android.simpledemo.UpdateProfileActivity.class);
+                MainActivity.this.startActivity(i);
+            }
+        });
+
+        changePassword.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (Jump.getSignedInUser() == null) {
+                    Toast.makeText(MainActivity.this, "Can't change password without record instance.",
+                            Toast.LENGTH_LONG).show();
+                    return;
+                }
+                Intent i = new Intent(MainActivity.this, com.janrain.android.simpledemo.ChangePasswordActivity.class);
                 MainActivity.this.startActivity(i);
             }
         });
