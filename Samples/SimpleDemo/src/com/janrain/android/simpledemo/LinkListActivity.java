@@ -181,42 +181,39 @@ public class LinkListActivity extends ListActivity {
             @Override
             public void onItemClick(AdapterView<?> a, View v, int position, long id) {
                 setPosition(position);
+
                 mIdentifier = (TextView) v.findViewById(R.id.row_profile_linkaccount_label);
                 unlinkAccount = (ImageView) v.findViewById(R.id.row_unlink_btn);
-                unlinkAccount.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        AlertDialog.Builder b = new AlertDialog.Builder(LinkListActivity.this);
-                        b.setTitle("Unlink Account");
-                        b.setMessage("Do you want to unlink the account?");
-                        b.setPositiveButton("Unlink", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int whichButton) {
-                                link_unlink = false;
-                                if (Jump.getSignedInUser().hasPassword()) {
-                                    if (link_account.getChildCount() > 1) {
-                                        Jump.performUnlinkAccount(String.valueOf(mIdentifier.getText()),
-                                                captureApiResultHandler);
-                                    } else {
-                                        Toast.makeText(LinkListActivity.this,
-                                                "Cannot unlink this account",
-                                                Toast.LENGTH_LONG)
-                                                .show();
-                                    }
-                                } else {
-                                    Jump.performUnlinkAccount(String.valueOf(mIdentifier.getText()),
-                                            captureApiResultHandler);
-                                }
-                                dialog.dismiss();
+
+                AlertDialog.Builder b = new AlertDialog.Builder(LinkListActivity.this);
+                b.setTitle("Unlink Account");
+                b.setMessage("Do you want to unlink the account?");
+                b.setPositiveButton("Unlink", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        link_unlink = false;
+                        if (Jump.getSignedInUser().hasPassword()) {
+                            if (link_account.getChildCount() > 1) {
+                                Jump.performUnlinkAccount(String.valueOf(mIdentifier.getText()),
+                                        captureApiResultHandler);
+                            } else {
+                                Toast.makeText(LinkListActivity.this,
+                                        "Cannot unlink this account",
+                                        Toast.LENGTH_LONG)
+                                        .show();
                             }
-                        });
-                        b.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int whichButton) {
-                                dialog.dismiss();
-                            }
-                        });
-                        b.show();
+                        } else {
+                            Jump.performUnlinkAccount(String.valueOf(mIdentifier.getText()),
+                                    captureApiResultHandler);
+                        }
+                        dialog.dismiss();
                     }
                 });
+                b.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dialog.dismiss();
+                    }
+                });
+                b.show();
             }
         });
     }
