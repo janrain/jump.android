@@ -56,7 +56,12 @@ import com.janrain.android.utils.JsonUtils;
 import com.janrain.android.utils.LogUtils;
 import com.janrain.android.utils.ThreadUtils;
 
+import net.openid.appauth.AppAuthConfiguration;
 import net.openid.appauth.AuthorizationService;
+import net.openid.appauth.browser.BrowserBlacklist;
+import net.openid.appauth.browser.Browsers;
+import net.openid.appauth.browser.VersionRange;
+import net.openid.appauth.browser.VersionedBrowserMatcher;
 
 import org.json.JSONObject;
 
@@ -454,7 +459,14 @@ public class Jump {
                 Jump.fireHandlerOnFailure(err);
             }
         });
-        AuthorizationService authorizationService = new AuthorizationService(fromActivity);
+        BrowserBlacklist blacklist = new BrowserBlacklist(
+                new VersionedBrowserMatcher(
+                        Browsers.SBrowser.PACKAGE_NAME,
+                        Browsers.SBrowser.SIGNATURE_SET,
+                        true, // custom tab
+                        VersionRange.ANY_VERSION));
+        AuthorizationService authorizationService = new AuthorizationService(fromActivity,
+                new AppAuthConfiguration.Builder().setBrowserMatcher(blacklist).build());
         state.jrEngage.setAuthorizationService(authorizationService);
         state.jrEngage.setAuthorizationActivity(fromActivity);
         if (providerName != null) {
