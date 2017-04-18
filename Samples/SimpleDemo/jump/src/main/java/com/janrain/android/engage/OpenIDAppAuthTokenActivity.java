@@ -151,13 +151,26 @@ public class OpenIDAppAuthTokenActivity extends Activity {
             @Nullable TokenResponse tokenResponse,
             @Nullable AuthorizationException authException) {
         LogUtils.logd(TAG, "Token request complete");
-        LogUtils.logd(TAG, "Token: " + tokenResponse.accessToken);
+        if(tokenResponse != null ){
+            LogUtils.logd(TAG, "Token: " + tokenResponse.accessToken);
+        }else if(authException != null){
+            LogUtils.logd(TAG, "Null Token Response - AuthorizationException: " + authException.getMessage() );
+        }else{
+            LogUtils.logd(TAG, "Null Token Response and AuthorizationException" );
+            authException = new AuthorizationException(2, 2007, "NullToken", "Null Token Response and AuthorizationException returned.", null, null);
+        }
 
         mAuthState.update(tokenResponse, authException);
         final JRSession session = JRSession.getInstance();
         JROpenIDAppAuth.OpenIDAppAuthProvider mOpenIDProvider = session.getCurrentOpenIDAppAuthProvider();
-        mOpenIDProvider.getAuthInfoTokenForAccessToken(tokenResponse.accessToken);
+        if(tokenResponse != null ) {
+            mOpenIDProvider.getAuthInfoTokenForAccessToken(tokenResponse.accessToken);
+        }else{
+            mOpenIDProvider.getAuthInfoTokenForAccessToken("");
+        }
         this.finish();
+
+
     }
 
     private void refreshAccessToken() {
