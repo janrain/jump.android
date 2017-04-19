@@ -93,7 +93,7 @@ public class JRWebViewFragment extends JRUiFragment {
     private static final int KEY_ALERT_DIALOG = 1;
 
     public static final int RESULT_RESTART = Activity.RESULT_FIRST_USER;
-    public static final int RESULT_FAIL_AND_RESTART = Activity.RESULT_FIRST_USER + 1;
+    //public static final int RESULT_FAIL_AND_RESTART = Activity.RESULT_FIRST_USER + 1;
     public static final int RESULT_BAD_OPENID_URL = Activity.RESULT_FIRST_USER + 2;
     public static final int RESULT_FAIL_AND_STOP = Activity.RESULT_FIRST_USER + 3;
 
@@ -166,7 +166,6 @@ public class JRWebViewFragment extends JRUiFragment {
     private void ensureWebViewSettings(WebSettings webViewSettings) {
         //webViewSettings.setUserAgentString("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) " +
         //        "AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.142 Safari/535.19");
-        webViewSettings.setUserAgentString("Mozilla/5.0 (Linux; Android 6.0.1; Nexus 6P Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.83 Mobile Safari/537.36");
         webViewSettings.setSavePassword(false);
         webViewSettings.setSupportMultipleWindows(true);
         webViewSettings.setBuiltInZoomControls(true);
@@ -174,8 +173,6 @@ public class JRWebViewFragment extends JRUiFragment {
         webViewSettings.setJavaScriptEnabled(true);
         webViewSettings.setJavaScriptCanOpenWindowsAutomatically(true);
         webViewSettings.setSupportZoom(true);
-        //webViewSettings.setDomStorageEnabled(true);
-        //webViewSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
     }
 
     @Override
@@ -658,15 +655,13 @@ public class JRWebViewFragment extends JRUiFragment {
                 showAlertDialog(alertTitle, alertMessage);
             } else if ("Please enter your OpenID".equals(error)) {
                 // Caused by entering a ~blank OpenID URL
-
                 mIsFinishPending = true;
                 setFragmentResult(RESULT_BAD_OPENID_URL);
                 // TODO resource-ify
                 showAlertDialog("OpenID Error", "The URL you entered does not appear to be an OpenID");
             } else if ("canceled".equals(error)) {
-                //mProvider.setForceReauthFlag(false);
+                //mProvider.setForceReauthFlag(true);
                 mSession.signOutUserForProvider(mSession.getCurrentlyAuthenticatingProvider().getName());
-
                 doAuthRestart();
             } else {
                 Log.e(TAG, "unrecognized error: " + error);
@@ -684,7 +679,6 @@ public class JRWebViewFragment extends JRUiFragment {
 
     private void doAuthRestart() {
         LogUtils.logd(TAG, "[doAuthRestart]");
-
         if (isSpecificProviderFlow() && mProvider != null && !mProvider.requiresInput()) {
             mSession.triggerAuthenticationDidCancel();
             finishFragmentWithResult(RESULT_RESTART);
