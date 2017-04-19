@@ -61,7 +61,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import static com.janrain.android.Jump.SignInResultHandler.SignInError.FailureReason.AUTHENTICATION_CANCELED_BY_USER;
+import static com.janrain.android.Jump.SignInResultHandler.SignInError.FailureReason.AUTHENTICATION_CANCELLED_BY_USER;
 
 public class TradSignInUi extends JRCustomInterfaceConfiguration {
 
@@ -107,7 +107,7 @@ public class TradSignInUi extends JRCustomInterfaceConfiguration {
                     @Override
                     public void onClick(View v) {
                         Jump.fireHandlerOnFailure(new Jump.SignInResultHandler.SignInError(
-                                AUTHENTICATION_CANCELED_BY_USER, null, null));
+                                AUTHENTICATION_CANCELLED_BY_USER, null, null));
                         dialog.dismiss();
                     }
                 });
