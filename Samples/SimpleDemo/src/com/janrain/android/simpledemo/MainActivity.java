@@ -52,6 +52,7 @@ import android.widget.Toast;
 
 import com.janrain.android.Jump;
 import com.janrain.android.capture.CaptureApiError;
+import com.janrain.android.capture.CaptureRecord;
 import com.janrain.android.engage.JREngage;
 import com.janrain.android.engage.types.JRActivityObject;
 import com.janrain.android.utils.LogUtils;
@@ -257,8 +258,14 @@ public class MainActivity extends FragmentActivity {
 
         changePassword.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (Jump.getSignedInUser() == null) {
+                CaptureRecord user = Jump.getSignedInUser();
+                if (user == null) {
                     Toast.makeText(MainActivity.this, "Can't change password without record instance.",
+                            Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(!user.hasPassword()){
+                    Toast.makeText(MainActivity.this, "Can't change password on social only accounts.",
                             Toast.LENGTH_LONG).show();
                     return;
                 }
@@ -292,7 +299,12 @@ public class MainActivity extends FragmentActivity {
 
         resendVerificationButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                promptForResendVerificationEmailAddress();
+                CaptureRecord user = Jump.getSignedInUser();
+                if (user == null) {
+                    promptForResendVerificationEmailAddress("");
+                }else{
+                    promptForResendVerificationEmailAddress(user.getEmail());
+                }
             }
         });
 
@@ -317,11 +329,12 @@ public class MainActivity extends FragmentActivity {
 
     }
 
-
-    private void promptForResendVerificationEmailAddress() {
+    private void promptForResendVerificationEmailAddress(String emailAddress) {
         final EditText input = new EditText(this);
         input.setInputType(InputType.TYPE_CLASS_TEXT);
-
+        if(!emailAddress.isEmpty()){
+            input.setText(emailAddress);
+        }
         AlertDialog.Builder b = new AlertDialog.Builder(MainActivity.this);
         b.setView(input);
         b.setTitle("Please confirm your email address");
@@ -344,7 +357,8 @@ public class MainActivity extends FragmentActivity {
             }
 
             public void onFailure(CaptureApiError e) {
-                Toast.makeText(MainActivity.this, "Failed to send verification email: " + e,
+                String error = e.error_message.isEmpty() ? e.error_description : e.error_message;
+                Toast.makeText(MainActivity.this, "Failed to send verification email: " + error,
                         Toast.LENGTH_LONG).show();
             }
         });
