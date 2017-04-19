@@ -117,8 +117,9 @@ public class MainActivity extends FragmentActivity {
                 i.putExtra("socialRegistrationToken", error.captureApiError.getSocialRegistrationToken());
                 MainActivity.this.startActivity(i);
             } else {
+                String errorString = error.reason.toString().isEmpty() ? error.toString() : error.reason.toString();
                 AlertDialog.Builder b = new AlertDialog.Builder(MainActivity.this);
-                b.setMessage("Sign-in failure:" + error);
+                b.setMessage("Sign-in failure:" + errorString);
                 b.setNeutralButton("Dismiss", null);
                 b.show();
             }
@@ -178,7 +179,7 @@ public class MainActivity extends FragmentActivity {
         linearLayout.setLayoutParams(new LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT));
         linearLayout.setOrientation(LinearLayout.VERTICAL);
 
-        Button webviewAuth = addButton(linearLayout, "Social Sign-In");
+        Button webviewAuth = addButton(linearLayout, "Sign-In");
         Button googleAuth = addButton(linearLayout, "Google Sign-In");
         Button dumpRecord = addButton(linearLayout, "Dump Record to Log");
         Button editProfile = addButton(linearLayout, "Edit Profile");
