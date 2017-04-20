@@ -653,8 +653,9 @@ public class MainActivity extends FragmentActivity implements
             }
 
             public void onFailure(CaptureApiError e) {
-                Toast.makeText(MainActivity.this, "Failed to send verification email: " + e,
-                        Toast.LENGTH_LONG).show();
+                String error = (e.error_message == null || e.error_message.isEmpty()) ? e.error_description : e.error_message;
+                Toast.makeText(MainActivity.this, "Failed to send verification email: " + error,
+                         Toast.LENGTH_LONG).show();
             }
         });
     }
