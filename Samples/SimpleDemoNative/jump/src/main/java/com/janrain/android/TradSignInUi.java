@@ -284,7 +284,7 @@ public class TradSignInUi extends JRCustomInterfaceConfiguration {
                 }
 
                 if (errorString.equals("") && error.captureApiError != null) {
-                    errorString = error.captureApiError.error_message.isEmpty() ? error.captureApiError.error_description : error.captureApiError.error_message;
+                    errorString = (error.captureApiError.error_message == null | error.captureApiError.error_message.isEmpty()) ? error.captureApiError.error_description : error.captureApiError.error_message;
                 }
 
                 AlertDialog.Builder adb = new AlertDialog.Builder(getActivity());
