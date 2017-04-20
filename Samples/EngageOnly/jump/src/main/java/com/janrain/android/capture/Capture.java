@@ -37,6 +37,7 @@ import com.janrain.android.utils.ApiConnection;
 import org.json.JSONObject;
 
 import java.security.SecureRandom;
+import java.util.Map;
 import java.util.Set;
 
 import static com.janrain.android.Jump.TraditionalSignInType;
@@ -397,6 +398,48 @@ public class Capture {
         return c;
     }
 
+    public static CaptureApiConnection updateUserProfileWithFormFieldsProvided(Map<String, String> fieldMap,
+                                                                               String oauthEndpoint,
+                                                                               String captureFlowFormName,
+                                                                               String accessToken,
+                                                                               final CaptureApiRequestCallback handler) {
+
+        if (captureFlowFormName == null || captureFlowFormName.isEmpty()) {
+            throwDebugException(new IllegalArgumentException("Missing Capture Flow Form Name"));
+        }
+
+        CaptureApiConnection c = new CaptureApiConnection(oauthEndpoint);
+
+        for (Map.Entry<String, String> entry : fieldMap.entrySet())
+        {
+            c.maybeAddParam(entry.getKey(),entry.getValue());
+        }
+
+        c.addAllToParams(
+                "client_id", Jump.getCaptureClientId(),
+                "locale", Jump.getCaptureLocale(),
+                "flow", Jump.getCaptureFlowName(),
+                "flow_version", Jump.getCaptureFlowVersion(),
+                "form", captureFlowFormName,
+                "access_token", accessToken
+        );
+
+        c.fetchResponseAsJson(new ApiConnection.FetchJsonCallback() {
+            public void run(JSONObject response) {
+                if (response == null) {
+                    handler.onFailure(CaptureApiError.INVALID_API_RESPONSE);
+                } else if ("ok".equals(response.opt("stat"))) {
+                    handler.onSuccess();
+                } else {
+                    handler.onFailure(new CaptureApiError(response, null, null));
+                }
+            }
+        });
+
+        return c;
+
+    }
+
     private static CaptureApiConnection getUpdateUserProfileConnection(CaptureRecord user, String editProfileForm) {
 
         if (editProfileForm == null) {
@@ -412,12 +455,14 @@ public class Capture {
                 "locale", Jump.getCaptureLocale(),
                 "flow", Jump.getCaptureFlowName(),
                 "flow_version", Jump.getCaptureFlowVersion(),
-                "form", Jump.getCaptureEditUserProfileFormName(),
+                "form", editProfileForm,
                 "access_token", user.accessToken
         );
 
         return c;
     }
+
+
 
     /**
      * @internal

@@ -27,7 +27,6 @@ Thumbs.db
 .project
 
 # Android Studio
-local.properties
 *.iml
 .idea
 #.idea/workspace.xml - remove # and delete .idea if it better suit your needs.
@@ -47,7 +46,6 @@ jump/.gradle/**/*
 jump/build/**
 jump/build/**/*
 Samples/SimpleDemo/build
-Samples/SimpleDemo/local.properties
 Samples/SimpleDemo/*.iml
 Samples/SimpleDemo/SimpleDemo.iml
 Samples/SimpleDemo/gradlew
@@ -69,7 +67,6 @@ Samples/SimpleDemoNative/.idea
 Samples/SimpleDemoNative/.gradle
 Samples/SimpleDemoNative/.gradle/**
 Samples/SimpleDemoNative/.gradle/**/*
-Samples/SimpleDemoNative/local.properties
 Samples/SimpleDemoNative/build
 Samples/SimpleDemoNative/build/**
 Samples/SimpleDemoNative/build/**/*

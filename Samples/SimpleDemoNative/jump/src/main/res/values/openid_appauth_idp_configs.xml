@@ -8,12 +8,12 @@
     <eat-comment/>
 
     <bool name="google_enabled">true</bool>
-    <string name="google_client_id" translatable="false">UPDATE.apps.googleusercontent.com</string>
+    <string name="google_client_id" translatable="false">169582807084-bk8a4jintrtka452cj1v610s588riapp.apps.googleusercontent.com</string>
     <!--
     NOTE: This scheme is automatically provisioned by Google for Android OAuth2 clients, and is
     the reverse form of the client ID registered above. Handling of this scheme is registered in an
     intent filter in the app's manifest.
     -->
-    <string name="google_auth_redirect_uri" translatable="false">com.googleusercontent.apps.UPDATE:/oauth2redirect</string>
+    <string name="google_auth_redirect_uri" translatable="false">com.googleusercontent.apps.169582807084-bk8a4jintrtka452cj1v610s588riapp:/oauth2redirect</string>
 
 </resources>
