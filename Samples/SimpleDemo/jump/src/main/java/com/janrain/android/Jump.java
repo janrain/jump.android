@@ -1219,7 +1219,8 @@ public class Jump {
      */
 
     public static void showSocialSignInDialog(Activity fromActivity, String providerName, boolean linkAccount, JREngageDelegate mDelegate) {
-        state.jrEngage.showAuthenticationDialog(fromActivity, null, providerName, null, linkAccount);
+        Boolean skipDialog = linkAccount ? linkAccount : false;
+        state.jrEngage.showAuthenticationDialog(fromActivity, skipDialog, providerName, null, linkAccount);
         state.jrEngage.addDelegate(mDelegate);
     }
     
