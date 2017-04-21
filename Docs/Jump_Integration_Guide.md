@@ -49,6 +49,43 @@
 </activity>
 ```
 
+Please refer to the Simple Demo app to see additional code modifications that may be required.
+
+If you are invoking the Engage/Social Login authentication dialogs directly from within your application then you may need to bind the OpenID AppAuth Authorization Service to your main activity (or the activity you have configured to receive the redirect from Google).
+
+The mobile libraries are expecting the Authorization service that is persisted in the Engage state/session to be the same as what will need to be referenced later in the authentication process (see JROpenIDAppAuth.java).
+
+NOTE:  Do not bind the Authorization service to a Fragment Activity or activity that might be destroyed before the Authorization process is complete other wise a "leaked service connection" error will occur.
+
+The following code is extracted from the Jump.java file and demonstrates how to do this:
+
+```
+//Required Includes:
+import net.openid.appauth.AppAuthConfiguration;
+import net.openid.appauth.AuthorizationService;
+import net.openid.appauth.browser.BrowserBlacklist;
+import net.openid.appauth.browser.Browsers;
+import net.openid.appauth.browser.VersionRange;
+import net.openid.appauth.browser.VersionedBrowserMatcher;
+
+//Example code:
+BrowserBlacklist blacklist = new BrowserBlacklist(
+                new VersionedBrowserMatcher(
+                        Browsers.SBrowser.PACKAGE_NAME,
+                        Browsers.SBrowser.SIGNATURE_SET,
+                        true, // custom tab
+                        VersionRange.ANY_VERSION));
+      AuthorizationService authorizationService = new AuthorizationService(fromActivity,
+              new AppAuthConfiguration.Builder().setBrowserMatcher(blacklist).build());
+      state.jrEngage.setAuthorizationService(authorizationService);
+      state.jrEngage.setAuthorizationActivity(fromActivity);
+      if (providerName != null) {
+          state.jrEngage.showAuthenticationDialog(fromActivity, providerName);
+      } else {
+          state.jrEngage.showAuthenticationDialog(fromActivity, TradSignInUi.class);
+      }
+```
+
 ## Upgrading to v6.0
 
 * The only IDE that this release supports and has been tested with is the Android Studio IDE.
