@@ -101,6 +101,7 @@ public class JRWebViewFragment extends JRUiFragment {
     private boolean mIsAlertShowing = false;
     private boolean mIsFinishPending = false;
     private boolean mIsLoadingMobileEndpoint = false;
+    private boolean mTwitterReload = false;
     private String mCurrentlyLoadingUrl;
     //private boolean mUseDesktopUa = false;
     private JRProvider mProvider;
@@ -199,6 +200,7 @@ public class JRWebViewFragment extends JRUiFragment {
             mProvider = mSession.getCurrentlyAuthenticatingProvider();
             configureWebViewUa();
             final URL startUrl = mSession.startUrlForCurrentlyAuthenticatingProvider();
+            if(mProvider.getName().equals("twitter")) mTwitterReload = true;
             mWebView.loadUrl(startUrl.toString());
         }
 
@@ -431,6 +433,10 @@ public class JRWebViewFragment extends JRUiFragment {
         public void onPageFinished(WebView view, String url) {
             LogUtils.logd(TAG, "[onPageFinished] URL: " + url);
             mCurrentlyLoadingUrl = null;
+            if(mProvider.getName().equals("twitter") && mTwitterReload){
+                mWebView.reload();
+                mTwitterReload = false;
+            }
 
             hideProgressSpinner();
 
@@ -649,13 +655,12 @@ public class JRWebViewFragment extends JRUiFragment {
                 showAlertDialog(alertTitle, alertMessage);
             } else if ("Please enter your OpenID".equals(error)) {
                 // Caused by entering a ~blank OpenID URL
-
                 mIsFinishPending = true;
                 setFragmentResult(RESULT_BAD_OPENID_URL);
                 // TODO resource-ify
                 showAlertDialog("OpenID Error", "The URL you entered does not appear to be an OpenID");
             } else if ("canceled".equals(error)) {
-                //mProvider.setForceReauth(true);
+                //mProvider.setForceReauthFlag(true);
                 mSession.signOutUserForProvider(mSession.getCurrentlyAuthenticatingProvider().getName());
                 doAuthRestart();
             } else {

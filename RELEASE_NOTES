@@ -1,7 +1,23 @@
+v7.0.5
+- Potentially BREAKING CHANGE: If you are using the "capture/CaptureRecord.java" file's "hasPassowrd()" method to determine if a user record is social only then the logic has been corrected.  "hasPassword()" now returns a Boolean true if the user record contains a password value other than null.
+- Added code and examples to support the change password functionality of flow forms.  This includes a new method that allow the developer to build up a simple Map of flow form names and values and submit the form to any Janrain "oauth/" compatible endpoint.  This method does no validation that the submitted data is accurate for the flow form configuration.  All validation of the submitted data and error reporting will be done server-side.
+```
+public static CaptureApiConnection updateUserProfileWithFormFieldsProvided(Map<String, String> fieldMap,
+                                                                               String oauthEndpoint,
+                                                                               String captureFlowFormName,
+                                                                               String accessToken,
+                                                                               final CaptureApiRequestCallback handler)
+```
+- Improved LinkAccount click behavior in the sample apps.
+- Improved error message parsing in several areas.
+- Resolved Twitter cancel-return webview display bug.
+- Added code to avoid null pointer exceptions with certain Samsung browsers during the OpenID AppAuth process.
+
 v7.0.4
 - Resolved notification issue where the user cancelled the OpenID AppAuth process by using the back button or closing the browser and the mobile libraries weren't notified.  NOTE:  This change requires adding an activity to your AndroidManifest.xml.  Please refer to the Docs/Upgrade_Guide.md for more assistance.
 - Added extra verification for null/empty engageAppUrl settings.
 - Updated sample applications to use the 0.5.1 version of the OpenID AppAuth Android libraries
+
 v7.0.3
 - OpenID AppAuth library activity and service connections are now bound to the activity from which the main Jump libraries are invoked from (MainActivity in the SimpleDemo application).
 - Removed JROpenIDAppAuthFragment.java class.
@@ -9,12 +25,15 @@ v7.0.3
 - Improved error handling when the user denies access to the OpenID AppAuth permissions/scopes request.
 - Added an example of invoking direct Engage authentication (Google) through the SimpleDemo main UI without needing to invoke the Engage Provider List Fragment.
 - There should be no code changes required for the integrating developer/engineer from the 7.0.2 release (unless they have made other library modifications that relate to the above behaviors)
+
 v7.0.2
 - Bug fixes around Activity creation for the App Auth module.
 - Documentation update
 - Catch error when signInForm is not defined or spelled incorrectly.
+
 v7.0.1
 - Resolved compatibility issues with certain Android versions and configurations.
+
 v7.0.0
 - Implemented OpenID AppAuth Libraries to support Google WebView Deprecation.
 - Added support for non-standard Engage server url's

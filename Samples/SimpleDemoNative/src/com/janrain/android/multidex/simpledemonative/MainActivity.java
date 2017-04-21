@@ -85,6 +85,7 @@ import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.plus.Plus;
 
 import com.google.android.gms.plus.Plus;
+import com.janrain.android.capture.CaptureRecord;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.Callback;
@@ -201,8 +202,9 @@ public class MainActivity extends FragmentActivity implements
                 i.putExtra("socialRegistrationToken", error.captureApiError.getSocialRegistrationToken());
                 MainActivity.this.startActivity(i);
             } else {
+                String errorString = error.reason.toString().isEmpty() ? error.toString() : error.reason.toString();
                 AlertDialog.Builder b = new AlertDialog.Builder(MainActivity.this);
-                b.setMessage("Sign-in failure:" + error);
+                b.setMessage("Sign-in failure:" + errorString);
                 b.setNeutralButton("Dismiss", null);
                 b.show();
             }
@@ -335,12 +337,13 @@ public class MainActivity extends FragmentActivity implements
         linearLayout.setLayoutParams(new LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT));
         linearLayout.setOrientation(LinearLayout.VERTICAL);
 
-        Button webviewAuth = addButton(linearLayout, "Webview Sign-In");
+        Button webviewAuth = addButton(linearLayout, "Sign-In");
         Button googleplusAuth = addButton(linearLayout, "Google+");
         Button facebookAuth = addButton(linearLayout, "Facebook");
         final Button twitterAuth = addButton(linearLayout, "Twitter");
         Button dumpRecord = addButton(linearLayout, "Dump Record to Log");
         Button editProfile = addButton(linearLayout, "Edit Profile");
+        Button changePassword = addButton(linearLayout, "Change Password");
         Button refreshToken = addButton(linearLayout, "Refresh Access Token");
         final Button resendVerificationButton = addButton(linearLayout, "Resend Email Verification");
         Button link_unlinkAccount = addButton(linearLayout, "Link & Unlink Account");
@@ -504,6 +507,24 @@ public class MainActivity extends FragmentActivity implements
             }
         });
 
+        changePassword.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                CaptureRecord user = Jump.getSignedInUser();
+                if (user == null) {
+                    Toast.makeText(MainActivity.this, "Can't change password without record instance.",
+                            Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(!user.hasPassword()){
+                    Toast.makeText(MainActivity.this, "Can't change password on social only accounts.",
+                            Toast.LENGTH_LONG).show();
+                    return;
+                }
+                Intent i = new Intent(MainActivity.this, com.janrain.android.multidex.simpledemonative.ChangePasswordActivity.class);
+                MainActivity.this.startActivity(i);
+            }
+        });
+
         refreshToken.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (Jump.getSignedInUser() == null) {
@@ -529,7 +550,12 @@ public class MainActivity extends FragmentActivity implements
 
         resendVerificationButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                promptForResendVerificationEmailAddress();
+                CaptureRecord user = Jump.getSignedInUser();
+                if (user == null) {
+                    promptForResendVerificationEmailAddress("");
+                }else{
+                    promptForResendVerificationEmailAddress(user.getEmail());
+                }
             }
         });
 
@@ -599,10 +625,12 @@ public class MainActivity extends FragmentActivity implements
         }
     }
 
-    private void promptForResendVerificationEmailAddress() {
+    private void promptForResendVerificationEmailAddress(String emailAddress) {
         final EditText input = new EditText(this);
         input.setInputType(InputType.TYPE_CLASS_TEXT);
-
+        if(!emailAddress.isEmpty()){
+            input.setText(emailAddress);
+        }
         AlertDialog.Builder b = new AlertDialog.Builder(MainActivity.this);
         b.setView(input);
         b.setTitle("Please confirm your email address");
@@ -625,8 +653,9 @@ public class MainActivity extends FragmentActivity implements
             }
 
             public void onFailure(CaptureApiError e) {
-                Toast.makeText(MainActivity.this, "Failed to send verification email: " + e,
-                        Toast.LENGTH_LONG).show();
+                String error = (e.error_message == null || e.error_message.isEmpty()) ? e.error_description : e.error_message;
+                Toast.makeText(MainActivity.this, "Failed to send verification email: " + error,
+                         Toast.LENGTH_LONG).show();
             }
         });
     }

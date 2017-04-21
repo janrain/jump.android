@@ -62,6 +62,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TimeZone;
 
+import static android.R.attr.password;
 import static com.janrain.android.capture.Capture.CaptureApiRequestCallback;
 import static com.janrain.android.capture.Capture.InvalidApidChangeException;
 import static com.janrain.android.utils.ApiConnection.FetchJsonCallback;
@@ -445,17 +446,22 @@ public class CaptureRecord extends JSONObject {
     }
 
     public boolean hasPassword() {
-        String password = getPasswordSchemaInfoFromFlow(Jump.getCaptureFlow());
+        String password = getSchemaInfoFromFlow(Jump.getCaptureFlow(), "password");
         if (password == null || password.isEmpty()) {
-            return true;
-        } else return false;
+            return false;
+        } else return true;
     }
 
-    private String getPasswordSchemaInfoFromFlow(Map<String, Object> captureFlow) {
+    public String getEmail() {
+        String email = getSchemaInfoFromFlow(Jump.getCaptureFlow(), "email");
+        return email;
+    }
+
+    private String getSchemaInfoFromFlow(Map<String, Object> captureFlow, String fieldName) {
         if (captureFlow == null) return null;
         Map form = (Map) captureFlow.get("schema_info");
         Map fieldNames = (Map) form.get("paths");
-        String type = (String) fieldNames.get("password");
+        String type = (String) fieldNames.get(fieldName);
         String formFieldValue = CaptureJsonUtils.valueForAttrByDotPath(this, type);
         return formFieldValue;
     }

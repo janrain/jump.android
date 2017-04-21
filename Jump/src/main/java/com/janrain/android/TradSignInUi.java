@@ -61,7 +61,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import static com.janrain.android.Jump.SignInResultHandler.SignInError.FailureReason.AUTHENTICATION_CANCELED_BY_USER;
+import static com.janrain.android.Jump.SignInResultHandler.SignInError.FailureReason.AUTHENTICATION_CANCELLED_BY_USER;
 
 public class TradSignInUi extends JRCustomInterfaceConfiguration {
 
@@ -107,7 +107,7 @@ public class TradSignInUi extends JRCustomInterfaceConfiguration {
                     @Override
                     public void onClick(View v) {
                         Jump.fireHandlerOnFailure(new Jump.SignInResultHandler.SignInError(
-                                AUTHENTICATION_CANCELED_BY_USER, null, null));
+                                AUTHENTICATION_CANCELLED_BY_USER, null, null));
                         dialog.dismiss();
                     }
                 });
@@ -179,6 +179,7 @@ public class TradSignInUi extends JRCustomInterfaceConfiguration {
                                     new DialogInterface.OnClickListener() {
                                         public void onClick(DialogInterface dialog, int id) {
                                             //Calls AlertDialog Forgot password flow
+
                                             AlertDialog myForgotPasswordDialog = forgotPassword();
                                             myForgotPasswordDialog.show();
                                             dialog.cancel();
@@ -283,7 +284,7 @@ public class TradSignInUi extends JRCustomInterfaceConfiguration {
                 }
 
                 if (errorString.equals("") && error.captureApiError != null) {
-                    errorString = error.captureApiError.error_description;
+                    errorString = (error.captureApiError.error_message == null | error.captureApiError.error_message.isEmpty()) ? error.captureApiError.error_description : error.captureApiError.error_message;
                 }
 
                 AlertDialog.Builder adb = new AlertDialog.Builder(getActivity());

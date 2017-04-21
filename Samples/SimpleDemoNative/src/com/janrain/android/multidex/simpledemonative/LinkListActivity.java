@@ -53,7 +53,7 @@ import com.janrain.android.engage.JREngageError;
 import com.janrain.android.engage.net.async.HttpResponseHeaders;
 import com.janrain.android.engage.types.JRActivityObject;
 import com.janrain.android.engage.types.JRDictionary;
-import com.janrain.android.multidex.simpledemonative.R;
+-import com.janrain.android.multidex.simpledemonative.R;
 import com.janrain.android.utils.LogUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -64,7 +64,7 @@ import java.util.ArrayList;
 
 public class LinkListActivity extends ListActivity {
     private static final String TAG = ListActivity.class.getSimpleName();
-    private static com.janrain.android.multidex.simpledemonative.LinkAccountsAdapter mAdapter;
+    private static com.janrain.android.simpledemo.LinkAccountsAdapter mAdapter;
     private final MyCaptureApiResultHandler captureApiResultHandler = new MyCaptureApiResultHandler();
     ListView link_account;
     TextView mIdentifier;
@@ -182,42 +182,39 @@ public class LinkListActivity extends ListActivity {
             @Override
             public void onItemClick(AdapterView<?> a, View v, int position, long id) {
                 setPosition(position);
+
                 mIdentifier = (TextView) v.findViewById(R.id.row_profile_linkaccount_label);
                 unlinkAccount = (ImageView) v.findViewById(R.id.row_unlink_btn);
-                unlinkAccount.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        AlertDialog.Builder b = new AlertDialog.Builder(LinkListActivity.this);
-                        b.setTitle("Unlink Account");
-                        b.setMessage("Do you want to unlink the account?");
-                        b.setPositiveButton("Unlink", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int whichButton) {
-                                link_unlink = false;
-                                if (Jump.getSignedInUser().hasPassword()) {
-                                    if (link_account.getChildCount() > 1) {
-                                        Jump.performUnlinkAccount(String.valueOf(mIdentifier.getText()),
-                                                captureApiResultHandler);
-                                    } else {
-                                        Toast.makeText(LinkListActivity.this,
-                                                "Cannot unlink this account",
-                                                Toast.LENGTH_LONG)
-                                                .show();
-                                    }
-                                } else {
-                                    Jump.performUnlinkAccount(String.valueOf(mIdentifier.getText()),
-                                            captureApiResultHandler);
-                                }
-                                dialog.dismiss();
+
+                AlertDialog.Builder b = new AlertDialog.Builder(LinkListActivity.this);
+                b.setTitle("Unlink Account");
+                b.setMessage("Do you want to unlink the account?");
+                b.setPositiveButton("Unlink", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        link_unlink = false;
+                        if (!Jump.getSignedInUser().hasPassword()) {
+                            if (link_account.getChildCount() > 1) {
+                                Jump.performUnlinkAccount(String.valueOf(mIdentifier.getText()),
+                                        captureApiResultHandler);
+                            } else {
+                                Toast.makeText(LinkListActivity.this,
+                                        "Cannot unlink this account",
+                                        Toast.LENGTH_LONG)
+                                        .show();
                             }
-                        });
-                        b.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int whichButton) {
-                                dialog.dismiss();
-                            }
-                        });
-                        b.show();
+                        } else {
+                            Jump.performUnlinkAccount(String.valueOf(mIdentifier.getText()),
+                                    captureApiResultHandler);
+                        }
+                        dialog.dismiss();
                     }
                 });
+                b.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dialog.dismiss();
+                    }
+                });
+                b.show();
             }
         });
     }
@@ -249,7 +246,7 @@ public class LinkListActivity extends ListActivity {
                         linkUnlinkResults.add(linkedRecords);
                         LogUtils.loge(profileData.getString("identifier"));
                     }
-                    mAdapter = new com.janrain.android.multidex.simpledemonative.LinkAccountsAdapter(LinkListActivity.this, linkUnlinkResults);
+                    mAdapter = new com.janrain.android.simpledemo.LinkAccountsAdapter(LinkListActivity.this, linkUnlinkResults);
                     link_account.setAdapter(mAdapter);
                 } catch (JSONException e) {
                     LogUtils.loge("Error parsing data " + e.toString());

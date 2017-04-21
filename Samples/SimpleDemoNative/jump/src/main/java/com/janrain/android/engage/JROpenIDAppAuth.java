@@ -176,36 +176,40 @@ public class JROpenIDAppAuth {
 
         /*package*/ void getAuthInfoTokenForAccessToken(String accessToken) {
 
-            ApiConnection.FetchJsonCallback handler = new ApiConnection.FetchJsonCallback() {
-                public void run(JSONObject json) {
+            if (accessToken != null && !accessToken.isEmpty()){
+                ApiConnection.FetchJsonCallback handler = new ApiConnection.FetchJsonCallback() {
+                    public void run(JSONObject json) {
 
-                    if (json == null) {
-                        triggerOnFailure("Bad Response", OpenIDAppAuthError.ENGAGE_ERROR);
-                        return;
+                        if (json == null) {
+                            triggerOnFailure("Bad Response", OpenIDAppAuthError.ENGAGE_ERROR);
+                            return;
+                        }
+
+                        String status = json.optString("stat");
+
+                        if (json.optString("stat") == null || !json.optString("stat").equals("ok")) {
+                            triggerOnFailure("Bad Json: " + json, OpenIDAppAuthError.ENGAGE_ERROR);
+                            return;
+                        }
+
+                        String auth_token = json.optString("token");
+
+                        JRDictionary payload = new JRDictionary();
+                        payload.put("token", auth_token);
+                        payload.put("auth_info", new JRDictionary());
+
+                        triggerOnSuccess(payload);
                     }
+                };
 
-                    String status = json.optString("stat");
+                ApiConnection connection =
+                        new ApiConnection(JRSession.getInstance().getRpBaseUrl() + "/signin/oauth_token");
 
-                    if (json.optString("stat") == null || !json.optString("stat").equals("ok")) {
-                        triggerOnFailure("Bad Json: " + json, OpenIDAppAuthError.ENGAGE_ERROR);
-                        return;
-                    }
-
-                    String auth_token = json.optString("token");
-
-                    JRDictionary payload = new JRDictionary();
-                    payload.put("token", auth_token);
-                    payload.put("auth_info", new JRDictionary());
-
-                    triggerOnSuccess(payload);
-                }
-            };
-
-            ApiConnection connection =
-                    new ApiConnection(JRSession.getInstance().getRpBaseUrl() + "/signin/oauth_token");
-
-            connection.addAllToParams("token", accessToken, "provider", provider());
-            connection.fetchResponseAsJson(handler);
+                connection.addAllToParams("token", accessToken, "provider", provider());
+                connection.fetchResponseAsJson(handler);
+            }else{
+                triggerOnFailure("Null or Empty AccessToken", OpenIDAppAuthError.ENGAGE_ERROR);
+            }
 
         }
 
