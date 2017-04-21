@@ -99,6 +99,11 @@ public class CaptureApiError {
     public final String error_description;
 
     /**
+     * A description of this instance of the error, which can vary for a single given code.
+     */
+    public final String error_message;
+
+    /**
      * The raw JSON response
      */
     public final JSONObject raw_response;
@@ -111,6 +116,7 @@ public class CaptureApiError {
         error = "INVALID_API_RESPONSE";
         code = -1;
         error_description = null;
+        error_message = null;
         raw_response = null;
     }
 
@@ -125,6 +131,7 @@ public class CaptureApiError {
         code = response.optInt("code");
         error = response.optString("error");
         error_description = response.optString("error_description");
+        error_message = response.optString("message");
         raw_response = response;
         this.engageToken = engageToken;
         this.conflictingIdentityProvider = conflictingProvider;
@@ -138,6 +145,7 @@ public class CaptureApiError {
         code = GENERIC_ERROR;
         error = null;
         error_description = description;
+        error_message = description;
         raw_response = null;
     }
 

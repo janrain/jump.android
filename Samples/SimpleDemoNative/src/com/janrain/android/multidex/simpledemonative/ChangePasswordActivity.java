@@ -38,69 +38,62 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import com.janrain.android.Jump;
 import com.janrain.android.capture.Capture;
 import com.janrain.android.capture.CaptureApiError;
 import com.janrain.android.capture.CaptureRecord;
-import com.janrain.android.multidex.simpledemonative.R;
 
 import org.json.JSONException;
 
-import static com.janrain.android.multidex.simpledemonative.R.id.update_profile_display_name;
-import static com.janrain.android.multidex.simpledemonative.R.id.update_profile_email;
-import static com.janrain.android.multidex.simpledemonative.R.id.update_profile_first_name;
-import static com.janrain.android.multidex.simpledemonative.R.id.update_profile_last_name;
-import static com.janrain.android.multidex.simpledemonative.R.id.update_profile_about;
+import java.util.HashMap;
+import java.util.Map;
 
-public class UpdateProfileActivity extends Activity {
+import static com.janrain.android.multidex.simpledemonative.R.id.change_password_old;
+import static com.janrain.android.multidex.simpledemonative.R.id.change_password_new;
+import static com.janrain.android.multidex.simpledemonative.R.id.change_password_confirm;
+
+public class ChangePasswordActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.update_profile_activity);
+        setContentView(R.layout.change_password_activity);
 
-        setTitle("Update Profile");
+        setTitle("Change Password");
 
         CaptureRecord user = Jump.getSignedInUser();
 
-        setEditTextString(update_profile_email, getStringOrNullFromUser(user, "email"));
-        setEditTextString(update_profile_display_name, getStringOrNullFromUser(user, "displayName"));
-        setEditTextString(update_profile_last_name, getStringOrNullFromUser(user, "familyName"));
-        setEditTextString(update_profile_first_name, getStringOrNullFromUser(user, "givenName"));
-        setEditTextString(update_profile_about, getStringOrNullFromUser(user, "aboutMe"));
     }
 
-    public void update(View view) {
+    public void changePassword(View view) {
+
         CaptureRecord user = Jump.getSignedInUser();
 
-        String email = getEditTextString(update_profile_email);
-        String firstName = getEditTextString(update_profile_first_name);
-        String lastName = getEditTextString(update_profile_last_name);
-        String displayName = getEditTextString(update_profile_display_name);
-        String about = getEditTextString(update_profile_about);
+        String oldPassword = getEditTextString(change_password_old);
+        String newPassword = getEditTextString(change_password_new);
+        String confirmPassword = getEditTextString(change_password_confirm);
 
-        try {
-            user.put("email", email);
-            user.put("displayName", displayName);
-            user.put("givenName", firstName);
-            user.put("familyName", lastName);
-            user.put("aboutMe", about);
-        } catch (JSONException e) {
-            throw new RuntimeException("Unexpected ", e);
-        }
+        Map<String, String> fieldMap = new HashMap<String, String>();
+        fieldMap.put("oldpassword", oldPassword);
+        fieldMap.put("newpassword", newPassword);
+        fieldMap.put("newpasswordConfirm", confirmPassword);
 
-        Capture.updateUserProfile(user, new Capture.CaptureApiRequestCallback() {
+        Capture.updateUserProfileWithFormFieldsProvided(fieldMap,
+                "/oauth/update_profile_native",
+                "newPasswordFormProfile",
+                user.getAccessToken(),
+                new Capture.CaptureApiRequestCallback() {
 
             public void onSuccess() {
-                Toast.makeText(UpdateProfileActivity.this, "Profile Updated", Toast.LENGTH_LONG).show();
+                Toast.makeText(ChangePasswordActivity.this, "Password Changed", Toast.LENGTH_LONG).show();
                 finish();
             }
 
             public void onFailure(CaptureApiError error) {
-                String errorMsg = (error.error_message == null | error.error_message.isEmpty()) ? error.error_description : error.error_message;
-                AlertDialog.Builder adb = new AlertDialog.Builder(UpdateProfileActivity.this);
+                AlertDialog.Builder adb = new AlertDialog.Builder(ChangePasswordActivity.this);
                 adb.setTitle("Error");
-                adb.setMessage(errorMsg.toString());
+                adb.setMessage(error.toString());
                 adb.show();
             }
         });

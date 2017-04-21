@@ -64,7 +64,7 @@ Samples/EngageOnly/build
 Samples/EngageOnly/jump/build
 Samples/EngageOnly/jump/build/**
 Samples/EngageOnly/jump/build/**/*
-Samples/EngageOnlyNative/*.iml
+Samples/EngageOnly/*.iml
 
 #NDK
 obj/
