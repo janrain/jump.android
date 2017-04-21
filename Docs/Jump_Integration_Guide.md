@@ -1,7 +1,7 @@
 # Janrain Android Mobile Libraries Integration Guide
 
 ## Upgrading to v7.0
-* In order to support Google's deprecation of the use of Webviews for web based authentication the mobile libraries have been updated to use Google's preferred OpenID AppAuth for Android Libraries (version 0.4.1 tested) for web based Google authentication (this is different from the native Google Android SDK based authentication that the Mobile Libraries also support).  Other than the required code and configuration changes the end-user experience should not appear to be any different than in previous versions of the mobile libraries.
+* In order to support Google's deprecation of the use of Webviews for web based authentication the mobile libraries have been updated to use Google's preferred OpenID AppAuth for Android Libraries (version 0.5.1 tested) for web based Google authentication (this is different from the native Google Android SDK based authentication that the Mobile Libraries also support).  Other than the required code and configuration changes the end-user experience should not appear to be any different than in previous versions of the mobile libraries.
 
 * Please read the "Docs/Upgrade_Guide.md" for general upgrade guidance.
 
@@ -55,7 +55,7 @@ If you are invoking the Engage/Social Login authentication dialogs directly from
 
 The mobile libraries are expecting the Authorization service that is persisted in the Engage state/session to be the same as what will need to be referenced later in the authentication process (see JROpenIDAppAuth.java).
 
-NOTE:  Do not bind the Authorization service to a Fragment Activity or activity that might be destroyed before the Authorization process is complete other wise a "leaked service connection" error will occur.
+NOTE:  Do not bind the Authorization service to a Fragment Activity or activity that might be destroyed before the Authorization process is complete otherwise a "leaked service connection" error will occur.
 
 The following code is extracted from the Jump.java file and demonstrates how to do this:
 
