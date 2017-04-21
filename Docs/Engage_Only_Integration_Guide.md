@@ -227,8 +227,8 @@ BrowserBlacklist blacklist = new BrowserBlacklist(
                         VersionRange.ANY_VERSION));
       AuthorizationService authorizationService = new AuthorizationService(fromActivity,
               new AppAuthConfiguration.Builder().setBrowserMatcher(blacklist).build());
-      state.jrEngage.setAuthorizationService(authorizationService);
-      state.jrEngage.setAuthorizationActivity(fromActivity);
+      mEngage.setAuthorizationService(authorizationService);
+      mEngage.jrEngage.setAuthorizationActivity(fromActivity);
       mEngage.showAuthenticationDialog(fromActivity, TradSignInUi.class);
 
 ```

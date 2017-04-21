@@ -18,6 +18,7 @@ Report bugs or ask questions:
 </activity>
 ```
 
+
 Please refer to the Simple Demo app to see additional code modifications that may be required.
 
 If you are invoking the Engage/Social Login authentication dialogs directly from within your application then you may need to bind the OpenID AppAuth Authorization Service to your main activity (or the activity you have configured to receive the redirect from Google).
