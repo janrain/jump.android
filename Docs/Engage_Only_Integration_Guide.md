@@ -171,7 +171,14 @@ Import the following classes:
     import com.janrain.android.engage.net.async.HttpResponseHeaders;
     import com.janrain.android.engage.types.JRActivityObject;
     import com.janrain.android.engage.types.JRDictionary;
+    import net.openid.appauth.AppAuthConfiguration;
     import net.openid.appauth.AuthorizationService;
+    import net.openid.appauth.browser.BrowserBlacklist;
+    import net.openid.appauth.browser.Browsers;
+    import net.openid.appauth.browser.VersionRange;
+    import net.openid.appauth.browser.VersionedBrowserMatcher;
+
+
 
 Interaction begins by calling the `JREngage.initInstance` method, which returns the `JREngage` object:
 
@@ -211,10 +218,20 @@ Once the `JREngage` object has been initialized, start authentication by calling
 [showAuthenticationDialog] after setting the AuthorizationService and AuthorizationActivity.
 method:
 
-    AuthorizationService authorizationService = new AuthorizationService(MainActivity.this);
-    mEngage.setAuthorizationService(authorizationService);
-    mEngage.setAuthorizationActivity(MainActivity.this);
-    mEngage.showAuthenticationDialog();
+```
+BrowserBlacklist blacklist = new BrowserBlacklist(
+                new VersionedBrowserMatcher(
+                        Browsers.SBrowser.PACKAGE_NAME,
+                        Browsers.SBrowser.SIGNATURE_SET,
+                        true, // custom tab
+                        VersionRange.ANY_VERSION));
+      AuthorizationService authorizationService = new AuthorizationService(fromActivity,
+              new AppAuthConfiguration.Builder().setBrowserMatcher(blacklist).build());
+      mEngage.setAuthorizationService(authorizationService);
+      mEngage.jrEngage.setAuthorizationActivity(fromActivity);
+      mEngage.showAuthenticationDialog(fromActivity, TradSignInUi.class);
+
+```
 
 You will receive your authentication token URL's response in the jrAuthenticationDidReachTokenUrl method.
 When received you will have access to the body of the response, as well as the headers, which frequently

@@ -2,6 +2,8 @@
 
 This guide describes the steps required to upgrade from different versions of the library.
 
+Please note that many of these update steps are cumulative.  Please start from your current version and step through each section in ascending order.
+
 ## Generalized Upgrade Process
 
 1. Remove **Jump** or **JREngage** modules from your project.
@@ -34,7 +36,13 @@ This guide describes the steps required to upgrade from different versions of th
 
     Use `com.janrain.android.utils.LogUtils` instead.
 
-### Upgrading to v7.0.4
+### Upgrading to v7.0.5 from v7.0.4
+
+In general there should be no changes required for customers that have successfully upgraded to v7.0.4.  There were some changes to the Simple Demo application to demonstrate the Change Password functionality and improvements to the Alert Dialogs used to show errors.
+
+
+### Upgrading to v7.0.4 from previous versions.
+
 * Add the following activity to your AndroidManifest.xml file (maybe below the OpenIDAppAuthTokenActivity):
 ```xml
 <activity
@@ -50,7 +58,44 @@ This guide describes the steps required to upgrade from different versions of th
 
 ```
 
-###  Upgrading to v7.0.3
+Please refer to the Simple Demo app to see additional code modifications that may be required.
+
+If you are invoking the Engage/Social Login authentication dialogs directly from within your application then you may need to bind the OpenID AppAuth Authorization Service to your main activity (or the activity you have configured to receive the redirect from Google).
+
+The mobile libraries are expecting the Authorization service that is persisted in the Engage state/session to be the same as what will need to be referenced later in the authentication process (see JROpenIDAppAuth.java).
+
+NOTE:  Do not bind the Authorization service to a Fragment Activity or activity that might be destroyed before the Authorization process is complete otherwise a "leaked service connection" error will occur.
+
+The following code is extracted from the Jump.java file and demonstrates how to do this:
+
+```
+//Required Includes:
+import net.openid.appauth.AppAuthConfiguration;
+import net.openid.appauth.AuthorizationService;
+import net.openid.appauth.browser.BrowserBlacklist;
+import net.openid.appauth.browser.Browsers;
+import net.openid.appauth.browser.VersionRange;
+import net.openid.appauth.browser.VersionedBrowserMatcher;
+
+//Example code:
+BrowserBlacklist blacklist = new BrowserBlacklist(
+                new VersionedBrowserMatcher(
+                        Browsers.SBrowser.PACKAGE_NAME,
+                        Browsers.SBrowser.SIGNATURE_SET,
+                        true, // custom tab
+                        VersionRange.ANY_VERSION));
+      AuthorizationService authorizationService = new AuthorizationService(fromActivity,
+              new AppAuthConfiguration.Builder().setBrowserMatcher(blacklist).build());
+      state.jrEngage.setAuthorizationService(authorizationService);
+      state.jrEngage.setAuthorizationActivity(fromActivity);
+      if (providerName != null) {
+          state.jrEngage.showAuthenticationDialog(fromActivity, providerName);
+      } else {
+          state.jrEngage.showAuthenticationDialog(fromActivity, TradSignInUi.class);
+      }
+```
+
+###  Upgrading to v7.0.3 from previous versions.
 
 * In order to support Google's deprecation of the use of Webviews for web based authentication the mobile libraries have been updated to use Google's preferred OpenID AppAuth for Android Libraries (version 0.4.1 tested) for web based Google authentication (this is different from the native Google Android SDK based authentication that the Mobile Libraries also support).  Other than the required code and configuration changes the end-user experience should not appear to be any different than in previous versions of the mobile libraries.
 

@@ -96,9 +96,10 @@ public class UpdateProfileActivity extends Activity {
             }
 
             public void onFailure(CaptureApiError error) {
+                String errorMsg = (error.error_message == null || error.error_message.isEmpty()) ? error.error_description : error.error_message;
                 AlertDialog.Builder adb = new AlertDialog.Builder(UpdateProfileActivity.this);
                 adb.setTitle("Error");
-                adb.setMessage(error.toString());
+                adb.setMessage(errorMsg.toString());
                 adb.show();
             }
         });

@@ -7,10 +7,10 @@
   "client": [
     {
       "client_info": {
-        "client_id": "android:com.janrain.android.multidex.simpledemonative",
+        "client_id": "android:com.janrain.android.multidex.simpledemonative.CHANGE_THIS",
         "client_type": 1,
         "android_client_info": {
-          "package_name": "com.janrain.android.multidex.simpledemonative"
+          "package_name": "com.janrain.android.multidex.simpledemonative.CHANGE_THIS"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "UPDATE.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.janrain.android.multidex.simpledemonative",
+            "package_name": "com.janrain.android.multidex.simpledemonative.CHANGE_THIS",
             "certificate_hash": "UPDATE"
           }
         }
