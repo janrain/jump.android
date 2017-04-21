@@ -14,7 +14,7 @@ android {
         // replace the below string with your own Google client ID. Make sure this is consistent
         // with the values used in openid_appauth_idp_configs.xml
         manifestPlaceholders = [
-                'appAuthRedirectScheme': 'com.googleusercontent.apps.UPDATE'
+                'appAuthRedirectScheme': 'com.googleusercontent.apps.UPDTE'
         ]
     }
 

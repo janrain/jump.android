@@ -31,6 +31,7 @@
         <activity android:name="com.janrain.android.simpledemo.RegistrationActivity"
             />
         <activity android:name="com.janrain.android.simpledemo.UpdateProfileActivity" />
+        <activity android:name="com.janrain.android.simpledemo.ChangePasswordActivity" />
         <activity android:name="com.janrain.android.simpledemo.LinkListActivity"/>
         <!--
         This activity declaration is merged with the version from the library manifest.
