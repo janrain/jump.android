@@ -53,6 +53,7 @@ import com.janrain.android.engage.JREngageError;
 import com.janrain.android.engage.net.async.HttpResponseHeaders;
 import com.janrain.android.engage.types.JRActivityObject;
 import com.janrain.android.engage.types.JRDictionary;
+-import com.janrain.android.multidex.simpledemonative.R;
 import com.janrain.android.utils.LogUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -170,7 +171,7 @@ public class LinkListActivity extends ListActivity {
 
                 } else {
                     LinkListActivity.this.startActivity(new Intent(LinkListActivity.this,
-                            com.janrain.android.simpledemo.MainActivity.class));
+                            com.janrain.android.multidex.simpledemonative.MainActivity.class));
                 }
             }
         });
@@ -222,7 +223,7 @@ public class LinkListActivity extends ListActivity {
         Jump.performFetchCaptureData(new Jump.CaptureApiResultHandler() {
             @Override
             public void onSuccess(JSONObject response) {
-                ArrayList<com.janrain.android.simpledemo.LinkData> linkUnlinkResults = new ArrayList<com.janrain.android.simpledemo.LinkData>();
+                ArrayList<com.janrain.android.multidex.simpledemonative.LinkData> linkUnlinkResults = new ArrayList<com.janrain.android.multidex.simpledemonative.LinkData>();
                 JSONObject json = response;
                 try {
                     JSONArray profiles = json.getJSONObject("result").getJSONArray("profiles");
@@ -240,7 +241,7 @@ public class LinkListActivity extends ListActivity {
                             }
                         }
                         LogUtils.loge(profileEmailsCombined.toString());
-                        com.janrain.android.simpledemo.LinkData linkedRecords = new com.janrain.android.simpledemo.LinkData(profileData.getString("identifier"),
+                        com.janrain.android.multidex.simpledemonative.LinkData linkedRecords = new com.janrain.android.multidex.simpledemonative.LinkData(profileData.getString("identifier"),
                                 profileData.getString("domain"), profileEmailsCombined.toString());
                         linkUnlinkResults.add(linkedRecords);
                         LogUtils.loge(profileData.getString("identifier"));
