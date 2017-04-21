@@ -11,10 +11,12 @@ public static CaptureApiConnection updateUserProfileWithFormFieldsProvided(Map<S
 - Improved error message parsing in several areas.
 - Resolved Twitter cancel-return webview display bug.
 - Added code to avoid null pointer exceptions with certain Samsung browsers during the OpenID AppAuth process.
+
 v7.0.4
 - Resolved notification issue where the user cancelled the OpenID AppAuth process by using the back button or closing the browser and the mobile libraries weren't notified.  NOTE:  This change requires adding an activity to your AndroidManifest.xml.  Please refer to the Docs/Upgrade_Guide.md for more assistance.
 - Added extra verification for null/empty engageAppUrl settings.
 - Updated sample applications to use the 0.5.1 version of the OpenID AppAuth Android libraries
+
 v7.0.3
 - OpenID AppAuth library activity and service connections are now bound to the activity from which the main Jump libraries are invoked from (MainActivity in the SimpleDemo application).
 - Removed JROpenIDAppAuthFragment.java class.
@@ -22,12 +24,15 @@ v7.0.3
 - Improved error handling when the user denies access to the OpenID AppAuth permissions/scopes request.
 - Added an example of invoking direct Engage authentication (Google) through the SimpleDemo main UI without needing to invoke the Engage Provider List Fragment.
 - There should be no code changes required for the integrating developer/engineer from the 7.0.2 release (unless they have made other library modifications that relate to the above behaviors)
+
 v7.0.2
 - Bug fixes around Activity creation for the App Auth module.
 - Documentation update
 - Catch error when signInForm is not defined or spelled incorrectly.
+
 v7.0.1
 - Resolved compatibility issues with certain Android versions and configurations.
+
 v7.0.0
 - Implemented OpenID AppAuth Libraries to support Google WebView Deprecation.
 - Added support for non-standard Engage server url's

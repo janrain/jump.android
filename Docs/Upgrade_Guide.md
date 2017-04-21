@@ -64,7 +64,7 @@ If you are invoking the Engage/Social Login authentication dialogs directly from
 
 The mobile libraries are expecting the Authorization service that is persisted in the Engage state/session to be the same as what will need to be referenced later in the authentication process (see JROpenIDAppAuth.java).
 
-NOTE:  Do not bind the Authorization service to a Fragment Activity or activity that might be destroyed before the Authorization process is complete other wise a "leaked service connection" error will occur.
+NOTE:  Do not bind the Authorization service to a Fragment Activity or activity that might be destroyed before the Authorization process is complete otherwise a "leaked service connection" error will occur.
 
 The following code is extracted from the Jump.java file and demonstrates how to do this:
 

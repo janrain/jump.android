@@ -171,7 +171,14 @@ Import the following classes:
     import com.janrain.android.engage.net.async.HttpResponseHeaders;
     import com.janrain.android.engage.types.JRActivityObject;
     import com.janrain.android.engage.types.JRDictionary;
+    import net.openid.appauth.AppAuthConfiguration;
     import net.openid.appauth.AuthorizationService;
+    import net.openid.appauth.browser.BrowserBlacklist;
+    import net.openid.appauth.browser.Browsers;
+    import net.openid.appauth.browser.VersionRange;
+    import net.openid.appauth.browser.VersionedBrowserMatcher;
+
+
 
 Interaction begins by calling the `JREngage.initInstance` method, which returns the `JREngage` object:
 
@@ -212,15 +219,6 @@ Once the `JREngage` object has been initialized, start authentication by calling
 method:
 
 ```
-//Required Includes:
-import net.openid.appauth.AppAuthConfiguration;
-import net.openid.appauth.AuthorizationService;
-import net.openid.appauth.browser.BrowserBlacklist;
-import net.openid.appauth.browser.Browsers;
-import net.openid.appauth.browser.VersionRange;
-import net.openid.appauth.browser.VersionedBrowserMatcher;
-
-//Example code:
 BrowserBlacklist blacklist = new BrowserBlacklist(
                 new VersionedBrowserMatcher(
                         Browsers.SBrowser.PACKAGE_NAME,
@@ -231,11 +229,8 @@ BrowserBlacklist blacklist = new BrowserBlacklist(
               new AppAuthConfiguration.Builder().setBrowserMatcher(blacklist).build());
       state.jrEngage.setAuthorizationService(authorizationService);
       state.jrEngage.setAuthorizationActivity(fromActivity);
-      if (providerName != null) {
-          mEngage.showAuthenticationDialog(fromActivity, providerName);
-      } else {
-          mEngage.showAuthenticationDialog(fromActivity, TradSignInUi.class);
-      }
+      mEngage.showAuthenticationDialog(fromActivity, TradSignInUi.class);
+
 ```
 
 You will receive your authentication token URL's response in the jrAuthenticationDidReachTokenUrl method.
