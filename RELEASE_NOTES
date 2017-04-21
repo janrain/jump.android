@@ -1,4 +1,5 @@
 v7.0.5
+- Potentially BREAKING CHANGE: If you are using the "capture/CaptureRecord.java" file's "hasPassowrd()" method to determine if a user record is social only then the logic has been corrected.  "hasPassword()" now returns a Boolean true if the user record contains a password value other than null.
 - Added code and examples to support the change password functionality of flow forms.  This includes a new method that allow the developer to build up a simple Map of flow form names and values and submit the form to any Janrain "oauth/" compatible endpoint.  This method does no validation that the submitted data is accurate for the flow form configuration.  All validation of the submitted data and error reporting will be done server-side.
 ```
 public static CaptureApiConnection updateUserProfileWithFormFieldsProvided(Map<String, String> fieldMap,

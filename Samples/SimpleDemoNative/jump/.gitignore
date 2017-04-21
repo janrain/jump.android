@@ -78,6 +78,25 @@ Samples/SimpleDemoNative/jump/.gradle/**/*
 Samples/SimpleDemoNative/jump/build
 Samples/SimpleDemoNative/jump/build/**
 Samples/SimpleDemoNative/jump/build/**/*
+Samples/EngageOnly/build
+Samples/EngageOnly/local.properties
+Samples/EngageOnly/*.iml
+Samples/EngageOnly/EngageOnly.iml
+Samples/EngageOnly/gradlew
+Samples/EngageOnly/gradle/
+Samples/EngageOnly/jump/jump.iml
+Samples/EngageOnly/build/**
+Samples/EngageOnly/build/**/*
+Samples/EngageOnly/*.iml
+Samples/EngageOnly/.idea
+Samples/EngageOnly/.gradle
+Samples/EngageOnly/.gradle/**
+Samples/EngageOnly/.gradle/**/*
+Samples/EngageOnly/build
+Samples/EngageOnly/jump/build
+Samples/EngageOnly/jump/build/**
+Samples/EngageOnly/jump/build/**/*
+Samples/EngageOnly/*.iml
 
 #NDK
 obj/
