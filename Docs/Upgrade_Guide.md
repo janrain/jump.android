@@ -36,6 +36,34 @@ Please note that many of these update steps are cumulative.  Please start from y
 
     Use `com.janrain.android.utils.LogUtils` instead.
 
+### Upgrading `Twitter Kit` library and `io.fabric` plugin
+Since the `Twitter Kit` is now out of the fabric bundle, it needs to be configured independently and depending on the case you might also need to remove the `io.fabric` plugin.
+
+* Update Twitter Kit library to version 3.1.1 in your `buile.gradle` file:
+```
+dependencies {
+...
+	compile 'com.twitter.sdk.android:twitter:3.1.1'
+...
+}
+```
+
+* Remove the `io.fabric` plugin from your `build.gradle` file **unless you're using any other fabric products**:
+```
+dependencies {
+...
+	classpath 'io.fabric.tools:gradle:1.+' // REMOVE THIS ONE
+...
+}
+
+apply plugin: 'io.fabric' // REMOVE THIS ONE TOO
+```
+
+After the version changes it's very likely you'll have various build errors because the Twitter Kit library also changed some of its classes. Review your code is compilant with the installation instructions on this link:
+https://dev.twitter.com/twitterkit/android/installation
+
+	
+
 ### Upgrading to v7.0.5 from v7.0.4
 
 In general there should be no changes required for customers that have successfully upgraded to v7.0.4.  There were some changes to the Simple Demo application to demonstrate the Change Password functionality and improvements to the Alert Dialogs used to show errors.
