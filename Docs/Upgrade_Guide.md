@@ -39,7 +39,7 @@ Please note that many of these update steps are cumulative.  Please start from y
 ### Upgrading `Twitter Kit` library and `io.fabric` plugin
 Since the `Twitter Kit` is now out of the fabric bundle, it needs to be configured independently and depending on the case you might also need to remove the `io.fabric` plugin.
 
-* Update Twitter Kit library to version 3.1.1 in your `buile.gradle` file:
+* Update Twitter Kit library to version 3.1.1 in your `build.gradle` file:
 ```
 dependencies {
 ...
