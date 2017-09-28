@@ -35,11 +35,9 @@ package com.janrain.android.multidex.simpledemonative;
 import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
+
 import com.janrain.android.Jump;
 import com.janrain.android.JumpConfig;
-import com.twitter.sdk.android.Twitter;
-import com.twitter.sdk.android.core.TwitterAuthConfig;
-import io.fabric.sdk.android.Fabric;
 
 public class SimpleDemoApplication extends Application {
 

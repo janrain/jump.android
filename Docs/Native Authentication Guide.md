@@ -4,7 +4,7 @@ This guide describes the process of integrating with native Android authenticati
 
 ## Supported Providers
 
-* Facebook (Tested with Facebook Android SDK version 4.18.0)
+* Facebook (Tested with Facebook Android SDK version 4.+ as per facebook's own documentation)
 * Google+ (Play/Sign-In SDK version 8.1 or lower ONLY - The Janrain API's are not currently compatible with version 8.3 or newer)
 * Twitter (Tested using Fabric and Twitter SDK version 2.3.1)
 
@@ -22,29 +22,18 @@ The Janrain Mobile Libraries for Android no longer integrates third-party Social
 
 ### Facebook
 
-As of release 7.0.0 the following Facebook SDK version 4.18.0 implementation steps were implemented in the SimpleCaptureDemo sample application in order to retrieve the Facebook oAuth access token from the Android device:
+As of release 7.0.0 the following Facebook SDK version 4.+ implementation steps were implemented in the SimpleCaptureDemo sample application in order to retrieve the Facebook oAuth access token from the Android device:
 
-1. Download the Facebook SDK for Android from this link:  https://developers.facebook.com/docs/android or implement it through your Gradle build settings
-2. Follow *ALL* of the steps on this page *EXCEPT* for Step 2 (Create a Facebook App): https://developers.facebook.com/docs/android/getting-started/  In order for the Janrain Social Login Server to validate the provided Facebook oAuth token, the token must be provisioned from the same Facebook application that is configured for the Janrain Social Login application.  In most cases, the developer would simply add an Android App Settings configuration to the existing Facebook App.
-3.  Use this page as a starting point for implementing native Facebook Login:  https://developers.facebook.com/docs/facebook-login/android
-4.  Make sure that the Permissions requested in the `LoginManager.getInstance().logInWithReadPermissions(MainActivity.this, Arrays.asList("public_profile", "email"));` method include the required permissions.  In most cases these permissions need to mirror the Facebook app permissions configuration of the Engage Social Login application that is configured in the Janrain Social Login Dashboard.
-5. Add the following dependency value to your application's build.gradle file:
-```json
-dependencies {
-    //Cardview required for Facebook SDK
-    compile 'com.android.support:cardview-v7:24.1.0'
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    //http://stackoverflow.com/questions/21882804/adding-local-aar-files-to-my-gradle-build
-    compile project(':facebook-android-sdk-4.18.0')
-}
-
-6. In your application's '/res/values/strings.xml add the following value with the Facebook App ID that corresponds to the Facebook application used by the configured Engage application:
+1. Follow *ALL* of the steps on this page *EXCEPT* for Step 2 (Create a Facebook App): https://developers.facebook.com/docs/android/getting-started/  In order for the Janrain Social Login Server to validate the provided Facebook oAuth token, the token must be provisioned from the same Facebook application that is configured for the Janrain Social Login application.  In most cases, the developer would simply add an Android App Settings configuration to the existing Facebook App.
+2. Use this page as a starting point for implementing native Facebook Login:  https://developers.facebook.com/docs/facebook-login/android
+3. Make sure that the Permissions requested in the `LoginManager.getInstance().logInWithReadPermissions(MainActivity.this, Arrays.asList("public_profile", "email"));` method include the required permissions.  In most cases these permissions need to mirror the Facebook app permissions configuration of the Engage Social Login application that is configured in the Janrain Social Login Dashboard.
+4. In your application's '/res/values/strings.xml add the following value with the Facebook App ID that corresponds to the Facebook application used by the configured Engage application:
 ```xml
 <!-- Facebook SDK https://developers.facebook.com/docs/android/getting-started -->
     <string name="facebook_app_id">UPDATE</string>
 ```
-7.  Refer to the `MainActivity.java` file for an example of how this was done with the SimpleDemoNative application using the Facebook SDK version 4.9.0.
-8.  Once you have retrieved the oAuth access token from the Facebook SDK you can initiate the Janrain authentication process with `Jump.startTokenAuthForNativeProvider(final Activity fromActivity, final String providerName, final String accessToken, final String tokenSecret, SignInResultHandler handler, final String mergeToken)`
+5. Refer to the `MainActivity.java` file for an example of how this was done with the SimpleDemoNative application using the Facebook SDK version 4.9.0.
+6. Once you have retrieved the oAuth access token from the Facebook SDK you can initiate the Janrain authentication process with `Jump.startTokenAuthForNativeProvider(final Activity fromActivity, final String providerName, final String accessToken, final String tokenSecret, SignInResultHandler handler, final String mergeToken)`
 
 ### Google+
 
@@ -57,7 +46,7 @@ As of release 6.0.0 and 7.0.0 the following Google SDK version 8.1 (Play/Sign-In
     compile 'com.google.android.gms:play-services-plus:8.1.0'
     compile 'com.google.android.gms:play-services-identity:8.1.0'
 2. Add the following buidscript repository and dependency value to your application's build.gradle file:
-```json
+```gradle
 apply plugin: 'com.google.gms.google-services'
 ```
 3. Follow *ALL* of the steps on this page that involve the project configuration and Google+ app configuration: https://developers.google.com/identity/sign-in/android/start  In order for the Janrain Social Login Server to validate the provided Google+ oAuth token, the token must be provisioned from the same Google+ application that is configured for the Janrain Social Login application.  In most cases, the developer would simply add an Android App Client ID configuration to the existing Google+ App.
@@ -74,7 +63,7 @@ As of release 7.0.0 the following Twitter Fabric, TwitterKit SDK (tested with ve
 1. Download the Fabric SDK from this link: https://get.fabric.io/ and include TwitterKit
 2. Configure your Twitter App: http://docs.fabric.io/android/twitter/configure-twitter-app.html  In order for the Janrain Social Login Server to validate the provided Twitter oAuth token, the token must be provisioned from the same Twitter application that is configured for the Janrain Social Login application.  In most cases, the developer would simply add an Android App Client ID configuration to the existing Twitter App.
 3. Add the following buidscript repository and dependency value to your application's build.gradle file:
-```json
+```gradle
 buildscript {
     repositories {
         maven { url 'https://maven.fabric.io/public' }
@@ -86,7 +75,7 @@ buildscript {
 apply plugin: 'io.fabric'
 ```
 4. Add the following dependency value to your application's build.gradle file:
-```json
+```gradle
 dependencies {
     compile('com.twitter.sdk.android:twitter:2.3.1@aar') {
         transitive = true;
