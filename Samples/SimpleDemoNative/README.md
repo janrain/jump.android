@@ -2,7 +2,7 @@
 
 Tested withe the following provider SDK versions:
 
-* Facebook Android SDK 4.18.0
+* Facebook Android SDK 4.+
 * Google Play/Sign-In 8.1
 * Twitter Kit 3.1.1
 
