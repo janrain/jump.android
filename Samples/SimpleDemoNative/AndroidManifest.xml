@@ -73,9 +73,6 @@
             android:windowSoftInputMode="adjustResize|stateHidden"
             />
 
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="UPDATE" />
     </application>
 
 </manifest>
