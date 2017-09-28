@@ -47,14 +47,15 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.janrain.android.Jump;
 import com.janrain.android.engage.JREngageDelegate;
 import com.janrain.android.engage.JREngageError;
 import com.janrain.android.engage.net.async.HttpResponseHeaders;
 import com.janrain.android.engage.types.JRActivityObject;
 import com.janrain.android.engage.types.JRDictionary;
--import com.janrain.android.multidex.simpledemonative.R;
 import com.janrain.android.utils.LogUtils;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -64,7 +65,7 @@ import java.util.ArrayList;
 
 public class LinkListActivity extends ListActivity {
     private static final String TAG = ListActivity.class.getSimpleName();
-    private static com.janrain.android.simpledemo.LinkAccountsAdapter mAdapter;
+    private static LinkAccountsAdapter mAdapter;
     private final MyCaptureApiResultHandler captureApiResultHandler = new MyCaptureApiResultHandler();
     ListView link_account;
     TextView mIdentifier;
@@ -246,7 +247,7 @@ public class LinkListActivity extends ListActivity {
                         linkUnlinkResults.add(linkedRecords);
                         LogUtils.loge(profileData.getString("identifier"));
                     }
-                    mAdapter = new com.janrain.android.simpledemo.LinkAccountsAdapter(LinkListActivity.this, linkUnlinkResults);
+                    mAdapter = new LinkAccountsAdapter(LinkListActivity.this, linkUnlinkResults);
                     link_account.setAdapter(mAdapter);
                 } catch (JSONException e) {
                     LogUtils.loge("Error parsing data " + e.toString());
