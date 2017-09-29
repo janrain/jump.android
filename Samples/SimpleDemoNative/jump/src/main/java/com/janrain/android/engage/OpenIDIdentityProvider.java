@@ -253,14 +253,19 @@ class OpenIDIdentityProvider {
         this.mRedirectUri = getConfigUriMandatory("redirect_uri");
         this.mScope = getConfigStringMandatory("authorization_scope");
 
-        // TODO read and validate configuration for the following fields:
-//        mDiscoveryEndpointRes;
-//        mAuthEndpointRes;
-//        mTokenEndpointRes;
-//        mRegistrationEndpointRes;
-//        mClientIdRes;
-//        mRedirectUriRes;
-//        mScopeRes;
+        this.mDiscoveryEndpoint = getConfigUri("authorization_scope");
+        this.mAuthEndpoint = getConfigUri("authorization_scope");
+        this.mTokenEndpoint = getConfigUri("authorization_scope");
+        this.mRegistrationEndpoint = getConfigUri("authorization_scope");
+        this.mClientId = getConfigString("authorization_scope", null);
+        this.mRedirectUri = getConfigUri("authorization_scope");
+        this.mScope = getConfigString("authorization_scope", null);
+
+        if (mDiscoveryEndpoint == null && mAuthEndpoint == null && mTokenEndpoint == null) {
+            throw new IllegalArgumentException(
+                    "the discovery endpoint or the auth and token endpoints must be specified"
+            );
+        }
 
         mConfigurationRead = true;
     }
@@ -290,6 +295,21 @@ class OpenIDIdentityProvider {
         }
 
         return value.equals("1") || value.toLowerCase().equals("true");
+    }
+
+    private Uri getConfigUri(String key) {
+        final String value = getConfigString(key, null);
+        if (value == null) {
+            return null;
+        }
+
+        try {
+            return Uri.parse(value);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     private Uri getConfigUriMandatory(String key) {
