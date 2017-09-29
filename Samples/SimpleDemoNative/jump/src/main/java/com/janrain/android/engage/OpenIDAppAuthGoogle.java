@@ -70,7 +70,7 @@ public class OpenIDAppAuthGoogle extends OpenIDAppAuthProvider {
 
 
     /*package*/ static boolean canHandleAuthentication(Context context) {
-        List<OpenIDIdentityProvider> providers = OpenIDIdentityProvider.getEnabledProviders(context);
+        List<OpenIDIdentityProvider> providers = OpenIDIdentityProvider.getProviders(context);
         //API Level 24:
         //return providers.stream().filter(o -> o.name.equals("googleplus")).findFirst().isPresent();
         for(OpenIDIdentityProvider idp : providers) {
@@ -101,7 +101,7 @@ public class OpenIDAppAuthGoogle extends OpenIDAppAuthProvider {
         LogUtils.logd(TAG, "[startAuthentication]");
         final Context appContext = fromParentContext;
 
-        List<OpenIDIdentityProvider> providers = OpenIDIdentityProvider.getEnabledProviders(appContext);
+        List<OpenIDIdentityProvider> providers = OpenIDIdentityProvider.getProviders(appContext);
 
         for (final OpenIDIdentityProvider idp : providers) {
             if(idp.name.equals("Google")){
