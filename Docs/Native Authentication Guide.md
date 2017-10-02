@@ -60,7 +60,7 @@ apply plugin: 'com.google.gms.google-services'
 
 As of release 7.0.6 the following TwitterKit SDK (tested with version 3.3.1) implementation steps were implemented in the SimpleDemoNative sample application in order to retrieve the Twitter oAuth access token from the Android device:
 
-1. Review the TwitterKit SDK Installation instructionsfrom this link: https://dev.twitter.com/twitterkit/android/installation
+1. Review the TwitterKit SDK Installation instructions from this link: https://dev.twitter.com/twitterkit/android/installation
 2. Configure your Twitter App.  In order for the Janrain Social Login Server to validate the provided Twitter oAuth token, the token must be provisioned from the same Twitter application that is configured for the Janrain Social Login application.  In most cases, the developer would simply add an Android App Client ID configuration to the existing Twitter App.
 3. Add the following dependency value to your application's build.gradle file:
 ```gradle
