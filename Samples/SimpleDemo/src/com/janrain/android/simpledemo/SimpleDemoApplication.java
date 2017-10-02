@@ -42,24 +42,9 @@ public class SimpleDemoApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        JumpConfig jumpConfig = new JumpConfig();
+        JumpConfig jumpConfig = new JumpConfig(this);
 
-        jumpConfig.engageAppId = "appcfamhnpkagijaeinl";
-        jumpConfig.captureDomain = "mobile-dev.janraincapture.com";
-        jumpConfig.captureClientId = "9vt2ej43mxyftkf68c3xthkm2rtweg8w";
-        jumpConfig.captureLocale = "en-US";
-        jumpConfig.captureTraditionalSignInFormName = "userInformationForm";
-        jumpConfig.traditionalSignInType = Jump.TraditionalSignInType.EMAIL;
-        jumpConfig.captureAppId = "rz47skmnm48jpcv3bh4eguv4b8";
-        jumpConfig.captureFlowName = "standard_flow";
-        jumpConfig.captureFlowVersion="HEAD";
-        jumpConfig.captureSocialRegistrationFormName = "socialRegistrationForm";
-        jumpConfig.captureTraditionalRegistrationFormName = "registrationForm";
-        jumpConfig.captureEditUserProfileFormName = "editProfileForm";
-        jumpConfig.captureEnableThinRegistration = false;
-        jumpConfig.captureForgotPasswordFormName="forgotPasswordForm"  ;
-        jumpConfig.captureResendEmailVerificationFormName = "resendVerificationForm";
-
+        // Modify any jumpConfig fields you need before calling Jump.init
         Jump.init(this, jumpConfig);
     }
 
