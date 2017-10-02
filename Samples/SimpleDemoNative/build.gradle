@@ -1,17 +1,14 @@
 apply plugin: 'com.android.application'
 
-
 buildscript {
     repositories {
         jcenter()
-        maven { url 'https://maven.fabric.io/public' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
         classpath 'com.google.gms:google-services:3.1.0'
     }
 }
-
 
 repositories {
     jcenter()
@@ -40,8 +37,6 @@ dependencies {
     compile 'com.twitter.sdk.android:twitter:3.1.1'
 }
 
-
-
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -62,7 +57,7 @@ android {
         // Replace the below string with your own Google client ID. Make sure this is consistent
         // with the values used in openid_appauth_idp_configs.xml
         manifestPlaceholders = [
-                'appAuthRedirectScheme': 'com.googleusercontent.apps.com.googleusercontent.apps.169582807084-bk8a4jintrtka452cj1v610s588riapp'
+                'appAuthRedirectScheme': 'com.googleusercontent.apps.com.googleusercontent.apps.UPDATE'
         ]
     }
 
