@@ -62,7 +62,7 @@ apply plugin: 'io.fabric' // REMOVE THIS ONE TOO
 After the version changes it's very likely you'll have various build errors because the Twitter Kit library also changed some of its classes. Review your code is compilant with the installation instructions on this link:
 https://dev.twitter.com/twitterkit/android/installation
 
-### Upgrading to v7.0.5 from v7.0.5
+### Upgrading to v7.0.5 from v7.0.6
 
 If you are leveraging TwitterKit for Native Authentication, you may need to remove the Fabric.io dependencies as Fabric.io has been sold to Google and the TwitterKit functionality is now a stand alone library maintained by Twitter.
 
