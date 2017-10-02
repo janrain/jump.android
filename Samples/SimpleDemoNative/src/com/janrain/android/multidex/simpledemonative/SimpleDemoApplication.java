@@ -46,7 +46,7 @@ public class SimpleDemoApplication extends Application {
         super.onCreate();
         JumpConfig jumpConfig = new JumpConfig(this);
 
-        // Modify any jumpConfig field you need before calling Jump.init
+        // Modify any jumpConfig fields you need before calling Jump.init
         Jump.init(this, jumpConfig);
     }
 

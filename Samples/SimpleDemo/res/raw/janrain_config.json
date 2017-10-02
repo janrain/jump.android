@@ -1,0 +1,16 @@
+{
+  "engageAppId": "UPDATE",
+  "captureDomain": "UPDATE.janraincapture.com",
+  "captureClientId": "UPDATE",
+  "captureLocale": "en-US",
+  "captureTraditionalSignInFormName": "userInformationForm",
+  "traditionalSignInType": "Jump.TraditionalSignInType.EMAIL",
+  "captureAppId": "UPDATE",
+  "captureFlowName": "standard_flow",
+  "captureFlowVersion": "HEAD",
+  "captureSocialRegistrationFormName": "socialRegistrationForm",
+  "captureTraditionalRegistrationFormName": "registrationForm",
+  "captureEditUserProfileFormName": "editProfileForm",
+  "captureEnableThinRegistration": false,
+  "captureForgotPasswordFormName": "forgotPasswordForm"
+}
