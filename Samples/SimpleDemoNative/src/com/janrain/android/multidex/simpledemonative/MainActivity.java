@@ -40,12 +40,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.IntentSender;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.support.multidex.MultiDex;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.InputType;
@@ -74,8 +72,6 @@ import com.google.android.gms.auth.GoogleAuthException;
 import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.android.gms.auth.GooglePlayServicesAvailabilityException;
 import com.google.android.gms.auth.UserRecoverableAuthException;
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.common.AccountPicker;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -83,22 +79,22 @@ import com.google.android.gms.common.Scopes;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.plus.Plus;
-
-import com.google.android.gms.plus.Plus;
-import com.janrain.android.capture.CaptureRecord;
-import com.twitter.sdk.android.Twitter;
-import com.twitter.sdk.android.core.TwitterAuthConfig;
-import com.twitter.sdk.android.core.Callback;
-import com.twitter.sdk.android.core.Result;
-import com.twitter.sdk.android.core.TwitterAuthToken;
-import com.twitter.sdk.android.core.TwitterException;
-import com.twitter.sdk.android.core.TwitterSession;
-
 import com.janrain.android.Jump;
 import com.janrain.android.capture.CaptureApiError;
+import com.janrain.android.capture.CaptureRecord;
 import com.janrain.android.engage.JREngage;
 import com.janrain.android.engage.types.JRActivityObject;
 import com.janrain.android.utils.LogUtils;
+import com.twitter.sdk.android.core.Callback;
+import com.twitter.sdk.android.core.DefaultLogger;
+import com.twitter.sdk.android.core.Result;
+import com.twitter.sdk.android.core.Twitter;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import com.twitter.sdk.android.core.TwitterAuthToken;
+import com.twitter.sdk.android.core.TwitterConfig;
+import com.twitter.sdk.android.core.TwitterCore;
+import com.twitter.sdk.android.core.TwitterException;
+import com.twitter.sdk.android.core.TwitterSession;
 import com.twitter.sdk.android.core.identity.TwitterAuthClient;
 
 import org.json.JSONObject;
@@ -106,8 +102,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Set;
-
-import io.fabric.sdk.android.Fabric;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
@@ -120,7 +114,6 @@ public class MainActivity extends FragmentActivity implements
     // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
     private static final String TWITTER_KEY = "UPDATE";
     private static final String TWITTER_SECRET = "UPDATE";
-
 
     //Facebook SDK
     private CallbackManager facebookCallbackManager;
@@ -319,9 +312,12 @@ public class MainActivity extends FragmentActivity implements
 
 
         //Initialize Twitter SDK
-        TwitterAuthConfig twitterAuthConfig = new TwitterAuthConfig("consumerKey", "consumerSecret");
-        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
-        Fabric.with(this, new Twitter(twitterAuthConfig), new Twitter(authConfig));
+        TwitterConfig config = new TwitterConfig.Builder(this)
+                .logger(new DefaultLogger(Log.DEBUG))
+                .twitterAuthConfig(new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET))
+                .debug(true)
+                .build();
+        Twitter.initialize(config);
 
 
         IntentFilter filter = new IntentFilter(Jump.JR_FAILED_TO_DOWNLOAD_FLOW);
@@ -427,7 +423,11 @@ public class MainActivity extends FragmentActivity implements
             public void onClick(View v) {
                 if (flowDownloaded) {
 
-                    TwitterSession twitterSession = Twitter.getSessionManager().getActiveSession();
+                    TwitterSession twitterSession = TwitterCore
+                            .getInstance()
+                            .getSessionManager()
+                            .getActiveSession();
+
                     if (twitterSession != null) {
                         twitterToken = twitterSession.getAuthToken();
                     }else{
@@ -592,8 +592,11 @@ public class MainActivity extends FragmentActivity implements
                 }
                 if(twitterToken != null){
                     MainActivity.ClearCookies(MainActivity.this);
-                    Twitter.getSessionManager().clearActiveSession();
-                    Twitter.logOut();
+                    TwitterCore
+                            .getInstance()
+                            .getSessionManager()
+                            .clearActiveSession();
+
                     LogUtils.logd("Logged out of Twitter");
                 }
                 Jump.signOutCaptureUser(MainActivity.this);
