@@ -4,7 +4,7 @@
   "captureClientId": "UPDATE",
   "captureLocale": "en-US",
   "captureTraditionalSignInFormName": "userInformationForm",
-  "traditionalSignInType": "Jump.TraditionalSignInType.EMAIL",
+  "traditionalSignInType": "EMAIL",
   "captureAppId": "UPDATE",
   "captureFlowName": "standard_flow",
   "captureFlowVersion": "HEAD",
