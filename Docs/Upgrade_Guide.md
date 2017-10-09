@@ -62,7 +62,24 @@ apply plugin: 'io.fabric' // REMOVE THIS ONE TOO
 After the version changes it's very likely you'll have various build errors because the Twitter Kit library also changed some of its classes. Review your code is compilant with the installation instructions on this link:
 https://dev.twitter.com/twitterkit/android/installation
 
-	
+### Upgrading to v7.0.6 from v7.0.5
+
+This version makes use of the `res/raw/janrain_config.json` file which you should provide under 
+your own app's `res` folder. Please follow these steps:
+
+* Make sure you have a `res/raw` folder in your app, if you don't have you need to create it.
+* Copy the `/Samples/SimpleDemo/res/raw/janrain_config.json` or the `/Samples/SimpleDemoNative/res/raw/janrain_config.json`
+file to your `res/raw` folder, depending on the Janrain's Jump library you're using.
+* Copy your janrain credentials and configurations from the `SimpleDemoApplication` 
+into the `janrain_config.json` file.
+* Use the new `JumpConfig(Context)` constructor. This constructor loads the configurations from the json file.
+* You can now remove all the assignations you had to the JumpConfig object's fields. 
+At this point you can override the config object's values by assigning them values programmatically. 
+
+Please take the `/Samples/SimpleDemo/res/raw/janrain_config.json`
+file as a basis to provide your own config file.
+
+
 
 ### Upgrading to v7.0.5 from v7.0.4
 
