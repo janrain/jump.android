@@ -4,6 +4,10 @@
     This contains the authorization service configuration details that are used to demonstrate
     authentication. By default, all authorization services are disabled until you modify this file
     to provide your own configuration details.
+
+    DEPRECATED!
+    PLEASE NOTE: These configurations have been deprecated, please use the new janrain_config.json
+    file instead which you should provide under your own app's res/raw folder.
     -->
     <eat-comment/>
 
