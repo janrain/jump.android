@@ -50,6 +50,9 @@ As of release 7.0.6 the following Google SDK Play/Sign-In SDK Services version 3
 apply plugin: 'com.google.gms.google-services'
 ```
 3. Follow *ALL* of the steps on this page that involve the project configuration and Google+ app configuration: https://developers.google.com/identity/sign-in/android/start  In order for the Janrain Social Login Server to validate the provided Google+ oAuth token, the token must be provisioned from the same Google+ application that is configured for the Janrain Social Login application.  In most cases, the developer would simply add an Android App Client ID configuration to the existing Google+ App.
+
+The google-services.json file can be complicated to fill in, it may be easier to go to this url and download a new one: https://developers.google.com/mobile/add
+
 4. In the case of the SimpleDemoNative application the integration steps were implemented in the `MainActivity.java` file with minimal changes from the examples provided by Google at this link: https://developers.google.com/identity/sign-in/android/sign-in.
 5. Make sure that the Scopes requested when configuring the Google API Client includes the required scopes.  In most cases these scopes need to mirror the Google+ app permissions configuration of the Engage Social Login application that is configured in the Janrain Social Login Dashboard. Example: `mGoogleApiClient = new GoogleApiClient.Builder(this).addConnectionCallbacks(this).addOnConnectionFailedListener(this).addApi(Plus.API).addScope(new Scope(Scopes.PROFILE)).addScope(new Scope(Scopes.EMAIL)).build();`
 6. Refer to the `MainActivity.m` file for an example of how this was done with the SimpleDemoNative application.
