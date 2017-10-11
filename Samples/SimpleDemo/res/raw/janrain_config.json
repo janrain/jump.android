@@ -17,8 +17,8 @@
     {
       "name": "Google",
       "enabled": "true",
-      "client_id": "UPDATE.apps.googleusercontent.com",
-      "redirect_uri": "com.googleusercontent.apps.UPDATE:/oauth2redirect",
+      "client_id": "169582807084-bk8a4jintrtka452cj1v610s588riapp.apps.googleusercontent.com",
+      "redirect_uri": "com.googleusercontent.apps.169582807084-bk8a4jintrtka452cj1v610s588riapp:/oauth2redirect",
       "authorization_scope": "openid email profile",
       "discovery_uri": "https://accounts.google.com/.well-known/openid-configuration",
       "authorization_endpoint_uri": "",
