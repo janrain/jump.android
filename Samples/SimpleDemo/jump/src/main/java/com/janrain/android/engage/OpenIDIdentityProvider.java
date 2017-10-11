@@ -223,8 +223,8 @@ class OpenIDIdentityProvider {
     /*package*/ final String TAG = getLogTag();
     /*package*/ String getLogTag() { return getClass().getSimpleName(); }
 
-    public OpenIDIdentityProvider(JSONObject configJson) {
-        this(configJson, NOT_SPECIFIED, NOT_SPECIFIED, NOT_SPECIFIED);
+    protected OpenIDIdentityProvider(JSONObject configJson) {
+        this(configJson, NOT_SPECIFIED, NOT_SPECIFIED, NOT_SPECIFIED, true);
     }
 
     @Deprecated
@@ -232,11 +232,17 @@ class OpenIDIdentityProvider {
             JSONObject configJson,
             @DrawableRes int buttonImageRes,
             @StringRes int buttonContentDescriptionRes,
-            @ColorRes int buttonTextColorRes) {
-        this.buttonImageRes = checkResSpecified(buttonImageRes, "buttonImageRes");
-        this.buttonContentDescriptionRes =
-                checkResSpecified(buttonContentDescriptionRes, "buttonContentDescriptionRes");
-        this.buttonTextColorRes = checkResSpecified(buttonTextColorRes, "buttonTextColorRes");
+            @ColorRes int buttonTextColorRes,
+            boolean allowResourcesNotSpecified) {
+        this.buttonImageRes = allowResourcesNotSpecified ?
+                buttonImageRes : checkResSpecified(buttonImageRes, "buttonImageRes");
+
+        this.buttonContentDescriptionRes = allowResourcesNotSpecified ?
+                buttonContentDescriptionRes : checkResSpecified(buttonContentDescriptionRes, "buttonContentDescriptionRes");
+
+        this.buttonTextColorRes = allowResourcesNotSpecified ?
+                buttonTextColorRes : checkResSpecified(buttonTextColorRes, "buttonTextColorRes");
+
         this.configJson = configJson;
     }
 
@@ -253,13 +259,12 @@ class OpenIDIdentityProvider {
         this.mRedirectUri = getConfigUriMandatory("redirect_uri");
         this.mScope = getConfigStringMandatory("authorization_scope");
 
-        this.mDiscoveryEndpoint = getConfigUri("authorization_scope");
-        this.mAuthEndpoint = getConfigUri("authorization_scope");
-        this.mTokenEndpoint = getConfigUri("authorization_scope");
-        this.mRegistrationEndpoint = getConfigUri("authorization_scope");
-        this.mClientId = getConfigString("authorization_scope", null);
-        this.mRedirectUri = getConfigUri("authorization_scope");
-        this.mScope = getConfigString("authorization_scope", null);
+        this.mDiscoveryEndpoint = getConfigUri("discovery_uri");
+        this.mAuthEndpoint = getConfigUri("authorization_endpoint_uri");
+        this.mTokenEndpoint = getConfigUri("token_endpoint_uri");
+        this.mRegistrationEndpoint = getConfigUri("registration_endpoint_uri");
+        this.mClientId = getConfigString("client_id", null);
+        this.mRedirectUri = getConfigUri("redirect_uri");
 
         if (mDiscoveryEndpoint == null && mAuthEndpoint == null && mTokenEndpoint == null) {
             throw new IllegalArgumentException(
@@ -418,7 +423,7 @@ class OpenIDIdentityProvider {
         @StringRes
         private final int mScopeRes;
 
-        OldProvider(
+        protected OldProvider(
                 @NonNull String name,
                 @BoolRes int enabledRes,
                 @StringRes int discoveryEndpointRes,
@@ -431,7 +436,7 @@ class OpenIDIdentityProvider {
                 @DrawableRes int buttonImageRes,
                 @StringRes int buttonContentDescriptionRes,
                 @ColorRes int buttonTextColorRes) {
-            super(null, buttonImageRes, buttonContentDescriptionRes, buttonTextColorRes);
+            super(null, buttonImageRes, buttonContentDescriptionRes, buttonTextColorRes, false);
             if (!isResSpecified(discoveryEndpointRes)
                     && !isResSpecified(authEndpointRes)
                     && !isResSpecified(tokenEndpointRes)) {
