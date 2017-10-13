@@ -226,6 +226,7 @@ public class JRProvider implements Serializable {
     }
 
     public String getName() {
+        if(TextUtils.isEmpty(mName)) return "";
         return mName;
     }
 

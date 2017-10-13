@@ -36,8 +36,8 @@ Please note that many of these update steps are cumulative.  Please start from y
 
     Use `com.janrain.android.utils.LogUtils` instead.
 
-### Upgrading `Twitter Kit` library and `io.fabric` plugin
-Since the `Twitter Kit` is now out of the fabric bundle, it needs to be configured independently and depending on the case you might also need to remove the `io.fabric` plugin.
+### Upgrading `TwitterKit` library if using TwitterKit for Native Authentication
+Since the `TwitterKit` is now out of the fabric bundle, it needs to be configured independently and depending on the case you might also need to remove the `io.fabric` plugin.
 
 * Update Twitter Kit library to version 3.1.1 in your `build.gradle` file:
 ```
@@ -79,6 +79,13 @@ At this point you can override the config object's values by assigning them valu
 The `/Samples/SimpleDemo/res/raw/janrain_config.json` file is intended to be used as the template for your own application's configuration file.  Please update the values in this file to reflect your Janrain configuration and settings.
 
 NOTE:  These changes are not mandatory, the libraries should still work using your existing configuration methods as long as they are compatible with previous versions.
+
+If you are leveraging TwitterKit for Native Authentication, you may need to remove the Fabric.io dependencies as Fabric.io has been sold to Google and the TwitterKit functionality is now a stand alone library maintained by Twitter.
+
+If you are leveraging the Google Sign-In libraries for Native Authentication, updating the Google Play Sign-In dependencies may require moving the following line to the bottom of your application's build.gradle file:
+```
+apply plugin: 'com.google.gms.google-services'
+```
 
 ### Upgrading to v7.0.5 from v7.0.4
 
