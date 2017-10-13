@@ -847,7 +847,9 @@ public class Jump {
     }
 
     /**
-     * @deprecated Loading state from disk is now done automatically from Jump.init
+     * This method will attempt to load the content stored with the saveToDisk method.
+     * To be used when appropriate in the Android Activity lifecycle
+     * https://developer.android.com/guide/components/activities/activity-lifecycle.html
      */
     public static void loadFromDisk(Context context) {
         loadUserFromDiskInternal(context);
