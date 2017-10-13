@@ -3,6 +3,10 @@
     <!--
     This file contains the OAuth2 configuration details that do not typically need to be changed
     for the demo app to correctly interact with each IDP.
+
+    DEPRECATED!
+    PLEASE NOTE: These configurations have been deprecated, please use the new janrain_config.json
+    file instead which you should provide under your own app's res/raw folder.
     -->
     <eat-comment/>
 
