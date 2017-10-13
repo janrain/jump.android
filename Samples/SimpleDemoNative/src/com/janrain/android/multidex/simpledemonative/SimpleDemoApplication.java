@@ -44,24 +44,9 @@ public class SimpleDemoApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        JumpConfig jumpConfig = new JumpConfig();
+        JumpConfig jumpConfig = new JumpConfig(this);
 
-        jumpConfig.engageAppId = "UPDATE";
-        jumpConfig.captureDomain = "UPDATE.janraincapture.com";
-        jumpConfig.captureClientId = "UPDATE";
-        jumpConfig.captureLocale = "en-US";
-        jumpConfig.captureTraditionalSignInFormName = "userInformationForm";
-        jumpConfig.traditionalSignInType = Jump.TraditionalSignInType.EMAIL;
-        jumpConfig.captureAppId = "UPDATE";
-        jumpConfig.captureFlowName = "standard_flow";
-        jumpConfig.captureFlowVersion="HEAD";
-        jumpConfig.captureSocialRegistrationFormName = "socialRegistrationForm";
-        jumpConfig.captureTraditionalRegistrationFormName = "registrationForm";
-        jumpConfig.captureEditUserProfileFormName = "editProfileForm";
-        jumpConfig.captureEnableThinRegistration = false;
-        jumpConfig.captureForgotPasswordFormName="forgotPasswordForm"  ;
-        jumpConfig.captureResendEmailVerificationFormName = "resendVerificationForm";
-
+        // Modify any jumpConfig fields you need before calling Jump.init
         Jump.init(this, jumpConfig);
     }
 
