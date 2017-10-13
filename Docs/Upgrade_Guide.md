@@ -64,22 +64,21 @@ https://dev.twitter.com/twitterkit/android/installation
 
 ### Upgrading to v7.0.6 from v7.0.5
 
-This version makes use of the `res/raw/janrain_config.json` file which you should provide under 
-your own app's `res` folder. Please follow these steps:
+This version now allows the use of the `res/raw/janrain_config.json` file which would be placed in
+the application's `res` folder. Please follow these steps to use this file:
 
-* Make sure you have a `res/raw` folder in your app, if you don't have you need to create it.
+* Make sure there is a `res/raw` folder in your app, this may need to be created if it doesn't exist.
 * Copy the `/Samples/SimpleDemo/res/raw/janrain_config.json` or the `/Samples/SimpleDemoNative/res/raw/janrain_config.json`
-file to your `res/raw` folder, depending on the Janrain's Jump library you're using.
-* Copy your janrain credentials and configurations from the `SimpleDemoApplication` 
-into the `janrain_config.json` file.
+file to the `res/raw` folder.
+* Update your janrain credentials and configuration settings in the `janrain_config.json` file.
 * Use the new `JumpConfig(Context)` constructor. This constructor loads the configurations from the json file.
-* You can now remove all the assignations you had to the JumpConfig object's fields. 
-At this point you can override the config object's values by assigning them values programmatically. 
+* You can now remove all the assignations you had to the JumpConfig object's fields.
 
-Please take the `/Samples/SimpleDemo/res/raw/janrain_config.json`
-file as a basis to provide your own config file.
+At this point you can override the config object's values by assigning them values programmatically.
 
+The `/Samples/SimpleDemo/res/raw/janrain_config.json` file is intended to be used as the template for your own application's configuration file.  Please update the values in this file to reflect your Janrain configuration and settings.
 
+NOTE:  These changes are not mandatory, the libraries should still work using your existing configuration methods as long as they are compatible with previous versions.
 
 ### Upgrading to v7.0.5 from v7.0.4
 
