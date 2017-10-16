@@ -64,6 +64,7 @@ import static com.janrain.android.simpledemo.R.id.update_profile_addressStreet2;
 import static com.janrain.android.simpledemo.R.id.update_profile_display_name;
 import static com.janrain.android.simpledemo.R.id.update_profile_email;
 import static com.janrain.android.simpledemo.R.id.update_profile_first_name;
+import static com.janrain.android.simpledemo.R.id.update_profile_gender;
 import static com.janrain.android.simpledemo.R.id.update_profile_last_name;
 import static com.janrain.android.simpledemo.R.id.update_profile_about;
 import static com.janrain.android.simpledemo.R.id.update_profile_middle_name;
@@ -73,9 +74,9 @@ import static com.janrain.android.simpledemo.R.id.update_profile_phone;
 
 public class UpdateProfileActivity extends Activity {
 
-    private String[] genderNames;
-    private String[] genderValues;
-    private boolean[] genderSelectables;
+    private FieldOptionsHolder genderOptions;
+    private FieldOptionsHolder stateOptions;
+    private FieldOptionsHolder countryOptions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,13 +99,16 @@ public class UpdateProfileActivity extends Activity {
         setEditTextString(update_profile_addressStreet2, getStringOrNullFromUser(user, "primaryAddress.address2"));
         setEditTextString(update_profile_addressCity, getStringOrNullFromUser(user, "primaryAddress.city"));
         setEditTextString(update_profile_addressPostalCode, getStringOrNullFromUser(user, "primaryAddress.zip"));
-        setEditTextString(update_profile_addressState, getStringOrNullFromUser(user, "primaryAddress.stateAbbreviation"));
-        setEditTextString(update_profile_addressCountry, getStringOrNullFromUser(user, "primaryAddress.country"));
         setCheckBoxBoolean(update_profile_optIn, getBooleanFromUser(user, "optIn.status", false));
         setEditTextString(update_profile_about, getStringOrNullFromUser(user, "aboutMe"));
 
-        initGenderValues();
-        initGenderAdapter(user);
+        genderOptions = getFieldOptions("gender");
+        stateOptions = getFieldOptions("addressState");
+        countryOptions = getFieldOptions("addressCountry");
+
+        initSpinner(update_profile_gender, getStringOrNullFromUser(user, "gender"), genderOptions);
+        initSpinner(R.id.update_profile_addressState, getStringOrNullFromUser(user, "primaryAddress.stateAbbreviation"), stateOptions);
+        initSpinner(R.id.update_profile_addressCountry, getStringOrNullFromUser(user, "primaryAddress.country"), countryOptions);
     }
 
     public void update(View view) {
@@ -115,15 +119,16 @@ public class UpdateProfileActivity extends Activity {
         String middleName = getEditTextString(update_profile_middle_name);
         String lastName = getEditTextString(update_profile_last_name);
         String displayName = getEditTextString(update_profile_display_name);
-        String gender = getSpinnerSelectedValue(R.id.update_profile_gender, genderValues);
         String phone = getEditTextString(update_profile_phone);
         String mobile = getEditTextString(update_profile_mobile);
         String addressStreet1 = getEditTextString(update_profile_addressStreet1);
         String addressStreet2 = getEditTextString(update_profile_addressStreet2);
         String addressCity = getEditTextString(update_profile_addressCity);
         String addressPostalCode = getEditTextString(update_profile_addressPostalCode);
-        String addressState = getEditTextString(update_profile_addressState);
-        String addressCountry = getEditTextString(update_profile_addressCountry);
+
+        String gender = getSpinnerSelectedValue(update_profile_gender, genderOptions);
+        String addressState = getSpinnerSelectedValue(update_profile_addressState, stateOptions);
+        String addressCountry = getSpinnerSelectedValue(update_profile_addressCountry, countryOptions);
 
         String about = getEditTextString(update_profile_about);
 
@@ -169,49 +174,66 @@ public class UpdateProfileActivity extends Activity {
         });
     }
 
-    private void initGenderValues() {
-        Map<String, Object> fields = (Map<String, Object>) Jump.getCaptureFlow().get("fields");
-        Map<String, Object> fieldGender = (Map<String, Object>) fields.get("gender");
-        List<Map<String, Object>> fieldGenderOptions = (List<Map<String, Object>>) fieldGender.get("options");
+    @SuppressWarnings("unchecked")
+    private FieldOptionsHolder getFieldOptions(String fieldName) {
+        Object objFields = Jump.getCaptureFlow().get("fields");
+        if (objFields == null || !(objFields instanceof Map)) {
+            return null;
+        }
 
-        int valuesCount = fieldGenderOptions.size();
-        genderNames = new String[valuesCount];
-        genderValues = new String[valuesCount];
-        genderSelectables = new boolean[valuesCount];
+        Map<String, Object> fields = (Map<String, Object>) objFields;
+        Object objFieldData = fields.get(fieldName);
+        if (objFieldData == null || !(objFieldData instanceof Map)) {
+            return null;
+        }
+
+        Map<String, Object> fieldData = (Map<String, Object>) objFieldData;
+        Object objFieldOptions = fieldData.get("options");
+        if (objFieldOptions == null || !(objFieldOptions instanceof List)) {
+            return null;
+        }
+
+        List<Map<String, Object>> fieldOptions = (List<Map<String, Object>>) objFieldOptions;
+        int valuesCount = fieldOptions.size();
+        final FieldOptionsHolder holder = new FieldOptionsHolder();
+        holder.names = new String[valuesCount];
+        holder.values = new String[valuesCount];
+        holder.disabledPositions = new boolean[valuesCount];
         int i = 0;
-        for (Map<String, Object> values : fieldGenderOptions) {
+        for (Map<String, Object> values : fieldOptions) {
             String value = (String) values.get("value");
             String text = (String) values.get("text");
             Boolean disabled = (Boolean) values.get("disabled");
 
-            genderNames[i] = text != null ? text : "";
-            genderValues[i] = value != null ? value : "";
-            genderSelectables[i] = disabled == null || !disabled;
+            holder.names[i] = text != null ? text : "";
+            holder.values[i] = value != null ? value : "";
+            holder.disabledPositions[i] = disabled != null && disabled;
 
             i++;
         }
+
+        return holder;
     }
 
-    private void initGenderAdapter(CaptureRecord user) {
-        final String gender = getStringOrNullFromUser(user, "gender");
-        ArrayAdapter<String> genderAdapter =
-                new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, genderNames) {
+    private void initSpinner(int viewId, String fieldValue, final FieldOptionsHolder options) {
+        ArrayAdapter<String> adapter =
+                new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, options.names) {
                     @Override
                     public boolean isEnabled(int position) {
-                        return genderSelectables[position];
+                        return !options.disabledPositions[position];
                     }
                 };
-        genderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Spinner genderSpinner = (Spinner) findViewById(R.id.update_profile_gender);
-        genderSpinner.setAdapter(genderAdapter);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        Spinner spinner = (Spinner) findViewById(viewId);
+        spinner.setAdapter(adapter);
         int genderSelection = 0;
-        for (int i = 0; i < genderValues.length; i++) {
-            if (genderValues[i].equals(gender)) {
+        for (int i = 0; i < options.values.length; i++) {
+            if (options.values[i].equals(fieldValue)) {
                 genderSelection = i;
                 break;
             }
         }
-        genderSpinner.setSelection(genderSelection);
+        spinner.setSelection(genderSelection);
     }
 
     private String getStringOrNullFromUser(CaptureRecord user, String key) {
@@ -268,8 +290,18 @@ public class UpdateProfileActivity extends Activity {
         return !currentObject.isNull(last) ? currentObject.opt(last) : null;
     }
 
-    public String getSpinnerSelectedValue(int layoutId, String[] values) {
+    public String getSpinnerSelectedValue(int layoutId, FieldOptionsHolder optionsHolder) {
+        if (optionsHolder == null) {
+            return null;
+        }
+
         int position = ((Spinner) findViewById(layoutId)).getSelectedItemPosition();
-        return values[position];
+        return optionsHolder.values[position];
+    }
+
+    private final class FieldOptionsHolder {
+        public String[] names;
+        public String[] values;
+        public boolean[] disabledPositions;
     }
 }
