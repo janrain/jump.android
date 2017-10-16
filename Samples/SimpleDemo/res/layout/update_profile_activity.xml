@@ -181,7 +181,7 @@
                 android:layout_gravity="left"
                 android:ems="10"
                 android:imeOptions="actionNext"
-                android:inputType="phone" />
+                android:inputType="text" />
 
             <!-- ADDRESS STREET 1 -->
             <TextView
@@ -198,7 +198,7 @@
                 android:layout_gravity="left"
                 android:ems="10"
                 android:imeOptions="actionNext"
-                android:inputType="phone" />
+                android:inputType="text" />
 
             <!-- ADDRESS CITY -->
             <TextView
@@ -215,7 +215,39 @@
                 android:layout_gravity="left"
                 android:ems="10"
                 android:imeOptions="actionNext"
-                android:inputType="phone" />
+                android:inputType="text" />
+
+            <!-- ADDRESS STATE -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_gravity="right"
+                android:text="State:" />
+
+            <Spinner
+                android:id="@+id/update_profile_addressState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:ems="10"
+                android:imeOptions="actionNext" />
+
+            <!-- ADDRESS COUNTRY -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_gravity="right"
+                android:text="Country:" />
+
+            <Spinner
+                android:id="@+id/update_profile_addressCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:ems="10"
+                android:imeOptions="actionNext" />
 
             <!-- ADDRESS POSTAL CODE -->
             <TextView
@@ -232,41 +264,7 @@
                 android:layout_gravity="left"
                 android:ems="10"
                 android:imeOptions="actionNext"
-                android:inputType="phone" />
-
-            <!-- ADDRESS STATE -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:layout_gravity="right"
-                android:text="State:" />
-
-            <EditText
-                android:id="@+id/update_profile_addressState"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:ems="10"
-                android:imeOptions="actionNext"
-                android:inputType="phone" />
-
-            <!-- ADDRESS POSTAL CODE -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:layout_gravity="right"
-                android:text="Country:" />
-
-            <EditText
-                android:id="@+id/update_profile_addressCountry"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:ems="10"
-                android:imeOptions="actionNext"
-                android:inputType="phone" />
+                android:inputType="textPostalAddress" />
 
             <!-- OPT IN -->
             <CheckBox
