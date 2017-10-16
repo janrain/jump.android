@@ -142,14 +142,16 @@ public class UpdateProfileActivity extends Activity {
             user.put("middleName", middleName);
             user.put("familyName", lastName);
 
-            user.put("familyName", lastName);
-            user.put("familyName", lastName);
-            user.put("familyName", lastName);
-            user.put("familyName", lastName);
-            user.put("familyName", lastName);
-            user.put("familyName", lastName);
-            user.put("familyName", lastName);
-            user.put("familyName", lastName);
+            JSONObject primaryAddressObj = new JSONObject();
+            primaryAddressObj.put("phone", phone);
+            primaryAddressObj.put("mobile", mobile);
+            primaryAddressObj.put("address1", addressStreet1);
+            primaryAddressObj.put("address2", addressStreet2);
+            primaryAddressObj.put("city", addressCity);
+            primaryAddressObj.put("zip", addressPostalCode);
+            primaryAddressObj.put("stateAbbreviation", addressState);
+            primaryAddressObj.put("country", addressCountry);
+            user.put("primaryAddress", primaryAddressObj);
 
             user.put("aboutMe", about);
         } catch (JSONException e) {
