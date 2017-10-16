@@ -47,6 +47,12 @@ import com.janrain.android.capture.CaptureApiError;
 import com.janrain.android.capture.CaptureRecord;
 
 import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 import static com.janrain.android.simpledemo.R.id.update_profile_addressCity;
 import static com.janrain.android.simpledemo.R.id.update_profile_addressCountry;
@@ -81,15 +87,15 @@ public class UpdateProfileActivity extends Activity {
         setEditTextString(update_profile_middle_name, getStringOrNullFromUser(user, "middleName"));
         setEditTextString(update_profile_last_name, getStringOrNullFromUser(user, "familyName"));
 //        setEditTextString(update_profile_birthdate, getStringOrNullFromUser(user, "birthdate"));
-        setEditTextString(update_profile_phone, getStringOrNullFromUser(user, "phone"));
-        setEditTextString(update_profile_mobile, getStringOrNullFromUser(user, "mobile"));
-        setEditTextString(update_profile_addressStreet1, getStringOrNullFromUser(user, "addressStreetAddress1"));
-        setEditTextString(update_profile_addressStreet2, getStringOrNullFromUser(user, "addressStreetAddress2"));
-        setEditTextString(update_profile_addressCity, getStringOrNullFromUser(user, "addressCity"));
-        setEditTextString(update_profile_addressPostalCode, getStringOrNullFromUser(user, "addressPostalCode"));
-        setEditTextString(update_profile_addressState, getStringOrNullFromUser(user, "addressState"));
-        setEditTextString(update_profile_addressCountry, getStringOrNullFromUser(user, "addressCountry"));
-        setCheckBoxBoolean(update_profile_optIn, getBooleanFromUser(user, "optIn", false));
+        setEditTextString(update_profile_phone, getStringOrNullFromUser(user, "primaryAddress.phone"));
+        setEditTextString(update_profile_mobile, getStringOrNullFromUser(user, "primaryAddress.mobile"));
+        setEditTextString(update_profile_addressStreet1, getStringOrNullFromUser(user, "primaryAddress.address1"));
+        setEditTextString(update_profile_addressStreet2, getStringOrNullFromUser(user, "primaryAddress.address2"));
+        setEditTextString(update_profile_addressCity, getStringOrNullFromUser(user, "primaryAddress.city"));
+        setEditTextString(update_profile_addressPostalCode, getStringOrNullFromUser(user, "primaryAddress.zip"));
+        setEditTextString(update_profile_addressState, getStringOrNullFromUser(user, "primaryAddress.stateAbbreviation"));
+        setEditTextString(update_profile_addressCountry, getStringOrNullFromUser(user, "primaryAddress.country"));
+        setCheckBoxBoolean(update_profile_optIn, getBooleanFromUser(user, "optIn.status", false));
         setEditTextString(update_profile_about, getStringOrNullFromUser(user, "aboutMe"));
 
         final String gender = getStringOrNullFromUser(user, "gender");
@@ -117,6 +123,16 @@ public class UpdateProfileActivity extends Activity {
         String middleName = getEditTextString(update_profile_middle_name);
         String lastName = getEditTextString(update_profile_last_name);
         String displayName = getEditTextString(update_profile_display_name);
+        String phone = getEditTextString(update_profile_phone);
+        String mobile = getEditTextString(update_profile_mobile);
+        String addressStreet1 = getEditTextString(update_profile_addressStreet1);
+        String addressStreet2 = getEditTextString(update_profile_addressStreet2);
+        String addressCity = getEditTextString(update_profile_addressCity);
+        String addressPostalCode = getEditTextString(update_profile_addressPostalCode);
+        String addressState = getEditTextString(update_profile_addressState);
+        String addressCountry = getEditTextString(update_profile_addressCountry);
+        boolean optIn = getCheckBoxBoolean(update_profile_optIn);
+
         String about = getEditTextString(update_profile_about);
 
         try {
@@ -125,6 +141,16 @@ public class UpdateProfileActivity extends Activity {
             user.put("givenName", firstName);
             user.put("middleName", middleName);
             user.put("familyName", lastName);
+
+            user.put("familyName", lastName);
+            user.put("familyName", lastName);
+            user.put("familyName", lastName);
+            user.put("familyName", lastName);
+            user.put("familyName", lastName);
+            user.put("familyName", lastName);
+            user.put("familyName", lastName);
+            user.put("familyName", lastName);
+
             user.put("aboutMe", about);
         } catch (JSONException e) {
             throw new RuntimeException("Unexpected ", e);
@@ -148,10 +174,12 @@ public class UpdateProfileActivity extends Activity {
     }
 
     private String getStringOrNullFromUser(CaptureRecord user, String key) {
-        if (user.isNull(key)) {
+        Object result = getObjectOrNullFromUser(user, key);
+        if (result == null) {
             return null;
         }
-        return user.optString(key);
+
+        return String.valueOf(result);
     }
 
     private boolean getBooleanFromUser(CaptureRecord user, String key, boolean defaultValue) {
@@ -175,5 +203,27 @@ public class UpdateProfileActivity extends Activity {
 
     private void setCheckBoxBoolean(int layoutId, boolean value) {
         ((CheckBox) findViewById(layoutId)).setChecked(value);
+    }
+
+    private Object getObjectOrNullFromUser(CaptureRecord user, String key) {
+        if (key == null || key.isEmpty() || key.endsWith(".")) {
+            return null;
+        }
+
+        if (!key.contains(".")) {
+            return !user.isNull(key) ? user.optString(key) : null;
+        }
+
+        LinkedList<String> segments = new LinkedList<>(Arrays.asList(key.split("\\.")));
+        String last = segments.removeLast();
+        JSONObject currentObject = user;
+        for (String segment : segments) {
+            currentObject = currentObject.optJSONObject(segment);
+            if (currentObject == null) {
+                return null;
+            }
+        }
+
+        return !currentObject.isNull(last) ? currentObject.opt(last) : null;
     }
 }
