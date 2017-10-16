@@ -36,7 +36,10 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 import com.janrain.android.Jump;
 import com.janrain.android.capture.Capture;
@@ -45,11 +48,21 @@ import com.janrain.android.capture.CaptureRecord;
 
 import org.json.JSONException;
 
+import static com.janrain.android.simpledemo.R.id.update_profile_addressCity;
+import static com.janrain.android.simpledemo.R.id.update_profile_addressCountry;
+import static com.janrain.android.simpledemo.R.id.update_profile_addressPostalCode;
+import static com.janrain.android.simpledemo.R.id.update_profile_addressState;
+import static com.janrain.android.simpledemo.R.id.update_profile_addressStreet1;
+import static com.janrain.android.simpledemo.R.id.update_profile_addressStreet2;
 import static com.janrain.android.simpledemo.R.id.update_profile_display_name;
 import static com.janrain.android.simpledemo.R.id.update_profile_email;
 import static com.janrain.android.simpledemo.R.id.update_profile_first_name;
 import static com.janrain.android.simpledemo.R.id.update_profile_last_name;
 import static com.janrain.android.simpledemo.R.id.update_profile_about;
+import static com.janrain.android.simpledemo.R.id.update_profile_middle_name;
+import static com.janrain.android.simpledemo.R.id.update_profile_mobile;
+import static com.janrain.android.simpledemo.R.id.update_profile_optIn;
+import static com.janrain.android.simpledemo.R.id.update_profile_phone;
 
 public class UpdateProfileActivity extends Activity {
 
@@ -64,9 +77,36 @@ public class UpdateProfileActivity extends Activity {
 
         setEditTextString(update_profile_email, getStringOrNullFromUser(user, "email"));
         setEditTextString(update_profile_display_name, getStringOrNullFromUser(user, "displayName"));
-        setEditTextString(update_profile_last_name, getStringOrNullFromUser(user, "familyName"));
         setEditTextString(update_profile_first_name, getStringOrNullFromUser(user, "givenName"));
+        setEditTextString(update_profile_middle_name, getStringOrNullFromUser(user, "middleName"));
+        setEditTextString(update_profile_last_name, getStringOrNullFromUser(user, "familyName"));
+//        setEditTextString(update_profile_birthdate, getStringOrNullFromUser(user, "birthdate"));
+        setEditTextString(update_profile_phone, getStringOrNullFromUser(user, "phone"));
+        setEditTextString(update_profile_mobile, getStringOrNullFromUser(user, "mobile"));
+        setEditTextString(update_profile_addressStreet1, getStringOrNullFromUser(user, "addressStreetAddress1"));
+        setEditTextString(update_profile_addressStreet2, getStringOrNullFromUser(user, "addressStreetAddress2"));
+        setEditTextString(update_profile_addressCity, getStringOrNullFromUser(user, "addressCity"));
+        setEditTextString(update_profile_addressPostalCode, getStringOrNullFromUser(user, "addressPostalCode"));
+        setEditTextString(update_profile_addressState, getStringOrNullFromUser(user, "addressState"));
+        setEditTextString(update_profile_addressCountry, getStringOrNullFromUser(user, "addressCountry"));
+        setCheckBoxBoolean(update_profile_optIn, getBooleanFromUser(user, "optIn", false));
         setEditTextString(update_profile_about, getStringOrNullFromUser(user, "aboutMe"));
+
+        final String gender = getStringOrNullFromUser(user, "gender");
+        ArrayAdapter<String> genderAdapter = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_spinner_item,
+                new String[] {
+                        "--",
+                        "Not Specified",
+                        "Male",
+                        "Female",
+                        "Other"
+                }
+        );
+
+        genderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ((Spinner)findViewById(R.id.update_profile_gender)).setAdapter(genderAdapter);
     }
 
     public void update(View view) {
@@ -74,6 +114,7 @@ public class UpdateProfileActivity extends Activity {
 
         String email = getEditTextString(update_profile_email);
         String firstName = getEditTextString(update_profile_first_name);
+        String middleName = getEditTextString(update_profile_middle_name);
         String lastName = getEditTextString(update_profile_last_name);
         String displayName = getEditTextString(update_profile_display_name);
         String about = getEditTextString(update_profile_about);
@@ -82,6 +123,7 @@ public class UpdateProfileActivity extends Activity {
             user.put("email", email);
             user.put("displayName", displayName);
             user.put("givenName", firstName);
+            user.put("middleName", middleName);
             user.put("familyName", lastName);
             user.put("aboutMe", about);
         } catch (JSONException e) {
@@ -112,11 +154,26 @@ public class UpdateProfileActivity extends Activity {
         return user.optString(key);
     }
 
+    private boolean getBooleanFromUser(CaptureRecord user, String key, boolean defaultValue) {
+        if (user.isNull(key)) {
+            return defaultValue;
+        }
+        return user.optBoolean(key, defaultValue);
+    }
+
     private String getEditTextString(int layoutId) {
         return ((EditText) findViewById(layoutId)).getText().toString();
     }
 
     private void setEditTextString(int layoutId, String value) {
         ((EditText) findViewById(layoutId)).setText(value);
+    }
+
+    private boolean getCheckBoxBoolean(int layoutId) {
+        return ((CheckBox) findViewById(layoutId)).isChecked();
+    }
+
+    private void setCheckBoxBoolean(int layoutId, boolean value) {
+        ((CheckBox) findViewById(layoutId)).setChecked(value);
     }
 }
