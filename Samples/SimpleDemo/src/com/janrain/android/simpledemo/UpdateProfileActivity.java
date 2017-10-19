@@ -62,6 +62,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import static com.janrain.android.simpledemo.R.id.update_profile_addressCity;
@@ -84,7 +85,7 @@ import static com.janrain.android.simpledemo.R.id.update_profile_phone;
 
 public class UpdateProfileActivity extends Activity {
 
-    private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
+    private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
 
     private FieldOptionsHolder genderOptions;
     private FieldOptionsHolder stateOptions;
