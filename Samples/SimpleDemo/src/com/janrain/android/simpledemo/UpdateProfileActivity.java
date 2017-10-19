@@ -34,12 +34,17 @@ package com.janrain.android.simpledemo;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.text.format.DateFormat;
+import android.text.format.Formatter;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.janrain.android.Jump;
 import com.janrain.android.capture.Capture;
@@ -49,8 +54,12 @@ import com.janrain.android.capture.CaptureRecord;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -61,6 +70,7 @@ import static com.janrain.android.simpledemo.R.id.update_profile_addressPostalCo
 import static com.janrain.android.simpledemo.R.id.update_profile_addressState;
 import static com.janrain.android.simpledemo.R.id.update_profile_addressStreet1;
 import static com.janrain.android.simpledemo.R.id.update_profile_addressStreet2;
+import static com.janrain.android.simpledemo.R.id.update_profile_birthdate;
 import static com.janrain.android.simpledemo.R.id.update_profile_display_name;
 import static com.janrain.android.simpledemo.R.id.update_profile_email;
 import static com.janrain.android.simpledemo.R.id.update_profile_first_name;
@@ -74,9 +84,12 @@ import static com.janrain.android.simpledemo.R.id.update_profile_phone;
 
 public class UpdateProfileActivity extends Activity {
 
+    private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
+
     private FieldOptionsHolder genderOptions;
     private FieldOptionsHolder stateOptions;
     private FieldOptionsHolder countryOptions;
+    private Date birthDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,7 +105,6 @@ public class UpdateProfileActivity extends Activity {
         setEditTextString(update_profile_first_name, getStringOrNullFromUser(user, "givenName"));
         setEditTextString(update_profile_middle_name, getStringOrNullFromUser(user, "middleName"));
         setEditTextString(update_profile_last_name, getStringOrNullFromUser(user, "familyName"));
-//        setEditTextString(update_profile_birthdate, getStringOrNullFromUser(user, "birthdate"));
         setEditTextString(update_profile_phone, getStringOrNullFromUser(user, "primaryAddress.phone"));
         setEditTextString(update_profile_mobile, getStringOrNullFromUser(user, "primaryAddress.mobile"));
         setEditTextString(update_profile_addressStreet1, getStringOrNullFromUser(user, "primaryAddress.address1"));
@@ -102,6 +114,8 @@ public class UpdateProfileActivity extends Activity {
         setCheckBoxBoolean(update_profile_optIn, getBooleanFromUser(user, "optIn.status", false));
         setEditTextString(update_profile_about, getStringOrNullFromUser(user, "aboutMe"));
 
+        updateBirthDate(getDateOrNullFromUser(user, "birthday"));
+
         genderOptions = getFieldOptions("gender");
         stateOptions = getFieldOptions("addressState");
         countryOptions = getFieldOptions("addressCountry");
@@ -109,6 +123,13 @@ public class UpdateProfileActivity extends Activity {
         initSpinner(update_profile_gender, getStringOrNullFromUser(user, "gender"), genderOptions);
         initSpinner(R.id.update_profile_addressState, getStringOrNullFromUser(user, "primaryAddress.stateAbbreviation"), stateOptions);
         initSpinner(R.id.update_profile_addressCountry, getStringOrNullFromUser(user, "primaryAddress.country"), countryOptions);
+
+        findViewById(update_profile_birthdate).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBirthDateClick();
+            }
+        });
     }
 
     public void update(View view) {
@@ -139,6 +160,9 @@ public class UpdateProfileActivity extends Activity {
             user.put("middleName", middleName);
             user.put("familyName", lastName);
             user.put("gender", gender);
+            if (birthDate != null) {
+                user.put("birthday", DATE_FORMAT.format(birthDate));
+            }
 
             final JSONObject primaryAddressObj = !user.isNull("primaryAddress") ?
                     user.optJSONObject("primaryAddress") : new JSONObject();
@@ -172,6 +196,29 @@ public class UpdateProfileActivity extends Activity {
                 adb.show();
             }
         });
+    }
+
+    private void onBirthDateClick() {
+        final DatePickerFragment fragment = DatePickerFragment.getInstance(birthDate);
+        final DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                final Calendar calendar = Calendar.getInstance();
+                calendar.set(year, month, dayOfMonth);
+
+                updateBirthDate(calendar.getTime());
+            }
+        };
+
+        fragment.setOnDateSetListener(listener);
+        fragment.show(getFragmentManager(), "datePicker");
+    }
+
+    private void updateBirthDate(Date date) {
+        birthDate = date;
+        if (birthDate != null) {
+            setEditTextString(update_profile_birthdate, DATE_FORMAT.format(birthDate));
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -245,6 +292,21 @@ public class UpdateProfileActivity extends Activity {
         return String.valueOf(result);
     }
 
+    private Date getDateOrNullFromUser(CaptureRecord user, String key) {
+        String strDate = getStringOrNullFromUser(user, key);
+        if (strDate == null) {
+            return null;
+        }
+
+        try {
+            return DATE_FORMAT.parse(strDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
     private boolean getBooleanFromUser(CaptureRecord user, String key, boolean defaultValue) {
         if (user.isNull(key)) {
             return defaultValue;
@@ -253,11 +315,11 @@ public class UpdateProfileActivity extends Activity {
     }
 
     private String getEditTextString(int layoutId) {
-        return ((EditText) findViewById(layoutId)).getText().toString();
+        return ((TextView) findViewById(layoutId)).getText().toString();
     }
 
     private void setEditTextString(int layoutId, String value) {
-        ((EditText) findViewById(layoutId)).setText(value);
+        ((TextView) findViewById(layoutId)).setText(value);
     }
 
     private boolean getCheckBoxBoolean(int layoutId) {

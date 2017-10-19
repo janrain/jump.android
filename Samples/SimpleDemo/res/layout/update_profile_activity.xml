@@ -27,7 +27,9 @@
                 android:layout_height="wrap_content"
                 android:layout_column="0"
                 android:layout_gravity="right"
-                android:text="Email:" />
+                android:text="Email:"
+                android:focusableInTouchMode="true"
+                android:focusable="true"/>
 
             <EditText
                 android:id="@+id/update_profile_email"
@@ -122,6 +124,22 @@
                 android:ems="10"
                 android:imeOptions="actionNext"
                 android:inputType="textPersonName" />
+
+            <!-- BIRTHDATE -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_gravity="right"
+                android:text="Gender:" />
+
+            <Button
+                android:id="@+id/update_profile_birthdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:ems="10"
+                android:imeOptions="actionNext" />
 
             <!-- PHONE -->
             <TextView
