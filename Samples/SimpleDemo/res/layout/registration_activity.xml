@@ -32,102 +32,307 @@
   ~  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
   -->
 
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="match_parent">
 
-    android:padding="8dip"
+    <GridLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alignmentMode="alignBounds"
+        android:columnCount="2"
+        android:columnOrderPreserved="false"
+        android:padding="8dip"
+        android:useDefaultMargins="true">
 
-    android:useDefaultMargins="true"
-    android:alignmentMode="alignBounds"
-    android:columnOrderPreserved="false"
+        <TextView
+            android:layout_column="0"
+            android:layout_gravity="right"
+            android:text="Email:" />
 
-    android:columnCount="2">
+        <EditText
+            android:id="@+id/trad_reg_email"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress" />
 
-    <TextView
-        android:text="Email:"
-        android:layout_column="0"
-        android:layout_gravity="right" />
+        <TextView
+            android:layout_column="0"
+            android:layout_gravity="right"
+            android:text="Display Name:" />
 
-    <EditText
-        android:id="@+id/trad_reg_email"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:imeOptions="actionNext"
-        android:layout_gravity="left" />
+        <EditText
+            android:id="@+id/trad_reg_display_name"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:imeOptions="actionNext"
+            android:inputType="textPersonName" />
 
-    <TextView
-        android:text="Display Name:"
-        android:layout_column="0"
-        android:layout_gravity="right" />
+        <TextView
+            android:layout_column="0"
+            android:layout_gravity="right"
+            android:text="First Name:" />
 
-    <EditText
-        android:id="@+id/trad_reg_display_name"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:imeOptions="actionNext"
-        android:layout_gravity="left" />
+        <EditText
+            android:id="@+id/trad_reg_first_name"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:imeOptions="actionNext"
+            android:inputType="textPersonName" />
 
-    <TextView
-        android:text="First Name:"
-        android:layout_column="0"
-        android:layout_gravity="right" />
+        <!-- MIDDLE NAME -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="right"
+            android:text="Middle Name:" />
 
-    <EditText
-        android:id="@+id/trad_reg_first_name"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:imeOptions="actionNext"
-        android:layout_gravity="left" />
+        <EditText
+            android:id="@+id/trad_reg_middle_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:imeOptions="actionNext"
+            android:inputType="textPersonName" />
 
-    <TextView
-        android:text="Last Name:"
-        android:layout_column="0"
-        android:layout_gravity="right" />
+        <TextView
+            android:layout_column="0"
+            android:layout_gravity="right"
+            android:text="Last Name:" />
 
-    <EditText
-        android:id="@+id/trad_reg_last_name"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:imeOptions="actionNext"
-        android:layout_gravity="left" />
+        <EditText
+            android:id="@+id/trad_reg_last_name"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:imeOptions="actionNext"
+            android:inputType="textPersonName" />
 
-    <TextView
-        android:text="Password:"
-        android:layout_column="0"
-        android:layout_gravity="right" />
+        <!-- GENDER -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="right"
+            android:text="Gender:" />
 
-    <EditText
-        android:id="@+id/trad_reg_password"
-        android:ems="10"
-        android:inputType="textVisiblePassword"
-        android:imeOptions="actionNext"
-        android:layout_gravity="left" />
+        <Spinner
+            android:id="@+id/trad_reg_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:imeOptions="actionNext"
+            android:inputType="textPersonName" />
 
-    <TextView
-        android:text="Confirm:"
-        android:layout_column="0"
-        android:layout_gravity="right" />
+        <!-- BIRTHDATE -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="right"
+            android:text="Gender:" />
 
-    <EditText
-        android:id="@+id/trad_reg_password_confirm"
-        android:ems="10"
-        android:inputType="textVisiblePassword"
-        android:imeOptions="actionNext"
-        android:layout_gravity="left" />
+        <Button
+            android:id="@+id/trad_reg_birthdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:imeOptions="actionNext" />
 
-    <Space
-        android:layout_column="0"
-        android:layout_columnSpan="2"
-        android:layout_gravity="fill" />
+        <!-- PHONE -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="right"
+            android:text="Phone:" />
 
-    <Button
-        android:id="@+id/trad_reg_button"
-        android:text="Register"
-        android:onClick="register"
-        android:layout_gravity="center_horizontal"
-        android:layout_columnSpan="2"
-        android:layout_column="0" />
+        <EditText
+            android:id="@+id/trad_reg_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:imeOptions="actionNext"
+            android:inputType="phone" />
 
-</GridLayout>
+        <!-- MOBILE -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="right"
+            android:text="Mobile Phone:" />
+
+        <EditText
+            android:id="@+id/trad_reg_mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:imeOptions="actionNext"
+            android:inputType="phone" />
+
+        <!-- ADDRESS HEADER -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="#FFCDCDCD"
+            android:padding="10dp"
+            android:text="Address" />
+
+        <!-- ADDRESS STREET 1 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="right"
+            android:text="Street 1:" />
+
+        <EditText
+            android:id="@+id/trad_reg_addressStreet1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:imeOptions="actionNext"
+            android:inputType="text" />
+
+        <!-- ADDRESS STREET 1 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="right"
+            android:text="Street 2:" />
+
+        <EditText
+            android:id="@+id/trad_reg_addressStreet2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:imeOptions="actionNext"
+            android:inputType="text" />
+
+        <!-- ADDRESS CITY -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="right"
+            android:text="City:" />
+
+        <EditText
+            android:id="@+id/trad_reg_addressCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:imeOptions="actionNext"
+            android:inputType="text" />
+
+        <!-- ADDRESS STATE -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="right"
+            android:text="State:" />
+
+        <Spinner
+            android:id="@+id/trad_reg_addressState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:imeOptions="actionNext" />
+
+        <!-- ADDRESS COUNTRY -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="right"
+            android:text="Country:" />
+
+        <Spinner
+            android:id="@+id/trad_reg_addressCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:imeOptions="actionNext" />
+
+        <!-- ADDRESS POSTAL CODE -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="right"
+            android:text="Postal Code:" />
+
+        <EditText
+            android:id="@+id/trad_reg_addressPostalCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:imeOptions="actionNext"
+            android:inputType="textPostalAddress" />
+
+        <!-- OPT IN -->
+        <CheckBox
+            android:id="@+id/trad_reg_optIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:imeOptions="actionNext"
+            android:text="Receive emails and other communications." />
+
+        <TextView
+            android:layout_column="0"
+            android:layout_gravity="right"
+            android:text="Password:" />
+
+        <EditText
+            android:id="@+id/trad_reg_password"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:imeOptions="actionNext"
+            android:inputType="textVisiblePassword" />
+
+        <TextView
+            android:layout_column="0"
+            android:layout_gravity="right"
+            android:text="Confirm:" />
+
+        <EditText
+            android:id="@+id/trad_reg_password_confirm"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:imeOptions="actionNext"
+            android:inputType="textVisiblePassword" />
+
+        <Space
+            android:layout_column="0"
+            android:layout_columnSpan="2"
+            android:layout_gravity="fill" />
+
+        <Button
+            android:id="@+id/trad_reg_button"
+            android:layout_column="0"
+            android:layout_columnSpan="2"
+            android:layout_gravity="center_horizontal"
+            android:onClick="register"
+            android:text="Register" />
+
+    </GridLayout>
+</ScrollView>
