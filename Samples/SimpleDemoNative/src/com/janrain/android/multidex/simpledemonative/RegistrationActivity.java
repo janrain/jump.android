@@ -165,7 +165,7 @@ public class RegistrationActivity extends Activity {
         String addressState = getSpinnerSelectedValue(trad_reg_addressState, stateOptions);
         String addressCountry = getSpinnerSelectedValue(trad_reg_addressCountry, countryOptions);
 
-        boolean optInStatus = getCheckBoxBoolean(R.id.trad_reg_optIn);
+        boolean shouldOptIn = getCheckBoxBoolean(R.id.trad_reg_optIn);
 
         String password = getEditTextString(trad_reg_password);
         String passwordConfirm = getEditTextString(trad_reg_password_confirm);
@@ -187,9 +187,11 @@ public class RegistrationActivity extends Activity {
                                 .put("city", addressCity)
                                 .put("zip", addressPostalCode)
                                 .put("stateAbbreviation", addressState)
-                                .put("country", addressCountry))
-                        .put("optIn", new JSONObject()
-                                .put("status", optInStatus));
+                                .put("country", addressCountry));
+
+                if (shouldOptIn) {
+                    newUser.put("optIn", new JSONObject().put("status", true));
+                }
 
                 if (birthDate != null) {
                     newUser.put("birthday", DATE_FORMAT.format(birthDate));
