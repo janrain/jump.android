@@ -131,7 +131,7 @@
                 android:layout_height="wrap_content"
                 android:layout_column="0"
                 android:layout_gravity="right"
-                android:text="Gender:" />
+                android:text="Birth Date:" />
 
             <Button
                 android:id="@+id/update_profile_birthdate"
