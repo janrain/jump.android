@@ -306,10 +306,16 @@ public class UpdateProfileActivity extends Activity {
     }
 
     private boolean getBooleanFromUser(CaptureRecord user, String key, boolean defaultValue) {
-        if (user.isNull(key)) {
-            return defaultValue;
+        Object result = getObjectOrNullFromUser(user, key);
+        if (result instanceof Boolean) {
+            return (boolean) result;
         }
-        return user.optBoolean(key, defaultValue);
+
+        if (result instanceof String) {
+            return Boolean.valueOf((String) result);
+        }
+
+        return defaultValue;
     }
 
     private String getEditTextString(int layoutId) {
