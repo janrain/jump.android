@@ -1088,7 +1088,12 @@ public class Jump {
 
                             }
                         })
-                .setNegativeButton(android.R.string.cancel, null)
+                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        signInResultHandler.onFailure(new SignInError(AUTHENTICATION_CANCELLED_BY_USER, null, null));
+                    }
+                })
                 .create();
 
         alertDialog.setCanceledOnTouchOutside(false);
