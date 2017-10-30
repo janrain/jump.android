@@ -563,7 +563,7 @@ public class Capture {
 
         /**
          * Extracts the "result" from the Capture Api Response and creates a {@link CaptureRecord}.
-         * This is specially useful to refresh the State#signedInUser if you need to.
+         * This is especially useful to refresh the State#signedInUser if you need to.
          * <br />
          * This method will return a valid result only during the {@link #onSuccess(JSONObject)} call.
          * @param accessToken The current access token. Extract it from the current signed in user
