@@ -538,6 +538,7 @@ public class Capture {
         private boolean canceled = false;
         private String authenticationToken;
         private String identityProvider;
+        private JSONObject result;
 
         public void cancel() {
             canceled = true;
@@ -548,9 +549,9 @@ public class Capture {
             if (response == null) {
                 onFailure(CaptureApiError.INVALID_API_RESPONSE);
             } else if ("ok".equals(response.opt("stat"))) {
-                onSuccess(response);
+                callOnSuccess(response);
             } else if ((response.opt("result"))!= null && String.valueOf(response.opt("result")).length()>0 ) {
-                onSuccess(response);
+                callOnSuccess(response);
             } else {
                 onFailure(CaptureApiError.INVALID_API_RESPONSE);
             }
@@ -559,6 +560,30 @@ public class Capture {
         public abstract void onSuccess(JSONObject response);
 
         public abstract void onFailure(CaptureApiError error);
+
+        /**
+         * Extracts the "result" from the Capture Api Response and creates a {@link CaptureRecord}.
+         * This is specially useful to refresh the State#signedInUser if you need to.
+         * <br />
+         * This method will return a valid result only during the {@link #onSuccess(JSONObject)} call.
+         * @param accessToken The current access token. Extract it from the current signed in user
+         *                    with the {@link CaptureRecord#getAccessToken()} or
+         *                    {@link Jump#getAccessToken()} methods.
+         * @return A new {@link CaptureRecord} object with the data obtained from the response.
+         */
+        protected final CaptureRecord getResultAsCaptureRecord(String accessToken) {
+            if (result == null) {
+                return null;
+            }
+
+            return new CaptureRecord(result, accessToken);
+        }
+
+        private void callOnSuccess(JSONObject response) {
+            result = response.optJSONObject("result");
+            onSuccess(response);
+            result = null;
+        }
     }
 
     /**
