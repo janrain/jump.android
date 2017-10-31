@@ -71,6 +71,7 @@
             android:configChanges="orientation|screenSize"
             android:theme="@style/Theme.Janrain"
             android:windowSoftInputMode="adjustResize|stateHidden"
+            tools:replace="android:theme"
             />
 
         <!--
