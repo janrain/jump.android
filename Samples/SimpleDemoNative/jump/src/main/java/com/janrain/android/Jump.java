@@ -1300,10 +1300,29 @@ public class Jump {
      * @param handler your result handler, called upon completion on the UI thread
      */
     public static void performFetchCaptureData(final CaptureApiResultHandler handler) {
+        performFetchCaptureData(handler, false);
+    }
+
+    /**
+     * Headless API for fetching Capture Signed user data
+     *
+     * @param handler your result handler, called upon completion on the UI thread
+     * @param updateSignedInUser indicates whether the current signed in user data
+     *                           should be updated using the successful response
+     */
+    public static void performFetchCaptureData(final CaptureApiResultHandler handler, final boolean updateSignedInUser) {
         state.captureAPIHandler = handler;
         Capture.performUpdateSignedUserData(new Capture.CaptureApiResultHandler() {
             @Override
             public void onSuccess(JSONObject response) {
+                if (updateSignedInUser) {
+                    final String accessToken = state.signedInUser.getAccessToken();
+                    final CaptureRecord record = getResultAsCaptureRecord(accessToken);
+                    if (record != null) {
+                        state.signedInUser = record;
+                    }
+                }
+
                 fireHandlerOnCaptureAPISuccess(response);
             }
 
