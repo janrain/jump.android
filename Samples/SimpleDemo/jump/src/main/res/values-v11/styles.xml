@@ -14,9 +14,9 @@
 
     <!-- {@deprecated Compatibility themes for v1 & v2} -->
     <style name="jr_dialog_dark" parent="@android:style/Theme.Holo.DialogWhenLarge.NoActionBar"/>
-    <style name="jr_fullscreen_no_title" parent="style/Theme.Janrain"/>
+    <style name="jr_fullscreen_no_title" parent="Theme.Janrain"/>
     <style name="jr_fullscreen_dark" parent="android:style/Theme.Holo"/>
-    <style name="jr_fullscreen_no_title_dark" parent="style/Theme.Janrain"/>
+    <style name="jr_fullscreen_no_title_dark" parent="Theme.Janrain"/>
 
     <!-- {@internal} -->
     <style name="jr_dialog_71_percent">
