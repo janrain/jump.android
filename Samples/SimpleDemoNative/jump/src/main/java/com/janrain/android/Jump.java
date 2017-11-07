@@ -72,6 +72,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.StreamCorruptedException;
+import java.util.Locale;
 import java.util.Map;
 
 import static com.janrain.android.Jump.CaptureApiResultHandler.CaptureAPIError;
@@ -484,6 +485,25 @@ public class Jump {
                                                        final String mergeToken) {
         if (state.jrEngage == null || state.captureDomain == null) {
             handler.onFailure(new SignInError(JUMP_NOT_INITIALIZED, null, null));
+            return;
+        }
+
+        if (!state.jrEngage.isNativeProviderConfigured(providerName)) {
+            final String message = String.format(
+                    Locale.getDefault(),
+                    "Provider '%s' not found, make sure you have configured it properly in your Engage dashboard.",
+                    providerName
+            );
+
+            LogUtils.loge(message);
+
+            JREngageError engageError = new JREngageError(
+                    message,
+                    JREngageError.ConfigurationError.PROVIDER_NOT_CONFIGURED_ERROR,
+                    JREngageError.ErrorType.CONFIGURATION_INFORMATION_MISSING
+            );
+
+            handler.onFailure(new SignInError(ENGAGE_ERROR, null, engageError));
             return;
         }
 
