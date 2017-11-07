@@ -72,6 +72,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.StreamCorruptedException;
+import java.util.Locale;
 import java.util.Map;
 
 import static com.janrain.android.Jump.CaptureApiResultHandler.CaptureAPIError;
@@ -487,6 +488,25 @@ public class Jump {
             return;
         }
 
+        if (!state.jrEngage.isNativeProviderConfigured(providerName)) {
+            final String message = String.format(
+                    Locale.getDefault(),
+                    "Provider '%s' not found, make sure you have configured it properly in your Engage dashboard.",
+                    providerName
+            );
+
+            LogUtils.loge(message);
+
+            JREngageError engageError = new JREngageError(
+                    message,
+                    JREngageError.ConfigurationError.PROVIDER_NOT_CONFIGURED_ERROR,
+                    JREngageError.ErrorType.CONFIGURATION_INFORMATION_MISSING
+            );
+
+            handler.onFailure(new SignInError(ENGAGE_ERROR, null, engageError));
+            return;
+        }
+
         state.signInHandler = handler;
         nextTokenAuthForNativeProvider(fromActivity,providerName,accessToken,tokenSecret,mergeToken);
 
@@ -760,7 +780,7 @@ public class Jump {
      */
     public interface FacebookRevokedHandler {
         /**
-         * Called when Facebook closeAndClearTokenInformation has succeeded. 
+         * Called when Facebook closeAndClearTokenInformation has succeeded.
          */
         void onSuccess();
 
@@ -1073,12 +1093,12 @@ public class Jump {
                                 // ... instead of showSignInDialog if you wish to present your own dialog
                                 // and then use the headless API to perform the traditional sign-in.
                                 
-                                // For the Merge Account workflow it is recommended to use the standard 
-                                // web based (non-native) authentication dialog.  This allows the end 
-                                // user to manually enter the social account that "owns" the Janrain user 
-                                // record.  If the user did not have this account stored on their 
-                                // phone or had multiple accounts stored the user interface could be overly 
-                                // complicated. The standard web based sign in dialog can be forced by 
+                                // For the Merge Account workflow it is recommended to use the standard
+                                // web based (non-native) authentication dialog.  This allows the end
+                                // user to manually enter the social account that "owns" the Janrain user
+                                // record.  If the user did not have this account stored on their
+                                // phone or had multiple accounts stored the user interface could be overly
+                                // complicated. The standard web based sign in dialog can be forced by
                                 // passing a null permissions parameter in the method call below
                                 Jump.showSignInDialog(fromActivity,
                                         existingProvider,
@@ -1088,7 +1108,12 @@ public class Jump {
 
                             }
                         })
-                .setNegativeButton(android.R.string.cancel, null)
+                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        signInResultHandler.onFailure(new SignInError(AUTHENTICATION_CANCELLED_BY_USER, null, null));
+                    }
+                })
                 .create();
 
         alertDialog.setCanceledOnTouchOutside(false);
