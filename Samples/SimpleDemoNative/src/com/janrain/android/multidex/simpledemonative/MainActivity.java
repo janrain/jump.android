@@ -753,7 +753,7 @@ public class MainActivity extends FragmentActivity implements
             LogUtils.logd("requestCode: GOOGLE_REQUEST_CODE_SIGN_IN");
             // If the error resolution was not successful we should not resolve further.
             if (resultCode != RESULT_OK) {
-                LogUtils.logd("result: RESULT_OK");
+                LogUtils.logd("result: NOT RESULT_OK");
                 mShouldResolve = false;
             }
 
