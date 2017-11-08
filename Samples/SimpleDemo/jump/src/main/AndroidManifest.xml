@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.janrain.android">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.janrain.android">
 
     <!--According to Xav Ducrochet nothing from the Library Project's manifest *except* the package
         is respected by the Android SDK.  He recommends that the activities contained in a
@@ -13,32 +14,35 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-sdk android:minSdkVersion="10"/>
 
-    <!-- The following activities are for the Janrain Engage for Android library -->
-    <!-- This activity must have a dialog theme such as Theme.Holo.Dialog, or
-        Theme.Dialog, etc.
+    <application tools:node="merge">
 
-        Using android:theme="@style/Theme.Janrain.Dialog" will result in Theme.Dialog on API 4-10 and
-        Theme.Holo.DialogWhenLarge.NoActionBar on API 11+
-    -->
-    <activity
-        android:name="com.janrain.android.engage.ui.JRFragmentHostActivity"
-        android:configChanges="orientation|screenSize"
-        android:theme="@style/Theme.Janrain.Dialog.Light"
-        android:windowSoftInputMode="adjustResize|stateHidden"
-        />
+        <!-- The following activities are for the Janrain Engage for Android library -->
+        <!-- This activity must have a dialog theme such as Theme.Holo.Dialog, or
+            Theme.Dialog, etc.
 
-    <!-- This activity must have a normal (non-dialog) theme such as Theme, Theme.Light, Theme.Holo, etc.
+            Using android:theme="@style/Theme.Janrain.Dialog" will result in Theme.Dialog on API 4-10 and
+            Theme.Holo.DialogWhenLarge.NoActionBar on API 11+
+        -->
+        <activity
+            android:name="com.janrain.android.engage.ui.JRFragmentHostActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.Janrain.Dialog.Light"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            />
 
-        Using android:theme="@style/Theme.Janrain" or "@style/Theme.Janrain.Light" will result in
-        Theme (or Theme.Light) on API 4-10 and
-        Theme.Holo (or Theme.Holo.Light) on API 11+
-    -->
-    <activity
-        android:name="com.janrain.android.engage.ui.JRFragmentHostActivity$Fullscreen"
-        android:configChanges="orientation|screenSize"
-        android:theme="@style/Theme.Janrain.Light"
-        android:windowSoftInputMode="adjustResize|stateHidden"
-        />
+        <!-- This activity must have a normal (non-dialog) theme such as Theme, Theme.Light, Theme.Holo, etc.
+
+            Using android:theme="@style/Theme.Janrain" or "@style/Theme.Janrain.Light" will result in
+            Theme (or Theme.Light) on API 4-10 and
+            Theme.Holo (or Theme.Holo.Light) on API 11+
+        -->
+        <activity
+            android:name="com.janrain.android.engage.ui.JRFragmentHostActivity$Fullscreen"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.Janrain.Light"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            />
+    </application>
 
 
 </manifest>
