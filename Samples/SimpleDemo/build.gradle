@@ -4,7 +4,7 @@ buildscript {
         maven { url 'https://maven.fabric.io/public' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.android.tools.build:gradle:3.0.0'
     }
 }
 apply plugin: 'com.android.application'
@@ -23,7 +23,7 @@ dependencies {
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '26.0.2'
 
     //If building with strict Android 6.0 the following will need to be uncommented
     //See: https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html
