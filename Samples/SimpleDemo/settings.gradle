@@ -1,2 +1,2 @@
-include ':jump'
-project(':jump').projectDir = new File('../../Jump')
+include ':Jump'
+project(':Jump').projectDir = new File('../../Jump')
