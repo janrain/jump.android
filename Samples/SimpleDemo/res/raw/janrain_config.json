@@ -3,7 +3,7 @@
   "captureDomain": "mobile-dev.janraincapture.com",
   "captureClientId": "xwvdh3ck2vyyzumgnj3wf34d8xkchzm9",
   "captureLocale": "en-US",
-  "captureTraditionalSignInFormName": "userInformationForm",
+  "captureTraditionalSignInFormName": "signInForm",
   "traditionalSignInType": "EMAIL",
   "captureAppId": "rz47skmnm48jpcv3bh4eguv4b8",
   "captureFlowName": "standard",
