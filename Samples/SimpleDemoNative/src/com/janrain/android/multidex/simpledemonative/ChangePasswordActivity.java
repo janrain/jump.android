@@ -81,7 +81,7 @@ public class ChangePasswordActivity extends Activity {
 
         Capture.updateUserProfileWithFormFieldsProvided(fieldMap,
                 "/oauth/update_profile_native",
-                "newPasswordFormProfile",
+                "changePasswordForm",
                 user.getAccessToken(),
                 new Capture.CaptureApiRequestCallback() {
 
