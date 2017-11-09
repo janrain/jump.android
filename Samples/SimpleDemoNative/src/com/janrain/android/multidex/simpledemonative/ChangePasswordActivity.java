@@ -75,9 +75,9 @@ public class ChangePasswordActivity extends Activity {
         String confirmPassword = getEditTextString(change_password_confirm);
 
         Map<String, String> fieldMap = new HashMap<String, String>();
-        fieldMap.put("oldpassword", currentPassword);
-        fieldMap.put("newpassword", newPassword);
-        fieldMap.put("newpasswordConfirm", newPasswordConfirm);
+        fieldMap.put("currentPassword", oldPassword);
+        fieldMap.put("newPassword", newPassword);
+        fieldMap.put("newPasswordConfirm", confirmPassword);
 
         Capture.updateUserProfileWithFormFieldsProvided(fieldMap,
                 "/oauth/update_profile_native",
