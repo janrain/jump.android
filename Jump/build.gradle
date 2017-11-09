@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '26.0.2'
     //If building with strict Android 6.0 the following will need to be uncommented
     //See: https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html
     //And: http://stackoverflow.com/questions/31653002/how-to-use-the-legacy-apache-http-client-on-android-m
@@ -12,7 +12,7 @@ android {
         minSdkVersion 17
         targetSdkVersion 25
         // replace the below string with your own Google client ID. Make sure this is consistent
-        // with the values used in openid_appauth_idp_configs.xml
+        // with the values used in janrain_config.json
         manifestPlaceholders = [
                 'appAuthRedirectScheme': 'com.googleusercontent.apps.UPDATE'
         ]
@@ -35,7 +35,7 @@ dependencies {
     compile 'com.squareup.okio:okio:1.6.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.squareup.retrofit:retrofit:1.8.0'
-    compile 'net.openid:appauth:0.5.1'
+    compile 'net.openid:appauth:0.7.0'
 }
 
 allprojects {

@@ -70,7 +70,7 @@ public class OpenIDAppAuthGoogle extends OpenIDAppAuthProvider {
 
 
     /*package*/ static boolean canHandleAuthentication(Context context) {
-        List<OpenIDIdentityProvider> providers = OpenIDIdentityProvider.getEnabledProviders(context);
+        List<OpenIDIdentityProvider> providers = OpenIDIdentityProvider.getProviders(context);
         //API Level 24:
         //return providers.stream().filter(o -> o.name.equals("googleplus")).findFirst().isPresent();
         for(OpenIDIdentityProvider idp : providers) {
@@ -101,7 +101,7 @@ public class OpenIDAppAuthGoogle extends OpenIDAppAuthProvider {
         LogUtils.logd(TAG, "[startAuthentication]");
         final Context appContext = fromParentContext;
 
-        List<OpenIDIdentityProvider> providers = OpenIDIdentityProvider.getEnabledProviders(appContext);
+        List<OpenIDIdentityProvider> providers = OpenIDIdentityProvider.getProviders(appContext);
 
         for (final OpenIDIdentityProvider idp : providers) {
             if(idp.name.equals("Google")){
@@ -139,21 +139,21 @@ public class OpenIDAppAuthGoogle extends OpenIDAppAuthProvider {
             @NonNull AuthState authState) {
 
 
-        AuthorizationRequest authRequest = new AuthorizationRequest.Builder(
-                serviceConfig,
-                idp.getClientId(),
-                ResponseTypeValues.CODE,
-                idp.getRedirectUri())
-                .setScope(idp.getScope())
-                .setLoginHint(null)
-                .build();
+        String clientId = idp.getClientId();
+        String code = ResponseTypeValues.CODE;
+        Uri redirectUri = idp.getRedirectUri();
+        AuthorizationRequest authRequest =
+                new AuthorizationRequest.Builder(serviceConfig, clientId, code, redirectUri)
+                        .setScope(idp.getScope())
+                        .setLoginHint(null)
+                        .build();
 
 
         //Intent postAuthIntent = new Intent(context, MyAuthResultHandlerActivity.class);
         //Intent authCanceledIntent = new Intent(context, MyAuthCanceledHandlerActivity.class);
         final JRSession session = JRSession.getInstance();
         session.setCurrentlyAuthenticatingOpenIDAppAuthProvider(this);
-        OpenIDAppAuthTokenActivity ta = new OpenIDAppAuthTokenActivity();
+        // OpenIDAppAuthTokenActivity ta = new OpenIDAppAuthTokenActivity();
         LogUtils.logd(TAG, "Making auth request to " + serviceConfig.authorizationEndpoint);
         Context appContext = session.getCurrentOpenIDAppAuthActivity().getBaseContext();
 
@@ -163,12 +163,19 @@ public class OpenIDAppAuthGoogle extends OpenIDAppAuthProvider {
 
         mAuthService.performAuthorizationRequest(
                 authRequest,
-                ta.createPostAuthorizationIntent(
+                OpenIDAppAuthTokenActivity.createPostAuthorizationIntent(
                         appContext,
                         authRequest,
                         serviceConfig.discoveryDoc,
-                        authState),
-                PendingIntent.getActivity(appContext, 0, cancelIntent, PendingIntent.FLAG_UPDATE_CURRENT));
+                        authState
+                ),
+                PendingIntent.getActivity(
+                        appContext,
+                        0,
+                        cancelIntent,
+                        PendingIntent.FLAG_UPDATE_CURRENT
+                )
+        );
 
     }
 
@@ -195,8 +202,11 @@ public class OpenIDAppAuthGoogle extends OpenIDAppAuthProvider {
                             idp.setClientId(registrationResponse.clientId);
                             LogUtils.logd(TAG, "Registration request complete successfully");
                             // Continue with the authentication
-                            makeAuthRequest(registrationResponse.request.configuration, idp,
-                                    new AuthState((registrationResponse)));
+                            makeAuthRequest(
+                                    registrationResponse.request.configuration,
+                                    idp,
+                                    new AuthState(registrationResponse)
+                            );
                         }
                     }
                 });
