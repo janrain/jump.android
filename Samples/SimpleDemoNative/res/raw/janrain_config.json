@@ -3,7 +3,7 @@
   "captureDomain": "UPDATE.janraincapture.com",
   "captureClientId": "UPDATE",
   "captureLocale": "en-US",
-  "captureTraditionalSignInFormName": "userInformationForm",
+  "captureTraditionalSignInFormName": "signInForm",
   "traditionalSignInType": "EMAIL",
   "captureAppId": "UPDATE",
   "captureFlowName": "standard_flow",
