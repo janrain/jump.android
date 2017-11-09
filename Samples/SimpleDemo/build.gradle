@@ -1,7 +1,6 @@
 buildscript {
     repositories {
         jcenter ()
-        maven { url 'https://maven.fabric.io/public' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.0'
@@ -11,7 +10,6 @@ apply plugin: 'com.android.application'
 
 repositories {
     jcenter ()
-    maven { url 'https://maven.fabric.io/public' }
 }
 
 
