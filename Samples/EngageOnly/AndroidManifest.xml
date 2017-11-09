@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.janrain.android.engageonly"
     android:versionCode="1"
     android:versionName="1.0">
@@ -96,6 +97,7 @@
             android:configChanges="orientation|screenSize"
             android:theme="@style/Theme.Janrain"
             android:windowSoftInputMode="adjustResize|stateHidden"
+            tools:replace="android:theme"
             />
 
     </application>

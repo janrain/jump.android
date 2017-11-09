@@ -1,1 +1,2 @@
 include ':jump'
+project(':jump').projectDir = new File('../../Jump')
