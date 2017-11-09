@@ -882,6 +882,10 @@ public class JREngage {
 
     }
 
+    public boolean isNativeProviderConfigured(String providerName) {
+        return mSession.getProviderByName(providerName) != null;
+    }
+
     /*package*/ void triggerOnSuccess(JRDictionary payload) {
         mSession.saveLastUsedAuthProvider();
         mSession.triggerAuthenticationDidCompleteWithPayload(payload);
@@ -918,8 +922,8 @@ public class JREngage {
     }
 
     private void showOpenIDAppAuthFlowInternal(final Activity fromActivity,
-                                            final JRProvider provider,
-                                            final Class<? extends JRCustomInterface> uiCustomization) {
+                                               final JRProvider provider,
+                                               final Class<? extends JRCustomInterface> uiCustomization) {
 
         mSession.setCurrentlyAuthenticatingProvider(provider);
         mUiCustomization = uiCustomization;
@@ -929,7 +933,7 @@ public class JREngage {
     }
 
     public JROpenIDAppAuth.OpenIDAppAuthCallback getNativeAuthCallback(final Activity fromActivity,
-                                                                 final Class<? extends JRCustomInterface> uiCustomization) {
+                                                                       final Class<? extends JRCustomInterface> uiCustomization) {
         final JRProvider provider = mSession.getCurrentlyAuthenticatingProvider();
 
         return new JROpenIDAppAuth.OpenIDAppAuthCallback() {
@@ -1393,43 +1397,43 @@ public class JREngage {
 /**
  * @page Providers
  *
-@htmlonly
-<!-- Script to resize the iFrames; Only works because iFrames origin is on same domain and iFrame
-      code contains script that calls this script -->
-<script type="text/javascript">
-    function resize(width, height, id) {
-        var iframe = document.getElementById(id);
-        iframe.width = width;
-        iframe.height = height + 50;
-        iframe.scrolling = false;
-        console.log(width);
-        console.log(height);
-    }
-</script>
+ @htmlonly
+ <!-- Script to resize the iFrames; Only works because iFrames origin is on same domain and iFrame
+ code contains script that calls this script -->
+ <script type="text/javascript">
+ function resize(width, height, id) {
+ var iframe = document.getElementById(id);
+ iframe.width = width;
+ iframe.height = height + 50;
+ iframe.scrolling = false;
+ console.log(width);
+ console.log(height);
+ }
+ </script>
 
-<!-- Redundant attributes to force scrolling to work across multiple browsers -->
-<iframe id="intro" src="../mobile_providers?list=intro&device=android" width="100%" height="100%"
-    style="border:none; overflow:hidden;" frameborder="0" scrolling="no">
-  Your browser does not support iFrames.
-</iframe>
-@endhtmlonly
+ <!-- Redundant attributes to force scrolling to work across multiple browsers -->
+ <iframe id="intro" src="../mobile_providers?list=intro&device=android" width="100%" height="100%"
+ style="border:none; overflow:hidden;" frameborder="0" scrolling="no">
+ Your browser does not support iFrames.
+ </iframe>
+ @endhtmlonly
 
-@anchor basicProviders
-@htmlonly
-<iframe id="basic" src="../mobile_providers?list=basic&device=android" width="100%" height="100%"
-    style="border:none; overflow:hidden;" frameborder="0" scrolling="no">
-  Your browser does not support iFrames.
-  <a href="../mobile_providers?list=basic&device=android">List of Providers</a>
-</iframe></p>
-@endhtmlonly
+ @anchor basicProviders
+ @htmlonly
+ <iframe id="basic" src="../mobile_providers?list=basic&device=android" width="100%" height="100%"
+ style="border:none; overflow:hidden;" frameborder="0" scrolling="no">
+ Your browser does not support iFrames.
+ <a href="../mobile_providers?list=basic&device=android">List of Providers</a>
+ </iframe></p>
+ @endhtmlonly
 
-@anchor socialProviders
-@htmlonly
-<iframe id="social" src="../mobile_providers?list=social&device=android" width="100%" height="100%"
-    style="border:none; overflow:hidden;" frameborder="0" scrolling="no">
-  Your browser does not support iFrames.
-  <a href="../mobile_providers?list=social&device=android">List of Social Providers</a>
-</iframe></p>
-@endhtmlonly
+ @anchor socialProviders
+ @htmlonly
+ <iframe id="social" src="../mobile_providers?list=social&device=android" width="100%" height="100%"
+ style="border:none; overflow:hidden;" frameborder="0" scrolling="no">
+ Your browser does not support iFrames.
+ <a href="../mobile_providers?list=social&device=android">List of Social Providers</a>
+ </iframe></p>
+ @endhtmlonly
  *
  **/

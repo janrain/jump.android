@@ -882,6 +882,10 @@ public class JREngage {
 
     }
 
+    public boolean isNativeProviderConfigured(String providerName) {
+        return mSession.getProviderByName(providerName) != null;
+    }
+
     /*package*/ void triggerOnSuccess(JRDictionary payload) {
         mSession.saveLastUsedAuthProvider();
         mSession.triggerAuthenticationDidCompleteWithPayload(payload);

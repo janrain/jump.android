@@ -32,6 +32,7 @@
 package com.janrain.android.multidex.simpledemonative;
 
 import android.accounts.AccountManager;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.BroadcastReceiver;
@@ -43,8 +44,12 @@ import android.content.IntentSender;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.StrictMode;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.AsyncTaskLoader;
+import android.support.v4.content.Loader;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.InputType;
 import android.util.Log;
@@ -140,7 +145,6 @@ public class MainActivity extends FragmentActivity implements
 
     // Received from newChooseAccountIntent(); passed to getToken()
     private static String googleEmail;
-    private static String googleToken;
     private static final String GOOGLE_SCOPES = "oauth2:profile email";
 
     //Twitter
@@ -744,10 +748,12 @@ public class MainActivity extends FragmentActivity implements
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         //Log.d(TAG, "onActivityResult:" + requestCode + ":" + resultCode + ":" + data);
-        LogUtils.loge("onActivityResult:" + requestCode + ":" + resultCode + ":" + data);
+        LogUtils.logd("onActivityResult:" + requestCode + ":" + resultCode + ":" + data);
         if (requestCode == GOOGLE_REQUEST_CODE_SIGN_IN) {
+            LogUtils.logd("requestCode: GOOGLE_REQUEST_CODE_SIGN_IN");
             // If the error resolution was not successful we should not resolve further.
             if (resultCode != RESULT_OK) {
+                LogUtils.logd("result: NOT RESULT_OK");
                 mShouldResolve = false;
             }
 
@@ -755,19 +761,32 @@ public class MainActivity extends FragmentActivity implements
 
             mGoogleApiClient.connect();
         }else if (requestCode == GOOGLE_REQUEST_CODE_PICK_ACCOUNT) {
+            LogUtils.logd("requestCode: GOOGLE_REQUEST_CODE_PICK_ACCOUNT");
             // Receiving a result from the AccountPicker
             if (resultCode == RESULT_OK) {
+                LogUtils.logd("result: RESULT_OK");
                 googleEmail = data.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
                 // With the account name acquired, go get the auth token
-                new RetrieveGoogleTokenTask(MainActivity.this).execute(googleEmail, GOOGLE_SCOPES);
+                final Bundle args = new Bundle();
+                args.putString("accountName", googleEmail);
+                args.putString("scopes", GOOGLE_SCOPES);
+                final RetrieveGoogleTokenLoaderCallbacks callback =
+                        new RetrieveGoogleTokenLoaderCallbacks(MainActivity.this);
+
+                getSupportLoaderManager().destroyLoader(1000);
+                Loader<String> loader = getSupportLoaderManager().initLoader(1000, args, callback);
+                loader.forceLoad();
             } else if (resultCode == RESULT_CANCELED) {
+                LogUtils.logd("result: RESULT_CANCELED");
                 // The account picker dialog closed without selecting an account.
                 // Notify users that they must pick an account to proceed.
                 Toast.makeText(this, "No account chosen - dialog cancelled", Toast.LENGTH_SHORT).show();
             }
         }else if(requestCode == FACEBOOK_REQUEST_CODE_SIGN_IN){
+            LogUtils.logd("requestCode: FACEBOOK_REQUEST_CODE_SIGN_IN");
             facebookCallbackManager.onActivityResult(requestCode, resultCode, data);
         }else if(requestCode == TWITTER_REQUEST_CODE_SIGN_IN){
+            LogUtils.logd("requestCode: TWITTER_REQUEST_CODE_SIGN_IN");
             twitterAuthClient.onActivityResult(requestCode, resultCode, data);
         }
     }
@@ -875,43 +894,76 @@ public class MainActivity extends FragmentActivity implements
         });
     }
 
-
-    private class RetrieveGoogleTokenTask extends AsyncTask<String, Void, String> {
-
+    private static class RetrieveGoogleTokenLoaderCallbacks implements LoaderManager.LoaderCallbacks<String> {
 
         private final MainActivity activity;
 
-        public RetrieveGoogleTokenTask (MainActivity activity){
+        public RetrieveGoogleTokenLoaderCallbacks(MainActivity activity) {
             this.activity = activity;
-        }
-        @Override
-        protected String doInBackground(String... params) {
-            if (BuildConfig.DEBUG) {
-                android.os.Debug.waitForDebugger();
-            }
-            String accountName = params[0];
-            String scopes = params[1];
-            String token = null;
-            MainActivity.googleEmail = accountName;
-            try {
-                token = GoogleAuthUtil.getToken(getApplicationContext(), accountName, scopes);
-            } catch (IOException e) {
-                LogUtils.loge(e.getMessage());
-            } catch (UserRecoverableAuthException e) {
-                startActivityForResult(e.getIntent(), GOOGLE_REQUEST_SIGN_IN_REQUIRED);
-            } catch (GoogleAuthException e) {
-                LogUtils.loge(e.getMessage());
-            }
-            return token;
         }
 
         @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            googleToken = s;
-            //May not show in IntelliJ - ./adb logcat seems to be more reliable
-            LogUtils.loge("Google Token Value: " + s);
-            Jump.startTokenAuthForNativeProvider(activity, "googleplus", s,"",activity.signInResultHandler,"");
+        public Loader<String> onCreateLoader(int id, Bundle args) {
+            LogUtils.logd();
+            final String accountName = args.getString("accountName");
+            final String scopes = args.getString("scopes");
+
+            return new RetrieveGoogleTokenLoader(activity, accountName, scopes);
+        }
+
+        @Override
+        public void onLoadFinished(Loader<String> loader, String googleToken) {
+            LogUtils.loge("Google Token Value: " + googleToken);
+            Jump.startTokenAuthForNativeProvider(activity, "googleplus", googleToken,"",activity.signInResultHandler,"");
+        }
+
+        @Override
+        public void onLoaderReset(Loader<String> loader) {
+            LogUtils.logd();
+        }
+    }
+
+    private static class RetrieveGoogleTokenLoader extends AsyncTaskLoader<String> {
+
+        private final Activity activity;
+        private final String accountName;
+        private final String scopes;
+
+        public RetrieveGoogleTokenLoader(Activity context, String accountName, String scopes) {
+            super(context);
+            this.activity = context;
+            this.accountName = accountName;
+            this.scopes = scopes;
+            LogUtils.logd();
+        }
+
+        @Override
+        public String loadInBackground() {
+            if (BuildConfig.DEBUG && android.os.Debug.waitingForDebugger()) {
+                Log.d(getClass().getSimpleName(), "Waiting for debugger...");
+                android.os.Debug.waitForDebugger();
+                Log.d(getClass().getSimpleName(), "Debugger connected!");
+            }
+
+            LogUtils.logd();
+
+            String token = null;
+            MainActivity.googleEmail = accountName;
+            try {
+                token = GoogleAuthUtil.getToken(activity.getApplicationContext(), accountName, scopes);
+            } catch (IOException e) {
+                LogUtils.loge(e.getMessage());
+            } catch (UserRecoverableAuthException e) {
+                activity.startActivityForResult(e.getIntent(), GOOGLE_REQUEST_SIGN_IN_REQUIRED);
+            } catch (GoogleAuthException e) {
+                LogUtils.loge(e.getMessage());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            Log.d(getClass().getSimpleName(), "token: " + token);
+
+            return token;
         }
     }
 

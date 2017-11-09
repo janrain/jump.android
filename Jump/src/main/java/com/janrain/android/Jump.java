@@ -72,6 +72,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.StreamCorruptedException;
+import java.util.Locale;
 import java.util.Map;
 
 import static com.janrain.android.Jump.CaptureApiResultHandler.CaptureAPIError;
@@ -487,6 +488,25 @@ public class Jump {
             return;
         }
 
+        if (!state.jrEngage.isNativeProviderConfigured(providerName)) {
+            final String message = String.format(
+                    Locale.getDefault(),
+                    "Provider '%s' not found, make sure you have configured it properly in your Engage dashboard.",
+                    providerName
+            );
+
+            LogUtils.loge(message);
+
+            JREngageError engageError = new JREngageError(
+                    message,
+                    JREngageError.ConfigurationError.PROVIDER_NOT_CONFIGURED_ERROR,
+                    JREngageError.ErrorType.CONFIGURATION_INFORMATION_MISSING
+            );
+
+            handler.onFailure(new SignInError(ENGAGE_ERROR, null, engageError));
+            return;
+        }
+
         state.signInHandler = handler;
         nextTokenAuthForNativeProvider(fromActivity,providerName,accessToken,tokenSecret,mergeToken);
 
@@ -847,9 +867,7 @@ public class Jump {
     }
 
     /**
-     * This method will attempt to load the content stored with the saveToDisk method.
-     * To be used when appropriate in the Android Activity lifecycle
-     * https://developer.android.com/guide/components/activities/activity-lifecycle.html
+     * @deprecated Loading state from disk is now done automatically from Jump.init
      */
     public static void loadFromDisk(Context context) {
         loadUserFromDiskInternal(context);
@@ -1090,7 +1108,12 @@ public class Jump {
 
                             }
                         })
-                .setNegativeButton(android.R.string.cancel, null)
+                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        signInResultHandler.onFailure(new SignInError(AUTHENTICATION_CANCELLED_BY_USER, null, null));
+                    }
+                })
                 .create();
 
         alertDialog.setCanceledOnTouchOutside(false);
@@ -1297,10 +1320,29 @@ public class Jump {
      * @param handler your result handler, called upon completion on the UI thread
      */
     public static void performFetchCaptureData(final CaptureApiResultHandler handler) {
+        performFetchCaptureData(handler, false);
+    }
+
+    /**
+     * Headless API for fetching Capture Signed user data
+     *
+     * @param handler your result handler, called upon completion on the UI thread
+     * @param updateSignedInUser indicates whether the current signed in user data
+     *                           should be updated using the successful response
+     */
+    public static void performFetchCaptureData(final CaptureApiResultHandler handler, final boolean updateSignedInUser) {
         state.captureAPIHandler = handler;
         Capture.performUpdateSignedUserData(new Capture.CaptureApiResultHandler() {
             @Override
             public void onSuccess(JSONObject response) {
+                if (updateSignedInUser) {
+                    final String accessToken = state.signedInUser.getAccessToken();
+                    final CaptureRecord record = getResultAsCaptureRecord(accessToken);
+                    if (record != null) {
+                        state.signedInUser = record;
+                    }
+                }
+
                 fireHandlerOnCaptureAPISuccess(response);
             }
 
