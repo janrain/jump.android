@@ -74,7 +74,7 @@ public class ChangePasswordActivity extends Activity {
         String newPassword = getEditTextString(change_password_new);
         String confirmPassword = getEditTextString(change_password_confirm);
 
-        Map<String, String> fieldMap = new HashMap<String, String>();
+        Map<String, String> fieldMap = new HashMap<>();
         fieldMap.put("currentPassword", oldPassword);
         fieldMap.put("newPassword", newPassword);
         fieldMap.put("newPasswordConfirm", confirmPassword);
