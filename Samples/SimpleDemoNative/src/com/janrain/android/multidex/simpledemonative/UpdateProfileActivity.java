@@ -62,7 +62,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import static com.janrain.android.multidex.simpledemonative.R.id.update_profile_about;
 import static com.janrain.android.multidex.simpledemonative.R.id.update_profile_addressCity;
 import static com.janrain.android.multidex.simpledemonative.R.id.update_profile_addressCountry;
 import static com.janrain.android.multidex.simpledemonative.R.id.update_profile_addressPostalCode;
@@ -110,7 +109,6 @@ public class UpdateProfileActivity extends Activity {
         setEditTextString(update_profile_addressCity, getStringOrNullFromUser(user, "primaryAddress.city"));
         setEditTextString(update_profile_addressPostalCode, getStringOrNullFromUser(user, "primaryAddress.zip"));
         setCheckBoxBoolean(update_profile_optIn, getBooleanFromUser(user, "optIn.status", false));
-        setEditTextString(update_profile_about, getStringOrNullFromUser(user, "aboutMe"));
 
         updateBirthDate(getDateOrNullFromUser(user, "birthday"));
 
@@ -149,8 +147,6 @@ public class UpdateProfileActivity extends Activity {
         String addressState = getSpinnerSelectedValue(update_profile_addressState, stateOptions);
         String addressCountry = getSpinnerSelectedValue(update_profile_addressCountry, countryOptions);
 
-        String about = getEditTextString(update_profile_about);
-
         try {
             user.put("email", email);
             user.put("displayName", displayName);
@@ -173,8 +169,6 @@ public class UpdateProfileActivity extends Activity {
             primaryAddressObj.put("stateAbbreviation", addressState);
             primaryAddressObj.put("country", addressCountry);
             user.put("primaryAddress", primaryAddressObj);
-
-            user.put("aboutMe", about);
         } catch (JSONException e) {
             throw new RuntimeException("Unexpected ", e);
         }

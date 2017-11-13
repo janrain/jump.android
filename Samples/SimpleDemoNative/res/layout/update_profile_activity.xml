@@ -296,24 +296,6 @@
                 android:imeOptions="actionNext"
                 android:text="Receive emails and other communications." />
 
-            <!-- ABOUT -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:layout_gravity="right"
-                android:text="About:" />
-
-            <EditText
-                android:id="@+id/update_profile_about"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:ems="10"
-                android:imeOptions="actionNext"
-                android:inputType="textCapSentences|textMultiLine"
-                android:lines="3" />
-
 
             <Button
                 android:id="@+id/update_profile_button"
