@@ -64,6 +64,8 @@ https://dev.twitter.com/twitterkit/android/installation
 
 ### Upgrading to v7.1 from v7.0.5
 
+NOTE: There have been significant updates to the code base in this release.  While over all functionality should not have changed it is highly recommended that thorough testing be performed when upgrading to this version from previous versions.
+
 This version now allows the use of the `res/raw/janrain_config.json` file which would be placed in
 the application's `res` folder.  This file includes the settings for the OpenID AppAuth library that were previously covered in the `/jump.android/Jump/src/res/values/openid_appauth_idp_configs.xml` file.  Please follow these steps to use this file:
 
