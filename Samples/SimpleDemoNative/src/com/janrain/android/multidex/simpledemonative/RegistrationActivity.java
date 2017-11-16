@@ -77,6 +77,8 @@ import static com.janrain.android.multidex.simpledemonative.R.id.trad_reg_mobile
 import static com.janrain.android.multidex.simpledemonative.R.id.trad_reg_optIn;
 import static com.janrain.android.multidex.simpledemonative.R.id.trad_reg_password;
 import static com.janrain.android.multidex.simpledemonative.R.id.trad_reg_password_confirm;
+import static com.janrain.android.multidex.simpledemonative.R.id.trad_reg_password_label;
+import static com.janrain.android.multidex.simpledemonative.R.id.trad_reg_password_confirm_label;
 import static com.janrain.android.multidex.simpledemonative.R.id.trad_reg_phone;
 import static com.janrain.android.utils.CollectionUtils.collectionToHumanReadableString;
 
@@ -128,6 +130,18 @@ public class RegistrationActivity extends Activity {
             setEditTextString(trad_reg_password_confirm, getStringOrNullFromUser(newUser, ""));
         } else {
             setTitle("Sign Up");
+        }
+
+        if (socialRegToken != null){
+            findViewById(trad_reg_password).setVisibility(View.GONE);
+            findViewById(trad_reg_password_confirm).setVisibility(View.GONE);
+            findViewById(trad_reg_password_label).setVisibility(View.GONE);
+            findViewById(trad_reg_password_confirm_label).setVisibility(View.GONE);
+        } else {
+            findViewById(trad_reg_password).setVisibility(View.VISIBLE);
+            findViewById(trad_reg_password_confirm).setVisibility(View.VISIBLE);
+            findViewById(trad_reg_password_label).setVisibility(View.VISIBLE);
+            findViewById(trad_reg_password_confirm_label).setVisibility(View.VISIBLE);
         }
 
         updateBirthDate(getDateOrNullFromUser(newUser, "birthday"));
