@@ -62,10 +62,10 @@ apply plugin: 'io.fabric' // REMOVE THIS ONE TOO
 After the version changes it's very likely you'll have various build errors because the Twitter Kit library also changed some of its classes. Review your code is compilant with the installation instructions on this link:
 https://dev.twitter.com/twitterkit/android/installation
 
-### Upgrading to v7.0.6 from v7.0.5
+### Upgrading to v7.1 from v7.0.5
 
 This version now allows the use of the `res/raw/janrain_config.json` file which would be placed in
-the application's `res` folder. Please follow these steps to use this file:
+the application's `res` folder.  This file includes the settings for the OpenID AppAuth library that were previously covered in the `/jump.android/Jump/src/res/values/openid_appauth_idp_configs.xml` file.  Please follow these steps to use this file:
 
 * Make sure there is a `res/raw` folder in your app, this may need to be created if it doesn't exist.
 * Copy the `/Samples/SimpleDemo/res/raw/janrain_config.json` or the `/Samples/SimpleDemoNative/res/raw/janrain_config.json`

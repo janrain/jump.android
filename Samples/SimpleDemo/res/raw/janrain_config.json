@@ -13,6 +13,7 @@
   "captureEditUserProfileFormName": "editProfileForm",
   "captureEnableThinRegistration": false,
   "captureForgotPasswordFormName": "forgotPasswordForm",
+  "captureResendEmailVerificationFormName":"resendVerificationForm",
   "openIDIdentityProviders": [
     {
       "name": "Google",

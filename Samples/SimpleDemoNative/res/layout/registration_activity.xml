@@ -298,6 +298,7 @@
             android:text="Receive emails and other communications." />
 
         <TextView
+            android:id="@+id/trad_reg_password_label"
             android:layout_column="0"
             android:layout_gravity="right"
             android:text="Password:" />
@@ -310,6 +311,7 @@
             android:inputType="textVisiblePassword" />
 
         <TextView
+            android:id="@+id/trad_reg_password_confirm_label"
             android:layout_column="0"
             android:layout_gravity="right"
             android:text="Confirm:" />
