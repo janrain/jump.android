@@ -1,4 +1,6 @@
-Welcome to the JUMP platform libary for Android.  This library is available open-source under a Berkeley
+## Janrain Mobile Libraries for Android
+
+Welcome to the Janrain Mobile libaries for Android.  This library is available open-source under a Berkeley
 license, as found in the LICENSE file.
 
 Getting Started:
@@ -6,6 +8,33 @@ Getting Started:
 
 Report bugs or ask questions:
     https://support.janrain.com
+
+### Upgrading to v7.1 from v7.0.5
+
+NOTE: There have been significant updates to the code base in this release.  While over all functionality should not have changed it is highly recommended that thorough testing be performed when upgrading to this version from previous versions.
+
+This version now allows the use of the `res/raw/janrain_config.json` file which would be placed in
+the application's `res` folder.  This file includes the settings for the OpenID AppAuth library that were previously covered in the `/jump.android/Jump/src/res/values/openid_appauth_idp_configs.xml` file.  Please follow these steps to use this file:
+
+* Make sure there is a `res/raw` folder in your app, this may need to be created if it doesn't exist.
+* Copy the `/Samples/SimpleDemo/res/raw/janrain_config.json` or the `/Samples/SimpleDemoNative/res/raw/janrain_config.json`
+file to the `res/raw` folder.
+* Update your janrain credentials and configuration settings in the `janrain_config.json` file.
+* Use the new `JumpConfig(Context)` constructor. This constructor loads the configurations from the json file.
+* You can now remove all the assignations you had to the JumpConfig object's fields.
+
+At this point you can override the config object's values by assigning them values programmatically.
+
+The `/Samples/SimpleDemo/res/raw/janrain_config.json` file is intended to be used as the template for your own application's configuration file.  Please update the values in this file to reflect your Janrain configuration and settings.
+
+NOTE:  These changes are not mandatory, the libraries should still work using your existing configuration methods as long as they are compatible with previous versions.
+
+If you are leveraging TwitterKit for Native Authentication, you may need to remove the Fabric.io dependencies as Fabric.io has been sold to Google and the TwitterKit functionality is now a stand alone library maintained by Twitter.
+
+If you are leveraging the Google Sign-In libraries for Native Authentication, updating the Google Play Sign-In dependencies may require moving the following line to the bottom of your application's build.gradle file:
+```
+apply plugin: 'com.google.gms.google-services'
+```
 
 ### Upgrading to v7.0.4 or v7.0.5
 - Add the following activity to your AndroidManifest.xml file (maybe below the OpenIDAppAuthTokenActivity):
