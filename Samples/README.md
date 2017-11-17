@@ -16,6 +16,6 @@ SimpleCaptureDemoNative demos:
 - Sign-in session management
 - Registration (traditional and social)
 - Native Authentication using Facebook, Google+, and Twitter
-- REQUIRED: Facebook SDK version 4.18.0
-- REQUIRED: Google Signin SDK 8.1.0
-- REQUIRED: Fabric.io with Twitter SDK 2.3.1
+- REQUIRED: Facebook SDK version 4.+
+- REQUIRED: Google Play/Sign-In SDK Services version 3.1.0 and Play Auth version 9.8.0)
+- REQUIRED: Twitter SDK version 3.3.1
