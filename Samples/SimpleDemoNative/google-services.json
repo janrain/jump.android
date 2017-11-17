@@ -6,7 +6,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "UPDATE",
+        "mobilesdk_app_id": "1:UPDATE",
         "android_client_info": {
           "package_name": "com.janrain.android.multidex.simpledemonative"
         }

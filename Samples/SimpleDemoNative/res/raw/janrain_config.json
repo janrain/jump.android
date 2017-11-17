@@ -6,13 +6,14 @@
   "captureTraditionalSignInFormName": "signInForm",
   "traditionalSignInType": "EMAIL",
   "captureAppId": "UPDATE",
-  "captureFlowName": "standard_flow",
+  "captureFlowName": "standard",
   "captureFlowVersion": "HEAD",
   "captureSocialRegistrationFormName": "socialRegistrationForm",
   "captureTraditionalRegistrationFormName": "registrationForm",
   "captureEditUserProfileFormName": "editProfileForm",
   "captureEnableThinRegistration": false,
   "captureForgotPasswordFormName": "forgotPasswordForm",
+  "captureResendEmailVerificationFormName":"resendVerificationForm",
   "openIDIdentityProviders": [
     {
       "name": "Google",
