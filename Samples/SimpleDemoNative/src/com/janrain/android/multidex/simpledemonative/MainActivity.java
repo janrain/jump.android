@@ -32,6 +32,7 @@
 package com.janrain.android.multidex.simpledemonative;
 
 import android.accounts.AccountManager;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.BroadcastReceiver;
@@ -40,13 +41,15 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.IntentSender;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.StrictMode;
-import android.support.multidex.MultiDex;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.AsyncTaskLoader;
+import android.support.v4.content.Loader;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.InputType;
 import android.util.Log;
@@ -74,8 +77,6 @@ import com.google.android.gms.auth.GoogleAuthException;
 import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.android.gms.auth.GooglePlayServicesAvailabilityException;
 import com.google.android.gms.auth.UserRecoverableAuthException;
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.common.AccountPicker;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -83,22 +84,22 @@ import com.google.android.gms.common.Scopes;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.plus.Plus;
-
-import com.google.android.gms.plus.Plus;
-import com.janrain.android.capture.CaptureRecord;
-import com.twitter.sdk.android.Twitter;
-import com.twitter.sdk.android.core.TwitterAuthConfig;
-import com.twitter.sdk.android.core.Callback;
-import com.twitter.sdk.android.core.Result;
-import com.twitter.sdk.android.core.TwitterAuthToken;
-import com.twitter.sdk.android.core.TwitterException;
-import com.twitter.sdk.android.core.TwitterSession;
-
 import com.janrain.android.Jump;
 import com.janrain.android.capture.CaptureApiError;
+import com.janrain.android.capture.CaptureRecord;
 import com.janrain.android.engage.JREngage;
 import com.janrain.android.engage.types.JRActivityObject;
 import com.janrain.android.utils.LogUtils;
+import com.twitter.sdk.android.core.Callback;
+import com.twitter.sdk.android.core.DefaultLogger;
+import com.twitter.sdk.android.core.Result;
+import com.twitter.sdk.android.core.Twitter;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import com.twitter.sdk.android.core.TwitterAuthToken;
+import com.twitter.sdk.android.core.TwitterConfig;
+import com.twitter.sdk.android.core.TwitterCore;
+import com.twitter.sdk.android.core.TwitterException;
+import com.twitter.sdk.android.core.TwitterSession;
 import com.twitter.sdk.android.core.identity.TwitterAuthClient;
 
 import org.json.JSONObject;
@@ -106,8 +107,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Set;
-
-import io.fabric.sdk.android.Fabric;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
@@ -120,7 +119,6 @@ public class MainActivity extends FragmentActivity implements
     // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
     private static final String TWITTER_KEY = "UPDATE";
     private static final String TWITTER_SECRET = "UPDATE";
-
 
     //Facebook SDK
     private CallbackManager facebookCallbackManager;
@@ -147,7 +145,6 @@ public class MainActivity extends FragmentActivity implements
 
     // Received from newChooseAccountIntent(); passed to getToken()
     private static String googleEmail;
-    private static String googleToken;
     private static final String GOOGLE_SCOPES = "oauth2:profile email";
 
     //Twitter
@@ -319,9 +316,12 @@ public class MainActivity extends FragmentActivity implements
 
 
         //Initialize Twitter SDK
-        TwitterAuthConfig twitterAuthConfig = new TwitterAuthConfig("consumerKey", "consumerSecret");
-        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
-        Fabric.with(this, new Twitter(twitterAuthConfig), new Twitter(authConfig));
+        TwitterConfig config = new TwitterConfig.Builder(this)
+                .logger(new DefaultLogger(Log.DEBUG))
+                .twitterAuthConfig(new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET))
+                .debug(true)
+                .build();
+        Twitter.initialize(config);
 
 
         IntentFilter filter = new IntentFilter(Jump.JR_FAILED_TO_DOWNLOAD_FLOW);
@@ -345,6 +345,7 @@ public class MainActivity extends FragmentActivity implements
         Button editProfile = addButton(linearLayout, "Edit Profile");
         Button changePassword = addButton(linearLayout, "Change Password");
         Button refreshToken = addButton(linearLayout, "Refresh Access Token");
+        Button refreshSignedInUser = addButton(linearLayout, "Refresh SignedIn User");
         final Button resendVerificationButton = addButton(linearLayout, "Resend Email Verification");
         Button link_unlinkAccount = addButton(linearLayout, "Link & Unlink Account");
         addButton(linearLayout, "Share").setOnClickListener(new View.OnClickListener() {
@@ -427,7 +428,11 @@ public class MainActivity extends FragmentActivity implements
             public void onClick(View v) {
                 if (flowDownloaded) {
 
-                    TwitterSession twitterSession = Twitter.getSessionManager().getActiveSession();
+                    TwitterSession twitterSession = TwitterCore
+                            .getInstance()
+                            .getSessionManager()
+                            .getActiveSession();
+
                     if (twitterSession != null) {
                         twitterToken = twitterSession.getAuthToken();
                     }else{
@@ -548,6 +553,33 @@ public class MainActivity extends FragmentActivity implements
             }
         });
 
+        refreshSignedInUser.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (Jump.getSignedInUser() == null) {
+                    Toast.makeText(MainActivity.this, "Cannot refresh signed in user, there was no one present",
+                            Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                Jump.CaptureApiResultHandler handler = new Jump.CaptureApiResultHandler() {
+                    @Override
+                    public void onSuccess(JSONObject response) {
+                        Toast.makeText(MainActivity.this, "SignedIn User Refreshed",
+                                Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onFailure(CaptureAPIError error) {
+                        Toast.makeText(MainActivity.this, "Failed to refresh SignedIn User",
+                                Toast.LENGTH_LONG).show();
+                        LogUtils.loge(error.toString());
+                    }
+                };
+
+                Jump.performFetchCaptureData(handler, true);
+            }
+        });
+
         resendVerificationButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 CaptureRecord user = Jump.getSignedInUser();
@@ -592,8 +624,11 @@ public class MainActivity extends FragmentActivity implements
                 }
                 if(twitterToken != null){
                     MainActivity.ClearCookies(MainActivity.this);
-                    Twitter.getSessionManager().clearActiveSession();
-                    Twitter.logOut();
+                    TwitterCore
+                            .getInstance()
+                            .getSessionManager()
+                            .clearActiveSession();
+
                     LogUtils.logd("Logged out of Twitter");
                 }
                 Jump.signOutCaptureUser(MainActivity.this);
@@ -741,10 +776,12 @@ public class MainActivity extends FragmentActivity implements
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         //Log.d(TAG, "onActivityResult:" + requestCode + ":" + resultCode + ":" + data);
-        LogUtils.loge("onActivityResult:" + requestCode + ":" + resultCode + ":" + data);
+        LogUtils.logd("onActivityResult:" + requestCode + ":" + resultCode + ":" + data);
         if (requestCode == GOOGLE_REQUEST_CODE_SIGN_IN) {
+            LogUtils.logd("requestCode: GOOGLE_REQUEST_CODE_SIGN_IN");
             // If the error resolution was not successful we should not resolve further.
             if (resultCode != RESULT_OK) {
+                LogUtils.logd("result: NOT RESULT_OK");
                 mShouldResolve = false;
             }
 
@@ -752,19 +789,32 @@ public class MainActivity extends FragmentActivity implements
 
             mGoogleApiClient.connect();
         }else if (requestCode == GOOGLE_REQUEST_CODE_PICK_ACCOUNT) {
+            LogUtils.logd("requestCode: GOOGLE_REQUEST_CODE_PICK_ACCOUNT");
             // Receiving a result from the AccountPicker
             if (resultCode == RESULT_OK) {
+                LogUtils.logd("result: RESULT_OK");
                 googleEmail = data.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
                 // With the account name acquired, go get the auth token
-                new RetrieveGoogleTokenTask(MainActivity.this).execute(googleEmail, GOOGLE_SCOPES);
+                final Bundle args = new Bundle();
+                args.putString("accountName", googleEmail);
+                args.putString("scopes", GOOGLE_SCOPES);
+                final RetrieveGoogleTokenLoaderCallbacks callback =
+                        new RetrieveGoogleTokenLoaderCallbacks(MainActivity.this);
+
+                getSupportLoaderManager().destroyLoader(1000);
+                Loader<String> loader = getSupportLoaderManager().initLoader(1000, args, callback);
+                loader.forceLoad();
             } else if (resultCode == RESULT_CANCELED) {
+                LogUtils.logd("result: RESULT_CANCELED");
                 // The account picker dialog closed without selecting an account.
                 // Notify users that they must pick an account to proceed.
                 Toast.makeText(this, "No account chosen - dialog cancelled", Toast.LENGTH_SHORT).show();
             }
         }else if(requestCode == FACEBOOK_REQUEST_CODE_SIGN_IN){
+            LogUtils.logd("requestCode: FACEBOOK_REQUEST_CODE_SIGN_IN");
             facebookCallbackManager.onActivityResult(requestCode, resultCode, data);
         }else if(requestCode == TWITTER_REQUEST_CODE_SIGN_IN){
+            LogUtils.logd("requestCode: TWITTER_REQUEST_CODE_SIGN_IN");
             twitterAuthClient.onActivityResult(requestCode, resultCode, data);
         }
     }
@@ -872,43 +922,76 @@ public class MainActivity extends FragmentActivity implements
         });
     }
 
-
-    private class RetrieveGoogleTokenTask extends AsyncTask<String, Void, String> {
-
+    private static class RetrieveGoogleTokenLoaderCallbacks implements LoaderManager.LoaderCallbacks<String> {
 
         private final MainActivity activity;
 
-        public RetrieveGoogleTokenTask (MainActivity activity){
+        public RetrieveGoogleTokenLoaderCallbacks(MainActivity activity) {
             this.activity = activity;
-        }
-        @Override
-        protected String doInBackground(String... params) {
-            if (BuildConfig.DEBUG) {
-                android.os.Debug.waitForDebugger();
-            }
-            String accountName = params[0];
-            String scopes = params[1];
-            String token = null;
-            MainActivity.googleEmail = accountName;
-            try {
-                token = GoogleAuthUtil.getToken(getApplicationContext(), accountName, scopes);
-            } catch (IOException e) {
-                LogUtils.loge(e.getMessage());
-            } catch (UserRecoverableAuthException e) {
-                startActivityForResult(e.getIntent(), GOOGLE_REQUEST_SIGN_IN_REQUIRED);
-            } catch (GoogleAuthException e) {
-                LogUtils.loge(e.getMessage());
-            }
-            return token;
         }
 
         @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            googleToken = s;
-            //May not show in IntelliJ - ./adb logcat seems to be more reliable
-            LogUtils.loge("Google Token Value: " + s);
-            Jump.startTokenAuthForNativeProvider(activity, "googleplus", s,"",activity.signInResultHandler,"");
+        public Loader<String> onCreateLoader(int id, Bundle args) {
+            LogUtils.logd();
+            final String accountName = args.getString("accountName");
+            final String scopes = args.getString("scopes");
+
+            return new RetrieveGoogleTokenLoader(activity, accountName, scopes);
+        }
+
+        @Override
+        public void onLoadFinished(Loader<String> loader, String googleToken) {
+            LogUtils.loge("Google Token Value: " + googleToken);
+            Jump.startTokenAuthForNativeProvider(activity, "googleplus", googleToken,"",activity.signInResultHandler,"");
+        }
+
+        @Override
+        public void onLoaderReset(Loader<String> loader) {
+            LogUtils.logd();
+        }
+    }
+
+    private static class RetrieveGoogleTokenLoader extends AsyncTaskLoader<String> {
+
+        private final Activity activity;
+        private final String accountName;
+        private final String scopes;
+
+        public RetrieveGoogleTokenLoader(Activity context, String accountName, String scopes) {
+            super(context);
+            this.activity = context;
+            this.accountName = accountName;
+            this.scopes = scopes;
+            LogUtils.logd();
+        }
+
+        @Override
+        public String loadInBackground() {
+            if (BuildConfig.DEBUG && android.os.Debug.waitingForDebugger()) {
+                Log.d(getClass().getSimpleName(), "Waiting for debugger...");
+                android.os.Debug.waitForDebugger();
+                Log.d(getClass().getSimpleName(), "Debugger connected!");
+            }
+
+            LogUtils.logd();
+
+            String token = null;
+            MainActivity.googleEmail = accountName;
+            try {
+                token = GoogleAuthUtil.getToken(activity.getApplicationContext(), accountName, scopes);
+            } catch (IOException e) {
+                LogUtils.loge(e.getMessage());
+            } catch (UserRecoverableAuthException e) {
+                activity.startActivityForResult(e.getIntent(), GOOGLE_REQUEST_SIGN_IN_REQUIRED);
+            } catch (GoogleAuthException e) {
+                LogUtils.loge(e.getMessage());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            Log.d(getClass().getSimpleName(), "token: " + token);
+
+            return token;
         }
     }
 

@@ -33,11 +33,25 @@
 package com.janrain.android;
 
 import android.content.Context;
+import android.support.annotation.Nullable;
+import android.text.TextUtils;
+
 import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.types.JRDictionary;
+import com.janrain.android.utils.LogUtils;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
+
+import okio.Buffer;
+import okio.BufferedSource;
+import okio.Okio;
 
 /**
  * A 'POJO' -- plain old java object, used to contain your configuration for the JUMP library, to be passed
@@ -139,6 +153,55 @@ public final class JumpConfig {
      */
     public final Map<String, JRDictionary> customProviders = new HashMap<String, JRDictionary>();
 
+    private JSONObject configJson;
+
+    /**
+     * This constructor is deprecated, please use new constructor {@link JumpConfig#JumpConfig(Context)}
+     */
+    @Deprecated
+    public JumpConfig() {
+    }
+
+    /**
+     * Creates and initializes a new JumpConfir object to be
+     * passed to {@link Jump#init(Context, JumpConfig)}.
+     * <br />
+     * The fields are initialized using the <b>res/raw/janrain_config.json</b> file
+     * which you should provide in your app.
+     * @param context
+     */
+    public JumpConfig(Context context) {
+        this.context = context;
+
+        BufferedSource configSource =
+                Okio.buffer(Okio.source(context.getResources().openRawResource(R.raw.janrain_config)));
+        Buffer configData = new Buffer();
+        try {
+            configSource.readAll(configData);
+            configJson = new JSONObject(configData.readString(Charset.forName("UTF-8")));
+        } catch (IOException ex) {
+            throw new RuntimeException("Failed to read configuration: " + ex.getMessage(), ex);
+        } catch (JSONException ex) {
+            throw new RuntimeException("Unable to parse configuration: " + ex.getMessage(), ex);
+        }
+
+        engageAppId = getConfigString("engageAppId");
+        captureDomain = getConfigString("captureDomain");
+        captureClientId = getConfigString("captureClientId");
+        captureLocale = getConfigString("captureLocale");
+        captureTraditionalSignInFormName = getConfigString("captureTraditionalSignInFormName");
+        traditionalSignInType = getConfigEnum("traditionalSignInType", Jump.TraditionalSignInType.class, null);
+        captureAppId = getConfigString("captureAppId");
+        captureFlowName = getConfigString("captureFlowName");
+        captureFlowVersion = getConfigString("captureFlowVersion");
+        captureSocialRegistrationFormName = getConfigString("captureSocialRegistrationFormName");
+        captureTraditionalRegistrationFormName = getConfigString("captureTraditionalRegistrationFormName");
+        captureEditUserProfileFormName = getConfigString("captureEditUserProfileFormName");
+        captureEnableThinRegistration = getConfigBoolean("captureEnableThinRegistration", false);
+        captureForgotPasswordFormName = getConfigString("captureForgotPasswordFormName");
+        captureResendEmailVerificationFormName = getConfigString("captureResendEmailVerificationFormName");
+    }
+
     /**
      * Adds a custom SAML provider for Engage authentication
      * @param providerId A short string which will be used to refer to the custom provider
@@ -208,5 +271,55 @@ public final class JumpConfig {
      * Used for custom Flow endpoints (i.e. China)
      */
     public String downloadFlowUrl;
+
+
+    @Nullable
+    private String getConfigString(String propName) {
+        String value = configJson.optString(propName);
+        if (value == null) {
+            return null;
+        }
+
+        value = value.trim();
+        if (TextUtils.isEmpty(value)) {
+            return null;
+        }
+
+        return value;
+    }
+
+    @Nullable
+    private boolean getConfigBoolean(String propName, boolean defaultValue) {
+        final String stringValue = getConfigString(propName);
+        if (stringValue == null) {
+            return defaultValue;
+        }
+
+        return stringValue.equals("1") || stringValue.toLowerCase().equals("true");
+    }
+
+    @Nullable
+    private <T extends Enum<T>> T getConfigEnum(String propName, Class<T> type, T defaultValue) {
+        final String stringValue = getConfigString(propName);
+        if (stringValue == null) {
+            return defaultValue;
+        }
+
+        try {
+            return Enum.valueOf(type, stringValue);
+        } catch (Exception e) {
+            String message = String.format(
+                    Locale.US,
+                    "Failed parse property: %s with value '%s' to enum type %s",
+                    propName,
+                    stringValue,
+                    type.getSimpleName()
+            );
+
+            LogUtils.loge(message, e);
+        }
+
+        return defaultValue;
+    }
 
 }

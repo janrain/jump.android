@@ -1,0 +1,31 @@
+{
+  "engageAppId": "UPDATE",
+  "captureDomain": "UPDATE.janraincapture.com",
+  "captureClientId": "UPDATE",
+  "captureLocale": "en-US",
+  "captureTraditionalSignInFormName": "signInForm",
+  "traditionalSignInType": "EMAIL",
+  "captureAppId": "UPDATE",
+  "captureFlowName": "standard",
+  "captureFlowVersion": "HEAD",
+  "captureSocialRegistrationFormName": "socialRegistrationForm",
+  "captureTraditionalRegistrationFormName": "registrationForm",
+  "captureEditUserProfileFormName": "editProfileForm",
+  "captureEnableThinRegistration": false,
+  "captureForgotPasswordFormName": "forgotPasswordForm",
+  "captureResendEmailVerificationFormName":"resendVerificationForm",
+  "openIDIdentityProviders": [
+    {
+      "name": "Google",
+      "enabled": "true",
+      "client_id": "UPDATE.apps.googleusercontent.com",
+      "redirect_uri": "com.googleusercontent.apps.UPDATE:/oauth2redirect",
+      "authorization_scope": "openid email profile",
+      "discovery_uri": "https://accounts.google.com/.well-known/openid-configuration",
+      "authorization_endpoint_uri": "",
+      "token_endpoint_uri": "",
+      "registration_endpoint_uri": "",
+      "https_required": true
+    }
+  ]
+}

@@ -185,6 +185,7 @@ public class MainActivity extends FragmentActivity {
         Button editProfile = addButton(linearLayout, "Edit Profile");
         Button changePassword = addButton(linearLayout, "Change Password");
         Button refreshToken = addButton(linearLayout, "Refresh Access Token");
+        Button refreshSignedInUser = addButton(linearLayout, "Refresh SignedIn User");
         final Button resendVerificationButton = addButton(linearLayout, "Resend Email Verification");
         Button link_unlinkAccount = addButton(linearLayout, "Link & Unlink Account");
         addButton(linearLayout, "Share").setOnClickListener(new View.OnClickListener() {
@@ -295,6 +296,33 @@ public class MainActivity extends FragmentActivity {
                         LogUtils.loge(e.toString());
                     }
                 });
+            }
+        });
+
+        refreshSignedInUser.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (Jump.getSignedInUser() == null) {
+                    Toast.makeText(MainActivity.this, "Cannot refresh signed in user, there was no one present",
+                            Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                Jump.CaptureApiResultHandler handler = new Jump.CaptureApiResultHandler() {
+                    @Override
+                    public void onSuccess(JSONObject response) {
+                        Toast.makeText(MainActivity.this, "SignedIn User Refreshed",
+                                Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onFailure(CaptureAPIError error) {
+                        Toast.makeText(MainActivity.this, "Failed to refresh SignedIn User",
+                                Toast.LENGTH_LONG).show();
+                        LogUtils.loge(error.toString());
+                    }
+                };
+
+                Jump.performFetchCaptureData(handler, true);
             }
         });
 

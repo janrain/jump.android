@@ -1,1 +1,2 @@
-include ':jump', ':facebook-android-sdk-4.18.0'
+include ':Jump'
+project(':Jump').projectDir = new File('../../Jump')
