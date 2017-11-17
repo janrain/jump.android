@@ -43,6 +43,7 @@
 
         <activity android:name=".RegistrationActivity"
             />
+        <activity android:name=".ChangePasswordActivity" />
         <activity android:name=".UpdateProfileActivity" />
         <activity android:name=".LinkListActivity"/>
 

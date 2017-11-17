@@ -199,6 +199,7 @@ public final class JumpConfig {
         captureEditUserProfileFormName = getConfigString("captureEditUserProfileFormName");
         captureEnableThinRegistration = getConfigBoolean("captureEnableThinRegistration", false);
         captureForgotPasswordFormName = getConfigString("captureForgotPasswordFormName");
+        captureResendEmailVerificationFormName = getConfigString("captureResendEmailVerificationFormName");
     }
 
     /**

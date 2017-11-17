@@ -37,7 +37,7 @@ As of release 7.0.0 the following Facebook SDK version 4.+ implementation steps 
 
 ### Google+
 
-As of release 7.0.6 the following Google SDK Play/Sign-In SDK Services version 3.1.0 and Play Auth version 9.8.0 implementation steps were implemented in the SimpleDemoNative sample application in order to retrieve the Google+ oAuth access token from the Android device:
+As of release 7.1 the following Google SDK Play/Sign-In SDK Services version 3.1.0 and Play Auth version 9.8.0 implementation steps were implemented in the SimpleDemoNative sample application in order to retrieve the Google+ oAuth access token from the Android device:
 
 1. Implement the following Gradle dependencies (see the build.gradle file in the SimpleDemoNative sample app for a full implementation):
     classpath 'com.google.gms:google-services:3.1.0'
@@ -61,7 +61,7 @@ The google-services.json file can be complicated to fill in, it may be easier to
 
 ### Twitter
 
-As of release 7.0.6 the following TwitterKit SDK (tested with version 3.3.1) implementation steps were implemented in the SimpleDemoNative sample application in order to retrieve the Twitter oAuth access token from the Android device:
+As of release 7.1 the following TwitterKit SDK (tested with version 3.3.1) implementation steps were implemented in the SimpleDemoNative sample application in order to retrieve the Twitter oAuth access token from the Android device:
 
 1. Review the TwitterKit SDK Installation instructions from this link: https://dev.twitter.com/twitterkit/android/installation
 2. Configure your Twitter App.  In order for the Janrain Social Login Server to validate the provided Twitter oAuth token, the token must be provisioned from the same Twitter application that is configured for the Janrain Social Login application.  In most cases, the developer would simply add an Android App Client ID configuration to the existing Twitter App.

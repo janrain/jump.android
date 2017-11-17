@@ -1,5 +1,23 @@
 # Janrain Android Mobile Libraries Integration Guide
 
+## Upgrading to v7.1 from v7.0.X
+
+This version now allows the use of the `res/raw/janrain_config.json` file which would be placed in
+the application's `res` folder. This file includes the settings for the OpenID AppAuth library that were previously covered in the `/jump.android/Jump/src/res/values/openid_appauth_idp_configs.xml` file.  Please follow these steps to use this file:
+
+* Make sure there is a `res/raw` folder in your app, this may need to be created if it doesn't exist.
+* Copy the `/Samples/SimpleDemo/res/raw/janrain_config.json` or the `/Samples/SimpleDemoNative/res/raw/janrain_config.json`
+file to the `res/raw` folder.
+* Update your janrain credentials and configuration settings in the `janrain_config.json` file.
+* Use the new `JumpConfig(Context)` constructor. This constructor loads the configurations from the json file.
+* You can now remove all the assignations you had to the JumpConfig object's fields.
+
+At this point you can override the config object's values by assigning them values programmatically.
+
+The `/Samples/SimpleDemo/res/raw/janrain_config.json` file is intended to be used as the template for your own application's configuration file.  Please update the values in this file to reflect your Janrain configuration and settings.
+
+NOTE:  These changes are not mandatory, the libraries should still work using your existing configuration methods as long as they are compatible with previous versions.
+
 ## Upgrading to v7.0
 * In order to support Google's deprecation of the use of Webviews for web based authentication the mobile libraries have been updated to use Google's preferred OpenID AppAuth for Android Libraries (version 0.5.1 tested) for web based Google authentication (this is different from the native Google Android SDK based authentication that the Mobile Libraries also support).  Other than the required code and configuration changes the end-user experience should not appear to be any different than in previous versions of the mobile libraries.
 
@@ -8,7 +26,7 @@
 * Please read the Samples/README.md and the respective sample folder's README.md files for specific upgrade and configuration details as there have been changes since the last release.
 
 - Update the module settings for your project to use the latest Jump sdk files you may need to remove any existing "jump" modules and re-add the latest module in order to ensure your project files are updated.
-- Open the '/jump.android/Jump/src/res/values/openid_appauth_idp_configs.xml' file and update the `google_client_id` and `google_auth_redirect_uri` with the appropriate Google application client id that correlates to the Google app that is used in your Engage application.
+- Open the `/jump.android/Jump/src/res/values/openid_appauth_idp_configs.xml` file and update the `google_client_id` and `google_auth_redirect_uri` with the appropriate Google application client id that correlates to the Google app that is used in your Engage application.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
