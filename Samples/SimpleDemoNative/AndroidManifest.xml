@@ -43,6 +43,7 @@
 
         <activity android:name=".RegistrationActivity"
             />
+        <activity android:name=".ChangePasswordActivity" />
         <activity android:name=".UpdateProfileActivity" />
         <activity android:name=".LinkListActivity"/>
 
@@ -71,11 +72,54 @@
             android:configChanges="orientation|screenSize"
             android:theme="@style/Theme.Janrain"
             android:windowSoftInputMode="adjustResize|stateHidden"
+            tools:replace="android:theme"
             />
 
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="UPDATE" />
+        <!--
+        This activity declaration is merged with the version from the library manifest.
+        It demonstrates how an https redirect can be captured, in addition to or instead of
+        a custom scheme.
+
+        Generally, this should be done in conjunction with an app link declaration for Android M
+        and above, for additional security and an improved user experience. See:
+
+        https://developer.android.com/training/app-links/index.html
+
+        The declaration from the library can be completely replaced by adding
+
+        tools:node="replace"
+
+        To the list of attributes on the activity element.
+
+        NOTE. Add these three activities only if you're going to provide
+        the web-based (not native) login alternative
+        -->
+        <activity
+            android:name="net.openid.appauth.RedirectUriReceiverActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="https"
+                    android:host="com.googleusercontent.apps.UPDATE"
+                    android:path="/oauth2redirect"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.janrain.android.engage.OpenIDAppAuthTokenActivity"
+            android:label="SimpleDemoApplication"
+            android:theme="@style/Theme.Janrain.Dialog.Light"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+
+        <activity
+            android:name="com.janrain.android.engage.OpenIDAppAuthCancelledActivity"
+            android:label="SimpleDemoApplication"
+            android:theme="@style/Theme.Janrain.Dialog.Light"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+
     </application>
 
 </manifest>

@@ -1,29 +1,27 @@
 buildscript {
     repositories {
         jcenter ()
-        maven { url 'https://maven.fabric.io/public' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.1'
+        classpath 'com.android.tools.build:gradle:3.0.0'
     }
 }
 apply plugin: 'com.android.application'
 
 repositories {
     jcenter ()
-    maven { url 'https://maven.fabric.io/public' }
 }
 
 
 dependencies {
     //compile fileTree(dir: 'libs', include: '*.jar')
     compile 'com.google.code.gson:gson:2.2.4'
-    compile project(':jump')
+    compile project(':Jump')
 }
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '26.0.2'
 
     //If building with strict Android 6.0 the following will need to be uncommented
     //See: https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html
