@@ -24,7 +24,7 @@ The `/Samples/SimpleDemo/res/raw/janrain_config.json` file is intended to be use
 *NOTE:*  These changes are not mandatory, the libraries should still work using your existing configuration methods as long as they are compatible with previous versions.
 
 
-### Typical Misconfiguration Errors###
+### Typical Misconfiguration Errors
 
 *Error*:
 ```
