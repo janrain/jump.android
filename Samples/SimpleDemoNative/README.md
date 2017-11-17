@@ -1,19 +1,19 @@
-#SimpleDemoNative Sample Application#
+# SimpleDemoNative Sample Application
 
 Tested withe the following provider SDK versions:
 
 * Facebook Android SDK 4.+
-* Google Play/Sign-In 8.1
+* Google Play/Sign-In SDK Services version 3.1.0 and Play Auth version 9.8.0
 * Twitter Kit 3.1.1
 
 This application is NOT configured with any useful Application or SDK credentials.
 
 Please refer to the Jump Integration Guide and Native Authentication Guide for instructions on configuring the necessary credentials for your Social Login, Registration, and Native identity provider SDK's.
 
-##IMPORTANT
+## IMPORTANT
 Please read the Docs/Upgrade Guide.md and RELEASE_NOTES before attempting to run these applications.  There are important configuration steps that must be taken before these apps will run.
 
-####To run this demo with your own configuration:
+#### To run this demo with your own configuration:
 
 1. Find /jump.android/Samples/SimpleDemo/src/com/janrain/android/simpledemo/SimpleDemoApplication.java
 2. Edit the settings in the jumpconfig object to reflect your Social Login and Registration Settings.
@@ -32,7 +32,7 @@ private static final String TWITTER_SECRET = "UPDATE";
 ```
 
 
-###Typical Misconfiguration Errors###
+### Typical Misconfiguration Errors
 
 *Error*:
 ```
