@@ -3,10 +3,11 @@ apply plugin: 'com.android.application'
 buildscript {
     repositories {
         jcenter()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0'
-        classpath 'com.google.gms:google-services:3.1.0'
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.google.gms:google-services:3.1.2'
     }
 }
 
@@ -15,26 +16,69 @@ repositories {
     maven {
         url "https://maven.google.com" // Google's Maven repository
     }
+    google()
 }
 
+/*
+configurations.all {
+    resolutionStrategy {
+        // fail eagerly on version conflict (includes transitive dependencies)
+        // e.g. multiple different versions of the same dependency (group and name are equal)
+        //failOnVersionConflict()
+
+        // prefer modules that are part of this build (multi-project or composite build) over external modules
+        //preferProjectModules()
+
+        // force certain versions of dependencies (including transitive)
+        //  *append new forced modules:
+        force 'com.google.android.gms:play-services:9.8.0', 'com.google.android.gms:play-services-auth:9.8.0'
+        force 'com.google.android.gms:play-services-plus:9.8.0', 'com.google.android.gms:play-services-auth:9.8.0'
+        force 'com.google.android.gms:play-services-auth:9.8.0'
+        //  *replace existing forced modules with new ones:
+        forcedModules = ['com.google.android.gms:play-services:9.8.0', 'com.google.android.gms:play-services-plus:9.8.0']
+
+        // add dependency substitution rules
+        //dependencySubstitution {
+        //    substitute module('org.gradle:api') with project(':api')
+        //    substitute project(':util') with module('org.gradle:util:3.0')
+        //}
+
+        // cache dynamic versions for 10 minutes
+        //cacheDynamicVersionsFor 10*60, 'seconds'
+        // don't cache changing modules at all
+        //cacheChangingModulesFor 0, 'seconds'
+    }
+}
+*/
+
 dependencies {
-    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.support:multidex:1.0.2'
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'com.twitter:twitter-text:1.13.0'
-    compile 'com.google.android.gms:play-services:9.8.0'
-    compile 'com.google.android.gms:play-services-plus:9.8.0'
-    compile 'com.google.android.gms:play-services-auth:9.8.0'
+    compile 'com.google.gms:google-services:3.1.2'
+    compile 'com.google.android.gms:play-services:11.6.0'
+    //compile 'com.google.android.gms:play-services-plus:9.8.0'
+    compile 'com.google.android.gms:play-services-plus:11.6.0'
+    //compile 'com.google.android.gms:play-services-auth:9.8.0'
+    compile 'com.google.android.gms:play-services-auth:11.6.0'
+    compile 'pub.devrel:easypermissions:0.3.0'
+    compile('com.google.api-client:google-api-client-android:1.23.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+    compile('com.google.apis:google-api-services-tasks:v1-rev48-1.23.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
     //Cardview required for Facebook SDK
-    compile 'com.android.support:cardview-v7:24.1.0'
-    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:cardview-v7:27.+'
+    compile 'com.android.support:appcompat-v7:27.+'
     compile 'com.facebook.android:facebook-android-sdk:[4,5)'
     compile project(':Jump')
     compile 'com.twitter.sdk.android:twitter:3.1.1'
 }
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.2'
 
     //If building with strict Android 6.0 the following will need to be uncommented
     //See: https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html
@@ -45,7 +89,7 @@ android {
     defaultConfig {
         applicationId "com.janrain.android.multidex.simpledemonative"
         minSdkVersion 17
-        targetSdkVersion 25
+        targetSdkVersion 27
         multiDexEnabled = true
 
         // If using web-based (not native) Google authentication.

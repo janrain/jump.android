@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
 
-    <uses-sdk android:minSdkVersion="17" android:targetSdkVersion="23" />
+    <uses-sdk android:minSdkVersion="17" android:targetSdkVersion="27" />
 
     <application
         android:name="SimpleDemoApplication"
@@ -101,7 +101,7 @@
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
                 <data android:scheme="https"
-                    android:host="com.googleusercontent.apps.UPDATE"
+                    android:host="com.googleusercontent.apps.169582807084-ubp0amiic485h5v75acn3026tumje1lq"
                     android:path="/oauth2redirect"/>
             </intent-filter>
         </activity>

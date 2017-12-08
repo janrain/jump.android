@@ -1,8 +1,8 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.2'
     //If building with strict Android 6.0 the following will need to be uncommented
     //See: https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html
     //And: http://stackoverflow.com/questions/31653002/how-to-use-the-legacy-apache-http-client-on-android-m
@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         minSdkVersion 17
-        targetSdkVersion 25
+        targetSdkVersion 27
         // replace the below string with your own Google client ID. Make sure this is consistent
         // with the values used in janrain_config.json
 
@@ -30,7 +30,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:25.1.0'
+    compile 'com.android.support:support-v4:27.+'
     compile files('libs/org.apache.http.legacy.jar')
     compile 'com.squareup.okhttp:okhttp:2.5.0'
     compile 'com.squareup.okhttp:okhttp-apache:2.5.0'
@@ -43,6 +43,9 @@ dependencies {
 allprojects {
     repositories {
         jcenter()
+        maven {
+            url "https://maven.google.com"
+        }
     }
     gradle.projectsEvaluated {
         tasks.withType(JavaCompile) {

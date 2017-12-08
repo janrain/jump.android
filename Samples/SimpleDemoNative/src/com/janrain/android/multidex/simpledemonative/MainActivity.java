@@ -51,6 +51,7 @@ import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.Loader;
 import android.support.v4.content.LocalBroadcastManager;
+import android.support.annotation.*;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
@@ -77,13 +78,26 @@ import com.google.android.gms.auth.GoogleAuthException;
 import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.android.gms.auth.GooglePlayServicesAvailabilityException;
 import com.google.android.gms.auth.UserRecoverableAuthException;
-import com.google.android.gms.common.AccountPicker;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.*;
+import com.google.android.gms.auth.api.signin.GoogleSignIn.*;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.android.gms.auth.api.signin.GoogleSignInStatusCodes;
+import com.google.android.gms.auth.api.signin.GoogleSignInApi;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptionsExtension;
+import com.google.android.gms.tasks.*;
+import com.google.android.gms.plus.Account.*;
+
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.Scopes;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Scope;
-import com.google.android.gms.plus.Plus;
+//import com.google.android.gms.plus.Plus;
 import com.janrain.android.Jump;
 import com.janrain.android.capture.CaptureApiError;
 import com.janrain.android.capture.CaptureRecord;
@@ -117,7 +131,7 @@ public class MainActivity extends FragmentActivity implements
         GoogleApiClient.OnConnectionFailedListener {
 
     // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
-    private static final String TWITTER_KEY = "UPDATE";
+    private static final String TWITTER_KEY = "D8H3uHM6EiyeB4197XiXi0axP";
     private static final String TWITTER_SECRET = "UPDATE";
 
     //Facebook SDK
@@ -141,7 +155,7 @@ public class MainActivity extends FragmentActivity implements
     private static final int TWITTER_REQUEST_CODE_SIGN_IN = 140;
 
     /* Client used to interact with Google APIs. */
-    private GoogleApiClient mGoogleApiClient;
+    private GoogleSignInClient mGoogleSignInClient;
 
     // Received from newChooseAccountIntent(); passed to getToken()
     private static String googleEmail;
@@ -246,15 +260,13 @@ public class MainActivity extends FragmentActivity implements
 
         // Configure sign-in to request the user's ID, email address, and basic
 //      // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
-
-        // Build GoogleApiClient with access to basic profile
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .addConnectionCallbacks(this)
-                .addOnConnectionFailedListener(this)
-                .addApi(Plus.API)
-                .addScope(new Scope(Scopes.PROFILE))
-                .addScope(new Scope(Scopes.EMAIL))
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .requestProfile()
+                .requestIdToken("169582807084-ubp0amiic485h5v75acn3026tumje1lq.apps.googleusercontent.com")
                 .build();
+        // Build a GoogleSignInClient with the options specified by gso.
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         //Initialize Facebook SDK
         FacebookSdk.sdkInitialize(getApplicationContext());
@@ -383,14 +395,20 @@ public class MainActivity extends FragmentActivity implements
         googleplusAuth.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (flowDownloaded) {
-                    mGoogleApiClient.connect();
+                    //mGoogleApiClient.connect();
                     //Add Google+ Native
 
                     //  BASIC GOOGLE SIGN IN CODE
                     //  https://developers.google.com/identity/sign-in/android/sign-in
                     // Authorizing with Google for REST APIs
                     // https://developers.google.com/android/guides/http-auth
-                    googlePickUserAccount();
+                    //googlePickUserAccount();
+
+                    // This task is always completed immediately, there is no need to attach an
+                    // asynchronous listener.
+                    Intent data = MainActivity.this.getIntent();
+                    Task<GoogleSignInAccount> task = GoogleSignIn.;
+                    handleGoogleSignInResult(task, MainActivity.this);
 
                 }else{
                     Toast.makeText(MainActivity.this, "Flow Configuration not downloaded yet",
@@ -616,12 +634,14 @@ public class MainActivity extends FragmentActivity implements
                     LoginManager.getInstance().logOut();
                     LogUtils.logd("Logged out of Facebook");
                 }
+                /*
                 if(mGoogleApiClient.isConnected()){
-                    Plus.AccountApi.clearDefaultAccount(mGoogleApiClient);
+                    //Plus.AccountApi.clearDefaultAccount(mGoogleApiClient);
                     mGoogleApiClient.disconnect();
                     mGoogleApiClient.connect();
                     LogUtils.logd("Logged out of Google+");
                 }
+                */
                 if(twitterToken != null){
                     MainActivity.ClearCookies(MainActivity.this);
                     TwitterCore
@@ -703,7 +723,7 @@ public class MainActivity extends FragmentActivity implements
         return button;
     }
 
-
+    /*
     private void googlePickUserAccount() {
 
         String[] accountTypes = new String[]{"com.google"};
@@ -712,12 +732,16 @@ public class MainActivity extends FragmentActivity implements
         startActivityForResult(intent, GOOGLE_REQUEST_CODE_PICK_ACCOUNT);
 
     }
-
+    */
 
     @Override
     protected void onStart() {
         super.onStart();
         //mGoogleApiClient.connect();
+        // Check for existing Google Sign In account, if the user is already signed in
+        // the GoogleSignInAccount will be non-null.
+        //GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+        //updateUI(account);
     }
 
     @Override
@@ -751,7 +775,7 @@ public class MainActivity extends FragmentActivity implements
                         //Log.e(TAG, "Could not resolve ConnectionResult.", e);
                         LogUtils.loge("Could not resolve Google+ ConnectionResult. " + e.toString());
                         mIsResolving = false;
-                        mGoogleApiClient.connect();
+                        //mGoogleApiClient.connect();
                     }
                 } else {
                     // Could not resolve the connection result, show the user an
@@ -787,7 +811,7 @@ public class MainActivity extends FragmentActivity implements
 
             mIsResolving = false;
 
-            mGoogleApiClient.connect();
+            //mGoogleApiClient.connect();
         }else if (requestCode == GOOGLE_REQUEST_CODE_PICK_ACCOUNT) {
             LogUtils.logd("requestCode: GOOGLE_REQUEST_CODE_PICK_ACCOUNT");
             // Receiving a result from the AccountPicker
@@ -836,7 +860,7 @@ public class MainActivity extends FragmentActivity implements
     public void onConnectionSuspended(int i) {
         //Log.d(TAG, "onConnectionSuspended() called. Trying to reconnect.");
         LogUtils.loge("onConnectedSuspended: " + String.valueOf(i));
-        mGoogleApiClient.connect();
+        //mGoogleApiClient.connect();
     }
 
     @Override
@@ -948,6 +972,21 @@ public class MainActivity extends FragmentActivity implements
         @Override
         public void onLoaderReset(Loader<String> loader) {
             LogUtils.logd();
+        }
+    }
+
+    private void handleGoogleSignInResult(@NonNull Task<GoogleSignInAccount> completedTask, MainActivity activity ) {
+        try {
+            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+            String idToken = account.getIdToken();
+            String authCode = account.getServerAuthCode();
+            Jump.startTokenAuthForNativeProvider(activity, "googleplus", idToken,"",this.signInResultHandler,"");
+            // TODO(developer): send ID Token to server and validate
+
+            //updateUI(account);
+        } catch (ApiException e) {
+            //Log.w(TAG, "handleSignInResult:error", e);
+            //updateUI(null);
         }
     }
 

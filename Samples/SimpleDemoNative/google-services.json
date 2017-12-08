@@ -1,37 +1,37 @@
 {
   "project_info": {
-    "project_number": "169582807084",
-    "project_id": "jrauthenticate-1119"
+    "project_number": "UPDATE",
+    "project_id": "UPDATE"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:169582807084:android:418c859d33b27a4f",
+        "mobilesdk_app_id": "1:UPDATE",
         "android_client_info": {
           "package_name": "com.janrain.android.multidex.simpledemonative"
         }
       },
       "oauth_client": [
         {
-          "client_id": "169582807084-ubp0amiic485h5v75acn3026tumje1lq.apps.googleusercontent.com",
+          "client_id": "UPDATE.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.janrain.android.multidex.simpledemonative",
-            "certificate_hash": "f380dc372c562aa0fb94d599119bfd01db4c60d3"
+            "certificate_hash": "UPDATE"
           }
         },
         {
-          "client_id": "169582807084-kq5nq5enn706qevokhjjvsqv2m84b7tl.apps.googleusercontent.com",
+          "client_id": "UPDATE.apps.googleusercontent.com",
           "client_type": 3
         },
         {
-          "client_id": "169582807084-g0mgrleeqga1bu056jupm2k5p7fpg8q7.apps.googleusercontent.com",
+          "client_id": "UPDATE.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC0xd66_sZf_LsRE8naC2aAGvQgQJ7eiK8"
+          "current_key": "UPDATE"
         }
       ],
       "services": {
