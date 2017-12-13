@@ -77,6 +77,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.LocalBroadcastManager;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 
@@ -824,6 +825,56 @@ public class JREngage {
 
     public static enum ExternalAuthError {
         ENGAGE_ERROR
+    }
+
+    public void getAuthInfoCodeForNativeProvider(final Activity fromActivity,
+                                                  final String providerName,
+                                                  final String serverAuthCode,
+                                                  String redirectUri) {
+        blockOnInitialization();
+        if (checkSessionDataError()) return;
+        checkNullActivity(fromActivity);
+
+        JRProvider provider = mSession.getProviderByName(providerName);
+
+        mSession.setCurrentlyAuthenticatingProvider(provider);
+
+        ApiConnection.FetchJsonCallback handler = new ApiConnection.FetchJsonCallback() {
+            public void run(JSONObject json) {
+
+                if (json == null) {
+                    triggerOnFailure("Bad Response", ExternalAuthError.ENGAGE_ERROR);
+                    return;
+                }
+
+                String status = json.optString("stat");
+
+                if (json == null || json.optString("stat") == null || !json.optString("stat").equals("ok")) {
+                    triggerOnFailure("Bad Json: " + json, ExternalAuthError.ENGAGE_ERROR);
+                    return;
+                }
+
+                String auth_token = json.optString("token");
+
+                JRDictionary payload = new JRDictionary();
+                payload.put("code", auth_token);
+                payload.put("auth_info", new JRDictionary());
+
+                triggerOnSuccess(payload);
+            }
+        };
+        String rp_base_url = JRSession.getInstance().getRpBaseUrl();
+
+        ApiConnection connection =
+                new ApiConnection(rp_base_url + "/signin/oauth_token");
+        if(TextUtils.isEmpty(redirectUri)) {
+            redirectUri = rp_base_url + "/" + providerName + "/callback";
+        }
+        connection.addAllToParams("code", serverAuthCode, "provider", providerName, "redirect_uri", redirectUri);
+
+        connection.fetchResponseAsJson(handler);
+
+
     }
 
 

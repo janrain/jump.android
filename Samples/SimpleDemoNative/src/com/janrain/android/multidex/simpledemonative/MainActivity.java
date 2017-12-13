@@ -41,18 +41,16 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.IntentSender;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.StrictMode;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.Loader;
 import android.support.v4.content.LocalBroadcastManager;
-import android.support.annotation.*;
 import android.text.InputType;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
@@ -63,6 +61,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
+import android.graphics.drawable.*;
+import android.graphics.*;
+import android.view.*;
 
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
@@ -74,30 +75,22 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.GoogleAuthException;
 import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.android.gms.auth.GooglePlayServicesAvailabilityException;
 import com.google.android.gms.auth.UserRecoverableAuthException;
-import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.*;
-import com.google.android.gms.auth.api.signin.GoogleSignIn.*;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInResult;
-import com.google.android.gms.auth.api.signin.GoogleSignInStatusCodes;
-import com.google.android.gms.auth.api.signin.GoogleSignInApi;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptionsExtension;
+import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.tasks.*;
-import com.google.android.gms.plus.Account.*;
-
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.android.gms.common.Scopes;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.Scope;
-//import com.google.android.gms.plus.Plus;
+
 import com.janrain.android.Jump;
 import com.janrain.android.capture.CaptureApiError;
 import com.janrain.android.capture.CaptureRecord;
@@ -126,13 +119,18 @@ import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 import static com.janrain.android.capture.Capture.CaptureApiRequestCallback;
 
-public class MainActivity extends FragmentActivity implements
-        GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener {
+import com.janrain.android.multidex.simpledemonative.NativeConfig;
+import com.twitter.sdk.android.core.identity.TwitterLoginButton;
+
+
+public class MainActivity extends FragmentActivity {
+
+    private NativeConfig nativeConfig;
 
     // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
-    private static final String TWITTER_KEY = "D8H3uHM6EiyeB4197XiXi0axP";
-    private static final String TWITTER_SECRET = "UPDATE";
+    private String TWITTER_KEY;
+    private String TWITTER_SECRET;
+    private String GOOGLE_SIGN_IN_ENGAGE_API_KEY;
 
     //Facebook SDK
     private CallbackManager facebookCallbackManager;
@@ -143,23 +141,16 @@ public class MainActivity extends FragmentActivity implements
     private boolean flowDownloaded = false;
 
     /* Google Request code used to invoke sign in user interactions. */
-    private static final int GOOGLE_REQUEST_CODE_SIGN_IN = 0;
-    private static final int GOOGLE_REQUEST_CODE_PICK_ACCOUNT = 1000;
-    private static final int GOOGLE_REQUEST_CODE_RECOVER_FROM_PLAY_SERVICES_ERROR = 1001;
-    private static final int GOOGLE_REQUEST_SIGN_IN_REQUIRED = 55664;
+    private static final int RC_SIGN_IN = 9001;
+
+    /* Client used to interact with Google APIs. */
+    private GoogleSignInClient mGoogleSignInClient;
 
     /* Facebook Request code used to invoke sign in user interactions. */
     private static final int FACEBOOK_REQUEST_CODE_SIGN_IN = 64206;
 
     /* Twitter Request code used to invoke sign in user interactions. */
     private static final int TWITTER_REQUEST_CODE_SIGN_IN = 140;
-
-    /* Client used to interact with Google APIs. */
-    private GoogleSignInClient mGoogleSignInClient;
-
-    // Received from newChooseAccountIntent(); passed to getToken()
-    private static String googleEmail;
-    private static final String GOOGLE_SCOPES = "oauth2:profile email";
 
     //Twitter
     private TwitterAuthClient twitterAuthClient;
@@ -257,13 +248,15 @@ public class MainActivity extends FragmentActivity implements
         super.onCreate(savedInstanceState);
 
         //enableStrictMode();
-
+        nativeConfig = new NativeConfig(this.getApplicationContext());
+        TWITTER_KEY = nativeConfig.twitterKey;
+        TWITTER_SECRET = nativeConfig.twitterSecret;
         // Configure sign-in to request the user's ID, email address, and basic
 //      // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .requestProfile()
-                .requestIdToken("169582807084-ubp0amiic485h5v75acn3026tumje1lq.apps.googleusercontent.com")
+                .requestServerAuthCode(nativeConfig.googleSignInEngageClientId)
                 .build();
         // Build a GoogleSignInClient with the options specified by gso.
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
@@ -350,15 +343,15 @@ public class MainActivity extends FragmentActivity implements
         linearLayout.setOrientation(LinearLayout.VERTICAL);
 
         Button webviewAuth = addButton(linearLayout, "Sign-In");
-        Button googleplusAuth = addButton(linearLayout, "Google+");
-        Button facebookAuth = addButton(linearLayout, "Facebook");
-        final Button twitterAuth = addButton(linearLayout, "Twitter");
+        Button googleAuth = addButton(linearLayout, "Google Sign-in");
+        Button facebookAuth = addButton(linearLayout, "Facebook Login");
+        Button twitterAuth = addButton(linearLayout, "Twitter Login");
         Button dumpRecord = addButton(linearLayout, "Dump Record to Log");
         Button editProfile = addButton(linearLayout, "Edit Profile");
         Button changePassword = addButton(linearLayout, "Change Password");
         Button refreshToken = addButton(linearLayout, "Refresh Access Token");
         Button refreshSignedInUser = addButton(linearLayout, "Refresh SignedIn User");
-        final Button resendVerificationButton = addButton(linearLayout, "Resend Email Verification");
+        Button resendVerificationButton = addButton(linearLayout, "Resend Email Verification");
         Button link_unlinkAccount = addButton(linearLayout, "Link & Unlink Account");
         addButton(linearLayout, "Share").setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -392,23 +385,13 @@ public class MainActivity extends FragmentActivity implements
             }
         });
 
-        googleplusAuth.setOnClickListener(new View.OnClickListener() {
+        googleAuth.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (flowDownloaded) {
-                    //mGoogleApiClient.connect();
-                    //Add Google+ Native
-
-                    //  BASIC GOOGLE SIGN IN CODE
-                    //  https://developers.google.com/identity/sign-in/android/sign-in
-                    // Authorizing with Google for REST APIs
-                    // https://developers.google.com/android/guides/http-auth
-                    //googlePickUserAccount();
-
                     // This task is always completed immediately, there is no need to attach an
                     // asynchronous listener.
-                    Intent data = MainActivity.this.getIntent();
-                    Task<GoogleSignInAccount> task = GoogleSignIn.;
-                    handleGoogleSignInResult(task, MainActivity.this);
+                    Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+                    startActivityForResult(signInIntent, RC_SIGN_IN);
 
                 }else{
                     Toast.makeText(MainActivity.this, "Flow Configuration not downloaded yet",
@@ -416,7 +399,6 @@ public class MainActivity extends FragmentActivity implements
                 }
             }
         });
-
 
         facebookAuth.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -634,14 +616,10 @@ public class MainActivity extends FragmentActivity implements
                     LoginManager.getInstance().logOut();
                     LogUtils.logd("Logged out of Facebook");
                 }
-                /*
-                if(mGoogleApiClient.isConnected()){
-                    //Plus.AccountApi.clearDefaultAccount(mGoogleApiClient);
-                    mGoogleApiClient.disconnect();
-                    mGoogleApiClient.connect();
-                    LogUtils.logd("Logged out of Google+");
-                }
-                */
+                try {
+                    mGoogleSignInClient.signOut();
+                } catch(Exception ex){}//Do nothing
+
                 if(twitterToken != null){
                     MainActivity.ClearCookies(MainActivity.this);
                     TwitterCore
@@ -723,25 +701,12 @@ public class MainActivity extends FragmentActivity implements
         return button;
     }
 
-    /*
-    private void googlePickUserAccount() {
-
-        String[] accountTypes = new String[]{"com.google"};
-        Intent intent = AccountPicker.newChooseAccountIntent(null, null,
-                accountTypes, false, null, null, null, null);
-        startActivityForResult(intent, GOOGLE_REQUEST_CODE_PICK_ACCOUNT);
-
-    }
-    */
-
     @Override
     protected void onStart() {
         super.onStart();
-        //mGoogleApiClient.connect();
         // Check for existing Google Sign In account, if the user is already signed in
         // the GoogleSignInAccount will be non-null.
-        //GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        //updateUI(account);
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
     }
 
     @Override
@@ -756,111 +721,38 @@ public class MainActivity extends FragmentActivity implements
         //mGoogleApiClient.disconnect();
     }
 
-    @Override
-    public void onConnectionFailed(ConnectionResult connectionResult) {
-        // Could not connect to Google Play Services.  The user needs to select an account,
-        // grant permissions or resolve an error in order to sign in. Refer to the javadoc for
-        // ConnectionResult to see possible error codes.
-        //Log.d(TAG, "onConnectionFailed:" + connectionResult);
-        if(connectionResult.getErrorCode() == GOOGLE_REQUEST_SIGN_IN_REQUIRED){
-            LogUtils.loge(connectionResult.toString());
-        }
-        else {
-            if (!mIsResolving && mShouldResolve) {
-                if (connectionResult.hasResolution()) {
-                    try {
-                        connectionResult.startResolutionForResult(this, GOOGLE_REQUEST_CODE_SIGN_IN);
-                        mIsResolving = true;
-                    } catch (IntentSender.SendIntentException e) {
-                        //Log.e(TAG, "Could not resolve ConnectionResult.", e);
-                        LogUtils.loge("Could not resolve Google+ ConnectionResult. " + e.toString());
-                        mIsResolving = false;
-                        //mGoogleApiClient.connect();
-                    }
-                } else {
-                    // Could not resolve the connection result, show the user an
-                    // error dialog.
-                    //showErrorDialog(connectionResult);
-
-                    AlertDialog.Builder b = new AlertDialog.Builder(MainActivity.this);
-                    b.setMessage("Google + Connection Error:" + connectionResult);
-                    b.setNeutralButton("Dismiss", null);
-                    b.show();
-                }
-            } else {
-                // Show the signed-out UI
-                //Suppressed/Ignored but logic left in for reference.
-            }
+    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
+        try {
+            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+            String idToken = account.getIdToken();
+            String authCode = account.getServerAuthCode();
+            // Signed in successfully, show authenticated UI.
+            LogUtils.logd("Google Server AuthCode: " + authCode);
+            Jump.startCodeAuthForNativeProvider(MainActivity.this, "googleplus", authCode,"",MainActivity.this.signInResultHandler,"");
+        } catch (ApiException e) {
+            // The ApiException status code indicates the detailed failure reason.
+            // Please refer to the GoogleSignInStatusCodes class reference for more information.
+            LogUtils.loge("Google Sign-in failed code=" + e.getStatusCode());
+            //updateUI(null);
         }
     }
-
 
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        //Log.d(TAG, "onActivityResult:" + requestCode + ":" + resultCode + ":" + data);
         LogUtils.logd("onActivityResult:" + requestCode + ":" + resultCode + ":" + data);
-        if (requestCode == GOOGLE_REQUEST_CODE_SIGN_IN) {
-            LogUtils.logd("requestCode: GOOGLE_REQUEST_CODE_SIGN_IN");
-            // If the error resolution was not successful we should not resolve further.
-            if (resultCode != RESULT_OK) {
-                LogUtils.logd("result: NOT RESULT_OK");
-                mShouldResolve = false;
-            }
-
-            mIsResolving = false;
-
-            //mGoogleApiClient.connect();
-        }else if (requestCode == GOOGLE_REQUEST_CODE_PICK_ACCOUNT) {
-            LogUtils.logd("requestCode: GOOGLE_REQUEST_CODE_PICK_ACCOUNT");
-            // Receiving a result from the AccountPicker
-            if (resultCode == RESULT_OK) {
-                LogUtils.logd("result: RESULT_OK");
-                googleEmail = data.getStringExtra(AccountManager.KEY_ACCOUNT_NAME);
-                // With the account name acquired, go get the auth token
-                final Bundle args = new Bundle();
-                args.putString("accountName", googleEmail);
-                args.putString("scopes", GOOGLE_SCOPES);
-                final RetrieveGoogleTokenLoaderCallbacks callback =
-                        new RetrieveGoogleTokenLoaderCallbacks(MainActivity.this);
-
-                getSupportLoaderManager().destroyLoader(1000);
-                Loader<String> loader = getSupportLoaderManager().initLoader(1000, args, callback);
-                loader.forceLoad();
-            } else if (resultCode == RESULT_CANCELED) {
-                LogUtils.logd("result: RESULT_CANCELED");
-                // The account picker dialog closed without selecting an account.
-                // Notify users that they must pick an account to proceed.
-                Toast.makeText(this, "No account chosen - dialog cancelled", Toast.LENGTH_SHORT).show();
-            }
-        }else if(requestCode == FACEBOOK_REQUEST_CODE_SIGN_IN){
+        if (requestCode == RC_SIGN_IN) {
+            // The Task returned from this call is always completed, no need to attach a listener.
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            handleSignInResult(task);
+        } else if (requestCode == FACEBOOK_REQUEST_CODE_SIGN_IN){
             LogUtils.logd("requestCode: FACEBOOK_REQUEST_CODE_SIGN_IN");
             facebookCallbackManager.onActivityResult(requestCode, resultCode, data);
-        }else if(requestCode == TWITTER_REQUEST_CODE_SIGN_IN){
+        } else if (requestCode == TWITTER_REQUEST_CODE_SIGN_IN){
             LogUtils.logd("requestCode: TWITTER_REQUEST_CODE_SIGN_IN");
             twitterAuthClient.onActivityResult(requestCode, resultCode, data);
         }
-    }
-
-    @Override
-    public void onConnected(Bundle bundle) {
-        // onConnected indicates that an account was selected on the device, that the selected
-        // account has granted any requested permissions to our app and that we were able to
-        // establish a service connection to Google Play services.
-        //Log.d(TAG, "onConnected:" + bundle);
-        LogUtils.loge("onConnected:" + bundle);
-        mShouldResolve = false;
-
-        // Show the signed-in UI
-        //showSignedInUI();
-    }
-
-    @Override
-    public void onConnectionSuspended(int i) {
-        //Log.d(TAG, "onConnectionSuspended() called. Trying to reconnect.");
-        LogUtils.loge("onConnectedSuspended: " + String.valueOf(i));
-        //mGoogleApiClient.connect();
     }
 
     @Override
@@ -882,6 +774,7 @@ public class MainActivity extends FragmentActivity implements
         if(Jump.getCaptureFlowName() != "") flowDownloaded = true;
     }
 
+    //Left in for testing and debugging use
     private static void enableStrictMode() {
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
                 .detectAll()
@@ -910,128 +803,5 @@ public class MainActivity extends FragmentActivity implements
         facebookAccessTokenTracker.stopTracking();
     }
 
-    /**
-     * This method is a hook for background threads and async tasks that need to
-     * provide the user a response UI when an exception occurs.
-     */
-    public void handleException(final Exception e) {
-        // Because this call comes from the AsyncTask, we must ensure that the following
-        // code instead executes on the UI thread.
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                if (e instanceof GooglePlayServicesAvailabilityException) {
-                    // The Google Play services APK is old, disabled, or not present.
-                    // Show a dialog created by Google Play services that allows
-                    // the user to update the APK
-                    int statusCode = ((GooglePlayServicesAvailabilityException) e)
-                            .getConnectionStatusCode();
-
-                    Dialog dialog = GooglePlayServicesUtil.getErrorDialog(statusCode,
-                            MainActivity.this,
-                            GOOGLE_REQUEST_CODE_RECOVER_FROM_PLAY_SERVICES_ERROR);
-                    dialog.show();
-
-                    LogUtils.loge("Google Play Exception Status Code: " + e.getMessage());
-
-                } else if (e instanceof UserRecoverableAuthException) {
-                    // Unable to authenticate, such as when the user has not yet granted
-                    // the app access to the account, but the user can fix this.
-                    // Forward the user to an activity in Google Play services.
-                    Intent intent = ((UserRecoverableAuthException) e).getIntent();
-                    startActivityForResult(intent,
-                            GOOGLE_REQUEST_CODE_RECOVER_FROM_PLAY_SERVICES_ERROR);
-                }
-            }
-        });
-    }
-
-    private static class RetrieveGoogleTokenLoaderCallbacks implements LoaderManager.LoaderCallbacks<String> {
-
-        private final MainActivity activity;
-
-        public RetrieveGoogleTokenLoaderCallbacks(MainActivity activity) {
-            this.activity = activity;
-        }
-
-        @Override
-        public Loader<String> onCreateLoader(int id, Bundle args) {
-            LogUtils.logd();
-            final String accountName = args.getString("accountName");
-            final String scopes = args.getString("scopes");
-
-            return new RetrieveGoogleTokenLoader(activity, accountName, scopes);
-        }
-
-        @Override
-        public void onLoadFinished(Loader<String> loader, String googleToken) {
-            LogUtils.loge("Google Token Value: " + googleToken);
-            Jump.startTokenAuthForNativeProvider(activity, "googleplus", googleToken,"",activity.signInResultHandler,"");
-        }
-
-        @Override
-        public void onLoaderReset(Loader<String> loader) {
-            LogUtils.logd();
-        }
-    }
-
-    private void handleGoogleSignInResult(@NonNull Task<GoogleSignInAccount> completedTask, MainActivity activity ) {
-        try {
-            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-            String idToken = account.getIdToken();
-            String authCode = account.getServerAuthCode();
-            Jump.startTokenAuthForNativeProvider(activity, "googleplus", idToken,"",this.signInResultHandler,"");
-            // TODO(developer): send ID Token to server and validate
-
-            //updateUI(account);
-        } catch (ApiException e) {
-            //Log.w(TAG, "handleSignInResult:error", e);
-            //updateUI(null);
-        }
-    }
-
-    private static class RetrieveGoogleTokenLoader extends AsyncTaskLoader<String> {
-
-        private final Activity activity;
-        private final String accountName;
-        private final String scopes;
-
-        public RetrieveGoogleTokenLoader(Activity context, String accountName, String scopes) {
-            super(context);
-            this.activity = context;
-            this.accountName = accountName;
-            this.scopes = scopes;
-            LogUtils.logd();
-        }
-
-        @Override
-        public String loadInBackground() {
-            if (BuildConfig.DEBUG && android.os.Debug.waitingForDebugger()) {
-                Log.d(getClass().getSimpleName(), "Waiting for debugger...");
-                android.os.Debug.waitForDebugger();
-                Log.d(getClass().getSimpleName(), "Debugger connected!");
-            }
-
-            LogUtils.logd();
-
-            String token = null;
-            MainActivity.googleEmail = accountName;
-            try {
-                token = GoogleAuthUtil.getToken(activity.getApplicationContext(), accountName, scopes);
-            } catch (IOException e) {
-                LogUtils.loge(e.getMessage());
-            } catch (UserRecoverableAuthException e) {
-                activity.startActivityForResult(e.getIntent(), GOOGLE_REQUEST_SIGN_IN_REQUIRED);
-            } catch (GoogleAuthException e) {
-                LogUtils.loge(e.getMessage());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            Log.d(getClass().getSimpleName(), "token: " + token);
-
-            return token;
-        }
-    }
 
 }

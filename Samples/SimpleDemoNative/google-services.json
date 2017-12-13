@@ -14,19 +14,19 @@
       "oauth_client": [
         {
           "client_id": "UPDATE.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "UPDATE.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "169582807084-bfven2a8vmqq4gm7u3uoqvbuei76tpt5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.janrain.android.multidex.simpledemonative",
             "certificate_hash": "UPDATE"
           }
-        },
-        {
-          "client_id": "UPDATE.apps.googleusercontent.com",
-          "client_type": 3
-        },
-        {
-          "client_id": "UPDATE.apps.googleusercontent.com",
-          "client_type": 3
         }
       ],
       "api_key": [

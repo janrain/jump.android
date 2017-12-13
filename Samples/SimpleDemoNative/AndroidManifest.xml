@@ -24,13 +24,20 @@
         <!-- Facebook SDK -->
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
 
-        <!--Facebook Login or Share-->
         <activity android:name="com.facebook.FacebookActivity"
             android:configChanges=
                 "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:label="@string/app_name"
-            tools:replace="android:theme"/>
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
 
         <activity android:name=".MainActivity">
 
@@ -94,6 +101,7 @@
         NOTE. Add these three activities only if you're going to provide
         the web-based (not native) login alternative
         -->
+        <!--
         <activity
             android:name="net.openid.appauth.RedirectUriReceiverActivity" >
             <intent-filter>
@@ -101,10 +109,11 @@
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
                 <data android:scheme="https"
-                    android:host="com.googleusercontent.apps.169582807084-ubp0amiic485h5v75acn3026tumje1lq"
+                    android:host="com.googleusercontent.apps.169582807084-bfven2a8vmqq4gm7u3uoqvbuei76tpt5"
                     android:path="/oauth2redirect"/>
             </intent-filter>
         </activity>
+        -->
 
         <activity
             android:name="com.janrain.android.engage.OpenIDAppAuthTokenActivity"
