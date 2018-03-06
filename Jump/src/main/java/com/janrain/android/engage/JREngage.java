@@ -863,10 +863,15 @@ public class JREngage {
                 triggerOnSuccess(payload);
             }
         };
+
         String rp_base_url = JRSession.getInstance().getRpBaseUrl();
 
+        if(!TextUtils.isEmpty(providerName)){
+            rp_base_url = rp_base_url + "/signin/oauth_token?providername=" + providerName;
+        }
+
         ApiConnection connection =
-                new ApiConnection(rp_base_url + "/signin/oauth_token");
+                new ApiConnection(rp_base_url);
         if(TextUtils.isEmpty(redirectUri)) {
             redirectUri = rp_base_url + "/" + providerName + "/callback";
         }
@@ -915,9 +920,14 @@ public class JREngage {
             }
         };
 
+        String rp_base_url = JRSession.getInstance().getRpBaseUrl();
+
+        if(!TextUtils.isEmpty(providerName)){
+            rp_base_url = rp_base_url + "/signin/oauth_token?providername=" + providerName;
+        }
 
         ApiConnection connection =
-                new ApiConnection(JRSession.getInstance().getRpBaseUrl() + "/signin/oauth_token");
+                new ApiConnection(rp_base_url);
         if(tokenSecret != null){
             if(providerName.equals("wechat")){
                 connection.addAllToParams("token", accessToken, "openid", tokenSecret, "provider", providerName);
