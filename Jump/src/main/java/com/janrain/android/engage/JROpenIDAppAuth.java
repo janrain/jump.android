@@ -211,7 +211,7 @@ public class JROpenIDAppAuth {
                 }
 
                 ApiConnection connection =
-                        new ApiConnection(JRSession.getInstance().getRpBaseUrl() + "/signin/oauth_token");
+                        new ApiConnection(rp_base_url);
 
                 connection.addAllToParams("token", accessToken, "provider", provider());
                 connection.fetchResponseAsJson(handler);

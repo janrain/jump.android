@@ -9,7 +9,7 @@ android {
     useLibrary "org.apache.http.legacy"
 
     defaultConfig {
-        minSdkVersion 17
+        minSdkVersion 20
         targetSdkVersion 27
         // replace the below string with your own Google client ID. Make sure this is consistent
         // with the values used in janrain_config.json
@@ -42,6 +42,7 @@ dependencies {
 
 allprojects {
     repositories {
+        jcenter()
         mavenLocal()
         mavenCentral()
         google()

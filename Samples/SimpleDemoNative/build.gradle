@@ -2,10 +2,10 @@ apply plugin: 'com.android.application'
 
 buildscript {
     repositories {
+        jcenter()
         mavenLocal()
         mavenCentral()
         google()
-        jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
@@ -15,10 +15,10 @@ buildscript {
 
 allprojects {
     repositories {
+        jcenter()
         mavenLocal()
         mavenCentral()
         google()
-        jcenter()
     }
     gradle.projectsEvaluated {
         tasks.withType(JavaCompile) {
@@ -61,8 +61,8 @@ configurations.all {
 
 dependencies {
     implementation 'com.android.support:multidex:1.0.3'
-    implementation 'com.google.code.gson:gson:2.8.0'
-    implementation 'com.twitter:twitter-text:1.14.7'
+    implementation 'com.google.code.gson:gson:2.6.0'
+    //implementation 'com.twitter:twitter-text:1.14.7'
     implementation 'com.google.gms:google-services:3.1.2'
     //implementation 'com.google.android.gms:play-services:11.8.0'
     //implementation 'com.google.android.gms:play-services-plus:9.8.0'
@@ -81,7 +81,10 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.0'
     implementation 'com.facebook.android:facebook-android-sdk:4.31.0'
     implementation project(':Jump')
-    implementation 'com.twitter.sdk.android:twitter:3.2.0'
+    // Include all the Twitter APIs
+    compile 'com.twitter.sdk.android:twitter:3.1.1'
+    // (Optional) Monetize using mopub
+    compile 'com.twitter.sdk.android:twitter-mopub:3.1.1'
 }
 
 android {
@@ -96,7 +99,7 @@ android {
 
     defaultConfig {
         applicationId "com.janrain.android.multidex.simpledemonative"
-        minSdkVersion 24
+        minSdkVersion 26
         targetSdkVersion 27
         multiDexEnabled = true
 

@@ -13,7 +13,7 @@
     <string name="unknown">unknown</string>
 
     <!-- Facebook SDK https://developers.facebook.com/docs/android/getting-started -->
-    <string name="facebook_app_id">773409502771506</string>
-    <string name="fb_login_protocol_scheme">fb773409502771506</string>
+    <string name="facebook_app_id">UPDATE</string>
+    <string name="fb_login_protocol_scheme">fbUPDATE</string>
 
 </resources>
