@@ -6,7 +6,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:UPDATE",
+        "mobilesdk_app_id": "UPDATE",
         "android_client_info": {
           "package_name": "com.janrain.android.multidex.simpledemonative"
         }
@@ -18,10 +18,6 @@
         },
         {
           "client_id": "UPDATE.apps.googleusercontent.com",
-          "client_type": 3
-        },
-        {
-          "client_id": "169582807084-bfven2a8vmqq4gm7u3uoqvbuei76tpt5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.janrain.android.multidex.simpledemonative",

@@ -62,14 +62,9 @@ configurations.all {
 dependencies {
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.google.code.gson:gson:2.6.0'
-    //implementation 'com.twitter:twitter-text:1.14.7'
     implementation 'com.google.gms:google-services:3.1.2'
-    //implementation 'com.google.android.gms:play-services:11.8.0'
-    //implementation 'com.google.android.gms:play-services-plus:9.8.0'
     implementation 'com.google.android.gms:play-services-plus:11.8.0'
-    //implementation 'com.google.android.gms:play-services-auth:9.8.0'
     implementation 'com.google.android.gms:play-services-auth:11.8.0'
-    //implementation 'pub.devrel:easypermissions:0.3.0'
     implementation('com.google.api-client:google-api-client-android:1.23.0') {
         exclude group: 'org.apache.httpcomponents'
     }
