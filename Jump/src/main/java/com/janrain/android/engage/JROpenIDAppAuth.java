@@ -39,6 +39,8 @@ import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.text.TextUtils;
+
 import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.session.JRSession;
 import com.janrain.android.engage.types.JRDictionary;
@@ -202,8 +204,14 @@ public class JROpenIDAppAuth {
                     }
                 };
 
+                String rp_base_url = JRSession.getInstance().getRpBaseUrl();
+
+                if(!TextUtils.isEmpty(provider())){
+                    rp_base_url = rp_base_url + "/signin/oauth_token?providername=" + provider();
+                }
+
                 ApiConnection connection =
-                        new ApiConnection(JRSession.getInstance().getRpBaseUrl() + "/signin/oauth_token");
+                        new ApiConnection(rp_base_url);
 
                 connection.addAllToParams("token", accessToken, "provider", provider());
                 connection.fetchResponseAsJson(handler);

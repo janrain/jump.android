@@ -9,7 +9,7 @@ Getting Started:
 Report bugs or ask questions:
     https://support.janrain.com
 
-### Upgrading to v7.1 from v7.0.5
+### Upgrading to v7.1.1 from v7.0.5
 
 NOTE: There have been significant updates to the code base in this release.  While over all functionality should not have changed it is highly recommended that thorough testing be performed when upgrading to this version from previous versions.
 
