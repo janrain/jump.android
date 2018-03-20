@@ -4,9 +4,11 @@ This guide describes the process of integrating with native Android authenticati
 
 ## Supported Providers
 
-* Facebook (Tested with Facebook Android SDK version 4.+ as per facebook's own documentation)
-* Google+ (Tested with Play/Sign-In SDK Services version 3.1.0 and Play Auth version 9.8.0)
-* Twitter (Tested Twitter SDK version 3.3.1)
+* Google Sign In (Native sample app tested with Sign-In SDK Services version 3.1.2 and play-services-auth version 11.8.0).  NOTE: The Native sample app has been modified to work with the newer Google Sign-In Android SDK's.  It is no longer compatible with the Google+ Android SDK's.  If you want to use the older Google+ Android SDK's for native authentication please refer to a previous release.  The supporting methods for the older SDK's are still in place and should work.
+  1. For Google Sign-In use: `Jump.startCodeAuthForNativeProvider(activity, "googleplus", authCode,"",activity.signInResultHandler,"");`
+  1. For Google+ use: `Jump.startTokenAuthForNativeProvider(activity, "googleplus", googleToken,"",activity.signInResultHandler,"");`
+* Facebook (Native sample app tested with Facebook Android SDK version 4.31.1 as per facebook's own documentation)
+* Twitter (Native sample app tested Twitter SDK version 3.1.1)
 
 ## Native Authentication for Janrain Mobile Libraries for Android version 6.0.0 or newer.
 
