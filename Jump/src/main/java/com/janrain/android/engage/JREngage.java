@@ -857,7 +857,7 @@ public class JREngage {
                 String auth_token = json.optString("token");
 
                 JRDictionary payload = new JRDictionary();
-                payload.put("code", auth_token);
+                payload.put("token", auth_token);
                 payload.put("auth_info", new JRDictionary());
 
                 triggerOnSuccess(payload);
@@ -873,9 +873,9 @@ public class JREngage {
         ApiConnection connection =
                 new ApiConnection(rp_base_url);
         if(TextUtils.isEmpty(redirectUri)) {
-            redirectUri = rp_base_url + "/" + providerName + "/callback";
+            redirectUri = JRSession.getInstance().getRpBaseUrl() + "/" + providerName + "/callback";
         }
-        connection.addAllToParams("code", serverAuthCode, "provider", providerName, "redirect_uri", redirectUri);
+        connection.addAllToParams("code", serverAuthCode, "provider", providerName, "redirect_uri", redirectUri, "application_id", "appcfamhnpkagijaeinl");
 
         connection.fetchResponseAsJson(handler);
 
