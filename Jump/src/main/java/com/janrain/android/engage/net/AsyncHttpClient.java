@@ -53,8 +53,6 @@ import android.os.Handler;
 import com.janrain.android.engage.net.async.HttpResponseHeaders;
 import com.janrain.android.utils.IoUtils;
 import com.janrain.android.utils.LogUtils;
-//import com.squareup.okhttp.OkHttpClient;
-//import com.squareup.okhttp.apache.OkApacheClient;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Protocol;

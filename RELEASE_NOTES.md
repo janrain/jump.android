@@ -1,5 +1,13 @@
 v7.1.1
 
+* NOTE: The library now forces HTTP 1.1 or 2.0 connections using TLS version 1.2 only when communicating to all Janrain Servers
+* Library dependencies updated:
+  * 'com.android.support:support-v4:27.1.0'
+  * files('libs/org.apache.http.legacy.jar')
+  * 'com.squareup.okhttp3:okhttp:3.10.0'
+  * 'com.squareup.okhttp3:okhttp-apache:3.10.0'
+  * 'com.squareup.okio:okio:1.14.0'
+  * 'net.openid:appauth:0.7.0'
 * Google Sign In (Native sample app tested with Sign-In SDK Services version 3.1.2 and play-services-auth version 11.8.0).  NOTE: The Native sample app has been modified to work with the newer Google Sign-In Android SDK's.  It is no longer compatible with the Google+ Android SDK's.  If you want to use the older Google+ Android SDK's for native authentication please refer to a previous release.  The supporting methods for the older SDK's are still in place and should work.
   1. For Google Sign-In use: `Jump.startCodeAuthForNativeProvider(activity, "googleplus", authCode,"",activity.signInResultHandler,"");`
   1. For Google+ use: `Jump.startTokenAuthForNativeProvider(activity, "googleplus", googleToken,"",activity.signInResultHandler,"");`
