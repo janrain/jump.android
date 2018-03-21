@@ -57,6 +57,7 @@ import com.janrain.android.utils.LogUtils;
 //import com.squareup.okhttp.apache.OkApacheClient;
 
 import okhttp3.OkHttpClient;
+import okhttp3.Protocol;
 import okhttp3.ConnectionSpec;
 import okhttp3.TlsVersion;
 import okhttp3.CipherSuite;
@@ -119,6 +120,7 @@ import static com.janrain.android.engage.net.JRConnectionManager.ManagedConnecti
             OkHttpClient okHttpClient = new OkHttpClient.Builder()
                     .connectTimeout(30, TimeUnit.SECONDS)
                     .readTimeout(30, TimeUnit.SECONDS)
+                    .protocols(Arrays.asList(Protocol.HTTP_1_1, Protocol.HTTP_2))
                     .followRedirects(true)
                     .followSslRedirects(true)
                     .connectionSpecs(Collections.singletonList(spec))

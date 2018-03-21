@@ -354,7 +354,7 @@ public class Jump {
         try {
             info = state.context.getApplicationContext().getPackageManager().getPackageInfo(packageName, 0);
             state.userAgent = state.context.getApplicationContext().getPackageManager().getApplicationLabel(ai).toString();
-            state.userAgent += "/" + info.versionCode + " ";
+            state.userAgent += "/" + info.versionCode + " JRML" + AndroidUtils.urlEncode(state.context.getString(R.string.jr_git_describe)) + " ";
         } catch (PackageManager.NameNotFoundException e) {
             throwDebugException(new RuntimeException("User agent create failed : ", e));
         }
