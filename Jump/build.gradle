@@ -32,8 +32,8 @@ android {
 dependencies {
     api 'com.android.support:support-v4:27.1.0'
     api files('libs/org.apache.http.legacy.jar')
-    api 'com.squareup.okhttp:okhttp:2.7.5'
-    api 'com.squareup.okhttp:okhttp-apache:2.7.5'
+    api 'com.squareup.okhttp3:okhttp:3.10.0'
+    api 'com.squareup.okhttp3:okhttp-apache:3.10.0'
     api 'com.squareup.okio:okio:1.14.0'
     api 'net.openid:appauth:0.7.0'
 }

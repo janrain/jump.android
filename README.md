@@ -9,7 +9,18 @@ Getting Started:
 Report bugs or ask questions:
     https://support.janrain.com
 
-### Upgrading to v7.1.1 from v7.0.5
+### Upgrading to v7.1.1 from v7.1.0
+
+* NOTE: The library now forces HTTP 1.1 or 2.0 connections using TLS version 1.2 only when communicating to all Janrain Servers
+* Library dependencies updated:
+  * 'com.android.support:support-v4:27.1.0'
+  * files('libs/org.apache.http.legacy.jar')
+  * 'com.squareup.okhttp3:okhttp:3.10.0'
+  * 'com.squareup.okhttp3:okhttp-apache:3.10.0'
+  * 'com.squareup.okio:okio:1.14.0'
+  * 'net.openid:appauth:0.7.0'
+
+### Upgrading to v7.1.0 from v7.0.5
 
 NOTE: There have been significant updates to the code base in this release.  While over all functionality should not have changed it is highly recommended that thorough testing be performed when upgrading to this version from previous versions.
 
