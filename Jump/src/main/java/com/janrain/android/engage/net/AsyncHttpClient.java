@@ -53,8 +53,14 @@ import android.os.Handler;
 import com.janrain.android.engage.net.async.HttpResponseHeaders;
 import com.janrain.android.utils.IoUtils;
 import com.janrain.android.utils.LogUtils;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.apache.OkApacheClient;
+//import com.squareup.okhttp.OkHttpClient;
+//import com.squareup.okhttp.apache.OkApacheClient;
+
+import okhttp3.OkHttpClient;
+import okhttp3.ConnectionSpec;
+import okhttp3.TlsVersion;
+import okhttp3.CipherSuite;
+import okhttp3.apache.OkApacheClient;
 
 import org.apache.http.Header;
 import org.apache.http.HeaderElement;
@@ -71,6 +77,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 import java.util.zip.GZIPInputStream;
 
@@ -89,7 +96,7 @@ import static com.janrain.android.engage.net.JRConnectionManager.ManagedConnecti
     private AsyncHttpClient() {}
 
     /*package*/ static class HttpExecutor implements Runnable {
-        private static final HttpClient mHttpClient = setupHttpClient();
+        private static final OkApacheClient mHttpClient = setupHttpClient();
         private final Handler mHandler;
         private final ManagedConnection mConn;
         private final JRConnectionManager.HttpCallback callBack;
@@ -100,11 +107,24 @@ import static com.janrain.android.engage.net.JRConnectionManager.ManagedConnecti
             callBack = new JRConnectionManager.HttpCallback(mConn);
         }
 
-        static private HttpClient setupHttpClient() {
-            OkHttpClient client = new OkHttpClient();
-            client.setConnectTimeout(30, TimeUnit.SECONDS);
-            client.setFollowRedirects(false);
-            OkApacheClient apacheClient = new OkApacheClient(client);
+        static private OkApacheClient setupHttpClient() {
+           ConnectionSpec spec = new ConnectionSpec.Builder(ConnectionSpec.MODERN_TLS)
+                    .tlsVersions(TlsVersion.TLS_1_2)
+                    .cipherSuites(
+                            CipherSuite.TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+                            CipherSuite.TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+                            CipherSuite.TLS_DHE_RSA_WITH_AES_128_GCM_SHA256)
+                    .build();
+
+            OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                    .connectTimeout(30, TimeUnit.SECONDS)
+                    .readTimeout(30, TimeUnit.SECONDS)
+                    .followRedirects(true)
+                    .followSslRedirects(true)
+                    .connectionSpecs(Collections.singletonList(spec))
+                    .build();
+
+            OkApacheClient apacheClient = new OkApacheClient(okHttpClient);
 
             return apacheClient;
         }
