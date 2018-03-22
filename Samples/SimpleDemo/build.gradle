@@ -1,27 +1,29 @@
 buildscript {
     repositories {
         jcenter ()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0'
+        classpath 'com.android.tools.build:gradle:3.0.1'
     }
 }
 apply plugin: 'com.android.application'
 
 repositories {
     jcenter ()
+    google()
 }
 
 
 dependencies {
     //compile fileTree(dir: 'libs', include: '*.jar')
-    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.google.code.gson:gson:2.8.0'
     compile project(':Jump')
 }
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
 
     //If building with strict Android 6.0 the following will need to be uncommented
     //See: https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html
@@ -30,13 +32,13 @@ android {
 
     defaultConfig {
         applicationId "com.janrain.android.simpledemo"
-        minSdkVersion 17  //14?
-        targetSdkVersion 25
+        minSdkVersion 20  //14?
+        targetSdkVersion 27
         multiDexEnabled = false
         // replace the below string with your own Google client ID. Make sure this is consistent
         // with the values used in openid_appauth_idp_configs.xml
         manifestPlaceholders = [
-                'appAuthRedirectScheme': 'com.googleusercontent.apps.169582807084-bk8a4jintrtka452cj1v610s588riapp'
+                'appAuthRedirectScheme': 'com.googleusercontent.apps.169582807084-akf8fm8d30dhf1m7l9pjuk16pthb8eui'
         ]
     }
 

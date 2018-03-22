@@ -14,5 +14,6 @@
 
     <!-- Facebook SDK https://developers.facebook.com/docs/android/getting-started -->
     <string name="facebook_app_id">UPDATE</string>
+    <string name="fb_login_protocol_scheme">fbUPDATE</string>
 
 </resources>

@@ -1,9 +1,25 @@
+v7.1.1
+
+* NOTE: The library now forces HTTP 1.1 or 2.0 connections using TLS version 1.2 only when communicating to all Janrain Servers
+* Library dependencies updated:
+  * 'com.android.support:support-v4:27.1.0'
+  * files('libs/org.apache.http.legacy.jar')
+  * 'com.squareup.okhttp3:okhttp:3.10.0'
+  * 'com.squareup.okhttp3:okhttp-apache:3.10.0'
+  * 'com.squareup.okio:okio:1.14.0'
+  * 'net.openid:appauth:0.7.0'
+* Google Sign In (Native sample app tested with Sign-In SDK Services version 3.1.2 and play-services-auth version 11.8.0).  NOTE: The Native sample app has been modified to work with the newer Google Sign-In Android SDK's.  It is no longer compatible with the Google+ Android SDK's.  If you want to use the older Google+ Android SDK's for native authentication please refer to a previous release.  The supporting methods for the older SDK's are still in place and should work.
+  1. For Google Sign-In use: `Jump.startCodeAuthForNativeProvider(activity, "googleplus", authCode,"",activity.signInResultHandler,"");`
+  1. For Google+ use: `Jump.startTokenAuthForNativeProvider(activity, "googleplus", googleToken,"",activity.signInResultHandler,"");`
+* Facebook (Native sample app tested with Facebook Android SDK version 4.31.1 as per facebook's own documentation)
+* Twitter (Native sample app tested Twitter SDK version 3.1.1)
+
 v7.1
 
 * Project files upgraded to Android Studio 3 (Also tested with Android Studio 2.3)
 * Facebook (Native sample app tested with Facebook Android SDK version 4.+ as per facebook's own documentation)
-* Google+ (Native sample app tested with Play/Sign-In SDK Services version 3.1.0 and Play Auth version 9.8.0)
-* Twitter (Native sample app tested Twitter SDK version 3.3.1)
+* Google+ (Native sample app tested with Play/Sign-In SDK Services version 3.1.0 and Play Auth version 11.8.0)
+* Twitter (Native sample app tested Twitter SDK version 3.1.1)
 * Bug fixes to several library files to address crashes from null values.
 * The sample apps have been heavily refactored.  They now load the library files from the top-level "Jump" folder in the repo instead of copying them to the app folder.
 * The sample apps now optionally use a json configuration file loaded from the application's `res\raw\janrain_config.json` file.  The original method for intiallizing the libraries is still supported.

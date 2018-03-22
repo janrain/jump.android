@@ -1,5 +1,10 @@
+extracas
+network_security_config.xml
+janrain_config.json
+simple_demo_native_config.json
 fabric.properties
 google-services.json
+*.backup
 *.DS_Store
 #built application files
 *.apk
