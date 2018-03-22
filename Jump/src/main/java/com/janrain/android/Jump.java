@@ -40,6 +40,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.support.v4.content.LocalBroadcastManager;
+import android.text.TextUtils;
 
 import com.janrain.android.capture.Capture;
 import com.janrain.android.capture.CaptureApiError;
@@ -353,7 +354,7 @@ public class Jump {
         try {
             info = state.context.getApplicationContext().getPackageManager().getPackageInfo(packageName, 0);
             state.userAgent = state.context.getApplicationContext().getPackageManager().getApplicationLabel(ai).toString();
-            state.userAgent += "/" + info.versionCode + " ";
+            state.userAgent += "/" + info.versionCode + " JRML" + AndroidUtils.urlEncode(state.context.getString(R.string.jr_git_describe)) + " ";
         } catch (PackageManager.NameNotFoundException e) {
             throwDebugException(new RuntimeException("User agent create failed : ", e));
         }
@@ -477,6 +478,7 @@ public class Jump {
         }
     }
 
+
     public static void startTokenAuthForNativeProvider(final Activity fromActivity,
                                                        final String providerName,
                                                        final String accessToken,
@@ -508,7 +510,56 @@ public class Jump {
         }
 
         state.signInHandler = handler;
-        nextTokenAuthForNativeProvider(fromActivity,providerName,accessToken,tokenSecret,mergeToken);
+        nextTokenAuthForNativeProvider(
+                fromActivity,
+                providerName,
+                accessToken,
+                tokenSecret,
+                "",
+                "",
+                mergeToken);
+
+    }
+
+    public static void startCodeAuthForNativeProvider(final Activity fromActivity,
+                                                       final String providerName,
+                                                       final String serverAuthCode,
+                                                       final String redirectUri,
+                                                       SignInResultHandler handler,
+                                                       final String mergeToken) {
+        if (state.jrEngage == null || state.captureDomain == null) {
+            handler.onFailure(new SignInError(JUMP_NOT_INITIALIZED, null, null));
+            return;
+        }
+
+        if (!state.jrEngage.isNativeProviderConfigured(providerName)) {
+            final String message = String.format(
+                    Locale.getDefault(),
+                    "Provider '%s' not found, make sure you have configured it properly in your Engage dashboard.",
+                    providerName
+            );
+
+            LogUtils.loge(message);
+
+            JREngageError engageError = new JREngageError(
+                    message,
+                    JREngageError.ConfigurationError.PROVIDER_NOT_CONFIGURED_ERROR,
+                    JREngageError.ErrorType.CONFIGURATION_INFORMATION_MISSING
+            );
+
+            handler.onFailure(new SignInError(ENGAGE_ERROR, null, engageError));
+            return;
+        }
+
+        state.signInHandler = handler;
+        nextTokenAuthForNativeProvider(
+                fromActivity,
+                providerName,
+                "",
+                "",
+                serverAuthCode,
+                redirectUri,
+                mergeToken);
 
     }
 
@@ -516,6 +567,8 @@ public class Jump {
                                                        String providerName,
                                                        final String accessToken,
                                                        final String tokenSecret,
+                                                       final String serverAuthCode,
+                                                       final String redirectUri,
                                                        final String mergeToken) {
         state.jrEngage.addDelegate(new JREngageDelegate.SimpleJREngageDelegate() {
             @Override
@@ -541,10 +594,12 @@ public class Jump {
         });
 
 
-        if (providerName != null && accessToken != null) {
+        if (!TextUtils.isEmpty(providerName) && !TextUtils.isEmpty(accessToken)) {
             state.jrEngage.getAuthInfoTokenForNativeProvider(fromActivity, providerName, accessToken, tokenSecret);
-        }else{
-            LogUtils.logd("Provider Name or Access Token can not be null");
+        } else if (!TextUtils.isEmpty(providerName) && !TextUtils.isEmpty(serverAuthCode)) {
+            state.jrEngage.getAuthInfoCodeForNativeProvider(fromActivity, providerName, serverAuthCode, redirectUri);
+        } else {
+            LogUtils.logd("Missing parameters for native auth token retrieval");
         }
     }
 

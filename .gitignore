@@ -80,5 +80,13 @@ Samples/SimpleDemoNative/jump/build
 Samples/SimpleDemoNative/jump/build/**
 Samples/SimpleDemoNative/jump/build/**/*
 
+Samples/SimpleDemoNative/res/values/strings.xml
+Samples/SimpleDemoNative/extracas
+Samples/SimpleDemoNative/network_security_config.xml
+Samples/SimpleDemoNative/res/raw/janrain_config.json
+Samples/SimpleDemoNative/res/raw/simple_demo_native_config.json
+Samples/SimpleDemoNative/fabric.properties
+Samples/SimpleDemoNative/google-services.json
+
 #NDK
 obj/

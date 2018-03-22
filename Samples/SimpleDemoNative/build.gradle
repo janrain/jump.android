@@ -3,38 +3,57 @@ apply plugin: 'com.android.application'
 buildscript {
     repositories {
         jcenter()
+        mavenLocal()
+        mavenCentral()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0'
-        classpath 'com.google.gms:google-services:3.1.0'
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.google.gms:google-services:3.1.2'
     }
 }
 
-repositories {
-    jcenter()
-    maven {
-        url "https://maven.google.com" // Google's Maven repository
+allprojects {
+    repositories {
+        jcenter()
+        mavenLocal()
+        mavenCentral()
+        google()
+    }
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+        }
     }
 }
+
 
 dependencies {
-    compile 'com.android.support:multidex:1.0.1'
-    compile 'com.google.code.gson:gson:2.2.4'
-    compile 'com.twitter:twitter-text:1.13.0'
-    compile 'com.google.android.gms:play-services:9.8.0'
-    compile 'com.google.android.gms:play-services-plus:9.8.0'
-    compile 'com.google.android.gms:play-services-auth:9.8.0'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation 'com.google.gms:google-services:3.1.2'
+    implementation 'com.google.android.gms:play-services-plus:11.8.0'
+    implementation 'com.google.android.gms:play-services-auth:11.8.0'
+    implementation('com.google.api-client:google-api-client-android:1.23.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+    implementation('com.google.apis:google-api-services-tasks:v1-rev48-1.23.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
     //Cardview required for Facebook SDK
-    compile 'com.android.support:cardview-v7:24.1.0'
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    compile 'com.facebook.android:facebook-android-sdk:[4,5)'
-    compile project(':Jump')
+    implementation 'com.android.support:cardview-v7:27.1.0'
+    implementation 'com.android.support:appcompat-v7:27.1.0'
+    implementation 'com.facebook.android:facebook-android-sdk:4.31.0'
+    implementation project(':Jump')
+    // Include all the Twitter APIs
     compile 'com.twitter.sdk.android:twitter:3.1.1'
+    // (Optional) Monetize using mopub
+    compile 'com.twitter.sdk.android:twitter-mopub:3.1.1'
 }
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
 
     //If building with strict Android 6.0 the following will need to be uncommented
     //See: https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html
@@ -44,8 +63,8 @@ android {
 
     defaultConfig {
         applicationId "com.janrain.android.multidex.simpledemonative"
-        minSdkVersion 17
-        targetSdkVersion 25
+        minSdkVersion 26
+        targetSdkVersion 27
         multiDexEnabled = true
 
         // If using web-based (not native) Google authentication.
@@ -80,14 +99,6 @@ android {
         release.setRoot('build-types/release')
     }
 
-}
-
-allprojects {
-    gradle.projectsEvaluated {
-        tasks.withType(JavaCompile) {
-            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
-        }
-    }
 }
 
 apply plugin: 'com.google.gms.google-services'
