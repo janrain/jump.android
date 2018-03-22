@@ -27,37 +27,6 @@ allprojects {
     }
 }
 
-/*
-configurations.all {
-    resolutionStrategy {
-        // fail eagerly on version conflict (includes transitive dependencies)
-        // e.g. multiple different versions of the same dependency (group and name are equal)
-        //failOnVersionConflict()
-
-        // prefer modules that are part of this build (multi-project or composite build) over external modules
-        //preferProjectModules()
-
-        // force certain versions of dependencies (including transitive)
-        //  *append new forced modules:
-        force 'com.google.android.gms:play-services:9.8.0', 'com.google.android.gms:play-services-auth:9.8.0'
-        force 'com.google.android.gms:play-services-plus:9.8.0', 'com.google.android.gms:play-services-auth:9.8.0'
-        force 'com.google.android.gms:play-services-auth:9.8.0'
-        //  *replace existing forced modules with new ones:
-        forcedModules = ['com.google.android.gms:play-services:9.8.0', 'com.google.android.gms:play-services-plus:9.8.0']
-
-        // add dependency substitution rules
-        //dependencySubstitution {
-        //    substitute module('org.gradle:api') with project(':api')
-        //    substitute project(':util') with module('org.gradle:util:3.0')
-        //}
-
-        // cache dynamic versions for 10 minutes
-        //cacheDynamicVersionsFor 10*60, 'seconds'
-        // don't cache changing modules at all
-        //cacheChangingModulesFor 0, 'seconds'
-    }
-}
-*/
 
 dependencies {
     implementation 'com.android.support:multidex:1.0.3'
