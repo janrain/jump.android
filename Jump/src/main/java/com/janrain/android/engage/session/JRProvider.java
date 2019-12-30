@@ -87,6 +87,7 @@ public class JRProvider implements Serializable {
     private final static Map<String, Integer> provider_list_icon_resources =
             new HashMap<String, Integer>() {
                 {
+                    put("icon_bw_apple", R.drawable.jr_icon_bw_apple);
                     put("icon_bw_facebook", R.drawable.jr_icon_bw_facebook);
                     put("icon_bw_linkedin", R.drawable.jr_icon_bw_linkedin);
                     put("icon_bw_myspace", R.drawable.jr_icon_bw_myspace);
@@ -101,6 +102,7 @@ public class JRProvider implements Serializable {
                     put("icon_bw_paypal", R.drawable.jr_icon_bw_paypal);
                     put("icon_bw_paypal_openidconnect", R.drawable.jr_icon_bw_paypal_openidconnect);
                     put("icon_aol", R.drawable.jr_icon_aol);
+                    put("icon_apple", R.drawable.jr_icon_apple);
                     put("icon_blogger", R.drawable.jr_icon_blogger);
                     put("icon_facebook", R.drawable.jr_icon_facebook);
                     put("icon_flickr", R.drawable.jr_icon_flickr);
