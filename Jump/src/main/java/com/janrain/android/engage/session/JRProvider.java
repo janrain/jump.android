@@ -99,6 +99,7 @@ public class JRProvider implements Serializable {
                     put("icon_bw_googleplus", R.drawable.jr_icon_bw_googleplus);
                     put("icon_bw_microsoftaccount", R.drawable.jr_icon_bw_microsoftaccount);
                     put("icon_bw_instagram", R.drawable.jr_icon_bw_instagram);
+                    put("icon_bw_line", R.drawable.jr_icon_bw_line);
                     put("icon_bw_paypal", R.drawable.jr_icon_bw_paypal);
                     put("icon_bw_paypal_openidconnect", R.drawable.jr_icon_bw_paypal_openidconnect);
                     put("icon_aol", R.drawable.jr_icon_aol);
@@ -110,6 +111,7 @@ public class JRProvider implements Serializable {
                     put("icon_google", R.drawable.jr_icon_google);
                     put("icon_googleplus", R.drawable.jr_icon_googleplus);
                     put("icon_instagram", R.drawable.jr_icon_instagram);
+                    put("icon_line", R.drawable.jr_icon_line);
                     put("icon_hyves", R.drawable.jr_icon_hyves);
                     put("icon_linkedin", R.drawable.jr_icon_linkedin);
                     put("icon_live_id", R.drawable.jr_icon_live_id);
