@@ -1,3 +1,7 @@
+v7.2.0
+* Added Engage support for Apple provider.
+* Added Engage support for Line provider.
+
 v7.1.1
 
 * NOTE: The library now forces HTTP 1.1 or 2.0 connections using TLS version 1.2 only when communicating to all Janrain Servers
