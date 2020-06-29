@@ -186,6 +186,7 @@ public final class JumpConfig {
         }
 
         engageAppId = getConfigString("engageAppId");
+        engageAppUrl = getConfigString("engageAppUrl", "https://rpxnow.com");
         captureDomain = getConfigString("captureDomain");
         captureClientId = getConfigString("captureClientId");
         captureLocale = getConfigString("captureLocale");
@@ -275,14 +276,19 @@ public final class JumpConfig {
 
     @Nullable
     private String getConfigString(String propName) {
+        return this.getConfigString(propName, null);
+    }
+
+    @Nullable
+    private String getConfigString(String propName, String defaultValue) {
         String value = configJson.optString(propName);
         if (value == null) {
-            return null;
+            return defaultValue;
         }
 
         value = value.trim();
         if (TextUtils.isEmpty(value)) {
-            return null;
+            return defaultValue;
         }
 
         return value;
