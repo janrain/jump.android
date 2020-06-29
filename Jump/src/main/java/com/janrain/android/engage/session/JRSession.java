@@ -88,8 +88,7 @@ public class JRSession implements JRConnectionManagerDelegate {
     private static final String ARCHIVE_AUTH_USERS_BY_PROVIDER = "jrAuthenticatedUsersByProvider";
     private static final String ARCHIVE_AUTH_OPENID_APPAUTH_PROVIDERS = "jrAuthenticatedOpenIDAppAuthProviders";
 
-    private static final String RPXNOW_BASE_URL = "https://rpxnow.com";
-    private static String mEngageBaseUrl = RPXNOW_BASE_URL;
+    private static String mEngageBaseUrl;
     private static final String UNFORMATTED_CONFIG_URL =
             "%s/openid/mobile_config_and_baseurl?appId=%s&device=android&app_name=%s&version=%s";
     private static final String TAG_GET_CONFIGURATION = "getConfiguration";
@@ -174,6 +173,10 @@ public class JRSession implements JRConnectionManagerDelegate {
         return sInstance;
     }
 
+    /**
+     * @deprecated Please use a constructor or initializer that accepts the "appUrl" parameter. This
+     * parameter is now mandatory.
+     */
     public static JRSession getInstance(String appId, String tokenUrl, JRSessionDelegate delegate) {
         if (sInstance != null) {
             if (sInstance.isUiShowing()) {
@@ -228,10 +231,6 @@ public class JRSession implements JRConnectionManagerDelegate {
         return new JRProvider(providerId, dict);
     }
 
-    private JRSession(String appId, String tokenUrl, JRSessionDelegate delegate) {
-        initialize(appId, "", tokenUrl, delegate);
-    }
-
     private JRSession(String appId, String appUrl, String tokenUrl, JRSessionDelegate delegate) {
         initialize(appId, appUrl, tokenUrl, delegate);
     }
@@ -240,17 +239,21 @@ public class JRSession implements JRConnectionManagerDelegate {
      * assignment warnings. */
     @SuppressWarnings("unchecked")
     private void initialize(String appId, String appUrl, String tokenUrl, JRSessionDelegate delegate) {
-        LogUtils.logd("initializing instance.");
+        if (appUrl == null || appUrl.trim().isEmpty()) {
+            final String message = "This initializer method is no longer supported, the 'appUrl' parameter " +
+                    "is now mandatory. Please refer to the Integration Guide document";
 
-        // for configurability to test against e.g. staging
-        String t = StringUtils.trim(AndroidUtils.readAsset(getApplicationContext(), "engage_base_url.txt"));
-        if (t != null) mEngageBaseUrl = t;
+            throw new UnsupportedOperationException(message);
+        }
+
+        LogUtils.logd("initializing instance.");
 
         mDelegates = new ArrayList<JRSessionDelegate>();
         mDelegates.add(delegate);
 
         mAppId = appId;
         mAppUrl = appUrl;
+        mEngageBaseUrl = appUrl;
         mTokenUrl = tokenUrl;
         mUniqueIdentifier = this.getUniqueIdentifier();
 
@@ -532,12 +535,11 @@ public class JRSession implements JRConnectionManagerDelegate {
     }
 
     public String getRpBaseUrl() {
-        if(mAppUrl != null && mAppUrl != "" && mAppUrl != mRpBaseUrl){
-            return mAppUrl;
-        }else{
+        if (mRpBaseUrl != null && !mRpBaseUrl.isEmpty()) {
             return mRpBaseUrl;
         }
 
+        return mAppUrl;
     }
 
     public boolean getHidePoweredBy() {
