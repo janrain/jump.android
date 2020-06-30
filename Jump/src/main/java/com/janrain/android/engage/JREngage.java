@@ -281,7 +281,7 @@ public class JREngage {
             // Initialize JRSession in background thread because it does a bunch of IO
             ThreadUtils.executeInBg(new Runnable() {
                 public void run() {
-                    sInstance.mSession = JRSession.getInstance(appId, appUrl, tokenUrl, sInstance.mJrsd);
+                    sInstance.mSession = JRSession.getInstance(appId, appUrl, tokenUrl, responseType, sInstance.mJrsd);
                     sInstance.mSession.setCustomProviders(customProviders);
 
 
