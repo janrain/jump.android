@@ -139,6 +139,11 @@ import static com.janrain.android.utils.LogUtils.throwDebugException;
  * @nosubgrouping
  */
 public class JREngage {
+    public static final String RESPONSE_TYPE_TOKEN = "token";
+    public static final String RESPONSE_TYPE_TOKEN_PROFILE = "token_profile";
+    public static final String DEFAULT_RESPONSE_TYPE = RESPONSE_TYPE_TOKEN_PROFILE;
+    public static final String DEFAULT_ENGAGE_APP_URL = "https://rpxnow.com";
+
     /**
      * If not set library logging is automatically controlled via the "debuggable" flag for the application
      * which is normally automatically set by the build system
@@ -207,7 +212,7 @@ public class JREngage {
                                         final String appUrl,
                                         final String tokenUrl,
                                         final JREngageDelegate delegate) {
-        return JREngage.initInstance(context, appId, appUrl, tokenUrl, delegate, null);
+        return JREngage.initInstance(context, appId, appUrl, tokenUrl, DEFAULT_RESPONSE_TYPE, delegate, null);
     }
 
     /**
@@ -230,7 +235,7 @@ public class JREngage {
                                         final String appId,
                                         final String tokenUrl,
                                         final JREngageDelegate delegate) {
-        return JREngage.initInstance(context, appId, "", tokenUrl, delegate, null);
+        return JREngage.initInstance(context, appId, "", tokenUrl, DEFAULT_RESPONSE_TYPE, delegate, null);
     }
 
     /**
@@ -255,10 +260,15 @@ public class JREngage {
                                         final String appId,
                                         final String appUrl,
                                         final String tokenUrl,
+                                        final String responseType,
                                         final JREngageDelegate delegate,
                                         final Map<String, JRDictionary> customProviders) {
         if (context == null) {
             throw new IllegalArgumentException("context parameter cannot be null.");
+        }
+
+        if (!RESPONSE_TYPE_TOKEN.equals(responseType) && !RESPONSE_TYPE_TOKEN_PROFILE.equals(responseType)) {
+            throw new IllegalArgumentException("Engage responseType only support 'token' and 'token_profile' values.");
         }
 
         if (sLoggingEnabled == null) sLoggingEnabled = AndroidUtils.isApplicationDebuggable(context);

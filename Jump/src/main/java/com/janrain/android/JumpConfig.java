@@ -36,6 +36,7 @@ import android.content.Context;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
+import com.janrain.android.engage.JREngage;
 import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.types.JRDictionary;
 import com.janrain.android.utils.LogUtils;
@@ -67,6 +68,18 @@ public final class JumpConfig {
      * The application ID of your Engage app, from the Engage Dashboard
      */
     public String engageAppId;
+
+    /**
+     * Engage can retrieve either the used profile and/or the token.
+     * <p>
+     *     This configuration takes two different values:
+     *     <ul>
+     *         <li><b>token_profile</b></li>
+     *         <li><b>token</b></li>
+     *     </ul>
+     * </p>
+     */
+    public String engageResponseType;
 
     /**
      * The application ID of your Capture app. Found on the Capture app's dashboard, at the top of the
@@ -186,7 +199,8 @@ public final class JumpConfig {
         }
 
         engageAppId = getConfigString("engageAppId");
-        engageAppUrl = getConfigString("engageAppUrl", "https://rpxnow.com");
+        engageAppUrl = getConfigString("engageAppUrl", JREngage.DEFAULT_ENGAGE_APP_URL);
+        engageResponseType = getConfigString("engageResponseType", JREngage.DEFAULT_RESPONSE_TYPE);
         captureDomain = getConfigString("captureDomain");
         captureClientId = getConfigString("captureClientId");
         captureLocale = getConfigString("captureLocale");

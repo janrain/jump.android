@@ -183,8 +183,15 @@ public class Jump {
         state.initCalled = true;
 
         state.context = context;
-        state.jrEngage = JREngage.initInstance(context.getApplicationContext(), jumpConfig.engageAppId,
-                jumpConfig.engageAppUrl, null, null, jumpConfig.customProviders);
+        state.jrEngage = JREngage.initInstance(
+                context.getApplicationContext(),
+                jumpConfig.engageAppId,
+                jumpConfig.engageAppUrl,
+                jumpConfig.engageResponseType,
+                null,
+                null,
+                jumpConfig.customProviders
+        );
         state.captureSocialRegistrationFormName = jumpConfig.captureSocialRegistrationFormName;
         state.captureTraditionalRegistrationFormName = jumpConfig.captureTraditionalRegistrationFormName;
         state.captureEditUserProfileFormName = jumpConfig.captureEditUserProfileFormName;
