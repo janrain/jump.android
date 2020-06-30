@@ -944,7 +944,7 @@ public class JRSession implements JRConnectionManagerDelegate {
             mCurrentlyAuthenticatingProvider.clearCookiesOnCookieDomains(getApplicationContext());
         }
 
-        fullStartUrl = String.format("%s%s?extended=true%s%s%s%s&installation_id=%s&applicationId=&s",
+        fullStartUrl = String.format("%s%s?extended=true%s%s%s%s&installation_id=%s&applicationId=%s",
                 mRpBaseUrl,
                 mCurrentlyAuthenticatingProvider.getStartAuthenticationUrl(),
                 oid,

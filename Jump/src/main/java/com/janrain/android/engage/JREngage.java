@@ -268,7 +268,7 @@ public class JREngage {
         }
 
         if (!RESPONSE_TYPE_TOKEN.equals(responseType) && !RESPONSE_TYPE_TOKEN_PROFILE.equals(responseType)) {
-            throw new IllegalArgumentException("Engage responseType only support 'token' and 'token_profile' values.");
+            throw new IllegalArgumentException("Engage responseType only supports 'token' and 'token_profile' values.");
         }
 
         if (sLoggingEnabled == null) sLoggingEnabled = AndroidUtils.isApplicationDebuggable(context);

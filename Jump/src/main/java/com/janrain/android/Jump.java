@@ -187,8 +187,8 @@ public class Jump {
                 context.getApplicationContext(),
                 jumpConfig.engageAppId,
                 jumpConfig.engageAppUrl,
-                jumpConfig.engageResponseType,
                 null,
+                jumpConfig.engageResponseType,
                 null,
                 jumpConfig.customProviders
         );
@@ -1003,7 +1003,7 @@ public class Jump {
         String flowUrlString = "";
 
         if(state.downloadFlowUrl != null && !state.downloadFlowUrl.isEmpty()){
-            flowUrlString = String.format("https://%s/widget_data/flows/%s/%s/%s/%s.json",
+            flowUrlString = String.format("%s/widget_data/flows/%s/%s/%s/%s.json",
                     state.downloadFlowUrl,
                     state.captureAppId, state.captureFlowName, flowVersion,
                     state.captureLocale);
