@@ -143,6 +143,11 @@ public class JREngage {
     public static final String RESPONSE_TYPE_TOKEN_PROFILE = "token_profile";
     public static final String DEFAULT_RESPONSE_TYPE = RESPONSE_TYPE_TOKEN_PROFILE;
     public static final String DEFAULT_ENGAGE_APP_URL = "https://rpxnow.com";
+    /**
+     * This is the default url used for engage to redirect the token to after a successful
+     * sign in. The library will catch this url to extract the token.
+     */
+    public static final String DEFAULT_TOKEN_REDIRECT_URL = "jrmsampleapp1://jrmsampleapp1/";
 
     /**
      * If not set library logging is automatically controlled via the "debuggable" flag for the application

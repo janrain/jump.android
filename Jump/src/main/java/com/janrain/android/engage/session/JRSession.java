@@ -931,7 +931,7 @@ public class JRSession implements JRConnectionManagerDelegate {
 
         final String tokenUrlParam;
         if (JREngage.RESPONSE_TYPE_TOKEN.equals(mResponseType)) {
-            tokenUrlParam = "&token_url=" + AndroidUtils.urlEncode("jrmsampleapp1://jrmsampleapp1/");
+            tokenUrlParam = "&token_url=" + AndroidUtils.urlEncode(JREngage.DEFAULT_TOKEN_REDIRECT_URL);
         } else {
             tokenUrlParam = "";
         }
