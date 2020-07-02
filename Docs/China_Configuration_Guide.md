@@ -65,7 +65,7 @@ The recommended way to attain this configuration is by providing a
 localized `/res/raw` folder for china, additionally to the default one.
 This will lead to having these two configuration files:
 * `/res/raw/janrain_config.json`
-* `/res/raw-cn/janrain_config.json`
+* `/res/raw-zh/janrain_config.json`
 
 A different way would be to build different flavors, leading to a  
 similar behavior by overriding the default configuration file with a
