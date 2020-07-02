@@ -189,6 +189,7 @@ public class Jump {
                 jumpConfig.engageAppUrl,
                 null,
                 jumpConfig.engageResponseType,
+                jumpConfig.engageWhitelistedDomain,
                 null,
                 jumpConfig.customProviders
         );
