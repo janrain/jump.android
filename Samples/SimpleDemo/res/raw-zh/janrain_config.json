@@ -1,0 +1,35 @@
+{
+  "engageAppId": "dzmriewlbnozoaqujgie",
+  "engageAppUrl": "api-test.login.cn.janrain.biz",
+  "engageResponseType": "token",
+  "engageWhitelistedDomain": "jrmsampleapp1://jrmsampleapp1/",
+  "captureAppId": "tnnryn58vvdmty3ftfdexf6ntm",
+  "captureDomain": "mobile-dev-app-1.capture.cn.janrain.biz",
+  "captureClientId": "h442qgfegxdjnemmfwh3ewdytt4w2vkm",
+  "captureLocale": "en-US",
+  "captureTraditionalSignInFormName": "signInForm",
+  "traditionalSignInType": "EMAIL",
+  "captureFlowName": "standard",
+  "captureFlowVersion": "HEAD",
+  "downloadFlowUrl": "https://janrain-capture-static.cn.janrain.biz",
+  "captureSocialRegistrationFormName": "socialRegistrationForm",
+  "captureTraditionalRegistrationFormName": "registrationForm",
+  "captureEditUserProfileFormName": "editProfileForm",
+  "captureEnableThinRegistration": false,
+  "captureForgotPasswordFormName": "forgotPasswordForm",
+  "captureResendEmailVerificationFormName":"resendVerificationForm",
+  "openIDIdentityProviders": [
+    {
+      "name": "Google",
+      "enabled": "true",
+      "client_id": "661582478563-s3c3r80gt5qhfjp18ue9cip2d2jajum8.apps.googleusercontent.com",
+      "redirect_uri": "com.googleusercontent.apps.661582478563-s3c3r80gt5qhfjp18ue9cip2d2jajum8:/oauth2redirect",
+      "authorization_scope": "openid email profile",
+      "discovery_uri": "https://accounts.google.com/.well-known/openid-configuration",
+      "authorization_endpoint_uri": "",
+      "token_endpoint_uri": "",
+      "registration_endpoint_uri": "",
+      "https_required": true
+    }
+  ]
+}
