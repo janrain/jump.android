@@ -98,6 +98,8 @@ public class JRWebViewFragment extends JRUiFragment {
     private static final String KEY_IS_LOADING_MOBILE_ENDPOINT = "mIsLoadingMobileEndpoint";
     private static final String KEY_IS_SPINNER_ON = "jr_spinner_on";
     private static final String KEY_CURRENTLY_LOADING_WEBVIEW_URL = "jr_current_webview_url";
+    private static final String KEY_RESPONSE_TYPE = "jr_response_type";
+    private static final String KEY_WHITELISTED_DOMAIN = "jr_whitelisted_domain";
     private static final String JR_RETAIN = "jr_retain_frag";
     private static final int KEY_ALERT_DIALOG = 1;
 
@@ -117,6 +119,8 @@ public class JRWebViewFragment extends JRUiFragment {
     private WebSettings mWebViewSettings;
     private ProgressBar mProgressSpinner;
     private RetainFragment mRetain;
+    private String mResponseType;
+    private String mWhitelistedDomain;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -196,11 +200,17 @@ public class JRWebViewFragment extends JRUiFragment {
             return;
         }
 
+        mResponseType = mSession.getResponseType();
+        mWhitelistedDomain = mSession.getWhitelistedDomain();
+
         if (savedInstanceState != null && savedInstanceState.containsKey(KEY_PROVIDER_NAME)) {
             mProvider = mSession.getProviderByName(savedInstanceState.getString(KEY_PROVIDER_NAME));
             mIsAlertShowing = savedInstanceState.getBoolean(KEY_IS_ALERT_SHOWING);
             mIsFinishPending = savedInstanceState.getBoolean(KEY_IS_FINISH_PENDING);
             mIsLoadingMobileEndpoint = savedInstanceState.getBoolean(KEY_IS_LOADING_MOBILE_ENDPOINT);
+            mResponseType = savedInstanceState.getString(KEY_RESPONSE_TYPE);
+            mWhitelistedDomain = savedInstanceState.getString(KEY_WHITELISTED_DOMAIN);
+
             String currentUrl = savedInstanceState.getString(KEY_CURRENTLY_LOADING_WEBVIEW_URL);
             configureWebViewUa();
             mWebView.restoreState(savedInstanceState);
@@ -283,6 +293,8 @@ public class JRWebViewFragment extends JRUiFragment {
         outState.putBoolean(KEY_IS_LOADING_MOBILE_ENDPOINT, mIsLoadingMobileEndpoint);
         outState.putBoolean(KEY_IS_SPINNER_ON, mProgressSpinner.getVisibility() == View.VISIBLE);
         outState.putString(KEY_CURRENTLY_LOADING_WEBVIEW_URL, mCurrentlyLoadingUrl);
+        outState.putString(KEY_RESPONSE_TYPE, mResponseType);
+        outState.putString(KEY_WHITELISTED_DOMAIN, mWhitelistedDomain);
         mWebView.saveState(outState);
 
         super.onSaveInstanceState(outState);
@@ -345,7 +357,7 @@ public class JRWebViewFragment extends JRUiFragment {
     }
 
     private boolean isTokenUrl(String url) {
-        final String endpointUrl = JREngage.DEFAULT_TOKEN_REDIRECT_URL;
+        final String endpointUrl = mWhitelistedDomain;
         if (mSession == null || TextUtils.isEmpty(url) || !url.startsWith(endpointUrl)) {
             return false;
         }

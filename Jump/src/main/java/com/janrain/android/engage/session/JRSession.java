@@ -135,6 +135,7 @@ public class JRSession implements JRConnectionManagerDelegate {
     private String mUrlEncodedAppName;
     private String mUniqueIdentifier;
     private String mResponseType;
+    private String mWhitelistedDomain;
 
     private boolean mConfigDone = false;
     private String mOldEtag;
@@ -158,24 +159,24 @@ public class JRSession implements JRConnectionManagerDelegate {
     }
 
 
-    public static JRSession getInstance(String appId, String appUrl, String tokenUrl, String responseType, JRSessionDelegate delegate) {
+    public static JRSession getInstance(String appId, String appUrl, String tokenUrl, String responseType, String whitelistedDomain, JRSessionDelegate delegate) {
         if (sInstance != null) {
             if (sInstance.isUiShowing()) {
                 LogUtils.loge("Cannot reinitialize JREngage while its UI is showing");
             } else {
                 LogUtils.logd("reinitializing, registered delegates will be unregistered");
-                sInstance.initialize(appId, appUrl, tokenUrl, responseType, delegate);
+                sInstance.initialize(appId, appUrl, tokenUrl, responseType, whitelistedDomain, delegate);
             }
         } else {
             LogUtils.logd("returning new instance.");
-            sInstance = new JRSession(appId, appUrl, tokenUrl, responseType, delegate);
+            sInstance = new JRSession(appId, appUrl, tokenUrl, responseType, whitelistedDomain, delegate);
         }
 
         return sInstance;
     }
 
     public static JRSession getInstance(String appId, String appUrl, String tokenUrl, JRSessionDelegate delegate) {
-        return getInstance(appId, appUrl, tokenUrl, JREngage.DEFAULT_RESPONSE_TYPE, delegate);
+        return getInstance(appId, appUrl, tokenUrl, JREngage.DEFAULT_RESPONSE_TYPE, null, delegate);
     }
 
     /**
@@ -188,11 +189,11 @@ public class JRSession implements JRConnectionManagerDelegate {
                 LogUtils.loge("Cannot reinitialize JREngage while its UI is showing");
             } else {
                 LogUtils.logd("reinitializing, registered delegates will be unregistered");
-                sInstance.initialize(appId, "", tokenUrl, JREngage.DEFAULT_RESPONSE_TYPE, delegate);
+                sInstance.initialize(appId, "", tokenUrl, JREngage.DEFAULT_RESPONSE_TYPE, null, delegate);
             }
         } else {
             LogUtils.logd("returning new instance.");
-            sInstance = new JRSession(appId, "", tokenUrl, JREngage.DEFAULT_RESPONSE_TYPE, delegate);
+            sInstance = new JRSession(appId, "", tokenUrl, JREngage.DEFAULT_RESPONSE_TYPE, null, delegate);
         }
 
         return sInstance;
@@ -236,14 +237,14 @@ public class JRSession implements JRConnectionManagerDelegate {
         return new JRProvider(providerId, dict);
     }
 
-    private JRSession(String appId, String appUrl, String tokenUrl, String responseType, JRSessionDelegate delegate) {
-        initialize(appId, appUrl, tokenUrl, responseType, delegate);
+    private JRSession(String appId, String appUrl, String tokenUrl, String responseType, String whitelistedDomain, JRSessionDelegate delegate) {
+        initialize(appId, appUrl, tokenUrl, responseType, whitelistedDomain, delegate);
     }
 
     /* We runtime type check the deserialized generics so we can safely ignore these unchecked
      * assignment warnings. */
     @SuppressWarnings("unchecked")
-    private void initialize(String appId, String appUrl, String tokenUrl, String responseType, JRSessionDelegate delegate) {
+    private void initialize(String appId, String appUrl, String tokenUrl, String responseType, String whitelistedDomain, JRSessionDelegate delegate) {
         if (appUrl == null || appUrl.trim().isEmpty()) {
             final String message = "This initializer method is no longer supported, the 'appUrl' parameter " +
                     "is now mandatory. Please refer to the Integration Guide document";
@@ -262,6 +263,7 @@ public class JRSession implements JRConnectionManagerDelegate {
         mTokenUrl = tokenUrl;
         mUniqueIdentifier = this.getUniqueIdentifier();
         mResponseType = responseType;
+        mWhitelistedDomain = whitelistedDomain;
 
         ApplicationInfo ai = AndroidUtils.getApplicationInfo();
         String appName = getApplicationContext().getPackageManager().getApplicationLabel(ai).toString();
@@ -565,6 +567,14 @@ public class JRSession implements JRConnectionManagerDelegate {
             mNewEtag = mSavedEtag;
             finishGetConfiguration(s);
         }
+    }
+
+    public String getResponseType() {
+        return mResponseType;
+    }
+
+    public String getWhitelistedDomain() {
+        return mWhitelistedDomain;
     }
 
     public void connectionDidFail(Exception ex, HttpResponseHeaders responseHeaders, byte[] payload,
@@ -931,7 +941,7 @@ public class JRSession implements JRConnectionManagerDelegate {
 
         final String tokenUrlParam;
         if (JREngage.RESPONSE_TYPE_TOKEN.equals(mResponseType)) {
-            tokenUrlParam = "&token_url=" + AndroidUtils.urlEncode(JREngage.DEFAULT_TOKEN_REDIRECT_URL);
+            tokenUrlParam = "&token_url=" + AndroidUtils.urlEncode(mWhitelistedDomain);
         } else {
             tokenUrlParam = "";
         }

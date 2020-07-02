@@ -143,11 +143,6 @@ public class JREngage {
     public static final String RESPONSE_TYPE_TOKEN_PROFILE = "token_profile";
     public static final String DEFAULT_RESPONSE_TYPE = RESPONSE_TYPE_TOKEN_PROFILE;
     public static final String DEFAULT_ENGAGE_APP_URL = "https://rpxnow.com";
-    /**
-     * This is the default url used for engage to redirect the token to after a successful
-     * sign in. The library will catch this url to extract the token.
-     */
-    public static final String DEFAULT_TOKEN_REDIRECT_URL = "jrmsampleapp1://jrmsampleapp1/";
 
     /**
      * If not set library logging is automatically controlled via the "debuggable" flag for the application
@@ -217,7 +212,7 @@ public class JREngage {
                                         final String appUrl,
                                         final String tokenUrl,
                                         final JREngageDelegate delegate) {
-        return JREngage.initInstance(context, appId, appUrl, tokenUrl, DEFAULT_RESPONSE_TYPE, delegate, null);
+        return JREngage.initInstance(context, appId, appUrl, tokenUrl, DEFAULT_RESPONSE_TYPE, null, delegate, null);
     }
 
     /**
@@ -240,7 +235,7 @@ public class JREngage {
                                         final String appId,
                                         final String tokenUrl,
                                         final JREngageDelegate delegate) {
-        return JREngage.initInstance(context, appId, "", tokenUrl, DEFAULT_RESPONSE_TYPE, delegate, null);
+        return JREngage.initInstance(context, appId, "", tokenUrl, DEFAULT_RESPONSE_TYPE, null, delegate, null);
     }
 
     /**
@@ -266,6 +261,7 @@ public class JREngage {
                                         final String appUrl,
                                         final String tokenUrl,
                                         final String responseType,
+                                        final String whitelistedDomain,
                                         final JREngageDelegate delegate,
                                         final Map<String, JRDictionary> customProviders) {
         if (context == null) {
@@ -274,6 +270,10 @@ public class JREngage {
 
         if (!RESPONSE_TYPE_TOKEN.equals(responseType) && !RESPONSE_TYPE_TOKEN_PROFILE.equals(responseType)) {
             throw new IllegalArgumentException("Engage responseType only supports 'token' and 'token_profile' values.");
+        }
+
+        if (RESPONSE_TYPE_TOKEN.equals(responseType) && (whitelistedDomain == null || whitelistedDomain.trim().isEmpty())) {
+            throw new IllegalArgumentException("Engage whitelistedDomain parameter is mandatory for 'token' response type.");
         }
 
         if (sLoggingEnabled == null) sLoggingEnabled = AndroidUtils.isApplicationDebuggable(context);
@@ -286,7 +286,7 @@ public class JREngage {
             // Initialize JRSession in background thread because it does a bunch of IO
             ThreadUtils.executeInBg(new Runnable() {
                 public void run() {
-                    sInstance.mSession = JRSession.getInstance(appId, appUrl, tokenUrl, responseType, sInstance.mJrsd);
+                    sInstance.mSession = JRSession.getInstance(appId, appUrl, tokenUrl, responseType, whitelistedDomain, sInstance.mJrsd);
                     sInstance.mSession.setCustomProviders(customProviders);
 
 

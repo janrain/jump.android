@@ -82,6 +82,12 @@ public final class JumpConfig {
     public String engageResponseType;
 
     /**
+     * Url used to retrieve the token in the 'token' response type. This parameter is ignored for
+     * other response types.
+     */
+    public String engageWhitelistedDomain;
+
+    /**
      * The application ID of your Capture app. Found on the Capture app's dashboard, at the top of the
      * API clients page.
      */
@@ -201,6 +207,7 @@ public final class JumpConfig {
         engageAppId = getConfigString("engageAppId");
         engageAppUrl = getConfigString("engageAppUrl", JREngage.DEFAULT_ENGAGE_APP_URL);
         engageResponseType = getConfigString("engageResponseType", JREngage.DEFAULT_RESPONSE_TYPE);
+        engageWhitelistedDomain = getConfigString("engageWhitelistedDomain");
         captureDomain = getConfigString("captureDomain");
         captureClientId = getConfigString("captureClientId");
         captureLocale = getConfigString("captureLocale");
