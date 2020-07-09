@@ -358,7 +358,11 @@ public class JRWebViewFragment extends JRUiFragment {
 
     private boolean isTokenUrl(String url) {
         final String endpointUrl = mWhitelistedDomain;
-        if (mSession == null || TextUtils.isEmpty(url) || !url.startsWith(endpointUrl)) {
+        if (endpointUrl == null
+                || mSession == null
+                || url == null
+                || url.isEmpty()
+                || !url.startsWith(endpointUrl)) {
             return false;
         }
 
