@@ -945,10 +945,14 @@ public class JRSession implements JRConnectionManagerDelegate {
         }
 
         final String tokenUrlParam;
+        final String deviceParam;
         if (JREngage.RESPONSE_TYPE_TOKEN.equals(mResponseType)) {
             tokenUrlParam = "&token_url=" + AndroidUtils.urlEncode(mWhitelistedDomain);
+            deviceParam = "";
         } else {
+            // defaults to "token_profile" response type
             tokenUrlParam = "";
+            deviceParam = "&device=android";
         }
 
         String fullStartUrl;
@@ -959,12 +963,13 @@ public class JRSession implements JRConnectionManagerDelegate {
             mCurrentlyAuthenticatingProvider.clearCookiesOnCookieDomains(getApplicationContext());
         }
 
-        fullStartUrl = String.format("%s%s?extended=true%s%s%s%s&installation_id=%s&applicationId=%s",
+        fullStartUrl = String.format("%s%s?extended=true%s%s%s%s%s&installation_id=%s&applicationId=%s",
                 mRpBaseUrl,
                 mCurrentlyAuthenticatingProvider.getStartAuthenticationUrl(),
                 oid,
                 extraParamString,
                 tokenUrlParam,
+                deviceParam,
                 (forceReauthUrlFlag ? "&force_reauth=true" : ""),
                 AndroidUtils.urlEncode(mUniqueIdentifier),
                 mAppId
