@@ -215,7 +215,7 @@ public class Jump {
         state.engageAppUrl = jumpConfig.engageAppUrl;
         state.downloadFlowUrl = jumpConfig.downloadFlowUrl;
 
-
+        state.jrEngage.initOpenIDIdentityProviders(context, jumpConfig.configFile);
 
 
         final Context tempContext = context;

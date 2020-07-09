@@ -34,6 +34,7 @@ package com.janrain.android;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
+import android.support.annotation.RawRes;
 import android.text.TextUtils;
 
 import com.janrain.android.engage.JREngage;
@@ -175,7 +176,8 @@ public final class JumpConfig {
     private JSONObject configJson;
 
     /**
-     * This constructor is deprecated, please use new constructor {@link JumpConfig#JumpConfig(Context)}
+     * This constructor is deprecated, please use new constructors
+     * {@link JumpConfig#JumpConfig(Context)} or {@link JumpConfig#JumpConfig(Context, int)}
      */
     @Deprecated
     public JumpConfig() {
@@ -190,10 +192,23 @@ public final class JumpConfig {
      * @param context
      */
     public JumpConfig(Context context) {
+        this(context, R.raw.janrain_config);
+    }
+
+    /**
+     * Creates and initializes a new JumpConfir object to be
+     * passed to {@link Jump#init(Context, JumpConfig)}.
+     * <br />
+     * The fields are initialized using the <b>res/raw/janrain_config.json</b> file
+     * which you should provide in your app.
+     * @param context
+     */
+    public JumpConfig(Context context, @RawRes int configFile) {
         this.context = context;
+        this.configFile = configFile;
 
         BufferedSource configSource =
-                Okio.buffer(Okio.source(context.getResources().openRawResource(R.raw.janrain_config)));
+                Okio.buffer(Okio.source(context.getResources().openRawResource(configFile)));
         Buffer configData = new Buffer();
         try {
             configSource.readAll(configData);
@@ -296,6 +311,12 @@ public final class JumpConfig {
      */
     public String downloadFlowUrl;
 
+    /**
+     * The original file used to load all configurations. If no file was provided
+     * the value will be zero
+     */
+    @RawRes
+    public int configFile;
 
     @Nullable
     private String getConfigString(String propName) {
