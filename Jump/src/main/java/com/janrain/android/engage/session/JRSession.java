@@ -809,9 +809,14 @@ public class JRSession implements JRConnectionManagerDelegate {
 
     private JREngageError startGetConfiguration() {
         String engageBaseUrl = mEngageBaseUrl;
-        if(mAppUrl != null && !mAppUrl.isEmpty()){
-            engageBaseUrl = String.format("https://%s", mAppUrl);
+        if(mAppUrl != null && !mAppUrl.isEmpty()) {
+            if (mAppUrl.startsWith("http://") || mAppUrl.startsWith("https://")) {
+                engageBaseUrl = mAppUrl;
+            } else {
+                engageBaseUrl = String.format("https://%s", mAppUrl);
+            }
         }
+
         String urlString = String.format(UNFORMATTED_CONFIG_URL,
                 engageBaseUrl,
                 mAppId,
