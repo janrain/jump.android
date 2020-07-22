@@ -186,7 +186,7 @@ public class Jump {
         state.jrEngage = JREngage.initInstance(
                 context.getApplicationContext(),
                 jumpConfig.engageAppId,
-                jumpConfig.engageAppUrl,
+                jumpConfig.engageDomain,
                 null,
                 jumpConfig.engageResponseType,
                 jumpConfig.engageWhitelistedDomain,
@@ -212,8 +212,8 @@ public class Jump {
         }else{
             state.captureRedirectUri = jumpConfig.captureRedirectUri;
         }
-        state.engageAppUrl = jumpConfig.engageAppUrl;
-        state.downloadFlowUrl = jumpConfig.downloadFlowUrl;
+        state.engageAppUrl = jumpConfig.engageDomain;
+        state.downloadFlowUrl = jumpConfig.captureFlowDomain;
 
         state.jrEngage.initOpenIDIdentityProviders(context, jumpConfig.configFile);
 

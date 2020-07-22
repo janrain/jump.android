@@ -1,6 +1,6 @@
 {
   "engageAppId": "dzmriewlbnozoaqujgie",
-  "engageAppUrl": "api-test.login.cn.janrain.biz",
+  "engageDomain": "api-test.login.cn.janrain.biz",
   "engageResponseType": "token",
   "engageWhitelistedDomain": "jrmsampleapp1://jrmsampleapp1/",
   "captureAppId": "tnnryn58vvdmty3ftfdexf6ntm",
@@ -11,7 +11,7 @@
   "traditionalSignInType": "EMAIL",
   "captureFlowName": "standard",
   "captureFlowVersion": "HEAD",
-  "downloadFlowUrl": "https://janrain-capture-static.cn.janrain.biz",
+  "captureFlowDomain": "https://janrain-capture-static.cn.janrain.biz",
   "captureSocialRegistrationFormName": "socialRegistrationForm",
   "captureTraditionalRegistrationFormName": "registrationForm",
   "captureEditUserProfileFormName": "editProfileForm",

@@ -220,7 +220,7 @@ public final class JumpConfig {
         }
 
         engageAppId = getConfigString("engageAppId");
-        engageAppUrl = getConfigString("engageAppUrl", JREngage.DEFAULT_ENGAGE_APP_URL);
+        engageDomain = getConfigString("engageDomain", JREngage.DEFAULT_ENGAGE_APP_URL);
         engageResponseType = getConfigString("engageResponseType", JREngage.DEFAULT_RESPONSE_TYPE);
         engageWhitelistedDomain = getConfigString("engageWhitelistedDomain");
         captureDomain = getConfigString("captureDomain");
@@ -231,7 +231,7 @@ public final class JumpConfig {
         captureAppId = getConfigString("captureAppId");
         captureFlowName = getConfigString("captureFlowName");
         captureFlowVersion = getConfigString("captureFlowVersion");
-        downloadFlowUrl = getConfigString("downloadFlowUrl", "https://d1lqe9temigv1p.cloudfront.net");
+        captureFlowDomain = getConfigString("captureFlowDomain", "https://d1lqe9temigv1p.cloudfront.net");
         captureSocialRegistrationFormName = getConfigString("captureSocialRegistrationFormName");
         captureTraditionalRegistrationFormName = getConfigString("captureTraditionalRegistrationFormName");
         captureEditUserProfileFormName = getConfigString("captureEditUserProfileFormName");
@@ -304,12 +304,12 @@ public final class JumpConfig {
     /**
      * Used for non-rpx.now Engage app url's
      */
-    public String engageAppUrl;
+    public String engageDomain;
 
     /**
      * Used for custom Flow endpoints (i.e. China)
      */
-    public String downloadFlowUrl;
+    public String captureFlowDomain;
 
     /**
      * The original file used to load all configurations. If no file was provided
