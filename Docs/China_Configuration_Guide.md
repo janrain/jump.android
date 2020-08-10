@@ -7,44 +7,44 @@ configuration and the configuration needed for China.
 
 ## The social providers
 Standard social login servers depend on the "realm", a subdomain
-established for each social login property. This process is started by
-retrieving the social providers configurations through a fixed
-server URL. However, China social login servers don't support the
-Social Login realm and, instead, are hosted on different servers
-with different hostnames.  
-A configuration parameter may be provided through the
-`janrain_config.json` file to overcome this situation:
-* **engageDomain** - This is the base social login server url, which
-will override the standard `https://rpxnow.com` url.
+established for each social login property. Typically, the social login
+process is started by retrieving the social provider configurations
+using a fixed server URL. However, China social login servers don't
+support the Social Login realm and, instead, are hosted on different
+servers with different hostnames.  
+However, a configuration configuration parameter may be provided
+through the `janrain_config.json` file to overcome this situation:
+* **engageDomain** - This is the base social login server URL, which
+overrides the standard `https://rpxnow.com` URL.
 
 ## Getting the token
 Social login supports retrieving both the token and the user profile
-through the same sign-in mechanism which starts by calling the start
-URL. This workflow isn't supported by China social login servers, which
-provide the token but not the user profile data.
+through the same sign-in mechanism (which starts by calling the start
+URL). This workflow isn't supported by China social login servers, which
+can provide the token but not the user profile data.
 
 In order to configure these two mechanisms, the library provides two
-parameters which need to be set in the `janrain_config.json` file:
-* **engageResponseType** - This parameter will select which workflow will
+parameters which must be set in the `janrain_config.json` file:
+* **engageResponseType** - This parameter selects the workflow to
 be used depending on the following values:
   * **token_profile**: The default value if **response_type** is
 omitted. This value triggers the default workflow, which retrieves
 both the token and the user profile.
   * **token**: Triggers the alternate workflow, which only retrieves the
-token. This is supported both in China and in all other regions. When
+token. This is supported in China and in all other regions. When
 using this response type, the **engageWhitelistedDomain** configuration
 is mandatory.
 
 * **engageWhitelistedDomain** - This is mandatory when using the
 **token** response type, and is otherwise ignored. After a successful
-sign in, the social login server redirects to this URL, so make sure
+sign in the social login server redirects to this URL, so be sure
 to allow-list the URL in the social login application.
-As the redirect is received inside the application, not through a
+As the redirect is received inside the application and not through a
 web browser, this token URL **cannot** act as a deeplink.
 
-# Capture Configuration Guide
+# Capture configuration guide
 Capture usually provides the flow configuration file through a CDN whose
-URL is handled inside the library, but for China a different CDN may be
+URL is handled inside the library, but for China a different CDN can be
 used.
 This CDN can be configured through the `janrain_config.json` file with
 the `captureFlowDomain` parameter. This is just the base URL without
@@ -52,10 +52,10 @@ any paths referring to the flow file; instead, it's usually just the
 schema and the hostname.
 
 # Configuring the same app for both environments
-There are three recommended ways to attain this configuration:
+There are three recommended ways to obtain this configuration:
 
-1. Provide a localized `/res/raw` folder for China (ie. `/res/raw-zh`),
-in addition to the default `/res/raw` one. This results in two
+1. Provide a localized `/res/raw` folder for China (ie. `/res/raw-zh`)
+in addition to the default `/res/raw` folder. This results in two
 configuration files:
     * `/res/raw/janrain_config.json`
     * `/res/raw-zh/janrain_config.json`
