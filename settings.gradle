@@ -1,0 +1,6 @@
+include ':Jump'
+project(':Jump').projectDir = new File('Jump')
+include ':SimpleDemo'
+project(':SimpleDemo').projectDir = new File('Samples/SimpleDemo')
+include ':SimpleDemoNative'
+project(':SimpleDemoNative').projectDir = new File('Samples/SimpleDemoNative')
