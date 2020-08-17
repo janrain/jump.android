@@ -63,7 +63,7 @@ android {
 
     defaultConfig {
         applicationId "com.janrain.android.multidex.simpledemonative"
-        minSdkVersion 26
+        minSdkVersion 20
         targetSdkVersion 27
         multiDexEnabled = true
 
@@ -87,7 +87,7 @@ android {
         }
 
         // Move the tests to tests/java, tests/res, etc...
-        instrumentTest.setRoot('tests')
+        androidTest.setRoot('tests')
 
         // Move the build types to build-types/<type>
         // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
