@@ -10,8 +10,6 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
 
-    <uses-sdk android:minSdkVersion="17" android:targetSdkVersion="25" />
-
     <application
         android:name="SimpleDemoApplication"
         android:icon="@drawable/icon"

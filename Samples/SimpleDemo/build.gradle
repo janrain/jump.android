@@ -4,7 +4,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.4.0'
     }
 }
 apply plugin: 'com.android.application'
@@ -16,14 +16,13 @@ repositories {
 
 
 dependencies {
-    //compile fileTree(dir: 'libs', include: '*.jar')
-    compile 'com.google.code.gson:gson:2.8.0'
-    compile project(':Jump')
+    //implementation fileTree(dir: 'libs', include: '*.jar')
+    implementation 'com.google.code.gson:gson:2.8.0'
+    implementation project(':Jump')
 }
 
 android {
     compileSdkVersion 27
-    buildToolsVersion '27.0.3'
 
     //If building with strict Android 6.0 the following will need to be uncommented
     //See: https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html
@@ -54,7 +53,7 @@ android {
         }
 
         // Move the tests to tests/java, tests/res, etc...
-        instrumentTest.setRoot('tests')
+        androidTest.setRoot('tests')
 
         // Move the build types to build-types/<type>
         // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
