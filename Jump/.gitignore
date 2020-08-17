@@ -33,6 +33,16 @@ local.properties
 build/
 /*/build*
 .idea/
+.idea
+.gradle
+.gradle/**
+.gradle/**/*
+gradlew
+gradlew.bat
+gradle/
+build
+build/**
+build/**/*
 
 
 #NDK

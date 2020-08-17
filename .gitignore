@@ -35,6 +35,9 @@ local.properties
 .gradle
 .gradle/**
 .gradle/**/*
+gradlew
+gradlew.bat
+gradle/
 build
 build/**
 build/**/*
@@ -50,6 +53,7 @@ Samples/SimpleDemo/build
 Samples/SimpleDemo/*.iml
 Samples/SimpleDemo/SimpleDemo.iml
 Samples/SimpleDemo/gradlew
+Samples/SimpleDemo/gradlew.bat
 Samples/SimpleDemo/gradle/
 Samples/SimpleDemo/jump/jump.iml
 Samples/SimpleDemo/build/**
@@ -68,6 +72,9 @@ Samples/SimpleDemoNative/.idea
 Samples/SimpleDemoNative/.gradle
 Samples/SimpleDemoNative/.gradle/**
 Samples/SimpleDemoNative/.gradle/**/*
+Samples/SimpleDemoNative/gradlew
+Samples/SimpleDemoNative/gradlew.bat
+Samples/SimpleDemoNative/gradle/
 Samples/SimpleDemoNative/build
 Samples/SimpleDemoNative/build/**
 Samples/SimpleDemoNative/build/**/*
