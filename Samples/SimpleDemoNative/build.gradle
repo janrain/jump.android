@@ -8,7 +8,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.6.3'
         classpath 'com.google.gms:google-services:3.1.2'
     }
 }
@@ -46,9 +46,9 @@ dependencies {
     implementation 'com.facebook.android:facebook-android-sdk:4.31.0'
     implementation project(':Jump')
     // Include all the Twitter APIs
-    compile 'com.twitter.sdk.android:twitter:3.1.1'
+    implementation 'com.twitter.sdk.android:twitter:3.1.1'
     // (Optional) Monetize using mopub
-    compile 'com.twitter.sdk.android:twitter-mopub:3.1.1'
+    implementation 'com.twitter.sdk.android:twitter-mopub:3.1.1'
 }
 
 android {
@@ -63,7 +63,7 @@ android {
 
     defaultConfig {
         applicationId "com.janrain.android.multidex.simpledemonative"
-        minSdkVersion 26
+        minSdkVersion 20
         targetSdkVersion 27
         multiDexEnabled = true
 
@@ -87,7 +87,7 @@ android {
         }
 
         // Move the tests to tests/java, tests/res, etc...
-        instrumentTest.setRoot('tests')
+        androidTest.setRoot('tests')
 
         // Move the build types to build-types/<type>
         // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...

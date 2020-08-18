@@ -22,7 +22,9 @@ import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.RawRes;
 import android.support.annotation.StringRes;
+import android.util.Log;
 
 import com.janrain.android.R;
 import com.janrain.android.engage.session.JRSession;
@@ -97,6 +99,39 @@ class OpenIDIdentityProvider {
 
     private static List<OpenIDIdentityProvider> sProviders;
 
+    public static void init(Context context, @RawRes int providersConfigFile) {
+        if (sProviders != null) {
+            return;
+        }
+
+        sProviders = new ArrayList<>();
+        BufferedSource configSource = Okio.buffer(
+                Okio.source(context.getResources().openRawResource(providersConfigFile))
+        );
+
+        JSONArray jsonArray;
+        try {
+            Buffer configData = new Buffer();
+            configSource.readAll(configData);
+            JSONObject jsonObject = new JSONObject(configData.readString(Charset.forName("UTF-8")));
+            jsonArray = jsonObject.getJSONArray("openIDIdentityProviders");
+        } catch (IOException ex) {
+            throw new RuntimeException("Failed to read configuration: " + ex.getMessage(), ex);
+        } catch (JSONException ex) {
+            throw new RuntimeException("Unable to parse configuration: " + ex.getMessage(), ex);
+        }
+
+        int length = jsonArray.length();
+        for (int i = 0; i < length; i++) {
+            try {
+                final JSONObject jsonObject = jsonArray.getJSONObject(i);
+                sProviders.add(new OpenIDIdentityProvider(jsonObject));
+            } catch (JSONException e) {
+                throw new RuntimeException("Failed to read configuration: " + e.getMessage(), e);
+            }
+        }
+    }
+
     /**
      * Gets all the configured OpenID Identity providers
      * @param context Context used to read the configuration file.
@@ -104,32 +139,9 @@ class OpenIDIdentityProvider {
      */
     public static List<OpenIDIdentityProvider> getAllProviders(Context context) {
         if (sProviders == null) {
-            sProviders = new ArrayList<>();
-            BufferedSource configSource = Okio.buffer(
-                    Okio.source(context.getResources().openRawResource(R.raw.janrain_config))
-            );
-
-            JSONArray jsonArray;
-            try {
-                Buffer configData = new Buffer();
-                configSource.readAll(configData);
-                JSONObject jsonObject = new JSONObject(configData.readString(Charset.forName("UTF-8")));
-                jsonArray = jsonObject.getJSONArray("openIDIdentityProviders");
-            } catch (IOException ex) {
-                throw new RuntimeException("Failed to read configuration: " + ex.getMessage(), ex);
-            } catch (JSONException ex) {
-                throw new RuntimeException("Unable to parse configuration: " + ex.getMessage(), ex);
-            }
-
-            int length = jsonArray.length();
-            for (int i = 0; i < length; i++) {
-                try {
-                    final JSONObject jsonObject = jsonArray.getJSONObject(i);
-                    sProviders.add(new OpenIDIdentityProvider(jsonObject));
-                } catch (JSONException e) {
-                    throw new RuntimeException("Failed to read configuration: " + e.getMessage(), e);
-                }
-            }
+            final String logTag = OpenIDIdentityProvider.class.getName();
+            Log.d(logTag, "No identity providers were previously, loading from default config file...");
+            OpenIDIdentityProvider.init(context, R.raw.janrain_config);
         }
 
         return sProviders;

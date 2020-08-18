@@ -34,8 +34,10 @@ package com.janrain.android;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
+import android.support.annotation.RawRes;
 import android.text.TextUtils;
 
+import com.janrain.android.engage.JREngage;
 import com.janrain.android.engage.session.JRProvider;
 import com.janrain.android.engage.types.JRDictionary;
 import com.janrain.android.utils.LogUtils;
@@ -67,6 +69,24 @@ public final class JumpConfig {
      * The application ID of your Engage app, from the Engage Dashboard
      */
     public String engageAppId;
+
+    /**
+     * Engage can retrieve either the used profile and/or the token.
+     * <p>
+     *     This configuration takes two different values:
+     *     <ul>
+     *         <li><b>token_profile</b></li>
+     *         <li><b>token</b></li>
+     *     </ul>
+     * </p>
+     */
+    public String engageResponseType;
+
+    /**
+     * Url used to retrieve the token in the 'token' response type. This parameter is ignored for
+     * other response types.
+     */
+    public String engageWhitelistedDomain;
 
     /**
      * The application ID of your Capture app. Found on the Capture app's dashboard, at the top of the
@@ -156,7 +176,8 @@ public final class JumpConfig {
     private JSONObject configJson;
 
     /**
-     * This constructor is deprecated, please use new constructor {@link JumpConfig#JumpConfig(Context)}
+     * This constructor is deprecated, please use new constructors
+     * {@link JumpConfig#JumpConfig(Context)} or {@link JumpConfig#JumpConfig(Context, int)}
      */
     @Deprecated
     public JumpConfig() {
@@ -171,10 +192,23 @@ public final class JumpConfig {
      * @param context
      */
     public JumpConfig(Context context) {
+        this(context, R.raw.janrain_config);
+    }
+
+    /**
+     * Creates and initializes a new JumpConfir object to be
+     * passed to {@link Jump#init(Context, JumpConfig)}.
+     * <br />
+     * The fields are initialized using the <b>res/raw/janrain_config.json</b> file
+     * which you should provide in your app.
+     * @param context
+     */
+    public JumpConfig(Context context, @RawRes int configFile) {
         this.context = context;
+        this.configFile = configFile;
 
         BufferedSource configSource =
-                Okio.buffer(Okio.source(context.getResources().openRawResource(R.raw.janrain_config)));
+                Okio.buffer(Okio.source(context.getResources().openRawResource(configFile)));
         Buffer configData = new Buffer();
         try {
             configSource.readAll(configData);
@@ -186,6 +220,9 @@ public final class JumpConfig {
         }
 
         engageAppId = getConfigString("engageAppId");
+        engageDomain = getConfigString("engageDomain", JREngage.DEFAULT_ENGAGE_APP_URL);
+        engageResponseType = getConfigString("engageResponseType", JREngage.DEFAULT_RESPONSE_TYPE);
+        engageWhitelistedDomain = getConfigString("engageWhitelistedDomain");
         captureDomain = getConfigString("captureDomain");
         captureClientId = getConfigString("captureClientId");
         captureLocale = getConfigString("captureLocale");
@@ -194,6 +231,7 @@ public final class JumpConfig {
         captureAppId = getConfigString("captureAppId");
         captureFlowName = getConfigString("captureFlowName");
         captureFlowVersion = getConfigString("captureFlowVersion");
+        captureFlowDomain = getConfigString("captureFlowDomain", "https://d1lqe9temigv1p.cloudfront.net");
         captureSocialRegistrationFormName = getConfigString("captureSocialRegistrationFormName");
         captureTraditionalRegistrationFormName = getConfigString("captureTraditionalRegistrationFormName");
         captureEditUserProfileFormName = getConfigString("captureEditUserProfileFormName");
@@ -266,23 +304,35 @@ public final class JumpConfig {
     /**
      * Used for non-rpx.now Engage app url's
      */
-    public String engageAppUrl;
+    public String engageDomain;
+
     /**
      * Used for custom Flow endpoints (i.e. China)
      */
-    public String downloadFlowUrl;
+    public String captureFlowDomain;
 
+    /**
+     * The original file used to load all configurations. If no file was provided
+     * the value will be zero
+     */
+    @RawRes
+    public int configFile;
 
     @Nullable
     private String getConfigString(String propName) {
+        return this.getConfigString(propName, null);
+    }
+
+    @Nullable
+    private String getConfigString(String propName, String defaultValue) {
         String value = configJson.optString(propName);
         if (value == null) {
-            return null;
+            return defaultValue;
         }
 
         value = value.trim();
         if (TextUtils.isEmpty(value)) {
-            return null;
+            return defaultValue;
         }
 
         return value;

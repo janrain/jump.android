@@ -62,6 +62,13 @@ apply plugin: 'io.fabric' // REMOVE THIS ONE TOO
 After the version changes it's very likely you'll have various build errors because the Twitter Kit library also changed some of its classes. Review your code is compilant with the installation instructions on this link:
 https://dev.twitter.com/twitterkit/android/installation
 
+### Upgrading to v7.3 from v7.2
+Action needed only when configuring the SDK for China.  
+Please follow the [China_Configuration_Guide.md](China_Configuration_Guide.md) file.
+
+### Upgrading to v7.2 from v7.1
+No action needed
+
 ### Upgrading to v7.1 from v7.0.5
 
 NOTE: There have been significant updates to the code base in this release.  While over all functionality should not have changed it is highly recommended that thorough testing be performed when upgrading to this version from previous versions.

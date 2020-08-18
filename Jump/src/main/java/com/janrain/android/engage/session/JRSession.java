@@ -88,8 +88,7 @@ public class JRSession implements JRConnectionManagerDelegate {
     private static final String ARCHIVE_AUTH_USERS_BY_PROVIDER = "jrAuthenticatedUsersByProvider";
     private static final String ARCHIVE_AUTH_OPENID_APPAUTH_PROVIDERS = "jrAuthenticatedOpenIDAppAuthProviders";
 
-    private static final String RPXNOW_BASE_URL = "https://rpxnow.com";
-    private static String mEngageBaseUrl = RPXNOW_BASE_URL;
+    private static String mEngageBaseUrl;
     private static final String UNFORMATTED_CONFIG_URL =
             "%s/openid/mobile_config_and_baseurl?appId=%s&device=android&app_name=%s&version=%s";
     private static final String TAG_GET_CONFIGURATION = "getConfiguration";
@@ -135,6 +134,8 @@ public class JRSession implements JRConnectionManagerDelegate {
     private String mRpBaseUrl;
     private String mUrlEncodedAppName;
     private String mUniqueIdentifier;
+    private String mResponseType;
+    private String mWhitelistedDomain;
 
     private boolean mConfigDone = false;
     private String mOldEtag;
@@ -158,33 +159,41 @@ public class JRSession implements JRConnectionManagerDelegate {
     }
 
 
-    public static JRSession getInstance(String appId, String appUrl, String tokenUrl, JRSessionDelegate delegate) {
+    public static JRSession getInstance(String appId, String appUrl, String tokenUrl, String responseType, String whitelistedDomain, JRSessionDelegate delegate) {
         if (sInstance != null) {
             if (sInstance.isUiShowing()) {
                 LogUtils.loge("Cannot reinitialize JREngage while its UI is showing");
             } else {
                 LogUtils.logd("reinitializing, registered delegates will be unregistered");
-                sInstance.initialize(appId, appUrl, tokenUrl, delegate);
+                sInstance.initialize(appId, appUrl, tokenUrl, responseType, whitelistedDomain, delegate);
             }
         } else {
             LogUtils.logd("returning new instance.");
-            sInstance = new JRSession(appId, appUrl, tokenUrl, delegate);
+            sInstance = new JRSession(appId, appUrl, tokenUrl, responseType, whitelistedDomain, delegate);
         }
 
         return sInstance;
     }
 
+    public static JRSession getInstance(String appId, String appUrl, String tokenUrl, JRSessionDelegate delegate) {
+        return getInstance(appId, appUrl, tokenUrl, JREngage.DEFAULT_RESPONSE_TYPE, null, delegate);
+    }
+
+    /**
+     * @deprecated Please use a constructor or initializer that accepts the "appUrl" parameter. This
+     * parameter is now mandatory.
+     */
     public static JRSession getInstance(String appId, String tokenUrl, JRSessionDelegate delegate) {
         if (sInstance != null) {
             if (sInstance.isUiShowing()) {
                 LogUtils.loge("Cannot reinitialize JREngage while its UI is showing");
             } else {
                 LogUtils.logd("reinitializing, registered delegates will be unregistered");
-                sInstance.initialize(appId, "", tokenUrl, delegate);
+                sInstance.initialize(appId, "", tokenUrl, JREngage.DEFAULT_RESPONSE_TYPE, null, delegate);
             }
         } else {
             LogUtils.logd("returning new instance.");
-            sInstance = new JRSession(appId, "", tokenUrl, delegate);
+            sInstance = new JRSession(appId, "", tokenUrl, JREngage.DEFAULT_RESPONSE_TYPE, null, delegate);
         }
 
         return sInstance;
@@ -228,31 +237,33 @@ public class JRSession implements JRConnectionManagerDelegate {
         return new JRProvider(providerId, dict);
     }
 
-    private JRSession(String appId, String tokenUrl, JRSessionDelegate delegate) {
-        initialize(appId, "", tokenUrl, delegate);
-    }
-
-    private JRSession(String appId, String appUrl, String tokenUrl, JRSessionDelegate delegate) {
-        initialize(appId, appUrl, tokenUrl, delegate);
+    private JRSession(String appId, String appUrl, String tokenUrl, String responseType, String whitelistedDomain, JRSessionDelegate delegate) {
+        initialize(appId, appUrl, tokenUrl, responseType, whitelistedDomain, delegate);
     }
 
     /* We runtime type check the deserialized generics so we can safely ignore these unchecked
      * assignment warnings. */
     @SuppressWarnings("unchecked")
-    private void initialize(String appId, String appUrl, String tokenUrl, JRSessionDelegate delegate) {
-        LogUtils.logd("initializing instance.");
+    private void initialize(String appId, String appUrl, String tokenUrl, String responseType, String whitelistedDomain, JRSessionDelegate delegate) {
+        if (appUrl == null || appUrl.trim().isEmpty()) {
+            final String message = "This initializer method is no longer supported, the 'appUrl' parameter " +
+                    "is now mandatory. Please refer to the Integration Guide document";
 
-        // for configurability to test against e.g. staging
-        String t = StringUtils.trim(AndroidUtils.readAsset(getApplicationContext(), "engage_base_url.txt"));
-        if (t != null) mEngageBaseUrl = t;
+            throw new UnsupportedOperationException(message);
+        }
+
+        LogUtils.logd("initializing instance.");
 
         mDelegates = new ArrayList<JRSessionDelegate>();
         mDelegates.add(delegate);
 
         mAppId = appId;
         mAppUrl = appUrl;
+        mEngageBaseUrl = appUrl;
         mTokenUrl = tokenUrl;
         mUniqueIdentifier = this.getUniqueIdentifier();
+        mResponseType = responseType;
+        mWhitelistedDomain = whitelistedDomain;
 
         ApplicationInfo ai = AndroidUtils.getApplicationInfo();
         String appName = getApplicationContext().getPackageManager().getApplicationLabel(ai).toString();
@@ -532,12 +543,11 @@ public class JRSession implements JRConnectionManagerDelegate {
     }
 
     public String getRpBaseUrl() {
-        if(mAppUrl != null && mAppUrl != "" && mAppUrl != mRpBaseUrl){
-            return mAppUrl;
-        }else{
+        if (mRpBaseUrl != null && !mRpBaseUrl.isEmpty()) {
             return mRpBaseUrl;
         }
 
+        return mAppUrl;
     }
 
     public boolean getHidePoweredBy() {
@@ -557,6 +567,14 @@ public class JRSession implements JRConnectionManagerDelegate {
             mNewEtag = mSavedEtag;
             finishGetConfiguration(s);
         }
+    }
+
+    public String getResponseType() {
+        return mResponseType;
+    }
+
+    public String getWhitelistedDomain() {
+        return mWhitelistedDomain;
     }
 
     public void connectionDidFail(Exception ex, HttpResponseHeaders responseHeaders, byte[] payload,
@@ -791,9 +809,14 @@ public class JRSession implements JRConnectionManagerDelegate {
 
     private JREngageError startGetConfiguration() {
         String engageBaseUrl = mEngageBaseUrl;
-        if(mAppUrl != null && !mAppUrl.isEmpty()){
-            engageBaseUrl = String.format("https://%s", mAppUrl);
+        if(mAppUrl != null && !mAppUrl.isEmpty()) {
+            if (mAppUrl.startsWith("http://") || mAppUrl.startsWith("https://")) {
+                engageBaseUrl = mAppUrl;
+            } else {
+                engageBaseUrl = String.format("https://%s", mAppUrl);
+            }
         }
+
         String urlString = String.format(UNFORMATTED_CONFIG_URL,
                 engageBaseUrl,
                 mAppId,
@@ -903,7 +926,7 @@ public class JRSession implements JRConnectionManagerDelegate {
         String extraParamString = "";
 
         if (!TextUtils.isEmpty(mCurrentlyAuthenticatingProvider.getOpenIdentifier())) {
-            oid = String.format("openid_identifier=%s&",
+            oid = String.format("&openid_identifier=%s",
                     mCurrentlyAuthenticatingProvider.getOpenIdentifier());
             if (mCurrentlyAuthenticatingProvider.requiresInput()) {
                 oid = oid.replaceAll("%@", mCurrentlyAuthenticatingProvider.getUserInput());
@@ -913,12 +936,23 @@ public class JRSession implements JRConnectionManagerDelegate {
 
             if (!TextUtils.isEmpty(mCurrentlyAuthenticatingProvider.getOpxBlob())) {
                 extraParamString =
-                        String.format("opx_blob=%s&", mCurrentlyAuthenticatingProvider.getOpxBlob());
+                        String.format("&opx_blob=%s", mCurrentlyAuthenticatingProvider.getOpxBlob());
             }
 
         } else if (!TextUtils.isEmpty(mCurrentlyAuthenticatingProvider.getSamlProvider())) {
             extraParamString =
-                    String.format("saml_provider=%s&", mCurrentlyAuthenticatingProvider.getSamlProvider());
+                    String.format("&saml_provider=%s", mCurrentlyAuthenticatingProvider.getSamlProvider());
+        }
+
+        final String tokenUrlParam;
+        final String deviceParam;
+        if (JREngage.RESPONSE_TYPE_TOKEN.equals(mResponseType)) {
+            tokenUrlParam = "&token_url=" + AndroidUtils.urlEncode(mWhitelistedDomain);
+            deviceParam = "";
+        } else {
+            // defaults to "token_profile" response type
+            tokenUrlParam = "";
+            deviceParam = "&device=android";
         }
 
         String fullStartUrl;
@@ -929,13 +963,16 @@ public class JRSession implements JRConnectionManagerDelegate {
             mCurrentlyAuthenticatingProvider.clearCookiesOnCookieDomains(getApplicationContext());
         }
 
-        fullStartUrl = String.format("%s%s?%s%s%sdevice=android&extended=true&installation_id=%s",
+        fullStartUrl = String.format("%s%s?extended=true%s%s%s%s%s&installation_id=%s&applicationId=%s",
                 mRpBaseUrl,
                 mCurrentlyAuthenticatingProvider.getStartAuthenticationUrl(),
                 oid,
                 extraParamString,
-                (forceReauthUrlFlag ? "force_reauth=true&" : ""),
-                AndroidUtils.urlEncode(mUniqueIdentifier)
+                tokenUrlParam,
+                deviceParam,
+                (forceReauthUrlFlag ? "&force_reauth=true" : ""),
+                AndroidUtils.urlEncode(mUniqueIdentifier),
+                mAppId
         );
 
         LogUtils.logd("startUrl: " + fullStartUrl);

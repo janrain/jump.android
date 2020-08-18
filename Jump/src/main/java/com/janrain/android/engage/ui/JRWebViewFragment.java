@@ -31,6 +31,7 @@
  */
 package com.janrain.android.engage.ui;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -41,6 +42,7 @@ import android.net.http.SslError;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.text.TextUtils;
@@ -55,12 +57,15 @@ import android.webkit.ConsoleMessage;
 import android.webkit.DownloadListener;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import com.janrain.android.R;
+import com.janrain.android.engage.JREngage;
 import com.janrain.android.engage.JREngageError;
 import com.janrain.android.engage.net.JRConnectionManager;
 import com.janrain.android.engage.net.JRConnectionManagerDelegate;
@@ -71,7 +76,11 @@ import com.janrain.android.utils.AndroidUtils;
 import com.janrain.android.utils.LogUtils;
 import org.json.JSONException;
 
+import java.io.BufferedInputStream;
+import java.io.ByteArrayInputStream;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -89,6 +98,8 @@ public class JRWebViewFragment extends JRUiFragment {
     private static final String KEY_IS_LOADING_MOBILE_ENDPOINT = "mIsLoadingMobileEndpoint";
     private static final String KEY_IS_SPINNER_ON = "jr_spinner_on";
     private static final String KEY_CURRENTLY_LOADING_WEBVIEW_URL = "jr_current_webview_url";
+    private static final String KEY_RESPONSE_TYPE = "jr_response_type";
+    private static final String KEY_WHITELISTED_DOMAIN = "jr_whitelisted_domain";
     private static final String JR_RETAIN = "jr_retain_frag";
     private static final int KEY_ALERT_DIALOG = 1;
 
@@ -108,6 +119,8 @@ public class JRWebViewFragment extends JRUiFragment {
     private WebSettings mWebViewSettings;
     private ProgressBar mProgressSpinner;
     private RetainFragment mRetain;
+    private String mResponseType;
+    private String mWhitelistedDomain;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -187,11 +200,17 @@ public class JRWebViewFragment extends JRUiFragment {
             return;
         }
 
+        mResponseType = mSession.getResponseType();
+        mWhitelistedDomain = mSession.getWhitelistedDomain();
+
         if (savedInstanceState != null && savedInstanceState.containsKey(KEY_PROVIDER_NAME)) {
             mProvider = mSession.getProviderByName(savedInstanceState.getString(KEY_PROVIDER_NAME));
             mIsAlertShowing = savedInstanceState.getBoolean(KEY_IS_ALERT_SHOWING);
             mIsFinishPending = savedInstanceState.getBoolean(KEY_IS_FINISH_PENDING);
             mIsLoadingMobileEndpoint = savedInstanceState.getBoolean(KEY_IS_LOADING_MOBILE_ENDPOINT);
+            mResponseType = savedInstanceState.getString(KEY_RESPONSE_TYPE);
+            mWhitelistedDomain = savedInstanceState.getString(KEY_WHITELISTED_DOMAIN);
+
             String currentUrl = savedInstanceState.getString(KEY_CURRENTLY_LOADING_WEBVIEW_URL);
             configureWebViewUa();
             mWebView.restoreState(savedInstanceState);
@@ -274,6 +293,8 @@ public class JRWebViewFragment extends JRUiFragment {
         outState.putBoolean(KEY_IS_LOADING_MOBILE_ENDPOINT, mIsLoadingMobileEndpoint);
         outState.putBoolean(KEY_IS_SPINNER_ON, mProgressSpinner.getVisibility() == View.VISIBLE);
         outState.putString(KEY_CURRENTLY_LOADING_WEBVIEW_URL, mCurrentlyLoadingUrl);
+        outState.putString(KEY_RESPONSE_TYPE, mResponseType);
+        outState.putString(KEY_WHITELISTED_DOMAIN, mWhitelistedDomain);
         mWebView.saveState(outState);
 
         super.onSaveInstanceState(outState);
@@ -333,6 +354,41 @@ public class JRWebViewFragment extends JRUiFragment {
         if (mSession == null) return false;
         final String endpointUrl = mSession.getRpBaseUrl() + "/signin/device";
         return ((!TextUtils.isEmpty(url)) && (url.startsWith(endpointUrl)));
+    }
+
+    private boolean isTokenUrl(String url) {
+        final String endpointUrl = mWhitelistedDomain;
+        if (endpointUrl == null
+                || mSession == null
+                || url == null
+                || url.isEmpty()
+                || !url.startsWith(endpointUrl)) {
+            return false;
+        }
+
+        LogUtils.logd("[TOKEN URL]: " + endpointUrl);
+        return true;
+    }
+
+    /**
+     * Creates and returns the fake content needed for the webview not to report errors when
+     * trying to load the token url.
+     * @param url The url to evaluate if it's the token url
+     * @return The fake content to show when loading the token url. Null if the given url is
+     * not a token url
+     */
+    private WebResourceResponse tryCreateTokenUrlFakeContentResponse(String url) {
+        if (!isTokenUrl(url)) {
+            return null;
+        }
+
+        // Allowing the token url to load will result in an error as the host or the schema
+        // would mos likely not exist, so return an empty data instead to show a blank page
+        return new WebResourceResponse(
+                "text/html",
+                "utf-8",
+                new ByteArrayInputStream(new byte[]{'\0'})
+        );
     }
 
     private void showProgressSpinner() {
@@ -412,6 +468,30 @@ public class JRWebViewFragment extends JRUiFragment {
             return !(Uri.parse(url).getScheme().equals("http") || Uri.parse(url).getScheme().equals("https"));
         }
 
+        @Nullable
+        @Override
+        public WebResourceResponse shouldInterceptRequest(WebView view, String url) {
+            final WebResourceResponse tokenUrlResponse = tryCreateTokenUrlFakeContentResponse(url);
+            if (tokenUrlResponse != null) {
+                return tokenUrlResponse;
+            }
+
+            return super.shouldInterceptRequest(view, url);
+        }
+
+        @Nullable
+        @Override
+        @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+        public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
+            final String url = request.getUrl().toString();
+            final WebResourceResponse tokenUrlResponse = tryCreateTokenUrlFakeContentResponse(url);
+            if (tokenUrlResponse != null) {
+                return tokenUrlResponse;
+            }
+
+            return super.shouldInterceptRequest(view, request);
+        }
+
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             LogUtils.logd(TAG, "[onPageStarted] url: " + url);
@@ -445,6 +525,23 @@ public class JRWebViewFragment extends JRUiFragment {
                         "mode");
                 return;
             }
+
+            if (isTokenUrl(url)) {
+                // When finishing loading the token url page, extract the token param from the url,
+                // start the authentication completed workflow and finish the current activity
+                LogUtils.logd(TAG, "Looks like token URL");
+
+                final String token = Uri.parse(url).getQueryParameter("token");
+                final JRDictionary fake_rpx_result = new JRDictionary();
+                fake_rpx_result.put("token", token);
+                fake_rpx_result.put("auth_info", new JRDictionary());
+                finishFragmentWithResult(Activity.RESULT_OK);
+
+                showProgressSpinner();
+                mSession.triggerAuthenticationDidCompleteWithPayload(fake_rpx_result);
+                return;
+            }
+
             /* We inject some JS into the WebView. The JS is from the configuration pulled down from 
              * Engage. This way we can remotely fix up pages which render poorly/brokenly, like Yahoo!.
              */

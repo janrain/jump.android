@@ -183,8 +183,16 @@ public class Jump {
         state.initCalled = true;
 
         state.context = context;
-        state.jrEngage = JREngage.initInstance(context.getApplicationContext(), jumpConfig.engageAppId,
-                jumpConfig.engageAppUrl, null, null, jumpConfig.customProviders);
+        state.jrEngage = JREngage.initInstance(
+                context.getApplicationContext(),
+                jumpConfig.engageAppId,
+                jumpConfig.engageDomain,
+                null,
+                jumpConfig.engageResponseType,
+                jumpConfig.engageWhitelistedDomain,
+                null,
+                jumpConfig.customProviders
+        );
         state.captureSocialRegistrationFormName = jumpConfig.captureSocialRegistrationFormName;
         state.captureTraditionalRegistrationFormName = jumpConfig.captureTraditionalRegistrationFormName;
         state.captureEditUserProfileFormName = jumpConfig.captureEditUserProfileFormName;
@@ -204,10 +212,10 @@ public class Jump {
         }else{
             state.captureRedirectUri = jumpConfig.captureRedirectUri;
         }
-        state.engageAppUrl = jumpConfig.engageAppUrl;
-        state.downloadFlowUrl = jumpConfig.downloadFlowUrl;
+        state.engageAppUrl = jumpConfig.engageDomain;
+        state.downloadFlowUrl = jumpConfig.captureFlowDomain;
 
-
+        state.jrEngage.initOpenIDIdentityProviders(context, jumpConfig.configFile);
 
 
         final Context tempContext = context;
@@ -996,7 +1004,7 @@ public class Jump {
         String flowUrlString = "";
 
         if(state.downloadFlowUrl != null && !state.downloadFlowUrl.isEmpty()){
-            flowUrlString = String.format("https://%s/widget_data/flows/%s/%s/%s/%s.json",
+            flowUrlString = String.format("%s/widget_data/flows/%s/%s/%s/%s.json",
                     state.downloadFlowUrl,
                     state.captureAppId, state.captureFlowName, flowVersion,
                     state.captureLocale);

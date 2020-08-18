@@ -1,3 +1,34 @@
+v7.3.0
+* The library supports the China region for Capture and social sign in.
+* The configuration files (.json) now require new keys if your 
+application needs to work in China (these keys are optional for 
+any other region):
+
+  * The required keys are: `captureFlowDomain` and `engageDomain`.  
+  With these keys you don't need to modify the library source code;
+  you only need to modify your configuration file.   
+  Here is a brief example of a configuration file using these new keys:
+  <pre><code class="json">// ...
+  // Other keys your file may have
+  // ...
+  &quot;engageAppId&quot;: &quot;{YoutEngageAppId}&quot;,
+  &quot;engageDomain&quot;: &quot;{yourengage.domain.com}&quot;,
+  &quot;engageResponseType&quot;: &quot;token&quot;,
+  &quot;engageWhitelistedDomain&quot;: &quot;{YourWhitelistedDomain}&quot;,
+  &quot;captureAppId&quot;: &quot;{YourCaptureAppId}&quot;,
+  &quot;captureDomain&quot;: &quot;{YourCaptureDomain}&quot;,
+  &quot;captureClientId&quot;: &quot;{YourCaptureClientId}&quot;,
+  &quot;captureFlowDomain&quot;: &quot;{yourcaptureflow.domain.com}&quot;,
+  // ...
+  // Other keys your file may have
+  //
+</code></pre>
+
+> **Remeber:** These new keys are optional if your application is
+used in other regions other than China.
+
+* Add the file [China_Configuration_Guide.md](Docs/China_Configuration_Guide.md) explaining the process that uses these new keys.
+
 v7.2.0
 * Added Engage support for Apple provider.
 * Added Engage support for Line provider.
